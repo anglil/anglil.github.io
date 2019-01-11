@@ -1,8 +1,10 @@
-# jemdoc: {index.html}
+# jemdoc: {index.html}, nofooter
 == Angli Liu
+
 ~~~
 PhD student, [https://www.cs.washington.edu/ Allen School of Computer Science at UW]
 ~~~
+
 == Work
 TBA
 
