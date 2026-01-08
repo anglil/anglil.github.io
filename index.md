@@ -32,22 +32,38 @@ title: Angli Liu
   </ul>
 
   <h2>Tech Stuff Blog</h2>
-  <div class="blog-section">
-    <iframe src="https://tech-stuff-angli.quora.com/" 
-            width="100%" 
-            height="1100px" 
-            frameborder="0" 
-            style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);"></iframe>
-  </div>
+  <p>Technical deep-dives, programming, machine learning, systems, and more.</p>
+
+  <p>
+    <a href="https://tech-stuff-angli.quora.com/" target="_blank" style="text-decoration: none; color: inherit;">
+      <img src="https://www.quora.com/favicon.ico" alt="Quora" width="20" height="20" style="vertical-align: middle; margin-right: 8px; border-radius: 4px;">
+      <strong>Visit Tech Stuff Blog on Quora →</strong>
+    </a>
+  </p>
+
+  <!-- Optional: Add a screenshot preview (upload to /images/tech-stuff-preview.png first) -->
+  <!-- 
+  <img src="/images/tech-stuff-preview.png" alt="Tech Stuff Blog preview" 
+       style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 1em;">
+  -->
+
 
   <h2>Personal Blog</h2>
-  <div class="blog-section">
-    <iframe src="https://anglil.quora.com/" 
-            width="100%" 
-            height="1100px" 
-            frameborder="0" 
-            style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);"></iframe>
-  </div>
+  <p>Life reflections, marathon running, travel, personal growth, and random thoughts.</p>
+
+  <p>
+    <a href="https://anglil.quora.com/" target="_blank" style="text-decoration: none; color: inherit;">
+      <img src="https://www.quora.com/favicon.ico" alt="Quora" width="20" height="20" style="vertical-align: middle; margin-right: 8px; border-radius: 4px;">
+      <strong>Visit Personal Blog on Quora →</strong>
+    </a>
+  </p>
+
+  <!-- Optional: Add a screenshot preview (upload to /images/personal-preview.png first) -->
+  <!-- 
+  <img src="/images/personal-preview.png" alt="Personal Blog preview" 
+       style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 1em;">
+  -->
+
 </div>
 
 <style>
@@ -80,20 +96,6 @@ title: Angli Liu
     font-weight: 400;
   }
 
-  .blog-section {
-    margin: 1.5em 0 3em;
-    background: #f9f9f9;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  }
-
-  iframe {
-    display: block;
-    width: 100%;
-    min-height: 1100px;
-  }
-
   a {
     color: #0066cc;
     text-decoration: none;
@@ -107,12 +109,13 @@ title: Angli Liu
     padding-left: 1.5em;
   }
 
+  p {
+    margin: 0.8em 0;
+  }
+
   @media (max-width: 768px) {
     .container {
       padding: 0 15px;
-    }
-    iframe {
-      min-height: 900px;
     }
   }
 </style>
