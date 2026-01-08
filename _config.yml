@@ -8,3 +8,6 @@ mathjax: true
 
 # Optional: add your photo (upload to /images/photo.jpg)
 # avatar: "/images/your_photo.jpg"
+
+# Force rebuild trigger + safety
+future: true
