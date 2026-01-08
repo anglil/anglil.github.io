@@ -1,0 +1,10 @@
+title: Angli Liu
+description: PhD student @ UW Allen School of Computer Science
+baseurl: "" # leave empty for root domain
+url: "https://anglil.github.io"
+
+# Enable MathJax globally
+mathjax: true
+
+# Optional: add your photo (upload to /images/photo.jpg)
+# avatar: "/images/your_photo.jpg"
