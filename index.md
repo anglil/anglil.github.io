@@ -5,15 +5,15 @@ title: Angli Liu
 
 <div class="wrapper">
   <div class="sidebar">
-    <h3>Links</h3>
     <ul>
       <li><a href="https://tech-stuff-angli.quora.com/" target="_blank">Tech Stuff Blog</a></li>
       <li><a href="https://anglil.quora.com/" target="_blank">Personal Blog</a></li>
+      <li><a href="https://scholar.google.com/citations?user=lNOZAc4AAAAJ&amp;hl=en" target="_blank">Google Scholar</a></li>
     </ul>
   </div>
 
   <div class="main">
-    <!-- Photo placeholder – right-aligned, floated like on similar Berkeley pages -->
+    <!-- Photo placeholder – floated right, similar placement to many Berkeley/UT faculty pages -->
     <!-- Upload your photo to /images/angli-photo.jpg and uncomment: -->
     <!--
     <img src="/images/angli-photo.jpg" alt="Angli Liu" class="profile-photo">
@@ -41,12 +41,6 @@ title: Angli Liu
 
     <hr>
 
-    <h2>Tech Stuff Blog</h2>
-    <p>Technical deep-dives, programming, machine learning, systems, and more.</p>
-
-    <h2>Personal Blog</h2>
-    <p>Life reflections, marathon running, travel, personal growth, and random thoughts.</p>
-
   </div>
 </div>
 
@@ -68,32 +62,25 @@ title: Angli Liu
     flex-shrink: 0;
   }
 
-  .sidebar h3 {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 1.4em;
-    margin: 0 0 1em 0;
-    color: #000;
-  }
-
   .sidebar ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 2em 0 0 0;
   }
 
   .sidebar li {
-    margin: 1.2em 0;
+    margin: 1.4em 0;
   }
 
   .sidebar a {
-    color: #c4820e;                /* Orange accent */
+    color: #c4820e;                /* Berkeley-style orange */
     text-decoration: none;
-    font-size: 1.05em;
+    font-size: 1.1em;
   }
 
   .sidebar a:hover {
     text-decoration: underline;
-    color: #d35400;               /* Darker orange on hover */
+    color: #d35400;               /* Darker orange hover */
   }
 
   .main {
