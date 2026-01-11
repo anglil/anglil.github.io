@@ -33,10 +33,7 @@ title: Angli Liu
 
     <h2>About</h2>
     <p>
-      [Add your short bio here – research interests, background, current projects, etc.]
-      <br><br>
-      I'm a PhD student working on [your main research area]. 
-      Previously [brief previous experience/education if you want to include].
+      A curious mind.
     </p>
 
     <hr>
