@@ -10,6 +10,11 @@ title: Angli Liu
       <li><a href="https://anglil.quora.com/" target="_blank">Personal Blog</a></li>
       <li><a href="https://scholar.google.com/citations?user=lNOZAc4AAAAJ&amp;hl=en" target="_blank">Google Scholar</a></li>
     </ul>
+
+    <h4>Notes</h4>
+    <ul>
+      <li><a href="#">[Notes placeholder]</a></li>
+    </ul>
   </div>
 
   <div class="main">
@@ -49,7 +54,7 @@ title: Angli Liu
     display: flex;
     gap: 50px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;           /* smaller body text – Caltech classic feel */
+    font-size: 14px;
     line-height: 1.50;
     color: #222;
   }
@@ -62,7 +67,7 @@ title: Angli Liu
   .sidebar ul {
     list-style: none;
     padding: 0;
-    margin: 1.8em 0 0 0;
+    margin: 1.8em 0 1.8em 0;
   }
 
   .sidebar li {
@@ -72,12 +77,20 @@ title: Angli Liu
   .sidebar a {
     color: #c4820e;
     text-decoration: none;
-    font-size: 13.5px;        /* even slightly smaller for sidebar links */
+    font-size: 13.5px;
   }
 
   .sidebar a:hover {
     text-decoration: underline;
     color: #d35400;
+  }
+
+  .sidebar h4 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    font-size: 1.15em;
+    margin: 2.2em 0 0.6em 0;
+    color: #000;
   }
 
   .main {
@@ -87,71 +100,13 @@ title: Angli Liu
   h1 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: normal;
-    font-size: 2.35em;        /* smaller than before, still prominent */
+    font-size: 2.35em;
     margin: 0 0 0.15em 0;
     color: #000;
   }
 
   .title {
-    font-size: 1.15em;        /* compact title */
+    font-size: 1.15em;
     color: #444;
     margin-bottom: 1.2em;
-    line-height: 1.4;
-  }
-
-  .email {
-    font-size: 1.05em;
-    margin: 1.6em 0 2.2em 0;
-  }
-
-  h2 {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: normal;
-    font-size: 1.55em;        /* modest heading size */
-    margin: 2.4em 0 0.7em 0;
-    color: #000;
-  }
-
-  p {
-    margin: 0.95em 0;
-  }
-
-  a {
-    color: #c4820e;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  hr {
-    border: 0;
-    border-top: 1px solid #ddd;
-    margin: 2.5em 0;
-  }
-
-  .profile-photo {
-    float: right;
-    width: 180px;
-    height: auto;
-    margin: 0 0 1.8em 2.2em;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 4px rgba(0,0,0,0.12);
-  }
-
-  @media (max-width: 850px) {
-    .wrapper {
-      flex-direction: column;
-      gap: 35px;
-    }
-    .sidebar {
-      width: 100%;
-    }
-    .profile-photo {
-      float: none;
-      display: block;
-      margin: 0 auto 1.8em;
-    }
-  }
-</style>
+    line-height: 1.4
