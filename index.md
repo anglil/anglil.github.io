@@ -13,7 +13,7 @@ title: Angli Liu
   </div>
 
   <div class="main">
-    <!-- Photo placeholder – floated right, similar placement to many Berkeley/UT faculty pages -->
+    <!-- Photo placeholder – floated right -->
     <!-- Upload your photo to /images/angli-photo.jpg and uncomment: -->
     <!--
     <img src="/images/angli-photo.jpg" alt="Angli Liu" class="profile-photo">
@@ -33,7 +33,10 @@ title: Angli Liu
 
     <h2>About</h2>
     <p>
-      A curious mind.
+      [Add your short bio here – research interests, background, current projects, etc.]
+      <br><br>
+      I'm a PhD student working on [your main research area]. 
+      Previously [brief previous experience/education if you want to include].
     </p>
 
     <hr>
@@ -43,41 +46,41 @@ title: Angli Liu
 
 <style>
   .wrapper {
-    max-width: 1000px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 35px 25px 50px;
     display: flex;
-    gap: 60px;
+    gap: 50px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.58;
+    font-size: 14px;           /* smaller body text – Caltech classic feel */
+    line-height: 1.50;
     color: #222;
   }
 
   .sidebar {
-    width: 220px;
+    width: 200px;
     flex-shrink: 0;
   }
 
   .sidebar ul {
     list-style: none;
     padding: 0;
-    margin: 2em 0 0 0;
+    margin: 1.8em 0 0 0;
   }
 
   .sidebar li {
-    margin: 1.4em 0;
+    margin: 1.1em 0;
   }
 
   .sidebar a {
-    color: #c4820e;                /* Berkeley-style orange */
+    color: #c4820e;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 13.5px;        /* even slightly smaller for sidebar links */
   }
 
   .sidebar a:hover {
     text-decoration: underline;
-    color: #d35400;               /* Darker orange hover */
+    color: #d35400;
   }
 
   .main {
@@ -87,32 +90,33 @@ title: Angli Liu
   h1 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: normal;
-    font-size: 3em;
-    margin: 0 0 0.2em 0;
+    font-size: 2.35em;        /* smaller than before, still prominent */
+    margin: 0 0 0.15em 0;
     color: #000;
   }
 
   .title {
-    font-size: 1.35em;
+    font-size: 1.15em;        /* compact title */
     color: #444;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.2em;
+    line-height: 1.4;
   }
 
   .email {
-    font-size: 1.2em;
-    margin: 2em 0 3em 0;
+    font-size: 1.05em;
+    margin: 1.6em 0 2.2em 0;
   }
 
   h2 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: normal;
-    font-size: 1.9em;
-    margin: 3em 0 0.8em 0;
+    font-size: 1.55em;        /* modest heading size */
+    margin: 2.4em 0 0.7em 0;
     color: #000;
   }
 
   p {
-    margin: 1.1em 0;
+    margin: 0.95em 0;
   }
 
   a {
@@ -127,22 +131,22 @@ title: Angli Liu
   hr {
     border: 0;
     border-top: 1px solid #ddd;
-    margin: 3em 0;
+    margin: 2.5em 0;
   }
 
   .profile-photo {
     float: right;
-    width: 200px;
+    width: 180px;
     height: auto;
-    margin: 0 0 2em 2.5em;
+    margin: 0 0 1.8em 2.2em;
     border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.12);
   }
 
   @media (max-width: 850px) {
     .wrapper {
       flex-direction: column;
-      gap: 40px;
+      gap: 35px;
     }
     .sidebar {
       width: 100%;
@@ -150,7 +154,7 @@ title: Angli Liu
     .profile-photo {
       float: none;
       display: block;
-      margin: 0 auto 2em;
+      margin: 0 auto 1.8em;
     }
   }
 </style>
