@@ -10,6 +10,7 @@ title: Angli Liu
       <li><a href="https://anglil.quora.com/" target="_blank">Personal Blog</a></li>
       <li><a href="https://scholar.google.com/citations?user=lNOZAc4AAAAJ&amp;hl=en" target="_blank">Google Scholar</a></li>
       <li><a href="#">Notes</a></li>
+      <li><a href="https://github.com/anglil" target="_blank">GitHub</a></li>
     </ul>
   </div>
 
@@ -48,7 +49,7 @@ title: Angli Liu
     display: flex;
     gap: 50px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;           /* classic small Caltech EE body text */
+    font-size: 14px;
     line-height: 1.50;
     color: #222;
   }
@@ -69,14 +70,14 @@ title: Angli Liu
   }
 
   .sidebar a {
-    color: #c4820e;                /* Dimakis-style orange accent */
+    color: #c4820e;
     text-decoration: none;
     font-size: 13.5px;
   }
 
   .sidebar a:hover {
     text-decoration: underline;
-    color: #d35400;               /* darker orange hover */
+    color: #d35400;
   }
 
   .main {
