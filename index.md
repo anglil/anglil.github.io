@@ -23,13 +23,13 @@ title: Angli Liu
 
     <h1>Angli Liu</h1>
 
-    <div class="title">
+    <p>
       PhD Student<br>
       Paul G. Allen School of Computer Science & Engineering<br>
       University of Washington
-    </div>
+    </p>
 
-    <p class="email">
+    <p>
       <a href="mailto:anglil@cs.washington.edu">anglil@cs.washington.edu</a>
     </p>
 
@@ -92,20 +92,6 @@ title: Angli Liu
     color: #000;
   }
 
-  .title {
-    font-family: Georgia, "Times New Roman", Times, serif;  /* Matching Caltech welcome section serif font */
-    font-size: 1.15em;
-    color: #444;
-    margin-bottom: 1.2em;
-    line-height: 1.4;
-  }
-
-  .email {
-    font-family: Georgia, "Times New Roman", Times, serif;  /* Matching Caltech welcome section serif font */
-    font-size: 1.05em;
-    margin: 1.6em 0 2.2em 0;
-  }
-
   h2 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-weight: normal;
@@ -115,8 +101,9 @@ title: Angli Liu
   }
 
   p {
-    font-family: Georgia, "Times New Roman", Times, serif;  /* Matching Caltech welcome section serif font */
+    font-family: Georgia, "Times New Roman", Times, serif;
     margin: 0.95em 0;
+    color: #444;
   }
 
   a {
