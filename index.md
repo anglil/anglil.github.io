@@ -93,6 +93,7 @@ title: Angli Liu
   }
 
   .title {
+    font-family: Georgia, "Times New Roman", Times, serif;  /* Matching Caltech welcome section serif font */
     font-size: 1.15em;
     color: #444;
     margin-bottom: 1.2em;
@@ -100,6 +101,7 @@ title: Angli Liu
   }
 
   .email {
+    font-family: Georgia, "Times New Roman", Times, serif;  /* Matching Caltech welcome section serif font */
     font-size: 1.05em;
     margin: 1.6em 0 2.2em 0;
   }
@@ -113,6 +115,7 @@ title: Angli Liu
   }
 
   p {
+    font-family: Georgia, "Times New Roman", Times, serif;  /* Matching Caltech welcome section serif font */
     margin: 0.95em 0;
   }
 
