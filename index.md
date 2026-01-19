@@ -23,18 +23,11 @@ title: Angli Liu
 
     <h1>Angli Liu</h1>
 
-    <p>
-      PhD Student<br>
-      Paul G. Allen School of Computer Science & Engineering<br>
-      University of Washington
-    </p>
+    <p>mind and hand</p>
 
     <p>
       <a href="mailto:anglil@cs.washington.edu">anglil@cs.washington.edu</a>
     </p>
-
-    <h2>About</h2>
-    <p>A curious mind.</p>
 
     <hr>
 
@@ -89,14 +82,6 @@ title: Angli Liu
     font-weight: normal;
     font-size: 2.35em;
     margin: 0 0 0.15em 0;
-    color: #000;
-  }
-
-  h2 {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: normal;
-    font-size: 1.55em;
-    margin: 2.4em 0 0.7em 0;
     color: #000;
   }
 
