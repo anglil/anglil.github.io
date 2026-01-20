@@ -23,7 +23,7 @@ title: Angli Liu
 
     <h1>Angli Liu</h1>
 
-    <p>Mind and hand</p>
+    <p>mind and hand</p>
 
     <p>
       <a href="mailto:anglil@cs.washington.edu">anglil@cs.washington.edu</a>
