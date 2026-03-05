@@ -140,8 +140,7 @@ title: Notes – Angli Liu
 
   .back-home a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 13.5px;
     color: #c4820e;
     text-decoration: none;
     letter-spacing: 0.3px;
