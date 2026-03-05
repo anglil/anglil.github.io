@@ -23,6 +23,10 @@ title: Notes – Angli Liu
     </ul>
 
     <hr>
+
+    <div class="back-home">
+      <a href="/">← Home</a>
+    </div>
   </div>
 </div>
 
@@ -127,5 +131,24 @@ title: Notes – Angli Liu
     .sidebar {
       width: 100%;
     }
+  }
+
+  .back-home {
+    text-align: right;
+    margin-top: 1.5em;
+  }
+
+  .back-home a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #c4820e;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+  }
+
+  .back-home a:hover {
+    text-decoration: underline;
+    color: #d35400;
   }
 </style>
