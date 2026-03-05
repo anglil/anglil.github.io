@@ -88,8 +88,8 @@ title: Notes – Angli Liu
   .notes-list a {
     color: #c4820e;
     text-decoration: none;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 1.05em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13.5px;
   }
 
   .notes-list a:hover {
