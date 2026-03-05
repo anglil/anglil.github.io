@@ -19,6 +19,7 @@ title: Notes – Angli Liu
 
     <ul class="notes-list">
       <li><a href="/notes/physics_highschool_1.pdf" target="_blank">physics_highschool_1</a></li>
+      <li><a href="/notes/physics_highschool_2.pdf" target="_blank">physics_highschool_2</a></li>
     </ul>
 
     <hr>
