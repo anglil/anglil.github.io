@@ -25,6 +25,7 @@ title: Notes – Angli Liu
       <li><a href="/notes/quantum mechanics.pdf" target="_blank">quantum mechanics</a></li>
       <li><a href="/notes/optics_1.pdf" target="_blank">optics_1</a></li>
       <li><a href="/notes/optics_2.pdf" target="_blank">optics_2</a></li>
+      <li><a href="/notes/electromagnetics.pdf" target="_blank">electromagnetics</a></li>
     </ul>
 
     <hr>
