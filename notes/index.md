@@ -22,6 +22,7 @@ title: Notes – Angli Liu
       <li><a href="/notes/physics_highschool_2.pdf" target="_blank">physics_highschool_2</a></li>
       <li><a href="/notes/digital electronics.pdf" target="_blank">digital electronics</a></li>
       <li><a href="/notes/thermodynamics.pdf" target="_blank">thermodynamics</a></li>
+      <li><a href="/notes/quantum mechanics.pdf" target="_blank">quantum mechanics</a></li>
     </ul>
 
     <hr>
