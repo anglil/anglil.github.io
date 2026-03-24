@@ -29,6 +29,7 @@ title: Notes – Angli Liu
       <li><a href="/notes/antennae.pdf" target="_blank">antennae</a></li>
       <li><a href="/notes/multivariable calculus.pdf" target="_blank">multivariable calculus</a></li>
       <li><a href="/notes/mathematical physics.pdf" target="_blank">mathematical physics</a></li>
+      <li><a href="/notes/complex analysis.pdf" target="_blank">complex analysis</a></li>
     </ul>
 
     <hr>
