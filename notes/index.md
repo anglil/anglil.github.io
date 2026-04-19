@@ -32,6 +32,10 @@ title: Notes – Angli Liu
       <li><a href="/notes/complex analysis.pdf" target="_blank">complex analysis</a></li>
       <li><a href="/notes/algebra, geometry, and advanced calculus 1.pdf" target="_blank">algebra, geometry, and advanced calculus 1</a></li>
       <li><a href="/notes/algebra, geometry, and advanced calculus 2.pdf" target="_blank">algebra, geometry, and advanced calculus 2</a></li>
+      <li><a href="/notes/applied math.pdf" target="_blank">applied math</a></li>
+      <li><a href="/notes/signals and systems.pdf" target="_blank">signals and systems</a></li>
+      <li><a href="/notes/stochastic process.pdf" target="_blank">stochastic process</a></li>
+      <li><a href="/notes/information theory.pdf" target="_blank">information theory</a></li>
     </ul>
 
     <hr>
