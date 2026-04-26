@@ -38,6 +38,7 @@ title: Notes – Angli Liu
       <li><a href="/notes/information theory.pdf" target="_blank">information theory</a></li>
       <li><a href="/notes/algorithms.pdf" target="_blank">algorithms</a></li>
       <li><a href="/notes/circuits principles, experiments, and semiconductors.pdf" target="_blank">circuits principles, experiments, and semiconductors</a></li>
+      <li><a href="/notes/communication circuits.pdf" target="_blank">communication circuits</a></li>
     </ul>
 
     <hr>
