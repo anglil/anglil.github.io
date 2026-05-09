@@ -37,11 +37,17 @@ title: Notes – Angli Liu
       <li><a href="/notes/stochastic process.pdf" target="_blank">stochastic process</a></li>
       <li><a href="/notes/information theory.pdf" target="_blank">information theory</a></li>
       <li><a href="/notes/algorithms.pdf" target="_blank">algorithms</a></li>
+      <li><a href="/notes/algorithms 2.pdf" target="_blank">algorithms 2</a></li>
+      <li><a href="/notes/algorithms 3.pdf" target="_blank">algorithms 3</a></li>
       <li><a href="/notes/circuits principles, experiments, and semiconductors.pdf" target="_blank">circuits principles, experiments, and semiconductors</a></li>
       <li><a href="/notes/communication circuits.pdf" target="_blank">communication circuits</a></li>
       <li><a href="/notes/c.pdf" target="_blank">c</a></li>
       <li><a href="/notes/c++.pdf" target="_blank">c++</a></li>
       <li><a href="/notes/computer architecture.pdf" target="_blank">computer architecture</a></li>
+      <li><a href="/notes/computer networks.pdf" target="_blank">computer networks</a></li>
+      <li><a href="/notes/computer networks 2.pdf" target="_blank">computer networks 2</a></li>
+      <li><a href="/notes/machine learning.pdf" target="_blank">machine learning</a></li>
+      <li><a href="/notes/reinforcement learning.pdf" target="_blank">reinforcement learning</a></li>
     </ul>
 
     <hr>
