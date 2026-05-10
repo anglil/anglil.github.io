@@ -49,6 +49,7 @@ title: Notes – Angli Liu
       <li><a href="/notes/computer networks 2.pdf" target="_blank">computer networks 2</a></li>
       <li><a href="/notes/machine learning.pdf" target="_blank">machine learning</a></li>
       <li><a href="/notes/reinforcement learning.pdf" target="_blank">reinforcement learning</a></li>
+      <li><a href="/notes/college electrical engineering.pdf" target="_blank">college electrical engineering</a></li>
     </ul>
 
     <hr>
