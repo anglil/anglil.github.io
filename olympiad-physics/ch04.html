@@ -1,107 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Chapter 4: Momentum and Collisions — Olympiad Physics</title>
-  <link rel="stylesheet" href="style.css">
-  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Thermodynamics - Olympiad Physics</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
-<aside id="sidebar"><div class="book-title">Olympiad Physics<span>Angli Liu</span></div><nav><ul><li><a href="index.html">Table of Contents</a></li><li><div class="part-label">Part I — Mechanics</div></li><li><a href="ch01.html">1. Kinematics</a></li><li><a href="ch02.html">2. Newton's Laws</a></li><li><a href="ch03.html">3. Energy &amp; Work</a></li><li><a href="ch04.html" class="active">4. Momentum</a></li><li><a href="ch05.html">5. Rotational Motion</a></li><li><a href="ch06.html">6. Fluid Mechanics</a></li><li><a href="ch07.html">7. Oscillations &amp; Waves</a></li><li><div class="part-label">Part II — Thermal, EM, Optics</div></li><li><a href="ch08.html">8. Thermodynamics</a></li><li><a href="ch09.html">9. Electrostatics</a></li><li><a href="ch10.html">10. DC Circuits</a></li><li><a href="ch11.html">11. Magnetism</a></li><li><a href="ch12.html">12. Optics</a></li><li><a href="ch13.html">13. Relativity</a></li></ul></nav></aside>
-<main id="content">
-
-<h1><span class="chapter-num">Chapter 4</span>Momentum and Collisions</h1>
-
-<h2 id="s4-1">4.1 Linear Momentum and Impulse</h2>
-
-<div class="box definition">
-  <div class="box-title">Definition 4.1 — Linear Momentum</div>
-  $$\mathbf{p} = m\mathbf{v}.$$
-</div>
-
-<div class="box theorem">
-  <div class="box-title">Theorem 4.1 — Impulse–Momentum Theorem</div>
-  $$\mathbf{J} = \int_{t_1}^{t_2}\mathbf{F}\,dt = \Delta\mathbf{p}.$$
-</div>
-
-<div class="box theorem">
-  <div class="box-title">Theorem 4.2 — Conservation of Momentum</div>
-  <p>If the net external force on a system is zero, the total momentum is conserved: $\sum_i m_i \mathbf{v}_i = \text{const}$.</p>
-</div>
-
-<h2 id="s4-2">4.2 Center of Mass</h2>
-
-<div class="box definition">
-  <div class="box-title">Definition 4.2 — Center of Mass</div>
-  $$\mathbf{r}_{\text{cm}} = \frac{\sum_i m_i \mathbf{r}_i}{\sum_i m_i}, \qquad \mathbf{v}_{\text{cm}} = \frac{\mathbf{p}_{\text{total}}}{M_{\text{total}}}.$$
-</div>
-
-<p>Newton's second law for the system: $\mathbf{F}_{\text{ext}} = M\mathbf{a}_{\text{cm}}$. The center of mass moves as if the total mass were concentrated there, acted on by the net external force.</p>
-
-<h2 id="s4-3">4.3 Elastic and Inelastic Collisions</h2>
-
-<p>In all collisions, momentum is conserved. <strong>Elastic</strong> collisions also conserve kinetic energy. <strong>Perfectly inelastic</strong> collisions result in the objects sticking together, maximizing kinetic energy loss.</p>
-
-<div class="box theorem">
-  <div class="box-title">Theorem 4.3 — 1D Elastic Collision</div>
-  <p>For a head-on elastic collision between masses $m_1$ (velocity $u_1$) and $m_2$ (at rest):</p>
-  $$v_1 = \frac{m_1 - m_2}{m_1 + m_2}\,u_1, \qquad v_2 = \frac{2m_1}{m_1 + m_2}\,u_1.$$
-</div>
-
-<details>
-  <summary>Proof</summary>
-  <div class="solution-content">
-    <p>Momentum: $m_1 u_1 = m_1 v_1 + m_2 v_2$. Energy: $m_1 u_1^2 = m_1 v_1^2 + m_2 v_2^2$.</p>
-    <p>From momentum: $m_1(u_1 - v_1) = m_2 v_2$. From energy: $m_1(u_1^2 - v_1^2) = m_2 v_2^2$, i.e., $m_1(u_1 - v_1)(u_1 + v_1) = m_2 v_2^2$.</p>
-    <p>Dividing: $u_1 + v_1 = v_2$. Substituting back gives the result. $\blacksquare$</p>
-  </div>
-</details>
-
-<div class="box example">
-  <div class="box-title">Example 4.1 — Ballistic Pendulum</div>
-  <p>A bullet of mass $m$ embeds in a block of mass $M$ suspended by a string. The block rises to height $h$. Find the bullet's speed.</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p>Collision (momentum): $mv_0 = (m+M)V$. Swing (energy): $\frac{1}{2}(m+M)V^2 = (m+M)gh$.</p>
-      <p>So $V = \sqrt{2gh}$ and $v_0 = \frac{m+M}{m}\sqrt{2gh}$.</p>
-    </div>
-  </details>
-</div>
-
-<h2 id="s4-4">4.4 Two-Dimensional Collisions</h2>
-
-<p>In 2D, apply conservation of $p_x$ and $p_y$ separately. For elastic collisions, add $\Delta K = 0$. A key result: in an elastic collision of equal masses where one is initially at rest, the final velocities are perpendicular.</p>
-
-<h2 id="s4-5">4.5 The Center-of-Mass Frame</h2>
-
-<p>In the CM frame, the total momentum is zero. Elastic collisions in the CM frame simply reverse each particle's velocity direction (in 1D) or change direction by an angle $\chi$ (in 2D, the scattering angle).</p>
-
-<h2 id="s4-6">4.6 Variable-Mass Systems</h2>
-
-<div class="box theorem">
-  <div class="box-title">Theorem 4.4 — Rocket Equation (Tsiolkovsky)</div>
-  <p>For a rocket expelling mass at rate $|\dot{m}|$ with exhaust velocity $v_e$ relative to the rocket:</p>
-  $$m\frac{dv}{dt} = -v_e\,\dot{m} + F_{\text{ext}}$$
-  <p>In gravity-free space with no external forces, $\Delta v = v_e \ln(m_0/m_f)$.</p>
-</div>
-
-<h2 id="s4-7">4.7 Exercises</h2>
-
-<div class="box exercise"><div class="box-title">Exercise 4.1</div><p>$n$ identical balls are arranged in a line on a frictionless surface. The first is given velocity $v_0$. All collisions are elastic. Show that the last ball departs with speed $v_0$ and all others remain at rest.</p></div>
-
-<div class="box exercise"><div class="box-title">Exercise 4.2</div><p>A ball bounces vertically between two horizontal surfaces separated by height $h$. Each bounce is elastic. Find the average force on the lower surface if the ball has mass $m$.</p></div>
-
-<div class="box exercise"><div class="box-title">Exercise 4.3</div><p>A particle of mass $m$ and speed $v$ strikes a stationary particle of mass $M$ elastically. Find the scattering angle in the lab frame as a function of the CM scattering angle $\chi$ and the mass ratio $m/M$.</p></div>
-
-<div class="box exercise"><div class="box-title">Exercise 4.4</div><p>A chain of length $L$ and mass $M$ lies coiled on a table. One end is pulled vertically upward with constant velocity $v$. Find the force applied as a function of the length $y$ already lifted.</p></div>
-
-<nav class="chapter-nav">
-  <a href="ch03.html">← Energy &amp; Work</a>
-  <a href="ch05.html">Rotational Motion →</a>
+<nav class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ch01.html">Chapter 1: Newtonian Mechanics</a></li>
+        <li><a href="ch02.html">Chapter 2: Special Relativity</a></li>
+        <li><a href="ch03.html">Chapter 3: Optics & Quantum Physics</a></li>
+        <li><a href="ch04.html">Chapter 4: Thermodynamics</a></li>
+    </ul>
 </nav>
+<main class="content">
+    <h1>Part 6: Ideal Gas</h1>
+
+    <h3>1. Pressure:</h3>
+    <img src="images/ch04_ideal_gas_pressure.png" alt="Ideal Gas Pressure" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ p = \frac{\Delta F}{\Delta S} = \frac{\Sigma I_i}{\Delta S \Delta t} = \frac{\frac{1}{2}\Sigma (m \cdot n \cdot v_{ix} \Delta t \cdot \Delta S) \cdot 2v_{ix}}{\Delta S \cdot \Delta t} $$
+    <p>In the above equation, $m(n v_{ix} \Delta t \Delta S)$ is the mass of the molecules in a cuboid hitting the container wall in time $\Delta t$.</p>
+    <p>$\frac{1}{2}$ represents that the probability of $v_{ix}$ in the $\pm x$ directions are both $\frac{1}{2}$. Since we only study the case of molecules hitting the right wall, we only take $\frac{1}{2}$.</p>
+    $$ \therefore p = n m \frac{\Sigma v_{ix}^2 \cdot n_i}{n} $$
+    $$ \because \overline{v_x^2} = \frac{\Sigma v_{ix}^2 n_i}{n} = \frac{1}{3}\overline{v^2} $$
+    $$ \therefore P = \frac{1}{3} n m \overline{v^2} = \frac{2}{3} n \left(\frac{1}{2} m \overline{v^2}\right) $$
+
+    <h3>2. Temperature:</h3>
+    <img src="images/ch04_ideal_gas_temperature.png" alt="Ideal Gas Temperature" style="max-width: 50%; display: block; margin: 1em auto;">
+    <p>After two molecules undergo elastic collision, the kinetic energy lost by molecule $M$:</p>
+    $$ \Delta E = \frac{1}{2}M(v_{ox}^2 - v_x^2) \quad (v_{oy} = v_y) $$
+    $$ = \frac{1}{2}M(v_{ox}-v_x)(v_{ox}+v_x) $$
+    <p>From conservation of momentum:</p>
+    $$ v_x = \frac{M v_{ox} + m v_{ox}'}{M+m} - \frac{m(v_{ox}-v_{ox}')}{M+m} = \frac{(M-m)v_{ox} + 2m v_{ox}'}{M+m} $$
+    $$ \therefore v_{ox} - v_x = \frac{2m(v_{ox}-v_{ox}')}{M+m}, \quad v_{ox} + v_x = \frac{2M v_{ox} + 2m v_{ox}'}{M+m} $$
+    $$ \therefore \Delta E = \frac{2mM}{(M+m)^2} [M v_{ox}^2 - m v_{ox}'^2 - (M-m)v_{ox}' v_{ox}] $$
+    <p>Taking the average for a large number of molecules $M$, we get:</p>
+    $$ \overline{\Delta E} = \frac{2mM}{(M+m)^2} [M \overline{v_{ox}^2} - m \overline{v_{ox}'^2} - (M-m)\overline{v_{ox}' v_{ox}}] $$
+    $$ \because \overline{v_{ox}} = \overline{v_{ox}'} = 0 \quad \therefore \overline{v_{ox}' v_{ox}} = 0 $$
+    $$ \therefore \overline{\Delta E} = \frac{2mM}{3(M+m)^2} (M \overline{v^2} - m \overline{v'^2}) \quad \left(\overline{v_x^2} = \frac{1}{3}\overline{v^2}\right) $$
+    $$ \propto \frac{1}{2}M\overline{v^2} - \frac{1}{2}m\overline{v'^2} $$
+    <p>From the zeroth law of thermodynamics, the average kinetic energy of molecules has the macroscopic characteristic of temperature, so we set:</p>
+    $$ \frac{1}{2}m\overline{v^2} = B \cdot T $$
+
 </main>
 </body>
 </html>
