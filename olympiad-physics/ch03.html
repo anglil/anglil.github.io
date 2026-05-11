@@ -146,6 +146,109 @@
     $$ K = \frac{y'}{y} = \frac{v-R}{u-R} = \frac{v - \frac{2uv}{u+v}}{u - \frac{2uv}{u+v}} = \frac{v^2-uv}{u^2-uv} = -\frac{v}{u} $$
     $$ \text{i.e. } K = -\frac{v}{u} $$
 
+    <h3>6. Lens Imaging</h3>
+    <p><strong>① Single Spherical Surface Refraction</strong></p>
+    <img src="images/ch03_single_spherical_refraction.png" alt="Single Spherical Surface Refraction" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>According to Fermat's principle, the optical path of ray $QMQ'$ is equal to that of $QAHCQ'$.</p>
+    $$ \therefore QU \cdot n + MQ \cdot n' = QA \cdot n + AQ' \cdot n' $$
+    $$ \because QH \approx QP, \quad Q'H \approx Q'O $$
+    $$ \therefore QP \cdot n + PM \cdot n + MO \cdot n' = QA \cdot n + AH \cdot n' = (QH-AH)n + AH \cdot n' $$
+    $$ \therefore PM \cdot n + MO \cdot n' = AH(n'-n) \quad (1) $$
+    <p>According to the paraxial approximation formula in geometry, for the paraxial ray $QMQ'$:</p>
+    $$ PM \approx \frac{h^2}{2u}, \quad MO \approx \frac{h^2}{2v} \quad (2) $$
+    <p>And from the intersecting chords theorem $AH(2R-AH) = h^2 \approx AH \cdot 2R$</p>
+    $$ \therefore AH = \frac{h^2}{2R} \quad (3) $$
+    <p>Substituting (2) and (3) into (1) gives $\frac{h^2}{2u} n + \frac{h^2}{2v} n' = \frac{h^2}{2R}(n'-n)$</p>
+    $$ \because s \approx u, \quad s' \approx v $$
+    $$ \therefore \frac{n}{u} + \frac{n'}{v} = \frac{n'-n}{R} $$
+    <p>Focal length: $\begin{cases} \text{Object focal length: } v \to \infty, u = \frac{Rn}{n'-n} = f_1 \\ \text{Image focal length: } u \to \infty, v = \frac{Rn'}{n'-n} = f_2 \end{cases}$</p>
+    <p>Sign Convention: The order of $n'-n$ in the formula is unchanged, only the signs of $u, v, R$ change.</p>
+    $$ \begin{cases} Q \text{ (object) is to the left of vertex } A, u > 0, \text{ otherwise negative.} \\ Q' \text{ (image) is to the right of vertex } A, v > 0, \text{ otherwise negative.} \\ C \text{ (center of curvature) is to the right of } A, \text{defined as } R > 0, \text{ otherwise negative.} \end{cases} $$
+    <p>Magnification: $K = \frac{y'}{y} = -\frac{v/n'}{u/n} = -\frac{nv}{n'u}$.</p>
+
+    <p><strong>② Thin Lens Imaging</strong></p>
+    <img src="images/ch03_thin_lens.png" alt="Thin Lens Imaging" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>For the left spherical surface: $\frac{n_1}{u} + \frac{n}{v_1} = \frac{n-n_1}{R_1}$</p>
+    <p>For the right spherical surface: $-\frac{n}{v_1} + \frac{n_2}{v} = \frac{n_2-n}{R_2}$</p>
+    $$ \therefore \frac{n_1}{u} + \frac{n_2}{v} = (n-1)\left(\frac{1}{R_1} + \frac{1}{R_2}\right) \quad (\text{Special case: } n_1 = n_2 = 1, f = \frac{1}{(n-1)(\frac{1}{R_1}+\frac{1}{R_2})}) $$
+    <p>For the general case: $\frac{n_1}{u} + \frac{n_2}{v} = \frac{n-n_1}{R_1} - \frac{n_2-n}{-R_2}$</p>
+    $$ \therefore \frac{n_1}{u} + \frac{n_2}{v} = \frac{n-n_1}{R_1} + \frac{n-n_2}{R_2} $$
+    <p>When $\frac{n-n_1}{R_1} + \frac{n-n_2}{R_2} > 0$, it is a converging lens, conversely a diverging lens.</p>
+    <p>Focal length: $\begin{cases} \text{Object focal length: } v \to \infty, u = \frac{n_1}{\frac{n-n_1}{R_1} + \frac{n-n_2}{R_2}} = f_1 \\ \text{Image focal length: } u \to \infty, v = \frac{n_2}{\frac{n-n_1}{R_1} + \frac{n-n_2}{R_2}} = f_2 \end{cases}$</p>
+    $$ \therefore \frac{f_1}{u} + \frac{f_2}{v} = 1 $$
+    <p>Let $u = x_1 + f_1$, $v = x_2 + f_2$</p>
+    $$ \therefore \frac{f_1}{x_1+f_1} + \frac{f_2}{x_2+f_2} = 1 \implies f_1 x_2 + f_1 f_2 + f_2 x_1 + f_2 f_1 = x_1 x_2 + x_1 f_2 + f_1 x_2 + f_1 f_2 $$
+    $$ \text{Yields } x_1 x_2 = f_1 f_2 $$
+    <p>Sign Convention: Real object $u > 0$, virtual object $u < 0$. Real image $v > 0$, virtual image $v < 0$. Convex lens $f > 0$, concave lens $f < 0$.</p>
+    <p>Magnification: $K = K_1 \cdot K_2 = \left(-\frac{v_1/n}{u/n_1}\right) \cdot \left(-\frac{v/n_2}{-v_1/n}\right) = -\frac{n_1 v}{n_2 u}$.</p>
+
+    <p>Proof of equal optical path for paraxial rays in thin lenses:</p>
+    <img src="images/ch03_paraxial_proof.png" alt="Paraxial Rays Proof" style="max-width: 50%; display: block; margin: 1em auto;">
+    $$ \Delta(PAA'P') - \Delta(POO'P') = (PA + n \cdot AA' + A'P') - (PO + n \cdot OO' + O'P') $$
+    $$ = (PE + EA + n \cdot AA' + A'F + FP') - [PM - OM + n(OM + MN + NO) + NP' - NO'] $$
+    <p>$\because P'A' \approx MN = b, \quad PE \approx PM, \quad P'F \approx P'N$</p>
+    $$ \text{Original expression } = EA + A'F + OM + NO' - n \cdot OM - n \cdot NO' $$
+    $$ \approx \frac{h^2}{2 \cdot PA} + \frac{h^2}{2 \cdot P'A'} + \frac{h^2}{2r_1} + \frac{h^2}{2r_2} - n\frac{h^2}{2r_1} - n\frac{h^2}{2r_2} $$
+    $$ = \frac{h^2}{2} \left[ \frac{1}{u} + \frac{1}{v} + (1-n)\left(\frac{1}{r_1} + \frac{1}{r_2}\right) \right] = \frac{h^2}{2} \left( \frac{1}{u} + \frac{1}{v} - \frac{1}{f} \right) = 0 $$
+    $$ \therefore \Delta(PAA'P') = \Delta(POO'P') $$
+    <p>Proof of $\Delta \approx \frac{h^2}{2s}$:</p>
+    $$ \because \sqrt{s^2-h^2} = s - \Delta $$
+    $$ \therefore s^2 - h^2 = s^2 - 2s\Delta + \Delta^2 $$
+    $$ \because \Delta^2 \approx 0 \quad \therefore \Delta = \frac{h^2}{2s} $$
+
+    <p><strong>③ Graphical Method</strong></p>
+    <p>1) Characteristic Ray Method:</p>
+    <img src="images/ch03_characteristic_rays.png" alt="Characteristic Rays" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>2) Arbitrary Ray Method:</p>
+    <p>Rays parallel to the secondary optical axis pass through the intersection of the focal plane and the secondary optical axis after refraction by the lens.</p>
+    <p>Explanation: Treat $M$ as a real object. Since it is on the focal plane, it cannot form an image. This means the rays emitted from it must be parallel to the ray passing through the optical center after refraction. As shown in the figure:</p>
+    <img src="images/ch03_arbitrary_rays.png" alt="Arbitrary Rays" style="max-width: 60%; display: block; margin: 1em auto;">
+
+    <h2>Special Topic: Silvered Lenses</h2>
+
+    <h3>1. Plano-Convex Thin Lens (Radius $R$, Refractive Index $n$)</h3>
+    <img src="images/ch03_silvered_plano_convex.png" alt="Silvered Plano-Convex" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>(The diagram shows the plane surface silvered, and the ray enters from the convex surface).</p>
+    $$ \frac{1}{u} + \frac{n}{v_1} = \frac{n-1}{R}, \text{ after reflection } u' = -v_1 \implies -\frac{n}{v_1} + \frac{1}{v} = \frac{1-n}{-R} \text{ (positive direction reversed)} $$
+    $$ \text{Solving yields } v = \frac{1}{-\frac{1}{u} + \frac{2(n-1)}{R}} $$
+    $$ \text{Magnification } K = \left(-\frac{v_1/n}{u/1}\right) \cdot \left(-\frac{v/1}{-v_1/n}\right) = -\frac{v}{u} $$
+    <p>Focal length: When parallel light enters:</p>
+    $$ \begin{cases} \frac{1}{\infty} + \frac{n}{v_1} = \frac{n-1}{R} \\ -\frac{n}{v_1} + \frac{1}{f} = \frac{1-n}{-R} \end{cases} \implies f = \frac{R}{2(n-1)} $$
+
+    <h3>2. Plano-Concave Thin Lens (Radius $R$, Refractive Index $n$)</h3>
+    <img src="images/ch03_silvered_plano_concave.png" alt="Silvered Plano-Concave" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ \frac{1}{u} + \frac{n}{v_1} = \frac{n-1}{-R}, \text{ after reflection } u' = -v_1 \implies -\frac{n}{v_1} + \frac{1}{v} = \frac{1-n}{R} \text{ (positive direction reversed)} $$
+    $$ \text{Solving yields } v = \frac{1}{-\frac{1}{u} - \frac{2(n-1)}{R}} $$
+    $$ \text{Magnification } K = \left(-\frac{v_1/n}{u/1}\right) \cdot \left(-\frac{v/1}{-v_1/n}\right) = -\frac{v}{u} $$
+    <p>Focal length: When parallel light enters:</p>
+    $$ \begin{cases} \frac{1}{\infty} + \frac{n}{v_1} = \frac{n-1}{-R} \\ -\frac{n}{v_1} + \frac{1}{f} = \frac{1-n}{R} \end{cases} \implies f = -\frac{R}{2(n-1)} $$
+
+    <h3>3. Plano-Convex Thin Lens (Curved Surface Silvered)</h3>
+    <img src="images/ch03_silvered_4.png" alt="Silvered Curved Plano-Convex" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ \because \frac{v_1}{u} \approx \frac{v_1/n}{u/1} = n \implies u' = nu $$
+    $$ \text{Or: } \frac{1}{u} + \frac{n}{v_1} = \frac{n-1}{\infty} = 0 \implies v_1 = -nu, \quad \therefore u' = -v_1 = nu $$
+    $$ \because \frac{n}{u'} + \frac{n}{v''} = -\frac{2n}{-R} \implies \frac{1}{v''} = -\frac{2}{R} - \frac{1}{u'} $$
+    $$ \because v = \frac{v''}{n} = \frac{1}{n} \left( -\frac{2}{R} - \frac{1}{nu} \right)^{-1} $$
+    $$ \text{Focal length: } \frac{1}{f} \approx n\left(-\frac{2}{R}\right) \implies f = -\frac{R}{2n} $$
+    $$ \text{Magnification: } K = -\frac{v''}{u'} = \frac{nv}{nu} \dots \implies K = -\frac{v}{u} $$
+
+    <h3>4. Plano-Concave Thin Lens (Curved Surface Silvered)</h3>
+    <img src="images/ch03_silvered_5.png" alt="Silvered Curved Plano-Concave" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ \because \frac{v_1}{u} \approx \frac{v_1/n}{u/1} = n \implies u' = nu $$
+    $$ \text{Or: } \frac{1}{u} + \frac{n}{v_1} = 0 \implies v_1 = -nu, \quad \therefore u' = -v_1 = nu $$
+    $$ \because \frac{n}{u'} + \frac{n}{v''} = \frac{2n}{R} \implies \frac{1}{v''} = \frac{2}{R} - \frac{1}{u'} $$
+    $$ \because v = \frac{v''}{n} = \frac{1}{n} \left( \frac{2}{R} - \frac{1}{nu} \right)^{-1} $$
+    $$ \text{Focal length: } \frac{1}{f} \approx n\left(\frac{2}{R}\right) \implies f = \frac{R}{2n} $$
+    $$ \text{Magnification: } K = -\frac{v''}{u'} = \dots \implies K = -\frac{v}{u} $$
+
+    <h3>5. Convexo-Concave Thin Lens (Radius $R_1, R_2$, Refractive Index $n$)</h3>
+    <img src="images/ch03_silvered_6.png" alt="Silvered Convexo-Concave" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ \frac{1}{u} + \frac{n}{v_1} = \frac{n-1}{R_1}, \quad u_2 = -v_1, \quad \frac{n}{u_2} + \frac{n}{v_2} = -\frac{2n}{R_2} $$
+    $$ u_3 = -v_2, \quad \frac{n}{u_3} + \frac{1}{v} = \frac{1-n}{-R_1} \text{ (positive direction reversed)} $$
+    $$ \therefore \frac{1}{v} = \frac{2(n-1)}{R_1} + \frac{2n}{R_2} - \frac{1}{u} $$
+    $$ \text{Focal length: } u \to \infty, \quad f = \frac{1}{\frac{2(n-1)}{R_1} + \frac{2n}{R_2}} $$
+    $$ \text{Magnification: } K = \left(-\frac{v_1/n}{u/1}\right) \left(-\frac{v_2/n}{-v_1/n}\right) \left(-\frac{v/1}{-v_2/n}\right) = -\frac{v}{u} $$
+
 </main>
 </body>
 </html>
