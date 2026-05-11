@@ -31,6 +31,7 @@
         <li><a href="ch04.html">4. Thermodynamics</a></li>
         <li><a href="ch05.html">5. Electrostatics</a></li>
         <li><a href="ch06.html" class="active">6. Direct Current Circuits</a></li>
+        <li><a href="ch07.html">7. Steady Current</a></li>
     </ul>
 </nav>
 
@@ -361,6 +362,66 @@
     $$ \therefore L = \frac{\mu_0 l}{2\pi} \ln\frac{b}{a} $$
     </div>
     <div style="clear: both;"></div>
+    <p><strong>⑤ Mutual Inductance:</strong></p>
+    $$ \mathcal{E}_{21} = -M_{21} \frac{di_1}{dt}, \quad \mathcal{E}_{12} = -M_{12} \frac{di_2}{dt} $$
+    <p>And $M_{12} = M_{21} = M$</p>
+    <p><strong>Proof:</strong></p>
+    <img src="images/ch06_mutual_inductance.png" alt="Mutual inductance proof" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>&lt;1&gt; Establish $i_1$ in the left circuit, the power source does work, and the energy stored in the magnetic field is $W_1 = \frac{1}{2} L_1 i_1^2$.</p>
+    <p>&lt;2&gt; Establish $i_2$ in the right circuit, the power source does work, storing energy $W_2 = \frac{1}{2} L_2 i_2^2$. But in this process, $L_1$ produces a back electromotive force. To keep $i_1$ constant, $\mathcal{E}_1$ must do additional work $W_{12} = -\int \mathcal{E}_{12} i_1 dt$:</p>
+    $$ W_{12} = \int M_{12} i_1 \frac{di_2}{dt} dt = M_{12} i_1 \int_0^{I_2} di_2 = M_{12} I_1 I_2 $$
+    <p>&lt;3&gt; After the above two processes, the system reaches the state where the currents are $I_1$ and $I_2$,</p>
+    $$ W_{\text{total}} = W_1 + W_2 + W_{12} = \frac{1}{2} L_1 I_1^2 + \frac{1}{2} L_2 I_2^2 + M_{12} I_1 I_2 $$
+    <p>&lt;4&gt; Starting by establishing $i_2$ in the right circuit first, reaching the same final state, the work done is similarly:</p>
+    $$ W_{\text{total}} = \frac{1}{2} L_1 I_1^2 + \frac{1}{2} L_2 I_2^2 + M_{21} I_1 I_2 $$
+    $$ \therefore M_{12} = M_{21} $$
+
+    <p><strong>Mutual inductance between a long solenoid and a ring:</strong> (length $\gg$ radius, ring on the axis, axis perpendicular to the ring plane)</p>
+    <p>Assume the current in the solenoid is $i_1$, then the magnetic flux through the ring is $\Phi = B_1 \pi r^2 = \pi r^2 \mu_0 n i_1$</p>
+    $$ \therefore M_{21} = \pi r^2 \mu_0 n $$
+    $$ \therefore M_{12} = M_{21} = \pi r^2 \mu_0 n $$
+
+    <p><strong>⑥ Equivalent Inductance:</strong></p>
+    <p>When they are far apart, the calculation method is similar to equivalent resistance. Special case when they influence each other:</p>
+    <img src="images/ch06_equiv_inductance.png" alt="Equivalent inductance" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>When $a-c$ or $b-d$ exists alone, the self-inductance is $L_0$.</p>
+    $$ \begin{cases} a\text{ connected to }b, \text{circuit connected at }c, d\text{:} & L=0 \\ c\text{ connected to }b, \text{circuit connected at }a, d\text{:} & \Psi = (2 N_0) (\mu_0 2n_0 I) S, \ L = 4L_0 \\ a\text{ connected to }b, c\text{ connected to }d\text{:} & \Psi = N_0 \cdot (\mu_0 n_0 \frac{I}{2}) S \times 2, \ L = L_0 \end{cases} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑦ RL Circuit:</strong></p>
+    <img src="images/ch06_rl_circuit.png" alt="RL circuit" style="max-width: 25%; float: right; margin-left: 1em;">
+    <div style="overflow: hidden;">
+    <p><strong>1) Charging:</strong></p>
+    $$ \mathcal{E} + \left(-L \frac{di}{dt}\right) - iR = 0 $$
+    $$ \therefore dt = \frac{L di}{\mathcal{E} - i R} = -\frac{L}{R} \frac{d(\mathcal{E} - R i)}{\mathcal{E} - R i} \implies \int_0^t dt = -\frac{L}{R} \int_0^i \frac{d(\mathcal{E} - R i)}{\mathcal{E} - R i} $$
+    $$ \therefore t = -\frac{L}{R} \ln\left(\frac{\mathcal{E} - R i}{\mathcal{E}}\right) \implies \text{Solving yields } i = \frac{\mathcal{E}}{R}(1 - e^{-\frac{R}{L}t}) $$
+    $$ \therefore U_L = -L \frac{di}{dt} = -\mathcal{E} \cdot e^{-\frac{R}{L}t} $$
+    <p><strong>2) Discharging:</strong></p>
+    $$ -L \frac{di}{dt} - iR = 0 $$
+    $$ \therefore dt = -\frac{L}{R} \frac{di}{i} \implies \int_0^t dt = -\frac{L}{R} \int_{i_0}^i \frac{di}{i} $$
+    $$ \therefore t = -\frac{L}{R} \ln\frac{i}{i_0} \implies \text{Solving yields } i = i_0 e^{-\frac{R}{L}t} $$
+    $$ \therefore U_L = -iR = \mathcal{E} e^{-\frac{R}{L}t} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>4. Semiconductors</h3>
+    <p><strong>① Diode:</strong></p>
+    <ul>
+        <li><strong>Ideal diode:</strong> Forward conducting $R=0$, reverse $R = \infty$.</li>
+        <li><strong>Real diode:</strong> $i = I_s(e^{\frac{qU}{kT}} - 1)$.</li>
+    </ul>
+    $$ \begin{cases} P\text{-type semiconductor: hole conduction} \\ N\text{-type semiconductor: electron conduction} \end{cases} $$
+    <img src="images/ch06_diode_pn.png" alt="PN junction" style="max-width: 25%; display: block; margin: 1em auto;">
+    <img src="images/ch06_diode_symbol.png" alt="Diode symbol" style="max-width: 20%; display: block; margin: 1em auto;">
+
+    <p><strong>② Transistor:</strong></p>
+    <img src="images/ch06_transistor_pnp.png" alt="Transistor" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>Emitter, Base, Collector.</p>
+    $$ \begin{cases} I_e = I_b + I_c, \quad I_c \gg I_b \\ \beta = \frac{dI_c}{dI_b} \approx \frac{I_c}{I_b} \end{cases} $$
 </main>
 </body>
 </html>

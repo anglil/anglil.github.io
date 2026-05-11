@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Steady Current - Olympiad Physics</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                macros: {
+                    bm: ["\\boldsymbol{#1}", 1]
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <h2><a href="index.html">Olympiad Physics</a></h2>
+    </div>
+    <ul class="nav-links">
+        <li><a href="ch01.html">1. Kinematics & Statics</a></li>
+        <li><a href="ch02.html">2. Dynamics & Oscillations</a></li>
+        <li><a href="ch03.html">3. Optics & Quantum Physics</a></li>
+        <li><a href="ch04.html">4. Thermodynamics</a></li>
+        <li><a href="ch05.html">5. Electrostatics</a></li>
+        <li><a href="ch06.html">6. Direct Current Circuits</a></li>
+        <li><a href="ch07.html" class="active">7. Steady Current</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <h1>Part 10: Steady Current</h1>
+
+    <h3>1. Current Continuity Equation</h3>
+    <p><strong>Equation:</strong></p>
+    $$ \oint \vec{j} \cdot d\vec{S} = -\frac{dq}{dt} $$
+    <p><strong>Steady condition:</strong></p>
+    $$ \oint \vec{j} \cdot d\vec{S} = -\frac{dq}{dt} = 0 $$
+
+    <h3>2. Ohm's Law</h3>
+    $$ U = I R $$
+    <p>Since $\Delta I = j \Delta S, \Delta U = R \Delta I, \Delta U = E \Delta l, R = \rho \frac{\Delta l}{\Delta S}$:</p>
+    $$ \therefore j = \frac{\Delta I}{\Delta S} = \frac{\Delta U / R}{\Delta S} = \frac{E \Delta l / (\rho \frac{\Delta l}{\Delta S})}{\Delta S} = \frac{E}{\rho} = \sigma E $$
+    <p>Written in vector form: $\vec{j} = \sigma \vec{E}$</p>
+    <p>Substituting into Gauss's Law: $\frac{1}{\sigma} \oint \vec{j} \cdot d\vec{S} = \frac{q}{\varepsilon}$</p>
+    $$ \therefore -\frac{dq}{dt} = \frac{\sigma}{\varepsilon} q \implies q = q_0 e^{-\frac{\sigma}{\varepsilon}t} $$
+    <p>This represents the process of establishing a steady current in a circuit.</p>
+
+    <h3>3. Ohm's Law for Full Circuit and Joule's Law</h3>
+    <p><strong>① For a pure resistance circuit (all electrical energy is converted to heat):</strong></p>
+    <p>Electromotive force of the power source: $\mathcal{E} = I R + I r$</p>
+    <p>Where the terminal voltage $U = I R = \mathcal{E} - I r = -r \cdot I + \mathcal{E}$ is a linear function of $I$.</p>
+    <ul>
+        <li><strong>Total power of the source:</strong> $P_{\text{total}} = \mathcal{E} I = I^2 R + I^2 r$</li>
+        <li><strong>Internal power:</strong> $P_{\text{in}} = I^2 r$</li>
+        <li><strong>Output power:</strong> $P_{\text{out}} = I^2 R$</li>
+    </ul>
+
+    <p>&lt;1&gt; $P_{\text{out}} = I^2 R = (\mathcal{E} - I r) I = -r I^2 + \mathcal{E} I = -r\left(I - \frac{\mathcal{E}}{2r}\right)^2 + \frac{\mathcal{E}^2}{4r}$</p>
+    <p>When $I = \frac{\mathcal{E}}{2r}$, $P_{\max} = \frac{\mathcal{E}^2}{4r}$.</p>
+
+    <p>&lt;2&gt; $P_{\text{out}} = I^2 R = \left(\frac{\mathcal{E}}{R+r}\right)^2 R = \frac{\mathcal{E}^2}{\frac{(R-r)^2}{R} + 4r} \le \frac{\mathcal{E}^2}{4r}$</p>
+    <p>Maximum occurs when $R = r$.</p>
+
+    <p>&lt;3&gt; $P_{\text{out}} = U I = U \frac{\mathcal{E}-U}{r} = -\frac{1}{r} U^2 + \frac{\mathcal{E}}{r} U = -\frac{1}{r}\left(U - \frac{\mathcal{E}}{2}\right)^2 + \frac{\mathcal{E}^2}{4r}$</p>
+    <p>When $U = \frac{\mathcal{E}}{2}$, $P_{\max} = \frac{\mathcal{E}^2}{4r}$.</p>
+
+    <p><strong>② Microscopic explanation of current:</strong></p>
+    $$ \vec{v}_i = \vec{v}_{0i} + \frac{q\vec{E}}{m} t_i, \quad \text{and} \quad \vec{j} = n e \bar{v}_i \implies \vec{j} = n e \bar{v}_{0i} + \frac{n e^2 \vec{E}}{m} \bar{t}_i $$
+    <p>Because $\vec{v}_{0i}$ is the initial velocity in all directions due to the thermal motion of the electron, $n \bar{v}_{0i} = 0$.</p>
+    <p>Let the average free flight time of the electron be $\tau = \frac{\sum t_i n_i}{n}$:</p>
+    $$ \therefore \vec{j} = \frac{n e^2 \tau}{m} \vec{E} \implies \sigma = \frac{n e^2 \tau}{m} $$
+
+    <p>Also, because $\vec{v}_i = \vec{v}_{0i} + \frac{e\vec{E}}{m} t_i$</p>
+    $$ \therefore \frac{1}{2} m v_i^2 = \frac{e^2 E^2}{2m} t_i^2 + \frac{1}{2} m v_{0i}^2 + \frac{e t_i}{m} \vec{v}_{0i} \cdot \vec{E} $$
+    <p>Averaging over a large number of electrons:</p>
+    $$ \frac{1}{2} m \bar{v}_i^2 = \frac{1}{2} m \bar{v}_{0i}^2 + \frac{e^2 E^2}{2m} \bar{t}_i^2 $$
+    $$ \therefore \Delta E_k = \frac{1}{2} m \bar{v}_i^2 - \frac{1}{2} m \bar{v}_{0i}^2 = \frac{e^2 E^2}{2m} \bar{t}_i^2 $$
+    <p>And because $\bar{t}_i^2 = 2 \tau^2$ (for exponential distribution of flight times):</p>
+    $$ \therefore \text{Thermal power density per unit volume } p = \frac{n \Delta \overline{E_k}}{\tau} = \frac{n e^2 \tau}{m} E^2 = \sigma E^2 $$
+    $$ \therefore \text{Thermal power } P = p \cdot V = \sigma E^2 l S = \frac{E^2 l^2}{\rho l / S} = \frac{U^2}{R} = I^2 R $$
+
+    <p>Therefore, work done by the current:</p>
+    <ul>
+        <li><strong>Total work:</strong> $W = q U = U I t$ (If it's a pure resistance circuit, $W = Q \implies U = I R$)</li>
+        <li><strong>Heat generated:</strong> $Q = P t = I^2 R t$ (If it's a non-pure resistance circuit, $W' = U I t - I^2 R t$)</li>
+    </ul>
+
+    <h3>4. Boundary Conditions</h3>
+    <p><strong>① Boundary conditions of the electric field:</strong></p>
+    <img src="images/ch07_E_boundary.png" alt="Electric field boundary" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Gauss's Theorem: $\varepsilon_1 E_1 \cos\theta_1 = \varepsilon_2 E_2 \cos\theta_2$</p>
+    <p>Circuital Theorem: $E_1 \sin\theta_1 = E_2 \sin\theta_2$</p>
+    $$ \therefore \frac{\tan\theta_1}{\tan\theta_2} = \frac{\varepsilon_1}{\varepsilon_2} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>② Boundary conditions of current density:</strong></p>
+    <img src="images/ch07_j_boundary.png" alt="Current density boundary" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Steady condition: $j_1 \cos\theta_1 = j_2 \cos\theta_2$</p>
+    <p>Ohm's law: $\vec{j} = \sigma \vec{E}$</p>
+    <p>Circuital Theorem: $\frac{j_1}{\sigma_1} \sin\theta_1 = \frac{j_2}{\sigma_2} \sin\theta_2$</p>
+    $$ \therefore \frac{\tan\theta_1}{\tan\theta_2} = \frac{\sigma_1}{\sigma_2} $$
+    <p>Therefore, there is an accumulation of free charge at the interface:</p>
+    $$ \sigma_e = \varepsilon_0 \left(\frac{j_2}{\sigma_2} \cos\theta_2 - \frac{j_1}{\sigma_1} \cos\theta_1\right) = \varepsilon_0 j_n \frac{\sigma_1 - \sigma_2}{\sigma_1 \sigma_2} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>5. Solving Complex Circuits</h3>
+
+    <p><strong>① Kirchhoff's Current Law (KCL):</strong></p>
+    <p>For a node: $\sum I_i = 0$ (The node can be a region; current flowing in is positive, flowing out is negative, or vice versa).</p>
+    <p>(Theoretical basis: Steady condition $\oint \vec{j} \cdot d\vec{S} = -\frac{dq}{dt} = 0$.)</p>
+
+    <p><strong>② Kirchhoff's Voltage Law (KVL):</strong></p>
+    <p>For a segment: $\sum U_i = \varphi_a - \varphi_b = \sum \mathcal{E}_i + \sum I_i R_i$</p>
+    <p>(Potential drop is positive, rise is negative, or vice versa; on resistors, current direction is the potential drop direction; on voltage sources, from positive pole to negative pole, etc.)</p>
+    <p>For a loop: $\sum U_i = 0$</p>
+    <p>(Theoretical basis: $U_{ab} = \varphi_a - \varphi_b = \int_a^b \vec{E} \cdot d\vec{l}$, and $\oint \vec{E} \cdot d\vec{l} = 0$.)</p>
+
+    <p><strong>③ Thevenin's Theorem:</strong></p>
+    <img src="images/ch07_thevenin.png" alt="Thevenin Theorem" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>An equivalent voltage source can be formed by:</p>
+    <ul>
+        <li>$\mathcal{E} = $ open-circuit terminal voltage of the network.</li>
+        <li>$r = $ equivalent resistance of the network after removing the power sources (but keeping their internal resistance).</li>
+    </ul>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>④ Norton's Theorem:</strong></p>
+    <img src="images/ch07_norton.png" alt="Norton Theorem" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>An equivalent current source can be formed by:</p>
+    <ul>
+        <li>$I = $ short-circuit current across the terminals of the network.</li>
+        <li>$r = $ equivalent resistance of the network after removing the power sources (but keeping their internal resistance).</li>
+    </ul>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑤ Superposition Principle:</strong></p>
+    <p>The current through any branch of a circuit is equal to the algebraic sum of the currents produced in that branch by each power source acting independently (with the other power sources replaced by their internal resistances).</p>
+    <p>(Theoretical basis: $I = \vec{j} \cdot \vec{S} = \sigma \vec{E} \cdot \vec{S} = \sigma (\sum \vec{E}_i) \cdot \vec{S} = \sum (\sigma \vec{E}_i \cdot \vec{S}) = \sum I_i$.)</p>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>6. Modifying Ammeters</h3>
+    <p><strong>① Ammeter (A):</strong></p>
+    <img src="images/ch07_ammeter.png" alt="Ammeter modification" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Connect a small shunt resistor in parallel.</p>
+    <p>Range $I = I_g + \frac{I_g R_g}{R} = \frac{R + R_g}{R} I_g$.</p>
+    $$ \therefore R = \frac{R_g}{n - 1} \quad (\text{where } n = \frac{I}{I_g}) $$
+    </div>
+    <div style="clear: both;"></div>
+</main>
+</body>
+</html>
