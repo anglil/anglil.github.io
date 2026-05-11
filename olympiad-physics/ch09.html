@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Electromagnetic Induction and Alternating Current - Olympiad Physics</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                macros: {
+                    bm: ["\\boldsymbol{#1}", 1]
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <h2><a href="index.html">Olympiad Physics</a></h2>
+    </div>
+    <ul class="nav-links">
+        <li><a href="ch01.html">1. Kinematics & Statics</a></li>
+        <li><a href="ch02.html">2. Dynamics & Oscillations</a></li>
+        <li><a href="ch03.html">3. Optics & Quantum Physics</a></li>
+        <li><a href="ch04.html">4. Thermodynamics</a></li>
+        <li><a href="ch05.html">5. Electrostatics</a></li>
+        <li><a href="ch06.html">6. Direct Current Circuits</a></li>
+        <li><a href="ch07.html">7. Steady Current</a></li>
+        <li><a href="ch08.html">8. Static Magnetic Field</a></li>
+        <li><a href="ch09.html" class="active">9. Electromagnetic Induction</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <h1>Part 12: Electromagnetic Induction and Alternating Current</h1>
+
+    <h3>1. Faraday's Law of Electromagnetic Induction</h3>
+    $$ \mathcal{E} = -\frac{d\Phi}{dt} = -\frac{d}{dt} \int \vec{B} \cdot d\vec{S} $$
+    <p>The direction is determined by the right-hand rule applied to the direction of $\Phi$.</p>
+    <p>If $\Phi$ increases over time, the induced EMF opposes the direction of $\Phi$; conversely, it aligns with $\Phi$.</p>
+
+    <p><strong>① Motional EMF:</strong></p>
+    $$ |\mathcal{E}| = \frac{d\Phi}{dt} = \frac{d}{dt} (B l x) = B l v $$
+    <p>For a general conductor: $\mathcal{E}_{ab} = \int_a^b (\vec{v} \times \vec{B}) \cdot d\vec{l}$.</p>
+
+    <p><strong>② Induced EMF:</strong></p>
+    $$ |\mathcal{E}| = \oint \vec{E} \cdot d\vec{l} = \oint (\vec{E}_{\text{ind}} + \vec{E}_{\text{es}}) \cdot d\vec{l} = \oint \vec{E}_{\text{ind}} \cdot d\vec{l} + \oint \vec{E}_{\text{es}} \cdot d\vec{l} = \oint \vec{E}_{\text{ind}} \cdot d\vec{l} $$
+    $$ \therefore \oint \vec{E}_{\text{ind}} \cdot d\vec{l} = -\frac{d}{dt} \int \vec{B} \cdot d\vec{S} = -\int \frac{\partial \vec{B}}{\partial t} \cdot d\vec{S} $$
+
+    <hr style="margin: 2em 0;">
+
+    <h3>2. Typical Examples</h3>
+
+    <p><strong>① Conductor Rod with Initial Velocity $v_0$:</strong></p>
+    <img src="images/ch09_rod_rails.png" alt="Conductor rod on rails" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Magnetic force $F = B I L$.</p>
+    <p>Momentum: $m \frac{dv}{dt} = -B L \cdot \frac{B L v}{R} = -\frac{B^2 L^2}{R} v$.</p>
+    $$ \therefore \frac{dv}{v} = -\frac{B^2 L^2}{m R} dt \implies \ln \frac{v}{v_0} = -\frac{B^2 L^2}{m R} t \implies v = v_0 e^{-\frac{B^2 L^2}{m R} t} $$
+    <p>Energy: $dW = I^2 R dt = I B L v dt$.</p>
+    <p>Also, $F dt = B I L dt = -m dv \implies dW = I B L v \frac{-m dv}{B I L} = -m v dv$.</p>
+    $$ \therefore \int I^2 R dt = \frac{1}{2} m v_0^2 - \frac{1}{2} m v^2 \quad \text{(Energy is conserved)}$$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>② Rotating Disk:</strong></p>
+    <img src="images/ch09_rotating_disk.png" alt="Rotating disk" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \mathcal{E} = \frac{B dS}{dt} = B \cdot \frac{\frac{1}{2} R^2 d\theta}{dt} = \frac{1}{2} B \omega R^2 $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>③ Rotating Rod:</strong></p>
+    <img src="images/ch09_rotating_rod_end.png" alt="Rotating rod end" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \mathcal{E} = \int B v dl = \int B \omega l dl = \frac{1}{2} B \omega l^2 $$
+    </div>
+    <div style="clear: both;"></div>
+    
+    <img src="images/ch09_rotating_rod_offcenter.png" alt="Rotating rod off-center" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \mathcal{E}_{ab} = \mathcal{E}_{aO} - \mathcal{E}_{bO} = \frac{1}{2} B \omega (l \cos\alpha)^2 - \frac{1}{2} B \omega (l \sin\alpha)^2 = \frac{1}{2} B \omega l^2 \cos 2\alpha $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>④ Induced EMF of a Wire Ring:</strong></p>
+    <img src="images/ch09_induced_emf_ring.png" alt="Induced EMF in a wire ring" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \oint \vec{E} \cdot d\vec{l} = E \cdot 2\pi r $$
+    $$ \begin{cases} \text{When } r > R: & E \cdot 2\pi r = \pi R^2 \frac{dB}{dt} \implies E = \frac{R^2}{2r} \frac{dB}{dt} \\ \text{When } r < R: & E \cdot 2\pi r = \pi r^2 \frac{dB}{dt} \implies E = \frac{r}{2} \frac{dB}{dt} \end{cases} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑤ Loop Spanning Across Magnetic Field Regions:</strong></p>
+    <img src="images/ch09_loop_half_b.png" alt="Loop spanning across magnetic field" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch09_loop_half_b_circuit.png" alt="Equivalent circuit of the loop" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \mathcal{E}_{acb} = \frac{1}{2} \theta R^2 \frac{dB}{dt} $$
+    <p>In the surface $abc$, $\mathcal{E} = \frac{d\Phi}{dt} = \left(\frac{1}{2} \theta R^2 - \frac{1}{2} R^2 \sin\theta\right) \frac{dB}{dt}$.</p>
+    $$ \therefore \mathcal{E}_{ab} = \mathcal{E}_{acb} - \mathcal{E} = \frac{1}{2} \theta R^2 \frac{dB}{dt} - \left(\frac{1}{2} \theta R^2 \frac{dB}{dt} - \frac{1}{2} R^2 \sin\theta \frac{dB}{dt}\right) = \frac{1}{2} R^2 \sin\theta \frac{dB}{dt} $$
+    <p>Where $\mathcal{E}$ is the induced EMF of the loop $acba$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑥ Superconducting Coil Entering a Magnetic Field (Self-inductance $L$):</strong></p>
+    <img src="images/ch09_superconducting_coil.png" alt="Superconducting coil entering magnetic field" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Magnetic flux $\Phi = B a x = L i$.</p>
+    <p>And $F = -B a i = m \frac{d^2x}{dt^2}$.</p>
+    $$ \therefore B a \left(\frac{B a x}{L}\right) + m \frac{d^2x}{dt^2} = 0 \implies \frac{B^2 a^2}{m L} x + \frac{d^2x}{dt^2} = 0 $$
+    $$ \therefore x = A \sin\left(\frac{B a}{\sqrt{m L}} t\right) \implies v = \frac{dx}{dt} = A \frac{B a}{\sqrt{m L}} \cos\left(\frac{B a}{\sqrt{m L}} t\right) $$
+    <p>When $t=0$, $v = A \frac{B a}{\sqrt{m L}} = v_0 \implies A = v_0 \frac{\sqrt{m L}}{B a}$.</p>
+    $$ \therefore x = \frac{v_0 \sqrt{m L}}{B a} \sin\left(\frac{B a}{\sqrt{m L}} t\right), \quad v = v_0 \cos\left(\frac{B a}{\sqrt{m L}} t\right) $$
+    </div>
+    <div style="clear: both;"></div>
+</main>
+</body>
+</html>

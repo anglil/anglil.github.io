@@ -33,6 +33,7 @@
         <li><a href="ch06.html">6. Direct Current Circuits</a></li>
         <li><a href="ch07.html">7. Steady Current</a></li>
         <li><a href="ch08.html" class="active">8. Static Magnetic Field</a></li>
+        <li><a href="ch09.html">9. Electromagnetic Induction</a></li>
     </ul>
 </nav>
 
@@ -78,6 +79,114 @@
     <p>When $r = R$ (at the center), $B = \frac{\mu_0 I}{2R}$.</p>
     </div>
     <div style="clear: both;"></div>
+    <p><strong>⑤ Current-Carrying Solenoid:</strong> (Turns per unit length $n$, total turns $N$, current per turn $I$)</p>
+    $$ dl = n I dl \implies dB = \frac{\mu_0 R^2 n I dl}{2 r^3} $$
+    $$ \text{Also, } dl = \frac{r d\theta}{\sin\theta} \text{ and } r = \frac{R}{\sin\theta} $$
+    $$ \therefore dB = \frac{\mu_0 n I}{2} \sin\theta d\theta \implies B = \frac{\mu_0 n I}{2} (\cos\theta_2 - \cos\theta_1) $$
+    <p>When the tube is infinitely long, $B = \mu_0 n I$.</p>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>4. Lorentz Force</h3>
+    $$ \vec{F} = q \vec{v} \times \vec{B} $$
+    <p>For a segment of conductive wire:</p>
+    $$ d\vec{F} = dq \vec{v} \times \vec{B} = n S e dl \cdot \vec{v} \times \vec{B} = n S e v \cdot d\vec{l} \times \vec{B} = I d\vec{l} \times \vec{B} $$
+    $$ \therefore \vec{F} = \int I d\vec{l} \times \vec{B} \quad \text{— Ampere's Force} $$
+
+    <p><strong>① Ampere's Force Torque:</strong></p>
+    <img src="images/ch08_ampere_torque.png" alt="Ampere's force torque" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ dF_{\perp} = I dl B_{\parallel} \quad \text{(In the same plane as the coil, produces no torque)} $$
+    $$ dF_{\parallel} = I dl B \sin\beta $$
+    $$ \therefore dM = dF_{\parallel} \cdot r = I dl B \sin\beta \cdot r = I \cdot R d\beta \cdot B \sin\beta \cdot R \sin\beta $$
+    $$ \therefore M = I R^2 B_{\perp} \int_0^{\pi} \sin^2\beta d\beta = \pi I R^2 B_{\perp} $$
+    <p>Written in vector form: $\vec{M} = I \vec{S} \times \vec{B}$.</p>
+    <p>Defining magnetic moment: $\vec{m} = I \vec{S}$.</p>
+    $$ \therefore \vec{M} = \vec{m} \times \vec{B} $$
+
+    <p><strong>② Lorentz Force Does No Work:</strong></p>
+    <img src="images/ch08_lorentz_work.png" alt="Lorentz force work" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ P = \vec{F} \cdot \vec{v} = (q \vec{v} \times \vec{B}) \cdot \vec{v} = 0 $$
+    <p>As electrons move with the conductor in a magnetic field at velocity $\vec{v}$, they experience a Lorentz force along the wire, gaining velocity $\vec{v}'$.</p>
+    $$ P = (\vec{f}' + \vec{f}) \cdot (\vec{v} + \vec{v}') = \vec{f} \cdot \vec{v}' + \vec{f}' \cdot \vec{v} = e v B \cdot v' - e v' B \cdot v = 0 $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>5. Applications</h3>
+
+    <p><strong>① Hall Effect:</strong></p>
+    $$ e E_H = e v B \implies U_H = E_H h = v B h $$
+    $$ \text{Also } I = n b h q v \implies v = \frac{I}{n b h q} \quad \therefore U_H = \frac{I B}{n q b} $$
+    <p>Hall Resistance: $R_H = \frac{B}{n q b}$.</p>
+
+    <p><strong>② Galvanometer/Ammeter:</strong> $B I S = k \theta$.</p>
+
+    <p><strong>③ Mass Spectrometer:</strong></p>
+    $$ m \frac{v^2}{r} = q v B \implies r = \frac{m v}{q B}, \quad T = \frac{2\pi m}{q B} $$
+
+    <p><strong>④ Cyclotron:</strong></p>
+    <img src="images/ch08_cyclotron.png" alt="Cyclotron" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ q U = \frac{1}{2} m v_1^2 \implies r_1 = \frac{m v_1}{q B}, \quad v_1 = \sqrt{\frac{2 q U}{m}} $$
+    $$ q U = \frac{1}{2} m v_2^2 - \frac{1}{2} m v_1^2 \implies r_2 = \frac{m v_2}{q B}, \quad v_2 = \sqrt{\frac{4 q U}{m}} $$
+    $$ q U = \frac{1}{2} m v_3^2 - \frac{1}{2} m v_2^2 \implies r_3 = \frac{m v_3}{q B}, \quad v_3 = \sqrt{\frac{6 q U}{m}} $$
+    $$ \dots $$
+    $$ \therefore v_1 : v_2 : v_3 : \dots = r_1 : r_2 : r_3 : \dots = 1 : \sqrt{2} : \sqrt{3} : \dots $$
+    <p>And the period $T = \frac{2\pi m}{q B}$ remains constant.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑤ Velocity Selector:</strong> $q v B = q E \implies v = \frac{E}{B}$.</p>
+    <img src="images/ch08_velocity_selector.png" alt="Velocity selector" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <ul>
+        <li>If $v < \frac{E}{B}$: $q B (v + v') = q E \implies v' = \frac{E}{B} - v$.
+        $$ \begin{cases} x = \frac{E}{B} t - \frac{m (\frac{E}{B} - v)}{q B} \sin\left(\frac{q B}{m} t\right) \\ y = \frac{m (\frac{E}{B} - v)}{q B} \cos\left(\frac{q B}{m} t\right) - \frac{m (\frac{E}{B} - v)}{q B} \end{cases} $$
+        </li>
+        <li>If $v > \frac{E}{B}$: $q B v = q E + q B v' \implies v' = v - \frac{E}{B}$.
+        $$ \begin{cases} x = \frac{E}{B} t + \frac{m \left(v - \frac{E}{B}\right)}{q B} \sin\left(\frac{q B}{m} t\right) \\ y = \frac{m \left(v - \frac{E}{B}\right)}{q B} - \frac{m \left(v - \frac{E}{B}\right)}{q B} \cos\left(\frac{q B}{m} t\right) \end{cases} $$
+        </li>
+    </ul>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑥ Magnetohydrodynamic (MHD) Generator:</strong></p>
+    <img src="images/ch08_mhd_generator.png" alt="MHD generator" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \begin{cases} \text{Non-electrostatic force: } E_{ne} = \frac{F}{q} = v B \quad \text{(Caused by Lorentz force)} \\ \text{Electrostatic force: } E_s \quad \text{(Caused by charge accumulation)} \end{cases} $$
+    $$ \therefore I = \sigma (E_{ne} - E_s) \cdot S \quad (\text{where } \sigma \text{ is conductivity}) $$
+    <p>Total power: $P = I E_{ne} l$.</p>
+    <p>Internal resistance power: $P_r = I (E_{ne} - E_s) l$.</p>
+    <p>Output power: $P_{\text{out}} = I E_s l = \sigma (v B - E_s) E_s V \le \frac{1}{4} \sigma v^2 B^2 V$ (where $V$ is the fluid volume between plates).</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑦ Electron Microscope:</strong></p>
+    <p>Pitch: $h = v_{\parallel} T = \frac{2\pi m}{q B} v_{\parallel} \approx \frac{2\pi m}{q B} v$.</p>
+
+    <p><strong>⑧ Magnetic Mirror:</strong></p>
+    $$ |\vec{m}| = I S = \frac{q}{T} \pi r^2 = \frac{q}{\frac{2\pi m}{q B}} \pi r^2 = \frac{q^2 B}{2 m} r^2 $$
+    $$ \text{Since } \frac{m v_{\perp}^2}{r} = q v_{\perp} B \implies r = \frac{m v_{\perp}}{q B} $$
+    $$ \therefore |\vec{m}| = \frac{m v_{\perp}^2}{2 B} $$
+    <p>Due to the conservation of magnetic moment:</p>
+    $$ \frac{m v_{\perp}^2}{2 B} = \frac{m v_0^2 \sin^2\theta}{2 B_0} = \frac{m v^2}{2 B} \implies \sin\theta_m = \sqrt{\frac{B_0}{B_m}} $$
+
+    <p><strong>⑨ Image Current:</strong> ($r \gg h$)</p>
+    <img src="images/ch08_image_current.png" alt="Image current" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>Since $r \gg h$, and the magnetic field inside the superconductor is zero, the magnetic field just outside the surface is parallel to the surface. This is equivalent to an image current at $z = -h$, with the two ring currents being anti-parallel.</p>
+    $$ m g = \frac{\mu_0 I}{2\pi \cdot 2h} \cdot 2\pi r \cdot I \implies I = \sqrt{\frac{2 m g h}{\mu_0 r}} $$
+    <ul>
+        <li><strong>If the ring oscillates slightly up and down:</strong>
+        $$ F = \frac{\mu_0 r I^2}{2(h - x)} - m g \approx m g + \frac{\mu_0 r I^2}{2 h^2} x $$
+        $$ \therefore T = 2\pi \sqrt{\frac{m}{\frac{\mu_0 r I^2}{2h^2}}} = 2\pi \sqrt{\frac{h}{g}} $$
+        </li>
+        <li><strong>If it oscillates slightly around the axis $P_1 P_2$:</strong>
+        $$ M \approx \frac{\mu_0 r I^2}{2} \left( \frac{1}{2h - r\theta} - \frac{1}{2h + r\theta} \right) \cdot r \approx \frac{\mu_0 r^3 I^2}{4 h^2} \theta = \frac{m g r^2}{2h} \theta $$
+        $$ \therefore T = 2\pi \sqrt{\frac{\frac{1}{2} m r^2}{\frac{m g r^2}{2h}}} = 2\pi \sqrt{\frac{h}{g}} $$
+        </li>
+    </ul>
 </main>
 </body>
 </html>
