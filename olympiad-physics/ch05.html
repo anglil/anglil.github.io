@@ -403,6 +403,158 @@
     <p><strong>2) Half space between two parallel metal plates ($+\sigma_0, -\sigma_0$) is filled with dielectric $\varepsilon_r$.</strong> (See next page)</p>
 
 
+
+
+    <p><strong>2) Half space between two parallel metal plates ($+\sigma_0, -\sigma_0$) is filled with dielectric $\varepsilon_r$.</strong></p>
+    <img src="images/ch05_parallel_dielectric.png" alt="Parallel plates with dielectric" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>From charge conservation: $\sigma_1 + \sigma_2 = 2\sigma_0$.</p>
+    <p>From Gauss's law:</p>
+    <ul>
+        <li>In the dielectric: $(\sigma_1 \Delta S - \sigma_1' \Delta S) = \varepsilon_0 E_1 \Delta S \quad \therefore \sigma_1 - \sigma_1' = \varepsilon_0 E_1$.</li>
+        <li>Alternatively: $\sigma_1 \Delta S = \varepsilon_0 \varepsilon_r E_1 \Delta S \quad \therefore \sigma_1 = \varepsilon_0 \varepsilon_r E_1$.</li>
+        <li>In the vacuum: $\sigma_2 \Delta S = \varepsilon_0 E_2 \Delta S \quad \therefore \sigma_2 = \varepsilon_0 E_2$.</li>
+    </ul>
+    <p>Also $\because U_1 = U_2 \quad \therefore E_1 = E_2$.</p>
+    <p>Thus from the equations we get:</p>
+    $$ \begin{cases} \sigma_1 = \frac{2\varepsilon_r}{1+\varepsilon_r} \sigma_0 \\ \sigma_2 = \frac{2}{1+\varepsilon_r} \sigma_0 \\ \sigma_1' = \frac{2(\varepsilon_r-1)}{1+\varepsilon_r} \sigma_0 \end{cases} \quad \text{and} \quad E_1 = E_2 = \frac{2\sigma_0}{\varepsilon_0(1+\varepsilon_r)} = \frac{2}{1+\varepsilon_r} E_0 $$
+
+    <p><strong>3) Dielectric sphere of radius R, relative permittivity $\varepsilon_r$ in a uniform field $E_0$:</strong></p>
+    <img src="images/ch05_dielectric_sphere.png" alt="Dielectric sphere in uniform field" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>At polar angle $\theta$, the polarization is $\vec{P} = \varepsilon_0(\varepsilon_r - 1)\vec{E}_0$ (using external field as approximation).</p>
+    $$ \sigma' = \vec{P} \cdot \hat{n} = P \cos\theta = \varepsilon_0(\varepsilon_r - 1)E_0 \cos\theta $$
+    <p>This surface charge distribution is equivalent to two spheres with volume charge density $\rho$ and $-\rho$ separated by distance $d$ (where $d \ll R$).</p>
+    <p>The total positive polarization charge on the right hemisphere is:</p>
+    $$ q_{\text{polar}}' = \int_0^{\pi/2} \sigma' \cdot 2\pi R\sin\theta \cdot R d\theta = \varepsilon_0(\varepsilon_r - 1)E_0 \pi R^2 $$
+    <p>The polarized sphere is equivalent to an electric dipole with moment $p' = P \cdot \frac{4}{3}\pi R^3$.</p>
+    <p>Therefore, the electric field outside the sphere is:</p>
+    $$ \begin{cases} E_r = \frac{1}{4\pi\varepsilon_0} \frac{2p'\cos\theta}{r^3} = \frac{2}{3}(\varepsilon_r - 1)E_0 \left(\frac{R}{r}\right)^3 \cos\theta \\ E_\theta = \frac{1}{4\pi\varepsilon_0} \frac{p'\sin\theta}{r^3} = \frac{1}{3}(\varepsilon_r - 1)E_0 \left(\frac{R}{r}\right)^3 \sin\theta \end{cases} $$
+    <p>The induced electric field inside the sphere is $E' = \frac{1}{3}(\varepsilon_r - 1)E_0$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Method of Images (电像法)</h3>
+    <p><strong>Principle:</strong> Replace the effect of induced charges with one or several point charges.<br>
+    <strong>Essence:</strong> In the space where the original charges are located, the spatial electric field strength and potential distribution remain unchanged.<br>
+    <strong>Reason:</strong> Uniqueness Theorem.</p>
+
+    <p><strong>1. Infinite grounded flat plate:</strong></p>
+    <img src="images/ch05_image_plate.png" alt="Image charge for plate" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Since the plate is grounded, its potential is 0. The potential on the perpendicular bisector plane of an electric dipole is also 0. We can imagine a negative charge $-q$ at the mirror image point of $+q$ with respect to the plate to ensure the plate's potential is zero. By the Uniqueness Theorem, replacing the grounded plate with $-q$ leaves the electric field in the right half-space unchanged.</p>
+    <p>Field distribution on the plate is $E = \frac{k \cdot 2q a}{(r^2 + a^2)^{3/2}}$, with direction perpendicular to the plate.</p>
+    $$ \therefore \sigma = \varepsilon_0 E = -\frac{q a}{2\pi (r^2 + a^2)^{3/2}} $$
+    <p>Total charge on the plate $q' = \int_0^\infty \sigma \cdot 2\pi r dr = -q$. Therefore, there is no electric field in the left space of the plate, and $+q$ experiences an electrostatic force from the induced charges on the plate $F = \frac{k q^2}{(2a)^2}$, equivalent to the force from the image charge $-q$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>2. Grounded conducting spherical shell:</strong></p>
+    <img src="images/ch05_image_sphere.png" alt="Image charge for sphere" style="max-width: 35%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Suppose a positive charge $q$ and a negative charge $q'$ ($|q'| < q$) exist in space. The equipotential surface $\varphi = 0$ is a spherical surface.</p>
+    <p><em>Proof:</em> $\because U_0 = 0 \implies \frac{kq'}{\sqrt{x^2+y^2}} + \frac{kq}{\sqrt{(d-x)^2+y^2}} = 0$. Squaring and rearranging:</p>
+    $$ q^2 (x^2+y^2) = q'^2 [(d-x)^2+y^2] \implies q^2 x^2 + q^2 y^2 = q'^2(d^2 - 2dx + x^2) + q'^2 y^2 $$
+    <p>Completing the square yields:</p>
+    $$ \left( x + \frac{q'^2 d}{q^2 - q'^2} \right)^2 + y^2 = \frac{q^2 q'^2 d^2}{(q^2 - q'^2)^2} $$
+    <p>From symmetry, the equipotential surface is a sphere. From this, for a point charge $q$ at distance $d$ from the center of a conducting sphere of radius $R$, the field outside can be evaluated by an image charge $q'$ inside.</p>
+    <p>The image charge $q'$ is at a distance $l = \frac{q'^2 d}{q^2 - q'^2}$ from the center, and the sphere radius is $R = \frac{q q' d}{q^2 - q'^2}$. Solving gives:</p>
+    $$ q' = -\frac{R}{d} q, \quad l = \frac{R^2}{d} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p>Also, since the potential at the center $O$ is $0$ in a grounded shell, $\frac{k q'}{l} + \frac{k q_{\text{induced}}}{R} = 0$, thus the total induced charge on the spherical surface equals the image charge $q'$.</p>
+
+    <p><strong>Discussion:</strong></p>
+    <p><strong>① If initially the spherical shell is ungrounded and uncharged, and $+q$ is placed outside:</strong></p>
+    <img src="images/ch05_image_sphere_ungrounded.png" alt="Ungrounded sphere image" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>1) To ensure the sphere is an equipotential body, place $q' = -\frac{R}{d} q$ at $l = \frac{R^2}{d}$ to make the shell potential zero.</p>
+    <p>2) Because $+q$ was added, the shell's net charge must remain zero. To ensure the shell is equipotential and the net charge is zero, a layer $q'' = -q' = \frac{R}{d} q$ should be uniformly distributed on the surface. And $q''$ uniformly distributed on the surface is equivalent to a point charge at the center.</p>
+    <p>In summary: image charges are $q' = -\frac{R}{d} q$ at $x = \frac{R^2}{d}$, and $q'' = \frac{R}{d} q$ at $x = 0$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>② If initially the shell is ungrounded and carries charge $Q$, and $+q$ is added outside:</strong></p>
+    <img src="images/ch05_image_sphere_charged.png" alt="Charged sphere image" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Similarly, add $q' = -\frac{R}{d} q$ at $l = \frac{R^2}{d}$ to make $\varphi = 0$.</p>
+    <p>Add $q'' = \frac{R}{d} q$ at the center to make net charge zero ($\varphi = \frac{k q''}{R} = \frac{k q}{d}$).</p>
+    <p>Add $q''' = Q$ at the center to make the net charge $Q$. The final potential is $\varphi = \frac{k(Q + \frac{R}{d}q)}{R}$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>3. Infinitely long grounded conducting cylinder (with line charge $\lambda$ at distance $d$ outside):</strong></p>
+    <img src="images/ch05_image_cylinder.png" alt="Cylinder image" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>The potential from $\lambda$ at point $P$ is $\varphi_P = \frac{\lambda}{2\pi\varepsilon_0} \ln\frac{r_0}{d-R}$.</p>
+    <p>The potential from image line $\lambda'$ at $P$ is $\varphi_P' = \frac{\lambda'}{2\pi\varepsilon_0} \ln\frac{r_0}{R-l}$.</p>
+    <p>Since the cylinder is grounded, the potential at $P$ and $Q$ must be zero:</p>
+    $$ \begin{cases} \frac{\lambda}{2\pi\varepsilon_0} \ln\frac{r_0}{d-R} + \frac{\lambda'}{2\pi\varepsilon_0} \ln\frac{r_0}{R-l} = 0 \\ \frac{\lambda}{2\pi\varepsilon_0} \ln\frac{r_0}{d+R} + \frac{\lambda'}{2\pi\varepsilon_0} \ln\frac{r_0}{R+l} = 0 \end{cases} $$
+    <p>Solving these yields: $\lambda' = -\lambda$ and $l = \frac{R^2}{d}$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>4. Electric dipole outside an ungrounded spherical shell at distance $L$:</strong></p>
+    <img src="images/ch05_image_dipole.png" alt="Dipole outside sphere" style="max-width: 35%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Dipole moment $P = q \cdot 2l$. Coordinate of $+q$ is $L+l$, coordinate of $-q$ is $L-l$.</p>
+    <p>Image of $+q$ is $q_1 = -\frac{R}{L+l} q$ at position $x_1 = \frac{R^2}{L+l}$.</p>
+    <p>Image of $-q$ is $q_2 = +\frac{R}{L-l} q$ at position $x_2 = \frac{R^2}{L-l}$.</p>
+    <p>Since $L \gg l$:</p>
+    $$ q_1 \approx -\frac{R}{L}\left(1-\frac{l}{L}\right)q = -\frac{R}{L}q + \frac{Rl}{L^2}q, \quad x_1 \approx \frac{R^2}{L^2}(L-l) $$
+    $$ q_2 \approx +\frac{R}{L}\left(1+\frac{l}{L}\right)q = \frac{R}{L}q + \frac{Rl}{L^2}q, \quad x_2 \approx \frac{R^2}{L^2}(L+l) $$
+    <p>The image dipole moment is $p' \approx q_2 \cdot (x_2-x_1) = \frac{R}{L}q \cdot \frac{2R^2 l}{L^2} = \frac{R^3}{L^3} P$.</p>
+    <p>Additionally, at the midpoint of $q_1, q_2$ (which is $\approx \frac{R^2}{L}$), there is a net image point charge: $q' = q_1 + q_2 = \frac{2Rl}{L^2}q$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>5. Image of a point charge with respect to an infinite dielectric plane:</strong></p>
+    <img src="images/ch05_image_dielectric.png" alt="Dielectric plane image" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Conditions:</p>
+    <p>① At the dielectric interface, $U_{\text{left}} = U_{\text{right}}$.</p>
+    <p>② Make a Gaussian pillbox near the origin. From Gauss's law $\Sigma \oint (\varepsilon_r \vec{E}) \cdot d\vec{S} = \Sigma q_{\text{free}} = 0 \implies \varepsilon_1 E_1 = \varepsilon_2 E_2$.</p>
+    <p>Assume there are image charges $q_1, q_2$ at $x = \pm d$ respectively. From conditions ① and ② at the origin:</p>
+    $$ \begin{cases} \frac{q+q_1}{4\pi\varepsilon_0 d} = \frac{q_2}{4\pi\varepsilon_0 d} \\ \varepsilon_1 \frac{q-q_1}{4\pi\varepsilon_0 d^2} = \varepsilon_2 \frac{q_2}{4\pi\varepsilon_0 d^2} \end{cases} $$
+    <p>Solving these yields: $q_1 = \frac{\varepsilon_1 - \varepsilon_2}{\varepsilon_1 + \varepsilon_2} q$ and $q_2 = \frac{2\varepsilon_1}{\varepsilon_1 + \varepsilon_2} q$.</p>
+    <p>$q$ and $q_1$ determine the electric field in the left space; $q_2$ determines the electric field in the right space.</p>
+    </div>
+    <div style="clear: both;"></div>
+    <img src="images/ch05_dielectric_fields.png" alt="Dielectric fields" style="max-width: 80%; display: block; margin: 1em auto;">
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Principle of Virtual Work in Electrostatic Fields</h3>
+
+    <p><strong>1. Electrostatic force experienced by the plates of a parallel plate capacitor:</strong></p>
+    <p><strong>① When $q$ is constant:</strong></p>
+    $$ W = \frac{1}{2}\varepsilon_0 E^2 S d = \frac{1}{2}\varepsilon_0 \left(\frac{q}{\varepsilon_0 S}\right)^2 S d = \frac{1}{2} \frac{q^2 d}{\varepsilon_0 S} $$
+    $$ \therefore F = -\frac{\partial W}{\partial d} = -\frac{q^2}{2\varepsilon_0 S} = -\frac{\sigma^2 S}{2\varepsilon_0} = -\frac{1}{2}\varepsilon_0 E^2 S $$
+    <p>The negative sign indicates an attractive force.</p>
+
+    <p><strong>② When $U$ is constant:</strong></p>
+    $$ W = \frac{1}{2}\varepsilon_0 \left(\frac{U}{d}\right)^2 S d = \frac{1}{2} \frac{\varepsilon_0 U^2 S}{d} $$
+    $$ \therefore F = \frac{\partial W}{\partial d} = -\frac{\varepsilon_0 U^2 S}{2d^2} = -\frac{1}{2}\varepsilon_0 E^2 S $$
+    <p>The negative sign indicates an attractive force.</p>
+
+    <p>In summary, $|F| = \frac{1}{2}\varepsilon_0 E^2 S$, which can be generalized to any charged body. The electrostatic pressure is $f = \frac{dF}{dS} = \frac{1}{2}\varepsilon_0 E^2 = w_e$.</p>
+    $$ F = \int_S p dS = \frac{1}{2\varepsilon_0} \int_S \sigma^2 dS. \quad \text{Also } W = \int_V \frac{1}{2}\varepsilon_0 E^2 dV $$
+    $$ F = \int_S \frac{1}{2}\varepsilon_0 (\varepsilon_r E^2) dS \cos\theta $$
+
+    <p><strong>2. Interaction force between the upper and lower hemispheres of a charged conducting sphere:</strong></p>
+    $$ F = \frac{1}{2\varepsilon_0} \int_S \sigma^2 dS \cos\theta = \frac{\sigma^2}{2\varepsilon_0} \pi R^2 $$
+
+    <p><strong>3. Force pulling a dielectric block inside parallel metal plates:</strong></p>
+    <img src="images/ch05_pull_dielectric.png" alt="Pulling dielectric" style="max-width: 40%; float: right; margin-left: 1em;">
+    <div style="overflow: hidden;">
+    $$ W = \frac{1}{2} \left( \frac{\varepsilon_0 \varepsilon_r (b-x) l}{d} + \frac{\varepsilon_0 x l}{d} \right) U^2 $$
+    $$ \therefore F = \frac{\partial W}{\partial x} = -\frac{\varepsilon_0 (\varepsilon_r - 1) l U^2}{2d} $$
+    </div>
+    <div style="clear: both;"></div>
+
+
 </main>
 </body>
 </html>
