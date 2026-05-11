@@ -1,129 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Chapter 3: Energy and Work — Olympiad Physics</title>
-  <link rel="stylesheet" href="style.css">
-  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3 - Geometrical Optics & Photons - Olympiad Physics</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          packages: {'[+]': ['cancel']}
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
 </head>
 <body>
-<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
-<aside id="sidebar"><div class="book-title">Olympiad Physics<span>Angli Liu</span></div><nav><ul><li><a href="index.html">Table of Contents</a></li><li><div class="part-label">Part I — Mechanics</div></li><li><a href="ch01.html">1. Kinematics</a></li><li><a href="ch02.html">2. Newton's Laws</a></li><li><a href="ch03.html" class="active">3. Energy &amp; Work</a></li><li><a href="ch04.html">4. Momentum</a></li><li><a href="ch05.html">5. Rotational Motion</a></li><li><a href="ch06.html">6. Fluid Mechanics</a></li><li><a href="ch07.html">7. Oscillations &amp; Waves</a></li><li><div class="part-label">Part II — Thermal, EM, Optics</div></li><li><a href="ch08.html">8. Thermodynamics</a></li><li><a href="ch09.html">9. Electrostatics</a></li><li><a href="ch10.html">10. DC Circuits</a></li><li><a href="ch11.html">11. Magnetism</a></li><li><a href="ch12.html">12. Optics</a></li><li><a href="ch13.html">13. Relativity</a></li></ul></nav></aside>
-<main id="content">
 
-<h1><span class="chapter-num">Chapter 3</span>Energy and Work</h1>
-
-<p>Energy methods provide a scalar alternative to Newton's vector equations. In many competition problems — especially those involving constraints, curved paths, or unknown forces — energy conservation is the fastest route to the answer.</p>
-
-<h2 id="s3-1">3.1 Work Done by a Force</h2>
-
-<div class="box definition">
-  <div class="box-title">Definition 3.1 — Work</div>
-  <p>The work done by a force $\mathbf{F}$ on a particle moving along a path $\mathcal{C}$ is</p>
-  $$W = \int_{\mathcal{C}} \mathbf{F}\cdot d\mathbf{r}.$$
-  <p>For a constant force: $W = \mathbf{F}\cdot\Delta\mathbf{r} = F\,\Delta r\,\cos\theta$.</p>
-</div>
-
-<h2 id="s3-2">3.2 Work–Energy Theorem</h2>
-
-<div class="box theorem">
-  <div class="box-title">Theorem 3.1 — Work–Energy Theorem</div>
-  <p>The net work done on a particle equals the change in its kinetic energy:</p>
-  $$W_{\text{net}} = \Delta K = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2.$$
-</div>
-
-<details>
-  <summary>Proof</summary>
-  <div class="solution-content">
-    <p>From $\mathbf{F} = m\mathbf{a}$: $W = \int \mathbf{F}\cdot d\mathbf{r} = m\int \mathbf{a}\cdot\mathbf{v}\,dt = m\int \frac{d}{dt}\!\left(\frac{v^2}{2}\right)dt = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2$. $\blacksquare$</p>
-  </div>
-</details>
-
-<h2 id="s3-3">3.3 Conservative Forces and Potential Energy</h2>
-
-<div class="box definition">
-  <div class="box-title">Definition 3.2 — Conservative Force</div>
-  <p>A force $\mathbf{F}$ is <em>conservative</em> if the work it does depends only on the endpoints, not the path. Equivalently, $\oint \mathbf{F}\cdot d\mathbf{r} = 0$ for every closed loop, or $\nabla \times \mathbf{F} = \mathbf{0}$.</p>
-</div>
-
-<p>For a conservative force there exists a scalar function $U(\mathbf{r})$ (potential energy) such that $\mathbf{F} = -\nabla U$ and $W_{A\to B} = U(A) - U(B) = -\Delta U$.</p>
-
-<table>
-  <tr><th>Force</th><th>Potential Energy $U$</th></tr>
-  <tr><td>Gravity (uniform)</td><td>$mgh$</td></tr>
-  <tr><td>Gravity (universal)</td><td>$-GMm/r$</td></tr>
-  <tr><td>Ideal spring</td><td>$\frac{1}{2}kx^2$</td></tr>
-  <tr><td>Electrostatic</td><td>$kq_1q_2/r$</td></tr>
-</table>
-
-<h2 id="s3-4">3.4 Conservation of Mechanical Energy</h2>
-
-<div class="box theorem">
-  <div class="box-title">Theorem 3.2 — Conservation of Energy</div>
-  <p>When only conservative forces do work:</p>
-  $$K_i + U_i = K_f + U_f \qquad\text{or equivalently}\qquad E = K + U = \text{const}.$$
-  <p>When non-conservative forces (friction, drag) also act: $\Delta E = W_{\text{nc}}$.</p>
-</div>
-
-<div class="box example">
-  <div class="box-title">Example 3.1 — Loop-the-Loop</div>
-  <p>A small ball starts from rest at height $h$ above the bottom of a frictionless circular loop of radius $R$. Find the minimum $h$ so the ball completes the loop.</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p>At the top of the loop, the ball needs $mg \leq mv_{\text{top}}^2/R$, so $v_{\text{top}}^2 \geq gR$.</p>
-      <p>Energy conservation from start to top: $mgh = mg(2R) + \frac{1}{2}mv_{\text{top}}^2$.</p>
-      <p>Setting $v_{\text{top}}^2 = gR$: $gh = 2gR + gR/2$, so $h = \frac{5}{2}R$.</p>
-    </div>
-  </details>
-</div>
-
-<h2 id="s3-5">3.5 Power</h2>
-
-<div class="box definition">
-  <div class="box-title">Definition 3.3 — Power</div>
-  $$P = \frac{dW}{dt} = \mathbf{F}\cdot\mathbf{v}.$$
-</div>
-
-<h2 id="s3-6">3.6 Potential Energy Diagrams</h2>
-
-<p>Plotting $U(x)$ versus $x$ gives deep insight into the qualitative behavior of one-dimensional motion. The particle moves in the region where $E \geq U(x)$. Turning points occur where $E = U(x)$. Equilibria occur at $dU/dx = 0$: stable if $d^2U/dx^2 > 0$, unstable if $d^2U/dx^2 < 0$.</p>
-
-<div class="box example">
-  <div class="box-title">Example 3.2 — Lennard-Jones Potential</div>
-  <p>The interaction between two neutral atoms is modeled by $U(r) = \epsilon\!\left[\left(\frac{r_0}{r}\right)^{12} - 2\left(\frac{r_0}{r}\right)^6\right]$. Find the equilibrium separation and the depth of the potential well.</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p>$dU/dr = 0 \implies -12\,\frac{r_0^{12}}{r^{13}} + 12\,\frac{r_0^6}{r^7} = 0 \implies r^6 = r_0^6 \implies r = r_0$.</p>
-      <p>$U(r_0) = \epsilon(1 - 2) = -\epsilon$, so the well depth is $\epsilon$.</p>
-    </div>
-  </details>
-</div>
-
-<h2 id="s3-7">3.7 Gravitational Potential Energy (General)</h2>
-
-<div class="box theorem">
-  <div class="box-title">Theorem 3.3 — Escape Velocity</div>
-  <p>The minimum launch speed from the surface of a body of mass $M$ and radius $R$ (ignoring atmosphere) is</p>
-  $$v_{\text{esc}} = \sqrt{\frac{2GM}{R}}.$$
-</div>
-
-<h2 id="s3-8">3.8 Exercises</h2>
-
-<div class="box exercise"><div class="box-title">Exercise 3.1</div><p>A block of mass $m$ slides down a quarter-circle ramp of radius $R$ starting from rest, then across a rough horizontal surface (coefficient $\mu_k$). How far does it travel before stopping?</p></div>
-
-<div class="box exercise"><div class="box-title">Exercise 3.2</div><p>A particle moves under the potential $U(x) = U_0\cosh(x/a)$. Find the period of small oscillations about the equilibrium.</p></div>
-
-<div class="box exercise"><div class="box-title">Exercise 3.3</div><p>A variable-mass chain of total length $L$ and mass $M$ hangs from a table edge with length $x_0$ initially hanging. Released from rest, find the speed when the last link leaves the table (frictionless).</p></div>
-
-<div class="box exercise"><div class="box-title">Exercise 3.4</div><p>A rocket of initial mass $M_0$ expels fuel at rate $\dot{m}$ with exhaust velocity $v_e$ relative to the rocket. Using energy considerations, verify the Tsiolkovsky rocket equation $\Delta v = v_e \ln(M_0/M_f)$.</p></div>
-
-<nav class="chapter-nav">
-  <a href="ch02.html">← Newton's Laws</a>
-  <a href="ch04.html">Momentum &amp; Collisions →</a>
+<nav class="sidebar">
+    <h2>Olympiad Physics</h2>
+    <ul>
+        <li><a href="index.html">Table of Contents</a></li>
+        <li><a href="ch01.html">Chapter 1. Kinematics and Dynamics</a></li>
+        <li><a href="ch02.html">Chapter 2. Special Relativity</a></li>
+        <li><a href="ch03.html" class="active">Chapter 3. Geometrical Optics & Photons</a></li>
+    </ul>
 </nav>
+
+<main class="content">
+    <h1>Chapter 3. Geometrical Optics & Photons</h1>
+    
+    <h2>Part 3: Geometrical Optics</h2>
+
+    <h3>1. Optical Path</h3>
+    <p>Optical Path: $\Delta = ct = nvt = ns$</p>
+    <p>Optical Path Difference: $\delta = n_1 s_1 - n_2 s_2$</p>
+    <p>(Speed of light $c = \frac{1}{\sqrt{\epsilon_0 \mu_0}}$, $v = \frac{1}{\sqrt{\epsilon\mu}}$, $n = \sqrt{\epsilon_r\mu_r}$)</p>
+    <p>Fermat's Principle: Light travels along the path with the shortest or longest optical path, $\int_A^B n ds = \text{extremum}$.</p>
+
+    <h3>2. Reflection of Light</h3>
+    <img src="images/ch03_reflection.png" alt="Light Reflection" style="max-width: 50%; display: block; margin: 1em auto;">
+    <p>Let points be $(x_1, y_1)$ and $(x_2, y_2)$ and the point of reflection be $(x, 0)$.</p>
+    $$ \Delta = n \sqrt{(x_1-x)^2+y_1^2} + n \sqrt{(x_2-x)^2+y_2^2} $$
+    $$ \frac{d\Delta}{dx} = n\frac{1}{2}\frac{2(x_1-x)(-dx)}{\sqrt{(x_1-x)^2+y_1^2}} + n\frac{1}{2}\frac{2(x_2-x)(-dx)}{\sqrt{(x_2-x)^2+y_2^2}} = 0 $$
+    $$ \therefore \frac{x-x_1}{\sqrt{(x-x_1)^2+y_1^2}} = \frac{x_2-x}{\sqrt{(x_2-x)^2+y_2^2}} $$
+    $$ \therefore \sin i_1 = \sin i_2 $$
+
+    <h3>3. Refraction of Light</h3>
+    <img src="images/ch03_refraction.png" alt="Light Refraction" style="max-width: 50%; display: block; margin: 1em auto;">
+    $$ \Delta = n_1 \sqrt{(x_1-x)^2+y_1^2} + n_2 \sqrt{(x_2-x)^2+y_2^2} $$
+    $$ \frac{d\Delta}{dx} = n_1 \frac{1}{2}\frac{-2(x_1-x)dx}{\sqrt{(x_1-x)^2+y_1^2}} + n_2 \frac{1}{2}\frac{-(x_2-x)dx}{\sqrt{(x_2-x)^2+y_2^2}} = 0 $$
+    $$ \therefore n_1 \frac{x-x_1}{\sqrt{(x-x_1)^2+y_1^2}} = n_2 \frac{x_2-x}{\sqrt{(x_2-x)^2+y_2^2}} $$
+    $$ \therefore \sin i_1 \cdot n_1 = \sin i_2 \cdot n_2 $$
+
+    <h3>4. Total Internal Reflection</h3>
+    <p>$\frac{\sin i_1}{\sin i_2} = \frac{n_2}{n_1}$. When $\sin i_2 = 1$, i.e., the angle of refraction is $90^\circ$, total internal reflection occurs.</p>
+    <p>At this time $\sin\alpha = \frac{n_2}{n_1}$, $\alpha = \arcsin \frac{n_2}{n_1}$ ($n_1 = \frac{c}{v_1}$, the optically denser medium has larger $n$, the optically rarer medium has smaller $n$).</p>
+
+    <h2>Special Topic: Photons</h2>
+
+    <h3>1. Theoretical Foundation</h3>
+    $$ E = h\nu, \quad P = \frac{h\nu}{c} = \frac{h}{\lambda} $$
+    $$ \because E^2 = P^2 c^2 + m_0^2 c^4 \text{, and } m_0 = 0 \quad \therefore P = \frac{E}{c} $$
+    $$ \because m = \frac{m_0}{\sqrt{1-v^2/c^2}} = \sqrt{\frac{E^2-P^2c^2}{c^4}}{\frac{c^2-v^2}{c^2}} = \frac{\sqrt{E^2-P^2c^2}}{c\sqrt{c^2-v^2}} = \frac{\sqrt{h^2\nu^2-P^2c^2}}{c\sqrt{c^2-v^2}} $$
+    $$ = \sqrt{\frac{\frac{h^2c^2}{\lambda^2}-m^2c^4}{c^2(c^2-v^2)}} = \sqrt{\frac{\frac{h^2}{\lambda^2}-m^2c^2}{c^2-v^2}} $$
+    $$ \therefore m^2(c^2-v^2) = \frac{h^2}{\lambda^2} - m^2c^2 \quad \therefore m^2(2c^2-v^2) = \frac{h^2}{\lambda^2} $$
+    $$ \because v = c, \quad \therefore m = \frac{h}{c\lambda} = \frac{h\nu}{c^2} \quad \text{This is the dynamic mass of the photon.} $$
+
+    <h3>2. Light Pressure</h3>
+    <p>Momentum of a group of photons $P = \frac{Nh\nu}{c} = \frac{\Phi}{c}$</p>
+    <p>If the reflection coefficient of the wall is $\rho$, then $\Delta I_1 = P\frac{\Phi}{c} - (-P\frac{\Phi}{c}) = 2\rho\frac{\Phi}{c}$.</p>
+    <p>The remaining $(1-\rho)N$ photons are absorbed by the wall, then $\Delta I_2 = (1-\rho)\frac{\Phi}{c}$.</p>
+    $$ \therefore \text{Light Pressure } = \Delta I_1 + \Delta I_2 = (1+\rho)\frac{\Phi}{c} $$
+
+    <h3>3. Derivation of the Law of Reflection</h3>
+    <img src="images/ch03_photon_momentum.png" alt="Photon Momentum Reflection" style="max-width: 40%; display: block; margin: 1em auto;">
+    $$ \begin{cases} h\nu + \frac{1}{2}MV^2 = h\nu' + \frac{1}{2}MV'^2 \quad (1) \\ MV - \frac{h\nu\cos\alpha}{c} = MV' + \frac{h\nu'\cos\alpha'}{c} \quad (2) \\ \frac{h\nu\sin\alpha}{c} = \frac{h\nu'\sin\alpha'}{c} \quad (3) \end{cases} $$
+    <p>From (1) we get $h(\nu-\nu') = \frac{1}{2}M(V'^2-V^2)$</p>
+    <p>From (2) we get $\frac{h}{c}(\nu\cos\alpha + \nu'\cos\alpha') = M(V-V')$</p>
+    $$ \therefore c\frac{\nu-\nu'}{\nu\cos\alpha + \nu'\cos\alpha'} = \frac{1}{2}(V+V') \approx V $$
+    <p>From (3) we get $\nu' = \frac{\sin\alpha}{\sin\alpha'}\nu$, substitute into the above equation:</p>
+    $$ V = \frac{\frac{\sin\alpha}{\sin\alpha'}-1}{\cos\alpha + \frac{\sin\alpha}{\sin\alpha'}\cos\alpha'} c = \frac{\sin\alpha-\sin\alpha'}{\sin\alpha'\cos\alpha+\sin\alpha\cos\alpha'} c = \frac{\sin\alpha-\sin\alpha'}{\sin(\alpha+\alpha')} c $$
+    $$ \text{i.e. } \sin\alpha - \sin\alpha' = \beta \sin(\alpha+\alpha') \text{. If } V \text{ is in the opposite direction, then } \sin\alpha - \sin\alpha' = \beta\sin\alpha\sin(\alpha+\alpha') $$
+
+    <h3>4. Redshift Velocity Measurement</h3>
+    <img src="images/ch03_redshift_1.png" alt="Redshift Simple" style="max-width: 40%; display: block; margin: 1em auto;">
+    $$ \begin{cases} \frac{h}{\lambda} + MV = -\frac{h}{\lambda'} + MV' \\ \frac{hc}{\lambda} + \frac{1}{2}MV^2 = \frac{hc}{\lambda'} + \frac{1}{2}MV'^2 \end{cases} $$
+    $$ \therefore h(\frac{1}{\lambda} + \frac{1}{\lambda'}) = M(V'-V) $$
+    $$ \therefore hc(\frac{1}{\lambda} - \frac{1}{\lambda'}) = \frac{1}{2}M(V'^2-V^2) $$
+    $$ \therefore c \frac{\frac{1}{\lambda}-\frac{1}{\lambda'}}{\frac{1}{\lambda}+\frac{1}{\lambda'}} = \frac{1}{2}(V'+V) \approx V $$
+    $$ \therefore V = \frac{\lambda'-\lambda}{\lambda'+\lambda} c $$
+    <p>Define redshift $Z = \frac{\lambda'-\lambda}{\lambda}$, $\therefore V = (\frac{Z}{2+Z}) c$</p>
+
+    <h3>5. Gravitational Redshift</h3>
+    <img src="images/ch03_redshift_2.png" alt="Gravitational Redshift" style="max-width: 40%; display: block; margin: 1em auto;">
+    $$ h\nu - \frac{GmM}{r} = h\nu' - \frac{GmM}{r'} $$
+    $$ \therefore h\nu(1 - \frac{GM}{c^2r}) = h\nu'(1 - \frac{GM}{c^2r'}) $$
+    $$ \therefore \nu' = \frac{1 - \frac{GM}{c^2r}}{1 - \frac{GM}{c^2r'}} \nu $$
+
+    <h3>6. Compton Effect</h3>
+    <img src="images/ch03_compton.png" alt="Compton Effect" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>From conservation of momentum and the law of cosines:</p>
+    $$ (mv)^2 = (\frac{h\nu}{c})^2 + (\frac{h\nu'}{c})^2 - 2\frac{h\nu}{c}\frac{h\nu'}{c}\cos\theta $$
+    <p>From conservation of energy:</p>
+    $$ m_0c^2 + h\nu = mc^2 + h\nu' $$
+    <p>From $m = \frac{m_0}{\sqrt{1-v^2/c^2}}$, we get $m^2c^2 = m^2v^2 + m_0^2c^2$. $\therefore (mc^2)^2 = (mv)^2c^2 + m_0^2c^4$.</p>
+    <p>Substitute the previous two equations into this equation:</p>
+    $$ (m_0c^2 + h\nu - h\nu')^2 = \left[ (\frac{h\nu}{c})^2 + (\frac{h\nu'}{c})^2 - \frac{2h^2\nu\nu'\cos\theta}{c^2} \right] c^2 + m_0^2c^4 $$
+    <p>Expanding yields: $m_0^2c^4 + 2m_0c^2h(\nu-\nu') + h^2(\nu-\nu')^2 = h^2\nu^2 + h^2\nu'^2 - 2h^2\nu\nu'\cos\theta + m_0^2c^4$</p>
+    $$ \therefore m_0c^2(\nu-\nu') = h\nu\nu'(1-\cos\theta) $$
+    $$ \therefore \frac{\nu-\nu'}{\nu\nu'} \approx \frac{\Delta\nu}{\nu^2} = \frac{2h}{m_0c^2}\sin^2\frac{\theta}{2} $$
+
+    <h3>7. Atomic Emission Recoil</h3>
+    <img src="images/ch03_atom_recoil.png" alt="Atomic Emission Recoil" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>Neglecting the change in atomic mass, from conservation of energy and conservation of momentum, we get:</p>
+    $$ \begin{cases} \frac{P_n^2}{2M} + E_n = \frac{P_m^2}{2M} + E_m + h\nu \\ P_m^2 = P_n^2 + P^2 - 2P_n P\cos\alpha \end{cases} $$
+    $$ \therefore \nu = \frac{E_n-E_m}{h} + \frac{2P_n P}{2Mh}\cos\alpha - \frac{P^2}{2Mh} \quad (\because P_n = Mv_n, P = \frac{h\nu}{c}) $$
+    $$ \therefore \nu = \nu_0 + \frac{v_n}{c}\nu\cos\alpha - \frac{h\nu^2}{2Mc^2} \approx \nu_0 + \frac{v_n}{c}\nu_0\cos\alpha - \frac{h\nu_0^2}{2Mc^2} $$
+    <p>The first term is the Bohr frequency.</p>
+    <p>The second term is the Doppler effect. When $v_n = 0$, this term is zero. $\nu = \nu_0 - \frac{h\nu_0^2}{2Mc^2}$.</p>
+    <p>The third term is the result of atomic recoil.</p>
+
+    <h3>5. Mirror Imaging</h3>
+    <p><strong>① Plane Mirror:</strong></p>
+    <p>Determine the number of virtual images: Let the object emit a light ray to each mirror, let the light ray reflect between the mirrors until it exits the system. The reverse extension of each reflected ray must pass through a virtual image.</p>
+    <img src="images/ch03_plane_mirror.png" alt="Plane Mirror Imaging" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>Real Image: The image formed by the convergence of actual light rays.</p>
+    <p>Virtual Image: The image formed by the convergence of the backward extensions of light rays.</p>
+
+    <p><strong>② Spherical Mirror:</strong></p>
+    <img src="images/ch03_spherical_convex.png" alt="Convex Spherical Mirror" style="max-width: 45%; display: inline-block;">
+    <img src="images/ch03_spherical_concave.png" alt="Concave Spherical Mirror" style="max-width: 45%; display: inline-block;">
+    <p>From the figure, $\frac{y}{-v} = \frac{y'}{u} \approx \frac{u-R+\frac{R}{2}}{\frac{R}{2}} = \frac{u-\frac{R}{2}}{\frac{R}{2}}$</p>
+    $$ \text{Yields } \frac{1}{u} + \frac{1}{v} = \frac{2}{R} = \frac{1}{f} \quad (f = \frac{R}{2} \text{, paraxial approximation}) $$
+    <p>Sign Convention: Object is in front of the mirror (the side that can reflect light), $u > 0$; object is behind the mirror, $u < 0$.</p>
+    <p>Real image, $v > 0$; Virtual image, $v < 0$ (Do not add signs when calculating, determine the sign after solving).</p>
+    <p>Concave mirror $f > 0$; Convex mirror $f < 0$.</p>
+    <p>Magnification: Magnification of an upright image</p>
+    $$ K = \frac{y'}{y} = \frac{v-R}{u-R} = \frac{v - \frac{2uv}{u+v}}{u - \frac{2uv}{u+v}} = \frac{v^2-uv}{u^2-uv} = -\frac{v}{u} $$
+    $$ \text{i.e. } K = -\frac{v}{u} $$
+
 </main>
 </body>
 </html>
