@@ -187,6 +187,180 @@
     </div>
     <div style="clear: both;"></div>
 
+    <hr style="margin: 2em 0;">
+
+    <h3>2. Capacitance</h3>
+    <p><strong>① Definition:</strong> $C = \frac{Q}{U}$</p>
+    <ul>
+        <li>$U$: potential difference between two plates.</li>
+        <li>$Q$: charge passing through the wire after connecting the two plates.</li>
+    </ul>
+
+    <p><strong>② Series and Parallel Circuits:</strong></p>
+    <ul>
+        <li><strong>Series:</strong> $\frac{1}{C_{\text{total}}} = \frac{U_{\text{total}}}{Q} = \sum \frac{U_i}{Q} = \sum \frac{1}{C_i}$</li>
+        <li><strong>Parallel:</strong> $C_{\text{total}} = \frac{Q_{\text{total}}}{U} = \sum \frac{Q_i}{U} = \sum C_i$</li>
+    </ul>
+
+    <p><strong>③ Energy of a capacitor:</strong></p>
+    $$ W = \int q dU = \int_0^Q q \frac{dq}{C} = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} \frac{Q^2}{\varepsilon S} d = \frac{1}{2} \left(\frac{Q}{\varepsilon S}\right)^2 \varepsilon S d = \frac{1}{2} E^2 \varepsilon S d = \frac{1}{2} \varepsilon E^2 \cdot V $$
+    <p>Energy density: $\omega = \frac{dW}{dV} = \frac{1}{2} \varepsilon E^2$</p>
+
+    <p><strong>④ Typical capacitor capacitance:</strong></p>
+
+    <p><strong>1) Parallel plate capacitor (ignoring edge effects):</strong></p>
+    <img src="images/ch06_parallel_plate.png" alt="Parallel plate capacitor" style="max-width: 40%; display: block; margin: 1em auto;">
+    $$ E_{\Delta S} = \frac{\sigma \Delta S}{\varepsilon_0} \implies E = \frac{Q}{\varepsilon_0 S} \implies U = E d = \frac{Q d}{\varepsilon_0 S} $$
+    $$ \therefore C = \frac{Q}{U} = \frac{\varepsilon_0 S}{d} $$
+
+    <p><strong>2) Tilted parallel plate capacitor ($h \ll d$):</strong></p>
+    <img src="images/ch06_tilted_capacitor.png" alt="Tilted capacitor" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>Treat the whole capacitor as an infinite number of $dC$ elements in parallel.</p>
+    $$ dC = \frac{\varepsilon_0 a dx}{d + \frac{h}{b}x} $$
+    $$ \therefore C = \int_0^b \frac{\varepsilon_0 a dx}{d + \frac{h}{b}x} = \frac{\varepsilon_0 a b}{h} \ln\left(1 + \frac{h}{d}\right) $$
+
+    <p><strong>3) Spherical capacitor:</strong></p>
+    <img src="images/ch06_spherical_capacitor.png" alt="Spherical capacitor" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \varphi_A = \frac{1}{4\pi\varepsilon_0}\left(\frac{q}{r_a} + \frac{-q}{r_b}\right) $$
+    $$ \varphi_B = \frac{1}{4\pi\varepsilon_0}\left(\frac{q}{r_b} + \frac{-q}{r_b}\right) $$
+    $$ \therefore U_{AB} = \varphi_A - \varphi_B = \frac{q}{4\pi\varepsilon_0}\left(\frac{1}{r_a} - \frac{1}{r_b}\right) $$
+    $$ \therefore C = \frac{q}{U_{AB}} = \frac{4\pi\varepsilon_0 r_a r_b}{r_b - r_a} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>4) Cylindrical capacitor (length $L$):</strong></p>
+    <img src="images/ch06_cylindrical_capacitor.png" alt="Cylindrical capacitor" style="max-width: 20%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Take a cylindrical Gaussian surface of radius $r$ between the two cylinders:</p>
+    $$ E \cdot 2\pi r \cdot L = \frac{q}{\varepsilon_0} \implies E = \frac{q}{2\pi\varepsilon_0 r L} $$
+    $$ \therefore U_{ab} = \int_{r_a}^{r_b} E dr = \frac{q}{2\pi\varepsilon_0 L} \int_{r_a}^{r_b} \frac{dr}{r} = \frac{q}{2\pi\varepsilon_0 L} \ln\left(\frac{r_b}{r_a}\right) $$
+    $$ \therefore C = \frac{q}{U_{ab}} = \frac{2\pi\varepsilon_0 L}{\ln\frac{r_b}{r_a}} $$
+    <p>When $r_b - r_a \ll r_a, r_b$, $C \approx \frac{2\pi\varepsilon_0 r_a L}{r_b - r_a}$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>5) Isolated conducting sphere:</strong></p>
+    <p>Treat infinity as the other plate.</p>
+    $$ \because \varphi_\infty = 0, \quad \varphi_R = \frac{Q}{4\pi\varepsilon_0 R} $$
+    $$ \therefore U = \frac{Q}{4\pi\varepsilon_0 R} \implies C = \frac{Q}{U} = 4\pi\varepsilon_0 R $$
+
+    <p><strong>6) Sphere-plate capacitor (radius $r$, distance $L$, $L \gg r$):</strong></p>
+    <img src="images/ch06_sphere_plate_cap.png" alt="Sphere-plate capacitor" style="max-width: 50%; display: block; margin: 1em auto;">
+    <p>Make an image of the metal sphere on the right side of the metal plate, remove the plate, in this two-sphere system:</p>
+    $$ U_{ab} = \frac{kq}{r} - \left(\frac{-kq}{r}\right) = \frac{2kq}{r} = \frac{q}{2\pi\varepsilon_0 r} $$
+    $$ \therefore C = \frac{q}{U_{ab}} = 2\pi\varepsilon_0 r $$
+    <p>This two-sphere system is exactly equivalent to two sphere-plate capacitors in series, so the sphere-plate capacitance is $C' = 4\pi\varepsilon_0 r$.</p>
+
+    <p><strong>7) Two-sphere connected capacitor (radii $r_a, r_b$, distance $L$, $L \gg r_a, r_b$):</strong></p>
+    <p>Because the two spheres are connected by a wire:</p>
+    $$ \varphi_a = \varphi_b \implies \frac{q_1}{r_a} = \frac{q_2}{r_b} $$
+    <p>Taking infinity as the other plate, $\varphi_\infty = 0$:</p>
+    $$ \therefore U = \varphi_a - \varphi_\infty = \frac{kq_1}{r_a} $$
+    $$ \therefore C = \frac{q_1+q_2}{U} = \frac{q_1 + \frac{r_b}{r_a}q_1}{\frac{kq_1}{r_a}} = 4\pi\varepsilon_0(r_a+r_b) $$
+
+    <p><strong>8) Two-sphere contacting capacitor (radius $R$, distance $2R$):</strong></p>
+    <img src="images/ch06_two_spheres_contact.png" alt="Two contacting spheres" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Assume the system potential is $U_0$. Imagine the charge of both spheres stays at their centers; ignoring mutual induction, the potential of both spheres is $U_0$, and $q_1 = 4\pi\varepsilon_0 R U_0$.</p>
+    <p>Because mutual induction will make the potential of the two spheres higher than $U_0$, to eliminate this additional potential, an image charge needs to be added inside each sphere:</p>
+    $$ q_2 = -\frac{R}{2R} q_1 = -\frac{1}{2} q_1, \quad x_2 = \frac{R^2}{2R} = \frac{1}{2} R $$
+    <p>This way, each internal image charge can eliminate the other's additional potential, but generates its own new additional potential, which requires new image charges to cancel:</p>
+    $$ q_3 = -\frac{R}{2R-x_2} q_2 = \frac{1}{3} q_1, \quad x_3 = \frac{R^2}{2R-x_2} = \frac{2}{3} R $$
+    <p>And so on. Each newly added image charge cancels the previously generated additional potential, while generating a new one. Because $|q_{n+1}| < |q_n|$, each new additional potential is smaller. As the number of image charges approaches infinity, it completely corrects the diminishing additional potentials, restoring the system potential to $U_0$.</p>
+    $$ \implies \begin{cases} q_n = \frac{(-1)^{n-1}}{n} q_1 \\ x_n = \frac{n-1}{n} R \end{cases} $$
+    <p>The total charge on the conducting spheres is equal to $q_1$ plus the total charge of all image charges:</p>
+    $$ Q_{\text{total}} = 2(q_1 + q_2 + \dots) = 2 q_1 \left(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots\right) = 8\pi\varepsilon_0 R U_0 \ln 2 $$
+    $$ \therefore C = \frac{Q_{\text{total}}}{U_0} = 8\pi\varepsilon_0 R \ln 2 $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>9) Leaky capacitor:</strong></p>
+    <img src="images/ch06_leaky_capacitor.png" alt="Leaky capacitor" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Because voltage $U$ is applied across the plates:</p>
+    $$ I = \frac{U}{\rho_1 \frac{d_1}{S} + \rho_2 \frac{d_2}{S}} = \frac{U S}{\rho_1 d_1 + \rho_2 d_2} $$
+    $$ \therefore E_1 = \rho_1 \frac{I}{S} = \frac{\rho_1 U}{\rho_1 d_1 + \rho_2 d_2}, \quad E_2 = \rho_2 \frac{I}{S} = \frac{\rho_2 U}{\rho_1 d_1 + \rho_2 d_2} $$
+    <p>Also, $C_1 = \frac{\varepsilon_0 \varepsilon_1 S}{d_1}$ and $C_2 = \frac{\varepsilon_0 \varepsilon_2 S}{d_2}$:</p>
+    $$ \therefore q_1 = E_1 d_1 C_1 = \frac{\rho_1 \varepsilon_0 \varepsilon_1 S U}{\rho_1 d_1 + \rho_2 d_2}, \quad q_2 = E_2 d_2 C_2 = \frac{\rho_2 \varepsilon_0 \varepsilon_2 S U}{\rho_1 d_1 + \rho_2 d_2} $$
+    <p>Therefore, the surface charge density at the interface of the two dielectrics is:</p>
+    $$ \sigma = \frac{\varepsilon_0 (\rho_1 \varepsilon_1 - \rho_2 \varepsilon_2) U}{\rho_1 d_1 + \rho_2 d_2} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑤ Equivalent Capacitance:</strong></p>
+    <p>Similar to equivalent resistance, it has symmetry and infinite series solutions. Also, because in a two-terminal passive circuit, $R$ and $\frac{1}{C}$ have the same mathematical status:</p>
+    <ul>
+        <li>Series: $R = \sum R_i, C = (\sum \frac{1}{C_i})^{-1}$</li>
+        <li>Parallel: $R = (\sum \frac{1}{R_i})^{-1}, C = \sum C_i$</li>
+    </ul>
+    <p>Therefore, it has the opposite Y-$\Delta$ transform to $R$.</p>
+
+    <img src="images/ch06_y_delta_cap.png" alt="Y-Delta transform for capacitors" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ \begin{cases} C_{12} = \frac{C_1 C_2}{C_1 + C_2 + C_3} \\ C_{23} = \frac{C_2 C_3}{C_1 + C_2 + C_3} \\ C_{31} = \frac{C_3 C_1}{C_1 + C_2 + C_3} \end{cases} \iff \begin{cases} C_3 = \frac{C_{12} C_{23} + C_{12} C_{31} + C_{23} C_{31}}{C_{12}} \\ C_1 = \frac{C_{12} C_{23} + C_{12} C_{31} + C_{23} C_{31}}{C_{23}} \\ C_2 = \frac{C_{12} C_{23} + C_{12} C_{31} + C_{23} C_{31}}{C_{31}} \end{cases} $$
+
+    <p><strong>⑥ RC Circuits:</strong></p>
+    <img src="images/ch06_rc_circuit.png" alt="RC circuit" style="max-width: 30%; float: right; margin-left: 1em;">
+    <div style="overflow: hidden;">
+    <p><strong>1) Charging:</strong></p>
+    $$ \mathcal{E} - i R - \frac{q}{C} = 0, \quad i = \frac{dq}{dt} $$
+    $$ \therefore \mathcal{E} = R \frac{dq}{dt} + \frac{q}{C} \implies dt = \frac{R C dq}{C\mathcal{E} - q} $$
+    $$ \therefore \int_0^t dt = -RC \int_0^q \frac{d(C\mathcal{E}-q)}{C\mathcal{E}-q} \implies t = -RC \ln \frac{C\mathcal{E}-q}{C\mathcal{E}} $$
+    <p>Solving yields:</p>
+    $$ q = C\mathcal{E} (1 - e^{-t/RC}), \quad i = \frac{dq}{dt} = \frac{\mathcal{E}}{R} e^{-t/RC} $$
+    <p><strong>2) Discharging:</strong></p>
+    $$ i R = \frac{q}{C}, \quad i = -\frac{dq}{dt} $$
+    $$ \therefore R \frac{dq}{dt} + \frac{q}{C} = 0 \implies dt = -RC \frac{dq}{q} $$
+    $$ \therefore t = -RC \ln \frac{q}{q_0} = -RC \ln \frac{q}{C\mathcal{E}} \implies q = C\mathcal{E} e^{-t/RC} $$
+    $$ i = -\frac{dq}{dt} = \frac{C\mathcal{E}}{RC} e^{-t/RC} = \frac{\mathcal{E}}{R} e^{-t/RC} $$
+    <p>(Same current curve as charging.)</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>3. Inductance</h3>
+    <p><strong>① Definition:</strong></p>
+    $$ \mathcal{E}_L = -\frac{d\Psi}{dt} = -N \frac{d\Phi}{dt} = -\frac{d(LI)}{dt} = -L \frac{dI}{dt} $$
+    $$ \therefore L = -\mathcal{E}_L / \frac{dI}{dt} $$
+
+    <p><strong>② Series and Parallel:</strong></p>
+    <ul>
+        <li><strong>Series:</strong> $L_{\text{total}} \frac{di}{dt} = \sum \mathcal{E}_{Li} = \sum L_i \frac{di}{dt} \implies L_{\text{total}} = \sum L_i$</li>
+        <li><strong>Parallel:</strong> $\frac{1}{L_{\text{total}}} = -\frac{di_{\text{total}} / dt}{\mathcal{E}_L} = -\frac{d\sum i_i / dt}{\mathcal{E}_L} = \sum -\frac{di_i / dt}{\mathcal{E}_L} = \sum \frac{1}{L_i}$</li>
+    </ul>
+
+    <p><strong>③ Energy of inductance:</strong></p>
+    $$ W = \int \mathcal{E} i dt = \int -L \frac{di}{dt} i dt = \int -L i di = \frac{1}{2} L I^2 = \frac{1}{2} \mu_0 n^2 V I^2 $$
+    <p>Also, from $B = \mu_0 n I$, eliminating $n I$ yields:</p>
+    $$ W = \frac{B^2}{2\mu_0} V $$
+    <p>Energy density: $\omega = \frac{dW}{dV} = \frac{B^2}{2\mu_0}$</p>
+
+    <p><strong>④ Self-inductance:</strong></p>
+    <p><strong>1) Solenoid:</strong></p>
+    $$ \Psi = N \Phi = (l \cdot n) \cdot B S = l n \cdot \mu_0 n I S = L \cdot I $$
+    $$ \therefore L = \frac{\Psi}{I} = \mu_0 n^2 S \cdot l = \mu_0 n^2 V $$
+    <p>Where $n$ is the turn density (turns/m).</p>
+
+    <p><strong>2) Toroidal solenoid:</strong></p>
+    <img src="images/ch06_toroidal_solenoid.png" alt="Toroidal solenoid" style="max-width: 35%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Apply Ampere's law to the whole ring:</p>
+    $$ B \cdot 2\pi r = \mu_0 N I \implies B = \frac{\mu_0 N I}{2\pi r} $$
+    <p>Therefore, the flux linkage is:</p>
+    $$ \Psi = N \cdot \int_a^b B \cdot h dr = N \frac{\mu_0 N I h}{2\pi} \ln\frac{b}{a} $$
+    $$ \therefore L = \frac{\mu_0 N^2 h}{2\pi} \ln\frac{b}{a} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>3) Coaxial cable:</strong></p>
+    <img src="images/ch06_coaxial_cable.png" alt="Coaxial cable" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>For a unit length of the cable ($l$):</p>
+    $$ \Psi = \int_a^b B l dr = \frac{\mu_0 I l}{2\pi} \int_a^b \frac{dr}{r} = \frac{\mu_0 I l}{2\pi} \ln\frac{b}{a} $$
+    $$ \therefore L = \frac{\mu_0 l}{2\pi} \ln\frac{b}{a} $$
+    </div>
+    <div style="clear: both;"></div>
 </main>
 </body>
 </html>
