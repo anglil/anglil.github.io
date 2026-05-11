@@ -2,205 +2,333 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapter 1: Kinematics — Olympiad Physics</title>
-  <meta name="description" content="Kinematics: position, velocity, acceleration, projectile motion, and relative motion for physics olympiad preparation.">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>一、牛顿力学 — Olympiad Physics</title>
   <link rel="stylesheet" href="style.css">
-  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}};
-  </script>
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
 <button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
 <aside id="sidebar">
   <div class="book-title">Olympiad Physics<span>Angli Liu</span></div>
-  <nav><ul>
-    <li><a href="index.html">Table of Contents</a></li>
-    <li><div class="part-label">Part I — Mechanics</div></li>
-    <li><a href="ch01.html" class="active">1. Kinematics</a></li>
-    <li><a href="ch02.html">2. Newton's Laws</a></li>
-    <li><a href="ch03.html">3. Energy &amp; Work</a></li>
-    <li><a href="ch04.html">4. Momentum</a></li>
-    <li><a href="ch05.html">5. Rotational Motion</a></li>
-    <li><a href="ch06.html">6. Fluid Mechanics</a></li>
-    <li><a href="ch07.html">7. Oscillations &amp; Waves</a></li>
-    <li><div class="part-label">Part II — Thermal, EM, Optics</div></li>
-    <li><a href="ch08.html">8. Thermodynamics</a></li>
-    <li><a href="ch09.html">9. Electrostatics</a></li>
-    <li><a href="ch10.html">10. DC Circuits</a></li>
-    <li><a href="ch11.html">11. Magnetism</a></li>
-    <li><a href="ch12.html">12. Optics</a></li>
-    <li><a href="ch13.html">13. Relativity</a></li>
-  </ul></nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Table of Contents</a></li>
+      <li><a href="ch01.html" class="active">一、牛顿力学</a></li>
+    </ul>
+  </nav>
 </aside>
 <main id="content">
 
-<h1><span class="chapter-num">Chapter 1</span>Kinematics</h1>
+<h1>一、牛顿力学</h1>
 
-<p>Kinematics is the study of motion without regard to the forces that cause it. We develop the vocabulary of displacement, velocity, and acceleration, first in one dimension, then in two and three dimensions. The chapter concludes with projectile motion and relative-motion problems characteristic of competition physics.</p>
+<h2 id="s1">1. 运动、动力学</h2>
 
-<h2 id="s1-1">1.1 Position and Displacement</h2>
+<p><strong>① 线量：</strong></p>
+$$ \vec{s} = \vec{r}_t - \vec{r}_0, \quad \vec{v} = \frac{d\vec{r}}{dt}, \quad \vec{a} = \frac{d\vec{v}}{dt} = \frac{d^2\vec{r}}{dt^2} $$
+<p>（自然系中 $\vec{a} = \frac{dv}{dt}\hat{\tau} + \frac{v^2}{\rho}\hat{n}$）</p>
 
-<div class="box definition">
-  <div class="box-title">Definition 1.1 — Position Vector</div>
-  <p>The <em>position</em> of a particle at time $t$ is specified by the vector $\mathbf{r}(t) = x(t)\,\hat{\mathbf{i}} + y(t)\,\hat{\mathbf{j}} + z(t)\,\hat{\mathbf{k}}$ in a chosen coordinate system. The <em>displacement</em> over the interval $[t_1, t_2]$ is</p>
-  $$\Delta\mathbf{r} = \mathbf{r}(t_2) - \mathbf{r}(t_1).$$
-</div>
+<p><strong>② 角量：</strong></p>
+$$ \theta = \varphi_2 - \varphi_1, \quad \omega = \frac{d\varphi}{dt}, \quad \beta = \frac{d\omega}{dt} = \frac{d^2\varphi}{dt^2}, \quad \vec{v} = \vec{\omega} \times \vec{r} $$
 
-<p><strong>Remark.</strong> Displacement is a vector; <em>distance</em> is the scalar $\displaystyle s = \int_{t_1}^{t_2} |\mathbf{v}(t)|\,dt$, which is always $\geq |\Delta\mathbf{r}|$.</p>
+<p><strong>曲率半径求法：</strong></p>
+<p>1) $\rho = \frac{ds}{d\theta} = \frac{v^3}{|\vec{v}\times\vec{a}|} = \frac{v^2}{a_n}$</p>
+<p>2) $v = \frac{\sqrt{(dx)^2+(dy)^2}}{dt}$</p>
+$$ a_n = a_x \sin\theta - a_y \cos\theta = \frac{d^2x}{dt^2}\frac{dy}{dx}\frac{1}{\sqrt{1+(\frac{dy}{dx})^2}} - \frac{d^2y}{dt^2}\frac{1}{\sqrt{1+(\frac{dy}{dx})^2}} $$
+<p>因为 $v = \frac{ds}{dt}$，</p>
+$$ \therefore \rho = \frac{v^2}{a_n} = \frac{[(dx)^2+(dy)^2]^{3/2}}{|dx\,d^2y - dy\,d^2x|} $$
+<p>对于椭圆 $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$，有：</p>
+$$ \rho = \frac{[(dx)^2+\frac{b^2}{a^2}\frac{x^2dx^2}{a^2-x^2}]^{3/2}}{\frac{b}{a}(\sqrt{a^2-x^2} + \frac{x^2}{\sqrt{a^2-x^2}})dx(dx^2)} = \frac{(1+\frac{b^2}{a^2}\frac{x^2}{a^2-x^2})^{3/2}}{\frac{b}{a}\frac{a^2}{a^2-x^2}} = \frac{(a^4-c^2x^2)^{3/2}}{a^4b} $$
+<p>（当 $x=0$ 时, $\rho = \frac{a^2}{b}$； 当 $x=a$ 时, $\rho = \frac{b^2}{a}$）</p>
 
-<h2 id="s1-2">1.2 Velocity</h2>
+<p><strong>③ 典型例：</strong></p>
+<p>1) 匀速直线：$\vec{s} = \vec{v} t$</p>
+<p>2) 匀加速直线：$\vec{v} = \vec{a}t + \vec{v}_0$, $\vec{s} = \int \vec{v} dt = \vec{s}_0 + \vec{v}_0 t + \frac{1}{2}\vec{a}t^2$</p>
+<p>3) 圆周：</p>
+<img src="images/ch01_circle.png" alt="圆周运动示意图" style="max-width: 40%; display: block; margin: 1em auto;">
+$$ \vec{a}_n = \frac{d\vec{v}}{dt} $$
+<p>若 $\vec{a}_t$ 为一常量，则 $\omega = \beta t + \omega_0$, $\theta = \theta_0 + \omega_0 t + \frac{1}{2}\beta t^2$</p>
 
-<div class="box definition">
-  <div class="box-title">Definition 1.2 — Velocity</div>
-  <p>The <em>instantaneous velocity</em> is the time derivative of the position vector:</p>
-  $$\mathbf{v}(t) = \frac{d\mathbf{r}}{dt} = \dot{x}\,\hat{\mathbf{i}} + \dot{y}\,\hat{\mathbf{j}} + \dot{z}\,\hat{\mathbf{k}}.$$
-  <p>The <em>average velocity</em> over $[t_1,t_2]$ is $\overline{\mathbf{v}} = \Delta\mathbf{r}/\Delta t$. The <em>speed</em> is $v = |\mathbf{v}|$.</p>
-</div>
+<p><strong>4) $F = \frac{GmM}{r^2}$ 的椭圆：</strong></p>
+<img src="images/ch01_ellipse.png" alt="椭圆轨道示意图" style="max-width: 60%; display: block; margin: 1em auto;">
+<p>设 $v_\theta$ 为横向速度， $v_r$ 为径向速度。</p>
+$$ \begin{cases} L = m v_\theta r \\ E = \frac{1}{2}m v^2 - \frac{GmM}{r} = \frac{1}{2}m(v_\theta^2 + v_r^2) - \frac{GmM}{r} \end{cases} $$
+<p>在A、B两点， $v_r = 0$, $v = \frac{L}{mr_0}$：</p>
+$$ \therefore E = \frac{1}{2}m \frac{L^2}{m^2r_0^2} - \frac{GmM}{r_0} $$
+<p>整理得：</p>
+$$ r_0^2 + \frac{GmM}{E}r_0 - \frac{L^2}{2mE} = 0 $$
+<p>又 $\because$ 在A、B两点 $r_0 = a+c$ 或 $a-c$：</p>
+$$ \begin{cases} r_1 + r_2 = 2a = -\frac{GmM}{E} \\ r_1 r_2 = a^2 - c^2 = b^2 = -\frac{L^2}{2mE} \end{cases} $$
+<p>解得：</p>
+$$ E = -\frac{GmM}{2a} \Rightarrow a = -\frac{GmM}{2E} $$
+$$ L = mb\sqrt{\frac{GM}{a}} \Rightarrow b = \sqrt{-\frac{L^2}{2mE}} $$
+<p>故椭圆方程为：</p>
+$$ \frac{x^2}{(-\frac{GmM}{2E})^2} + \frac{y^2}{(-\frac{L^2}{2mE})} = 1 $$
 
-<h2 id="s1-3">1.3 Acceleration</h2>
+<p><strong>曲率半径：</strong></p>
+$$ \frac{GmM}{r^2} \cos\theta = m\frac{v^2}{\rho} $$
+<p>而 $m v \cos\theta \cdot r = m b \sqrt{\frac{GM}{a}} \Rightarrow \cos\theta = \frac{b}{vr}\sqrt{\frac{GM}{a}}$</p>
+$$ \therefore \rho = \frac{r^2v^2}{GM\cos\theta} = \frac{r^3v^3}{GMb\sqrt{GM/a}} $$
+<p>而 $\frac{1}{2}mv^2 - \frac{GmM}{r} = -\frac{GmM}{2a} \Rightarrow v = \sqrt{GM(\frac{2}{r}-\frac{1}{a})}$</p>
+$$ \therefore \rho = \frac{r^3 (GM)^{3/2} (\frac{2}{r}-\frac{1}{a})^{3/2}}{(GM)^{3/2} b \frac{1}{\sqrt{a}}} = \frac{r^3}{b}\sqrt{a}\left(\frac{2}{r}-\frac{1}{a}\right)^{3/2} $$
+<p>A点：$\rho_A = \frac{(a-c)^3}{b} \sqrt{a} \left(\frac{2}{a-c}-\frac{1}{a}\right)^{3/2} = \frac{b^2}{a}$</p>
+<p>B点：$\rho_B = \frac{(a+c)^3}{b} \sqrt{a} \left(\frac{2}{a+c}-\frac{1}{a}\right)^{3/2} = \frac{b^2}{a}$</p>
+<p>C点：$\rho_C = \frac{a^3}{b} \sqrt{a} \left(\frac{2}{a}-\frac{1}{a}\right)^{3/2} = \frac{a^2}{b}$</p>
 
-<div class="box definition">
-  <div class="box-title">Definition 1.3 — Acceleration</div>
-  $$\mathbf{a}(t) = \frac{d\mathbf{v}}{dt} = \frac{d^2\mathbf{r}}{dt^2}.$$
-</div>
+<p><strong>周期：</strong>由于单位时间矢径扫过的面积 $\frac{dS}{dt} = \frac{1}{2}|\vec{r}\times\vec{v}| = \frac{1}{2}r v_\theta = \frac{1}{2}rv\cos\theta$</p>
+<p>$\because v\cos\theta = \frac{b}{r}\sqrt{\frac{GM}{a}}$</p>
+$$ \therefore \frac{dS}{dt} = \frac{1}{2}r \cdot \frac{b}{r}\sqrt{\frac{GM}{a}} = \frac{b}{2}\sqrt{\frac{GM}{a}} $$
+$$ \therefore \pi ab = \frac{b}{2}\sqrt{\frac{GM}{a}} \cdot T \Rightarrow T = 2\pi\sqrt{\frac{a^3}{GM}} $$
 
-<h2 id="s1-4">1.4 Uniformly Accelerated Motion</h2>
+<p><strong>5) 抛体运动：</strong></p>
+<img src="images/ch01_parabola.png" alt="抛体运动示意图" style="max-width: 50%; display: block; margin: 1em auto;">
+$$ v_x = v_0\cos\theta, \quad v_y = v_0\sin\theta - gt $$
+$$ x = v_0\cos\theta \cdot t, \quad y = v_0\sin\theta \cdot t - \frac{1}{2}gt^2 $$
+<p>射程 $X = \frac{v_0^2\sin2\theta}{g}$，射高 $Y = \frac{v_0^2\sin^2\theta}{2g}$</p>
+<p>轨道方程：消去$t$得</p>
+$$ y = x\tan\theta - \frac{gx^2}{2v_0^2\cos^2\theta} = -\frac{g}{2v_0^2\cos^2\theta}x^2 + \tan\theta \cdot x $$
+<p>（此方程中参数有 $x, y, v_0, \tan\theta$ ，知二可求四，知二可求最）</p>
+<p>曲率半径：$\rho = \frac{v^2}{a_n} = \frac{v_0^2 - 2gy}{g\cos\alpha} = \frac{(v_0^2 - 2v_0gy\sin\theta + g^2t^2)^{3/2}}{g v_0\cos\theta}$</p>
 
-<div class="box theorem">
-  <div class="box-title">Theorem 1.1 — SUVAT Equations</div>
-  <p>For constant acceleration $\mathbf{a}$ with initial velocity $\mathbf{v}_0$ and initial position $\mathbf{r}_0$:</p>
-  $$\mathbf{v} = \mathbf{v}_0 + \mathbf{a}\,t$$
-  $$\mathbf{r} = \mathbf{r}_0 + \mathbf{v}_0\,t + \tfrac{1}{2}\mathbf{a}\,t^2$$
-  $$v^2 = v_0^2 + 2\,\mathbf{a}\cdot\Delta\mathbf{r}$$
-  $$\Delta\mathbf{r} = \tfrac{1}{2}(\mathbf{v}_0 + \mathbf{v})\,t$$
-</div>
+<p><strong>包络线方程1：初速度各向同：</strong></p>
+$$ \begin{cases} x = \frac{v_0^2\sin2\theta}{2g} \quad \text{(最远)} \\ y = \frac{v_0^2\sin^2\theta}{2g} = \frac{v_0^2}{4g}(1-\cos2\theta) \quad \text{(最高)} \end{cases} $$
+<p>消去$\theta$得：</p>
+$$ \left(\frac{2g}{v_0^2}x\right)^2 + \left(1 - \frac{4g}{v_0^2}y\right)^2 = 1 $$
+<p>变形得：</p>
+$$ \frac{x^2}{(\frac{v_0^2}{2g})^2} + \frac{(y - \frac{v_0^2}{4g})^2}{(\frac{v_0^2}{4g})^2} = 1 $$
+<p>中心坐标：$(0, \frac{v_0^2}{4g})$， $a = \frac{v_0^2}{2g}$, $b = \frac{v_0^2}{4g}$</p>
 
-<details>
-  <summary>Proof</summary>
-  <div class="solution-content">
-    <p>Integrate $\mathbf{a} = d\mathbf{v}/dt$ from $0$ to $t$:</p>
-    $$\int_0^t \mathbf{a}\,dt' = \mathbf{v}(t) - \mathbf{v}_0 \implies \mathbf{v} = \mathbf{v}_0 + \mathbf{a}\,t.$$
-    <p>Integrate once more: $\mathbf{r} = \mathbf{r}_0 + \int_0^t \mathbf{v}\,dt' = \mathbf{r}_0 + \mathbf{v}_0 t + \frac{1}{2}\mathbf{a}t^2$.</p>
-    <p>Eliminate $t$ between the first two equations: from the first, $t = (v - v_0)/a$. Substituting into the displacement equation (in the direction of motion) gives $v^2 = v_0^2 + 2a\,\Delta x$. $\blacksquare$</p>
-  </div>
-</details>
+<p><strong>包络线方程2：同方向，各向速度：</strong></p>
+$$ \begin{cases} x = \frac{v^2\sin2\theta}{2g} \quad \text{(最远)} \\ y = \frac{v^2}{4g}(1-\cos2\theta) \quad \text{(最高)} \end{cases} $$
+<p>消去$v^2$：</p>
+$$ \frac{y}{x} = \frac{1}{2}\frac{1-\cos2\theta}{\sin2\theta} = \frac{1}{2}\tan\theta $$
 
-<div class="box example">
-  <div class="box-title">Example 1.1 — Free-Fall with Air Resistance Onset</div>
-  <p>A ball is dropped from rest at height $h = 45\,\text{m}$. Ignoring air resistance, find (a) the time to reach the ground, (b) the speed at impact.</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p>(a) Take downward as positive. $h = \frac{1}{2}gt^2 \implies t = \sqrt{2h/g} = \sqrt{2(45)/9.8} \approx 3.03\,\text{s}$.</p>
-      <p>(b) $v = gt = 9.8 \times 3.03 \approx 29.7\,\text{m/s}$.</p>
-    </div>
-  </details>
-</div>
+<p><strong>6) 简谐运动：</strong></p>
+<p><strong>&lt;1&gt; 弹簧振子：</strong></p>
+<img src="images/ch01_spring.png" alt="弹簧振子示意图" style="max-width: 50%; display: block; margin: 1em auto;">
+$$ \vec{F} = -k\vec{x} = m\frac{d^2\vec{x}}{dt^2} $$
+$$ \therefore kx + m\frac{d^2x}{dt^2} = 0 \Rightarrow kx\,dx + m\frac{dx}{dt}d\left(\frac{dx}{dt}\right) = 0 $$
+<p>积分得：</p>
+$$ \frac{1}{2}kx^2 - \frac{1}{2}kA^2 + \frac{1}{2}m\left(\frac{dx}{dt}\right)^2 = 0 $$
+$$ \therefore \frac{dx}{\sqrt{A^2-x^2}} = \sqrt{\frac{k}{m}} dt $$
+<p>令 $x = A\cos\theta$，代入上式得 $\theta = -\sqrt{\frac{k}{m}}t$</p>
+$$ \therefore x = A\cos\left(\sqrt{\frac{k}{m}}t\right) \Rightarrow T = 2\pi\sqrt{\frac{m}{k}} $$
+$$ \begin{cases} v = \frac{dx}{dt} = -A\sqrt{\frac{k}{m}}\sin\left(\sqrt{\frac{k}{m}}t\right) \\ a = \frac{dv}{dt} = -A\frac{k}{m}\cos\left(\sqrt{\frac{k}{m}}t\right) \end{cases} $$
 
-<h2 id="s1-5">1.5 Projectile Motion</h2>
+<p><strong>&lt;2&gt; 单摆：</strong></p>
+<img src="images/ch01_simple_pendulum.png" alt="单摆示意图" style="max-width: 30%; display: block; margin: 1em auto;">
+$$ \vec{F} = -mg\sin\varphi \cdot \hat{x} - mg\cos\varphi \cdot \hat{\tau} = m\frac{d\vec{v}}{dt} $$
+$$ mgl(1-\cos\varphi) = \frac{1}{2}mv^2 + mgl(1-\cos\theta) $$
+$$ \therefore v = \sqrt{2gl(\cos\theta-\cos\varphi)} \approx \sqrt{gl(\varphi^2-\theta^2)} $$
+<p>令 $\theta = \varphi\cos\alpha$，代入上式得 $v = \sqrt{gl}\varphi\sin\alpha$</p>
+$$ \because dv = -\sqrt{gl}\frac{\theta\,d\theta}{\sqrt{\varphi^2-\theta^2}} $$
+<p>或者由 $\frac{d\theta}{dt} = -\frac{v}{l}$：</p>
+$$ dt = \sqrt{\frac{l}{g}}\frac{d\theta}{\sqrt{\varphi^2-\theta^2}} = \sqrt{\frac{l}{g}}\frac{-\varphi\sin\alpha\,d\alpha}{\varphi\sin\alpha} = -\sqrt{\frac{l}{g}} d\alpha $$
+$$ \therefore \alpha = \sqrt{\frac{g}{l}}t \quad \text{(代入前式得)} $$
+$$ \begin{cases} \theta = \varphi\cos\left(\sqrt{\frac{g}{l}}t\right) \Rightarrow T = 2\pi\sqrt{\frac{l}{g}} \\ v = -\varphi\sqrt{gl}\sin\left(\sqrt{\frac{g}{l}}t\right) \\ a = -\varphi g\cos\left(\sqrt{\frac{g}{l}}t\right) \end{cases} $$
 
-<p>Decompose the motion into horizontal (no acceleration) and vertical (acceleration $g$ downward) components.</p>
+<p><strong>&lt;3&gt; 复摆：</strong></p>
+<img src="images/ch01_compound_pendulum.png" alt="复摆示意图" style="max-width: 30%; display: block; margin: 1em auto;">
+$$ M \times (-mgh\theta) = I\frac{d\omega}{dt} $$
+$$ mgh(1-\cos\varphi) = \frac{1}{2}I\omega^2 + mgh(1-\cos\theta) $$
+<p>同理 $T = 2\pi\sqrt{\frac{I}{mgh}}$</p>
 
-<div class="box theorem">
-  <div class="box-title">Theorem 1.2 — Projectile Range and Maximum Height</div>
-  <p>A projectile launched from ground level with speed $v_0$ at angle $\theta$ above the horizontal:</p>
-  $$R = \frac{v_0^2 \sin 2\theta}{g}, \qquad H = \frac{v_0^2 \sin^2\theta}{2g}, \qquad T = \frac{2v_0\sin\theta}{g}.$$
-  <p>The range is maximized at $\theta = 45°$.</p>
-</div>
+<p><strong>7) 圆轮运动：(纯滚)</strong></p>
+<img src="images/ch01_cycloid.png" alt="圆轮运动示意图" style="max-width: 60%; display: block; margin: 1em auto;">
+<p>在梯形 $AB P' P$ 中：$AB = x = P P' - R\sin\varphi = R(\varphi - \sin\varphi)$</p>
+<p>在梯形 $B C O' P'$ 中：$BC = y = P' O' - R\cos\varphi = R(1 - \cos\varphi)$</p>
+<p>曲率半径：$\vec{a} = \frac{d|v|}{dt}\hat{\tau} + \frac{v^2}{\rho}\hat{n}$</p>
+$$ \frac{d|v|}{dt} = \frac{v^2}{R}, \quad \text{而} \quad v_{A}^2 = 2v^2(1-\cos\varphi) $$
+$$ \therefore \rho = \frac{(2v^2(1-\cos\varphi))^{3/2}}{v^2/R \cdot \sin(\varphi/2)} = 4R\sin\frac{\varphi}{2} $$
 
-<details>
-  <summary>Proof</summary>
-  <div class="solution-content">
-    <p>Let $v_{0x} = v_0\cos\theta$, $v_{0y} = v_0\sin\theta$.</p>
-    <p>Flight time: $0 = v_{0y}T - \frac{1}{2}gT^2 \implies T = 2v_{0y}/g$.</p>
-    <p>Range: $R = v_{0x}T = v_0\cos\theta \cdot 2v_0\sin\theta/g = v_0^2\sin 2\theta/g$.</p>
-    <p>Max height: at apex, $v_y = 0 \implies t^* = v_{0y}/g$, so $H = v_{0y}t^* - \frac{1}{2}g(t^*)^2 = v_0^2\sin^2\theta/(2g)$. $\blacksquare$</p>
-  </div>
-</details>
+<p><strong>8) 重力场与磁场结合问题</strong></p>
+<img src="images/ch01_bg_field.png" alt="重力场与磁场示意图" style="max-width: 60%; display: block; margin: 1em auto;">
+<p>质量为$m$，带电量为$+q$的粒子从原点无初速度释放。</p>
+<p>给粒子附加沿x轴正方向和负方向各一个速度$v$，使 $qvB = mg$。</p>
+$$ \therefore v = \frac{mg}{qB}, \quad R = \frac{mv}{qB} = \frac{m^2g}{q^2B^2} $$
+<p>粒子做水平向右匀速直线运动和匀速圆周运动。</p>
+$$ \therefore x = vt - R\sin\omega t, \quad y = R - R\cos\omega t $$
+$$ \because v = \frac{mg}{qB} = \frac{qBR}{m} \therefore \omega = \frac{v}{R} = \frac{qB}{m} $$
+$$ \therefore \begin{cases} x = \frac{mg}{qB}t - R\sin(\frac{qB}{m}t) = \frac{mg}{qB}t - \frac{m^2g}{q^2B^2}\sin(\frac{qB}{m}t) \\ y = R - R\cos(\frac{qB}{m}t) = \frac{m^2g}{q^2B^2} - \frac{m^2g}{q^2B^2}\cos(\frac{qB}{m}t) \end{cases} $$
 
-<div class="box example">
-  <div class="box-title">Example 1.2 — Projectile on an Incline</div>
-  <p>A particle is launched with speed $v_0$ at angle $\alpha$ above an inclined plane of angle $\beta$. Find the range along the incline.</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p>Use tilted coordinates: $x'$ along the incline, $y'$ perpendicular. Then $a_{x'} = -g\sin\beta$ and $a_{y'} = -g\cos\beta$.</p>
-      <p>Setting $y' = 0$: $T = 2v_0\sin\alpha / (g\cos\beta)$.</p>
-      <p>Range along incline: $L = v_0\cos\alpha \cdot T + \frac{1}{2}(-g\sin\beta)T^2$. Substituting:</p>
-      $$L = \frac{2v_0^2\sin\alpha}{g\cos^2\beta}\bigl(\cos\alpha\cos\beta - \sin\alpha\sin\beta\bigr) = \frac{2v_0^2\sin\alpha\cos(\alpha+\beta)}{g\cos^2\beta}.$$
-    </div>
-  </details>
-</div>
+<p><strong>9) 波动</strong></p>
+$$ \begin{cases} \text{横波: 振动方向与传播方向垂直 (固体中传播)} \\ \text{纵波: 振动方向与传播方向相同 (固、液、气中传播)} \end{cases} $$
+$$ y(x,t) = A\cos\left(\omega t - \frac{\omega}{v}x + \varphi\right) $$
+$$ = A\cos(\omega t - kx + \varphi) \quad k \text{: 波数} $$
+$$ = A\cos 2\pi\left(\frac{t}{T} - \frac{x}{\lambda} + \frac{\varphi}{2\pi}\right) $$
+<p>当 $x=x_0$ 时，方程表示该点振动方程：</p>
+$$ y(t) = A\cos\left(\omega t - \frac{\omega}{v}x_0 + \varphi\right) $$
+<p>当 $t=t_0$ 时，方程表示该时刻波形：</p>
+$$ y(x) = A\cos\left(\omega t_0 - \frac{\omega}{v}x + \varphi\right) $$
+<p><strong>&lt;1&gt; 波速：</strong></p>
+$$ \frac{\partial^2 y(x,t)}{\partial t^2} = -\omega^2 A\cos\left(\omega t - \frac{\omega}{v}x + \varphi\right) $$
+$$ \frac{\partial^2 y(x,t)}{\partial x^2} = -\frac{\omega^2}{v^2} A\cos\left(\omega t - \frac{\omega}{v}x + \varphi\right) $$
+$$ \therefore \frac{\partial^2 y}{\partial t^2} = v^2 \frac{\partial^2 y}{\partial x^2} $$
 
-<h2 id="s1-6">1.6 Relative Motion</h2>
+<p><strong>轻质柔软弦的横波方程：</strong></p>
+<img src="images/ch01_string_wave.png" alt="弦的横波示意图" style="max-width: 40%; display: block; margin: 1em auto;">
+$$ \begin{cases} T_2 \sin\alpha_2 - T_1 \sin\alpha_1 = \rho \, ds \frac{\partial^2 y}{\partial t^2} \\ T_2 \cos\alpha_2 - T_1 \cos\alpha_1 = 0 \end{cases} $$
+$$ \because \begin{cases} \cos\alpha_1 \approx \cos\alpha_2 \approx 1 \\ \sin\alpha_1 \approx \tan\alpha_1 = \left.\frac{\partial y}{\partial x}\right|_x, \quad \sin\alpha_2 \approx \tan\alpha_2 = \left.\frac{\partial y}{\partial x}\right|_{x+dx} \end{cases} $$
+$$ \therefore \frac{\partial^2 y}{\partial t^2} = \frac{T}{\rho} \frac{\partial^2 y}{\partial x^2} $$
+$$ \therefore v = \sqrt{\frac{T}{\rho}} $$
 
-<div class="box theorem">
-  <div class="box-title">Theorem 1.3 — Galilean Velocity Transformation</div>
-  <p>If frame $S'$ moves with constant velocity $\mathbf{V}$ relative to frame $S$, then for any particle:</p>
-  $$\mathbf{v}_S = \mathbf{v}_{S'} + \mathbf{V}, \qquad \mathbf{a}_S = \mathbf{a}_{S'}.$$
-</div>
+<p><strong>稀薄气体中的声速：</strong></p>
+<p>气体可以为在传播过程中经历绝热过程， $PV^\gamma = C$</p>
+$$ \therefore V^\gamma dp + \gamma PV^{\gamma-1} dV = 0 \Rightarrow \frac{dp}{dV} = -\gamma \frac{P}{V} $$
+<p>由体变模量定义： $dp = -B \frac{dV}{V} \therefore B = -V \frac{dp}{dV} = \gamma P$</p>
+$$ \therefore v = \sqrt{\frac{B}{\rho}} = \sqrt{\frac{\gamma P}{\rho}} = \sqrt{\frac{\gamma RT}{M}} $$
 
-<div class="box example">
-  <div class="box-title">Example 1.3 — River Crossing</div>
-  <p>A swimmer can swim at speed $v_s$ in still water. A river of width $d$ flows with speed $v_r < v_s$. What heading minimizes the crossing time, and what heading makes the swimmer arrive directly opposite?</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p><strong>Minimum time:</strong> Swim perpendicular to the bank. Time $= d/v_s$, but the swimmer is swept downstream by $v_r d/v_s$.</p>
-      <p><strong>Straight across:</strong> Aim upstream at angle $\theta$ with $v_s\sin\theta = v_r$, i.e. $\theta = \arcsin(v_r/v_s)$. The perpendicular component is $v_s\cos\theta = \sqrt{v_s^2 - v_r^2}$, so $t = d/\sqrt{v_s^2 - v_r^2}$.</p>
-    </div>
-  </details>
-</div>
+<p><strong>&lt;2&gt; 波的能量和能流：</strong></p>
+$$ \begin{cases} \text{动能：} dE_k = \frac{1}{2} dm \cdot v^2 = \frac{1}{2} \rho \, dV \left(\frac{\partial y}{\partial t}\right)^2 = \frac{1}{2} \rho \, dV \, \omega^2 A^2 \sin^2\left(\omega t - \frac{\omega}{v}x\right) \\ \text{势能：} \frac{F}{S} = Y \frac{dy}{dx} \Rightarrow F = \frac{YS}{dx} dy = k \, dy \end{cases} $$
+$$ dE_p = \frac{1}{2}k(dy)^2 = \frac{1}{2}\frac{YS}{dx}(dy)^2 = \frac{1}{2}\left(\frac{\partial y}{\partial x}\right)^2(S \, dx) \cdot Y = \frac{1}{2}\left(\frac{\partial y}{\partial x}\right)^2 \cdot Y \, dV $$
+$$ = \frac{1}{2} \rho \, dV \, \omega^2 A^2 \sin^2\left(\omega t - \frac{\omega}{v}x\right) $$
+$$ \therefore dE = dE_k + dE_p = \rho \, dV \, \omega^2 A^2 \sin^2\left(\omega t - \frac{\omega}{v}x\right) $$
+<p>对于平面简谐波：</p>
+<p>能量密度 $\varepsilon = \frac{dE}{dV} = \rho \, \omega^2 A^2 \sin^2(\omega t - \frac{\omega}{v}x)$</p>
+<p>能流密度 $\vec{I} = \varepsilon \vec{v}$ ， $\bar{I} = \bar{\varepsilon}v = \frac{1}{2} \rho A^2 \omega^2 v$</p>
+<p>对于球面波：</p>
+$$ \bar{I}_1 4\pi r_1^2 = \bar{I}_2 4\pi r_2^2 \therefore \frac{\bar{I}_1}{\bar{I}_2} = \frac{r_2^2}{r_1^2} = \frac{A_1^2}{A_2^2} \therefore y = \frac{A_0 r_0}{r}\cos(\omega t - kr) $$
 
-<h2 id="s1-7">1.7 Curvilinear Coordinates</h2>
+<p><strong>&lt;3&gt; 波的干涉：</strong></p>
+$$ y_1(x,t) = A_1\cos\left(\omega t - \frac{\omega}{v}x_1 + \varphi_1\right) $$
+$$ y_2(x,t) = A_2\cos\left(\omega t - \frac{\omega}{v}x_2 + \varphi_2\right) $$
+<p>在某点P，两列波的合成仍为简谐运动，有</p>
+$$ y(t) = y_1(x_1, t) + y_2(x_2, t) = A\cos(\omega t + \varphi) $$
+<img src="images/ch01_wave_interference.png" alt="波的干涉矢量图" style="max-width: 40%; display: block; margin: 1em auto;">
+$$ \Delta \varphi = (\varphi_1 - \varphi_2) - \frac{2\pi}{\lambda}(x_1 - x_2) $$
+$$ A = \sqrt{A_1^2 + A_2^2 + 2A_1 A_2 \cos\Delta\varphi} $$
+<p>当 $\Delta\varphi = 2k\pi$ 时，干涉相长， $A = A_1 + A_2$</p>
+<p>当 $\Delta\varphi = (2k+1)\pi$ 时，干涉相消， $A = |A_1 - A_2|$</p>
 
-<p>In polar coordinates $(r,\theta)$ the position, velocity, and acceleration are:</p>
+<p><strong>&lt;4&gt; 驻波：实质为波的干涉</strong></p>
+<p>左行波 $y_1(x,t) = A\cos\left(\omega t + \frac{2\pi}{\lambda}x\right)$</p>
+<p>右行波 $y_2(x,t) = A\cos\left(\omega t - \frac{2\pi}{\lambda}x\right)$</p>
+$$ \therefore y(x,t) = y_1(x,t) + y_2(x,t) = 2A\cos\left(\frac{2\pi}{\lambda}x\right) \cos\omega t $$
+$$ \begin{cases} \text{当 } \frac{2\pi}{\lambda}x = k\pi \text{，即 } x = k\frac{\lambda}{2} \text{ 时，振幅取得最大，为波腹} \\ \text{当 } \frac{2\pi}{\lambda}x = (2k+1)\frac{\pi}{2} \text{，即 } x = (2k+1)\frac{\lambda}{4} \text{ 时，振幅为零，为波节} \end{cases} $$
+$$ \begin{cases} \text{绳波中两个端点必处是驻波节点，故绳长 } L = k\cdot\frac{\lambda}{2} \\ \text{核外电子绕原子核的运动为物质波，轨道周长满足 } 2\pi R = k\lambda \end{cases} $$
 
-$$\mathbf{r} = r\,\hat{\mathbf{r}}$$
-$$\mathbf{v} = \dot{r}\,\hat{\mathbf{r}} + r\dot{\theta}\,\hat{\boldsymbol{\theta}}$$
-$$\mathbf{a} = (\ddot{r} - r\dot{\theta}^2)\,\hat{\mathbf{r}} + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\,\hat{\boldsymbol{\theta}}$$
+<p><strong>④ 质点动力学：</strong></p>
+<p>瞬时效应：$\vec{F} = m\vec{a} = m\frac{d\vec{v}}{dt}$</p>
+<p>时间积累：$\vec{F} dt = m d\vec{v} \Rightarrow \int_{t_1}^{t_2} \vec{F} dt = m(\vec{v}_2 - \vec{v}_1)$</p>
+<p>空间积累：$\vec{F} \cdot d\vec{s} = m\vec{v} \cdot d\vec{v} \Rightarrow \int_{s_1}^{s_2} \vec{F} \cdot d\vec{s} = \frac{1}{2}m(v_2^2 - v_1^2)$</p>
+$$ P = \frac{dW}{dt} = \vec{F} \cdot \vec{v} $$
 
-<p>The term $r\dot{\theta}^2$ is the centripetal acceleration; $2\dot{r}\dot{\theta}$ is the Coriolis-like cross term that appears when $r$ is changing.</p>
+<p><strong>⑤ 刚体动力学：</strong></p>
+$$ \vec{M} = \vec{r} \times \vec{F} $$
+<p>瞬时效应：$M = I\beta = I\frac{d\omega}{dt}$  （$I = \int r^2 dm$，$r$ 为 $dm$ 到转轴的距离）</p>
+<p>时间积累：$M dt = I d\omega \Rightarrow \int_{t_1}^{t_2} M dt = I(\omega_2 - \omega_1)$</p>
+<p>空间积累：$M d\theta = I\omega d\omega \Rightarrow \int_{\theta_1}^{\theta_2} M d\theta = \frac{1}{2}I(\omega_2^2 - \omega_1^2)$</p>
+$$ P = \frac{dW}{dt} = \vec{M} \cdot \vec{\omega} $$
 
-<div class="box definition">
-  <div class="box-title">Definition 1.4 — Tangential and Normal Components</div>
-  <p>For motion along a curve, the acceleration decomposes as:</p>
-  $$\mathbf{a} = \frac{dv}{dt}\,\hat{\mathbf{t}} + \frac{v^2}{\rho}\,\hat{\mathbf{n}}$$
-  <p>where $\hat{\mathbf{t}}$ is the unit tangent, $\hat{\mathbf{n}}$ the unit normal pointing toward the center of curvature, and $\rho$ is the radius of curvature.</p>
-</div>
+<p><strong>1) 转动惯量平行轴定理：</strong> $I = I_c + md^2$</p>
+<img src="images/ch01_parallel_axis.png" alt="平行轴定理" style="max-width: 40%; display: block; margin: 1em auto;">
+<p>（$I_c$：刚体对过质心转轴的转动惯量，$I$：刚体对于过质心转轴相距 $l$ 的另一条平行转轴的转动惯量）</p>
+$$ I = \int r^2 dm = \int (\vec{r}_c - \vec{l})^2 dm = I_c + ml^2 - 2\vec{l}\cdot\int \vec{r}_c dm = I_c + ml^2 $$
 
-<h2 id="s1-8">1.8 Exercises</h2>
+<p><strong>2) 转动惯量垂直轴定理：</strong> $I_z = I_x + I_y$</p>
+<img src="images/ch01_perpendicular_axis.png" alt="垂直轴定理" style="max-width: 30%; display: block; margin: 1em auto;">
+$$ I_z = \int r^2 dm = \int (x^2 + y^2) dm = \int x^2 dm + \int y^2 dm = I_x + I_y $$
 
-<div class="box exercise">
-  <div class="box-title">Exercise 1.1</div>
-  <p>A particle moves along the $x$-axis with velocity $v(t) = v_0(1 - t/\tau)$ for $0 \leq t \leq 2\tau$. Find (a) the displacement over $[0, 2\tau]$, (b) the total distance traveled.</p>
-</div>
+<p><strong>3) 典型几何体转动惯量：</strong></p>
+<p><strong>&lt;1&gt; 圆环</strong></p>
+<img src="images/ch01_ring.png" alt="圆环转动惯量" style="max-width: 20%; display: block; margin: 1em auto;">
+$$ I_1 = \int r^2 dm = mR^2 $$
+<p><strong>&lt;2&gt; 圆盘</strong></p>
+<img src="images/ch01_disk.png" alt="圆盘转动惯量" style="max-width: 20%; display: block; margin: 1em auto;">
+$$ I_2 = \int_0^R r^2 \frac{2\pi r dr}{\pi R^2} m = \frac{2m}{R^2}\int_0^R r^3 dr = \frac{1}{2}mR^2 $$
+<p><strong>&lt;3&gt; 圆筒</strong></p>
+<img src="images/ch01_cylindrical_shell.png" alt="圆筒转动惯量" style="max-width: 40%; display: block; margin: 1em auto;">
+$$ I_3 = \int_{r_1}^{r_2} r^2 \frac{2\pi r dr}{\pi(r_2^2-r_1^2)} m = \frac{2m}{r_2^2-r_1^2} \int_{r_1}^{r_2} r^3 dr = \frac{1}{2}m(r_1^2+r_2^2) $$
+<p><strong>&lt;4&gt; 细杆</strong></p>
+<img src="images/ch01_rod.png" alt="细杆转动惯量" style="max-width: 40%; display: block; margin: 1em auto;">
+<p>① 绕中心轴：</p>
+$$ I_1 = \int_{-L/2}^{L/2} r^2 \frac{m}{L} dr = \frac{1}{12}mL^2 $$
+<p>② 绕端点轴：</p>
+$$ I_2 = I_1 + m\left(\frac{L}{2}\right)^2 = \frac{1}{3}mL^2 $$
 
-<div class="box exercise">
-  <div class="box-title">Exercise 1.2</div>
-  <p>A ball is thrown from the top of a building of height $H$ with horizontal speed $v_0$. At the same instant, a second ball is thrown from the ground directly below with speed $u$ at angle $\theta$ above the horizontal. Find the condition on $u$ and $\theta$ for the balls to collide in mid-air.</p>
-</div>
+<p><strong>&lt;5&gt; 圆柱体</strong></p>
+<img src="images/ch01_thick_rod.png" alt="圆柱体转动惯量" style="max-width: 40%; display: block; margin: 1em auto;">
+$$ I_1 = \int_0^R r^2 \frac{2\pi r dr \cdot l}{\pi R^2 l} m = \frac{1}{2}mR^2 $$
+$$ I_2 = \int \left[ \frac{dm \cdot l^2}{12} + dm(R\sin\theta)^2 \right] = \frac{1}{12}ml^2 + 2\int_0^{\pi/2} \frac{(R\cos\theta)(R d\theta\cos\theta)}{\pi R^2} m (R\sin\theta)^2 $$
+$$ = \frac{1}{12}ml^2 + \frac{4mR^2}{\pi} \int_0^{\pi/2} \cos^2\theta \sin^2\theta d\theta $$
+$$ = \frac{1}{12}ml^2 + \frac{1}{4}mR^2 $$
+<p><strong>&lt;6&gt; 球体与球壳</strong></p>
+<img src="images/ch01_sphere.png" alt="球体和球壳转动惯量" style="max-width: 30%; display: block; margin: 1em auto;">
+<p>① 实心球：</p>
+$$ I_1 = \int_0^{\pi/2} \frac{(\pi R^2\cos^2\theta)(R d\theta\cos\theta)}{\frac{4}{3}\pi R^3} m (R\sin\theta)^2 = 3mR^2 \int_0^{\pi/2} \cos^3\theta \sin^2\theta d\theta = \frac{2}{5}mR^2 $$
+<p>② 球壳：</p>
+$$ I_2 = 2\int_0^{\pi/2} \frac{2\pi R\cos\theta \cdot R d\theta}{4\pi R^2} m (R\sin\theta)^2 = mR^2 \int_0^{\pi/2} \sin^2\theta \cos\theta d\theta = \frac{2}{3}mR^2 $$
 
-<div class="box exercise">
-  <div class="box-title">Exercise 1.3</div>
-  <p>Two particles start simultaneously from the same point. Particle A moves with constant speed $v_A$ along a straight line. Particle B always moves directly toward A with constant speed $v_B > v_A$. Find the time at which B catches A.</p>
-</div>
+<p><strong>⑥ 碰撞：</strong></p>
+<p><strong>1) 正碰：</strong></p>
+$$ \begin{cases} m_1v_1 + m_2v_2 = m_1v_1' + m_2v_2' \\ v_2' - v_1' = e(v_1 - v_2) \end{cases} $$
+$$ \begin{cases} e = 1 \text{ 完全弹性体} \\ e \in (0, 1) \text{ 一般非弹性体} \\ e = 0 \text{ 完全非弹性体} \end{cases} $$
+<p>解得：</p>
+$$ v_1' = \frac{m_1v_1+m_2v_2}{m_1+m_2} - \frac{m_2}{m_1+m_2}e(v_1-v_2) $$
+$$ v_2' = \frac{m_1v_1+m_2v_2}{m_1+m_2} + \frac{m_1}{m_1+m_2}e(v_1-v_2) $$
+<p>第一项为质心速度：$\frac{m_1v_1+m_2v_2}{m_1+m_2}$，由于动量守恒，这一项不变。</p>
+<p>第二项为相对质心的运动速度，能量在质心系中两二体作用而损耗。</p>
+<p>损失的能量：</p>
+$$ \Delta E = \frac{1}{2}m_1v_1^2 + \frac{1}{2}m_2v_2^2 - \frac{1}{2}m_1v_1'^2 - \frac{1}{2}m_2v_2'^2 $$
+$$ = \frac{1}{2}\frac{m_1m_2}{m_1+m_2}(v_1-v_2)^2 - \frac{1}{2}\frac{m_1m_2}{m_1+m_2}(v_1'-v_2')^2 $$
+$$ = \frac{1}{2}(1-e^2)\frac{m_1m_2}{m_1+m_2}(v_1-v_2)^2 $$
 
-<div class="box exercise">
-  <div class="box-title">Exercise 1.4</div>
-  <p>A projectile is launched at speed $v_0$ at angle $\theta$ on a planet where gravitational acceleration decreases linearly with altitude: $g(h) = g_0(1 - h/R)$, where $R \gg H_{\max}$. Find the first-order correction to the range.</p>
-</div>
+<p><strong>2) 斜碰：</strong></p>
+<img src="images/ch01_oblique_collision.png" alt="斜碰示意图" style="max-width: 30%; display: block; margin: 1em auto;">
+$$ v_{2x}' - v_{1x}' = e(v_1\cos\theta_1 - v_2\cos\theta_2) $$
+$$ m_1v_1\cos\theta_1 + m_2v_2\cos\theta_2 = m_1v_{1x}' + m_2v_{2x}' $$
+$$ -m_1v_1\cos\theta_1 + m_1v_{1x}' = N \Delta t_1 $$
+$$ -m_1v_1\sin\theta_1 + m_1v_{1y}' = \mu N \Delta t_1 $$
+$$ m_1v_1\sin\theta_1 + m_2v_2\sin\theta_2 = m_1v_{1y}' + m_2v_{2y}' $$
 
-<div class="box exercise">
-  <div class="box-title">Exercise 1.5</div>
-  <p>A boat crosses a river of width $d$ in which the current velocity varies as $v(y) = v_0 \sin(\pi y / d)$ where $y$ is the distance from one bank. If the boat has speed $u$ relative to the water, find the heading angle $\alpha(y)$ as a function of position such that the boat arrives directly opposite, and compute the crossing time.</p>
-</div>
+<p><strong>⑦ 万有引力：</strong></p>
+<p><strong>1) 万有引力作用下质点的运动轨迹：</strong></p>
+<img src="images/ch01_orbit_coord.png" alt="万有引力轨道极坐标" style="max-width: 60%; display: block; margin: 1em auto;">
+<p>由上图， $\frac{y}{x} = \tan\alpha$， $\frac{dy}{dx} = \tan[\pi-(\theta-\alpha)] = \tan(\alpha-\theta) = \frac{\tan\alpha-\tan\theta}{1+\tan\alpha\tan\theta}$ &lt;1&gt;</p>
+<p>由于万有引力是保守力：$E = \frac{1}{2}mv^2 - \frac{GmM}{r}$ 为常量。</p>
+<p>由于万有引力是有心力：$L = mvr\sin\theta$ 为常量。</p>
+$$ \therefore E = \frac{1}{2}m\frac{L^2}{m^2r^2\sin^2\theta} - \frac{GmM}{r} = \frac{L^2(1+\tan^2\theta)}{2mr^2\tan^2\theta} - \frac{GmM}{r} = \frac{L^2}{2mr^2\tan^2\theta} + \frac{L^2}{2mr^2} - \frac{GmM}{r} $$
+<p>解得：</p>
+$$ \tan^2\theta = \frac{L^2}{2mr^2} / \left(E + \frac{GmM}{r} - \frac{L^2}{2mr^2}\right) = \frac{L^2}{2mr^2E + 2GmMm^2r - L^2} $$
+$$ \therefore \tan\theta = \frac{L}{\sqrt{2mE\left[\left(r+\frac{GmM}{2E}\right)^2 - \left(\frac{GmM}{2E}\right)^2 + \frac{L^2}{2mE}\right]}} \quad \text{&lt;2&gt;} $$
+<p>由 $y = r\sin\alpha$, $x = r\cos\alpha$， &lt;1&gt;式变为：</p>
+$$ \frac{\sin\alpha \, dr + r\cos\alpha \, d\alpha}{\cos\alpha \, dr - r\sin\alpha \, d\alpha} = \frac{\tan\alpha - \tan\theta}{1 + \tan\alpha\tan\theta} = -\frac{1}{\tan\theta} + \frac{\frac{1}{\tan\alpha}+\tan\alpha}{1+\tan\alpha\tan\theta} $$
+<p>分离变量得：</p>
+$$ \frac{dr}{r\tan\theta} = -d\alpha $$
+<p>将&lt;2&gt;代入得：</p>
+$$ \frac{L \, dr}{r\sqrt{2mE\left[\left(r+\frac{GmM}{2E}\right)^2 - \left(\frac{GmM}{2E}\right)^2 + \frac{L^2}{2mE}\right]}} = -d\alpha \quad \text{&lt;3&gt;} $$
+<p>令 $u = \frac{1}{r}$，得：</p>
+$$ \frac{L\left(-\frac{du}{u^2}\right)}{\frac{1}{u}\sqrt{2mE\left[\left(\frac{1}{u}+\frac{GmM}{2E}\right)^2 - \left(\frac{GmM}{2E}\right)^2 + \frac{L^2}{2mE}\right]}} = -d\alpha $$
+<p>化简得：</p>
+$$ \frac{du}{\sqrt{\frac{2mE}{L^2} + \left(\frac{GmM}{L^2}\right)^2 - \left(u - \frac{GmM}{L^2}\right)^2}} = d\alpha \quad \text{&lt;4&gt;} $$
+<p>令 $u - \frac{GmM}{L^2} = \sqrt{\frac{2mE}{L^2} + \left(\frac{GmM}{L^2}\right)^2} \cos\beta$，得 $d\beta = -d\alpha$。</p>
+$$ \therefore u - \frac{GmM}{L^2} = \sqrt{\frac{2mE}{L^2} + \left(\frac{GmM}{L^2}\right)^2} \cos\alpha $$
+<p>将 $u = \frac{1}{\sqrt{x^2+y^2}}$ 和 $\cos\alpha = \frac{x}{\sqrt{x^2+y^2}}$ 代入上式，得：</p>
+$$ \frac{1}{\sqrt{x^2+y^2}} = \frac{GmM}{L^2} + \frac{\sqrt{2mEL^2 + (GmM)^2}}{L^2} \frac{x}{\sqrt{x^2+y^2}} \quad \text{&lt;5&gt;} $$
+<p>整理得：</p>
+$$ \frac{y^2}{-\frac{L^2}{2mE}} + \frac{\left(x - \frac{\sqrt{(GmM)^2+2mEL^2}}{2mE}\right)^2}{\left(\frac{GmM}{2E}\right)^2} = 1 \quad \text{&lt;6&gt;} $$
 
-<nav class="chapter-nav">
-  <span></span>
-  <a href="ch02.html">Newton's Laws &amp; Dynamics →</a>
-</nav>
+<p><strong>1. 若 $E = 0$：</strong></p>
+<p>对于&lt;5&gt;式有：</p>
+$$ \frac{1}{\sqrt{x^2+y^2}} = \frac{GmM}{L^2} + \frac{GmM}{L^2}\frac{x}{\sqrt{x^2+y^2}} $$
+<p>化简得：</p>
+$$ 1 - \frac{2GmM}{L^2}x = \left(\frac{GmM}{L^2}\right)^2 y^2 $$
+<p>此为抛物线方程。&lt;7&gt;</p>
+
+<p><strong>2. 若 $E > 0$：</strong></p>
+<p>对于&lt;6&gt;式有 $-\frac{L^2}{2mE} < 0$，</p>
+$$ \therefore \frac{\left(x-\frac{\sqrt{(GmM)^2+2mEL^2}}{2mE}\right)^2}{\left(\frac{GmM}{2E}\right)^2} - \frac{y^2}{\left(\sqrt{\frac{L^2}{2mE}}\right)^2} = 1 $$
+<p>此为双曲线。&lt;8&gt;</p>
+
+<p><strong>3. 若 $E < 0$：</strong></p>
+<p>对于&lt;6&gt;式有 $-\frac{L^2}{2mE} > 0$，</p>
+$$ \therefore \frac{\left(x-\frac{\sqrt{(GmM)^2+2mEL^2}}{2mE}\right)^2}{\left(\frac{GmM}{2E}\right)^2} + \frac{y^2}{\left(\sqrt{-\frac{L^2}{2mE}}\right)^2} = 1 $$
+<p>此为椭圆。&lt;9&gt;</p>
+
+<p>$\Delta$ 当 $(GmM)^2 + 2mEL^2 = 0$，即 $E = -\frac{(GmM)^2}{2mL^2} = -\frac{G^2mM^2}{2L^2}$ 时，</p>
+<p>&lt;9&gt;式变为 $x^2 + y^2 = \left(-\frac{GmM}{2E}\right)^2$，此为圆方程。</p>
+<p>$\Delta$ 当 $E < -\frac{GmM^2G}{2L^2}$ 时，此情况不存在（$\Delta < 0$）。</p>
 
 </main>
 </body>
