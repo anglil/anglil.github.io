@@ -18,8 +18,8 @@ title: Notes – Angli Liu
     <h1>Notes</h1>
 
     <ul class="notes-list">
-      <li><a href="/notes/physics_highschool_1.pdf" target="_blank">physics_highschool_1</a> (<a href="/olympiad-physics/" target="_blank">Olympiad Physics</a>)</li>
-      <li><a href="/notes/physics_highschool_2.pdf" target="_blank">physics_highschool_2</a> (<a href="/olympiad-physics/" target="_blank">Olympiad Physics</a>)</li>
+      <li><a href="/notes/physics_highschool_1.pdf" target="_blank">physics_highschool_1</a> (<a href="/olympiad-physics/index.html" target="_blank">Olympiad Physics</a>)</li>
+      <li><a href="/notes/physics_highschool_2.pdf" target="_blank">physics_highschool_2</a> (<a href="/olympiad-physics/index.html" target="_blank">Olympiad Physics</a>)</li>
       <li><a href="/notes/digital electronics.pdf" target="_blank">digital electronics</a></li>
       <li><a href="/notes/thermodynamics.pdf" target="_blank">thermodynamics</a></li>
       <li><a href="/notes/quantum mechanics.pdf" target="_blank">quantum mechanics</a></li>
