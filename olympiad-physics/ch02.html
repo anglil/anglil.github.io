@@ -1,191 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Chapter 2: Newton's Laws — Olympiad Physics</title>
-  <link rel="stylesheet" href="style.css">
-  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Special Relativity - Olympiad Physics</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
-<aside id="sidebar">
-  <div class="book-title">Olympiad Physics<span>Angli Liu</span></div>
-  <nav><ul>
-    <li><a href="index.html">Table of Contents</a></li>
-    <li><div class="part-label">Part I — Mechanics</div></li>
-    <li><a href="ch01.html">1. Kinematics</a></li>
-    <li><a href="ch02.html" class="active">2. Newton's Laws</a></li>
-    <li><a href="ch03.html">3. Energy &amp; Work</a></li>
-    <li><a href="ch04.html">4. Momentum</a></li>
-    <li><a href="ch05.html">5. Rotational Motion</a></li>
-    <li><a href="ch06.html">6. Fluid Mechanics</a></li>
-    <li><a href="ch07.html">7. Oscillations &amp; Waves</a></li>
-    <li><div class="part-label">Part II — Thermal, EM, Optics</div></li>
-    <li><a href="ch08.html">8. Thermodynamics</a></li>
-    <li><a href="ch09.html">9. Electrostatics</a></li>
-    <li><a href="ch10.html">10. DC Circuits</a></li>
-    <li><a href="ch11.html">11. Magnetism</a></li>
-    <li><a href="ch12.html">12. Optics</a></li>
-    <li><a href="ch13.html">13. Relativity</a></li>
-  </ul></nav>
-</aside>
-<main id="content">
-
-<h1><span class="chapter-num">Chapter 2</span>Newton's Laws and Dynamics</h1>
-
-<p>This chapter presents the three laws of motion, the concept of force, and systematic methods for solving dynamics problems including free-body diagrams, constraint equations, and non-inertial reference frames.</p>
-
-<h2 id="s2-1">2.1 Newton's Three Laws</h2>
-
-<div class="box theorem">
-  <div class="box-title">Newton's First Law (Law of Inertia)</div>
-  <p>In an inertial reference frame, a body remains at rest or in uniform rectilinear motion unless acted upon by a net external force.</p>
-</div>
-
-<div class="box theorem">
-  <div class="box-title">Newton's Second Law</div>
-  <p>In an inertial frame, the net force on a particle equals the rate of change of its momentum:</p>
-  $$\mathbf{F}_{\text{net}} = \frac{d\mathbf{p}}{dt} = \frac{d(m\mathbf{v})}{dt}.$$
-  <p>For constant mass: $\mathbf{F}_{\text{net}} = m\mathbf{a}$.</p>
-</div>
-
-<div class="box theorem">
-  <div class="box-title">Newton's Third Law</div>
-  <p>If body A exerts a force $\mathbf{F}_{AB}$ on body B, then B exerts a force $\mathbf{F}_{BA} = -\mathbf{F}_{AB}$ on A. The forces are equal in magnitude, opposite in direction, and act on <em>different</em> bodies.</p>
-</div>
-
-<h2 id="s2-2">2.2 Common Forces</h2>
-
-<p><strong>Gravity</strong> near Earth's surface: $\mathbf{W} = -mg\,\hat{\mathbf{j}}$.</p>
-<p><strong>Normal force</strong> $\mathbf{N}$: perpendicular to the contact surface, adjusts to prevent interpenetration.</p>
-<p><strong>Friction:</strong> Static friction $f_s \leq \mu_s N$; kinetic friction $f_k = \mu_k N$, opposing the direction of sliding.</p>
-<p><strong>Tension</strong> $T$: along an ideal (massless, inextensible) string, equal on both sides when passing over a frictionless pulley.</p>
-<p><strong>Spring force:</strong> $F = -kx$ (Hooke's law), where $x$ is the extension from natural length.</p>
-
-<h2 id="s2-3">2.3 Free-Body Diagrams and Problem-Solving Strategy</h2>
-
-<ol>
-  <li>Identify the system (the object or set of objects).</li>
-  <li>Draw all external forces on the system.</li>
-  <li>Choose a coordinate system (often aligned with the acceleration).</li>
-  <li>Write $\sum F_x = ma_x$ and $\sum F_y = ma_y$.</li>
-  <li>Add constraint equations (e.g., string length, rolling without slipping).</li>
-  <li>Solve the resulting system of equations.</li>
-</ol>
-
-<div class="box example">
-  <div class="box-title">Example 2.1 — Atwood Machine</div>
-  <p>Two masses $m_1 > m_2$ hang from an ideal string over an ideal pulley. Find the acceleration and tension.</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p>Let $a$ be the acceleration (downward for $m_1$, upward for $m_2$). For $m_1$: $m_1 g - T = m_1 a$. For $m_2$: $T - m_2 g = m_2 a$.</p>
-      <p>Adding: $(m_1 - m_2)g = (m_1 + m_2)a$, so</p>
-      $$a = \frac{(m_1 - m_2)g}{m_1 + m_2}, \qquad T = \frac{2m_1 m_2 g}{m_1 + m_2}.$$
-    </div>
-  </details>
-</div>
-
-<h2 id="s2-4">2.4 Inclined Planes and Friction</h2>
-
-<div class="box example">
-  <div class="box-title">Example 2.2 — Block on a Rough Incline</div>
-  <p>A block of mass $m$ sits on a plane inclined at angle $\theta$ with coefficient of static friction $\mu_s$. Find the critical angle for sliding.</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p>Along the plane: $mg\sin\theta = f_s$. Perpendicular: $N = mg\cos\theta$. Sliding begins when $f_s = \mu_s N$:</p>
-      $$mg\sin\theta_c = \mu_s mg\cos\theta_c \implies \tan\theta_c = \mu_s.$$
-    </div>
-  </details>
-</div>
-
-<h2 id="s2-5">2.5 Constraint Equations</h2>
-
-<p>When objects are connected by strings or rods, their accelerations are not independent. The constraint that string length is constant provides additional equations.</p>
-
-<div class="box example">
-  <div class="box-title">Example 2.3 — Double Atwood Machine</div>
-  <p>Mass $m_1$ hangs on one side of a pulley; on the other side hangs a second pulley with masses $m_2$ and $m_3$. Find the accelerations of all three masses.</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p>Let $a_1$ be the acceleration of $m_1$ (downward positive) and $a'$ the acceleration of $m_2$ relative to the lower pulley (downward positive for $m_2$). Then $a_2 = -a_1 + a'$ and $a_3 = -a_1 - a'$.</p>
-      <p>Equations: $m_1g - T_1 = m_1 a_1$, $T_1 = 2T_2$ (massless lower pulley), $m_2 g - T_2 = m_2 a_2$, $m_3 g - T_2 = m_3 a_3$.</p>
-      <p>Solving this system yields:</p>
-      $$a_1 = g\,\frac{4m_2 m_3 - m_1(m_2+m_3)}{4m_2 m_3 + m_1(m_2+m_3)}.$$
-    </div>
-  </details>
-</div>
-
-<h2 id="s2-6">2.6 Non-Inertial Frames and Pseudo-Forces</h2>
-
-<div class="box theorem">
-  <div class="box-title">Theorem 2.1 — Pseudo-Force in an Accelerating Frame</div>
-  <p>In a frame accelerating with $\mathbf{A}$ relative to an inertial frame, Newton's second law becomes:</p>
-  $$m\mathbf{a}' = \mathbf{F}_{\text{real}} - m\mathbf{A}$$
-  <p>where $\mathbf{a}'$ is the acceleration measured in the non-inertial frame. The term $-m\mathbf{A}$ is the <em>pseudo-force</em> (or inertial force).</p>
-</div>
-
-<div class="box example">
-  <div class="box-title">Example 2.4 — Pendulum in an Accelerating Train</div>
-  <p>A pendulum hangs in a train accelerating at $a$ horizontally. Find the equilibrium angle.</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p>In the train's frame, the pseudo-force is $ma$ backward. The effective gravity is $\mathbf{g}_{\text{eff}} = (-a, -g)$. The pendulum aligns with $\mathbf{g}_{\text{eff}}$, making angle $\theta = \arctan(a/g)$ with the vertical.</p>
-    </div>
-  </details>
-</div>
-
-<h2 id="s2-7">2.7 Circular Motion</h2>
-
-<div class="box theorem">
-  <div class="box-title">Theorem 2.2 — Centripetal Acceleration</div>
-  <p>A particle moving at speed $v$ along a circular path of radius $R$ has centripetal acceleration</p>
-  $$a_c = \frac{v^2}{R} = \omega^2 R$$
-  <p>directed toward the center. The net radial force must supply this: $F_{\text{net, radial}} = mv^2/R$.</p>
-</div>
-
-<div class="box example">
-  <div class="box-title">Example 2.5 — Conical Pendulum</div>
-  <p>A mass $m$ moves in a horizontal circle at the end of a string of length $\ell$ making angle $\theta$ with the vertical. Find the period.</p>
-  <details>
-    <summary>Solution</summary>
-    <div class="solution-content">
-      <p>Vertical: $T\cos\theta = mg$. Radial: $T\sin\theta = m\omega^2 \ell\sin\theta$.</p>
-      <p>Dividing: $\omega^2 = g/(\ell\cos\theta)$, so $\displaystyle \tau = 2\pi\sqrt{\frac{\ell\cos\theta}{g}}$.</p>
-    </div>
-  </details>
-</div>
-
-<h2 id="s2-8">2.8 Exercises</h2>
-
-<div class="box exercise">
-  <div class="box-title">Exercise 2.1</div>
-  <p>Three blocks of masses $m_1$, $m_2$, $m_3$ are connected by strings on a frictionless horizontal surface and pulled by a force $F$ applied to $m_1$. Find the tension in each string.</p>
-</div>
-
-<div class="box exercise">
-  <div class="box-title">Exercise 2.2</div>
-  <p>A wedge of mass $M$ and angle $\alpha$ rests on a frictionless floor. A block of mass $m$ slides frictionlessly down the wedge. Find the acceleration of the wedge.</p>
-</div>
-
-<div class="box exercise">
-  <div class="box-title">Exercise 2.3</div>
-  <p>A bead slides on a frictionless wire shaped as a parabola $y = x^2/(2R)$. Find the normal force at the vertex as a function of the bead's speed.</p>
-</div>
-
-<div class="box exercise">
-  <div class="box-title">Exercise 2.4</div>
-  <p>A car rounds a banked curve of radius $R$ at angle $\theta$ with the horizontal. The coefficient of static friction is $\mu_s$. Find the maximum and minimum speeds for the car not to slip.</p>
-</div>
-
-<nav class="chapter-nav">
-  <a href="ch01.html">← Kinematics</a>
-  <a href="ch03.html">Energy &amp; Work →</a>
+<nav class="sidebar">
+    <h2>Contents</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ch01.html">Chapter 1: Newtonian Mechanics</a></li>
+        <li><a href="ch02.html">Chapter 2: Special Relativity</a></li>
+    </ul>
 </nav>
+<main class="content">
+    <h1>2. Special Relativity</h1>
+
+    <h2>1. Galilean Transformation</h2>
+    <p><strong>①</strong></p>
+    $$ \begin{cases} x = x' + vt' \\ y = y' \\ z = z' \\ t = t' \end{cases} $$
+
+    <p><strong>②</strong></p>
+    $$ \vec{r} = \vec{r}' + \vec{r}_{origin} \quad \text{Absolute = Relative + Entrainment} $$
+    $$ \therefore \vec{v} = \vec{v}' + \vec{v}_{entrainment} $$
+    $$ \therefore \vec{a} = \vec{a}' + 0 \quad (\because m = m', \therefore \vec{F} = \vec{F}') $$
+    <p>Translational inertial force: $\vec{F}_{inertial} = -m\vec{a}$</p>
+    <p>Rotational inertial force (Centrifugal force): $\vec{F}_{centrifugal} = -m\vec{\omega} \times (\vec{\omega} \times \vec{r}')$</p>
+    <p>Coriolis force: $\vec{F}_{coriolis} = -2m\vec{\omega} \times \vec{v}'$</p>
+
+    <p><strong>③ Doppler Effect:</strong></p>
+    <p>1) Observer moving at speed $v_R$:</p>
+    $$ \nu_R = \frac{v+v_R}{\lambda} = \frac{v+v_R}{v/\nu} = \frac{v+v_R}{v}\nu $$
+    <p>($v_R$ direction towards the source is positive, away is negative)</p>
+    <p>2) Source moving relative to the medium at speed $v_S$:</p>
+    $$ \nu_S = \frac{v}{\lambda-\frac{v_S}{\nu}} = \frac{v}{\frac{v}{\nu}-\frac{v_S}{\nu}} = \frac{v}{v-v_S}\nu $$
+    <p>($v_S$ direction towards the observer is positive, away is negative)</p>
+
+    <p>3) General case:</p>
+    <img src="images/ch02_galilean_doppler.png" alt="Doppler effect general case" style="max-width: 40%; display: block; margin: 1em auto;">
+    $$ \nu' = \frac{v+v_R\cos\theta}{v-v_S}\nu $$
+    <p>There is only a longitudinal Doppler effect.</p>
+    <p>There is no transverse Doppler effect.</p>
+
+    <h2>2. Lorentz Transformation</h2>
+    <p><strong>① Basic Postulates:</strong></p>
+    <p>1) All inertial frames are equivalent (reference frames where the law of inertia holds are inertial frames) — Principle of Relativity.</p>
+    <p>2) The speed of light in vacuum is constant in all inertial frames — Principle of the Constancy of the Speed of Light.</p>
+
+    <p><strong>② Lorentz Transformation: ensures all physical laws have covariant coordinate transformation formulas.</strong></p>
+    <p>1) Suppose inertial frame K' moves relative to inertial frame K along the $x$ direction with speed $v$.</p>
+    <p>When $x=x'=0$, $y=y'=0, z=z'=0, t=t'=0$.</p>
+    <p>2) The principle of relativity requires that the coordinate transformation from $K(x,y,z,t)$ to $K'(x',y',z',t')$ should be symmetric, i.e., both the forward and inverse transformations are the same kind of function. This requirement stems from the homogeneity of space. The transformation satisfying this requirement must be a linear function.</p>
+    $$ \begin{cases} x' = ax + bt \\ t' = px + qt \end{cases} \Rightarrow \begin{cases} x = \frac{q}{aq-bp}x' - \frac{b}{aq-bp}t' \\ t = \frac{a}{aq-bp}x' - \frac{p}{aq-bp}t' \end{cases} $$
+    <p>Since the relative motion only occurs in the $x$ direction, thus:</p>
+    $$ \begin{cases} y' = y \\ z' = z \end{cases} $$
+    <p>3) The principle of the constancy of the speed of light requires: if a flash of light is emitted from the origin at time $t=t'=0$, then in both inertial frames:</p>
+    $$ \begin{cases} x^2+y^2+z^2-c^2t^2=0 \\ x'^2+y'^2+z'^2-c^2t'^2=0 \end{cases} $$
+    <p>For any arbitrary event, let $x+y^2+z^2-c^2t^2 = \lambda(x'^2+y'^2+z'^2-c^2t'^2+A)$.</p>
+    <p>Due to symmetry and continuity, we have $x'^2+y'^2+z'^2-c^2t'^2 = x^2+y^2+z^2-c^2t^2$.</p>
+
+    <p>4) In the K frame, the origin $O'$ of the K' frame satisfies:</p>
+    <img src="images/ch02_minkowski.png" alt="Minkowski space coordinate transformation" style="max-width: 40%; display: block; margin: 1em auto;">
+    $$ \begin{cases} \frac{dx'}{dt} = a\frac{dx}{dt} + b \\ \frac{dt'}{dt} = p\frac{dx}{dt} + q \end{cases} $$
+    $$ \because \frac{dx'}{dt} = 0 $$
+    $$ \therefore dx = b \, dt, \quad dt' = q \, dt $$
+    $$ \therefore \frac{dx}{dt} = -\frac{b}{a} = v $$
+    <p>(The origin of K' moves towards the $+x$ direction in K, so $v$ is positive).</p>
+    <p>In the K' frame, the origin $O$ of the K frame satisfies:</p>
+    $$ \begin{cases} \frac{dx}{dt'} = \frac{q}{aq-bp}\frac{dx'}{dt'} - \frac{b}{aq-bp} \\ \frac{dt}{dt'} = \frac{a}{aq-bp}\frac{dx'}{dt'} - \frac{p}{aq-bp} \end{cases} $$
+    $$ \because \frac{dx}{dt'} = 0 $$
+    $$ \therefore dx' = -\frac{b}{aq-bp} dt', \quad dt = \frac{a}{aq-bp} dt' $$
+    $$ \therefore \frac{dx'}{dt'} = -\frac{b}{a} = -v \quad \text{(The origin of K moves towards the $-x$ direction in K', so $-v$ is negative).} $$
+    <p>Therefore $b = -av, a = q$. Substituting into the transformation equations gives:</p>
+    $$ \begin{cases} x' = ax - avt \\ t' = px + at \end{cases} $$
+    <p>Substitute into the spacetime interval invariance equation:</p>
+    $$ x^2+y^2+z^2-c^2t^2 = (ax-avt)^2 + y^2 + z^2 - c^2(px+at)^2 $$
+    <p>Simplifying yields:</p>
+    $$ x^2 - c^2t^2 = (a^2-c^2p^2)x^2 + (a^2v^2-a^2c^2)t^2 - (2a^2v+2apc^2)xt $$
+    <p>Because the coefficients of identical terms must be equal:</p>
+    $$ \begin{cases} 1 = a^2 - c^2p^2 \\ -c^2 = a^2v^2 - a^2c^2 \\ 0 = 2a^2v + 2apc^2 \end{cases} \Rightarrow \begin{cases} a = \frac{1}{\sqrt{1-v^2/c^2}} \\ p = -\frac{v}{c^2}\frac{1}{\sqrt{1-v^2/c^2}} \end{cases} $$
+    <p>Substituting into the transformation equations, we get:</p>
+    $$ \begin{cases} x' = \frac{1}{\sqrt{1-v^2/c^2}}(x-vt) \\ y' = y \\ z' = z \\ t' = \frac{1}{\sqrt{1-v^2/c^2}}\left(t-\frac{v}{c^2}x\right) \end{cases} \quad \begin{cases} x = \frac{1}{\sqrt{1-v^2/c^2}}(x'+vt') \\ y = y' \\ z = z' \\ t = \frac{1}{\sqrt{1-v^2/c^2}}\left(t'+\frac{v}{c^2}x'\right) \end{cases} $$
+
+    <p>Note: &lt;1&gt; Pay attention to the prerequisite of the derivation: $x=x'=0, y=y'=0, z=z'=0, t=t'=0$.</p>
+    <p>This prerequisite does not lose generality, but the equations derived from the two postulates only apply to this prerequisite.</p>
+    <p>For situations where the origins do not coincide at $t=t'=0$, they will not conform to this.</p>
+    <p>&lt;2&gt; Due to the homogeneity of space, all inertial frames are equivalent, only linear transformation equations can reflect this principle.</p>
+    <p>&lt;3&gt; The essence of the principle of the constancy of the speed of light is $(dx)^2+(dy)^2+(dz)^2-(c\,dt)^2 = (dx')^2+(dy')^2+(dz')^2-(c\,dt')^2 = ds^2 = \sqrt{(c\,d\tau)^2-(dl_0)^2}$. Because the intrinsic length $l_0$ has length, $\therefore dl_0 = 0$, $\therefore d\tau = \frac{ds}{c}$.</p>
+
+    <h2>③ Spacetime View of Relativity</h2>
+    <p><strong>1) Relativity of Time Order and Causality.</strong></p>
+    <p>Let events A and B occur in frame K' at locations and times $(x_1', t_1')$ and $(x_2', t_2')$.</p>
+    <p>Then in frame K, the times events A and B occur are:</p>
+    $$ t_1 = \frac{t_1' + \frac{v}{c^2}x_1'}{\sqrt{1-v^2/c^2}}, \quad t_2 = \frac{t_2' + \frac{v}{c^2}x_2'}{\sqrt{1-v^2/c^2}} $$
+    $$ \therefore t_2 - t_1 = \frac{(t_2'-t_1') + \frac{v}{c^2}(x_2'-x_1')}{\sqrt{1-v^2/c^2}} = \frac{(t_2'-t_1')\left(1 + \frac{v}{c^2}\frac{x_2'-x_1'}{t_2'-t_1'}\right)}{\sqrt{1-v^2/c^2}} $$
+    <p>Timelike interval events: $\frac{x_2'-x_1'}{t_2'-t_1'} > -c$, there may be a causal relationship, and with causality the time order cannot reverse.</p>
+    <p>Spacelike interval events: $\frac{x_2'-x_1'}{t_2'-t_1'} < -c$, no causal relationship, the time order may reverse.</p>
+    <p>(If there were, it would mean superluminal causation is needed to overtake).</p>
+
+    <p><strong>2) Relativity of Simultaneity:</strong></p>
+    <p>If in frame K', two events A and B occur simultaneously at time $t'$ at locations $x_1'$ and $x_2'$. In frame K, we have:</p>
+    $$ t_1 = \frac{t' + \frac{v}{c^2}x_1'}{\sqrt{1-v^2/c^2}}, \quad t_2 = \frac{t' + \frac{v}{c^2}x_2'}{\sqrt{1-v^2/c^2}} $$
+    <p>For frame K, these two events do not necessarily occur simultaneously. The time interval between A and B in frame K is:</p>
+    $$ \Delta t = t_2 - t_1 = \frac{v}{c^2}\frac{x_2'-x_1'}{\sqrt{1-v^2/c^2}} $$
+    <p>Therefore, one can only synchronize clocks in one coordinate system, or synchronize clocks at two touching points in two coordinate systems.</p>
+
+    <p><strong>③ Relativity of Time Intervals (Time Dilation):</strong></p>
+    <p>If in frame K', two events A and B occur at location $x'$ at times $t_1'$ and $t_2'$. In frame K, we have:</p>
+    $$ t_1 = \frac{t_1' + \frac{v}{c^2}x'}{\sqrt{1-v^2/c^2}}, \quad t_2 = \frac{t_2' + \frac{v}{c^2}x'}{\sqrt{1-v^2/c^2}} $$
+    $$ \therefore \Delta t = t_2 - t_1 = \frac{t_2'-t_1'}{\sqrt{1-v^2/c^2}} = \frac{\Delta t'}{\sqrt{1-v^2/c^2}} > \Delta t' $$
+    <p>For the same two events A and B measured in different reference frames, the time interval is shortest for the proper time (intrinsic time interval).</p>
+
+    <p><strong>③ Relativity of Spatial Position (Length Contraction):</strong></p>
+    <p>In frame K', there is a rigid ruler at rest along the $x'$ direction, with endpoints at coordinates $x_1', x_2'$. Its proper length is $L' = |x_2'-x_1'|$. In frame K, when measuring at time $t$ (clocks are synchronized differently in the moving reference frame), we have:</p>
+    $$ x_1' = \frac{x_1-vt}{\sqrt{1-v^2/c^2}}, \quad x_2' = \frac{x_2-vt}{\sqrt{1-v^2/c^2}} $$
+    $$ \text{Thus in frame K, } L = |x_2-x_1| = |x_2'-x_1'|\sqrt{1-v^2/c^2} = L'\sqrt{1-v^2/c^2} < L' $$
+    <p>But in the rest frame K', $x_1'$ and $x_2'$ are measured simultaneously at time $t'$, with time difference $\Delta t' = \frac{1}{\sqrt{1-v^2/c^2}}(\Delta t - \frac{v}{c^2}\Delta x)$.</p>
+    <p>Because they are measured simultaneously at time $t$ in the moving frame K, so $\Delta t = 0$, $\therefore \Delta t' = -\frac{v/c^2}{\sqrt{1-v^2/c^2}}\Delta x = -\frac{v}{c^2}L'$.</p>
+
+    <h2>④ Four-Vectors</h2>
+    <p>[$U = (U_x, U_y, U_z, U_t)$: four-velocity; $\vec{v} = (v_x, v_y, v_z)$ three-velocity; $\vec{V}$: reference frame velocity]</p>
+    <p><strong>1) Minkowski Space</strong></p>
+    $$ \begin{cases} x' = \gamma[x+i\beta(ict)] \\ y' = y \\ z' = z \\ ict' = \gamma[ict - i\beta x] \end{cases} $$
+    <p>Lorentz Invariant:</p>
+    $$ x'^2 + y'^2 + z'^2 + (ict')^2 $$
+    $$ = \gamma^2(x-\beta ct)^2 + y^2 + z^2 + \gamma^2(-1)(ct-\beta x)^2 $$
+    $$ = x^2 + y^2 + z^2 + (ict)^2 = -S^2 $$
+
+    <p><strong>2) Four-Velocity</strong></p>
+    <p>Proper time $d\tau = \frac{ds}{c}$</p>
+    <p>Define four-velocity $U_x = \frac{dx}{d\tau}, U_y = \frac{dy}{d\tau}, U_z = \frac{dz}{d\tau}, U_t = \frac{d(ict)}{d\tau}$</p>
+    $$ \therefore U_x = \frac{dx}{dt}\frac{dt}{d\tau} = \gamma \frac{dx}{dt} = \frac{v_x}{\sqrt{1-v^2/c^2}}, \quad \text{Similarly, } U_y = \frac{v_y}{\sqrt{1-v^2/c^2}}, \quad U_z = \frac{v_z}{\sqrt{1-v^2/c^2}} $$
 
 </main>
 </body>
