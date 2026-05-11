@@ -427,6 +427,74 @@
     $$ G\frac{mM}{R^2} = \frac{mM}{M+m} \frac{4\pi^2}{T^2} R $$
     $$ \therefore T = 2\pi\sqrt{\frac{R^3}{G(M+m)}} $$
 
+    <hr style="margin: 2em 0;">
+
+    <h2>Special Topic: Projectile Motion with Air Resistance $\vec{f} = -k\vec{v}$</h2>
+    <img src="images/topic_projectile_air_res.png" alt="Projectile with Air Resistance" style="max-width: 50%; display: block; margin: 1em auto;">
+    <p>Taking any point during the motion for force analysis:</p>
+    $$ \begin{cases} m \frac{dv_x}{dt} = -k v_x \\ m \frac{dv_y}{dt} = -(mg + k v_y) \end{cases} $$
+    $$ \therefore \begin{cases} \frac{dv_x}{v_x} = -\frac{k}{m} dt \\ \frac{d(k v_y)}{mg + k v_y} = -\frac{k}{m} dt \end{cases} \implies \begin{cases} \ln\frac{v_x}{v_0\cos\alpha} = -\frac{k}{m} t \\ \ln\left(\frac{mg + k v_y}{mg + k v_0\sin\alpha}\right) = -\frac{k}{m} t \end{cases} $$
+    $$ \therefore \begin{cases} v_x = (v_0\cos\alpha) e^{-\frac{k}{m}t} \\ v_y = \left(v_0\sin\alpha + \frac{mg}{k}\right) e^{-\frac{k}{m}t} - \frac{mg}{k} \end{cases} $$
+    <p>Integrating the two equations with respect to time, we get:</p>
+    $$ \begin{cases} x = \frac{m}{k}(v_0\cos\alpha)(1 - e^{-\frac{k}{m}t}) \\ y = \frac{m}{k}\left(v_0\sin\alpha + \frac{mg}{k}\right)(1 - e^{-\frac{k}{m}t}) - \frac{mg}{k} t \end{cases} $$
+    <p>Eliminating $t$, we get the trajectory equation:</p>
+    $$ y = \left(\tan\alpha + \frac{mg}{k v_0\cos\alpha}\right) x + \frac{m^2 g}{k^2} \ln\left(1 - \frac{kx}{m v_0\cos\alpha}\right) $$
+    <p>When $k \to 0$, $\frac{kx}{m v_0\cos\alpha} \ll 1$. Using Taylor expansion $\ln(1 - x) = -x - \frac{1}{2}x^2 - \dots$</p>
+    <p>Taking only the first two terms, we get:</p>
+    $$ y \approx x\tan\alpha + \frac{mgx}{k v_0\cos\alpha} - \frac{m^2g}{k^2}\left(\frac{kx}{m v_0\cos\alpha} + \frac{1}{2}\left(\frac{kx}{m v_0\cos\alpha}\right)^2\right) $$
+    $$ = x\tan\alpha - \frac{g}{2 v_0^2\cos^2\alpha} x^2 $$
+    <p>This is the standard parabolic equation for projectile motion without air resistance.</p>
+
+    <hr style="margin: 2em 0;">
+
+    <h2>Special Topic: Two Acceleration Modes of a Car</h2>
+    <p><strong>1. Accelerating at constant power</strong> (Rated power $P_0$, constant resistance $f$, car mass $m$)</p>
+    <img src="images/topic_car_accel_constant_power.png" alt="Constant Power Acceleration" style="max-width: 40%; display: block; margin: 1em auto;">
+    $$ \because P_0 = F_{\text{traction}} \cdot v $$
+    $$ \therefore a = \frac{F_{\text{traction}} - f}{m} = \frac{\frac{P_0}{v} - f}{m} = \frac{dv}{dt} $$
+    <p>Separating variables, we get:</p>
+    $$ \frac{m \, dv}{\frac{P_0}{v} - f} = dt \implies \frac{mv \, dv}{P_0 - f v} = dt $$
+    <p>Rearranging yields:</p>
+    $$ \frac{-\frac{m}{f}(P_0 - f v) + \frac{m P_0}{f}}{P_0 - f v} dv = \left(-\frac{m}{f} + \frac{m P_0/f}{P_0 - f v}\right) dv = dt $$
+    <p>Integrating gives:</p>
+    $$ -\frac{m}{f} v - \frac{m P_0}{f^2} \ln\left(\frac{P_0 - fv}{P_0}\right) = t $$
+    <p>When $v = \frac{P_0}{f}$, $a = 0$ and $t \to \infty$.</p>
+
+    <p><strong>2. Accelerating at constant acceleration</strong> (Constant acceleration $a_0$, rated power $P_0$, constant resistance $f$)</p>
+    <img src="images/topic_car_accel_constant_accel.png" alt="Constant Acceleration" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p><strong>First stage:</strong> $v = a_0 t$.</p>
+    $$ F_{\text{traction}} - f = m a_0 \implies F_{\text{traction}} = f + m a_0 $$
+    <p>Final state of the first stage:</p>
+    $$ P_t = F_{\text{traction}} \cdot v_1 = (f + m a_0) v_1 = P_0 = f \cdot v_m $$
+    $$ \therefore v_1 = \frac{f}{f + m a_0} v_m $$
+    <p>At this time, $t_1 = \frac{v_1}{a_0} = \frac{f}{f + m a_0} \frac{v_m}{a_0}$.</p>
+    <p><strong>Second stage:</strong> The uniformly accelerated rectilinear motion in the first stage has brought the car to its rated power, but not to its maximum speed. Therefore, in the second stage, the car must undergo variable acceleration rectilinear motion at the rated power $P_0$, gradually changing from $F_{\text{traction}} \cdot v_1$ to $f \cdot v_m$. This process is the same as the first mode.</p>
+    $$ -\frac{m}{f}(v - v_1) - \frac{m P_0}{f^2} \ln\left(\frac{P_0 - f v}{P_0 - f v_1}\right) = t - t_1 $$
+
+    <hr style="margin: 2em 0;">
+
+    <h2>Special Topic: Tension Distribution in Ropes with Friction and Gravity</h2>
+    <p><strong>1. With friction (Capstan equation)</strong></p>
+    <img src="images/topic_capstan_friction.png" alt="Rope Tension Friction" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>Taking a small segment of rope subtending angle $d\theta$, with tension $T+dT$ on one side and $T$ on the other, normal force $dN$, and friction $df = \mu dN$:</p>
+    $$ \begin{cases} (T+dT)\sin\frac{d\theta}{2} + T\sin\frac{d\theta}{2} = dN \\ (T+dT)\cos\frac{d\theta}{2} - T\cos\frac{d\theta}{2} = \mu dN \end{cases} $$
+    <p>Omitting second-order infinitesimals and using $\sin\frac{d\theta}{2} \approx \frac{d\theta}{2}$, $\cos\frac{d\theta}{2} \approx 1$, we get:</p>
+    $$ \begin{cases} T d\theta = dN \\ dT = \mu dN \end{cases} $$
+    $$ \therefore \frac{dT}{T} = \mu d\theta \implies \ln\frac{T}{T_0} = \mu\theta $$
+    $$ \therefore T = T_0 e^{\mu\theta} $$
+
+    <p><strong>2. With gravity (Non-light rope over a cylinder)</strong></p>
+    <img src="images/topic_rope_gravity.png" alt="Rope Tension Gravity" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>Taking a rope segment with mass $dm = \frac{M}{L} R d\theta$. Equilibrium in tangential and normal directions:</p>
+    $$ dT = dm \, g \cos\theta = \frac{MgR}{L} \cos\theta \, d\theta $$
+    $$ dN = T d\theta + dm \, g \sin\theta = T d\theta + \frac{MgR}{L} \sin\theta \, d\theta $$
+    <p>From the first equation, integrating from $\theta=0$ (horizontal) gives:</p>
+    $$ T - T_0 = \frac{MgR}{L} \sin\theta \implies T = T_0 + \frac{MgR}{L} \sin\theta $$
+    <p>Substituting into the normal force equation:</p>
+    $$ dN = \left(T_0 + \frac{MgR}{L} \sin\theta\right) d\theta + \frac{MgR}{L} \sin\theta \, d\theta = T_0 d\theta + \frac{2MgR}{L} \sin\theta \, d\theta $$
+    <p>Integrating gives the total normal force from $0$ to $\theta$:</p>
+    $$ N = T_0 \theta + \frac{2MgR}{L} (1 - \cos\theta) $$
+
 </main>
 </body>
 </html>

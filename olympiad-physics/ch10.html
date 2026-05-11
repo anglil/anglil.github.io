@@ -74,6 +74,51 @@
     <p><strong>Electrical Resonance:</strong> When the driving angular frequency $\omega$ matches the natural angular frequency $\omega_0$ of the circuit, the current amplitude reaches its maximum value, resulting in electrical resonance.</p>
     </div>
     <div style="clear: both;"></div>
+    <hr style="margin: 2em 0;">
+
+    <h3>4. Electromagnetic Waves</h3>
+    
+    <p><strong>1) Maxwell's Equations and Electromagnetic Waves</strong></p>
+    <p>From Maxwell's equations in integral form:</p>
+    $$ \oint \vec{E} \cdot d\vec{S} = \frac{\Sigma q}{\varepsilon_0} $$
+    $$ \oint \vec{B} \cdot d\vec{S} = 0 $$
+    $$ \oint \vec{E} \cdot d\vec{l} = -\frac{d\Phi_B}{dt} = -\int_S \frac{\partial \vec{B}}{\partial t} \cdot d\vec{S} $$
+    $$ \oint \vec{B} \cdot d\vec{l} = \mu_0 \left( I + \varepsilon_0 \frac{d\Phi_E}{dt} \right) = \mu_0 \int_S \left( \vec{j} + \varepsilon_0 \frac{\partial \vec{E}}{\partial t} \right) \cdot d\vec{S} $$
+    <p>We can derive the wave speed in a vacuum: $c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$.</p>
+    <p>The relationship between the electric field and magnetic field in an electromagnetic wave is: $\vec{B} = \frac{\hat{c} \times \vec{E}}{c}$, where $\hat{c}$ is the unit vector in the direction of propagation (Note: the text implies $B = E/c$).</p>
+    
+    <p><strong>Energy Density and Flux:</strong></p>
+    <ul>
+        <li>Energy Density: $\omega = \frac{1}{2}\varepsilon_0 E^2 + \frac{1}{2\mu_0} B^2 = \frac{1}{2}\varepsilon_0 E^2 + \frac{1}{2\mu_0} \left(\frac{E}{c}\right)^2 = \varepsilon_0 E^2$.</li>
+        <li>Energy Flux Density (Poynting Vector Magnitude): $S = \frac{\omega dS \cdot c dt}{dS \cdot dt} = c\omega = \frac{EB}{\mu_0}$. In vector form: $\vec{S} = \frac{1}{\mu_0} \vec{E} \times \vec{B}$.</li>
+        <li>Intensity (Average Flux): $\bar{S} = I = \overline{c\omega} = c\varepsilon_0 \overline{E^2} = \frac{1}{2} c\varepsilon_0 E_m^2 \propto E_m^2$.</li>
+    </ul>
+
+    <p><strong>Radiation Pressure:</strong></p>
+    <ul>
+        <li>On a perfectly absorbing black body: $p_r = \frac{W/c}{\Delta t \cdot \Delta S} = \frac{W}{c \cdot \Delta t \cdot \Delta S} = \omega = \varepsilon_0 E^2$.</li>
+        <li>On a perfectly reflecting surface: $p_r = 2\varepsilon_0 E^2$.</li>
+    </ul>
+
+    <p><strong>2) Principles of Transmission and Reception</strong></p>
+    <ul>
+        <li><strong>Open Circuit:</strong> An LC oscillator is coupled to an open circuit (antenna and ground) to radiate waves effectively.</li>
+    </ul>
+    <img src="images/ch10_em_wave_transmission.png" alt="EM wave open circuit transmission" style="max-width: 60%; display: block; margin: 1em auto;">
+    
+    <ul>
+        <li><strong>Modulation (AM, FM, PM) & Amplification:</strong> The base signal modulates a high-frequency carrier wave for transmission.</li>
+    </ul>
+    <img src="images/ch10_em_wave_modulation.png" alt="Modulated waves" style="max-width: 80%; display: block; margin: 1em auto;">
+
+    <img src="images/ch10_em_wave_tuning.png" alt="Tuning circuit" style="max-width: 20%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <ul>
+        <li><strong>Tuning:</strong> Adjusting the receiver's LC circuit to match the frequency of the incoming wave ($\omega_{\text{circuit}} = \omega_{\text{receive}} = 2\pi f = \frac{1}{\sqrt{LC}}$).</li>
+        <li><strong>Demodulation (Detection):</strong> Extracting the original signal (sound, light, etc.) from the received high-frequency wave.</li>
+    </ul>
+    </div>
+    <div style="clear: both;"></div>
 </main>
 </body>
 </html>
