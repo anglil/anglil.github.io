@@ -46,8 +46,8 @@
 
     <p><strong>In Electrostatic Fields:</strong></p>
     <ul>
-        <li><strong>Gauss's Law (高斯定理):</strong> $\Phi_e = \oint \vec{E} \cdot d\vec{S} = \frac{q}{\varepsilon_0} \quad (q \text{ is the net charge enclosed by the Gaussian surface})$</li>
-        <li><strong>Circuital Law (环路定理):</strong> $\oint \vec{E} \cdot d\vec{l} = 0$</li>
+        <li><strong>Gauss's Law:</strong> $\Phi_e = \oint \vec{E} \cdot d\vec{S} = \frac{q}{\varepsilon_0} \quad (q \text{ is the net charge enclosed by the Gaussian surface})$</li>
+        <li><strong>Circuital Law:</strong> $\oint \vec{E} \cdot d\vec{l} = 0$</li>
     </ul>
 
     <p><strong>① Electric field distribution of a point charge:</strong></p>
@@ -85,8 +85,8 @@
     </div>
     <div style="clear: both;"></div>
 
-    <p><strong>⑦ Electric Dipole (电偶极子):</strong> (Dipole moment $\vec{p} = q\vec{l}$, where $\vec{l}$ points from $-q$ to $+q$).</p>
-    <p><strong>1) On the perpendicular bisector (中垂线):</strong></p>
+    <p><strong>⑦ Electric Dipole:</strong> (Dipole moment $\vec{p} = q\vec{l}$, where $\vec{l}$ points from $-q$ to $+q$).</p>
+    <p><strong>1) On the perpendicular bisector:</strong></p>
     <img src="images/ch05_dipole_axis.png" alt="Dipole perpendicular bisector" style="max-width: 25%; float: left; margin-right: 1em;">
     <div style="overflow: hidden;">
     $$ E = 2E^+ \cos\theta = 2 \frac{kq}{r^2 + (\frac{l}{2})^2} \frac{\frac{l}{2}}{\sqrt{r^2 + (\frac{l}{2})^2}} = \frac{kql}{\left(r^2 + \frac{l^2}{4}\right)^{\frac{3}{2}}} $$
@@ -95,12 +95,12 @@
     </div>
     <div style="clear: both;"></div>
 
-    <p><strong>2) On the line connecting the charges (连线):</strong></p>
+    <p><strong>2) On the line connecting the charges:</strong></p>
     <img src="images/ch05_dipole_line.png" alt="Dipole connecting line" style="max-width: 35%; display: block; margin: 1em auto;">
     $$ E = \frac{kq}{(r - \frac{l}{2})^2} - \frac{kq}{(r + \frac{l}{2})^2} = kq \frac{r^2 + rl + \frac{l^2}{4} - r^2 + rl - \frac{l^2}{4}}{\left[r^2 - (\frac{l}{2})^2\right]^2} \approx kq \cdot \frac{2rl}{r^4} = \frac{2kql}{r^3} $$
     $$ \therefore E \approx \frac{2kp}{r^3} $$
 
-    <p><strong>3) Arbitrary point (任意点):</strong></p>
+    <p><strong>3) Arbitrary point:</strong></p>
     <img src="images/ch05_dipole_arbitrary.png" alt="Dipole arbitrary point" style="max-width: 25%; float: left; margin-right: 1em;">
     <div style="overflow: hidden;">
     <p>With OA as the polar axis, from $-q$ construct symmetric charge $+q$, and at the same point add $-q$. This decomposes it into two dipoles.</p>
@@ -278,15 +278,15 @@
 
     <h3>4. Electric Potential Energy and Electrostatic Energy</h3>
 
-    <p><strong>① Electric Potential Energy (电势能):</strong></p>
+    <p><strong>① Electric Potential Energy:</strong></p>
     <p>Because the electrostatic field is a conservative field, when moving a charge in an electrostatic field, the work done by the electrostatic field force is independent of the path. Therefore, any charge in an electrostatic field has electrostatic potential energy.</p>
     $$ W = q\varphi $$
     $$ A_{12} = W_1 - W_2 = q(\varphi_1 - \varphi_2) $$
     <p>The electric potential energy of a charge in an external electric field is shared by the charge and the charge system that produces the electric field. It is an interaction energy. Similarly, the electric potential energy of a point charge system in an external electric field is $W = \sum q_i \varphi_i$.</p>
     <p>(Note: $\varphi_i$ does not include the potential produced by the charges within this charge system at that point.)</p>
 
-    <p><strong>② Electrostatic Energy (静电能):</strong></p>
-    <p><strong>1) Mutual energy (互能):</strong> The work done by electrostatic forces between charges when they are scattered from their current positions to infinity. i.e., the interaction energy of a point charge system.</p>
+    <p><strong>② Electrostatic Energy:</strong></p>
+    <p><strong>1) Mutual energy:</strong> The work done by electrostatic forces between charges when they are scattered from their current positions to infinity. i.e., the interaction energy of a point charge system.</p>
     <ul>
         <li>Moving $q_1$ from infinity to a point in space, no work is done.</li>
         <li>Moving $q_2$ from infinity to distance $r_{12}$ from $q_1$: $W_1 = q_2 \int_{r_{12}}^\infty \frac{q_1 dr}{4\pi\varepsilon_0 r^2} = \frac{q_1 q_2}{4\pi\varepsilon_0 r_{12}}$.</li>
@@ -296,7 +296,7 @@
     </ul>
     $$ \therefore E = \sum_{i=1}^n W_i = \frac{1}{2} \sum_{i=1}^n q_i \varphi_i $$
 
-    <p><strong>2) Self-energy (自能):</strong> The work done by electrostatic forces when a charged body is divided into infinite charge elements and scattered to infinity from each other.</p>
+    <p><strong>2) Self-energy:</strong> The work done by electrostatic forces when a charged body is divided into infinite charge elements and scattered to infinity from each other.</p>
     $$ E = \frac{1}{2} \int \varphi dq $$
     <p>Therefore, the total electrostatic energy in space = mutual energy + self-energy = $\frac{1}{2} \int \varphi dq$.</p>
     $$ = \int w dV = \frac{1}{2} \varepsilon_0 \int E^2 dV \quad (w: \text{energy density}) $$
@@ -436,7 +436,7 @@
 
     <hr style="margin: 2em 0;">
 
-    <h3>Special Topic: Method of Images (电像法)</h3>
+    <h3>Special Topic: Method of Images</h3>
     <p><strong>Principle:</strong> Replace the effect of induced charges with one or several point charges.<br>
     <strong>Essence:</strong> In the space where the original charges are located, the spatial electric field strength and potential distribution remain unchanged.<br>
     <strong>Reason:</strong> Uniqueness Theorem.</p>

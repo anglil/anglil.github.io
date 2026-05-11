@@ -37,24 +37,24 @@
 <main class="content">
     <h1>Part 9: Resistance, Capacitance, Inductance</h1>
 
-    <h3>1. Resistance (电阻)</h3>
+    <h3>1. Resistance</h3>
     <p><strong>① Resistivity and Temperature:</strong></p>
     $$ R = \rho \frac{l}{S} $$
     $$ \rho = \rho_0(1+\alpha t), \quad d\rho = \alpha \rho_0 dt \implies R = R_0(1+\alpha t) $$
 
     <p><strong>② Series and Parallel Circuits:</strong></p>
     <ul>
-        <li><strong>Series (串联):</strong> $R_{\text{total}} = \rho \frac{\sum l_i}{S} = \sum \rho \frac{l_i}{S} = \sum R_i \implies R_{\text{total}} = \frac{U_{\text{total}}}{I} = \sum \frac{U_i}{I} = \sum R_i$</li>
-        <li><strong>Parallel (并联):</strong> $\frac{1}{R_{\text{total}}} = \frac{\sum S_i}{\rho l} = \sum \frac{S_i}{\rho l} = \sum \frac{1}{R_i} \implies \frac{1}{R_{\text{total}}} = \frac{I_{\text{total}}}{U} = \sum \frac{I_i}{U} = \sum \frac{1}{R_i}$</li>
+        <li><strong>Series:</strong> $R_{\text{total}} = \rho \frac{\sum l_i}{S} = \sum \rho \frac{l_i}{S} = \sum R_i \implies R_{\text{total}} = \frac{U_{\text{total}}}{I} = \sum \frac{U_i}{I} = \sum R_i$</li>
+        <li><strong>Parallel:</strong> $\frac{1}{R_{\text{total}}} = \frac{\sum S_i}{\rho l} = \sum \frac{S_i}{\rho l} = \sum \frac{1}{R_i} \implies \frac{1}{R_{\text{total}}} = \frac{I_{\text{total}}}{U} = \sum \frac{I_i}{U} = \sum \frac{1}{R_i}$</li>
     </ul>
 
-    <p><strong>③ Equivalent Resistance (等效电阻):</strong></p>
+    <p><strong>③ Equivalent Resistance:</strong></p>
 
-    <p><strong>1) Symmetry (对称性):</strong></p>
+    <p><strong>1) Symmetry:</strong></p>
     <p><em>&lt;1&gt; Folding symmetry in grids:</em></p>
     <img src="images/ch06_sym_grid_1.png" alt="Grid symmetry" style="max-width: 80%; display: block; margin: 1em auto;">
 
-    <p><em>&lt;2&gt; Ladder network (梯形网络):</em></p>
+    <p><em>&lt;2&gt; Ladder network:</em></p>
     <img src="images/ch06_ladder_network.png" alt="Ladder network" style="max-width: 60%; display: block; margin: 1em auto;">
     $$ U_{CB} = U_{AD} = [I_1 + (I_1+I_2) + (I_1+I_2+I_3) + \dots + (I-I_{n+1})] R $$
     $$ = [(I-I_1) + (I-I_1-I_2) + \dots + I_{n+1}] R $$
@@ -69,7 +69,7 @@
     $$ \therefore U_{AB} = I_1 R + U_{BC} $$
     $$ R_{AB} = \frac{U_{AB}}{I} = \left\{ \frac{n}{2} + \left[ 3 - \frac{(2+\sqrt{3})^{n-2} - (2-\sqrt{3})^{n-2}}{(2+\sqrt{3})^{n-1} - (2-\sqrt{3})^{n-1} - 2\sqrt{3}} \right]^{-1} \right\} R $$
 
-    <p><em>&lt;3&gt; Self-similarity (自相似性):</em></p>
+    <p><em>&lt;3&gt; Self-similarity:</em></p>
     <img src="images/ch06_sierpinski.png" alt="Sierpinski resistor network" style="max-width: 30%; float: left; margin-right: 1em;">
     <div style="overflow: hidden;">
     <p>Find the equivalent resistance between A and B (unit resistance $R_0$, with infinite equilateral triangles inside).</p>
@@ -81,7 +81,7 @@
     </div>
     <div style="clear: both;"></div>
 
-    <p><strong>2) Infinity (无限性):</strong></p>
+    <p><strong>2) Infinity:</strong></p>
     <img src="images/ch06_infinite_ladder.png" alt="Infinite ladder" style="max-width: 30%; float: left; margin-right: 1em;">
     <div style="overflow: hidden;">
     $$ \frac{(R_{n-1} + 2r) r}{R_{n-1} + 3r} = R_n $$
@@ -95,11 +95,11 @@
     </div>
     <div style="clear: both;"></div>
 
-    <p><strong>3) Current Superposition Method (电流叠加法):</strong></p>
+    <p><strong>3) Current Superposition Method:</strong></p>
     <p>Assume a current $I$ flows into one node, calculate the current $I_{AB}$ flowing through the target branch AB. Assume a current $I$ flows out of the other node, calculate the current $I_{AB}'$ in AB. If $r_{AB}$ is the resistance of the wire connecting A and B ($r_{AB} = c \cdot r$), and $I_{AB} = A \cdot I$, $I_{AB}' = B \cdot I$:</p>
     $$ \therefore U_{AB} = (I_{AB} + I_{AB}') r_{AB} = (A+B) c \cdot r \cdot I \implies R_{AB} = \frac{U_{AB}}{I} = (A+B) c \cdot r $$
 
-    <p><em>&lt;1&gt; Square Grid (正四边形网格):</em></p>
+    <p><em>&lt;1&gt; Square Grid:</em></p>
     <img src="images/ch06_square_grid.png" alt="Square grid" style="max-width: 25%; float: left; margin-right: 1em;">
     <div style="overflow: hidden;">
     <p>Assume $I$ flows into A, current on AB is $\frac{I}{4}$. Assume $I$ flows out of B, current on AB is $\frac{I}{4}$.</p>
@@ -111,7 +111,7 @@
     </div>
     <div style="clear: both;"></div>
 
-    <p><em>&lt;2&gt; Hexagonal Grid (正六边形网格):</em></p>
+    <p><em>&lt;2&gt; Hexagonal Grid:</em></p>
     <img src="images/ch06_hex_grid.png" alt="Hexagonal grid" style="max-width: 25%; float: left; margin-right: 1em;">
     <div style="overflow: hidden;">
     <p>Assume $I$ flows into a, current on ab is $\frac{I}{3}$, current on bc is $\frac{I}{6}$.</p>
@@ -120,7 +120,7 @@
     </div>
     <div style="clear: both;"></div>
 
-    <p><em>&lt;3&gt; Cross Grid / "田" Shape (田字形):</em></p>
+    <p><em>&lt;3&gt; Cross Grid / "" Shape:</em></p>
     <img src="images/ch06_cross_grid.png" alt="Cross grid" style="max-width: 25%; float: left; margin-right: 1em;">
     <div style="overflow: hidden;">
     <p>Find equivalent resistance between A and B.</p>
@@ -132,7 +132,7 @@
     </div>
     <div style="clear: both;"></div>
 
-    <p><strong>4) Y-$\Delta$ Transform (Y-$\Delta$ 变换):</strong></p>
+    <p><strong>4) Y-$\Delta$ Transform (Y-$\Delta$ ):</strong></p>
     <img src="images/ch06_y_delta.png" alt="Y-Delta Transform" style="max-width: 60%; display: block; margin: 1em auto;">
     <p>Equivalence implies: $I_1 = I_1', I_2 = I_2', I_3 = I_3'$ and $\varphi_1 = \varphi_1', \varphi_2 = \varphi_2', \varphi_3 = \varphi_3'$.</p>
     <p>In the Y-shape (using node voltage method and Kirchhoff's current law):</p>
@@ -150,7 +150,7 @@
 
     <hr style="margin: 2em 0;">
 
-    <h3>Special Topic: Measuring Resistivity (测电阻率)</h3>
+    <h3>Special Topic: Measuring Resistivity</h3>
 
     <p><strong>1. Measuring the resistivity of an infinite medium:</strong></p>
     <img src="images/ch06_measure_infinite.png" alt="Measure infinite medium" style="max-width: 35%; float: left; margin-right: 1em;">
