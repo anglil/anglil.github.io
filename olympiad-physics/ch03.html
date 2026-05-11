@@ -249,6 +249,101 @@
     $$ \text{Focal length: } u \to \infty, \quad f = \frac{1}{\frac{2(n-1)}{R_1} + \frac{2n}{R_2}} $$
     $$ \text{Magnification: } K = \left(-\frac{v_1/n}{u/1}\right) \left(-\frac{v_2/n}{-v_1/n}\right) \left(-\frac{v/1}{-v_2/n}\right) = -\frac{v}{u} $$
 
+    <h3>7. Optical Instruments</h3>
+    <p><strong>① Human Eye</strong></p>
+    <img src="images/ch03_human_eye.png" alt="Human Eye" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>Distance of distinct vision: $d = 25\text{cm}$</p>
+    <p>This is the minimum distance at which the eye can see an image clearly. It is generally the distance from the image to the eye or eyepiece in optical instruments.</p>
+
+    <p><strong>② Magnifying Glass</strong></p>
+    <img src="images/ch03_magnifying_glass.png" alt="Magnifying Glass" style="max-width: 50%; display: block; margin: 1em auto;">
+    $$ K = \frac{\beta}{\alpha} \approx \frac{\tan\beta}{\tan\alpha} \approx \frac{y/f}{y/d} = \frac{d}{f} \quad (d: \text{distance of distinct vision}, f: \text{focal length}) $$
+
+    <p><strong>③ Microscope</strong></p>
+    <img src="images/ch03_microscope.png" alt="Microscope" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ K = \frac{\beta}{\alpha} \approx \frac{A_2 B_2 / d}{AB / d} \approx \frac{A_1 B_1 / f_2}{AB / d} = \frac{v_1}{u_1} \cdot \frac{d}{f_2} \approx \frac{L}{f_1} \cdot \frac{d}{f_2} = \frac{L d}{f_1 f_2} $$
+
+    <p><strong>④ Keplerian Telescope</strong></p>
+    <img src="images/ch03_keplerian_telescope.png" alt="Keplerian Telescope" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ K = \frac{\beta}{\alpha} \approx \frac{A_1 B_1 / f_2}{A_1 B_1 / f_1} \approx \frac{f_1}{f_2} \quad \therefore \text{The smaller the eyepiece } f_2 \text{ and the larger the objective } f_1, \text{ the larger } K \text{ is.} $$
+
+    <p><strong>⑤ Galilean Telescope</strong></p>
+    <img src="images/ch03_galilean_telescope.png" alt="Galilean Telescope" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ K = \frac{\beta}{\alpha} \approx \frac{A_1 B_1 / f_2}{A_1 B_1 / f_1} \approx \frac{f_1}{f_2} \quad \therefore \text{The smaller the eyepiece } f_2, \text{ the larger } K \text{ is.} $$
+
+    <h2>Part 4: Wave Optics</h2>
+
+    <h3>1. Interference of Light: Same frequency, same direction of vibration, fixed phase difference.</h3>
+    <p><strong>① Young's Double Slit Interference</strong></p>
+    <img src="images/ch03_youngs_double_slit.png" alt="Young's Double Slit" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>For point P, $\varphi_1 = A_1 \cos(\omega t - \frac{r_1}{v}) + \varphi_{01}, \quad \varphi_2 = A_2 \cos(\omega t - \frac{r_2}{v}) + \varphi_{02}$</p>
+    $$ \therefore \Delta\varphi = \omega \frac{r_2-r_1}{v} + \varphi_{01} - \varphi_{02} $$
+    $$ \because \varphi_{01} = \varphi_{02} \quad \therefore \Delta\varphi = \frac{\omega}{v}(r_2-r_1) = \frac{2\pi}{\lambda}(r_2-r_1) = \frac{2\pi}{\lambda}\delta $$
+    $$ \therefore \delta = \frac{\Delta\varphi}{2\pi}\lambda $$
+    $$ \begin{cases} \text{If } \delta = k\lambda, \text{ i.e. } \frac{\Delta\varphi}{2\pi} = k, \text{ constructive interference.} \\ \text{If } \delta = \frac{2k+1}{2}\lambda, \text{ i.e. } \frac{\Delta\varphi}{2\pi} = \frac{2k+1}{2}, \text{ destructive interference.} \end{cases} $$
+    $$ \text{Also } \delta \approx \Delta s_1 = d\sin\theta \approx d\tan\theta = d\frac{y}{r_0} $$
+    $$ \therefore \begin{cases} \text{If } d\frac{y}{r_0} = k\lambda, \text{ i.e. } y = k\frac{r_0\lambda}{d}, \text{ constructive interference.} \\ \text{If } d\frac{y}{r_0} = \frac{2k+1}{2}\lambda, \text{ i.e. } y = \frac{2k+1}{2}\frac{r_0\lambda}{d}, \text{ destructive interference.} \end{cases} $$
+    $$ \therefore \text{Distance between bright/dark fringes } \Delta y = \frac{r_0\lambda}{d}. $$
+
+    <p><strong>2) Exact Solution:</strong></p>
+    <p>If point P has constructive interference, i.e., maximum vibration, then the distance difference from P to the two point sources $S_1, S_2$ is</p>
+    $$ \delta = 2k \cdot \frac{\lambda}{2} \quad (k = 0, 1, 2 \dots) $$
+    <p>If $\lambda$ is constant, then $\delta$ is a constant. The locus of points with a constant distance difference to two fixed points is a hyperbola. The two light sources are the two foci of the hyperbola. With the line connecting $S_1 S_2$ as the y-axis, and the perpendicular bisector $OP_0$ as the x-axis:</p>
+    $$ \because 2a = \delta = 2k \cdot \frac{\lambda}{2} \quad \therefore a = k\frac{\lambda}{2} $$
+    $$ \text{Also } c = \frac{d}{2} $$
+    $$ \therefore \frac{y^2}{(k\lambda/2)^2} - \frac{x^2}{(d/2)^2 - (k\lambda/2)^2} = 1 $$
+    $$ \text{When } x = r_0, \quad y = \pm k\frac{\lambda}{2} \sqrt{1 + \frac{r_0^2}{(d/2)^2 - (k\lambda/2)^2}} $$
+    <p>Similarly, if point P has destructive interference, i.e., minimum vibration, we have:</p>
+    $$ \frac{y^2}{(\frac{2k+1}{2}\frac{\lambda}{2})^2} - \frac{x^2}{(d/2)^2 - (\frac{2k+1}{2}\frac{\lambda}{2})^2} = 1 $$
+    $$ \text{When } x = r_0, \quad y = \pm \frac{2k+1}{2}\frac{\lambda}{2} \sqrt{1 + \frac{r_0^2}{(d/2)^2 - (\frac{2k+1}{2}\frac{\lambda}{2})^2}} $$
+
+    <p><strong>② Fresnel Biprism Interference</strong></p>
+    <img src="images/ch03_fresnel_biprism.png" alt="Fresnel Biprism" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>Take the upper half as the object of study: $n\sin i_1' \approx ni_1', \quad n\sin i_2' \approx ni_2', \quad i_1' + i_2' = A$.</p>
+    $$ \therefore \theta = (i_1 - i_1') + (i_2 - i_2') \approx (n-1)i_1' + (n-1)i_2' = (n-1)A $$
+    $$ \text{Also } \theta \approx \frac{d/2}{l} \quad \therefore d = 2l(n-1)A $$
+    $$ \therefore \begin{cases} 2l(n-1)A \cdot \frac{y}{L+l} = k\lambda, \text{ constructive interference.} \\ 2l(n-1)A \cdot \frac{y}{L+l} = \frac{2k+1}{2}\lambda, \text{ destructive interference.} \end{cases} $$
+    $$ \Delta y = \frac{L+l}{2l(n-1)A} \cdot \lambda $$
+
+    <p><strong>③ Newton's Rings Interference</strong></p>
+    <img src="images/ch03_newtons_rings.png" alt="Newton's Rings" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ \delta = 2h - \frac{\lambda}{2} $$
+    <p>(Because the light reflecting off the flat glass plate after passing through the convex lens undergoes a half-wave loss, the optical path difference decreases by $\frac{\lambda}{2}$.)</p>
+    $$ \therefore \begin{cases} 2h - \frac{\lambda}{2} = 2k \cdot \frac{\lambda}{2}, \text{ i.e. } h = (2k+1)\frac{\lambda}{4}, \text{ constructive interference.} \\ \quad \text{At this time } r^2 = h(2R-h) \approx 2Rh, \quad r = \sqrt{2R(2k+1)\frac{\lambda}{4}} \\ 2h - \frac{\lambda}{2} = (2k-1)\frac{\lambda}{2}, \text{ i.e. } h = (2k)\frac{\lambda}{4}, \text{ destructive interference.} \\ \quad \text{At this time } r = \sqrt{2R \cdot 2k \frac{\lambda}{4}} = \sqrt{Rk\lambda} \end{cases} $$
+
+    <p><strong>④ Thin Film Interference</strong></p>
+    <p>1) Equal Inclination Interference (Parallel light obliquely incident on a glass plate with parallel faces)</p>
+    <img src="images/ch03_equal_inclination.png" alt="Equal Inclination Interference" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ \delta = n \cdot \frac{2h}{\cos\theta_2} - 2h\tan\theta_2\sin\theta_1 - \frac{\lambda}{2} \quad \text{(Light reflecting on the upper surface undergoes half-wave loss)} $$
+    $$ \because \sin\theta_1 = n\sin\theta_2 $$
+    $$ \therefore \delta = \frac{2nh - 2nh\sin^2\theta_2}{\cos\theta_2} - \frac{\lambda}{2} = \frac{2nh(1-\sin^2\theta_2)}{\cos\theta_2} - \frac{\lambda}{2} = 2nh\cos\theta_2 - \frac{\lambda}{2} $$
+    $$ \therefore \begin{cases} 2nh\cos\theta_2 - \frac{\lambda}{2} = 2k \cdot \frac{\lambda}{2}, \text{ i.e. } 2nh\cos\theta_2 = (2k+1)\frac{\lambda}{2}, \text{ constructive interference.} \\ 2nh\cos\theta_2 - \frac{\lambda}{2} = (2k-1)\frac{\lambda}{2}, \text{ i.e. } 2nh\cos\theta_2 = 2k\frac{\lambda}{2}, \text{ destructive interference.} \end{cases} $$
+
+    <p>2) Equal Thickness Interference (Parallel light perpendicularly incident on a glass plate with a small angle of inclination)</p>
+    <img src="images/ch03_equal_thickness.png" alt="Equal Thickness Interference" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ \begin{cases} h = (2k+1)\frac{\lambda}{4n\cos\theta_2} \approx (2k+1)\frac{\lambda}{4n}, \text{ constructive interference.} \\ h = 2k \cdot \frac{\lambda}{4n\cos\theta_2} \approx 2k \cdot \frac{\lambda}{4n}, \text{ destructive interference.} \end{cases} $$
+    $$ \therefore \Delta h = \frac{\lambda}{2n}, \quad \Delta x = \frac{\Delta h}{\sin\phi} \approx \frac{\Delta h}{\phi} = \frac{\lambda}{2n\phi}. $$
+    <p>The distance between adjacent bright fringes is $\Delta x = \frac{\lambda}{2n\phi}$.</p>
+
+    <p><strong>⑤ Fresnel Equations</strong></p>
+    <img src="images/ch03_fresnel_equations.png" alt="Fresnel Equations" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>The velocity $\vec{v}$, electric vector $\vec{E}$, and magnetic vector $\vec{B}$ of the incident, reflected, and refracted light form a right-handed spiral relationship.</p>
+    <p>In the figure, $\vec{v}, \vec{v}_1, \vec{v}_2$ are known. Once a set of $\vec{E}_1, \vec{E}_2, \vec{E}_3$ or $\vec{B}_1, \vec{B}_2, \vec{B}_3$ is arbitrarily given, the other set can be given by decomposing each vector into components.</p>
+    <p>From the continuity of the components (they do not change abruptly after reflection and refraction at the interface), we get:</p>
+    $$ E_{s1} = E_{s1}' + E_{s2}, \quad E_{p1}\cos\alpha = -E_{p1}'\cos\alpha - E_{p2}\cos\beta \quad (1) $$
+    $$ B_{s1} = B_{s1}' - B_{s2}, \quad B_{p1}\cos\alpha = -B_{p1}'\cos\alpha + B_{p2}\cos\beta \quad (2) $$
+    $$ \text{Also } \because B_{s1} = \sqrt{\epsilon_1\mu_1} E_{p1}, \quad B_{s1}' = \sqrt{\epsilon_1\mu_1} E_{p1}', \quad B_{s2} = \sqrt{\epsilon_2\mu_2} E_{p2}. \quad \text{For light waves, } \mu_1 = \mu_2 = \mu_0. $$
+    $$ \therefore \sqrt{\epsilon_1} E_{p1} = \sqrt{\epsilon_1} E_{p1}' - \sqrt{\epsilon_2} E_{p2} \implies n_1 E_{p1} = n_1 E_{p1}' - n_2 E_{p2} $$
+    $$ \text{Also } \because n_1 \sin\alpha = n_2 \sin\beta \quad \therefore E_{p1} = E_{p1}' - \frac{\sin\beta}{\sin\alpha} E_{p2} \quad (3) $$
+    <p>Combining (1) and (3) yields $E_{p1}\cos\alpha = -\cos\alpha\left(E_{p1} + \frac{\sin\beta}{\sin\alpha} E_{p2}\right) - E_{p2}\cos\beta$</p>
+    $$ \therefore \frac{E_{p2}}{E_{p1}} = -\frac{2\cos\alpha \sin\beta}{\sin\alpha\cos\alpha + \sin\beta\cos\beta} = -\frac{2\cos\alpha \sin\beta}{\frac{1}{2}(\sin 2\alpha + \sin 2\beta)} = -\frac{2\cos\alpha \sin\beta}{\sin(\alpha+\beta)\cos(\alpha-\beta)} $$
+    <p>Similarly, $E_{p1}\cos\alpha = -E_{p1}'\cos\alpha - \frac{\sin\alpha}{\sin\beta}(E_{p1} - E_{p1}')\cos\beta$</p>
+    $$ \therefore \frac{E_{p1}'}{E_{p1}} = \frac{\sin\alpha\cos\beta - \cos\alpha\sin\beta}{\sin\alpha\cos\beta + \cos\alpha\sin\beta} = \frac{\tan(\alpha-\beta)}{\tan(\alpha+\beta)} $$
+    <p>Also it can be proven:</p>
+    $$ \frac{E_{s1}'}{E_{s1}} = -\frac{\sin(\alpha-\beta)}{\sin(\alpha+\beta)} $$
+    $$ \frac{E_{s2}}{E_{s1}} = \frac{2\sin\beta\cos\alpha}{\sin(\alpha+\beta)} $$
+    <p>This explains the half-wave loss when light reflecting from an optically denser medium.</p>
+
 </main>
 </body>
 </html>
