@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Electromagnetic Oscillations and Waves - Olympiad Physics</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<nav class="sidebar">
+    <h2>Olympiad Physics</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ch01.html">Chapter 1: Kinematics</a></li>
+        <li><a href="ch02.html">Chapter 2: Statics</a></li>
+        <li><a href="ch03.html">Chapter 3: Dynamics</a></li>
+        <li><a href="ch04.html">Chapter 4: Work and Energy</a></li>
+        <li><a href="ch05.html">Chapter 5: Momentum and Impulse</a></li>
+        <li><a href="ch06.html">Chapter 6: Gravitation</a></li>
+        <li><a href="ch07.html">Chapter 7: Electrostatics</a></li>
+        <li><a href="ch08.html">Chapter 8: Static Magnetic Field</a></li>
+        <li><a href="ch09.html">Chapter 9: Electromagnetic Induction</a></li>
+        <li><a href="ch10.html" class="active">Chapter 10: Electromagnetic Oscillations</a></li>
+    </ul>
+</nav>
+<main class="content">
+    <h1>Chapter 10: Electromagnetic Oscillations and Waves</h1>
+
+    <h3>1. Undamped Free Oscillations</h3>
+    <img src="images/ch10_lc_circuit.png" alt="LC Circuit" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p><strong>Initial State:</strong> The source $\mathcal{E}$ charges the capacitor $C$.</p>
+    <p>At $t = 0$, $i = 0$, $q = C\mathcal{E}$.</p>
+    <p>When the switch is toggled to position $a$, the capacitor begins to discharge. In time $dt$, the capacitor charge decreases by $dq$, thus $i = -\frac{dq}{dt}$.</p>
+    $$ \frac{q}{C} - \left(-L\frac{di}{dt}\right) = 0 \implies \frac{q}{C} + L\frac{di}{dt} = 0 \implies i + LC \frac{d^2i}{dt^2} = 0 $$
+    </div>
+    <div style="clear: both;"></div>
+    <p>Solving this differential equation yields: $i = i_m \sin\left(\frac{1}{\sqrt{LC}} t\right)$.</p>
+    $$ \frac{di}{dt} = \frac{i_m}{\sqrt{LC}} \cos\left(\frac{1}{\sqrt{LC}} t\right) = \frac{q}{LC} $$
+    <p>At $t=0$, $q = C\mathcal{E}$, so $\frac{i_m}{\sqrt{LC}} = \frac{C\mathcal{E}}{LC} = \frac{\mathcal{E}}{L} \implies i_m = \frac{\mathcal{E}}{\sqrt{L/C}}$.</p>
+    $$ \therefore i = \frac{\mathcal{E}}{\sqrt{L/C}} \sin\left(\frac{1}{\sqrt{LC}} t\right) $$
+    $$ q = -\int i dt = -\frac{\mathcal{E}}{\sqrt{L/C}} \int \sin\left(\frac{1}{\sqrt{LC}} t\right) dt = -\mathcal{E} C \int \sin\left(\frac{1}{\sqrt{LC}} t\right) d\left(\frac{1}{\sqrt{LC}} t\right) = C\mathcal{E} \cos\left(\frac{1}{\sqrt{LC}} t\right) $$
+    <p>Therefore, we have the following relations for voltage and energy:</p>
+    <ul>
+        <li>$U_C = \frac{q}{C} = \mathcal{E} \cos\left(\frac{1}{\sqrt{LC}} t\right)$</li>
+        <li>$U_L = -U_C = -\mathcal{E} \cos\left(\frac{1}{\sqrt{LC}} t\right)$</li>
+        <li>$W_C = \frac{1}{2} \frac{q^2}{C} = \frac{(C\mathcal{E})^2}{2C} \cos^2\left(\frac{1}{\sqrt{LC}} t\right) = \frac{C\mathcal{E}^2}{4} \left[1 + \cos\left(\frac{2}{\sqrt{LC}} t\right)\right]$</li>
+        <li>$W_L = \frac{1}{2} L i^2 = \frac{L \mathcal{E}^2}{2 L/C} \sin^2\left(\frac{1}{\sqrt{LC}} t\right) = \frac{C\mathcal{E}^2}{4} \left[1 - \cos\left(\frac{2}{\sqrt{LC}} t\right)\right]$</li>
+    </ul>
+
+    <h3>2. Damped Free Oscillations</h3>
+    <img src="images/ch10_damped_oscillation.png" alt="Damped LC oscillation circuit" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \frac{q}{C} - \left(-L\frac{di}{dt}\right) + i R = 0 $$
+    <p>Due to the resistance $R$, the energy of the oscillation gradually dissipates into heat.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <h3>3. Forced Oscillations</h3>
+    <img src="images/ch10_forced_oscillation.png" alt="Forced LC oscillation circuit" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ U_m \sin(\omega t) - L \frac{di}{dt} = \frac{q}{C} + i R $$
+    <p><strong>Electrical Resonance:</strong> When the driving angular frequency $\omega$ matches the natural angular frequency $\omega_0$ of the circuit, the current amplitude reaches its maximum value, resulting in electrical resonance.</p>
+    </div>
+    <div style="clear: both;"></div>
+</main>
+</body>
+</html>

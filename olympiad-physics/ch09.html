@@ -34,6 +34,7 @@
         <li><a href="ch07.html">7. Steady Current</a></li>
         <li><a href="ch08.html">8. Static Magnetic Field</a></li>
         <li><a href="ch09.html" class="active">9. Electromagnetic Induction</a></li>
+        <li><a href="ch10.html">Chapter 10: Electromagnetic Oscillations</a></li>
     </ul>
 </nav>
 
@@ -266,6 +267,132 @@
     $$ \therefore R' = \left(\frac{N_1}{N_2}\right)^2 R \quad \text{(Equivalent Resistance)} $$
     </div>
     <div style="clear: both;"></div>
+    <p><strong>⑨ Power Transmission:</strong></p>
+    <img src="images/ch09_power_transmission.png" alt="Power transmission diagram" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>Consider a transmission system: Generator ($U_0$, $P_0$) $\rightarrow$ Step-up Transformer ($N_0, N_1$) $\rightarrow$ Transmission Line ($R$) $\rightarrow$ Step-down Transformer ($N_2, N_3$) $\rightarrow$ Load.</p>
+    <ul>
+        <li>Generator output current: $I_0 = \frac{P_0}{U_0}$.</li>
+        <li>Voltage at start of transmission line: $U_1 = \frac{N_1}{N_0} U_0$. Current: $I_1 = \frac{N_0}{N_1} I_0$.</li>
+        <li>Voltage loss on transmission line: $U_{\text{loss}} = I_1 R$. Power loss: $P_{\text{loss}} = I_1^2 R$.</li>
+        <li>Voltage at user end of transmission line: $U_2 = U_1 - U_{\text{loss}} = \frac{N_1}{N_0} U_0 - \frac{N_0}{N_1} I_0 R$. Current: $I_2 = I_1$.</li>
+        <li>User network voltage: $U_3 = \frac{N_3}{N_2} U_2 = \frac{N_3 N_1}{N_2 N_0} U_0 - \frac{N_3 N_0}{N_2 N_1} I_0 R$.</li>
+        <li>User power: $P = P_0 - P_{\text{loss}} = P_0 - \left(\frac{N_0}{N_1}\right)^2 I_0^2 R$.</li>
+        <li>User current: $I_3 = \frac{P}{U_3} = \frac{P_0 - \left(\frac{N_0}{N_1}\right)^2 I_0^2 R}{\frac{N_3 N_1}{N_2 N_0} \left[ U_0 - \left(\frac{N_0}{N_1}\right)^2 I_0 R \right]}$.</li>
+    </ul>
+
+    <p><strong>⑩ Rectification and Filtering:</strong></p>
+    <p><strong>1) Half-Wave Rectification:</strong></p>
+    <img src="images/ch09_half_wave_rectifier.png" alt="Half-wave rectifier" style="max-width: 50%; display: block; margin: 1em auto;">
+    <p>To find the effective voltage over one full period $T$:</p>
+    $$ \frac{U_{\text{eff}}^2}{R} T = \int_0^{T/2} \frac{U_m^2 \sin^2(\omega t)}{R} dt $$
+    $$ \therefore U_{\text{eff}}^2 T = U_m^2 \left[ \frac{1}{2} \int_0^{T/2} dt - \frac{1}{2} \int_0^{T/2} \cos(2\omega t) dt \right] = U_m^2 \left[ \frac{1}{4} T - \frac{1}{4\omega} \int_0^{T/2} \cos(2\omega t) d(2\omega t) \right] = \frac{1}{4} U_m^2 T $$
+    $$ \therefore U_{\text{eff}} = \frac{1}{2} U_m, \quad I_{\text{eff}} = \frac{1}{2} I_m $$
+
+    <p><strong>2) Full-Wave Rectification:</strong></p>
+    <img src="images/ch09_full_wave_rectifier.png" alt="Full-wave rectifier" style="max-width: 50%; display: block; margin: 1em auto;">
+    <p>The effective values are the same as unrectified AC:</p>
+    $$ U_{\text{eff}} = \frac{U_m}{\sqrt{2}}, \quad I_{\text{eff}} = \frac{I_m}{\sqrt{2}} $$
+    <ul>
+        <li>The secondary coil requires a center tap.</li>
+        <li>To obtain the same pulsating voltage amplitude $U_m$, the diodes must be able to withstand a reverse voltage of $2 U_m$.</li>
+    </ul>
+
+    <p><strong>3) Bridge Rectification:</strong></p>
+    <img src="images/ch09_bridge_rectifier.png" alt="Bridge rectifier" style="max-width: 50%; display: block; margin: 1em auto;">
+    $$ u = U_m |\sin(\omega t)| $$
+
+    <p><strong>4) Filtering Circuits:</strong></p>
+    <p>The pulsating DC after rectification is used as the input voltage for filtering circuits.</p>
+    <img src="images/ch09_filter_types.png" alt="Filter types" style="max-width: 80%; display: block; margin: 1em auto;">
+    <ul>
+        <li><strong>Capacitor Filter:</strong> $X_C = \frac{1}{2\pi f C}$. Passes AC, blocks DC. Passes high frequencies, blocks low frequencies.</li>
+        <li><strong>Inductor Filter:</strong> $X_L = 2\pi f L$. Passes DC, blocks AC. Passes low frequencies, blocks high frequencies.</li>
+        <li><strong>$\pi$-Type Filter:</strong> Combination of capacitors and inductors for smoother DC output.</li>
+    </ul>
+
+    <p><strong>5) Filtering Circuits with Diodes and DC Sources:</strong></p>
+    <img src="images/ch09_filter_diode_1.png" alt="Filter diode circuit 1" style="max-width: 50%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <ul>
+        <li>When $u > \mathcal{E}$, diode D is reverse biased and disconnected. $U_{AB} = u$.</li>
+        <li>When $u < \mathcal{E}$, diode D is forward biased and conducts (short circuit). $U_{AB} = \mathcal{E}$.</li>
+    </ul>
+    </div>
+    <div style="clear: both;"></div>
+
+    <img src="images/ch09_filter_diode_2.png" alt="Filter diode circuit 2" style="max-width: 50%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <ul>
+        <li>When $u > \mathcal{E}$, diode D is forward biased and conducts (short circuit). $U_{AB} = u - \mathcal{E}$.</li>
+        <li>When $u < \mathcal{E}$, diode D is reverse biased and disconnected (open circuit). $U_{AB} = 0$.</li>
+    </ul>
+    </div>
+    <div style="clear: both;"></div>
+
+    <img src="images/ch09_filter_diode_3.png" alt="Filter diode circuit 3" style="max-width: 50%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Assume $\mathcal{E}_1 > \mathcal{E}_2$.</p>
+    <ul>
+        <li>When $u > \mathcal{E}_1 > \mathcal{E}_2$, D1 conducts, D2 is off. $U_{AB} = \mathcal{E}_1$.</li>
+        <li>When $\mathcal{E}_1 > u > \mathcal{E}_2$, both D1 and D2 are off. $U_{AB} = u$.</li>
+        <li>When $\mathcal{E}_1 > \mathcal{E}_2 > u$, D1 is off, D2 conducts. $U_{AB} = \mathcal{E}_2$.</li>
+    </ul>
+    </div>
+    <div style="clear: both;"></div>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>4. Three-Phase Alternating Current</h3>
+
+    <p>A three-phase generator produces three alternating EMFs with equal amplitudes and a $120^\circ$ phase difference:</p>
+    $$ e_A = \mathcal{E}_m \sin(\omega t) $$
+    $$ e_B = \mathcal{E}_m \sin(\omega t - 120^\circ) $$
+    $$ e_C = \mathcal{E}_m \sin(\omega t - 240^\circ) = \mathcal{E}_m \sin(\omega t + 120^\circ) $$
+
+    <p><strong>1) Y-Y Connection:</strong></p>
+    <img src="images/ch09_y_y_connection.png" alt="Y-Y connection" style="max-width: 90%; display: block; margin: 1em auto;">
+    <p><strong>Characteristic 1:</strong> Line voltage $U_{\text{line}} = \sqrt{3} U_{\text{phase}}$.</p>
+    <p>Proof:</p>
+    $$ e_A - e_B = \mathcal{E}_m [\sin(\omega t) - \sin(\omega t - 120^\circ)] = \mathcal{E}_m \left[ \sin(\omega t) - \sin(\omega t)\cos 120^\circ + \cos(\omega t)\sin 120^\circ \right] $$
+    $$ = \mathcal{E}_m \left[ \sin(\omega t) + \frac{1}{2}\sin(\omega t) + \frac{\sqrt{3}}{2}\cos(\omega t) \right] = \sqrt{3}\mathcal{E}_m \left[ \frac{\sqrt{3}}{2}\sin(\omega t) + \frac{1}{2}\cos(\omega t) \right] = \sqrt{3} \mathcal{E}_m \sin(\omega t + 30^\circ) $$
+    <p>Since the effective value of $e_A - e_B$ is the line voltage $U_{\text{line}}$, we have $U_{\text{line}} = \sqrt{3} U_{\text{phase}}$.</p>
+    
+    <p><strong>Characteristic 2:</strong> The voltage in the neutral line is 0.</p>
+    <p>Proof:</p>
+    $$ U_{\text{neutral}} = \mathcal{E}_m [\sin(\omega t) + \sin(\omega t + 120^\circ) + \sin(\omega t - 120^\circ)] $$
+    $$ = \mathcal{E}_m \left[ \sin(\omega t) + \sin(\omega t)\cos 120^\circ + \cos(\omega t)\sin 120^\circ + \sin(\omega t)\cos 120^\circ - \cos(\omega t)\sin 120^\circ \right] $$
+    $$ = \mathcal{E}_m \left[ \sin(\omega t) - \frac{1}{2}\sin(\omega t) + \frac{\sqrt{3}}{2}\cos(\omega t) - \frac{1}{2}\sin(\omega t) - \frac{\sqrt{3}}{2}\cos(\omega t) \right] = 0 $$
+    <p>Therefore, under symmetrical load conditions, the current in the neutral line is zero.</p>
+
+    <p><strong>2) Y-$\Delta$ Connection:</strong></p>
+    <img src="images/ch09_y_delta_connection.png" alt="Y-Delta connection" style="max-width: 90%; display: block; margin: 1em auto;">
+    <p><strong>Characteristic:</strong> Line current $I_{\text{line}} = \sqrt{3} I_{\text{phase}}$.</p>
+    <p>Proof using Y-$\Delta$ transform for the load: The equivalent Y-resistance is $r = \frac{R^2}{R+R+R} = \frac{R}{3}$.</p>
+    $$ I_{\text{phase}(\Delta)} = \frac{U_{\text{line}}}{R} = \frac{U_{\text{line}}}{3r} $$
+    $$ I_{\text{line}} = \frac{U_{\text{phase}(Y)}}{r} = \frac{U_{\text{line}}/\sqrt{3}}{r} $$
+    $$ \therefore \frac{I_{\text{phase}(\Delta)}}{I_{\text{line}}} = \frac{1}{\sqrt{3}} \implies I_{\text{line}} = \sqrt{3} I_{\text{phase}(\Delta)} $$
+
+    <p><strong>3) $\Delta$ Connection:</strong></p>
+    <img src="images/ch09_delta_connection.png" alt="Delta connection" style="max-width: 80%; display: block; margin: 1em auto;">
+    <p><strong>Characteristic:</strong> $U_{\text{phase}} = U_{\text{line}}$.</p>
+
+    <p><strong>4) Rotating Magnetic Field of a Three-Phase Induction Motor:</strong></p>
+    <img src="images/ch09_motor_cross_section.png" alt="Motor cross section" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>The magnetic fields produced by the three phases are:</p>
+    $$ B_1 = \mu_0 n i_1 = \mu_0 n I_m \sin(\omega t) = B_m \sin(\omega t) $$
+    $$ B_2 = B_m \sin\left(\omega t + \frac{2}{3}\pi\right) $$
+    $$ B_3 = B_m \sin\left(\omega t - \frac{2}{3}\pi\right) $$
+    </div>
+    <div style="clear: both;"></div>
+    <p>In the direction at an angle $\theta$ relative to $B_1$, the resultant magnetic field is:</p>
+    $$ B_\theta = B_1 \cos\theta + B_2 \cos\left(\theta + \frac{2}{3}\pi\right) + B_3 \cos\left(\theta - \frac{2}{3}\pi\right) $$
+    $$ = B_m \left[ \sin(\omega t)\cos\theta + \sin\left(\omega t + \frac{2}{3}\pi\right)\cos\left(\theta + \frac{2}{3}\pi\right) + \sin\left(\omega t - \frac{2}{3}\pi\right)\cos\left(\theta - \frac{2}{3}\pi\right) \right] $$
+    <p>Using the product-to-sum formula ($2\sin A\cos B = \sin(A+B) + \sin(A-B)$):</p>
+    $$ B_\theta = \frac{1}{2} B_m \left[ \sin(\omega t + \theta) + \sin(\omega t - \theta) + \sin\left(\omega t + \theta + \frac{4}{3}\pi\right) + \sin(\omega t - \theta) + \sin\left(\omega t + \theta - \frac{4}{3}\pi\right) + \sin(\omega t - \theta) \right] $$
+    $$ = \frac{1}{2} B_m \left[ 3\sin(\omega t - \theta) + \sin(\omega t + \theta) - \frac{1}{2}\sin(\omega t + \theta) - \frac{\sqrt{3}}{2}\cos(\omega t + \theta) - \frac{1}{2}\sin(\omega t + \theta) + \frac{\sqrt{3}}{2}\cos(\omega t + \theta) \right] $$
+    $$ = \frac{3}{2} B_m \sin(\omega t - \theta) $$
+    <p>This shows that the direction of the resultant magnetic field $B_\theta$ produced by the three-phase current rotates uniformly at $\omega$ with time $t$, where $\theta = \theta_0 + \omega t$.</p>
 </main>
 </body>
 </html>
