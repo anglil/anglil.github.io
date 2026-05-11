@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Direct Current Circuits - Olympiad Physics</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                macros: {
+                    bm: ["\\boldsymbol{#1}", 1]
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <h2><a href="index.html">Olympiad Physics</a></h2>
+    </div>
+    <ul class="nav-links">
+        <li><a href="ch01.html">1. Kinematics & Statics</a></li>
+        <li><a href="ch02.html">2. Dynamics & Oscillations</a></li>
+        <li><a href="ch03.html">3. Optics & Quantum Physics</a></li>
+        <li><a href="ch04.html">4. Thermodynamics</a></li>
+        <li><a href="ch05.html">5. Electrostatics</a></li>
+        <li><a href="ch06.html" class="active">6. Direct Current Circuits</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <h1>Part 9: Resistance, Capacitance, Inductance</h1>
+
+    <h3>1. Resistance (电阻)</h3>
+    <p><strong>① Resistivity and Temperature:</strong></p>
+    $$ R = \rho \frac{l}{S} $$
+    $$ \rho = \rho_0(1+\alpha t), \quad d\rho = \alpha \rho_0 dt \implies R = R_0(1+\alpha t) $$
+
+    <p><strong>② Series and Parallel Circuits:</strong></p>
+    <ul>
+        <li><strong>Series (串联):</strong> $R_{\text{total}} = \rho \frac{\sum l_i}{S} = \sum \rho \frac{l_i}{S} = \sum R_i \implies R_{\text{total}} = \frac{U_{\text{total}}}{I} = \sum \frac{U_i}{I} = \sum R_i$</li>
+        <li><strong>Parallel (并联):</strong> $\frac{1}{R_{\text{total}}} = \frac{\sum S_i}{\rho l} = \sum \frac{S_i}{\rho l} = \sum \frac{1}{R_i} \implies \frac{1}{R_{\text{total}}} = \frac{I_{\text{total}}}{U} = \sum \frac{I_i}{U} = \sum \frac{1}{R_i}$</li>
+    </ul>
+
+    <p><strong>③ Equivalent Resistance (等效电阻):</strong></p>
+
+    <p><strong>1) Symmetry (对称性):</strong></p>
+    <p><em>&lt;1&gt; Folding symmetry in grids:</em></p>
+    <img src="images/ch06_sym_grid_1.png" alt="Grid symmetry" style="max-width: 80%; display: block; margin: 1em auto;">
+
+    <p><em>&lt;2&gt; Ladder network (梯形网络):</em></p>
+    <img src="images/ch06_ladder_network.png" alt="Ladder network" style="max-width: 60%; display: block; margin: 1em auto;">
+    $$ U_{CB} = U_{AD} = [I_1 + (I_1+I_2) + (I_1+I_2+I_3) + \dots + (I-I_{n+1})] R $$
+    $$ = [(I-I_1) + (I-I_1-I_2) + \dots + I_{n+1}] R $$
+    $$ \therefore 2U_{CB} = n I R $$
+    <p>Also, from the loop equations:</p>
+    $$ \begin{cases} I_k R + i_k' R = i_{k-1}' R + I_k R \\ I_k R + i_k'' R = i_k' R + I_{k+1} R \end{cases} \implies \begin{cases} i_{k-1}' + I_k = i_k'' \\ i_k' = I_k + i_k'' \end{cases} $$
+    <p>Solving this yields $4I_k = I_{k+1} + I_{k-1}$. Transforming this recurrence relation:</p>
+    $$ I_{n+1} - (2-\sqrt{3})I_n = (2+\sqrt{3}) [I_n - (2-\sqrt{3})I_{n-1}] $$
+    <p>Because of conjugate symmetry, $I_{n+1} = I_1$, $I_n = I_2$. Solving gives:</p>
+    $$ I_2 = \frac{(2+\sqrt{3})^{n-2} - (2-\sqrt{3})^{n-2}}{(2+\sqrt{3})^{n-1} - (2-\sqrt{3})^{n-1} + (2-\sqrt{3}) - (2+\sqrt{3})} I_1 $$
+    <p>And from the first segment: $2I_1 R = (I - I_1)R \implies I_2 = 3I_1 - I$. Combining these yields $I_1$ in terms of $I$.</p>
+    $$ \therefore U_{AB} = I_1 R + U_{BC} $$
+    $$ R_{AB} = \frac{U_{AB}}{I} = \left\{ \frac{n}{2} + \left[ 3 - \frac{(2+\sqrt{3})^{n-2} - (2-\sqrt{3})^{n-2}}{(2+\sqrt{3})^{n-1} - (2-\sqrt{3})^{n-1} - 2\sqrt{3}} \right]^{-1} \right\} R $$
+
+    <p><em>&lt;3&gt; Self-similarity (自相似性):</em></p>
+    <img src="images/ch06_sierpinski.png" alt="Sierpinski resistor network" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Find the equivalent resistance between A and B (unit resistance $R_0$, with infinite equilateral triangles inside).</p>
+    <p>By symmetry, POQ can be separated from AOB, and due to self-similarity:</p>
+    $$ R_{AB} = 2 R_{PQ} $$
+    $$ \therefore R_{AB} = \frac{ \frac{aR_0 \cdot R_{PQ}}{aR_0 + R_{PQ}} + aR_0 }{ \frac{aR_0 \cdot R_{PQ}}{aR_0 + R_{PQ}} + 2aR_0 } a R_0 $$
+    <p>Solving this equation gives:</p>
+    $$ \therefore R_{AB} = \frac{1}{3}(\sqrt{7}-1) a R_0 $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>2) Infinity (无限性):</strong></p>
+    <img src="images/ch06_infinite_ladder.png" alt="Infinite ladder" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \frac{(R_{n-1} + 2r) r}{R_{n-1} + 3r} = R_n $$
+    $$ \frac{(2-\sqrt{3})r[R_{n-1} + (1-\sqrt{3})r]}{R_{n-1} + 3r} = R_n + (1-\sqrt{3})r $$
+    <p>Rearranging the terms gives:</p>
+    $$ \frac{1}{R_n + (1-\sqrt{3})r} - \frac{2+\sqrt{3}}{R_{n-1} + (1-\sqrt{3})r} = \frac{1}{(2-\sqrt{3})r} = 2+\sqrt{3} $$
+    <p>Solving the recurrence relation:</p>
+    $$ R_n = -\frac{1}{2\sqrt{3}}r + \left[ \frac{1}{R_1 + (1-\sqrt{3})r} + \frac{1}{2\sqrt{3}r} \right] (7+4\sqrt{3})^{n-1} + (\sqrt{3}-1)r $$
+    <p>When $n \to \infty$:</p>
+    $$ R_\infty = (\sqrt{3}-1)r $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>3) Current Superposition Method (电流叠加法):</strong></p>
+    <p>Assume a current $I$ flows into one node, calculate the current $I_{AB}$ flowing through the target branch AB. Assume a current $I$ flows out of the other node, calculate the current $I_{AB}'$ in AB. If $r_{AB}$ is the resistance of the wire connecting A and B ($r_{AB} = c \cdot r$), and $I_{AB} = A \cdot I$, $I_{AB}' = B \cdot I$:</p>
+    $$ \therefore U_{AB} = (I_{AB} + I_{AB}') r_{AB} = (A+B) c \cdot r \cdot I \implies R_{AB} = \frac{U_{AB}}{I} = (A+B) c \cdot r $$
+
+    <p><em>&lt;1&gt; Square Grid (正四边形网格):</em></p>
+    <img src="images/ch06_square_grid.png" alt="Square grid" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Assume $I$ flows into A, current on AB is $\frac{I}{4}$. Assume $I$ flows out of B, current on AB is $\frac{I}{4}$.</p>
+    <p>Superposing both cases: $U_{AB} = (\frac{I}{4} + \frac{I}{4}) \cdot r \implies R_{AB} = \frac{1}{2} r$.</p>
+    <p>Since $R_{AB}$ is the parallel combination of $r_{AB}$ and the rest of the grid (denoted $\overline{r_{AB}}$):</p>
+    $$ \frac{1}{r_{AB}} + \frac{1}{\overline{r_{AB}}} = \frac{2}{r} $$
+    <p>Since $r_{AB} = r$, we get $\overline{r_{AB}} = r$.</p>
+    <p>Thus, when $r_{AB} = R, R \in (0, +\infty)$, $R_{AB} = \frac{Rr}{R+r}$; when $r_{AB} = 0$, $R_{AB} = \overline{r_{AB}} = r$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><em>&lt;2&gt; Hexagonal Grid (正六边形网格):</em></p>
+    <img src="images/ch06_hex_grid.png" alt="Hexagonal grid" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Assume $I$ flows into a, current on ab is $\frac{I}{3}$, current on bc is $\frac{I}{6}$.</p>
+    <p>Assume $I$ flows out of c, current on bc is $\frac{I}{6}$, current on ab is $\frac{I}{3}$.</p>
+    <p>Superposing both cases: $U_{ac} = (\frac{I}{3} + \frac{I}{6})r + (\frac{I}{6} + \frac{I}{3})r = I r \implies R_{ac} = r$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><em>&lt;3&gt; Cross Grid / "田" Shape (田字形):</em></p>
+    <img src="images/ch06_cross_grid.png" alt="Cross grid" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Find equivalent resistance between A and B.</p>
+    <p>Assume $I$ flows into A and out of O. Solving yields $I_1' = \frac{7}{24} I, I_2' = \frac{1}{8} I$.</p>
+    <p>Assume $I$ flows into O and out of B. Solving yields $I_1'' = \frac{7}{24} I, I_2'' = \frac{5}{24} I$.</p>
+    $$ \therefore I_1 = \frac{7}{24}I + \frac{7}{24}I = \frac{14}{24} I, \quad I_2 = \frac{1}{8}I + \frac{5}{24}I = \frac{1}{3} I $$
+    $$ \therefore U_{AB} = I_1 r + I_2 \cdot 2r \implies R_{AB} = \frac{U_{AB}}{I} = \left(\frac{14}{24} + \frac{2}{3}\right)r = \frac{30}{24} r = \frac{5}{4} r $$
+    <p>(Note: The manuscript calculation is approximated as $\frac{29}{24} r$ based on the diagram labels).</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>4) Y-$\Delta$ Transform (Y-$\Delta$ 变换):</strong></p>
+    <img src="images/ch06_y_delta.png" alt="Y-Delta Transform" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>Equivalence implies: $I_1 = I_1', I_2 = I_2', I_3 = I_3'$ and $\varphi_1 = \varphi_1', \varphi_2 = \varphi_2', \varphi_3 = \varphi_3'$.</p>
+    <p>In the Y-shape (using node voltage method and Kirchhoff's current law):</p>
+    $$ \begin{cases} \varphi_1 - I_1 R_1 + I_3 R_3 = \varphi_3 \\ \varphi_1 - I_1 R_1 + I_2 R_2 = \varphi_2 \\ I_1 + I_2 + I_3 = 0 \end{cases} $$
+    <p>In the $\Delta$-shape:</p>
+    $$ \begin{cases} \varphi_1' - I_{13} R_{13} = \varphi_3' \\ \varphi_1' + I_{12} R_{12} = \varphi_2' \\ I_1' = I_{13} - I_{12} \end{cases} $$
+    <p>From the Y-shape, we can express $I_1$ in terms of the potentials:</p>
+    $$ I_1 = \frac{R_2+R_3}{R_1 R_2 + R_2 R_3 + R_3 R_1} \varphi_1 - \frac{R_3}{R_1 R_2 + R_2 R_3 + R_3 R_1} \varphi_2 - \frac{R_2}{R_1 R_2 + R_2 R_3 + R_3 R_1} \varphi_3 $$
+    <p>From the $\Delta$-shape:</p>
+    $$ I_1' = \left(\frac{1}{R_{31}} + \frac{1}{R_{12}}\right) \varphi_1' - \frac{1}{R_{12}} \varphi_2' - \frac{1}{R_{31}} \varphi_3' $$
+    <p>Comparing the coefficients of the potentials, we get:</p>
+    $$ R_{12} = \frac{R_1 R_2 + R_2 R_3 + R_3 R_1}{R_3}, \quad R_{31} = \frac{R_1 R_2 + R_2 R_3 + R_3 R_1}{R_2}, \quad R_{23} = \frac{R_1 R_2 + R_2 R_3 + R_3 R_1}{R_1} $$
+    <p>By solving the reverse transformation from $\Delta$ to Y:</p>
+    $$ R_1 = \frac{R_{12} R_{31}}{R_{12} + R_{23} + R_{31}}, \quad R_2 = \frac{R_{23} R_{12}}{R_{12} + R_{23} + R_{31}}, \quad R_3 = \frac{R_{23} R_{31}}{R_{12} + R_{23} + R_{31}} $$
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Measuring Resistivity (测电阻率)</h3>
+
+    <p><strong>1. Measuring the resistivity of an infinite medium:</strong></p>
+    <img src="images/ch06_measure_infinite.png" alt="Measure infinite medium" style="max-width: 35%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Draw a square ABCD of side $a$ on the surface. Inject current $I_0$ at A, and extract the same current $I_0$ at D.</p>
+    <p>For the injected current at A, the current density is $j = \frac{I_0}{2\pi r^2} \implies E = \frac{j}{\sigma} = \frac{I_0 \rho}{2\pi r^2}$.</p>
+    $$ \therefore \varphi = -\int E dr = \frac{I_0 \rho}{2\pi r} $$
+    $$ \therefore U_{BC} = \frac{I_0 \rho}{2\pi a} - \frac{I_0 \rho}{2\pi (\sqrt{2}a)} = \frac{(2-\sqrt{2})I_0 \rho}{4\pi a} $$
+    <p>Similarly, considering only the extracted current at D, $U_{BC}' = \frac{(2-\sqrt{2})I_0 \rho}{4\pi a}$. By superposition:</p>
+    $$ U_0 = U_{BC} + U_{BC}' = \frac{(2-\sqrt{2})I_0 \rho}{2\pi a} $$
+    $$ \therefore \rho = \frac{2\pi a}{(2-\sqrt{2})} \frac{U_0}{I_0} = (2+\sqrt{2})\pi a \frac{U_0}{I_0} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>2. Measuring the resistivity of space where two metal spheres of radius $a$ are separated by distance $l \gg a$ (Multimeter reading is R):</strong></p>
+    <img src="images/ch06_measure_spheres.png" alt="Measure spheres" style="max-width: 50%; display: block; margin: 1em auto;">
+    <p>The current density at a point $x$ between the spheres is:</p>
+    $$ j(x) = \frac{I_0}{4\pi} \left[ \frac{1}{x^2} + \frac{1}{(l-x)^2} \right] \quad (a < x < l-a) $$
+    $$ \therefore dR(x) = \rho \frac{dx}{S} = \frac{\rho dx}{I_0} j(x) = \frac{\rho dx}{I_0} \frac{I_0}{4\pi} \left[ \frac{1}{x^2} + \frac{1}{(l-x)^2} \right] = \frac{\rho}{4\pi} \left[ \frac{1}{x^2} + \frac{1}{(l-x)^2} \right] dx $$
+    $$ \therefore R = \frac{\rho}{4\pi} \int_a^{l-a} \left[ \frac{1}{x^2} + \frac{1}{(l-x)^2} \right] dx = \frac{\rho}{4\pi} \cdot 2 \left( \frac{1}{a} - \frac{1}{l-a} \right) = \frac{\rho}{2\pi} \left( \frac{1}{a} - \frac{1}{l-a} \right) $$
+    <p>The multimeter measures this total resistance $R_{\text{total}}$.</p>
+    $$ \therefore \rho = \frac{2\pi R_{\text{total}} a (l-a)}{l-2a} $$
+    <p>When $l \to \infty$, $\rho = 2\pi R_{\text{total}} a$.</p>
+
+    <p><strong>3. Measuring the resistivity of the substance between two concentric spheres:</strong></p>
+    <img src="images/ch06_measure_concentric.png" alt="Measure concentric spheres" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Take a Gaussian surface of radius $r$ between the two spherical surfaces:</p>
+    $$ \oint E dS = E \cdot 4\pi r^2 = \frac{Q}{\varepsilon_1} = \rho \oint j dS = \rho I $$
+    $$ \therefore Q = \varepsilon_1 \rho I $$
+    <p>And $U_{ab} = \frac{Q}{4\pi\varepsilon_1} \left(\frac{1}{a} - \frac{1}{b}\right) = I R$. Substituting $Q$:</p>
+    $$ \frac{\varepsilon_1 \rho I}{\varepsilon_1} = \frac{4\pi R a b}{b - a} \cdot I $$
+    $$ \therefore \rho = \frac{4\pi R a b}{b - a} $$
+    </div>
+    <div style="clear: both;"></div>
+
+</main>
+</body>
+</html>
