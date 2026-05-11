@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Chapter 6: Fluid Mechanics — Olympiad Physics</title>
+  <link rel="stylesheet" href="style.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<aside id="sidebar"><div class="book-title">Olympiad Physics<span>Angli Liu</span></div><nav><ul><li><a href="index.html">Table of Contents</a></li><li><div class="part-label">Part I — Mechanics</div></li><li><a href="ch01.html">1. Kinematics</a></li><li><a href="ch02.html">2. Newton's Laws</a></li><li><a href="ch03.html">3. Energy &amp; Work</a></li><li><a href="ch04.html">4. Momentum</a></li><li><a href="ch05.html">5. Rotational Motion</a></li><li><a href="ch06.html" class="active">6. Fluid Mechanics</a></li><li><a href="ch07.html">7. Oscillations &amp; Waves</a></li><li><div class="part-label">Part II — Thermal, EM, Optics</div></li><li><a href="ch08.html">8. Thermodynamics</a></li><li><a href="ch09.html">9. Electrostatics</a></li><li><a href="ch10.html">10. DC Circuits</a></li><li><a href="ch11.html">11. Magnetism</a></li><li><a href="ch12.html">12. Optics</a></li><li><a href="ch13.html">13. Relativity</a></li></ul></nav></aside>
+<main id="content">
+
+<h1><span class="chapter-num">Chapter 6</span>Fluid Mechanics</h1>
+
+<h2 id="s6-1">6.1 Pressure and Pascal's Principle</h2>
+
+<div class="box definition">
+  <div class="box-title">Definition 6.1 — Pressure</div>
+  $$P = \frac{dF}{dA}$$
+  <p>Pressure is a scalar; force on a surface element $d\mathbf{A}$ is $d\mathbf{F} = -P\,d\mathbf{A}$ (pointing inward).</p>
+</div>
+
+<div class="box theorem">
+  <div class="box-title">Pascal's Principle</div>
+  <p>A change in pressure applied to an enclosed fluid is transmitted undiminished to every point of the fluid and to the walls of the container.</p>
+</div>
+
+<h2 id="s6-2">6.2 Hydrostatic Pressure</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 6.1 — Hydrostatic Equation</div>
+  $$\frac{dP}{dz} = -\rho g \qquad\implies\qquad P = P_0 + \rho g h$$
+  <p>for an incompressible fluid of density $\rho$ at depth $h$ below the surface.</p>
+</div>
+
+<h2 id="s6-3">6.3 Archimedes' Principle</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 6.2 — Archimedes' Principle</div>
+  <p>The buoyant force on a submerged (or partially submerged) body equals the weight of the displaced fluid:</p>
+  $$F_b = \rho_f V_{\text{disp}}\,g.$$
+</div>
+
+<div class="box example">
+  <div class="box-title">Example 6.1 — Floating Body</div>
+  <p>A block of density $\rho_s$ and volume $V$ floats in a liquid of density $\rho_\ell > \rho_s$. What fraction is submerged?</p>
+  <details><summary>Solution</summary><div class="solution-content"><p>Equilibrium: $\rho_s V g = \rho_\ell V_{\text{sub}} g$. Fraction submerged $= V_{\text{sub}}/V = \rho_s/\rho_\ell$.</p></div></details>
+</div>
+
+<h2 id="s6-4">6.4 Continuity Equation</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 6.3 — Equation of Continuity</div>
+  <p>For an incompressible fluid in steady flow: $A_1 v_1 = A_2 v_2$.</p>
+</div>
+
+<h2 id="s6-5">6.5 Bernoulli's Equation</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 6.4 — Bernoulli's Equation</div>
+  <p>For steady, incompressible, non-viscous flow along a streamline:</p>
+  $$P + \frac{1}{2}\rho v^2 + \rho g h = \text{const}.$$
+</div>
+
+<details>
+  <summary>Proof</summary>
+  <div class="solution-content">
+    <p>Apply the work–energy theorem to a fluid element flowing through a tube. The work done by pressure forces and gravity equals the change in kinetic energy. Consider a section of streamtube between points 1 and 2. In time $dt$, a volume $A_1 v_1\,dt = A_2 v_2\,dt = dV$ flows through.</p>
+    <p>Net work by pressure: $(P_1 - P_2)dV$. Work by gravity: $-\rho g(h_2 - h_1)dV$. Change in KE: $\frac{1}{2}\rho(v_2^2 - v_1^2)dV$.</p>
+    <p>Combining: $P_1 + \frac{1}{2}\rho v_1^2 + \rho g h_1 = P_2 + \frac{1}{2}\rho v_2^2 + \rho g h_2$. $\blacksquare$</p>
+  </div>
+</details>
+
+<div class="box example">
+  <div class="box-title">Example 6.2 — Torricelli's Theorem</div>
+  <p>A tank of water filled to height $H$ has a small hole at the bottom. Find the exit speed.</p>
+  <details><summary>Solution</summary><div class="solution-content"><p>Apply Bernoulli between the top surface (large area, $v \approx 0$, $P = P_{\text{atm}}$, $h = H$) and the hole ($P = P_{\text{atm}}$, $h = 0$):</p><p>$P_{\text{atm}} + \rho g H = P_{\text{atm}} + \frac{1}{2}\rho v^2 \implies v = \sqrt{2gH}$.</p></div></details>
+</div>
+
+<h2 id="s6-6">6.6 Viscous Flow and Stokes' Law</h2>
+
+<p>For a sphere of radius $r$ moving at speed $v$ through a fluid of viscosity $\eta$:</p>
+$$F_{\text{drag}} = 6\pi\eta r v \qquad\text{(Stokes' law, low Reynolds number)}.$$
+
+<p>Terminal velocity of a falling sphere: $v_t = \frac{2r^2(\rho_s - \rho_f)g}{9\eta}$.</p>
+
+<h2 id="s6-7">6.7 Surface Tension</h2>
+
+<div class="box definition">
+  <div class="box-title">Definition 6.2 — Surface Tension</div>
+  <p>Surface tension $\gamma$ is the force per unit length along a line on the surface, or equivalently the energy per unit area. Excess pressure inside a bubble of radius $R$: $\Delta P = 2\gamma/R$ (single surface) or $4\gamma/R$ (soap bubble, two surfaces).</p>
+</div>
+
+<h2 id="s6-8">6.8 Exercises</h2>
+
+<div class="box exercise"><div class="box-title">Exercise 6.1</div><p>A U-tube contains mercury (density $\rho_m$). Water (density $\rho_w$) is poured into one arm to a height $h_w$. Find the difference in mercury levels.</p></div>
+
+<div class="box exercise"><div class="box-title">Exercise 6.2</div><p>A cylindrical tank of cross-section $A$ has a small orifice of area $a \ll A$ at the bottom. Initially the water level is $H$. Find the time to drain completely.</p></div>
+
+<div class="box exercise"><div class="box-title">Exercise 6.3</div><p>A sphere of density $\rho_s$ is released in a viscous fluid of density $\rho_f$ and viscosity $\eta$. Find $v(t)$ as it approaches terminal velocity.</p></div>
+
+<nav class="chapter-nav">
+  <a href="ch05.html">← Rotational Motion</a>
+  <a href="ch07.html">Oscillations &amp; Waves →</a>
+</nav>
+</main>
+</body>
+</html>

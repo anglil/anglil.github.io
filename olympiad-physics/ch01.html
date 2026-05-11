@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1: Kinematics — Olympiad Physics</title>
+  <meta name="description" content="Kinematics: position, velocity, acceleration, projectile motion, and relative motion for physics olympiad preparation.">
+  <link rel="stylesheet" href="style.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}};
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<aside id="sidebar">
+  <div class="book-title">Olympiad Physics<span>Angli Liu</span></div>
+  <nav><ul>
+    <li><a href="index.html">Table of Contents</a></li>
+    <li><div class="part-label">Part I — Mechanics</div></li>
+    <li><a href="ch01.html" class="active">1. Kinematics</a></li>
+    <li><a href="ch02.html">2. Newton's Laws</a></li>
+    <li><a href="ch03.html">3. Energy &amp; Work</a></li>
+    <li><a href="ch04.html">4. Momentum</a></li>
+    <li><a href="ch05.html">5. Rotational Motion</a></li>
+    <li><a href="ch06.html">6. Fluid Mechanics</a></li>
+    <li><a href="ch07.html">7. Oscillations &amp; Waves</a></li>
+    <li><div class="part-label">Part II — Thermal, EM, Optics</div></li>
+    <li><a href="ch08.html">8. Thermodynamics</a></li>
+    <li><a href="ch09.html">9. Electrostatics</a></li>
+    <li><a href="ch10.html">10. DC Circuits</a></li>
+    <li><a href="ch11.html">11. Magnetism</a></li>
+    <li><a href="ch12.html">12. Optics</a></li>
+    <li><a href="ch13.html">13. Relativity</a></li>
+  </ul></nav>
+</aside>
+<main id="content">
+
+<h1><span class="chapter-num">Chapter 1</span>Kinematics</h1>
+
+<p>Kinematics is the study of motion without regard to the forces that cause it. We develop the vocabulary of displacement, velocity, and acceleration, first in one dimension, then in two and three dimensions. The chapter concludes with projectile motion and relative-motion problems characteristic of competition physics.</p>
+
+<h2 id="s1-1">1.1 Position and Displacement</h2>
+
+<div class="box definition">
+  <div class="box-title">Definition 1.1 — Position Vector</div>
+  <p>The <em>position</em> of a particle at time $t$ is specified by the vector $\mathbf{r}(t) = x(t)\,\hat{\mathbf{i}} + y(t)\,\hat{\mathbf{j}} + z(t)\,\hat{\mathbf{k}}$ in a chosen coordinate system. The <em>displacement</em> over the interval $[t_1, t_2]$ is</p>
+  $$\Delta\mathbf{r} = \mathbf{r}(t_2) - \mathbf{r}(t_1).$$
+</div>
+
+<p><strong>Remark.</strong> Displacement is a vector; <em>distance</em> is the scalar $\displaystyle s = \int_{t_1}^{t_2} |\mathbf{v}(t)|\,dt$, which is always $\geq |\Delta\mathbf{r}|$.</p>
+
+<h2 id="s1-2">1.2 Velocity</h2>
+
+<div class="box definition">
+  <div class="box-title">Definition 1.2 — Velocity</div>
+  <p>The <em>instantaneous velocity</em> is the time derivative of the position vector:</p>
+  $$\mathbf{v}(t) = \frac{d\mathbf{r}}{dt} = \dot{x}\,\hat{\mathbf{i}} + \dot{y}\,\hat{\mathbf{j}} + \dot{z}\,\hat{\mathbf{k}}.$$
+  <p>The <em>average velocity</em> over $[t_1,t_2]$ is $\overline{\mathbf{v}} = \Delta\mathbf{r}/\Delta t$. The <em>speed</em> is $v = |\mathbf{v}|$.</p>
+</div>
+
+<h2 id="s1-3">1.3 Acceleration</h2>
+
+<div class="box definition">
+  <div class="box-title">Definition 1.3 — Acceleration</div>
+  $$\mathbf{a}(t) = \frac{d\mathbf{v}}{dt} = \frac{d^2\mathbf{r}}{dt^2}.$$
+</div>
+
+<h2 id="s1-4">1.4 Uniformly Accelerated Motion</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 1.1 — SUVAT Equations</div>
+  <p>For constant acceleration $\mathbf{a}$ with initial velocity $\mathbf{v}_0$ and initial position $\mathbf{r}_0$:</p>
+  $$\mathbf{v} = \mathbf{v}_0 + \mathbf{a}\,t$$
+  $$\mathbf{r} = \mathbf{r}_0 + \mathbf{v}_0\,t + \tfrac{1}{2}\mathbf{a}\,t^2$$
+  $$v^2 = v_0^2 + 2\,\mathbf{a}\cdot\Delta\mathbf{r}$$
+  $$\Delta\mathbf{r} = \tfrac{1}{2}(\mathbf{v}_0 + \mathbf{v})\,t$$
+</div>
+
+<details>
+  <summary>Proof</summary>
+  <div class="solution-content">
+    <p>Integrate $\mathbf{a} = d\mathbf{v}/dt$ from $0$ to $t$:</p>
+    $$\int_0^t \mathbf{a}\,dt' = \mathbf{v}(t) - \mathbf{v}_0 \implies \mathbf{v} = \mathbf{v}_0 + \mathbf{a}\,t.$$
+    <p>Integrate once more: $\mathbf{r} = \mathbf{r}_0 + \int_0^t \mathbf{v}\,dt' = \mathbf{r}_0 + \mathbf{v}_0 t + \frac{1}{2}\mathbf{a}t^2$.</p>
+    <p>Eliminate $t$ between the first two equations: from the first, $t = (v - v_0)/a$. Substituting into the displacement equation (in the direction of motion) gives $v^2 = v_0^2 + 2a\,\Delta x$. $\blacksquare$</p>
+  </div>
+</details>
+
+<div class="box example">
+  <div class="box-title">Example 1.1 — Free-Fall with Air Resistance Onset</div>
+  <p>A ball is dropped from rest at height $h = 45\,\text{m}$. Ignoring air resistance, find (a) the time to reach the ground, (b) the speed at impact.</p>
+  <details>
+    <summary>Solution</summary>
+    <div class="solution-content">
+      <p>(a) Take downward as positive. $h = \frac{1}{2}gt^2 \implies t = \sqrt{2h/g} = \sqrt{2(45)/9.8} \approx 3.03\,\text{s}$.</p>
+      <p>(b) $v = gt = 9.8 \times 3.03 \approx 29.7\,\text{m/s}$.</p>
+    </div>
+  </details>
+</div>
+
+<h2 id="s1-5">1.5 Projectile Motion</h2>
+
+<p>Decompose the motion into horizontal (no acceleration) and vertical (acceleration $g$ downward) components.</p>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 1.2 — Projectile Range and Maximum Height</div>
+  <p>A projectile launched from ground level with speed $v_0$ at angle $\theta$ above the horizontal:</p>
+  $$R = \frac{v_0^2 \sin 2\theta}{g}, \qquad H = \frac{v_0^2 \sin^2\theta}{2g}, \qquad T = \frac{2v_0\sin\theta}{g}.$$
+  <p>The range is maximized at $\theta = 45°$.</p>
+</div>
+
+<details>
+  <summary>Proof</summary>
+  <div class="solution-content">
+    <p>Let $v_{0x} = v_0\cos\theta$, $v_{0y} = v_0\sin\theta$.</p>
+    <p>Flight time: $0 = v_{0y}T - \frac{1}{2}gT^2 \implies T = 2v_{0y}/g$.</p>
+    <p>Range: $R = v_{0x}T = v_0\cos\theta \cdot 2v_0\sin\theta/g = v_0^2\sin 2\theta/g$.</p>
+    <p>Max height: at apex, $v_y = 0 \implies t^* = v_{0y}/g$, so $H = v_{0y}t^* - \frac{1}{2}g(t^*)^2 = v_0^2\sin^2\theta/(2g)$. $\blacksquare$</p>
+  </div>
+</details>
+
+<div class="box example">
+  <div class="box-title">Example 1.2 — Projectile on an Incline</div>
+  <p>A particle is launched with speed $v_0$ at angle $\alpha$ above an inclined plane of angle $\beta$. Find the range along the incline.</p>
+  <details>
+    <summary>Solution</summary>
+    <div class="solution-content">
+      <p>Use tilted coordinates: $x'$ along the incline, $y'$ perpendicular. Then $a_{x'} = -g\sin\beta$ and $a_{y'} = -g\cos\beta$.</p>
+      <p>Setting $y' = 0$: $T = 2v_0\sin\alpha / (g\cos\beta)$.</p>
+      <p>Range along incline: $L = v_0\cos\alpha \cdot T + \frac{1}{2}(-g\sin\beta)T^2$. Substituting:</p>
+      $$L = \frac{2v_0^2\sin\alpha}{g\cos^2\beta}\bigl(\cos\alpha\cos\beta - \sin\alpha\sin\beta\bigr) = \frac{2v_0^2\sin\alpha\cos(\alpha+\beta)}{g\cos^2\beta}.$$
+    </div>
+  </details>
+</div>
+
+<h2 id="s1-6">1.6 Relative Motion</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 1.3 — Galilean Velocity Transformation</div>
+  <p>If frame $S'$ moves with constant velocity $\mathbf{V}$ relative to frame $S$, then for any particle:</p>
+  $$\mathbf{v}_S = \mathbf{v}_{S'} + \mathbf{V}, \qquad \mathbf{a}_S = \mathbf{a}_{S'}.$$
+</div>
+
+<div class="box example">
+  <div class="box-title">Example 1.3 — River Crossing</div>
+  <p>A swimmer can swim at speed $v_s$ in still water. A river of width $d$ flows with speed $v_r < v_s$. What heading minimizes the crossing time, and what heading makes the swimmer arrive directly opposite?</p>
+  <details>
+    <summary>Solution</summary>
+    <div class="solution-content">
+      <p><strong>Minimum time:</strong> Swim perpendicular to the bank. Time $= d/v_s$, but the swimmer is swept downstream by $v_r d/v_s$.</p>
+      <p><strong>Straight across:</strong> Aim upstream at angle $\theta$ with $v_s\sin\theta = v_r$, i.e. $\theta = \arcsin(v_r/v_s)$. The perpendicular component is $v_s\cos\theta = \sqrt{v_s^2 - v_r^2}$, so $t = d/\sqrt{v_s^2 - v_r^2}$.</p>
+    </div>
+  </details>
+</div>
+
+<h2 id="s1-7">1.7 Curvilinear Coordinates</h2>
+
+<p>In polar coordinates $(r,\theta)$ the position, velocity, and acceleration are:</p>
+
+$$\mathbf{r} = r\,\hat{\mathbf{r}}$$
+$$\mathbf{v} = \dot{r}\,\hat{\mathbf{r}} + r\dot{\theta}\,\hat{\boldsymbol{\theta}}$$
+$$\mathbf{a} = (\ddot{r} - r\dot{\theta}^2)\,\hat{\mathbf{r}} + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\,\hat{\boldsymbol{\theta}}$$
+
+<p>The term $r\dot{\theta}^2$ is the centripetal acceleration; $2\dot{r}\dot{\theta}$ is the Coriolis-like cross term that appears when $r$ is changing.</p>
+
+<div class="box definition">
+  <div class="box-title">Definition 1.4 — Tangential and Normal Components</div>
+  <p>For motion along a curve, the acceleration decomposes as:</p>
+  $$\mathbf{a} = \frac{dv}{dt}\,\hat{\mathbf{t}} + \frac{v^2}{\rho}\,\hat{\mathbf{n}}$$
+  <p>where $\hat{\mathbf{t}}$ is the unit tangent, $\hat{\mathbf{n}}$ the unit normal pointing toward the center of curvature, and $\rho$ is the radius of curvature.</p>
+</div>
+
+<h2 id="s1-8">1.8 Exercises</h2>
+
+<div class="box exercise">
+  <div class="box-title">Exercise 1.1</div>
+  <p>A particle moves along the $x$-axis with velocity $v(t) = v_0(1 - t/\tau)$ for $0 \leq t \leq 2\tau$. Find (a) the displacement over $[0, 2\tau]$, (b) the total distance traveled.</p>
+</div>
+
+<div class="box exercise">
+  <div class="box-title">Exercise 1.2</div>
+  <p>A ball is thrown from the top of a building of height $H$ with horizontal speed $v_0$. At the same instant, a second ball is thrown from the ground directly below with speed $u$ at angle $\theta$ above the horizontal. Find the condition on $u$ and $\theta$ for the balls to collide in mid-air.</p>
+</div>
+
+<div class="box exercise">
+  <div class="box-title">Exercise 1.3</div>
+  <p>Two particles start simultaneously from the same point. Particle A moves with constant speed $v_A$ along a straight line. Particle B always moves directly toward A with constant speed $v_B > v_A$. Find the time at which B catches A.</p>
+</div>
+
+<div class="box exercise">
+  <div class="box-title">Exercise 1.4</div>
+  <p>A projectile is launched at speed $v_0$ at angle $\theta$ on a planet where gravitational acceleration decreases linearly with altitude: $g(h) = g_0(1 - h/R)$, where $R \gg H_{\max}$. Find the first-order correction to the range.</p>
+</div>
+
+<div class="box exercise">
+  <div class="box-title">Exercise 1.5</div>
+  <p>A boat crosses a river of width $d$ in which the current velocity varies as $v(y) = v_0 \sin(\pi y / d)$ where $y$ is the distance from one bank. If the boat has speed $u$ relative to the water, find the heading angle $\alpha(y)$ as a function of position such that the boat arrives directly opposite, and compute the crossing time.</p>
+</div>
+
+<nav class="chapter-nav">
+  <span></span>
+  <a href="ch02.html">Newton's Laws &amp; Dynamics →</a>
+</nav>
+
+</main>
+</body>
+</html>

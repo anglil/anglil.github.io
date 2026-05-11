@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Chapter 2: Newton's Laws — Olympiad Physics</title>
+  <link rel="stylesheet" href="style.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<aside id="sidebar">
+  <div class="book-title">Olympiad Physics<span>Angli Liu</span></div>
+  <nav><ul>
+    <li><a href="index.html">Table of Contents</a></li>
+    <li><div class="part-label">Part I — Mechanics</div></li>
+    <li><a href="ch01.html">1. Kinematics</a></li>
+    <li><a href="ch02.html" class="active">2. Newton's Laws</a></li>
+    <li><a href="ch03.html">3. Energy &amp; Work</a></li>
+    <li><a href="ch04.html">4. Momentum</a></li>
+    <li><a href="ch05.html">5. Rotational Motion</a></li>
+    <li><a href="ch06.html">6. Fluid Mechanics</a></li>
+    <li><a href="ch07.html">7. Oscillations &amp; Waves</a></li>
+    <li><div class="part-label">Part II — Thermal, EM, Optics</div></li>
+    <li><a href="ch08.html">8. Thermodynamics</a></li>
+    <li><a href="ch09.html">9. Electrostatics</a></li>
+    <li><a href="ch10.html">10. DC Circuits</a></li>
+    <li><a href="ch11.html">11. Magnetism</a></li>
+    <li><a href="ch12.html">12. Optics</a></li>
+    <li><a href="ch13.html">13. Relativity</a></li>
+  </ul></nav>
+</aside>
+<main id="content">
+
+<h1><span class="chapter-num">Chapter 2</span>Newton's Laws and Dynamics</h1>
+
+<p>This chapter presents the three laws of motion, the concept of force, and systematic methods for solving dynamics problems including free-body diagrams, constraint equations, and non-inertial reference frames.</p>
+
+<h2 id="s2-1">2.1 Newton's Three Laws</h2>
+
+<div class="box theorem">
+  <div class="box-title">Newton's First Law (Law of Inertia)</div>
+  <p>In an inertial reference frame, a body remains at rest or in uniform rectilinear motion unless acted upon by a net external force.</p>
+</div>
+
+<div class="box theorem">
+  <div class="box-title">Newton's Second Law</div>
+  <p>In an inertial frame, the net force on a particle equals the rate of change of its momentum:</p>
+  $$\mathbf{F}_{\text{net}} = \frac{d\mathbf{p}}{dt} = \frac{d(m\mathbf{v})}{dt}.$$
+  <p>For constant mass: $\mathbf{F}_{\text{net}} = m\mathbf{a}$.</p>
+</div>
+
+<div class="box theorem">
+  <div class="box-title">Newton's Third Law</div>
+  <p>If body A exerts a force $\mathbf{F}_{AB}$ on body B, then B exerts a force $\mathbf{F}_{BA} = -\mathbf{F}_{AB}$ on A. The forces are equal in magnitude, opposite in direction, and act on <em>different</em> bodies.</p>
+</div>
+
+<h2 id="s2-2">2.2 Common Forces</h2>
+
+<p><strong>Gravity</strong> near Earth's surface: $\mathbf{W} = -mg\,\hat{\mathbf{j}}$.</p>
+<p><strong>Normal force</strong> $\mathbf{N}$: perpendicular to the contact surface, adjusts to prevent interpenetration.</p>
+<p><strong>Friction:</strong> Static friction $f_s \leq \mu_s N$; kinetic friction $f_k = \mu_k N$, opposing the direction of sliding.</p>
+<p><strong>Tension</strong> $T$: along an ideal (massless, inextensible) string, equal on both sides when passing over a frictionless pulley.</p>
+<p><strong>Spring force:</strong> $F = -kx$ (Hooke's law), where $x$ is the extension from natural length.</p>
+
+<h2 id="s2-3">2.3 Free-Body Diagrams and Problem-Solving Strategy</h2>
+
+<ol>
+  <li>Identify the system (the object or set of objects).</li>
+  <li>Draw all external forces on the system.</li>
+  <li>Choose a coordinate system (often aligned with the acceleration).</li>
+  <li>Write $\sum F_x = ma_x$ and $\sum F_y = ma_y$.</li>
+  <li>Add constraint equations (e.g., string length, rolling without slipping).</li>
+  <li>Solve the resulting system of equations.</li>
+</ol>
+
+<div class="box example">
+  <div class="box-title">Example 2.1 — Atwood Machine</div>
+  <p>Two masses $m_1 > m_2$ hang from an ideal string over an ideal pulley. Find the acceleration and tension.</p>
+  <details>
+    <summary>Solution</summary>
+    <div class="solution-content">
+      <p>Let $a$ be the acceleration (downward for $m_1$, upward for $m_2$). For $m_1$: $m_1 g - T = m_1 a$. For $m_2$: $T - m_2 g = m_2 a$.</p>
+      <p>Adding: $(m_1 - m_2)g = (m_1 + m_2)a$, so</p>
+      $$a = \frac{(m_1 - m_2)g}{m_1 + m_2}, \qquad T = \frac{2m_1 m_2 g}{m_1 + m_2}.$$
+    </div>
+  </details>
+</div>
+
+<h2 id="s2-4">2.4 Inclined Planes and Friction</h2>
+
+<div class="box example">
+  <div class="box-title">Example 2.2 — Block on a Rough Incline</div>
+  <p>A block of mass $m$ sits on a plane inclined at angle $\theta$ with coefficient of static friction $\mu_s$. Find the critical angle for sliding.</p>
+  <details>
+    <summary>Solution</summary>
+    <div class="solution-content">
+      <p>Along the plane: $mg\sin\theta = f_s$. Perpendicular: $N = mg\cos\theta$. Sliding begins when $f_s = \mu_s N$:</p>
+      $$mg\sin\theta_c = \mu_s mg\cos\theta_c \implies \tan\theta_c = \mu_s.$$
+    </div>
+  </details>
+</div>
+
+<h2 id="s2-5">2.5 Constraint Equations</h2>
+
+<p>When objects are connected by strings or rods, their accelerations are not independent. The constraint that string length is constant provides additional equations.</p>
+
+<div class="box example">
+  <div class="box-title">Example 2.3 — Double Atwood Machine</div>
+  <p>Mass $m_1$ hangs on one side of a pulley; on the other side hangs a second pulley with masses $m_2$ and $m_3$. Find the accelerations of all three masses.</p>
+  <details>
+    <summary>Solution</summary>
+    <div class="solution-content">
+      <p>Let $a_1$ be the acceleration of $m_1$ (downward positive) and $a'$ the acceleration of $m_2$ relative to the lower pulley (downward positive for $m_2$). Then $a_2 = -a_1 + a'$ and $a_3 = -a_1 - a'$.</p>
+      <p>Equations: $m_1g - T_1 = m_1 a_1$, $T_1 = 2T_2$ (massless lower pulley), $m_2 g - T_2 = m_2 a_2$, $m_3 g - T_2 = m_3 a_3$.</p>
+      <p>Solving this system yields:</p>
+      $$a_1 = g\,\frac{4m_2 m_3 - m_1(m_2+m_3)}{4m_2 m_3 + m_1(m_2+m_3)}.$$
+    </div>
+  </details>
+</div>
+
+<h2 id="s2-6">2.6 Non-Inertial Frames and Pseudo-Forces</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 2.1 — Pseudo-Force in an Accelerating Frame</div>
+  <p>In a frame accelerating with $\mathbf{A}$ relative to an inertial frame, Newton's second law becomes:</p>
+  $$m\mathbf{a}' = \mathbf{F}_{\text{real}} - m\mathbf{A}$$
+  <p>where $\mathbf{a}'$ is the acceleration measured in the non-inertial frame. The term $-m\mathbf{A}$ is the <em>pseudo-force</em> (or inertial force).</p>
+</div>
+
+<div class="box example">
+  <div class="box-title">Example 2.4 — Pendulum in an Accelerating Train</div>
+  <p>A pendulum hangs in a train accelerating at $a$ horizontally. Find the equilibrium angle.</p>
+  <details>
+    <summary>Solution</summary>
+    <div class="solution-content">
+      <p>In the train's frame, the pseudo-force is $ma$ backward. The effective gravity is $\mathbf{g}_{\text{eff}} = (-a, -g)$. The pendulum aligns with $\mathbf{g}_{\text{eff}}$, making angle $\theta = \arctan(a/g)$ with the vertical.</p>
+    </div>
+  </details>
+</div>
+
+<h2 id="s2-7">2.7 Circular Motion</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 2.2 — Centripetal Acceleration</div>
+  <p>A particle moving at speed $v$ along a circular path of radius $R$ has centripetal acceleration</p>
+  $$a_c = \frac{v^2}{R} = \omega^2 R$$
+  <p>directed toward the center. The net radial force must supply this: $F_{\text{net, radial}} = mv^2/R$.</p>
+</div>
+
+<div class="box example">
+  <div class="box-title">Example 2.5 — Conical Pendulum</div>
+  <p>A mass $m$ moves in a horizontal circle at the end of a string of length $\ell$ making angle $\theta$ with the vertical. Find the period.</p>
+  <details>
+    <summary>Solution</summary>
+    <div class="solution-content">
+      <p>Vertical: $T\cos\theta = mg$. Radial: $T\sin\theta = m\omega^2 \ell\sin\theta$.</p>
+      <p>Dividing: $\omega^2 = g/(\ell\cos\theta)$, so $\displaystyle \tau = 2\pi\sqrt{\frac{\ell\cos\theta}{g}}$.</p>
+    </div>
+  </details>
+</div>
+
+<h2 id="s2-8">2.8 Exercises</h2>
+
+<div class="box exercise">
+  <div class="box-title">Exercise 2.1</div>
+  <p>Three blocks of masses $m_1$, $m_2$, $m_3$ are connected by strings on a frictionless horizontal surface and pulled by a force $F$ applied to $m_1$. Find the tension in each string.</p>
+</div>
+
+<div class="box exercise">
+  <div class="box-title">Exercise 2.2</div>
+  <p>A wedge of mass $M$ and angle $\alpha$ rests on a frictionless floor. A block of mass $m$ slides frictionlessly down the wedge. Find the acceleration of the wedge.</p>
+</div>
+
+<div class="box exercise">
+  <div class="box-title">Exercise 2.3</div>
+  <p>A bead slides on a frictionless wire shaped as a parabola $y = x^2/(2R)$. Find the normal force at the vertex as a function of the bead's speed.</p>
+</div>
+
+<div class="box exercise">
+  <div class="box-title">Exercise 2.4</div>
+  <p>A car rounds a banked curve of radius $R$ at angle $\theta$ with the horizontal. The coefficient of static friction is $\mu_s$. Find the maximum and minimum speeds for the car not to slip.</p>
+</div>
+
+<nav class="chapter-nav">
+  <a href="ch01.html">← Kinematics</a>
+  <a href="ch03.html">Energy &amp; Work →</a>
+</nav>
+
+</main>
+</body>
+</html>

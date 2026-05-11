@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Chapter 13: Special Relativity and Modern Physics — Olympiad Physics</title>
+  <link rel="stylesheet" href="style.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<aside id="sidebar"><div class="book-title">Olympiad Physics<span>Angli Liu</span></div><nav><ul><li><a href="index.html">Table of Contents</a></li><li><div class="part-label">Part I — Mechanics</div></li><li><a href="ch01.html">1. Kinematics</a></li><li><a href="ch02.html">2. Newton's Laws</a></li><li><a href="ch03.html">3. Energy &amp; Work</a></li><li><a href="ch04.html">4. Momentum</a></li><li><a href="ch05.html">5. Rotational Motion</a></li><li><a href="ch06.html">6. Fluid Mechanics</a></li><li><a href="ch07.html">7. Oscillations &amp; Waves</a></li><li><div class="part-label">Part II — Thermal, EM, Optics</div></li><li><a href="ch08.html">8. Thermodynamics</a></li><li><a href="ch09.html">9. Electrostatics</a></li><li><a href="ch10.html">10. DC Circuits</a></li><li><a href="ch11.html">11. Magnetism</a></li><li><a href="ch12.html">12. Optics</a></li><li><a href="ch13.html" class="active">13. Relativity</a></li></ul></nav></aside>
+<main id="content">
+
+<h1><span class="chapter-num">Chapter 13</span>Special Relativity and Modern Physics</h1>
+
+<h2 id="s13-1">13.1 Postulates of Special Relativity</h2>
+<div class="box theorem"><div class="box-title">Einstein's Postulates</div><ol><li>The laws of physics are the same in all inertial frames.</li><li>The speed of light in vacuum $c = 3\times10^8\,\text{m/s}$ is the same in all inertial frames.</li></ol></div>
+
+<h2 id="s13-2">13.2 Lorentz Transformations</h2>
+<p>For frame $S'$ moving at $v$ along $x$ relative to $S$, with $\gamma = 1/\sqrt{1-v^2/c^2}$:</p>
+$$x' = \gamma(x-vt), \quad t' = \gamma(t-vx/c^2), \quad y'=y, \quad z'=z.$$
+
+<h2 id="s13-3">13.3 Time Dilation and Length Contraction</h2>
+<div class="box theorem"><div class="box-title">Theorem 13.1</div>$$\Delta t = \gamma\,\Delta t_0 \qquad\text{(time dilation)},$$$$L = L_0/\gamma \qquad\text{(length contraction along the direction of motion)}.$$</div>
+
+<div class="box example"><div class="box-title">Example 13.1 — Muon Lifetime</div><p>Muons created in the upper atmosphere at $v = 0.998c$ have a proper lifetime $\tau_0 = 2.2\,\mu\text{s}$. How far do they travel in the Earth's frame?</p><details><summary>Solution</summary><div class="solution-content"><p>$\gamma = 1/\sqrt{1-0.998^2} \approx 15.8$. In the Earth frame, $\tau = \gamma\tau_0 = 34.8\,\mu\text{s}$. Distance: $d = v\tau = 0.998(3\times10^8)(34.8\times10^{-6}) \approx 10.4\,\text{km}$.</p></div></details></div>
+
+<h2 id="s13-4">13.4 Relativistic Velocity Addition</h2>
+$$u' = \frac{u-v}{1-uv/c^2}.$$
+
+<h2 id="s13-5">13.5 Relativistic Momentum and Energy</h2>
+<div class="box theorem"><div class="box-title">Theorem 13.2 — Energy–Momentum Relation</div>$$\mathbf{p} = \gamma m\mathbf{v}, \qquad E = \gamma mc^2, \qquad E^2 = (pc)^2 + (mc^2)^2.$$<p>Kinetic energy: $K = (\gamma-1)mc^2$. Rest energy: $E_0 = mc^2$.</p></div>
+
+<p>For massless particles (photons): $E = pc$, $p = E/c = h/\lambda$.</p>
+
+<h2 id="s13-6">13.6 Photoelectric Effect</h2>
+<div class="box theorem"><div class="box-title">Einstein's Photoelectric Equation</div>$$K_{\max} = hf - \phi$$<p>where $h = 6.626\times10^{-34}\,\text{J·s}$ and $\phi$ is the work function. Threshold frequency: $f_0 = \phi/h$.</p></div>
+
+<h2 id="s13-7">13.7 Bohr Model of the Hydrogen Atom</h2>
+<div class="box theorem"><div class="box-title">Theorem 13.3 — Bohr Energy Levels</div>$$E_n = -\frac{13.6\,\text{eV}}{n^2}, \qquad r_n = n^2 a_0, \qquad a_0 = 0.529\,\text{Å}.$$<p>Transition wavelengths: $\frac{1}{\lambda} = R_H\left(\frac{1}{n_f^2}-\frac{1}{n_i^2}\right)$ with $R_H = 1.097\times10^7\,\text{m}^{-1}$.</p></div>
+
+<h2 id="s13-8">13.8 de Broglie Wavelength and Wave–Particle Duality</h2>
+$$\lambda = \frac{h}{p} = \frac{h}{mv} \qquad\text{(non-relativistic)}.$$
+
+<h2 id="s13-9">13.9 Nuclear Physics Basics</h2>
+<p><strong>Mass–energy equivalence:</strong> Binding energy $B = [Z m_p + N m_n - M_{\text{nucleus}}]c^2$.</p>
+<p><strong>Radioactive decay:</strong> $N(t) = N_0 e^{-\lambda t}$, half-life $t_{1/2} = \ln 2/\lambda$.</p>
+<p><strong>Decay types:</strong> $\alpha$ ($^4_2$He emission), $\beta^-$ ($n\to p + e^- + \bar\nu$), $\beta^+$ ($p\to n + e^+ + \nu$), $\gamma$ (photon emission).</p>
+
+<h2 id="s13-10">13.10 Exercises</h2>
+<div class="box exercise"><div class="box-title">Exercise 13.1</div><p>A spaceship travels at $0.6c$ relative to Earth. It fires a probe forward at $0.8c$ relative to the ship. What is the probe's speed relative to Earth?</p></div>
+<div class="box exercise"><div class="box-title">Exercise 13.2</div><p>A photon of wavelength $\lambda$ Compton-scatters off a stationary electron. Show that the wavelength shift is $\Delta\lambda = (h/m_e c)(1-\cos\theta)$. Find the maximum energy transferred to the electron for $\lambda = 0.05\,\text{nm}$.</p></div>
+<div class="box exercise"><div class="box-title">Exercise 13.3</div><p>The sun's luminosity is $L = 3.846\times10^{26}\,\text{W}$. Estimate how much mass the sun loses per second due to nuclear fusion.</p></div>
+<div class="box exercise"><div class="box-title">Exercise 13.4</div><p>An electron is confined in a one-dimensional box of length $L$. Using the de Broglie condition, find the allowed energy levels. Compare with $E_n = n^2\pi^2\hbar^2/(2mL^2)$.</p></div>
+
+<nav class="chapter-nav">
+  <a href="ch12.html">← Optics</a>
+  <span></span>
+</nav>
+</main>
+</body>
+</html>

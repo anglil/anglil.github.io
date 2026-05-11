@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Chapter 11: Magnetism — Olympiad Physics</title>
+  <link rel="stylesheet" href="style.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<aside id="sidebar"><div class="book-title">Olympiad Physics<span>Angli Liu</span></div><nav><ul><li><a href="index.html">Table of Contents</a></li><li><div class="part-label">Part I — Mechanics</div></li><li><a href="ch01.html">1. Kinematics</a></li><li><a href="ch02.html">2. Newton's Laws</a></li><li><a href="ch03.html">3. Energy &amp; Work</a></li><li><a href="ch04.html">4. Momentum</a></li><li><a href="ch05.html">5. Rotational Motion</a></li><li><a href="ch06.html">6. Fluid Mechanics</a></li><li><a href="ch07.html">7. Oscillations &amp; Waves</a></li><li><div class="part-label">Part II — Thermal, EM, Optics</div></li><li><a href="ch08.html">8. Thermodynamics</a></li><li><a href="ch09.html">9. Electrostatics</a></li><li><a href="ch10.html">10. DC Circuits</a></li><li><a href="ch11.html" class="active">11. Magnetism</a></li><li><a href="ch12.html">12. Optics</a></li><li><a href="ch13.html">13. Relativity</a></li></ul></nav></aside>
+<main id="content">
+
+<h1><span class="chapter-num">Chapter 11</span>Magnetism and Electromagnetic Induction</h1>
+
+<h2 id="s11-1">11.1 Magnetic Force</h2>
+<div class="box theorem"><div class="box-title">Lorentz Force Law</div>$$\mathbf{F} = q(\mathbf{E} + \mathbf{v}\times\mathbf{B}).$$<p>The magnetic force does no work (always perpendicular to $\mathbf{v}$).</p></div>
+
+<p>A charged particle in a uniform $\mathbf{B}$ moves in a circle of radius $r = mv/(qB)$ with cyclotron frequency $\omega_c = qB/m$.</p>
+
+<div class="box example"><div class="box-title">Example 11.1 — Velocity Selector</div><p>Crossed $\mathbf{E}$ and $\mathbf{B}$ fields: a particle passes undeflected when $qE = qvB$, i.e., $v = E/B$.</p></div>
+
+<h2 id="s11-2">11.2 Force on a Current-Carrying Wire</h2>
+$$d\mathbf{F} = I\,d\boldsymbol{\ell}\times\mathbf{B}, \qquad \mathbf{F} = I\mathbf{L}\times\mathbf{B} \;\text{(uniform B)}.$$
+
+<h2 id="s11-3">11.3 Biot–Savart Law</h2>
+<div class="box theorem"><div class="box-title">Theorem 11.1 — Biot–Savart Law</div>$$d\mathbf{B} = \frac{\mu_0}{4\pi}\frac{I\,d\boldsymbol{\ell}\times\hat{\mathbf{r}}}{r^2}$$<p>where $\mu_0 = 4\pi\times10^{-7}\,\text{T·m/A}$.</p></div>
+
+<table>
+  <tr><th>Configuration</th><th>$B$</th></tr>
+  <tr><td>Long straight wire (distance $d$)</td><td>$\mu_0 I/(2\pi d)$</td></tr>
+  <tr><td>Center of circular loop (radius $R$)</td><td>$\mu_0 I/(2R)$</td></tr>
+  <tr><td>Solenoid ($n$ turns/length)</td><td>$\mu_0 n I$ (inside)</td></tr>
+  <tr><td>Toroid ($N$ turns, radius $r$)</td><td>$\mu_0 NI/(2\pi r)$</td></tr>
+</table>
+
+<h2 id="s11-4">11.4 Ampère's Law</h2>
+<div class="box theorem"><div class="box-title">Theorem 11.2 — Ampère's Law</div>$$\oint \mathbf{B}\cdot d\boldsymbol{\ell} = \mu_0 I_{\text{enc}}.$$</div>
+
+<h2 id="s11-5">11.5 Faraday's Law of Induction</h2>
+<div class="box theorem"><div class="box-title">Theorem 11.3 — Faraday's Law</div>$$\mathcal{E} = -\frac{d\Phi_B}{dt}, \qquad \Phi_B = \int \mathbf{B}\cdot d\mathbf{A}.$$<p>Lenz's law: the induced current opposes the change in flux.</p></div>
+
+<div class="box example"><div class="box-title">Example 11.2 — Rod Sliding on Rails</div><p>A conducting rod of length $L$ slides with velocity $v$ on two parallel rails in a uniform field $B$ (perpendicular to the plane of the rails, resistance $R$). Find the induced current and the force needed to maintain constant velocity.</p><details><summary>Solution</summary><div class="solution-content"><p>$\mathcal{E} = BLv$. Current: $I = BLv/R$. Force on the rod (opposing motion): $F = BIL = B^2L^2v/R$. To maintain constant $v$, apply $F = B^2L^2v/R$.</p></div></details></div>
+
+<h2 id="s11-6">11.6 Inductance</h2>
+<div class="box definition"><div class="box-title">Definition 11.1 — Self-Inductance</div>$$\mathcal{E}_L = -L\frac{dI}{dt}, \qquad L = \frac{\Phi_B}{I}.$$<p>Solenoid: $L = \mu_0 n^2 V$ where $V$ is the volume.</p></div>
+
+<p>Energy stored: $U = \frac{1}{2}LI^2$. Energy density: $u = B^2/(2\mu_0)$.</p>
+
+<h2 id="s11-7">11.7 RL and LC Circuits</h2>
+<p><strong>RL circuit:</strong> $I(t) = (V/R)(1-e^{-t/\tau_L})$ with $\tau_L = L/R$.</p>
+<p><strong>LC circuit:</strong> $q(t) = Q_0\cos(\omega t + \phi)$ with $\omega = 1/\sqrt{LC}$.</p>
+
+<h2 id="s11-8">11.8 Exercises</h2>
+<div class="box exercise"><div class="box-title">Exercise 11.1</div><p>A square loop of side $a$ carries current $I$. Find the magnetic field at the center of the loop.</p></div>
+<div class="box exercise"><div class="box-title">Exercise 11.2</div><p>A circular loop of radius $R$ and resistance $r$ is placed in a time-varying magnetic field $B(t) = B_0 e^{-t/\tau}$. Find the current as a function of time.</p></div>
+<div class="box exercise"><div class="box-title">Exercise 11.3</div><p>Two long parallel wires separated by distance $d$ carry currents $I_1$ and $I_2$ in the same direction. Find the force per unit length and the magnetic field at the midpoint.</p></div>
+
+<nav class="chapter-nav">
+  <a href="ch10.html">← DC Circuits</a>
+  <a href="ch12.html">Optics →</a>
+</nav>
+</main>
+</body>
+</html>

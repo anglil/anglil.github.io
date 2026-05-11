@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Chapter 8: Thermodynamics — Olympiad Physics</title>
+  <link rel="stylesheet" href="style.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<aside id="sidebar"><div class="book-title">Olympiad Physics<span>Angli Liu</span></div><nav><ul><li><a href="index.html">Table of Contents</a></li><li><div class="part-label">Part I — Mechanics</div></li><li><a href="ch01.html">1. Kinematics</a></li><li><a href="ch02.html">2. Newton's Laws</a></li><li><a href="ch03.html">3. Energy &amp; Work</a></li><li><a href="ch04.html">4. Momentum</a></li><li><a href="ch05.html">5. Rotational Motion</a></li><li><a href="ch06.html">6. Fluid Mechanics</a></li><li><a href="ch07.html">7. Oscillations &amp; Waves</a></li><li><div class="part-label">Part II — Thermal, EM, Optics</div></li><li><a href="ch08.html" class="active">8. Thermodynamics</a></li><li><a href="ch09.html">9. Electrostatics</a></li><li><a href="ch10.html">10. DC Circuits</a></li><li><a href="ch11.html">11. Magnetism</a></li><li><a href="ch12.html">12. Optics</a></li><li><a href="ch13.html">13. Relativity</a></li></ul></nav></aside>
+<main id="content">
+
+<h1><span class="chapter-num">Chapter 8</span>Thermodynamics and Kinetic Theory</h1>
+
+<h2 id="s8-1">8.1 Temperature and the Zeroth Law</h2>
+<p>The zeroth law establishes thermal equilibrium as an equivalence relation: if $A$ is in equilibrium with $C$ and $B$ is in equilibrium with $C$, then $A$ is in equilibrium with $B$. This justifies the existence of temperature as a state function.</p>
+
+<h2 id="s8-2">8.2 Ideal Gas Law</h2>
+<div class="box theorem"><div class="box-title">Theorem 8.1 — Ideal Gas Law</div>$$PV = nRT = Nk_BT$$<p>where $R = 8.314\,\text{J/(mol·K)}$ and $k_B = R/N_A = 1.381\times 10^{-23}\,\text{J/K}$.</p></div>
+
+<h2 id="s8-3">8.3 Kinetic Theory of Gases</h2>
+<div class="box theorem"><div class="box-title">Theorem 8.2 — Pressure from Kinetic Theory</div>$$P = \frac{1}{3}\rho\,\overline{v^2} = \frac{1}{3}\frac{N}{V}m\overline{v^2}.$$</div>
+
+<p>Average kinetic energy per molecule: $\frac{1}{2}m\overline{v^2} = \frac{3}{2}k_B T$. Root-mean-square speed: $v_{\text{rms}} = \sqrt{3k_BT/m}$.</p>
+
+<p><strong>Equipartition theorem:</strong> Each quadratic degree of freedom contributes $\frac{1}{2}k_B T$ to the average energy. For an ideal gas with $f$ degrees of freedom: $U = \frac{f}{2}nRT$. Monoatomic: $f=3$. Diatomic (rigid): $f=5$.</p>
+
+<h2 id="s8-4">8.4 First Law of Thermodynamics</h2>
+<div class="box theorem"><div class="box-title">Theorem 8.3 — First Law</div>$$\Delta U = Q - W$$<p>where $Q$ is heat added to the system and $W = \int P\,dV$ is work done by the system.</p></div>
+
+<table>
+  <tr><th>Process</th><th>Constraint</th><th>$W$</th><th>$\Delta U$</th><th>$Q$</th></tr>
+  <tr><td>Isochoric</td><td>$V=\text{const}$</td><td>$0$</td><td>$nC_v\Delta T$</td><td>$nC_v\Delta T$</td></tr>
+  <tr><td>Isobaric</td><td>$P=\text{const}$</td><td>$P\Delta V$</td><td>$nC_v\Delta T$</td><td>$nC_p\Delta T$</td></tr>
+  <tr><td>Isothermal</td><td>$T=\text{const}$</td><td>$nRT\ln(V_f/V_i)$</td><td>$0$</td><td>$W$</td></tr>
+  <tr><td>Adiabatic</td><td>$Q=0$</td><td>$-\Delta U$</td><td>$nC_v\Delta T$</td><td>$0$</td></tr>
+</table>
+
+<p>For an adiabatic process: $PV^\gamma = \text{const}$, $TV^{\gamma-1} = \text{const}$, where $\gamma = C_p/C_v = (f+2)/f$.</p>
+
+<h2 id="s8-5">8.5 Heat Engines and the Second Law</h2>
+<div class="box theorem"><div class="box-title">Theorem 8.4 — Carnot Efficiency</div><p>The maximum efficiency of a heat engine operating between temperatures $T_H$ and $T_C$:</p>$$\eta_{\text{Carnot}} = 1 - \frac{T_C}{T_H}.$$</div>
+
+<div class="box definition"><div class="box-title">Definition 8.1 — Entropy</div>$$dS = \frac{\delta Q_{\text{rev}}}{T}, \qquad \Delta S \geq 0 \;\text{(isolated system)}.$$</div>
+
+<div class="box example"><div class="box-title">Example 8.1 — Otto Cycle</div><p>An ideal Otto cycle operates between volumes $V_1$ (max) and $V_2$ (min) with compression ratio $r = V_1/V_2$. Find the efficiency.</p><details><summary>Solution</summary><div class="solution-content"><p>The Otto cycle has two adiabats and two isochors. $\eta = 1 - 1/r^{\gamma-1}$.</p></div></details></div>
+
+<h2 id="s8-6">8.6 Heat Transfer</h2>
+<p><strong>Conduction:</strong> $\dot{Q} = -\kappa A\,(dT/dx)$ (Fourier's law).</p>
+<p><strong>Radiation:</strong> $P = \varepsilon\sigma A T^4$ (Stefan–Boltzmann law).</p>
+
+<h2 id="s8-7">8.7 Exercises</h2>
+<div class="box exercise"><div class="box-title">Exercise 8.1</div><p>An ideal monoatomic gas undergoes a cycle: isothermal expansion at $T_1$ from $V_1$ to $2V_1$, isochoric cooling to $T_2$, isothermal compression at $T_2$ back to $V_1$, isochoric heating to $T_1$. Find the efficiency.</p></div>
+<div class="box exercise"><div class="box-title">Exercise 8.2</div><p>Two identical blocks at temperatures $T_1$ and $T_2$ (with $T_1 > T_2$) are brought into thermal contact. Find the entropy change of the universe when they reach equilibrium.</p></div>
+<div class="box exercise"><div class="box-title">Exercise 8.3</div><p>A gas satisfies the van der Waals equation $(P + a/V^2)(V - b) = RT$ (for one mole). Find the work done in an isothermal expansion from $V_1$ to $V_2$.</p></div>
+
+<nav class="chapter-nav">
+  <a href="ch07.html">← Oscillations &amp; Waves</a>
+  <a href="ch09.html">Electrostatics →</a>
+</nav>
+</main>
+</body>
+</html>

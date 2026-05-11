@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Chapter 3: Energy and Work — Olympiad Physics</title>
+  <link rel="stylesheet" href="style.css">
+  <script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<aside id="sidebar"><div class="book-title">Olympiad Physics<span>Angli Liu</span></div><nav><ul><li><a href="index.html">Table of Contents</a></li><li><div class="part-label">Part I — Mechanics</div></li><li><a href="ch01.html">1. Kinematics</a></li><li><a href="ch02.html">2. Newton's Laws</a></li><li><a href="ch03.html" class="active">3. Energy &amp; Work</a></li><li><a href="ch04.html">4. Momentum</a></li><li><a href="ch05.html">5. Rotational Motion</a></li><li><a href="ch06.html">6. Fluid Mechanics</a></li><li><a href="ch07.html">7. Oscillations &amp; Waves</a></li><li><div class="part-label">Part II — Thermal, EM, Optics</div></li><li><a href="ch08.html">8. Thermodynamics</a></li><li><a href="ch09.html">9. Electrostatics</a></li><li><a href="ch10.html">10. DC Circuits</a></li><li><a href="ch11.html">11. Magnetism</a></li><li><a href="ch12.html">12. Optics</a></li><li><a href="ch13.html">13. Relativity</a></li></ul></nav></aside>
+<main id="content">
+
+<h1><span class="chapter-num">Chapter 3</span>Energy and Work</h1>
+
+<p>Energy methods provide a scalar alternative to Newton's vector equations. In many competition problems — especially those involving constraints, curved paths, or unknown forces — energy conservation is the fastest route to the answer.</p>
+
+<h2 id="s3-1">3.1 Work Done by a Force</h2>
+
+<div class="box definition">
+  <div class="box-title">Definition 3.1 — Work</div>
+  <p>The work done by a force $\mathbf{F}$ on a particle moving along a path $\mathcal{C}$ is</p>
+  $$W = \int_{\mathcal{C}} \mathbf{F}\cdot d\mathbf{r}.$$
+  <p>For a constant force: $W = \mathbf{F}\cdot\Delta\mathbf{r} = F\,\Delta r\,\cos\theta$.</p>
+</div>
+
+<h2 id="s3-2">3.2 Work–Energy Theorem</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 3.1 — Work–Energy Theorem</div>
+  <p>The net work done on a particle equals the change in its kinetic energy:</p>
+  $$W_{\text{net}} = \Delta K = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2.$$
+</div>
+
+<details>
+  <summary>Proof</summary>
+  <div class="solution-content">
+    <p>From $\mathbf{F} = m\mathbf{a}$: $W = \int \mathbf{F}\cdot d\mathbf{r} = m\int \mathbf{a}\cdot\mathbf{v}\,dt = m\int \frac{d}{dt}\!\left(\frac{v^2}{2}\right)dt = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2$. $\blacksquare$</p>
+  </div>
+</details>
+
+<h2 id="s3-3">3.3 Conservative Forces and Potential Energy</h2>
+
+<div class="box definition">
+  <div class="box-title">Definition 3.2 — Conservative Force</div>
+  <p>A force $\mathbf{F}$ is <em>conservative</em> if the work it does depends only on the endpoints, not the path. Equivalently, $\oint \mathbf{F}\cdot d\mathbf{r} = 0$ for every closed loop, or $\nabla \times \mathbf{F} = \mathbf{0}$.</p>
+</div>
+
+<p>For a conservative force there exists a scalar function $U(\mathbf{r})$ (potential energy) such that $\mathbf{F} = -\nabla U$ and $W_{A\to B} = U(A) - U(B) = -\Delta U$.</p>
+
+<table>
+  <tr><th>Force</th><th>Potential Energy $U$</th></tr>
+  <tr><td>Gravity (uniform)</td><td>$mgh$</td></tr>
+  <tr><td>Gravity (universal)</td><td>$-GMm/r$</td></tr>
+  <tr><td>Ideal spring</td><td>$\frac{1}{2}kx^2$</td></tr>
+  <tr><td>Electrostatic</td><td>$kq_1q_2/r$</td></tr>
+</table>
+
+<h2 id="s3-4">3.4 Conservation of Mechanical Energy</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 3.2 — Conservation of Energy</div>
+  <p>When only conservative forces do work:</p>
+  $$K_i + U_i = K_f + U_f \qquad\text{or equivalently}\qquad E = K + U = \text{const}.$$
+  <p>When non-conservative forces (friction, drag) also act: $\Delta E = W_{\text{nc}}$.</p>
+</div>
+
+<div class="box example">
+  <div class="box-title">Example 3.1 — Loop-the-Loop</div>
+  <p>A small ball starts from rest at height $h$ above the bottom of a frictionless circular loop of radius $R$. Find the minimum $h$ so the ball completes the loop.</p>
+  <details>
+    <summary>Solution</summary>
+    <div class="solution-content">
+      <p>At the top of the loop, the ball needs $mg \leq mv_{\text{top}}^2/R$, so $v_{\text{top}}^2 \geq gR$.</p>
+      <p>Energy conservation from start to top: $mgh = mg(2R) + \frac{1}{2}mv_{\text{top}}^2$.</p>
+      <p>Setting $v_{\text{top}}^2 = gR$: $gh = 2gR + gR/2$, so $h = \frac{5}{2}R$.</p>
+    </div>
+  </details>
+</div>
+
+<h2 id="s3-5">3.5 Power</h2>
+
+<div class="box definition">
+  <div class="box-title">Definition 3.3 — Power</div>
+  $$P = \frac{dW}{dt} = \mathbf{F}\cdot\mathbf{v}.$$
+</div>
+
+<h2 id="s3-6">3.6 Potential Energy Diagrams</h2>
+
+<p>Plotting $U(x)$ versus $x$ gives deep insight into the qualitative behavior of one-dimensional motion. The particle moves in the region where $E \geq U(x)$. Turning points occur where $E = U(x)$. Equilibria occur at $dU/dx = 0$: stable if $d^2U/dx^2 > 0$, unstable if $d^2U/dx^2 < 0$.</p>
+
+<div class="box example">
+  <div class="box-title">Example 3.2 — Lennard-Jones Potential</div>
+  <p>The interaction between two neutral atoms is modeled by $U(r) = \epsilon\!\left[\left(\frac{r_0}{r}\right)^{12} - 2\left(\frac{r_0}{r}\right)^6\right]$. Find the equilibrium separation and the depth of the potential well.</p>
+  <details>
+    <summary>Solution</summary>
+    <div class="solution-content">
+      <p>$dU/dr = 0 \implies -12\,\frac{r_0^{12}}{r^{13}} + 12\,\frac{r_0^6}{r^7} = 0 \implies r^6 = r_0^6 \implies r = r_0$.</p>
+      <p>$U(r_0) = \epsilon(1 - 2) = -\epsilon$, so the well depth is $\epsilon$.</p>
+    </div>
+  </details>
+</div>
+
+<h2 id="s3-7">3.7 Gravitational Potential Energy (General)</h2>
+
+<div class="box theorem">
+  <div class="box-title">Theorem 3.3 — Escape Velocity</div>
+  <p>The minimum launch speed from the surface of a body of mass $M$ and radius $R$ (ignoring atmosphere) is</p>
+  $$v_{\text{esc}} = \sqrt{\frac{2GM}{R}}.$$
+</div>
+
+<h2 id="s3-8">3.8 Exercises</h2>
+
+<div class="box exercise"><div class="box-title">Exercise 3.1</div><p>A block of mass $m$ slides down a quarter-circle ramp of radius $R$ starting from rest, then across a rough horizontal surface (coefficient $\mu_k$). How far does it travel before stopping?</p></div>
+
+<div class="box exercise"><div class="box-title">Exercise 3.2</div><p>A particle moves under the potential $U(x) = U_0\cosh(x/a)$. Find the period of small oscillations about the equilibrium.</p></div>
+
+<div class="box exercise"><div class="box-title">Exercise 3.3</div><p>A variable-mass chain of total length $L$ and mass $M$ hangs from a table edge with length $x_0$ initially hanging. Released from rest, find the speed when the last link leaves the table (frictionless).</p></div>
+
+<div class="box exercise"><div class="box-title">Exercise 3.4</div><p>A rocket of initial mass $M_0$ expels fuel at rate $\dot{m}$ with exhaust velocity $v_e$ relative to the rocket. Using energy considerations, verify the Tsiolkovsky rocket equation $\Delta v = v_e \ln(M_0/M_f)$.</p></div>
+
+<nav class="chapter-nav">
+  <a href="ch02.html">← Newton's Laws</a>
+  <a href="ch04.html">Momentum &amp; Collisions →</a>
+</nav>
+</main>
+</body>
+</html>

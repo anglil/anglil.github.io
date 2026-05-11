@@ -1,0 +1,396 @@
+/* Olympiad Physics — Interactive Textbook Stylesheet */
+/* Inspired by introtcs.org with a clean, academic aesthetic */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@400;500&display=swap');
+
+:root {
+  --bg: #fafaf8;
+  --bg-sidebar: #1a1a2e;
+  --bg-sidebar-hover: #16213e;
+  --text: #2c2c2c;
+  --text-light: #555;
+  --text-sidebar: #c8c8d4;
+  --text-sidebar-active: #ffffff;
+  --accent: #0f3460;
+  --accent-light: #1a5276;
+  --accent-bright: #e94560;
+  --border: #ddd;
+  --bg-box: #f4f6f9;
+  --bg-theorem: #eef2f7;
+  --bg-example: #fdf6ec;
+  --bg-exercise: #f0faf0;
+  --border-theorem: #3a7bd5;
+  --border-example: #e67e22;
+  --border-exercise: #27ae60;
+  --border-definition: #8e44ad;
+  --bg-definition: #f5f0fa;
+  --shadow: 0 2px 8px rgba(0,0,0,0.06);
+  --max-content: 780px;
+  --sidebar-width: 300px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 17px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.75;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+#sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background: var(--bg-sidebar);
+  color: var(--text-sidebar);
+  padding: 2rem 0;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  overflow-y: auto;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+#sidebar .book-title {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-sidebar-active);
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+#sidebar .book-title span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-sidebar);
+  margin-top: 0.3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+#sidebar nav ul {
+  list-style: none;
+}
+
+#sidebar nav > ul > li {
+  margin-bottom: 0.15rem;
+}
+
+#sidebar nav a {
+  display: block;
+  padding: 0.4rem 1.5rem;
+  color: var(--text-sidebar);
+  text-decoration: none;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.88rem;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+#sidebar nav a:hover {
+  background: var(--bg-sidebar-hover);
+  color: var(--text-sidebar-active);
+  border-left-color: var(--accent-bright);
+}
+
+#sidebar nav a.active {
+  background: var(--bg-sidebar-hover);
+  color: var(--text-sidebar-active);
+  border-left-color: var(--accent-bright);
+  font-weight: 600;
+}
+
+#sidebar nav .part-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-bright);
+  padding: 1rem 1.5rem 0.3rem;
+}
+
+/* ===== MAIN CONTENT ===== */
+#content {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  padding: 3rem 3rem 5rem;
+  max-width: calc(var(--max-content) + 6rem + var(--sidebar-width));
+}
+
+#content > * { max-width: var(--max-content); }
+
+/* ===== TYPOGRAPHY ===== */
+h1 {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+h1 .chapter-num {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-bright);
+  margin-bottom: 0.3rem;
+}
+
+h2 {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--border);
+}
+
+h3 {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  margin: 1.8rem 0 0.8rem;
+}
+
+p { margin-bottom: 1rem; }
+
+a { color: var(--accent-light); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--accent-bright); }
+
+/* ===== MATH BOXES ===== */
+.box {
+  border-left: 4px solid var(--border);
+  background: var(--bg-box);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+  box-shadow: var(--shadow);
+}
+
+.box .box-title {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+}
+
+.theorem { border-left-color: var(--border-theorem); background: var(--bg-theorem); }
+.theorem .box-title { color: var(--border-theorem); }
+
+.definition { border-left-color: var(--border-definition); background: var(--bg-definition); }
+.definition .box-title { color: var(--border-definition); }
+
+.example { border-left-color: var(--border-example); background: var(--bg-example); }
+.example .box-title { color: var(--border-example); }
+
+.exercise { border-left-color: var(--border-exercise); background: var(--bg-exercise); }
+.exercise .box-title { color: var(--border-exercise); }
+
+/* ===== COLLAPSIBLE PROOFS/SOLUTIONS ===== */
+details {
+  margin: 1rem 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+details summary {
+  cursor: pointer;
+  padding: 0.7rem 1.2rem;
+  background: var(--bg-box);
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--accent-light);
+  user-select: none;
+  transition: background 0.2s;
+}
+
+details summary:hover { background: #e8ecf1; }
+
+details[open] summary { border-bottom: 1px solid var(--border); }
+
+details .solution-content {
+  padding: 1rem 1.2rem;
+  background: #fff;
+}
+
+/* ===== FIGURE / DIAGRAM ===== */
+.figure {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.figure svg, .figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+.figure .caption {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* ===== TABLES ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: var(--bg-box);
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ===== NAVIGATION FOOTER ===== */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border);
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.chapter-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent-light);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.chapter-nav a:hover {
+  background: var(--bg-box);
+  color: var(--accent-bright);
+}
+
+/* ===== HAMBURGER (mobile) ===== */
+#menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem; left: 1rem;
+  z-index: 200;
+  background: var(--bg-sidebar);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  :root { --sidebar-width: 260px; }
+  #sidebar { transform: translateX(-100%); }
+  #sidebar.open { transform: translateX(0); }
+  #content { margin-left: 0; padding: 4rem 1.5rem 3rem; }
+  #menu-toggle { display: block; }
+}
+
+/* ===== LANDING PAGE ===== */
+.landing-header {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.landing-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.landing-header .subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.landing-header .author {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+.toc-section {
+  margin: 2rem 0;
+}
+
+.toc-section h2 {
+  font-size: 1.2rem;
+  border-bottom: none;
+  margin-bottom: 0.8rem;
+  color: var(--accent-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.toc-section ol {
+  list-style: none;
+  counter-reset: chapter;
+}
+
+.toc-section ol li {
+  counter-increment: chapter;
+  margin-bottom: 0.4rem;
+}
+
+.toc-section ol li a {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.toc-section ol li a:hover {
+  color: var(--accent-bright);
+}
+
+.toc-section ol li a::before {
+  content: counter(chapter) ". ";
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+/* ===== PRINT ===== */
+@media print {
+  #sidebar, #menu-toggle { display: none; }
+  #content { margin-left: 0; max-width: 100%; }
+}
