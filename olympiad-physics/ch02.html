@@ -136,6 +136,109 @@
     <p>Define four-velocity $U_x = \frac{dx}{d\tau}, U_y = \frac{dy}{d\tau}, U_z = \frac{dz}{d\tau}, U_t = \frac{d(ict)}{d\tau}$</p>
     $$ \therefore U_x = \frac{dx}{dt}\frac{dt}{d\tau} = \gamma \frac{dx}{dt} = \frac{v_x}{\sqrt{1-v^2/c^2}}, \quad \text{Similarly, } U_y = \frac{v_y}{\sqrt{1-v^2/c^2}}, \quad U_z = \frac{v_z}{\sqrt{1-v^2/c^2}} $$
 
+    <p>The above $v_x, v_y, v_z$ are the three-velocities of an object in frame K.</p>
+    <p>For the last component of the four-velocity, $U_t = \frac{d(ict)}{d\tau} = ic\gamma = \frac{ic}{\sqrt{1-v^2/c^2}}$.</p>
+    $$ \therefore U = (U_x, U_y, U_z, U_t) = (\gamma v_x, \gamma v_y, \gamma v_z, ic\gamma) $$
+    <p>Since $dx, dy, dz, d(ict)$ obey the Lorentz transformation, and $d\tau$ is an invariant, therefore:</p>
+    $$ \begin{cases} U_x' = \gamma (U_x + i\beta U_t) \\ U_y' = U_y \\ U_z' = U_z \\ U_t' = \gamma (U_t - i\beta U_x) \end{cases} $$
+    <p>Lorentz Invariant:</p>
+    $$ U_x^2 + U_y^2 + U_z^2 + U_t^2 = \frac{v_x^2+v_y^2+v_z^2-c^2}{1-v^2/c^2} = \frac{v^2-c^2}{1-v^2/c^2} = -c^2 $$
+    $$ \therefore \gamma'v_x' = \gamma\gamma(v_x-c\beta) $$
+    $$ \gamma'v_y' = \gamma v_y $$
+    $$ \gamma'v_z' = \gamma v_z $$
+    $$ c\gamma' = \gamma\gamma(c-\beta v_x) $$
+    <p>where $\gamma_v = \frac{1}{\sqrt{1-\beta^2}}$, $\gamma = \frac{1}{\sqrt{1-(v/c)^2}}$ ($v$ is the speed in frame K), $\gamma' = \frac{1}{\sqrt{1-(v'/c)^2}}$ ($v'$ is the speed in frame K').</p>
+    $$ \therefore \frac{\gamma}{\gamma'} = \frac{1}{1-\frac{\beta v_x}{c}} = \frac{1}{1-\frac{V v_x}{c^2}} \quad \text{($\beta = \frac{V}{c}$, $V$ is the relative speed of K and K')} $$
+    <p>Substituting this into the first three equations gives:</p>
+    $$ \begin{cases} v_x' = \frac{v_x-V}{1-\frac{v_x V}{c^2}} \\ v_y' = \frac{v_y\sqrt{1-V^2/c^2}}{1-\frac{v_x V}{c^2}} \\ v_z' = \frac{v_z\sqrt{1-V^2/c^2}}{1-\frac{v_x V}{c^2}} \end{cases} $$
+    <p>(The velocity transformation can be directly derived by differentiating the Lorentz transformation, i.e., $dx = \frac{dx'+Vdt'}{\sqrt{1-V^2/c^2}}$, $dy=dy'$, $dz=dz'$, $dt = \frac{dt'+\frac{V}{c^2}dx'}{\sqrt{1-V^2/c^2}}$. Dividing these three equations gives the result. Just using the four-velocity to derive it is simpler and more representative.)</p>
+
+    <p><strong>3) Four-Momentum</strong></p>
+    <p>Define four-momentum $P_x = m_0 U_x, P_y = m_0 U_y, P_z = m_0 U_z, P_t = m_0 U_t$</p>
+    $$ \therefore P = (P_x, P_y, P_z, P_t) = (\gamma m_0 v_x, \gamma m_0 v_y, \gamma m_0 v_z, im_0 c\gamma) $$
+    <p>Obviously, the four-momentum obeys the Lorentz transformation:</p>
+    $$ \begin{cases} P_x' = \frac{P_x + i\beta P_t}{\sqrt{1-V^2/c^2}} = \frac{P_x - \frac{V}{c} \frac{E}{c}}{\sqrt{1-V^2/c^2}} \\ P_y' = P_y \\ P_z' = P_z \\ P_t' = \frac{P_t - i\beta P_x}{\sqrt{1-V^2/c^2}} = \frac{P_t - i\frac{V}{c} P_x}{\sqrt{1-V^2/c^2}} \end{cases} $$
+    <p>Lorentz Invariant:</p>
+    $$ P_x^2 + P_y^2 + P_z^2 + P_t^2 = \frac{m_0^2(v_x^2+v_y^2+v_z^2-c^2)}{1-v^2/c^2} = -m_0^2 c^2 $$
+
+    <h2>⑤ Relativistic Dynamics</h2>
+    <p>$U = (U_x, U_y, U_z, U_t)$: four-velocity, $v = (v_x, v_y, v_z)$: three-velocity; $V$: relative velocity of reference frames.</p>
+    <p>1) Mass: $m = \frac{m_0}{\sqrt{1-v^2/c^2}}$</p>
+    <p>2) Momentum: $\vec{P} = m\vec{v} = \frac{m_0\vec{v}}{\sqrt{1-v^2/c^2}}$, Force: $\vec{F} = \frac{d\vec{P}}{dt} = \frac{d}{dt}\left(\frac{m_0\vec{v}}{\sqrt{1-v^2/c^2}}\right)$</p>
+    <p>3) Energy: $dE_k = \vec{F}\cdot d\vec{s} = \frac{d(m\vec{v})}{dt}\cdot d\vec{s} = v^2dm + mvdv$</p>
+    $$ \because m^2c^2 - m_0^2c^2 = m^2v^2, \therefore 2mc^2dm = 2mv^2dm + 2v m^2 dv $$
+    $$ \therefore c^2dm = v^2dm + mvdv \quad \text{Substituting into the previous equation gives:} $$
+    $$ dE_k = c^2dm $$
+    $$ \therefore E_k = mc^2 - m_0c^2 $$
+    <p>Total energy $E = mc^2$; Power $p = \frac{dE_k}{dt} = \vec{F}\cdot\vec{v}$</p>
+    <p>And $E^2 = m_0^2c^4 + p^2c^2$.</p>
+
+    <p><strong>4) Force Transformation Equations:</strong></p>
+    <p>Define four-force: $f_x = \frac{dP_x}{d\tau}, f_y = \frac{dP_y}{d\tau}, f_z = \frac{dP_z}{d\tau}, f_t = \frac{dP_t}{d\tau}$.</p>
+    $$ \begin{cases} f_x = \frac{dP_x}{dt}\frac{dt}{d\tau} = \frac{dP_x}{dt}\frac{1}{\sqrt{1-v^2/c^2}} = F_x / \sqrt{1-v^2/c^2} \\ f_y = F_y / \sqrt{1-v^2/c^2}, \quad f_z = F_z / \sqrt{1-v^2/c^2} \\ f_t = \frac{dP_t}{dt}\frac{dt}{d\tau} = \frac{d(im_0c/\sqrt{1-v^2/c^2})}{dt}\frac{1}{\sqrt{1-v^2/c^2}} = \frac{imc}{\sqrt{1-v^2/c^2}} \frac{d(mc^2)}{dt} = \frac{i\vec{F}\cdot\vec{v}}{c\sqrt{1-v^2/c^2}} \end{cases} $$
+    $$ \because f_x' = \frac{f_x + i\beta f_t}{\sqrt{1-V^2/c^2}} = \frac{f_x - \frac{V}{c^2} \vec{F}\cdot\vec{v}}{\sqrt{1-V^2/c^2}} $$
+    $$ \therefore \frac{F_x'}{\sqrt{1-v'^2/c^2}} = \frac{\frac{F_x}{\sqrt{1-v^2/c^2}} - \frac{V}{c^2}\frac{\vec{F}\cdot\vec{v}}{\sqrt{1-v^2/c^2}}}{\sqrt{1-V^2/c^2}} $$
+    <p>According to $\frac{\gamma}{\gamma'} = \frac{1}{1-\frac{V v_x}{c^2}}$</p>
+    $$ \therefore F_x' = \frac{F_x - \frac{V}{c^2}\vec{F}\cdot\vec{v}}{1-\frac{V v_x}{c^2}} $$
+    $$ \because f_y' = f_y $$
+    $$ \therefore \frac{F_y'}{\sqrt{1-v'^2/c^2}} = \frac{F_y}{\sqrt{1-v^2/c^2}} $$
+    $$ \therefore F_y' = \frac{F_y\sqrt{1-V^2/c^2}}{1-\frac{V v_x}{c^2}} $$
+    <p>Similarly $F_z' = \frac{F_z\sqrt{1-V^2/c^2}}{1-\frac{V v_x}{c^2}}$</p>
+    $$ f_t' = \frac{f_t - i\beta f_x}{\sqrt{1-V^2/c^2}} \dots $$
+
+    <p>Combining the above equations, we have ($F_x, F_y, F_z$ are the three-force components):</p>
+    $$ \begin{cases} F_x' = \frac{F_x - \frac{V}{c^2}\vec{F}\cdot\vec{v}}{1-\frac{V v_x}{c^2}} \\ F_y' = \frac{F_y\sqrt{1-V^2/c^2}}{1-\frac{V v_x}{c^2}} \\ F_z' = \frac{F_z\sqrt{1-V^2/c^2}}{1-\frac{V v_x}{c^2}} \end{cases} $$
+
+    <p><strong>Application Example: Origin of the Magnetic Field:</strong></p>
+    <p>A charged parallel plate capacitor moves with velocity $\vec{v}_0 = v_0\vec{i}$ in frame S. There is a charge $q$ between the plates moving with velocity $\vec{v} = v_x\vec{i} + v_y\vec{j} + v_z\vec{k}$. The plates are at rest in frame S'. In frame S', $q$ moves with velocity $\vec{v}' = v_x'\vec{i} + v_y'\vec{j} + v_z'\vec{k}$.</p>
+    <img src="images/ch02_magnetic_field_transform.png" alt="Magnetic field transform diagram" style="max-width: 80%; display: block; margin: 1em auto;">
+    <p>In frame S': $F_x' = qE_x' = q(\frac{\sigma}{\epsilon_0})_x = qE_x$</p>
+    $$ F_y' = qE_y' = q(\frac{\sigma}{\epsilon_0})_y = q(\frac{\sigma_0}{\epsilon_0\sqrt{1-v_0^2/c^2}})_y = \frac{qE_y}{\sqrt{1-v_0^2/c^2}} $$
+    $$ F_z' = qE_z' = q(\frac{\sigma}{\epsilon_0})_z = q(\frac{\sigma_0}{\epsilon_0\sqrt{1-v_0^2/c^2}})_z = \frac{qE_z}{\sqrt{1-v_0^2/c^2}} $$
+    $$ v_x' = \frac{v_x - v_0}{1 - \frac{v_0 v_x}{c^2}} $$
+    $$ v_y' = \frac{v_y\sqrt{1-v_0^2/c^2}}{1 - \frac{v_0 v_x}{c^2}} $$
+    $$ v_z' = \frac{v_z\sqrt{1-v_0^2/c^2}}{1 - \frac{v_0 v_x}{c^2}} $$
+    <p>According to the force transformation equations, in frame S:</p>
+    $$ F_x = \frac{F_x' + \frac{v_0}{c^2}(F_x'v_x' + F_y'v_y' + F_z'v_z')}{1 + \frac{v_0 v_x'}{c^2}} = \frac{qE_x + \frac{v_0}{c^2}\left[qE_x\frac{v_x-v_0}{1-\frac{v_0 v_x}{c^2}} + \left(\frac{qE_y v_y}{1-\frac{v_0 v_x}{c^2}} + \frac{qE_z v_z}{1-\frac{v_0 v_x}{c^2}}\right)(1-\frac{v_0^2}{c^2})\right]}{1 + \frac{v_0(v_x-v_0)}{c^2-v_0 v_x}} $$
+    $$ = qE_x + q(E_y v_y + E_z v_z)\frac{v_0}{c^2} $$
+    $$ F_y = \frac{qE_y \sqrt{1-v_0^2/c^2}\sqrt{1-v_0^2/c^2}}{1 + \frac{v_0(v_x-v_0)}{c^2-v_0 v_x}} = qE_y - \frac{qv_0 v_x E_y}{c^2} $$
+    $$ F_z = qE_z - \frac{qv_0 v_x E_z}{c^2} $$
+    <p>Define $\vec{B} = \frac{1}{c^2}\vec{v}_0 \times \vec{E}$.</p>
+    $$ \therefore \vec{F} = F_x\vec{i} + F_y\vec{j} + F_z\vec{k} = q(E_x\vec{i} + E_y\vec{j} + E_z\vec{k}) + q\vec{v} \times \vec{B} = q\vec{E} + q\vec{v} \times \vec{B} $$
+
+    <h2>⑥ Nuclear Reactions and Particle Reactions</h2>
+    <p><strong>1) Atomic Nucleus:</strong> $M = N + Z$ ($M$: mass number, $N$: number of neutrons, $Z$: number of protons)</p>
+    $$ \begin{cases} \alpha \text{ decay: } {}^M_Z X \to {}^{M-4}_{Z-2} Y + {}^4_2 He \text{ (emits } \alpha \text{ particle)} \\ \beta \text{ decay: } {}^M_Z X \to {}^M_{Z+1} Y + {}^{0}_{-1} e \text{ (emits } \beta \text{ particle)} \end{cases} \text{ (emit particles)} $$
+    <p>$N = N_0 e^{-\lambda t}$, half-life $T$: $N = \frac{N_0}{2}$, $\therefore e^{-\lambda T} = \frac{1}{2}$, $T = \frac{\ln 2}{\lambda}$</p>
+    $$ \therefore N = N_0 e^{t(-\frac{\ln 2}{T})} = N_0 (e^{\ln\frac{1}{2}})^{\frac{t}{T}} = N_0 \left(\frac{1}{2}\right)^{\frac{t}{T}} $$
+    $$ \begin{cases} \text{Discovery of proton: } {}^{14}_7 N + {}^4_2 He \to {}^{17}_8 O + {}^1_1 H \\ \text{Discovery of neutron: } {}^9_4 Be + {}^4_2 He \to {}^{12}_6 C + {}^1_0 n \\ \text{Discovery of positron: } {}^{30}_{15} P \to {}^{30}_{14} Si + {}^{0}_{1} e \\ \text{Nuclear fission: } {}^{235}_{92} U + {}^1_0 n \to {}^{144}_{56} Ba + {}^{89}_{36} Kr + 3 {}^1_0 n \\ \text{Nuclear fusion: } {}^2_1 H + {}^3_1 H \to {}^4_2 He + {}^1_0 n \end{cases} $$
+
+    <p><strong>2) Two-body decay: $A \to A_1 + A_2$</strong></p>
+    $$ \begin{cases} P_1 = P_2 \\ m_0 c^2 = \sqrt{P_1^2 c^2 + m_{10}^2 c^4} + \sqrt{P_2^2 c^2 + m_{20}^2 c^4} \end{cases} $$
+    <p>Solving yields $P_1 = P_2 = \frac{c}{2m_0}\sqrt{[m_0^2-(m_{10}+m_{20})^2][m_0^2-(m_{10}-m_{20})^2]}$</p>
+    $$ \begin{cases} E_1 = \sqrt{P_1^2 c^2 + m_{10}^2 c^4} = \frac{m_0^2+m_{10}^2-m_{20}^2}{2m_0} c^2 \\ E_2 = \sqrt{P_2^2 c^2 + m_{20}^2 c^4} = \frac{m_0^2+m_{20}^2-m_{10}^2}{2m_0} c^2 \end{cases} $$
+
+    <p><strong>3) Two-body reaction threshold energy.</strong></p>
+    $$ A_1 + A_2 \to A_3 + A_4 + A_5 \dots $$
+    <p>In the center-of-momentum frame (CM frame: relatively centered, the CM frame generally does not coincide with the center-of-mass frame):</p>
+    <p>&lt;1&gt; $P_1' = P_2'$</p>
+    <p>&lt;2&gt; $P_1' = \gamma (P_1 - \beta \frac{E_1}{c})$ (high-energy particle 1)</p>
+    <p>&lt;3&gt; $E_1' = \gamma (E_1 - \beta P_1 c)$</p>
+    <p>&lt;4&gt; $P_2' = \gamma \beta m_{20} c$ (target particle 2, at rest in the laboratory frame)</p>
+    <p>&lt;5&gt; $E_2' = \gamma m_{20} c^2$</p>
+
+    <p>(From the last equation of the four-momentum transformation, we have $E' = (E-VP_x)/\sqrt{1-V^2/c^2}$.)</p>
+    <p>From &lt;1&gt;, &lt;2&gt;, &lt;4&gt; solving gives $\beta = \frac{P_1 c}{E_1 + m_{20} c^2}$.</p>
+    $$ \therefore E_1' + E_2' = \gamma (E_1 - \beta P_1 c + m_{20} c^2) = \frac{1}{\sqrt{1-\beta^2}} \left(E_1 - \frac{P_1 c^2}{E_1 + m_{20} c^2} + m_{20} c^2\right) $$
+    $$ = \frac{1}{\sqrt{1 - \frac{E_1^2 - m_{10}^2 c^4}{(E_1 + m_{20} c^2)^2}}} \left(E_1 - \frac{E_1^2 - m_{10}^2 c^4}{E_1 + m_{20} c^2} + m_{20} c^2\right) $$
+    $$ = \sqrt{m_{10}^2 c^4 + m_{20}^2 c^4 + 2E_1 m_{20} c^2} $$
+    <p>This is the expression for the total energy $E'$ in the CM frame. In the CM frame, this part of the energy can be completely converted into the rest mass energy of the products, i.e., after the reaction, all products are at rest in the CM frame, with no kinetic energy. Therefore, this energy $E'$ is also called the available reaction energy.</p>
+    <p>When this threshold reaction occurs, the energy threshold of the incident particle $m_{10}$ is $E_{th}$, and its kinetic energy is $E_{k_{th}}$.</p>
+    $$ \therefore \sqrt{m_{10}^2 c^4 + m_{20}^2 c^4 + 2E_{th} m_{20} c^2} = \sum_{i=3}^n m_i c^2 \text{ (Rest mass energy of all products after reaction)} $$
+    <p>Solving yields $E_{th} = \frac{(\sum m_i c^2)^2 - (m_{10}^2 c^4 + m_{20}^2 c^4)}{2m_{20} c^2}$</p>
+    $$ \therefore E_{k_{th}} = E_{th} - m_{10} c^2 = \frac{(\sum m_i c^2)^2 - (m_{10} c^2 + m_{20} c^2)^2}{2m_{20} c^2} = \frac{(\sum m_i + m_{10} + m_{20})(\sum m_i - m_{10} - m_{20})c^2}{2m_{20}} $$
+    $$ = \left[-(m_{10}+m_{20}-\sum m_i)c^2\right] \frac{\sum m_i}{2m_{20}} \quad [Q = (m_{10}+m_{20}-\sum m_i)c^2 \text{ Reaction Energy}] $$
+
 </main>
 </body>
 </html>
