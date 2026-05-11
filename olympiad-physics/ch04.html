@@ -48,6 +48,138 @@
     <p>From the zeroth law of thermodynamics, the average kinetic energy of molecules has the macroscopic characteristic of temperature, so we set:</p>
     $$ \frac{1}{2}m\overline{v^2} = B \cdot T $$
 
+    <h3>3. Ideal Gas Equation of State:</h3>
+    <p>From $P = \frac{2}{3}n\left(\frac{1}{2}m\overline{v^2}\right)$ and $BT = \frac{1}{2}m\overline{v^2}$, we have</p>
+    $$ P = \frac{2}{3}nBT = \frac{2}{3}\frac{N}{V}BT = \frac{2}{3}\frac{\nu N_A}{V}BT \quad (n: \text{number density}, \nu: \text{moles}) $$
+    $$ \therefore PV = \frac{2}{3}\nu N_A BT $$
+    <p>Let $R = \frac{2}{3}N_A B$, we get:</p>
+    $$ PV = \nu RT. \quad \therefore T = \frac{1}{B}\left(\frac{1}{2}m\overline{v^2}\right) = \frac{2N_A}{3R}\left(\frac{1}{2}m\overline{v^2}\right). $$
+    <p>Deduction: $PV = \frac{M}{\mu}RT = \frac{\rho V}{\mu}RT$, $\therefore \mu P = \rho RT$.</p>
+    <p>For the same gas: $\frac{P_1 V_1}{T_1} = \frac{P_2 V_2}{T_2}, \quad \frac{P_1}{\rho_1 T_1} = \frac{P_2}{\rho_2 T_2}$.</p>
+    <p>For all gases in the same system: $\frac{P_{\text{total}} V_{\text{total}}}{T_{\text{total}}} = R \sum \nu_i = \sum \frac{P_i V_i}{T_i}$.</p>
+
+    <h3>4. First Law of Thermodynamics Applied to Ideal Gas</h3>
+    <p>($\nu$: number of moles)</p>
+    <p><strong>① Thermodynamic processes:</strong> The process of the system state changing with time (state variables: $P, T, V$).</p>
+    $$ \begin{cases} \text{Quasi-static (准静态): } \text{every intermediate state is approximately an equilibrium state.} \\ \text{Non-quasi-static (非静态): } \text{intermediate states cannot be considered equilibrium states (cannot be represented on a P-V diagram).} \end{cases} $$
+    <p>1) Work: $dW = F dl = PS dl = P dV$.</p>
+    <p>2) Heat: $dQ = \nu C dT \quad (C: \text{molar heat capacity. For solids } C \text{ is constant. For gases } C \text{ can vary})$.</p>
+    <p>3) Internal energy: $dU = \frac{i}{2}\nu R dT$ (Molecular thermal motion: translation, rotation, vibration + potential energy between atoms in molecule).</p>
+    <p>$i = t + r + 2s \quad (t: \text{translational degrees of freedom} = 3; r: \text{rotational degrees of freedom} = 2, 1, 0; s: \text{vibrational degrees of freedom} = 3N-6)$.</p>
+    <p>For monoatomic molecules: $U = N \cdot \left(\frac{1}{2}m\overline{v^2}\right) = N \cdot \frac{3}{2}BT = \frac{3}{2}\nu RT$.</p>
+    <p>First Law of Thermodynamics: $U_0 + Q - W = U_t, \quad dQ = dU + dW$.</p>
+    <p>(Heat absorbed $Q$ is positive, work done by system on surroundings $W$ is positive).</p>
+
+    <p><strong>② Analysis of various processes:</strong> $dQ = P dV + \frac{i}{2} \nu R dT, \quad PV = \nu RT$.</p>
+    <p><strong>1) Isochoric process (等容过程):</strong> $P = \frac{\nu R}{V} \cdot T$.</p>
+    $$ \begin{cases} \text{Work done by system on surroundings: } W = \int P dV = 0. \\ \text{Change in system internal energy: } \Delta U = \frac{i}{2} \nu R \Delta T. \\ \text{Heat absorbed by system from surroundings: } Q = \frac{i}{2} \nu R \Delta T = \nu C_V \Delta T. \end{cases} $$
+
+    <p><strong>2) Isobaric process (等压过程):</strong> $V = \frac{\nu R}{P} \cdot T$.</p>
+    $$ \begin{cases} \text{Work done by system on surroundings: } W = \int P dV = P \Delta V = \nu R \Delta T. \\ \text{Change in system internal energy: } \Delta U = \frac{i}{2} \nu R \Delta T = \nu C_V \Delta T. \\ \text{Heat absorbed by system from surroundings: } Q = \nu(C_V+R)\Delta T = \nu C_P \Delta T. \end{cases} $$
+
+    <p><strong>3) Isothermal process (等温过程):</strong> $P = \frac{\nu RT}{V}$.</p>
+    $$ \begin{cases} \text{Work done by system on surroundings: } W = \int_{V_1}^{V_2} P dV = \nu RT \int_{V_1}^{V_2} \frac{dV}{V} = \nu RT \ln\frac{V_2}{V_1} = -\nu RT \ln\frac{P_2}{P_1}. \\ \text{Change in system internal energy: } \Delta U = \frac{i}{2} \nu R \Delta T = 0. \\ \text{Heat absorbed by system from surroundings: } Q = \nu RT \ln\frac{V_2}{V_1}. \end{cases} $$
+
+    <p><strong>4) Adiabatic process (绝热过程):</strong> $PV^\gamma = P_0 V_0^\gamma$.</p>
+    <p>From $P dV + V dP = \nu R dT$ and $\nu C_V dT + P dV = dU + dW = 0$, we get:</p>
+    $$ \frac{C_V}{R} (P dV + V dP) + P dV = 0 \implies \frac{R+C_V}{C_V} \frac{dV}{V} = -\frac{dP}{P}. $$
+    <p>Integrating gives $\ln\frac{V}{V_0} = -\frac{C_V}{C_P} \ln\frac{P}{P_0} \dots \implies PV^{\frac{C_P}{C_V}} = P_0 V_0^{\frac{C_P}{C_V}} \implies PV^\gamma = P_0 V_0^\gamma$.</p>
+    $$ \begin{cases} \text{Work done by system: } W = \int_{V_1}^{V_2} P dV = \int_{V_1}^{V_2} \frac{P_0 V_0^\gamma}{V^\gamma} dV = \left. P_0 V_0^\gamma \frac{1}{1-\gamma} V^{1-\gamma} \right|_{V_1}^{V_2} \\ \quad = -\frac{C_V}{R} P_0 V_0^\gamma (V_2^{-\frac{R}{C_V}} - V_1^{-\frac{R}{C_V}}) = \dots \\ \quad = \frac{C_V}{R} (P_1 V_1 - P_2 V_2) = \frac{C_V}{R} (\nu R T_1 - \nu R T_2) = \nu C_V (T_1 - T_2). \\ \text{Internal energy change: } \Delta U = \nu C_V (T_2 - T_1) = \nu C_V \Delta T. \\ \text{Heat absorbed: } Q = 0. \end{cases} $$
+
+    <p><strong>5) Carnot cycle of ideal gas (卡诺循环):</strong></p>
+    <img src="images/ch04_carnot_cycle.png" alt="Carnot Cycle" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>(1) $Q_1 = \nu R T_1 \ln\frac{V_b}{V_a}$: Isothermal expansion $ab$ absorbs heat $Q_1$ from high temp source $T_1$.</p>
+    <p>(2) $T_1 V_b^{\gamma-1} = T_2 V_c^{\gamma-1}$: Adiabatic process $bc$.</p>
+    <p>(3) $Q_2 = \nu R T_2 \ln\frac{V_c}{V_d}$: Isothermal compression $cd$ releases heat $Q_2$ to low temp source $T_2$.</p>
+    <p>(4) $T_2 V_d^{\gamma-1} = T_1 V_a^{\gamma-1}$: Adiabatic process $da$.</p>
+    <p>From (2) and (4) we get: $\frac{V_b}{V_a} = \frac{V_c}{V_d}$. Substituting into (3) yields:</p>
+    $$ Q_2 = \nu R T_2 \ln\frac{V_b}{V_a} $$
+    <p>Comparing with (1) we get: $\frac{Q_1}{T_1} = \frac{Q_2}{T_2}$</p>
+    $$ \therefore \eta = \frac{A}{Q_1} = \frac{Q_1 - Q_2}{Q_1} = 1 - \frac{T_2}{T_1}. $$
+
+    <h3>5. Saturated and Unsaturated Vapor</h3>
+    <p>($n_{\text{evap}} = n_{\text{cond}}$ vs $n_{\text{evap}} > n_{\text{cond}}$)</p>
+    <p><strong>Properties:</strong></p>
+    <ol>
+        <li>At the same temperature, the saturated vapor pressures of different liquids are generally different.</li>
+        <li>The saturated vapor pressure of a given liquid increases rapidly with temperature. Thus, when the volume of saturated vapor decreases or the temperature drops, the vapor will liquefy.</li>
+        <li>The condition for liquid boiling is that the saturated vapor pressure of the liquid at that temperature equals the external pressure.</li>
+    </ol>
+    <p><strong>Calculation:</strong> According to Dalton's law of partial pressures: gas pressure in a closed container $P = P_{\text{gas}} + P_{\text{vapor}}$.</p>
+    <p>When there is liquid water in the container and it's in an equilibrium state, $P_{\text{vapor}} = P_{\text{sat}}$, which corresponds to 100% relative humidity.</p>
+    <p>For a mixture of air and water vapor, when the vapor is unsaturated, it approximately follows the ideal gas equation of state, i.e., $P_{\text{gas}} V = \nu_{\text{gas}} R T$, $P_{\text{vapor}} V = \nu_{\text{vapor}} R T$, and $PV = \nu_{\text{total}}RT$.</p>
+    <p>When temperature drops, water vapor turns into saturated vapor; if temperature drops further or pressure increases, water vapor will partially liquefy. At this time $P_{\text{sat}} V' = \nu_{\text{vapor}}' R T$, and $P_{\text{gas}}' V' = \nu_{\text{gas}} R T$.</p>
+    <p>For a mixture of air and water vapor, if there is no liquid water present, it can be calculated using the ideal gas equation of state.</p>
+    $$ \rho = \frac{M_{\text{gas}} \cdot \nu_{\text{gas}} + M_{\text{vapor}} \cdot \nu_{\text{vapor}}}{V} \quad (M_{\text{gas}} = 28.8 \text{ g/mol}, M_{\text{vapor}} = 18 \text{ g/mol}). $$
+    <p>And definitions: Absolute humidity = $P_{\text{vapor}}$, Relative humidity = $\frac{P_{\text{vapor}}}{P_{\text{sat}}}$ (where $P_{\text{sat}}$ is the saturated vapor pressure at that temperature).</p>
+
+    <h1>Part 7: Liquids and Solids</h1>
+
+    <h3>1. Surface Tension of Liquids</h3>
+    $$ F = \sigma L \quad (\text{Direction: normal to the drawn line, tangent to the liquid surface}) $$
+    <p><strong>Property:</strong> For a non-planar liquid surface, surface tension will cause a pressure difference between inside and outside. As shown in the figure:</p>
+    <img src="images/ch04_surface_tension.png" alt="Surface Tension on Curved Surface" style="max-width: 50%; display: block; margin: 1em auto;">
+    <p>Let $\widehat{AB} = \widehat{EF} = \widehat{HG} = \Delta l_1$, $\widehat{A_1B_1} = \widehat{HE} = \widehat{GF} = \Delta l_2$.</p>
+    <p>Because the horizontal components of $\Delta f_1$ and $\Delta f_2$ cancel each other,</p>
+    $$ \therefore \text{The combined effect of } \Delta f_1 \text{ and } \Delta f_2 \text{ is } (\Delta f_1 + \Delta f_2)\Delta\varphi = 2\sigma \Delta l_2 \Delta\varphi = 2\sigma \Delta l_2 \cdot \frac{A_1B_1}{2R_1} = \frac{\sigma}{R_1} \Delta l_1 \Delta l_2 = \frac{\sigma}{R_1} \Delta S. $$
+    <p>Similarly, for $\widehat{A_2B_2}$ there is a combined force $\frac{\sigma}{R_2}\Delta S$.</p>
+    $$ \therefore \Delta f_{\text{total}} = \sigma\left(\frac{1}{R_1} + \frac{1}{R_2}\right)\Delta S $$
+    <p>$\therefore$ The pressure difference caused by the curved surface is $p = \frac{\Delta f_{\text{total}}}{\Delta S} = \sigma\left(\frac{1}{R_1} + \frac{1}{R_2}\right)$.</p>
+    <p>Where $R_1, R_2$ are the principal radii of curvature of two mutually perpendicular normal sections.</p>
+    $$ \begin{cases} \text{For a spherical surface, additional pressure } p_1 = \frac{2\sigma}{R} \\ \text{For a spherical bubble film, additional pressure } p_2 = 2p_1 = \frac{4\sigma}{R} \end{cases} $$
+
+    <p><strong>① Capillary Phenomenon</strong></p>
+    <p>For a wetting liquid:</p>
+    <img src="images/ch04_capillary.png" alt="Capillary Action" style="max-width: 25%; display: block; margin: 1em auto;">
+    $$ \because p_A = p_0 - \frac{2\sigma}{R}. $$
+    $$ p_B = p_A + \rho g h = p_0. $$
+    $$ \therefore h = \frac{2\sigma}{\rho g R}. \quad \text{Also } \because R\cos\theta = r, \quad \therefore h = \frac{2\sigma\cos\theta}{\rho g r}. $$
+
+    <p><strong>② Vibration of a Soap Bubble</strong></p>
+    <img src="images/ch04_soap_bubble.png" alt="Soap Bubble Vibration" style="max-width: 25%; display: block; margin: 1em auto;">
+    <p>When the soap bubble radius expands by $x$, the surface has:</p>
+    $$ df_{\text{total}} = P_0 ds + \frac{4\sigma}{R+x} ds - p' ds \quad (P_0 \text{ is atmospheric pressure}). $$
+    <p>At equilibrium, $P_0 ds + \frac{4\sigma}{R} ds = P ds$. $\therefore P = P_0 + \frac{4\sigma}{R}$.</p>
+    <p>Due to isothermal change, $\therefore P \cdot \frac{4}{3}\pi R^3 = P' \cdot \frac{4}{3}\pi (R+x)^3$. $\therefore P' = \left(\frac{R}{R+x}\right)^3 \cdot \left(P_0 + \frac{4\sigma}{R}\right)$.</p>
+    $$ \therefore df_{\text{total}} = P_0\left[1 - \left(\frac{R}{R+x}\right)^3\right] ds + 4\sigma\left[\frac{1}{R+x} - \frac{R^2}{(R+x)^3}\right] ds $$
+    $$ \approx P_0\left[1 - \frac{R^3}{R^3+3R^2x}\right] ds + 4\sigma\left[\frac{1}{R+x} - \frac{R^2}{R^3+3R^2x}\right] ds $$
+    $$ \approx P_0\left(1 - \frac{R-3x}{R}\right) ds + 4\sigma\left(\frac{R-x}{R^2} - \frac{R-3x}{R^2}\right) ds $$
+    $$ = \frac{3x}{R}P_0 ds + \frac{2x}{R^2} 4\sigma ds. $$
+    $$ \therefore dk = \frac{3P_0 ds}{R} + \frac{8\sigma ds}{R^2}. $$
+    $$ \therefore T = 2\pi \sqrt{\frac{dm}{dk}} = 2\pi \sqrt{\frac{\frac{ds}{4\pi R^2} m}{\left(\frac{3P_0}{R} + \frac{8\sigma}{R^2}\right) ds}} = 2\pi \sqrt{\frac{m}{12\pi R P_0 + 32\pi \sigma}}. $$
+    <p>The work done by surface tension during this process:</p>
+    $$ W = \int_{R_1}^{R_2} \frac{4\sigma}{R} \cdot 4\pi R^2 \cdot dR = 16\pi\sigma \int_{R_1}^{R_2} R dR = 8\pi\sigma(R_2^2 - R_1^2). $$
+    <p>Similarly, calculating with surface free energy:</p>
+    $$ W = (2\sigma)(S_2 - S_1) = 2\sigma(4\pi R_2^2 - 4\pi R_1^2) = 8\pi\sigma(R_2^2 - R_1^2) $$
+    <p>(Because a liquid film has two surfaces, each surface doing work $\sigma\Delta S$, two surfaces doing work to overcome surface tension is $2\sigma\Delta S$).</p>
+
+    <h3>2. Solids:</h3>
+    <p><strong>① Crystal Types:</strong></p>
+    <ul>
+        <li>Single crystal: Anisotropy.</li>
+        <li>Polycrystal: Isotropy.</li>
+        <li>Amorphous solid: Isotropy.</li>
+        <li>Liquid: Isotropy.</li>
+        <li>Liquid crystal: Anisotropy.</li>
+    </ul>
+
+    <p><strong>② Thermal Expansion:</strong></p>
+    <p>Let the length of a solid at $0^\circ\text{C}$ and $t^\circ\text{C}$ be $l_0$ and $l$. We have:</p>
+    $$ l = l_0(1 + \alpha t), \quad dl = \alpha l_0 dt. $$
+    <p>Let the volume of a solid at $0^\circ\text{C}$ and $t^\circ\text{C}$ be $V_0$ and $V$. We have:</p>
+    $$ V = V_0(1 + \beta t), \quad dV = \beta V_0 dt. $$
+    <p>And $\beta = 3\alpha$.</p>
+
+    <p><strong>③ Phase Changes:</strong></p>
+    <p>For the same solid: heat of fusion $Q_1 = \lambda m$; heat of vaporization $Q_2 = L m$.</p>
+    <p>Heat of sublimation $Q_3 = Q_1 + Q_2 = (\lambda + L)m$.</p>
+
+    <p><strong>④ Heat Conduction:</strong></p>
+    <p>Let there be a plate of cross-sectional area $S$ and thickness $x$. The two sides of the plate maintain a temperature difference $\Delta T$.</p>
+    <p>The heat $dQ$ flowing perpendicular to the plate surface in time $dt$ is:</p>
+    $$ H = \frac{dQ}{dt} = -k S \cdot \frac{\Delta T}{x} $$
+    $$ \begin{cases} \text{Multi-layer plates in series: } H = \frac{-S\Delta T}{\sum (x_i/k_i)} \\ \text{Multi-layer plates in parallel: } H = -\frac{\Delta T}{x} \sum (k_i S_i) \end{cases} \quad \text{(Similar to the series and parallel connections of resistors, capacitors, inductors, and springs)}. $$
+
 </main>
 </body>
 </html>
