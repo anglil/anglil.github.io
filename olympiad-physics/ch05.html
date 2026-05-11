@@ -239,6 +239,170 @@
     </div>
     <div style="clear: both;"></div>
 
+
+
+    <p><strong>⑥ Electric field lines and equipotential lines equations for a finite length uniformly charged straight line:</strong></p>
+    <p><strong>1) Electric field line equation:</strong></p>
+    <img src="images/ch05_finite_line_field.png" alt="Finite line electric field" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>From the previous derivation, the effect of AB on P is equivalent to that of arc MN (with the same linear density $\lambda$) on P. $\therefore$ The direction of the electric field at point P is along the angle bisector of $\angle MPN$, which is also the tangent direction of the electric field line.</p>
+    <p>Due to the arbitrariness of point P, the direction of the electric field at any point on the $xy$ plane is along the bisector of $\angle APB$.</p>
+    <p>From the properties of a hyperbola (the tangent direction at any point on it is the same as the angle bisector of the lines connecting the two foci to that point), it can be known that the electric field lines are a family of confocal hyperbolas. Their equation is:</p>
+    $$ \frac{x^2}{a^2} - \frac{y^2}{\frac{l^2}{4} - a^2} = 1 \quad \left(\text{where } 0 < a < \frac{l}{2}\right) $$
+
+    <p><strong>2) Equipotential line equation:</strong></p>
+    <img src="images/ch05_finite_line_equipotential.png" alt="Finite line equipotential" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Since the electric field line equation is a hyperbola, and equipotential lines are everywhere perpendicular to the electric field lines, the equipotential line equation is an ellipse:</p>
+    $$ \frac{x^2}{a^2} + \frac{y^2}{a^2 - \frac{l^2}{4}} = 1 \quad \left(\text{where } a > \frac{l}{2}\right) $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑦ Electric potential distribution on the axis of a charged ring:</strong></p>
+    <img src="images/ch05_ring_potential.png" alt="Charged ring potential" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \varphi = \int \frac{dq}{4\pi\varepsilon_0\sqrt{x^2+R^2}} = \frac{q}{4\pi\varepsilon_0\sqrt{x^2+R^2}} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑧ Electric potential distribution on the axis of a charged disk:</strong></p>
+    <p>Using the above result:</p>
+    $$ \varphi = \int \frac{dq}{4\pi\varepsilon_0\sqrt{x^2+r^2}} = \int_0^R \frac{2\pi r dr \sigma}{4\pi\varepsilon_0\sqrt{x^2+r^2}} $$
+    $$ = \frac{\sigma}{2\varepsilon_0} \int_0^R \frac{r dr}{\sqrt{x^2+r^2}} = \frac{\sigma}{4\varepsilon_0} \int_0^R \frac{d(x^2+r^2)}{\sqrt{x^2+r^2}} = \frac{\sigma}{2\varepsilon_0}\left(\sqrt{x^2+R^2} - x\right) $$
+
+    <p><strong>⑨ Electric potential distribution of an infinitely wide uniformly charged flat plate:</strong></p>
+    <p>Choosing the charged plane itself as the zero potential point, the potential at a distance $r$ from the plate is:</p>
+    $$ \varphi = -\int_0^r \frac{\sigma}{2\varepsilon_0} dr = -\frac{\sigma r}{2\varepsilon_0} $$
+
+    <hr style="margin: 2em 0;">
+
+    <h3>4. Electric Potential Energy and Electrostatic Energy</h3>
+
+    <p><strong>① Electric Potential Energy (电势能):</strong></p>
+    <p>Because the electrostatic field is a conservative field, when moving a charge in an electrostatic field, the work done by the electrostatic field force is independent of the path. Therefore, any charge in an electrostatic field has electrostatic potential energy.</p>
+    $$ W = q\varphi $$
+    $$ A_{12} = W_1 - W_2 = q(\varphi_1 - \varphi_2) $$
+    <p>The electric potential energy of a charge in an external electric field is shared by the charge and the charge system that produces the electric field. It is an interaction energy. Similarly, the electric potential energy of a point charge system in an external electric field is $W = \sum q_i \varphi_i$.</p>
+    <p>(Note: $\varphi_i$ does not include the potential produced by the charges within this charge system at that point.)</p>
+
+    <p><strong>② Electrostatic Energy (静电能):</strong></p>
+    <p><strong>1) Mutual energy (互能):</strong> The work done by electrostatic forces between charges when they are scattered from their current positions to infinity. i.e., the interaction energy of a point charge system.</p>
+    <ul>
+        <li>Moving $q_1$ from infinity to a point in space, no work is done.</li>
+        <li>Moving $q_2$ from infinity to distance $r_{12}$ from $q_1$: $W_1 = q_2 \int_{r_{12}}^\infty \frac{q_1 dr}{4\pi\varepsilon_0 r^2} = \frac{q_1 q_2}{4\pi\varepsilon_0 r_{12}}$.</li>
+        <li>Moving $q_3$ from infinity to distance $r_{13}$ from $q_1$ and $r_{23}$ from $q_2$: $W_2 = q_3 \left(\frac{q_1}{4\pi\varepsilon_0 r_{13}} + \frac{q_2}{4\pi\varepsilon_0 r_{23}}\right)$.</li>
+        <li>$\dots$</li>
+        <li>Moving $q_n$ from infinity to distance $r_{1n}$ from $q_1$ $\dots$ $r_{(n-1)n}$ from $q_{n-1}$: $W_n = q_n \left(\frac{q_1}{4\pi\varepsilon_0 r_{1n}} + \frac{q_2}{4\pi\varepsilon_0 r_{2n}} + \dots + \frac{q_{n-1}}{4\pi\varepsilon_0 r_{(n-1)n}}\right)$.</li>
+    </ul>
+    $$ \therefore E = \sum_{i=1}^n W_i = \frac{1}{2} \sum_{i=1}^n q_i \varphi_i $$
+
+    <p><strong>2) Self-energy (自能):</strong> The work done by electrostatic forces when a charged body is divided into infinite charge elements and scattered to infinity from each other.</p>
+    $$ E = \frac{1}{2} \int \varphi dq $$
+    <p>Therefore, the total electrostatic energy in space = mutual energy + self-energy = $\frac{1}{2} \int \varphi dq$.</p>
+    $$ = \int w dV = \frac{1}{2} \varepsilon_0 \int E^2 dV \quad (w: \text{energy density}) $$
+
+    <p><strong>③ Applications of Energy</strong></p>
+    <p><strong>1) Electric potential energy of an electric dipole in an external uniform electric field $\vec{E}$:</strong></p>
+    <img src="images/ch05_dipole_external_field.png" alt="Dipole in external field" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ W = \sum_{i=1}^n q_i \varphi_i = q\varphi_A + (-q\varphi_B) $$
+    $$ = -q E l \cos\theta = -\vec{p} \cdot \vec{E} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>2) Electrostatic energy of a parallel plate capacitor:</strong></p>
+    $$ \begin{cases} W = \frac{1}{2} \int \varphi dq = \frac{1}{2} q(U_1 - U_2) = \frac{1}{2} qU \\ W = \frac{1}{2}\varepsilon_0 \int E^2 dV = \frac{1}{2}\varepsilon_0 E^2 S \cdot d = \frac{1}{2}\varepsilon_0 \frac{U^2}{d^2} S \cdot d = \frac{1}{2} C U^2 \\ W = \int q dU = \int \frac{q dq}{C} = \frac{1}{2} \frac{q^2}{C} \end{cases} $$
+
+    <p><strong>3) Solid sphere:</strong></p>
+    <img src="images/ch05_solid_sphere_energy.png" alt="Solid sphere energy" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \begin{cases} \text{When } r < R, \quad W = \frac{1}{2} \varepsilon_0 \int_0^R \left(\frac{qr}{4\pi\varepsilon_0 R^3}\right)^2 4\pi r^2 dr = \frac{1}{2}\varepsilon_0 \left(\frac{q}{4\pi\varepsilon_0 R^3}\right)^2 4\pi \int_0^R r^4 dr = \frac{q^2}{40\pi\varepsilon_0 R} \\ \text{When } r \ge R, \quad W = \frac{1}{2} \varepsilon_0 \int_R^\infty \left(\frac{q}{4\pi\varepsilon_0 r^2}\right)^2 4\pi r^2 dr = \frac{1}{2}\varepsilon_0 \left(\frac{q}{4\pi\varepsilon_0}\right)^2 4\pi \int_R^\infty \frac{dr}{r^2} = \frac{q^2}{8\pi\varepsilon_0 R} \end{cases} $$
+    $$ \therefore W_{\text{total}} = \frac{q^2}{40\pi\varepsilon_0 R} + \frac{q^2}{8\pi\varepsilon_0 R} = \frac{3q^2}{20\pi\varepsilon_0 R} $$
+    <p>Alternatively using $W = \frac{1}{2} \int \varphi dq$:</p>
+    $$ W_{\text{total}} = \frac{1}{2} \int \varphi dq = \frac{1}{2} \int_0^R \frac{q(3R^2-r^2)}{8\pi\varepsilon_0 R^3} \cdot \frac{q}{\frac{4}{3}\pi R^3} 4\pi r^2 dr = \frac{3q^2}{20\pi\varepsilon_0 R} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>4) Hollow spherical shell:</strong></p>
+    <img src="images/ch05_shell_energy.png" alt="Hollow shell energy" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \begin{cases} \text{When } r < R, \quad W = 0 \\ \text{When } r \ge R, \quad W = \frac{1}{2} \varepsilon_0 \int_R^\infty \left(\frac{q}{4\pi\varepsilon_0 r^2}\right)^2 4\pi r^2 dr = \frac{q^2}{8\pi\varepsilon_0 R} \end{cases} $$
+    $$ \therefore W_{\text{total}} = \frac{q^2}{8\pi\varepsilon_0 R} $$
+    <p>Alternatively:</p>
+    $$ W_{\text{total}} = \frac{1}{2} \int \varphi dq = \frac{1}{2} \cdot \frac{q}{4\pi\varepsilon_0 R} \cdot q = \frac{q^2}{8\pi\varepsilon_0 R} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>5. Conductors and Dielectrics</h3>
+
+    <p><strong>① Conductors in electrostatic equilibrium:</strong></p>
+    $$ \begin{cases} \text{Inside: } \vec{E} = \vec{E}_{\text{external}} + \vec{E}_{\text{induced}} = 0 \\ \text{Outside: } \text{Field strength at outer surface } \vec{E} = \frac{\sigma}{\varepsilon_0} \vec{n} \perp \text{outer surface} \end{cases} $$
+    <p>The conductor is an equipotential body, its surface is an equipotential surface, and induced charges distribute on the surface.</p>
+
+    <p><strong>Conductor with a cavity:</strong></p>
+    <p><strong>1) Charges outside cavity, conductor ungrounded, no charge on inner wall, no electric field inside cavity.</strong></p>
+    <img src="images/ch05_cavity_1.png" alt="Cavity case 1" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p><em>Proof:</em> Take a Gaussian surface $S$ inside the conductor enclosing the cavity. Since $\Phi = \oint_S \vec{E} \cdot d\vec{S} = 0$, the net charge on the inner wall is zero. Take a loop $L$, according to the circuital law, there are no electric field lines inside the cavity, so there is no charge on the inner wall. Hence, no electric field inside.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>2) Charges outside cavity, conductor grounded, no charge on inner wall, only one type of charge on outer surface, no electric field inside cavity.</strong></p>
+    <img src="images/ch05_cavity_2.png" alt="Cavity case 2" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p><em>Proof:</em> If positive charges exist on the outer surface (as shown), the electric field lines they emit will extend to infinity (they cannot end at negative charges on the other side of the conductor because the potential is equal everywhere). But the potential at infinity is also zero, which contradicts the existence of electric field lines connecting the conductor and infinity.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>3) Charge inside cavity, conductor ungrounded, inner and outer wall charges are $-q$ and $+q$ respectively, electric field exists outside cavity.</strong></p>
+    <img src="images/ch05_cavity_3.png" alt="Cavity case 3" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p><em>Proof:</em> Take a Gaussian surface inside the conductor enclosing the cavity. Since $\oint_S \vec{E} \cdot d\vec{S} = 0$, the charge on the inner wall is $-q$ to cancel the charge $+q$ in the cavity. Take a Gaussian surface outside enclosing the conductor, due to charge conservation, the outer surface has $+q$, so the net charge is $+q$, $\oint_S \vec{E} \cdot d\vec{S} \neq 0$, thus there is an electric field outside.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>4) Charge inside cavity, conductor grounded, inner wall charge $-q$, outer wall charge $0$, no electric field outside cavity.</strong></p>
+    <img src="images/ch05_cavity_4.png" alt="Cavity case 4" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p><em>Proof:</em> Take a Gaussian surface inside the conductor enclosing the cavity. Since $\oint_S \vec{E} \cdot d\vec{S} = 0$, the inner wall has $-q$. Also, since the potential inside the conductor (including the outer surface) is zero, and the potential at infinity is zero, there is no electric field outside.</p>
+    </div>
+    <div style="clear: both;"></div>
+    <p>In summary: Cases 1) and 2): outside does not affect inside. Case 3): inside does not affect outside. If charges exist both inside and outside simultaneously (grounded or ungrounded), then superpose the respective cases.</p>
+
+    <p><strong>② Dielectrics in electrostatic equilibrium:</strong></p>
+    $$ \begin{cases} \text{Polar molecules } \to \text{inherent electric moment } \to \text{inherent moments align in external field} \\ \text{Non-polar molecules } \to \text{induced electric moment } \to \text{external field separates centers of positive and negative charges} \end{cases} $$
+    <p>Macroscopic effect: generates surface polarization charges.</p>
+    <p>Let the external field be $\vec{E}_0$. The surface density of polarization charges is $\sigma'$. The field induced by it is $\vec{E}'$. The relative permittivity of the dielectric is $\varepsilon_r$. Therefore, the resultant field in space is $\vec{E} = \vec{E}_0 + \vec{E}'$.</p>
+
+    <p>Take a rectangular cuboid dielectric as an example:</p>
+    <img src="images/ch05_dielectric_polarization.png" alt="Dielectric polarization" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>From the generalized Gauss's law: $\varepsilon_0 \oint_S (\varepsilon_r \vec{E}) \cdot d\vec{S} = q_{\text{free charges}}$</p>
+    <p>Take a Gaussian surface as shown in the diagram: $\because q_{\text{free}} = 0 \quad \therefore -\varepsilon_0 E_0 + \varepsilon_0 \varepsilon_r (E_0 - E') = 0 \quad \therefore E' = \frac{\varepsilon_r - 1}{\varepsilon_r} E_0$.</p>
+    $$ \therefore \text{Resultant field inside dielectric } E = E_0 - E' = \frac{E_0}{\varepsilon_r} $$
+    <p>Again by Gauss's law: $\varepsilon_0(-E_0 \Delta S + E \Delta S) = -\sigma' \Delta S$. Solving yields: $-\sigma' = -\frac{\varepsilon_0(\varepsilon_r-1)}{\varepsilon_r} E_0$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p>In summary: From initial conditions $E_0$ and $\varepsilon_r$, by Gauss's law:</p>
+    $$ \begin{cases} \varepsilon_0 \oint_S \vec{E} \cdot d\vec{S} = q_{\text{free}} + q_{\text{polarization}} \\ \varepsilon_0 \oint_S (\varepsilon_r \vec{E}) \cdot d\vec{S} = q_{\text{free}} \end{cases} $$
+    <p>(Note: A dielectric is generally not an equipotential body, its surface is generally not an equipotential surface, and polarization charges distribute on the surface.)</p>
+    <p>We can solve for:</p>
+    $$ E = \frac{E_0}{\varepsilon_r}, \quad E' = \frac{\varepsilon_r-1}{\varepsilon_r} E_0, \quad \sigma' = \frac{\varepsilon_0(\varepsilon_r-1)}{\varepsilon_r} E_0 $$
+    <p>Define polarization $\vec{P} = \varepsilon_0(\varepsilon_r-1)\vec{E}$, then $\sigma' = \frac{\vec{P} \cdot d\vec{S}}{dS} = \vec{P} \cdot \hat{n}$.</p>
+
+    <p><strong>1) Sphere of radius R, charge q immersed in a dielectric $\varepsilon_r$:</strong></p>
+    <img src="images/ch05_charge_in_dielectric.png" alt="Charge in dielectric" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>From $\varepsilon_0 \oint (\varepsilon_r \vec{E}) \cdot d\vec{S} = q$, we get $\varepsilon_0 \varepsilon_r E \cdot 4\pi r^2 = q \quad \therefore E = \frac{q}{4\pi\varepsilon_0\varepsilon_r r^2}$.</p>
+    <p>From $\varepsilon_0 \oint \vec{E} \cdot d\vec{S} = q + q'$, we get $q' = \varepsilon_0 \cdot \frac{q}{4\pi\varepsilon_0\varepsilon_r r^2} \cdot 4\pi r^2 - q = \frac{q}{\varepsilon_r} - q = -\frac{\varepsilon_r-1}{\varepsilon_r} q$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>2) Half space between two parallel metal plates ($+\sigma_0, -\sigma_0$) is filled with dielectric $\varepsilon_r$.</strong> (See next page)</p>
+
+
 </main>
 </body>
 </html>
