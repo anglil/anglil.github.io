@@ -32,6 +32,7 @@
         <li><a href="ch05.html">5. Electrostatics</a></li>
         <li><a href="ch06.html">6. Direct Current Circuits</a></li>
         <li><a href="ch07.html" class="active">7. Steady Current</a></li>
+        <li><a href="ch08.html">8. Static Magnetic Field</a></li>
     </ul>
 </nav>
 
@@ -164,6 +165,171 @@
     <p>Connect a small shunt resistor in parallel.</p>
     <p>Range $I = I_g + \frac{I_g R_g}{R} = \frac{R + R_g}{R} I_g$.</p>
     $$ \therefore R = \frac{R_g}{n - 1} \quad (\text{where } n = \frac{I}{I_g}) $$
+    </div>
+    <div style="clear: both;"></div>
+    <p><strong>② Voltmeter (V):</strong></p>
+    <img src="images/ch07_voltmeter.png" alt="Voltmeter modification" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Connect a large voltage-dividing resistor in series.</p>
+    <p>Range $U = (R_g + R) I_g$.</p>
+    $$ \therefore R = (n - 1) R_g \quad (\text{where } n = \frac{U}{U_g}) $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>③ Ohmmeter:</strong></p>
+    <img src="images/ch07_ohmmeter.png" alt="Ohmmeter modification" style="max-width: 40%; display: block; margin: 1em auto;">
+    $$ I_{\text{meas}} = \frac{\mathcal{E}}{r + R_g + R + R_x} \implies R_x = \frac{\mathcal{E}}{I_{\text{meas}}} - R - R_g - r $$
+    <p>Because the ammeter scale is uniform:</p>
+    <ul>
+        <li>Ammeter and voltmeter scales are uniform.</li>
+        <li>Ohmmeter scale is not uniform.</li>
+    </ul>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>7. Measuring Resistance and Internal Resistance</h3>
+
+    <p><strong>① Voltammetry (Voltmeter-Ammeter Method):</strong></p>
+    
+    <p><strong>1) Ammeter external connection:</strong></p>
+    <img src="images/ch07_ammeter_external.png" alt="Ammeter external connection" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Due to voltmeter current division, $I_{\text{meas}} > I_{\text{true}}$. Also $R_{\text{true}} = \frac{U_{\text{meas}}}{I_{\text{true}}}$.</p>
+    $$ \therefore R_{\text{meas}} = \frac{U_{\text{meas}}}{I_{\text{meas}}} < R_{\text{true}} $$
+    <p>Error:</p>
+    $$ R_{\text{error}} = R_{\text{true}} - R_{\text{meas}} = R_x - \frac{U}{I_{\text{meas}}} = R_x - \frac{R_x R_V}{R_x + R_V} = \frac{R_x^2}{R_x + R_V} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>2) Ammeter internal connection:</strong></p>
+    <img src="images/ch07_ammeter_internal.png" alt="Ammeter internal connection" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Due to ammeter voltage division, $U_{\text{meas}} > U_{\text{true}}$. Also $R_{\text{true}} = \frac{U_{\text{true}}}{I_{\text{meas}}}$.</p>
+    $$ \therefore R_{\text{meas}} = \frac{U_{\text{meas}}}{I_{\text{meas}}} > R_{\text{true}} $$
+    <p>Error:</p>
+    $$ R_{\text{error}} = R_{\text{meas}} - R_{\text{true}} = \frac{U_{\text{meas}}}{I_{\text{meas}}} - R_x = (R_x + R_A) - R_x = R_A $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>3) Choosing the connection method:</strong></p>
+    <p>Let the error of both methods be equal: $\frac{R_x^2}{R_x + R_V} = R_A$.</p>
+    <p>Dividing by $R_x R_V$ gives $\frac{R_x}{R_V} = \frac{R_A}{R_x} + \frac{R_A}{R_V}$. Since $R_A \ll R_V$, then $\frac{R_x}{R_V} \approx \frac{R_A}{R_x} \implies R_x^2 \approx R_A R_V$.</p>
+    <ul>
+        <li>When $R_x > \sqrt{R_A R_V}$, use internal connection, making the ammeter's voltage division relatively small.</li>
+        <li>When $R_x < \sqrt{R_A R_V}$, use external connection, making the voltmeter's current division relatively small.</li>
+    </ul>
+
+    <p><strong>When $R_x$ is unknown:</strong></p>
+    <img src="images/ch07_unknown_rx.png" alt="Test connection for unknown Rx" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Let switch $S$ briefly contact $a$ and $b$ respectively:</p>
+    <ul>
+        <li>If the ammeter reading changes significantly, $S$ should connect to $b$. (This means at $a$, the voltmeter divides too much current, so $R_x$ is a large resistance, requiring internal connection.)</li>
+        <li>If the voltmeter reading changes significantly, $S$ should connect to $a$. (This means at $b$, the ammeter divides too much voltage, so $R_x$ is a small resistance, requiring external connection.)</li>
+    </ul>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>② Ohmmeter Method:</strong></p>
+    $$ R_{\text{meas}} = \frac{\mathcal{E}}{I_{\text{meas}}} - R - R_g - r $$
+    $$ \begin{cases} \text{When } I_{\text{meas}} \to 0, \quad R_{\text{meas}} \to \infty \\ \text{When } I_{\text{meas}} = \frac{\mathcal{E}}{R+R_g+r}, \quad R_{\text{meas}} = 0 \end{cases} $$
+    $$ \therefore R_{\text{mid}} = \frac{\mathcal{E}}{I_{\text{max}}/2} - R - R_g - r = R + R_g + r $$
+    $$ \therefore R_{\text{meas}} = \frac{\mathcal{E}}{I_{\text{meas}}} - R_{\text{mid}} $$
+    <p>$R_{\text{mid}}$ is the resistance value at the median scale of the ohmmeter, which can be read directly.</p>
+
+    <p><strong>③ Bridge Method:</strong></p>
+    <img src="images/ch07_bridge.png" alt="Wheatstone bridge" style="max-width: 35%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>When the current in $G$ is 0, the bridge is balanced.</p>
+    <p>At this point, $U_x = U_1$ and $U_2 = U_3$. $I_1 = I_2$ and $I_x = I_3$.</p>
+    $$ \therefore R_x I_x = R_1 I_1, \quad R_2 I_2 = R_3 I_3 $$
+    $$ \therefore R_x = \frac{R_1}{R_2} R_3 = \frac{L_1}{L_2} R_3 $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>④ Half-deflection method to measure ammeter internal resistance:</strong></p>
+    <img src="images/ch07_half_deflection.png" alt="Half deflection method" style="max-width: 35%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Close $S_1$, adjust $R_P$ to make the ammeter fully deflect.</p>
+    <p>Then close $S_2$, adjust $R_{\text{box}}$ to make the ammeter half-deflect. Let the current through $R_{\text{box}}$ at this time be $I'$.</p>
+    $$ \therefore \frac{I_g}{2} R_g = I' R_{\text{box}} \implies I' = \frac{R_g}{2R_{\text{box}}} I_g $$
+    <p>Because the terminal voltage is approximately constant:</p>
+    $$ \therefore I_g R_g + I_g R_P = \frac{I_g}{2} R_g + \left(\frac{I_g}{2} + I'\right) R_P = \frac{I_g}{2} R_g + \left(\frac{I_g}{2} + \frac{R_g}{2R_{\text{box}}} I_g\right) R_P $$
+    <p>Simplifying yields: $R_g = \frac{R_{\text{box}}}{1 - \frac{R_{\text{box}}}{R_P}} = \frac{R_P R_{\text{box}}}{R_P - R_{\text{box}}}$</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>Error Analysis:</strong></p>
+    $$ \begin{cases} I_g R_g + I_g (R_P + r) = \mathcal{E} \\ \frac{1}{2} I_g R_g + \left(\frac{1}{2} I_g + I'\right) (R_P + r) = \mathcal{E} \end{cases} $$
+    $$ \text{and} \quad \frac{1}{2} I_g R_g = I' R_{\text{box}} $$
+    $$ \therefore \frac{\mathcal{E} - I_g R_g}{\mathcal{E} - \frac{1}{2} I_g R_g} = \frac{I_g}{\frac{1}{2} I_g + I'} = \frac{I_g}{\frac{1}{2} I_g + \frac{R_g}{2R_{\text{box}}} I_g} = \frac{2}{1 + \frac{R_g}{R_{\text{box}}}} $$
+    $$ \therefore \frac{R_g}{R_{\text{box}}} = \frac{\mathcal{E}}{\mathcal{E} - I_g R_g} $$
+    <p>This shows the relative error.</p>
+
+    <p><strong>⑤ Substitution Method:</strong></p>
+    <img src="images/ch07_substitution.png" alt="Substitution method" style="max-width: 35%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Turn switch $S_2$ to 1, adjust the sliding rheostat, and note the ammeter A's reading. Then turn $S_2$ to 2, adjust the resistance box until A's reading matches the previous one. Then $R = R_g$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>⑥ Wheatstone bridge to measure microammeter internal resistance:</strong></p>
+    <img src="images/ch07_wheatstone_microammeter.png" alt="Wheatstone bridge for microammeter" style="max-width: 35%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>When the circuit is connected, adjust the sliding rheostat and note G's reading. Then connect K to the meter wire, adjust its position until G stops at the unchanged scale. Note the resistance box value $R_{\text{box}}$, then $R_g = \frac{L_1}{L_2} R_{\text{box}}$.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>8. Measuring Electromotive Force (EMF)</h3>
+
+    <p><strong>① Voltmeter Method:</strong></p>
+    <img src="images/ch07_emf_voltmeter.png" alt="Voltmeter method" style="max-width: 25%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ \mathcal{E} = U $$
+    <p><strong>Error Analysis:</strong></p>
+    $$ \mathcal{E}_{\text{meas}} = U_{\text{meas}}, \quad \mathcal{E}_{\text{true}} = I r + U_{\text{meas}} = \frac{U_{\text{meas}}}{R_V} r + U_{\text{meas}} $$
+    $$ \therefore \mathcal{E}_{\text{true}} = \frac{R_V + r}{R_V} U_{\text{meas}} = \frac{R_V + r}{R_V} \mathcal{E}_{\text{meas}} $$
+    <p>The measured value is smaller than the true value.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>② Potentiometer Method:</strong></p>
+    <img src="images/ch07_emf_potentiometer.png" alt="Potentiometer method" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>Close $K_1$, and close $K_2$ to position 1. Adjust $S$ to $A$, and adjust $R$ so the current through $\mathcal{E}_S$ is 0.</p>
+    $$ \therefore I = \frac{\mathcal{E}_0}{R_{AC} + R + r} $$
+    $$ \therefore \mathcal{E}_S = I R_{AC} = \frac{\mathcal{E}_0 R_{AC}}{R_{AC} + R + r} $$
+    <p>Close $K_2$ to position 2, move the contact to $B$ so the current through $\mathcal{E}_x$ is 0.</p>
+    $$ \therefore I' = \frac{\mathcal{E}_0}{R_{BC} + R + r} $$
+    $$ \therefore \mathcal{E}_x = I' R_{BC} = \frac{\mathcal{E}_0 R_{BC}}{R_{BC} + R + r} $$
+    $$ \therefore \mathcal{E}_x = \frac{R_{BC}}{R_{AC}} \mathcal{E}_S = \frac{BC}{AC} \mathcal{E}_S $$
+
+    <p><strong>③ U-I Graph Method:</strong></p>
+    <img src="images/ch07_ui_graph.png" alt="U-I graph method" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    <p>Calculate using the experimental formula: $U_{\text{meas}} = -r I_{\text{meas}} + \mathcal{E}$</p>
+    $$ \begin{cases} I_{\text{meas}} = 0, \quad \mathcal{E} = U_0 \quad \text{(open circuit)} \\ U_{\text{meas}} = 0, \quad r = \frac{U_0}{I_0} \quad \text{(short circuit)} \end{cases} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>Error Analysis:</strong></p>
+    <p><strong>1) External connection:</strong></p>
+    <img src="images/ch07_ui_error_ext.png" alt="U-I error external" style="max-width: 30%; float: right; margin-left: 1em;">
+    <div style="overflow: hidden;">
+    $$ \mathcal{E} = I_{\text{meas}}(r + R_A) + U_{\text{meas}} \implies U_{\text{meas}} = -(R_A + r) I_{\text{meas}} + \mathcal{E} $$
+    <p>When $I_{\text{meas}} = 0$, $\mathcal{E}_{\text{meas}} = U_0'$ is the true EMF.</p>
+    <p>When $U_{\text{meas}} = 0$, $r_{\text{true}} = \frac{U_0'}{I_0'} - R_A$. Therefore, the experimental value $r = \frac{U_0'}{I_0'}$ is larger than the true value, as shown in the graph.</p>
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>2) Internal connection:</strong></p>
+    <img src="images/ch07_ui_error_int.png" alt="U-I error internal" style="max-width: 30%; float: right; margin-left: 1em;">
+    <div style="overflow: hidden;">
+    $$ \mathcal{E} = I_A r + U_{\text{meas}} = \left(\frac{U_{\text{meas}}}{R_V} + I_{\text{meas}}\right) r + U_{\text{meas}} = \frac{R_V+r}{R_V} U_{\text{meas}} + I_{\text{meas}} r $$
+    $$ \therefore U_{\text{meas}} = -\frac{R_V r}{R_V+r} I_{\text{meas}} + \frac{R_V}{R_V+r} \mathcal{E} $$
+    <p>When $I_{\text{meas}} = 0$, $\mathcal{E}_{\text{true}} = \frac{R_V+r}{R_V} U_0'$, so the experimental value $\mathcal{E}_{\text{meas}} = U_0'$ is smaller than the true value.</p>
+    <p>When $U_{\text{meas}} = 0$, $r_{\text{true}} = \frac{\mathcal{E}}{I_0'}$. The experimental value $r = \frac{U_0'}{I_0'} = \frac{R_V}{R_V+r} r_{\text{true}}$, so it is also smaller than the true value.</p>
     </div>
     <div style="clear: both;"></div>
 </main>

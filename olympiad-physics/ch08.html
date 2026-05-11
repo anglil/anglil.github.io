@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Static Magnetic Field - Olympiad Physics</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                macros: {
+                    bm: ["\\boldsymbol{#1}", 1]
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <h2><a href="index.html">Olympiad Physics</a></h2>
+    </div>
+    <ul class="nav-links">
+        <li><a href="ch01.html">1. Kinematics & Statics</a></li>
+        <li><a href="ch02.html">2. Dynamics & Oscillations</a></li>
+        <li><a href="ch03.html">3. Optics & Quantum Physics</a></li>
+        <li><a href="ch04.html">4. Thermodynamics</a></li>
+        <li><a href="ch05.html">5. Electrostatics</a></li>
+        <li><a href="ch06.html">6. Direct Current Circuits</a></li>
+        <li><a href="ch07.html">7. Steady Current</a></li>
+        <li><a href="ch08.html" class="active">8. Static Magnetic Field</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <h1>Part 11: Static Magnetic Field</h1>
+
+    <h3>1. Biot-Savart Law</h3>
+    $$ d\vec{B} = \frac{\mu_0}{4\pi} \frac{I d\vec{l} \times \hat{r}}{r^2}, \quad \vec{B} = \int d\vec{B} $$
+
+    <h3>2. Gauss's Law & Ampere's Circuital Law</h3>
+    <ul>
+        <li><strong>Gauss's Law for Magnetism:</strong> $\oint_S \vec{B} \cdot d\vec{S} = 0$</li>
+        <li><strong>Ampere's Circuital Law:</strong> $\oint_L \vec{B} \cdot d\vec{l} = \mu_0 \sum I$</li>
+    </ul>
+
+    <h3>3. Typical Current-Carrying Magnetic Fields</h3>
+    <p><strong>① Infinite and Finite Wire:</strong></p>
+    <ul>
+        <li><strong>Infinite Wire</strong> (Current $I$):
+        $$ B \cdot 2\pi r = \mu_0 I \implies B = \frac{\mu_0 I}{2\pi r} $$
+        </li>
+        <li><strong>Finite Wire</strong> (Current $I$):
+        <img src="images/ch08_finite_wire.png" alt="Finite wire" style="max-width: 40%; display: block; margin: 1em auto;">
+        $$ dB = \frac{\mu_0}{4\pi} \frac{I dl \cos\theta}{r^2} = \frac{\mu_0}{4\pi} \frac{I \cdot \left(\frac{R}{\cos^2\theta} d\theta\right) \cos\theta}{\left(\frac{R}{\cos\theta}\right)^2} = \frac{\mu_0 I \cos\theta d\theta}{4\pi R} $$
+        </li>
+    </ul>
+
+    <p><strong>② Infinite Wide Flat Plate (Current density $j$):</strong></p>
+    <img src="images/ch08_infinite_plate.png" alt="Infinite plate" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ 2 B L = \mu_0 j L \implies B = \frac{1}{2} \mu_0 j $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <p><strong>③ Infinite Cylindrical Surface:</strong> (Radius $R$, uniform current $I$ on surface)</p>
+    $$ \begin{cases} r \ge R: & B \cdot 2\pi r = \mu_0 I \implies B = \frac{\mu_0 I}{2\pi r} \\ r < R: & B = 0 \end{cases} $$
+
+    <p><strong>④ Current-Carrying Ring:</strong></p>
+    <img src="images/ch08_current_ring.png" alt="Current ring" style="max-width: 30%; float: left; margin-right: 1em;">
+    <div style="overflow: hidden;">
+    $$ dB = \frac{\mu_0}{4\pi} \frac{I dl}{r^2} = \frac{\mu_0}{4\pi} \frac{I \cdot R d\theta}{r^2} $$
+    $$ \therefore B_{\perp} = 0, \quad B_{||} = \frac{\mu_0}{4\pi} \left( \frac{2\pi R I}{r^2} \frac{R}{r} \right) = \frac{\mu_0 R^2 I}{2r^3} $$
+    <p>When $r = R$ (at the center), $B = \frac{\mu_0 I}{2R}$.</p>
+    </div>
+    <div style="clear: both;"></div>
+</main>
+</body>
+</html>
