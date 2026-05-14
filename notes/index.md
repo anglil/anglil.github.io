@@ -20,7 +20,6 @@ title: Notes – Angli Liu
     <ul class="notes-list">
       <li><a href="/notes/physics_highschool_1.pdf" target="_blank">physics_highschool_1</a> (<a href="/olympiad-physics/index.html" target="_blank">Olympiad Physics</a>)</li>
       <li><a href="/notes/physics_highschool_2.pdf" target="_blank">physics_highschool_2</a> (<a href="/olympiad-physics/index.html" target="_blank">Olympiad Physics</a>)</li>
-      <li><a href="/notes/digital electronics.pdf" target="_blank">digital electronics</a></li>
       <li><a href="/notes/thermodynamics.pdf" target="_blank">thermodynamics</a></li>
       <li><a href="/notes/quantum mechanics.pdf" target="_blank">quantum mechanics</a></li>
       <li><a href="/notes/optics_1.pdf" target="_blank">optics_1</a></li>
@@ -42,6 +41,7 @@ title: Notes – Angli Liu
       <li><a href="/notes/algorithms 3.pdf" target="_blank">algorithms 3</a></li>
       <li><a href="/notes/circuits principles, experiments, and semiconductors.pdf" target="_blank">circuits principles, experiments, and semiconductors</a></li>
       <li><a href="/notes/communication circuits.pdf" target="_blank">communication circuits</a></li>
+      <li><a href="/notes/digital electronics.pdf" target="_blank">digital electronics</a></li>
       <li><a href="/notes/c.pdf" target="_blank">c</a></li>
       <li><a href="/notes/c++.pdf" target="_blank">c++</a></li>
       <li><a href="/notes/computer architecture.pdf" target="_blank">computer architecture</a></li>
