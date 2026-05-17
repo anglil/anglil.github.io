@@ -98,7 +98,7 @@
 
     <h3>4. Boundary Conditions</h3>
     <p><strong>① Boundary conditions of the electric field:</strong></p>
-    <img src="images/ch07_E_boundary.png" alt="Electric field boundary" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch07_E_boundary.png" alt="Electric field boundary" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Gauss's Theorem: $\varepsilon_1 E_1 \cos\theta_1 = \varepsilon_2 E_2 \cos\theta_2$</p>
     <p>Circuital Theorem: $E_1 \sin\theta_1 = E_2 \sin\theta_2$</p>
@@ -107,7 +107,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>② Boundary conditions of current density:</strong></p>
-    <img src="images/ch07_j_boundary.png" alt="Current density boundary" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch07_j_boundary.png" alt="Current density boundary" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Steady condition: $j_1 \cos\theta_1 = j_2 \cos\theta_2$</p>
     <p>Ohm's law: $\vec{j} = \sigma \vec{E}$</p>
@@ -133,7 +133,7 @@
     <p>(Theoretical basis: $U_{ab} = \varphi_a - \varphi_b = \int_a^b \vec{E} \cdot d\vec{l}$, and $\oint \vec{E} \cdot d\vec{l} = 0$.)</p>
 
     <p><strong>③ Thevenin's Theorem:</strong></p>
-    <img src="images/ch07_thevenin.png" alt="Thevenin Theorem" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch07_thevenin.png" alt="Thevenin Theorem" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>An equivalent voltage source can be formed by:</p>
     <ul>
@@ -144,7 +144,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>④ Norton's Theorem:</strong></p>
-    <img src="images/ch07_norton.png" alt="Norton Theorem" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch07_norton.png" alt="Norton Theorem" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>An equivalent current source can be formed by:</p>
     <ul>
@@ -162,7 +162,7 @@
 
     <h3>6. Modifying Ammeters</h3>
     <p><strong>① Ammeter (A):</strong></p>
-    <img src="images/ch07_ammeter.png" alt="Ammeter modification" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch07_ammeter.png" alt="Ammeter modification" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Connect a small shunt resistor in parallel.</p>
     <p>Range $I = I_g + \frac{I_g R_g}{R} = \frac{R + R_g}{R} I_g$.</p>
@@ -170,7 +170,7 @@
     </div>
     <div style="clear: both;"></div>
     <p><strong>② Voltmeter (V):</strong></p>
-    <img src="images/ch07_voltmeter.png" alt="Voltmeter modification" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch07_voltmeter.png" alt="Voltmeter modification" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Connect a large voltage-dividing resistor in series.</p>
     <p>Range $U = (R_g + R) I_g$.</p>
@@ -194,7 +194,7 @@
     <p><strong>① Voltammetry (Voltmeter-Ammeter Method):</strong></p>
     
     <p><strong>1) Ammeter external connection:</strong></p>
-    <img src="images/ch07_ammeter_external.png" alt="Ammeter external connection" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch07_ammeter_external.png" alt="Ammeter external connection" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Due to voltmeter current division, $I_{\text{meas}} > I_{\text{true}}$. Also $R_{\text{true}} = \frac{U_{\text{meas}}}{I_{\text{true}}}$.</p>
     $$ \therefore R_{\text{meas}} = \frac{U_{\text{meas}}}{I_{\text{meas}}} < R_{\text{true}} $$
@@ -204,7 +204,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>2) Ammeter internal connection:</strong></p>
-    <img src="images/ch07_ammeter_internal.png" alt="Ammeter internal connection" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch07_ammeter_internal.png" alt="Ammeter internal connection" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Due to ammeter voltage division, $U_{\text{meas}} > U_{\text{true}}$. Also $R_{\text{true}} = \frac{U_{\text{true}}}{I_{\text{meas}}}$.</p>
     $$ \therefore R_{\text{meas}} = \frac{U_{\text{meas}}}{I_{\text{meas}}} > R_{\text{true}} $$
@@ -222,7 +222,7 @@
     </ul>
 
     <p><strong>When $R_x$ is unknown:</strong></p>
-    <img src="images/ch07_unknown_rx.png" alt="Test connection for unknown Rx" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch07_unknown_rx.png" alt="Test connection for unknown Rx" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Let switch $S$ briefly contact $a$ and $b$ respectively:</p>
     <ul>
@@ -240,7 +240,7 @@
     <p>$R_{\text{mid}}$ is the resistance value at the median scale of the ohmmeter, which can be read directly.</p>
 
     <p><strong>③ Bridge Method:</strong></p>
-    <img src="images/ch07_bridge.png" alt="Wheatstone bridge" style="max-width: 35%; float: left; margin-right: 1em;">
+    <img src="images/ch07_bridge.png" alt="Wheatstone bridge" style="max-width: 35%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>When the current in $G$ is 0, the bridge is balanced.</p>
     <p>At this point, $U_x = U_1$ and $U_2 = U_3$. $I_1 = I_2$ and $I_x = I_3$.</p>
@@ -250,7 +250,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>④ Half-deflection method to measure ammeter internal resistance:</strong></p>
-    <img src="images/ch07_half_deflection.png" alt="Half deflection method" style="max-width: 35%; float: left; margin-right: 1em;">
+    <img src="images/ch07_half_deflection.png" alt="Half deflection method" style="max-width: 35%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Close $S_1$, adjust $R_P$ to make the ammeter fully deflect.</p>
     <p>Then close $S_2$, adjust $R_{\text{box}}$ to make the ammeter half-deflect. Let the current through $R_{\text{box}}$ at this time be $I'$.</p>
@@ -269,14 +269,14 @@
     <p>This shows the relative error.</p>
 
     <p><strong>⑤ Substitution Method:</strong></p>
-    <img src="images/ch07_substitution.png" alt="Substitution method" style="max-width: 35%; float: left; margin-right: 1em;">
+    <img src="images/ch07_substitution.png" alt="Substitution method" style="max-width: 35%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Turn switch $S_2$ to 1, adjust the sliding rheostat, and note the ammeter A's reading. Then turn $S_2$ to 2, adjust the resistance box until A's reading matches the previous one. Then $R = R_g$.</p>
     </div>
     <div style="clear: both;"></div>
 
     <p><strong>⑥ Wheatstone bridge to measure microammeter internal resistance:</strong></p>
-    <img src="images/ch07_wheatstone_microammeter.png" alt="Wheatstone bridge for microammeter" style="max-width: 35%; float: left; margin-right: 1em;">
+    <img src="images/ch07_wheatstone_microammeter.png" alt="Wheatstone bridge for microammeter" style="max-width: 35%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>When the circuit is connected, adjust the sliding rheostat and note G's reading. Then connect K to the meter wire, adjust its position until G stops at the unchanged scale. Note the resistance box value $R_{\text{box}}$, then $R_g = \frac{L_1}{L_2} R_{\text{box}}$.</p>
     </div>
@@ -287,7 +287,7 @@
     <h3>8. Measuring Electromotive Force (EMF)</h3>
 
     <p><strong>① Voltmeter Method:</strong></p>
-    <img src="images/ch07_emf_voltmeter.png" alt="Voltmeter method" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch07_emf_voltmeter.png" alt="Voltmeter method" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     $$ \mathcal{E} = U $$
     <p><strong>Error Analysis:</strong></p>
@@ -308,7 +308,7 @@
     $$ \therefore \mathcal{E}_x = \frac{R_{BC}}{R_{AC}} \mathcal{E}_S = \frac{BC}{AC} \mathcal{E}_S $$
 
     <p><strong>③ U-I Graph Method:</strong></p>
-    <img src="images/ch07_ui_graph.png" alt="U-I graph method" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch07_ui_graph.png" alt="U-I graph method" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Calculate using the experimental formula: $U_{\text{meas}} = -r I_{\text{meas}} + \mathcal{E}$</p>
     $$ \begin{cases} I_{\text{meas}} = 0, \quad \mathcal{E} = U_0 \quad \text{(open circuit)} \\ U_{\text{meas}} = 0, \quad r = \frac{U_0}{I_0} \quad \text{(short circuit)} \end{cases} $$
@@ -317,7 +317,7 @@
 
     <p><strong>Error Analysis:</strong></p>
     <p><strong>1) External connection:</strong></p>
-    <img src="images/ch07_ui_error_ext.png" alt="U-I error external" style="max-width: 30%; float: right; margin-left: 1em;">
+    <img src="images/ch07_ui_error_ext.png" alt="U-I error external" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     $$ \mathcal{E} = I_{\text{meas}}(r + R_A) + U_{\text{meas}} \implies U_{\text{meas}} = -(R_A + r) I_{\text{meas}} + \mathcal{E} $$
     <p>When $I_{\text{meas}} = 0$, $\mathcal{E}_{\text{meas}} = U_0'$ is the true EMF.</p>
@@ -326,7 +326,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>2) Internal connection:</strong></p>
-    <img src="images/ch07_ui_error_int.png" alt="U-I error internal" style="max-width: 30%; float: right; margin-left: 1em;">
+    <img src="images/ch07_ui_error_int.png" alt="U-I error internal" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     $$ \mathcal{E} = I_A r + U_{\text{meas}} = \left(\frac{U_{\text{meas}}}{R_V} + I_{\text{meas}}\right) r + U_{\text{meas}} = \frac{R_V+r}{R_V} U_{\text{meas}} + I_{\text{meas}} r $$
     $$ \therefore U_{\text{meas}} = -\frac{R_V r}{R_V+r} I_{\text{meas}} + \frac{R_V}{R_V+r} \mathcal{E} $$
@@ -334,6 +334,54 @@
     <p>When $U_{\text{meas}} = 0$, $r_{\text{true}} = \frac{\mathcal{E}}{I_0'}$. The experimental value $r = \frac{U_0'}{I_0'} = \frac{R_V}{R_V+r} r_{\text{true}}$, so it is also smaller than the true value.</p>
     </div>
     <div style="clear: both;"></div>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: High School Physics Experiments (Circuits)</h3>
+
+    <h4>Experiment 7: Determine the Resistivity of a Metal (and Practice Using a Micrometer)</h4>
+    <p><strong>Experiment Objective:</strong> Practice using a micrometer; learn to use the Voltammetry method to measure resistance; determine the resistivity of a metal.</p>
+    <p><strong>Experiment Principle:</strong> According to the resistance formula $R = \rho \frac{L}{S}$, measure the length $L$ and diameter $d$ of the wire to calculate the cross-sectional area $S$. Measure the resistance $R$ using the Voltammetry method to find the resistivity $\rho$ of the metal wire.</p>
+    <p><strong>Procedure:</strong></p>
+    <ol>
+        <li>Use the micrometer to measure the diameter $d$ at 3 different positions, calculate the average $\bar{d}$, and then calculate the cross-sectional area $S = \pi \left(\frac{\bar{d}}{2}\right)^2$.</li>
+        <li>Connect the experimental circuit. Use a millimeter ruler to measure the effective length $L$ of the wire in the circuit three times and calculate the average $\bar{L}$.</li>
+        <li>Change the sliding rheostat's slider position, record the values of voltage $U$ and current $I$ for multiple groups, and calculate the average resistance $\bar{R}$.</li>
+        <div style="text-align: center; margin: 1em 0;">
+            <img src="images/exp_resistivity_circuit.png" alt="Resistivity Measurement Circuit Diagram" style="max-width: 40%; display: block; margin: 1em auto;">
+            <p><em>(Note: External ammeter connection method is used because the metal wire resistance is typically small)</em></p>
+        </div>
+        <li>Substitute the averages into the formula to get the resistivity:</li>
+    </ol>
+    $$ \rho = \frac{\bar{R} S}{\bar{L}} = \frac{\pi \bar{d}^2 \bar{U}}{4 \bar{L} \bar{I}} $$
+
+    <h4>Experiment 9: Practice Using a Multimeter</h4>
+    <p><strong>Precautions:</strong></p>
+    <ol>
+        <li>Before use, observe whether the pointer points to the zero scale of the ammeter. If not, use a screwdriver to adjust the mechanical zero-adjust screw on the dial to zero.</li>
+        <li><strong>Measuring resistance:</strong> Disconnect the measured resistance from other components and the power supply. Do not touch the metal shafts of the test leads with your hands.</li>
+        <li>When switching to a different Ohms range, you must re-zero the Ohms adjustment.</li>
+        <li>After finishing measurements, unplug the test leads, and set the switch to the "highest AC voltage range" or "OFF" position. If not used for a long time, remove the battery.</li>
+    </ol>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/exp_ohmmeter.png" alt="Ohmmeter Internal Circuit Diagram" style="max-width: 40%; display: block; margin: 1em auto;">
+    </div>
+
+    <h4>Experiment 15: Simple Use of Sensors</h4>
+    <p>A sensor's general workflow transforms a non-electrical physical quantity into an electrical quantity:</p>
+    <p style="text-align: center;"><strong>Non-electrical physical quantity $\to$ Sensitive element $\to$ Conversion device $\to$ Conversion circuit $\to$ Electrical quantity</strong></p>
+    <p>Common quantities measured:</p>
+    <ul>
+        <li><strong>Length:</strong> length, width, height, displacement, angle, geometric position.</li>
+        <li><strong>Mechanics:</strong> force, torque, acceleration, mass, vibration.</li>
+        <li><strong>Temperature:</strong> temperature, moisture.</li>
+        <li><strong>Frequency:</strong> frequency, time.</li>
+        <li><strong>Electricity:</strong> resistance, voltage, current, capacitance, inductance.</li>
+        <li><strong>Magnetism:</strong> magnetic field, magnetic flux.</li>
+        <li><strong>Optics:</strong> brightness, color, transparency.</li>
+        <li><strong>Acoustics:</strong> sound pressure, noise.</li>
+    </ul>
+
 </main>
 </body>
 </html>

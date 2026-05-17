@@ -74,7 +74,7 @@
     $$ R_{AB} = \frac{U_{AB}}{I} = \left\{ \frac{n}{2} + \left[ 3 - \frac{(2+\sqrt{3})^{n-2} - (2-\sqrt{3})^{n-2}}{(2+\sqrt{3})^{n-1} - (2-\sqrt{3})^{n-1} - 2\sqrt{3}} \right]^{-1} \right\} R $$
 
     <p><em>&lt;3&gt; Self-similarity:</em></p>
-    <img src="images/ch06_sierpinski.png" alt="Sierpinski resistor network" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch06_sierpinski.png" alt="Sierpinski resistor network" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Find the equivalent resistance between A and B (unit resistance $R_0$, with infinite equilateral triangles inside).</p>
     <p>By symmetry, POQ can be separated from AOB, and due to self-similarity:</p>
@@ -86,7 +86,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>2) Infinity:</strong></p>
-    <img src="images/ch06_infinite_ladder.png" alt="Infinite ladder" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch06_infinite_ladder.png" alt="Infinite ladder" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     $$ \frac{(R_{n-1} + 2r) r}{R_{n-1} + 3r} = R_n $$
     $$ \frac{(2-\sqrt{3})r[R_{n-1} + (1-\sqrt{3})r]}{R_{n-1} + 3r} = R_n + (1-\sqrt{3})r $$
@@ -104,7 +104,7 @@
     $$ \therefore U_{AB} = (I_{AB} + I_{AB}') r_{AB} = (A+B) c \cdot r \cdot I \implies R_{AB} = \frac{U_{AB}}{I} = (A+B) c \cdot r $$
 
     <p><em>&lt;1&gt; Square Grid:</em></p>
-    <img src="images/ch06_square_grid.png" alt="Square grid" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch06_square_grid.png" alt="Square grid" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Assume $I$ flows into A, current on AB is $\frac{I}{4}$. Assume $I$ flows out of B, current on AB is $\frac{I}{4}$.</p>
     <p>Superposing both cases: $U_{AB} = (\frac{I}{4} + \frac{I}{4}) \cdot r \implies R_{AB} = \frac{1}{2} r$.</p>
@@ -116,7 +116,7 @@
     <div style="clear: both;"></div>
 
     <p><em>&lt;2&gt; Hexagonal Grid:</em></p>
-    <img src="images/ch06_hex_grid.png" alt="Hexagonal grid" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch06_hex_grid.png" alt="Hexagonal grid" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Assume $I$ flows into a, current on ab is $\frac{I}{3}$, current on bc is $\frac{I}{6}$.</p>
     <p>Assume $I$ flows out of c, current on bc is $\frac{I}{6}$, current on ab is $\frac{I}{3}$.</p>
@@ -125,7 +125,7 @@
     <div style="clear: both;"></div>
 
     <p><em>&lt;3&gt; Cross Grid / "" Shape:</em></p>
-    <img src="images/ch06_cross_grid.png" alt="Cross grid" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch06_cross_grid.png" alt="Cross grid" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Find equivalent resistance between A and B.</p>
     <p>Assume $I$ flows into A and out of O. Solving yields $I_1' = \frac{7}{24} I, I_2' = \frac{1}{8} I$.</p>
@@ -157,7 +157,7 @@
     <h3>Special Topic: Measuring Resistivity</h3>
 
     <p><strong>1. Measuring the resistivity of an infinite medium:</strong></p>
-    <img src="images/ch06_measure_infinite.png" alt="Measure infinite medium" style="max-width: 35%; float: left; margin-right: 1em;">
+    <img src="images/ch06_measure_infinite.png" alt="Measure infinite medium" style="max-width: 35%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Draw a square ABCD of side $a$ on the surface. Inject current $I_0$ at A, and extract the same current $I_0$ at D.</p>
     <p>For the injected current at A, the current density is $j = \frac{I_0}{2\pi r^2} \implies E = \frac{j}{\sigma} = \frac{I_0 \rho}{2\pi r^2}$.</p>
@@ -180,7 +180,7 @@
     <p>When $l \to \infty$, $\rho = 2\pi R_{\text{total}} a$.</p>
 
     <p><strong>3. Measuring the resistivity of the substance between two concentric spheres:</strong></p>
-    <img src="images/ch06_measure_concentric.png" alt="Measure concentric spheres" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch06_measure_concentric.png" alt="Measure concentric spheres" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Take a Gaussian surface of radius $r$ between the two spherical surfaces:</p>
     $$ \oint E dS = E \cdot 4\pi r^2 = \frac{Q}{\varepsilon_1} = \rho \oint j dS = \rho I $$
@@ -224,7 +224,7 @@
     $$ \therefore C = \int_0^b \frac{\varepsilon_0 a dx}{d + \frac{h}{b}x} = \frac{\varepsilon_0 a b}{h} \ln\left(1 + \frac{h}{d}\right) $$
 
     <p><strong>3) Spherical capacitor:</strong></p>
-    <img src="images/ch06_spherical_capacitor.png" alt="Spherical capacitor" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch06_spherical_capacitor.png" alt="Spherical capacitor" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     $$ \varphi_A = \frac{1}{4\pi\varepsilon_0}\left(\frac{q}{r_a} + \frac{-q}{r_b}\right) $$
     $$ \varphi_B = \frac{1}{4\pi\varepsilon_0}\left(\frac{q}{r_b} + \frac{-q}{r_b}\right) $$
@@ -234,7 +234,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>4) Cylindrical capacitor (length $L$):</strong></p>
-    <img src="images/ch06_cylindrical_capacitor.png" alt="Cylindrical capacitor" style="max-width: 20%; float: left; margin-right: 1em;">
+    <img src="images/ch06_cylindrical_capacitor.png" alt="Cylindrical capacitor" style="max-width: 20%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Take a cylindrical Gaussian surface of radius $r$ between the two cylinders:</p>
     $$ E \cdot 2\pi r \cdot L = \frac{q}{\varepsilon_0} \implies E = \frac{q}{2\pi\varepsilon_0 r L} $$
@@ -264,7 +264,7 @@
     $$ \therefore C = \frac{q_1+q_2}{U} = \frac{q_1 + \frac{r_b}{r_a}q_1}{\frac{kq_1}{r_a}} = 4\pi\varepsilon_0(r_a+r_b) $$
 
     <p><strong>8) Two-sphere contacting capacitor (radius $R$, distance $2R$):</strong></p>
-    <img src="images/ch06_two_spheres_contact.png" alt="Two contacting spheres" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch06_two_spheres_contact.png" alt="Two contacting spheres" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Assume the system potential is $U_0$. Imagine the charge of both spheres stays at their centers; ignoring mutual induction, the potential of both spheres is $U_0$, and $q_1 = 4\pi\varepsilon_0 R U_0$.</p>
     <p>Because mutual induction will make the potential of the two spheres higher than $U_0$, to eliminate this additional potential, an image charge needs to be added inside each sphere:</p>
@@ -280,7 +280,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>9) Leaky capacitor:</strong></p>
-    <img src="images/ch06_leaky_capacitor.png" alt="Leaky capacitor" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch06_leaky_capacitor.png" alt="Leaky capacitor" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Because voltage $U$ is applied across the plates:</p>
     $$ I = \frac{U}{\rho_1 \frac{d_1}{S} + \rho_2 \frac{d_2}{S}} = \frac{U S}{\rho_1 d_1 + \rho_2 d_2} $$
@@ -304,7 +304,7 @@
     $$ \begin{cases} C_{12} = \frac{C_1 C_2}{C_1 + C_2 + C_3} \\ C_{23} = \frac{C_2 C_3}{C_1 + C_2 + C_3} \\ C_{31} = \frac{C_3 C_1}{C_1 + C_2 + C_3} \end{cases} \iff \begin{cases} C_3 = \frac{C_{12} C_{23} + C_{12} C_{31} + C_{23} C_{31}}{C_{12}} \\ C_1 = \frac{C_{12} C_{23} + C_{12} C_{31} + C_{23} C_{31}}{C_{23}} \\ C_2 = \frac{C_{12} C_{23} + C_{12} C_{31} + C_{23} C_{31}}{C_{31}} \end{cases} $$
 
     <p><strong>⑥ RC Circuits:</strong></p>
-    <img src="images/ch06_rc_circuit.png" alt="RC circuit" style="max-width: 30%; float: right; margin-left: 1em;">
+    <img src="images/ch06_rc_circuit.png" alt="RC circuit" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p><strong>1) Charging:</strong></p>
     $$ \mathcal{E} - i R - \frac{q}{C} = 0, \quad i = \frac{dq}{dt} $$
@@ -347,7 +347,7 @@
     <p>Where $n$ is the turn density (turns/m).</p>
 
     <p><strong>2) Toroidal solenoid:</strong></p>
-    <img src="images/ch06_toroidal_solenoid.png" alt="Toroidal solenoid" style="max-width: 35%; float: left; margin-right: 1em;">
+    <img src="images/ch06_toroidal_solenoid.png" alt="Toroidal solenoid" style="max-width: 35%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>Apply Ampere's law to the whole ring:</p>
     $$ B \cdot 2\pi r = \mu_0 N I \implies B = \frac{\mu_0 N I}{2\pi r} $$
@@ -358,7 +358,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>3) Coaxial cable:</strong></p>
-    <img src="images/ch06_coaxial_cable.png" alt="Coaxial cable" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch06_coaxial_cable.png" alt="Coaxial cable" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>For a unit length of the cable ($l$):</p>
     $$ \Psi = \int_a^b B l dr = \frac{\mu_0 I l}{2\pi} \int_a^b \frac{dr}{r} = \frac{\mu_0 I l}{2\pi} \ln\frac{b}{a} $$
@@ -386,7 +386,7 @@
 
     <p><strong>⑥ Equivalent Inductance:</strong></p>
     <p>When they are far apart, the calculation method is similar to equivalent resistance. Special case when they influence each other:</p>
-    <img src="images/ch06_equiv_inductance.png" alt="Equivalent inductance" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch06_equiv_inductance.png" alt="Equivalent inductance" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p>When $a-c$ or $b-d$ exists alone, the self-inductance is $L_0$.</p>
     $$ \begin{cases} a\text{ connected to }b, \text{circuit connected at }c, d\text{:} & L=0 \\ c\text{ connected to }b, \text{circuit connected at }a, d\text{:} & \Psi = (2 N_0) (\mu_0 2n_0 I) S, \ L = 4L_0 \\ a\text{ connected to }b, c\text{ connected to }d\text{:} & \Psi = N_0 \cdot (\mu_0 n_0 \frac{I}{2}) S \times 2, \ L = L_0 \end{cases} $$
@@ -394,7 +394,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>⑦ RL Circuit:</strong></p>
-    <img src="images/ch06_rl_circuit.png" alt="RL circuit" style="max-width: 25%; float: right; margin-left: 1em;">
+    <img src="images/ch06_rl_circuit.png" alt="RL circuit" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <p><strong>1) Charging:</strong></p>
     $$ \mathcal{E} + \left(-L \frac{di}{dt}\right) - iR = 0 $$

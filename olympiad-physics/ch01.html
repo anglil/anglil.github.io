@@ -6,6 +6,17 @@
     <title>Chapter 1: Newtonian Mechanics - Olympiad Physics</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                macros: {
+                    bm: ["\\boldsymbol{#1}", 1]
+                }
+            }
+        };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -494,6 +505,156 @@
     $$ dN = \left(T_0 + \frac{MgR}{L} \sin\theta\right) d\theta + \frac{MgR}{L} \sin\theta \, d\theta = T_0 d\theta + \frac{2MgR}{L} \sin\theta \, d\theta $$
     <p>Integrating gives the total normal force from $0$ to $\theta$:</p>
     $$ N = T_0 \theta + \frac{2MgR}{L} (1 - \cos\theta) $$
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Experimental Error Theory</h3>
+    <p><strong>1. Expression of Measurement Results:</strong></p>
+    $$ Y = \bar{N} \pm \Delta N $$
+    <p>This includes: the numerical value, the unit, and the uncertainty $\Delta N$.</p>
+
+    <p><strong>2. Meaning of Measurement Results:</strong></p>
+    <p>The measurement result is a range $[N - \Delta N, N + \Delta N]$, and the true value falls in this range with a certain probability.</p>
+    <ul>
+        <li><strong>Limit uncertainty ($e$):</strong> The confidence probability is $100\%$.</li>
+        <li><strong>Standard uncertainty ($\sigma$):</strong> For a normal distribution, $e = 3\sigma$; for a uniform distribution, $e = \sqrt{3}\sigma$. It can be seen that the confidence probability is not $100\%$.</li>
+    </ul>
+
+    <p><strong>3. Calculation of Uncertainty:</strong></p>
+    <p><strong>Direct Measurement:</strong></p>
+    <ul>
+        <li><strong>Multiple measurements:</strong> $Y = \bar{N} \pm \sigma_{\bar{N}}$, where the mean value is $\bar{N} = \frac{1}{n} \sum_{i=1}^n N_i$, and the standard uncertainty of the mean is $\sigma_{\bar{N}} = \sqrt{\frac{\sum (N_i - \bar{N})^2}{n(n-1)}}$.</li>
+        <li><strong>Single measurement:</strong> $Y = N \pm e$.</li>
+    </ul>
+
+    <p><strong>Indirect Measurement:</strong></p>
+    <p>If the indirectly measured quantity $N$ is a function of mutually independent directly measured quantities $x_1, x_2, \dots$: $N = f(x_1, x_2, \dots)$; since $x_1, x_2, \dots$ have errors, $N$ must also have errors.</p>
+    
+    <p><strong>Combined Error:</strong></p>
+    <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: center; margin: 1em 0;">
+            <tr style="border-bottom: 2px solid var(--text-primary);">
+                <th style="padding: 0.5em;">Function Expression</th>
+                <th style="padding: 0.5em;">Standard Uncertainty ($\sigma$)</th>
+                <th style="padding: 0.5em;">Limit Uncertainty ($e$)</th>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 0.5em;">$N = x \pm y$</td>
+                <td style="padding: 0.5em;">$\sigma_N = \sqrt{\sigma_x^2 + \sigma_y^2}$</td>
+                <td style="padding: 0.5em;">$e_N = e_x + e_y$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 0.5em;">$N = xy$ or $\frac{x}{y}$</td>
+                <td style="padding: 0.5em;">$\sigma_N = \sqrt{\left(\frac{\sigma_x}{x}\right)^2 + \left(\frac{\sigma_y}{y}\right)^2} |N|$</td>
+                <td style="padding: 0.5em;">$e_N = \left(\frac{e_x}{|x|} + \frac{e_y}{|y|}\right) |N|$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 0.5em;">$N = kx$</td>
+                <td style="padding: 0.5em;">$\sigma_N = |k|\sigma_x$</td>
+                <td style="padding: 0.5em;">$e_N = |k|e_x$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 0.5em;">$N = x^k$</td>
+                <td style="padding: 0.5em;">$\sigma_N = |k|\frac{\sigma_x}{|x|}|N|$</td>
+                <td style="padding: 0.5em;">$e_N = |k|\frac{e_x}{|x|}|N|$</td>
+            </tr>
+        </table>
+    </div>
+    <p><em>(Where $x, y$ are directly measured quantities, corresponding to the measured values without uncertainties.)</em></p>
+    <p>Note: When expressing the result as $Y = \bar{N} \pm \sigma$, $\sigma$ is exact; when expressing it as $Y = N \pm e$, $e$ is an approximate uncertainty (combined limit uncertainty).</p>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: High School Physics Experiments (Kinematics & Statics)</h3>
+
+    <h4>Experiment 1: Study of Uniformly Accelerated Rectilinear Motion</h4>
+    <p><strong>Experiment Objective:</strong> Measure the acceleration of uniformly accelerated rectilinear motion.</p>
+    <p><strong>Equipment:</strong> Spark timer, paper tape, carbon paper, AC power supply, small cart, string, long wooden board with a pulley at one end, ruler, weights, two connecting wires.</p>
+    <p><strong>Principle:</strong></p>
+    $$ S_1 = v_0 T + \frac{1}{2} a T^2 \quad \text{and} \quad S_2 = (v_0 + aT)T + \frac{1}{2} a T^2 $$
+    $$ \Delta S = S_2 - S_1 = a T^2 $$
+    $$ \therefore a_1 = \frac{S_4 - S_1}{3T^2}, \quad a_2 = \frac{S_5 - S_2}{3T^2}, \dots $$
+    <p>Then calculate the average value of $a_1, a_2 \dots$. Here, $T = 0.02n$ seconds ($n$ is the number of intervals between two counting points).</p>
+    <p><strong>Procedure & Data Processing:</strong></p>
+    <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: center; margin: 1em 0;">
+            <tr style="border-bottom: 2px solid var(--text-primary);">
+                <th style="padding: 0.5em;">Point</th>
+                <th style="padding: 0.5em;">Segment $S/m$</th>
+                <th style="padding: 0.5em;">Difference $\Delta S/m$</th>
+                <th style="padding: 0.5em;">Segment Acceleration $a/(m\cdot s^{-2})$</th>
+                <th style="padding: 0.5em;">Cart Acceleration</th>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 0.5em;">1</td>
+                <td style="padding: 0.5em;">$S_1$</td>
+                <td style="padding: 0.5em;"></td>
+                <td style="padding: 0.5em;"></td>
+                <td style="padding: 0.5em;" rowspan="6">$a = \frac{a_1 + a_2 + a_3}{3}$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 0.5em;">2</td>
+                <td style="padding: 0.5em;">$S_2$</td>
+                <td style="padding: 0.5em;"></td>
+                <td style="padding: 0.5em;"></td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 0.5em;">3</td>
+                <td style="padding: 0.5em;">$S_3$</td>
+                <td style="padding: 0.5em;"></td>
+                <td style="padding: 0.5em;"></td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 0.5em;">4</td>
+                <td style="padding: 0.5em;">$S_4$</td>
+                <td style="padding: 0.5em;">$S_4 - S_1$</td>
+                <td style="padding: 0.5em;">$\frac{S_4 - S_1}{3T^2} = a_1$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 0.5em;">5</td>
+                <td style="padding: 0.5em;">$S_5$</td>
+                <td style="padding: 0.5em;">$S_5 - S_2$</td>
+                <td style="padding: 0.5em;">$\frac{S_5 - S_2}{3T^2} = a_2$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+                <td style="padding: 0.5em;">6</td>
+                <td style="padding: 0.5em;">$S_6$</td>
+                <td style="padding: 0.5em;">$S_6 - S_3$</td>
+                <td style="padding: 0.5em;">$\frac{S_6 - S_3}{3T^2} = a_3$</td>
+            </tr>
+        </table>
+    </div>
+
+    <h4>Experiment 2: Explore the Relationship Between Elastic Force and Spring Elongation</h4>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/exp_spring_elongation.png" alt="Spring Elongation Experiment Setup" style="max-width: 40%; display: block; margin: 1em auto;">
+    </div>
+
+    <h4>Experiment 3: Verify the Parallelogram Rule of Forces</h4>
+    <p><strong>Experiment Objective:</strong> Verify the parallelogram rule of forces.</p>
+    <p><strong>Equipment:</strong> Square wooden board, white paper, two spring scales, triangle ruler, ruler, several thumbtacks, pencil, rubber band, two thin string loops.</p>
+    <p><strong>Principle:</strong> The effect of a single force $F'$ is the same as the combined effect of two concurrent forces $F_1$ and $F_2$ when they both stretch the rubber band to a certain point $O$; therefore $F'$ is the equivalent resultant force of $F_1$ and $F_2$. Draw the diagram of $F'$, then draw the diagram of the theoretical resultant force $F$ of $F_1$ and $F_2$ according to the parallelogram rule. Compare whether $F'$ and $F$ are equal in magnitude and same in direction (within the error range).</p>
+    <p><strong>Procedure:</strong></p>
+    <ol>
+        <li>Fix the white paper on a horizontal wooden board.</li>
+        <li>Use a thumbtack to fix one end of the rubber band at $A$. Tie two string loops to the other end.</li>
+        <li>Use two spring scales to hook the two string loops respectively, and pull the rubber band at an angle to a certain point $O$.</li>
+        <li>Record the scale readings, use a pencil to mark the position of point $O$ and the directions of the two string loops.</li>
+        <li>With $F_1$ and $F_2$ as adjacent sides, draw a parallelogram to find the diagonal $F$.</li>
+        <li>Use one spring scale to hook a string loop and stretch the node of the rubber band also to point $O$. Draw the diagram of $F'$.</li>
+        <li>Compare the magnitude and direction of $F'$ and $F$.</li>
+        <li>Change the magnitude and angle between $F_1$ and $F_2$, and repeat the experiment twice.</li>
+    </ol>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/exp_parallelogram_rule.png" alt="Parallelogram Rule of Forces Experiment" style="max-width: 50%; display: block; margin: 1em auto;">
+    </div>
+    <p><strong>Precautions:</strong></p>
+    <ol>
+        <li>The spring scale should be parallel to the board surface.</li>
+        <li>Ensure the spring scale and rubber band do not exceed their elastic limits, and pull them as much as possible to reduce measurement error.</li>
+        <li>Allowable error range: $\Delta F \le 5\%$, $\Delta\theta \le 7^\circ$.</li>
+        <li>The angle between $F_1$ and $F_2$ should not be too large; line of sight should be perpendicular to the scale when reading.</li>
+    </ol>
 
 </main>
 </body>

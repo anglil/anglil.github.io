@@ -63,7 +63,7 @@
     </ul>
 
     <p><strong>② Infinite Wide Flat Plate (Current density $j$):</strong></p>
-    <img src="images/ch08_infinite_plate.png" alt="Infinite plate" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch08_infinite_plate.png" alt="Infinite plate" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     $$ 2 B L = \mu_0 j L \implies B = \frac{1}{2} \mu_0 j $$
     </div>
@@ -73,7 +73,7 @@
     $$ \begin{cases} r \ge R: & B \cdot 2\pi r = \mu_0 I \implies B = \frac{\mu_0 I}{2\pi r} \\ r < R: & B = 0 \end{cases} $$
 
     <p><strong>④ Current-Carrying Ring:</strong></p>
-    <img src="images/ch08_current_ring.png" alt="Current ring" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch08_current_ring.png" alt="Current ring" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     $$ dB = \frac{\mu_0}{4\pi} \frac{I dl}{r^2} = \frac{\mu_0}{4\pi} \frac{I \cdot R d\theta}{r^2} $$
     $$ \therefore B_{\perp} = 0, \quad B_{||} = \frac{\mu_0}{4\pi} \left( \frac{2\pi R I}{r^2} \frac{R}{r} \right) = \frac{\mu_0 R^2 I}{2r^3} $$
@@ -105,7 +105,7 @@
     $$ \therefore \vec{M} = \vec{m} \times \vec{B} $$
 
     <p><strong>② Lorentz Force Does No Work:</strong></p>
-    <img src="images/ch08_lorentz_work.png" alt="Lorentz force work" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch08_lorentz_work.png" alt="Lorentz force work" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     $$ P = \vec{F} \cdot \vec{v} = (q \vec{v} \times \vec{B}) \cdot \vec{v} = 0 $$
     <p>As electrons move with the conductor in a magnetic field at velocity $\vec{v}$, they experience a Lorentz force along the wire, gaining velocity $\vec{v}'$.</p>
@@ -128,7 +128,7 @@
     $$ m \frac{v^2}{r} = q v B \implies r = \frac{m v}{q B}, \quad T = \frac{2\pi m}{q B} $$
 
     <p><strong>④ Cyclotron:</strong></p>
-    <img src="images/ch08_cyclotron.png" alt="Cyclotron" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch08_cyclotron.png" alt="Cyclotron" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     $$ q U = \frac{1}{2} m v_1^2 \implies r_1 = \frac{m v_1}{q B}, \quad v_1 = \sqrt{\frac{2 q U}{m}} $$
     $$ q U = \frac{1}{2} m v_2^2 - \frac{1}{2} m v_1^2 \implies r_2 = \frac{m v_2}{q B}, \quad v_2 = \sqrt{\frac{4 q U}{m}} $$
@@ -140,7 +140,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>⑤ Velocity Selector:</strong> $q v B = q E \implies v = \frac{E}{B}$.</p>
-    <img src="images/ch08_velocity_selector.png" alt="Velocity selector" style="max-width: 25%; float: left; margin-right: 1em;">
+    <img src="images/ch08_velocity_selector.png" alt="Velocity selector" style="max-width: 25%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     <ul>
         <li>If $v < \frac{E}{B}$: $q B (v + v') = q E \implies v' = \frac{E}{B} - v$.
@@ -154,7 +154,7 @@
     <div style="clear: both;"></div>
 
     <p><strong>⑥ Magnetohydrodynamic (MHD) Generator:</strong></p>
-    <img src="images/ch08_mhd_generator.png" alt="MHD generator" style="max-width: 30%; float: left; margin-right: 1em;">
+    <img src="images/ch08_mhd_generator.png" alt="MHD generator" style="max-width: 30%; display: block; margin: 1em auto;">
     <div style="overflow: hidden;">
     $$ \begin{cases} \text{Non-electrostatic force: } E_{ne} = \frac{F}{q} = v B \quad \text{(Caused by Lorentz force)} \\ \text{Electrostatic force: } E_s \quad \text{(Caused by charge accumulation)} \end{cases} $$
     $$ \therefore I = \sigma (E_{ne} - E_s) \cdot S \quad (\text{where } \sigma \text{ is conductivity}) $$
@@ -188,6 +188,53 @@
         $$ \therefore T = 2\pi \sqrt{\frac{\frac{1}{2} m r^2}{\frac{m g r^2}{2h}}} = 2\pi \sqrt{\frac{h}{g}} $$
         </li>
     </ul>
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Magnetohydrodynamic (MHD) Generator</h3>
+    <p><strong>Model:</strong> The cross section is a rectangle, with tube length $l$, width $a$, and height $b$. The top and bottom sides are insulators, and the two sides separated by distance $a$ are conductors with negligible resistance, connected to a load $R_L$. The entire tube is in a region of uniform magnetic field, where $B$ is perpendicular to the top and bottom sides, pointing upwards. A plasma with resistivity $\rho$ flows through the tube along the $l$ direction at a uniform velocity. The frictional force it experiences is proportional to the flow velocity. A constant pressure difference $p$ is maintained at both ends of the tube. Without a magnetic field, the steady flow velocity of the plasma is $v_0$. What is the steady flow velocity when there is a magnetic field?</p>
+    <img src="images/topic_mhd_generator.png" alt="MHD generator model" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>Without a magnetic field:</p>
+    $$ \Delta F = p \cdot ab, \quad f_0 = k v_0 \quad \text{and} \quad \Delta F = f_0 \implies k = \frac{pab}{v_0} $$
+    <p>With a magnetic field, the plasma is deflected by the Lorentz force and hits the side plates. At the same time, ions fly out to the other side plate, forming a circuit. The induced electromotive force is $\mathcal{E} = Bav$.</p>
+    $$ \therefore I = \frac{\mathcal{E}}{R} = \frac{Bav}{R_L + \rho \frac{a}{bl}} $$
+    $$ \therefore \text{Ampere force } F = B I a = \frac{B^2 a^2 v}{R_L + \rho \frac{a}{bl}} $$
+    <p>Also, $\Delta F = F + f$</p>
+    $$ \implies pab = \frac{B^2 a^2 v}{R_L + \rho \frac{a}{bl}} + kv = \frac{B^2 a^2 v}{R_L + \rho \frac{a}{bl}} + pab \frac{v}{v_0} $$
+    $$ \therefore v = \frac{pab}{\frac{pab}{v_0} + \frac{B^2 a^2}{R_L + \rho \frac{a}{bl}}} $$
+    $$ \therefore \mathcal{E} = Bav = \frac{B a v_0}{1 + \frac{B^2 a l v_0}{p b \left(R_L + \rho \frac{a}{bl}\right)}} $$
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Motion of Charged Particles in Special Electromagnetic Fields - Solving by Differential Equations</h3>
+    <img src="images/topic_special_em_field.png" alt="Charged particle in special EM field" style="max-width: 40%; display: block; margin: 1em auto;">
+    <div style="overflow: hidden;">
+    <p><strong>Problem:</strong> In space, establish a coordinate system as shown in the figure. A uniform electric field is along the positive x-axis, with magnitude $E$. A uniform magnetic field is at an angle $\alpha$ with the positive z-axis, with magnitude $B$. A particle of mass $m$ and charge $q$ ($q>0$) starts moving with an initial velocity $v_0$ along the positive y-axis. Find its equation of motion.</p>
+    <p>Set up the dynamic equations:</p>
+    $$ \begin{cases} m a_x = qE + q v_y B_z \quad &(1) \\ m a_y = -q v_x B_z + q v_z B_x \quad &(2) \\ m a_z = -q v_y B_x \quad &(3) \end{cases} \implies \begin{cases} m v_x = q E t + q y B_z \quad &(4) \\ m (v_y - v_0) = -q x B_z + q z B_x \quad &(5) \\ m v_z = -q y B_x \quad &(6) \end{cases} $$
+    <p>From (4) solve for $v_x$, from (6) solve for $v_z$, substitute both into (2), we get:</p>
+    $$ m a_y = -q B_z \left(\frac{qE}{m}t + \frac{qB_z}{m}y\right) - \frac{q^2 B_x^2}{m} y = -\frac{q^2 E B_z}{m} t - \frac{q^2 B^2}{m} y $$
+    <p>Rearranging terms gives:</p>
+    $$ \frac{d^2 y}{dt^2} + \frac{q^2 E B_z}{m^2} t + \frac{q^2 B^2}{m^2} y = 0 \implies \frac{d^2 y}{dt^2} + \frac{q^2 B^2}{m^2} \left( \frac{E B_z}{B^2} t + y \right) = 0 $$
+    <p>Since $\frac{d^2 y}{dt^2} = \frac{d^2}{dt^2}\left(y + \frac{E}{B}\cos\alpha \cdot t\right)$ and $\frac{B_z}{B} = \cos\alpha$, we get:</p>
+    $$ \frac{d^2}{dt^2}\left(y + \frac{E}{B}\cos\alpha \cdot t\right) + \frac{q^2 B^2}{m^2} \left( y + \frac{E}{B}\cos\alpha \cdot t \right) = 0 \quad (7) $$
+    <p>Solving yields: $y + \frac{E}{B}\cos\alpha \cdot t = A \sin\left(\frac{qB}{m} t + \theta\right)$.</p>
+    <p>At $t=0$, $y=0 \implies A\sin\theta = 0$.</p>
+    <p>$\frac{dy}{dt} = A \frac{qB}{m} \cos\left(\frac{qB}{m} t + \theta\right) - \frac{E}{B}\cos\alpha$. At $t=0$, $\frac{dy}{dt} = v_0$.</p>
+    $$ \therefore \begin{cases} A\sin\theta = 0 \\ v_0 = \frac{qB}{m} A \cos\theta - \frac{E}{B}\cos\alpha \end{cases} \implies \begin{cases} \theta = 0 \\ A = \frac{m}{qB}\left(v_0 + \frac{E}{B}\cos\alpha\right) \end{cases} $$
+    $$ \therefore y = \frac{m}{qB}\left(v_0 + \frac{E}{B}\cos\alpha\right) \sin\left(\frac{qB}{m} t\right) - \frac{E}{B}\cos\alpha \cdot t \quad (10) $$
+    <p>Substitute (10) into (4) to get:</p>
+    $$ m \frac{dx}{dt} = qE \cdot t + q B \cos\alpha \left[ \frac{m}{qB}\left(v_0 + \frac{E}{B}\cos\alpha\right) \sin\left(\frac{qB}{m} t\right) - \frac{E}{B}\cos\alpha \cdot t \right] $$
+    $$ = qE \cdot t + m\left(v_0\cos\alpha + \frac{E}{B}\cos^2\alpha\right) \sin\left(\frac{qB}{m} t\right) - qE\cos^2\alpha \cdot t $$
+    $$ \therefore \frac{dx}{dt} = \left(v_0\cos\alpha + \frac{E}{B}\cos^2\alpha\right) \sin\left(\frac{qB}{m} t\right) + \frac{qE\sin^2\alpha}{m} \cdot t $$
+    <p>Integrating gives $x$:</p>
+    $$ \therefore x = \frac{m}{qB} \left(v_0\cos\alpha + \frac{E}{B}\cos^2\alpha\right) \left[1 - \cos\left(\frac{qB}{m} t\right)\right] + \frac{1}{2} \frac{qE\sin^2\alpha}{m} t^2 \quad (11) $$
+    <p>Substitute (10) into (6) to get:</p>
+    $$ m \frac{dz}{dt} = -q B \sin\alpha \left[ \frac{m}{qB}\left(v_0 + \frac{E}{B}\cos\alpha\right) \sin\left(\frac{qB}{m} t\right) - \frac{E}{B}\cos\alpha \cdot t \right] $$
+    $$ = -m\left(v_0\sin\alpha + \frac{E}{B}\sin\alpha\cos\alpha\right) \sin\left(\frac{qB}{m} t\right) + qE\sin\alpha\cos\alpha \cdot t $$
+    $$ \therefore \frac{dz}{dt} = -\left(v_0\sin\alpha + \frac{E}{B}\sin\alpha\cos\alpha\right) \sin\left(\frac{qB}{m} t\right) + \frac{qE\sin\alpha\cos\alpha}{m} \cdot t $$
+    <p>Integrating gives $z$:</p>
+    $$ \therefore z = -\frac{m}{qB} \left(v_0\sin\alpha + \frac{E}{B}\sin\alpha\cos\alpha\right) \left[1 - \cos\left(\frac{qB}{m} t\right)\right] + \frac{1}{2} \frac{qE\sin\alpha\cos\alpha}{m} t^2 \quad (12) $$
+    </div>
+    <div style="clear: both;"></div>
 </main>
 </body>
 </html>

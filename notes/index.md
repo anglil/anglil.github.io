@@ -25,7 +25,6 @@ title: Notes – Angli Liu
       <li><a href="/notes/optics_1.pdf" target="_blank">optics_1</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
       <li><a href="/notes/optics_2.pdf" target="_blank">optics_2</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
       <li><a href="/notes/electromagnetics.pdf" target="_blank">electromagnetics</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
-      <li><a href="/notes/antennae.pdf" target="_blank">antennae</a></li>
       <li><a href="/notes/multivariable calculus.pdf" target="_blank">multivariable calculus</a></li>
       <li><a href="/notes/mathematical physics.pdf" target="_blank">mathematical physics</a></li>
       <li><a href="/notes/complex analysis.pdf" target="_blank">complex analysis</a></li>
@@ -41,6 +40,7 @@ title: Notes – Angli Liu
       <li><a href="/notes/algorithms 3.pdf" target="_blank">algorithms 3</a></li>
       <li><a href="/notes/circuits principles, experiments, and semiconductors.pdf" target="_blank">circuits principles, experiments, and semiconductors</a></li>
       <li><a href="/notes/communication circuits.pdf" target="_blank">communication circuits</a></li>
+      <li><a href="/notes/antennae.pdf" target="_blank">antennae</a></li>
       <li><a href="/notes/digital electronics.pdf" target="_blank">digital electronics</a></li>
       <li><a href="/notes/c.pdf" target="_blank">c</a></li>
       <li><a href="/notes/c++.pdf" target="_blank">c++</a></li>

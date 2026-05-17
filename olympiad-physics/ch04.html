@@ -6,6 +6,17 @@
     <title>Chapter 4: Thermodynamics - Olympiad Physics</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                macros: {
+                    bm: ["\\boldsymbol{#1}", 1]
+                }
+            }
+        };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -198,6 +209,28 @@
     <p>The heat $dQ$ flowing perpendicular to the plate surface in time $dt$ is:</p>
     $$ H = \frac{dQ}{dt} = -k S \cdot \frac{\Delta T}{x} $$
     $$ \begin{cases} \text{Multi-layer plates in series: } H = \frac{-S\Delta T}{\sum (x_i/k_i)} \\ \text{Multi-layer plates in parallel: } H = -\frac{\Delta T}{x} \sum (k_i S_i) \end{cases} \quad \text{(Similar to the series and parallel connections of resistors, capacitors, inductors, and springs)}. $$
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: High School Physics Experiments (Thermodynamics & Molecular Physics)</h3>
+
+    <h4>Experiment 10: Use Oil Film Method to Estimate the Size of a Molecule</h4>
+    <p><strong>Experiment Objective:</strong> Estimate the diameter of (oleic acid) molecules.</p>
+    <p><strong>Equipment:</strong> Oleic acid, alcohol, shallow tray, talcum powder, graduated cylinder (two), dropper (or syringe), glass plate, pen, coordinate paper.</p>
+    <p><strong>Principle:</strong> Oleic acid molecules form a monomolecular layer on the water surface. By calculating the area of the film formed by a certain known volume of pure oleic acid on the water, we can calculate the size (diameter) of the oleic acid molecule.</p>
+    <p><strong>Procedure:</strong></p>
+    <ol>
+        <li>Prepare an oleic acid-alcohol solution of a certain known concentration $C$.</li>
+        <li>Pour water into the shallow tray and sprinkle talcum powder evenly on it.</li>
+        <li>Use a dropper or syringe to drop the oleic acid-alcohol solution into the graduated cylinder. Make the volume $1\text{ mL}$. If $n$ drops correspond to $1\text{ mL}$, the volume of each drop is $V_0 = \frac{1}{n} \text{ mL}$.</li>
+        <li>Drop exactly one drop (of volume $V_0$) of the solution onto the water surface. The oleic acid will quickly spread out to form a monomolecular film, while the alcohol will evaporate or dissolve.</li>
+        <li>After the shape of the oil film stabilizes, place a glass plate over the shallow tray and use a pen to carefully trace the shape of the oil film onto the glass.</li>
+        <li>Place the glass plate on coordinate paper to estimate the area $S$ of the oil film. <em>(Method for counting grid squares: discard any portion less than half a square, and count any portion greater than half a square as one full square)</em>.</li>
+        <li>Based on the initial concentration $C$ of the solution, calculate the volume of pure oleic acid in one drop: $V_{\text{pure}} = V_0 \times C$.</li>
+    </ol>
+    <p>The film thickness (molecular diameter) is then:</p>
+    $$ D = \frac{V_{\text{pure}}}{S} $$
+    <p><em>(The calculated order of magnitude for the molecular diameter should be around $10^{-10}\text{ m}$).</em></p>
 
 </main>
 </body>

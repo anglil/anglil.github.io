@@ -143,8 +143,8 @@
     <p>Virtual Image: The image formed by the convergence of the backward extensions of light rays.</p>
 
     <p><strong>② Spherical Mirror:</strong></p>
-    <img src="images/ch03_spherical_convex.png" alt="Convex Spherical Mirror" style="max-width: 45%; display: inline-block;">
-    <img src="images/ch03_spherical_concave.png" alt="Concave Spherical Mirror" style="max-width: 45%; display: inline-block;">
+    <img src="images/ch03_spherical_convex.png" alt="Convex Spherical Mirror" style="max-width: 45%; display: block; margin: 1em auto;">
+    <img src="images/ch03_spherical_concave.png" alt="Concave Spherical Mirror" style="max-width: 45%; display: block; margin: 1em auto;">
     <p>From the figure, $\frac{y}{-v} = \frac{y'}{u} \approx \frac{u-R+\frac{R}{2}}{\frac{R}{2}} = \frac{u-\frac{R}{2}}{\frac{R}{2}}$</p>
     $$ \text{Yields } \frac{1}{u} + \frac{1}{v} = \frac{2}{R} = \frac{1}{f} \quad (f = \frac{R}{2} \text{, paraxial approximation}) $$
     <p>Sign Convention: Object is in front of the mirror (the side that can reflect light), $u > 0$; object is behind the mirror, $u < 0$.</p>
@@ -430,6 +430,168 @@
     <h3>3. Inverse Photoelectric Effect</h3>
     <img src="images/ch03_inverse_photoelectric.png" alt="Inverse Photoelectric Effect" style="max-width: 60%; display: block; margin: 1em auto;">
     $$ E = E' + h\nu $$
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Light Propagation in Optical Fibers</h3>
+    <img src="images/topic_optical_fiber_1.png" alt="Light propagation in optical fiber" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p>The radial distribution of refractive index is $n^2 = n_0^2(1 - \alpha^2 r^2)$.</p>
+    $$ \begin{cases} n \sin\theta = n_0 \sin\theta_0 \\ \sin\theta = \cos\left(\frac{\pi}{2} - \theta\right) = \frac{1}{\sqrt{1 + \tan^2\left(\frac{\pi}{2} - \theta\right)}} = \frac{1}{\sqrt{1 + \left(\frac{dr}{dx}\right)^2}} \end{cases} $$
+    $$ \therefore \left(\frac{dr}{dx}\right)^2 = \frac{n^2}{n_0^2 \sin^2\theta_0} - 1 $$
+    <p>Taking the derivative with respect to $x$:</p>
+    $$ 2 \left(\frac{dr}{dx}\right) \frac{d^2 r}{dx^2} = \frac{1}{n_0^2 \sin^2\theta_0} \frac{d(n^2)}{dr} \cdot \frac{dr}{dx} $$
+    $$ \therefore 2 \frac{d^2 r}{dx^2} = \frac{1}{n_0^2 \sin^2\theta_0} (-2n_0^2 \alpha^2 r) $$
+    <p>i.e., $\frac{d^2 r}{dx^2} + \frac{\alpha^2}{\sin^2\theta_0} r = 0$. Solving this differential equation yields $r = A \sin\left(\frac{\alpha}{\sin\theta_0} x + \varphi_0\right)$.</p>
+    <p>At $x = 0$, $r = 0$, so $A \sin\varphi_0 = 0$.</p>
+    <p>And at $x = 0$, $\frac{dr}{dx} = A \frac{\alpha}{\sin\theta_0} \cos\varphi_0$; therefore $A \frac{\alpha}{\sin\theta_0} \cos\varphi_0 = \frac{\cos\theta_0}{\sin\theta_0} \implies A\alpha \cos\varphi_0 = \cos\theta_0$.</p>
+    <p>Solving gives $\varphi_0 = 0, A = \frac{\cos\theta_0}{\alpha}$.</p>
+    <p>Therefore, the trajectory equation of the light ray is $r = \frac{\cos\theta_0}{\alpha} \sin\left(\frac{\alpha}{\sin\theta_0} x\right)$.</p>
+    <img src="images/topic_optical_fiber_2.png" alt="Sinusoidal trajectory in optical fiber" style="max-width: 60%; display: block; margin: 1em auto;">
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Interaction between Electron and Photon</h3>
+    <p><strong>1. Photon causes bound electron to jump (Bound atom)</strong></p>
+    $$ h\nu = \frac{me^4}{8\varepsilon_0^2 h^2} \left(\frac{1}{m^2} - \frac{1}{n^2}\right) $$
+    
+    <p><strong>2. Photon causes free atom to jump (Free atom)</strong></p>
+    $$ h\nu = E_j - E_i + \frac{P_{\text{atom}} \cdot \frac{h\nu}{c}}{M} \cos\alpha - \frac{\left(\frac{h\nu}{c}\right)^2}{2M} $$
+    $$ = \frac{me^4}{8\varepsilon_0^2 h^2} \left(\frac{1}{m^2} - \frac{1}{n^2}\right) + \frac{P_{\text{atom}} h\nu}{Mc} \cos\alpha - \frac{(h\nu)^2}{2Mc^2} $$
+    
+    <p><strong>3. Photon causes electron to escape (Photoelectric effect)</strong></p>
+    $$ h\nu = \frac{1}{2}mv^2 + W = \frac{1}{2}mv^2 + \frac{me^4}{8\varepsilon_0^2 h^2} $$
+    
+    <p><strong>4. Photon causes electron to scatter (Compton effect on free electron at rest)</strong></p>
+    <img src="images/topic_compton_scattering.png" alt="Compton scattering" style="max-width: 40%; display: block; margin: 1em auto;">
+    <div style="overflow: hidden;">
+    <p>① Hypothesis: If a free electron at rest can absorb a photon, it must satisfy momentum and energy conservation:</p>
+    $$ \begin{cases} \frac{h\nu}{c} = P_e \\ h\nu + m_0 c^2 = \sqrt{P_e^2 c^2 + m_0^2 c^4} \implies \frac{h\nu}{c} = \sqrt{P_e^2 + m_0^2 c^2} \end{cases} $$
+    <p>These two equations are contradictory. Therefore, a free electron at rest cannot produce the photoelectric effect.</p>
+    <p>② Photon and free electron at rest produce the Compton effect.</p>
+    $$ \begin{cases} (m v)^2 = \left(\frac{h\nu}{c}\right)^2 + \left(\frac{h\nu'}{c}\right)^2 - 2\frac{h\nu}{c}\frac{h\nu'}{c}\cos\theta \\ m_0 c^2 + h\nu = mc^2 + h\nu' \\ m = \frac{m_0}{\sqrt{1-v^2/c^2}} \end{cases} $$
+    $$ \therefore \frac{1}{\nu'} - \frac{1}{\nu} = \frac{2h}{m_0 c^2} \sin^2\frac{\theta}{2} $$
+    $$ \therefore \frac{c}{\nu'} - \frac{c}{\nu} = \frac{2h}{m_0 c} \sin^2\frac{\theta}{2} \implies \Delta\lambda = \frac{2h}{m_0 c} \sin^2\frac{\theta}{2} = 2\lambda_c \sin^2\frac{\theta}{2} $$
+    <p>Also, from momentum conservation:</p>
+    $$ \begin{cases} \frac{h\nu}{c} \sin\theta = mv \sin\varphi \\ \frac{h\nu}{c} = \frac{h\nu'}{c}\cos\theta + mv\cos\varphi \end{cases} $$
+    $$ \therefore \tan\varphi = \frac{\frac{h\nu'}{c}\sin\theta}{\frac{h\nu}{c} - \frac{h\nu'}{c}\cos\theta} = \frac{\sin\theta}{\frac{\nu}{\nu'} - \cos\theta} = \frac{\sin\theta}{1-\cos\theta + \frac{\Delta\lambda}{\lambda}} $$
+    $$ = \frac{2\sin\frac{\theta}{2}\cos\frac{\theta}{2}}{2\sin^2\frac{\theta}{2} + 2\frac{\lambda_c}{\lambda}\sin^2\frac{\theta}{2}} = \frac{\cot\frac{\theta}{2}}{1 + \lambda_c/\lambda} $$
+    $$ \therefore \tan\varphi \tan\frac{\theta}{2} = \frac{1}{1 + \lambda_c/\lambda} = \frac{1}{1 + \frac{h}{m_0 c \lambda}} $$
+    </div>
+    <div style="clear: both;"></div>
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Neutron Gravity Interference</h3>
+    <p><strong>1. Basic duality of neutron waves and particles:</strong></p>
+    $$ \Psi(\vec{r}, t) = C e^{i(\vec{p}\cdot\vec{r} - E\cdot t)/\hbar} $$
+    <p>Its phase $(\vec{p}\cdot\vec{r} - E\cdot t)/\hbar$ is invariant under Lorentz transformation, requiring that $(\vec{p}, iE/c)$ form a four-vector, therefore $E=mc^2$, $p=mv$.</p>
+
+    <p><strong>2. Neutron gravity interferometer:</strong></p>
+    <div style="display: flex; justify-content: center; gap: 2em; margin: 1em 0;">
+        <img src="images/topic_neutron_interferometer_top.png" alt="Neutron gravity interferometer top view" style="max-width: 45%; display: block; margin: 1em auto;">
+        <img src="images/topic_neutron_interferometer_3d.png" alt="Neutron gravity interferometer 3D view" style="max-width: 45%; display: block; margin: 1em auto;">
+    </div>
+    <p>A neutron beam enters the interferometer from $A$. It is split into two beams by the beam splitter. Let the de Broglie wavelength of the neutron at this time be $\lambda_0$.</p>
+    <p>The neutrons in the $AB$ and $DC$ segments are subjected to gravity, so their momentum becomes smaller, hence their wavelength becomes longer. Also because the optical path is $N_{\text{opt}} = \int \frac{ds}{\lambda}$:</p>
+    <p>$\therefore$ The two neutron beams have the same optical path in segments $AB$ and $DC$, but a path difference is produced in segments $AD$ and $BC$.</p>
+    <p>Let the wavelength of the two neutron beams at point $C$ be $\lambda$. Since the optical path of one beam in $BC$ is $\frac{a}{\lambda_0}$, and the optical path of the other beam in $AD$ is $\frac{a}{\lambda}$, an optical path difference $AD\left(\frac{1}{\lambda_0} - \frac{1}{\lambda}\right)$ is produced, and the two neutron beams interfere at $C$.</p>
+
+    <p><strong>3. Optical path difference calculation:</strong></p>
+    <p>$\because$ The height difference is $H = \left(\frac{a}{\cos\theta}\right) \cdot \sin2\theta \cdot \sin\varphi = 2a \sin\theta \sin\varphi$.</p>
+    $$ \therefore \frac{1}{2m} \left(\frac{h}{\lambda_0}\right)^2 - \frac{1}{2m} \left(\frac{h}{\lambda}\right)^2 = mgH = mg \cdot 2a \sin\theta \sin\varphi $$
+    <p>(Since slow neutrons are used in the experiment, the non-relativistic $p-E$ relation can be used).</p>
+    $$ \therefore \left(\frac{1}{\lambda_0} - \frac{1}{\lambda}\right)\left(\frac{1}{\lambda_0} + \frac{1}{\lambda}\right) \approx \left(\frac{1}{\lambda_0} - \frac{1}{\lambda}\right) \cdot \frac{2}{\lambda_0} = \frac{4m^2 g a \sin\theta \sin\varphi}{h^2} $$
+    $$ \therefore \frac{1}{\lambda_0} - \frac{1}{\lambda} = \frac{2m^2 g a \sin\theta \sin\varphi \lambda_0}{h^2} $$
+    $$ \therefore \Delta N_{\text{opt}} = \left(\frac{1}{\lambda_0} - \frac{1}{\lambda}\right) \cdot \frac{a}{\cos\theta} = \frac{2m^2 g a^2 \lambda_0 \tan\theta \sin\varphi}{h^2} $$
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Methods for Determining the Speed of Light in the Laboratory</h3>
+
+    <h4>1. Rotating Toothed Wheel Method (1849, Fizeau)</h4>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/topic_fizeau_wheel.png" alt="Fizeau's rotating toothed wheel apparatus" style="max-width: 80%; display: block; margin: 1em auto;">
+    </div>
+    <p>The light emitted from the point light source $S$ will converge and pass through the gap between two teeth of $W$ after being reflected by the half-silvered mirror $A$.</p>
+    <p>After reflection by $M$, it converges again at the toothed wheel. At this time, if the wheel has rotated exactly such that the light is blocked by a tooth, the observer will not see the light.</p>
+    <p>Let the speed of the wheel when the light reflected from mirror $M$ is blocked for the first time be $n$; the time required for one tooth to rotate to the next gap is $\Delta t$, and the total number of teeth on the wheel is $N$.</p>
+    $$ \because \Delta \theta = \omega \Delta t \implies \frac{2\pi}{2N} = \omega \Delta t $$
+    $$ \text{Also } \omega = 2\pi n $$
+    <p>Solving gives $\Delta t = \frac{1}{2nN}$.</p>
+    <p>Since the light has traveled back and forth over a distance $l$, $\Delta t = \frac{2l}{c}$.</p>
+    $$ \therefore \frac{2l}{c} = \frac{1}{2nN} \implies c = 4nNl $$
+
+    <h4>2. Rotating Mirror Method (1851, Foucault)</h4>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/topic_foucault_mirror.png" alt="Foucault's rotating mirror apparatus" style="max-width: 80%; display: block; margin: 1em auto;">
+    </div>
+    <p>Let the angle the mirror $M_1$ rotated in time $\Delta t$ be $\Delta\alpha$; the reflected light will rotate by $2\Delta\alpha$. Therefore, the displacement of the image is $\Delta s = 2\Delta\alpha \cdot l$ (where $l$ is the distance from the lens $L$ to $S$ or $S'$).</p>
+    <p>Also, the light has traveled back and forth once between $M_2$ and $M_1$, so $\Delta t = \frac{2l_0}{c}$ (where $l_0$ is the distance between $M_2$ and $M_1$).</p>
+    $$ \text{And } \because \Delta\alpha = \omega \Delta t $$
+    $$ \therefore \Delta s = 2\Delta\alpha \cdot l = 2\omega l \Delta t = \frac{4\omega l l_0}{c} $$
+    $$ \therefore c = \frac{4\omega l l_0}{\Delta s} $$
+
+    <h4>3. Rotating Prism Method (1926, Michelson)</h4>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/topic_michelson_prism.png" alt="Michelson's rotating prism apparatus" style="max-width: 80%; display: block; margin: 1em auto;">
+    </div>
+    <p>Let the distance between stations $A$ and $B$ be $L$. To get the light reflected from face $b$ to face $b'$ (to maintain the stationary image), the time taken is $\Delta t = \frac{\Delta\theta}{\omega}$, and the travel time of light is $\Delta t = \frac{2L}{c}$.</p>
+    $$ \therefore c = \frac{2L\omega}{\Delta\theta} $$
+    <p>For an octagonal prism, $\Delta\theta = \frac{2\pi}{8} = \frac{\pi}{4}$.</p>
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Speed of Light vs Speed of Sound; Optical and Acoustic Doppler Effect</h3>
+
+    <h4>1. Speed of Light vs Speed of Sound</h4>
+    <p><strong>Speed of Light:</strong></p>
+    $$ c = \frac{1}{\sqrt{\varepsilon\mu}} \quad \text{where } \varepsilon = \varepsilon_r \varepsilon_0, \; \mu = \mu_r \mu_0 \quad \text{and } \lambda\nu = c $$
+    <p><strong>Speed of Sound:</strong></p>
+    $$ v = \sqrt{\frac{\gamma RT}{\mu}} $$
+    <p><em>(where $\mu$ is the macroscopic average molar mass of the air)</em></p>
+
+    <h4>2. Doppler Effect</h4>
+
+    <p><strong>① Optical Doppler Effect</strong></p>
+    <p>In the Michelson-Morley experiment, the interference fringes did not shift, which indicates that from frame $S$ to frame $S'$ (inertial frames), the phase of the wave does not change: $A(x,y,z,t) = A_0 e^{i(\vec{k}\cdot\vec{r} - \omega t)}$, i.e.,</p>
+    $$ \vec{k}'\cdot\vec{r}' - \omega' t' = \vec{k}\cdot\vec{r} - \omega t $$
+    <p>Since $k = \frac{2\pi}{\lambda}$ and $\omega = 2\pi\nu$, the four-components of the wave vector $(k_x, k_y, k_z, i\frac{\omega}{c})$ obey the Lorentz transformation. Thus we have:</p>
+    $$ \frac{\omega}{c} = \gamma\left(-\beta k_x' + \frac{\omega'}{c}\right) $$
+    <p>Substituting $k_x' = \frac{2\pi}{\lambda'}\cos\theta = \frac{2\pi\nu'}{c}\cos\theta$ and $\omega' = 2\pi\nu'$, we get:</p>
+    $$ \frac{2\pi\nu}{c} = \gamma\left(-\beta \frac{2\pi\nu'}{c}\cos\theta + \frac{2\pi\nu'}{c}\right) $$
+    <p>Solving for $\nu'$ yields the relativistic optical Doppler effect formula:</p>
+    $$ \nu' = \frac{\nu}{\gamma(1-\beta\cos\theta)} = \nu \frac{\sqrt{1-\beta^2}}{1-\beta\cos\theta} $$
+    <p><em>(where $\beta = \frac{v}{c}$, and $v$ is the velocity of the observer relative to the source.)</em></p>
+
+    <p><strong>② Acoustic Doppler Effect</strong></p>
+    <p>If the wave source moves relative to the medium with velocity $v_S$, then the wave speed is unchanged relative to the medium, but the wavelength changes:</p>
+    $$ \nu' = \frac{v}{\lambda'} = \frac{v}{\frac{v}{\nu} - \frac{v_S\cos\alpha}{\nu}} = \nu \frac{v}{v - v_S\cos\alpha} $$
+    <p>If the observer moves relative to the medium with velocity $v_R$, then the wavelength is unchanged, but the wave speed changes relative to the observer:</p>
+    $$ \nu'' = \frac{v + v_R\cos\beta}{\lambda} = \nu' \frac{v + v_R\cos\beta}{v} $$
+    <p>Combining the above, the general acoustic Doppler effect formula is:</p>
+    $$ \nu_{obs} = \frac{v + v_R\cos\beta}{v - v_S\cos\alpha} \cdot \nu $$
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: High School Physics Experiments (Optics)</h3>
+
+    <h4>Experiment 12: Measure the Refractive Index of Glass</h4>
+    <p><strong>Experiment Objective:</strong> Measure the refractive index of a glass block.</p>
+    <p><strong>Equipment:</strong> White paper, parallel-sided glass block, thumbtacks, pins, pencil, compass, triangle ruler.</p>
+    <p><strong>Principle:</strong> Based on Snell's Law, $n = \frac{\sin i}{\sin r}$. By placing pins to trace the path of a light ray passing through the glass block and drawing the incident and refracted rays, we can measure the angles and calculate the refractive index.</p>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/exp_refractive_index.png" alt="Measuring Refractive Index Setup" style="max-width: 50%; display: block; margin: 1em auto;">
+    </div>
+
+    <h4>Experiment 13: Use Double-Slit Interference to Measure the Wavelength of Light</h4>
+    <p><strong>Experiment Objective:</strong> Measure the wavelength of monochromatic light.</p>
+    <p><strong>Equipment:</strong> Light source, color filter, single slit, double slit, light shield tube (with screen and optical bench), measuring microscope.</p>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/exp_double_slit.png" alt="Double-Slit Interference Apparatus" style="max-width: 60%; display: block; margin: 1em auto;">
+    </div>
+    <p><strong>Principle & Procedure:</strong></p>
+    <p>The distance between adjacent bright (or dark) fringes is given by:</p>
+    $$ \Delta x = \frac{L}{d}\lambda $$
+    <p>The distance between fringes is measured using the measuring microscope (consisting of a graduated reticle, eyepiece, handwheel, and micrometer). Measuring the distance between two adjacent fringes directly as $\Delta x = |a_1 - a_2|$ has a large error. Usually, we measure the distance $a$ spanning across $n$ fringes, so:</p>
+    $$ \Delta x = \frac{a}{n-1} $$
+    <p>Use a ruler to measure the distance $L$ from the double slit to the screen. The slit spacing $d$ is a known parameter of the apparatus.</p>
+    $$ \therefore \lambda = \frac{d}{L}\Delta x $$
 
 </main>
 </body>

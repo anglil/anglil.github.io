@@ -6,6 +6,17 @@
     <title>Chapter 2: Special Relativity - Olympiad Physics</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                macros: {
+                    bm: ["\\boldsymbol{#1}", 1]
+                }
+            }
+        };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -256,6 +267,331 @@
     $$ \therefore h\nu = \frac{1}{\sqrt{1-\beta^2}}(h\nu' - h\nu'\beta\cos\theta') $$
     $$ \therefore \nu' = \nu \frac{\sqrt{1-\beta^2}}{1 - \beta\cos\theta'} $$
     $$ \begin{cases} \text{When } \theta' = 0 \text{ (approaching), } \nu' = \nu \sqrt{\frac{1+\beta}{1-\beta}} \approx \nu(1+\beta) \\ \text{When } \theta' = \frac{\pi}{2} \text{ (transverse), } \nu' = \nu \sqrt{1-\beta^2} \approx \nu(1-\frac{1}{2}\beta^2) \end{cases} $$
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Acceleration Equivalent to Gravitational Field Problem</h3>
+    <p><strong>Problem:</strong> A thought experiment inside a box undergoing uniform accelerated linear motion with acceleration $a$. A laser emitter and a laser receiver are installed at the bottom and top of the box, respectively. The distance between them in the box frame is $L$, and the period of laser emission from the emitter to the receiver is $T_0$. Prove that in the ground reference frame, the period $T$ of the laser received by the receiver at the top of the box is $T = T_0 \left(1 + \frac{aL}{c^2}\right)$.</p>
+    <img src="images/topic_accel_equiv_gravity.png" alt="Acceleration equivalent to gravity" style="max-width: 60%; display: block; margin: 1em auto;">
+    <p><strong>Proof:</strong></p>
+    <p>Let at $t=0$, the box starts accelerating from rest, and simultaneously the laser light wave is emitted from the emitter.</p>
+    <p>At any time $t$:</p>
+    $$ \begin{cases} \text{Emitter position: } x = \frac{1}{2} a t^2 \\ \text{Receiver position: } x = L + \frac{1}{2} a t^2 \end{cases} $$
+    $$ \begin{cases} \text{Vibration state position of the examined wave: } x = ct \\ \text{Vibration state position one period } T_0 \text{ later: } x = \frac{1}{2} a T_0^2 + c(t - T_0) \end{cases} $$
+    <p>Let the examined vibration state reach the receiver at time $t_1$.</p>
+    $$ ct_1 = L + \frac{1}{2} a t_1^2 \implies t_1 = \frac{c}{a}\left(1 - \sqrt{1 - \frac{2aL}{c^2}}\right) $$
+    <p>Let the vibration state exactly one period $T_0$ later reach the receiver at time $t_2$.</p>
+    $$ \frac{1}{2} a T_0^2 + c(t_2 - T_0) = L + \frac{1}{2} a t_2^2 \implies t_2 = \frac{c}{a}\left(1 - \sqrt{1 - \frac{2aL}{c^2} - \frac{2aT_0}{c} + \frac{a^2 T_0^2}{c^2}}\right) $$
+    <p>Therefore, the received laser period in the ground frame is:</p>
+    $$ T = t_2 - t_1 $$
+    $$ = \frac{c}{a} \sqrt{1 - \frac{2aL}{c^2}} - \frac{c}{a} \sqrt{1 - \frac{2aL}{c^2} - \frac{2aT_0}{c} + \frac{a^2 T_0^2}{c^2}} $$
+    $$ = \frac{c}{a} \sqrt{1 - \frac{2aL}{c^2}} \left[ 1 - \sqrt{1 - \frac{\frac{2aT_0}{c} - \frac{a^2 T_0^2}{c^2}}{1 - \frac{2aL}{c^2}}} \right] $$
+    <p>Using the Taylor expansion approximation $\sqrt{1-x} \approx 1 - \frac{1}{2}x$:</p>
+    $$ T \approx \frac{c}{a}\left(1 - \frac{aL}{c^2}\right) \left[ 1 - \left(1 - \frac{\frac{aT_0}{c} - \frac{a^2 T_0^2}{2c^2}}{1 - \frac{2aL}{c^2}}\right) \right] $$
+    $$ \approx \frac{c}{a}\left(1 - \frac{aL}{c^2}\right) \left( \frac{aT_0}{c} - \frac{a^2 T_0^2}{2c^2} \right) \left(1 + \frac{2aL}{c^2}\right) $$
+    $$ = \left(1 - \frac{aL}{c^2}\right)\left(1 + \frac{2aL}{c^2}\right)\left(T_0 - \frac{aT_0^2}{2c}\right) $$
+    $$ \approx \left(1 + \frac{2aL}{c^2} - \frac{aL}{c^2}\right) T_0 \left(1 - \frac{aT_0}{2c}\right) \quad \text{The } \frac{aT_0}{c} \text{ term is relatively negligible.} $$
+    $$ \approx T_0 \left(1 + \frac{aL}{c^2}\right) $$
+    <p>Since $a$ can be equivalent to gravitational field strength $g$, we get $T = T_0 \left(1 + \frac{gL}{c^2}\right)$.</p>
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Spring Oscillator with Massive Spring</h3>
+    <p><strong>1. Spring oscillator with massive spring</strong></p>
+    <p>The central point mass of the spring oscillator is $M$, the spring mass is $m$, the stiffness coefficient is $k$, the oscillation period of the system is:</p>
+    $$ T = 2\pi \sqrt{\frac{M + m/3}{k}} $$
+    <p><strong>Proof:</strong> When the spring is at its original length $l_0$, take a line element $ds$ at coordinate $s$. Its mass is $dm = \frac{m}{l_0} ds$.</p>
+    <p>When $M$ undergoes displacement $x$, let the displacement of $dm$ be $p$. Due to the uniform distribution of the spring's mass, $\frac{p}{x} = \frac{s}{l_0}$.</p>
+    <p>Taking the derivative of the above with respect to time:</p>
+    $$ \frac{dp}{dt} = \frac{s}{l_0} \frac{dx}{dt} = \frac{s}{l_0} v $$
+    <p>$\therefore$ The kinetic energy of $dm$ is $dE_k = \frac{1}{2} dm \left(\frac{dp}{dt}\right)^2 = \frac{1}{2} \frac{m}{l_0} ds \frac{s^2}{l_0^2} v^2 = \frac{mv^2}{2l_0^3} s^2 ds$</p>
+    <p>$\therefore$ The kinetic energy of the entire spring is $E_{k1} = \frac{mv^2}{2l_0^3} \int_0^{l_0} s^2 ds = \frac{1}{6} m v^2$</p>
+    <p>And the kinetic energy of the small ball is $E_{k2} = \frac{1}{2} M v^2$.</p>
+    <p>$\therefore$ The mechanical energy of the system is $E = \frac{1}{2}\left(M + \frac{m}{3}\right)\left(\frac{dx}{dt}\right)^2 + \frac{1}{2} k x^2$.</p>
+    <p>Taking the derivative with respect to time $t$:</p>
+    $$ \frac{dE}{dt} = \frac{1}{2}\left(M + \frac{m}{3}\right) \cdot 2 \left(\frac{dx}{dt}\right) \frac{d}{dt}\left(\frac{dx}{dt}\right) + \frac{1}{2} k \cdot 2x \frac{dx}{dt} = 0 $$
+    $$ \therefore \frac{d^2 x}{dt^2} + \frac{k}{M + m/3} x = 0 $$
+    $$ \therefore T = 2\pi \sqrt{\frac{M + m/3}{k}} $$
+
+    <p><strong>2. Simple pendulum with massive string</strong></p>
+    <img src="images/topic_massive_pendulum.png" alt="Simple pendulum with massive string" style="max-width: 25%; display: block; margin: 1em auto;">
+    <div style="overflow: hidden;">
+    <p>The central point mass of a simple pendulum is $M$, the pendulum string mass is $m$, the oscillation period of the system is:</p>
+    $$ T = 2\pi \sqrt{\frac{M + m/3}{M + m/2} \frac{l}{g}} $$
+    <p><strong>Proof:</strong></p>
+    <p>Kinetic energy $E_{k1} = \frac{1}{2} \int_0^l \frac{m}{l} dr \left(\frac{r}{l}v\right)^2 = \frac{1}{6} m v^2 = \frac{1}{6} m l^2 \left(\frac{d\theta}{dt}\right)^2$</p>
+    <p>$E_{k2} = \frac{1}{2} M l^2 \left(\frac{d\theta}{dt}\right)^2$</p>
+    <p>Potential energy (taking the lowest point as the zero potential energy plane):</p>
+    $$ E_{p1} = mg\left[\frac{l}{2}(1 - \cos\theta)\right] \approx \frac{1}{2} mg \frac{l}{2} \theta^2 = \frac{1}{4} m g l \theta^2 $$
+    $$ E_{p2} = Mgl(1-\cos\theta) \approx \frac{1}{2} Mgl\theta^2 $$
+    <p>$\therefore$ Total mechanical energy is:</p>
+    $$ E = \frac{1}{2} l^2 \left(\frac{d\theta}{dt}\right)^2 \left(M + \frac{m}{3}\right) + \frac{1}{2} \left(M + \frac{m}{2}\right) g l \theta^2 $$
+    <p>Taking the derivative with respect to time $t$:</p>
+    $$ \frac{dE}{dt} = \left(M + \frac{m}{3}\right) l^2 \frac{d\theta}{dt} \frac{d^2\theta}{dt^2} + \left(M + \frac{m}{2}\right) gl \theta \frac{d\theta}{dt} = 0 $$
+    $$ \therefore \frac{d^2\theta}{dt^2} + \frac{M + m/2}{M + m/3} \frac{g}{l} \theta = 0 $$
+    $$ \therefore T = 2\pi \sqrt{\frac{M + m/3}{M + m/2} \frac{l}{g}} $$
+    </div>
+    <div style="clear: both;"></div>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Threshold Energy in Two-Body Reactions</h3>
+    <p><strong>1. Model:</strong> $A_1 + A_2 \to A_3 + A_4 + A_5 \dots$</p>
+    <p>In the laboratory frame (L-frame): $A_1$ is the high-energy particle, with momentum $P_1$, and energy $E_1 = m_1 c^2$. $A_2$ is the target particle, with momentum 0, and energy $E_2 = m_{20} c^2$.</p>
+    <p>In the center-of-momentum frame (C-frame): Let the relative velocity of the C-frame to the L-frame be $V$, $\beta = \frac{V}{c}$, $\gamma = \frac{1}{\sqrt{1-\beta^2}}$.</p>
+    <p>Define the four-momentum $P = m_0 U$, where $U$ is the four-velocity, and its magnitude squared is $-c^2$.</p>
+    <p>Define the three-momentum $p = m v$, since $m = \gamma m_0, v = \frac{dx}{dt}$, the spatial components of the four-momentum correspond to the three-momentum. From the Lorentz transformation:</p>
+    $$ \begin{cases} P_1' = \gamma (P_1 - \beta m_1 c) \\ P_2' = \gamma (P_2 - \beta m_2 c) \end{cases} $$
+    <p>$\because P_2 = 0, m_2 = m_{20} \implies P_2' = -\gamma \beta m_{20} c$.</p>
+
+    <p><strong>2. Process:</strong> In threshold reactions, the high-energy particle has a threshold energy in the L-frame, allowing the reaction to just occur. At this time, the total energy of the generated particles after the collision in the L-frame is minimum.</p>
+    <p>Let $P_3, P_4, P_5 \dots$ be the momenta of the generated particles in the L-frame. Assume $P_i < P_{i+1}$ ($i \ge 3$).</p>
+    <p>If we increase $P_i$ by $\Delta P$ and decrease $P_{i+1}$ by $\Delta P$ ($\Delta P < P_{i+1} - P_i$), the total momentum remains unchanged. The change in total kinetic energy is roughly proportional to $c^2[(P_i + \Delta P)^2 - P_i^2] - c^2[P_{i+1}^2 - (P_{i+1} - \Delta P)^2]$:</p>
+    $$ = c^2[2\Delta P (P_i - P_{i+1} + \Delta P)] < 0 $$
+    <p>$\therefore P_i \ne P_{i+1}$ does not correspond to the minimum total energy. $\therefore$ All products in the L-frame must have equal momentum, i.e., $P_3 = P_4 = P_5 = \dots$</p>
+    <p>Let $P_3', P_4', P_5' \dots$ be the momenta of the generated particles in the C-frame.</p>
+    <p>Since $P_i' = \gamma(P_i - \beta m_i c)$, and $\sum P_i' = 0$,</p>
+    $$ \therefore \sum P_i - \beta c \sum m_i = 0 $$
+    <p>Also $\sum P_i = P_1 + P_2 = P_1$, $\sum m_i c^2 = m_1 c^2 + m_{20} c^2$.</p>
+    $$ \therefore P_1 = \beta c (m_1 + m_{20}) $$
+    $$ P_i = \frac{1}{n} P_1 = \frac{\beta c}{n} (m_1 + m_{20}) $$
+    $$ E_1^2 = m_{10}^2 c^4 + P_1^2 c^2 = m_{10}^2 c^4 + (\beta c)^2 (m_1 + m_{20})^2 $$
+
+    <p><strong>3. Essence:</strong></p>
+    <p>From the last term of the four-momentum transformation: $P_t' = \frac{P_t - v \beta P_x}{\sqrt{1 - V^2/c^2}} = \gamma (P_t - v \beta P_x)$.</p>
+    <p>Since $P_t = im_0 c \gamma, P_t' = im_0 c \gamma'$, we get:</p>
+    $$ E' = \gamma (E - \beta c P_x) $$
+    <p>Let $E_1, E_2$ be the energies of $A_1, A_2$ in the L-frame, $E_1', E_2'$ be the energies of $A_1, A_2$ in the C-frame.</p>
+    $$ \therefore \begin{cases} E_1' = \gamma(E_1 - \beta c P_1) \\ E_2' = \gamma(m_{20} c^2 - \beta c \cdot 0) = \gamma m_{20} c^2 \end{cases} $$
+    <p>$\therefore$ Total energy in the C-frame $E' = E_1' + E_2' = \gamma(E_1 - \beta c P_1 + m_{20} c^2)$.</p>
+    <p>From previously, $\beta = \frac{P_1 c}{E_1 + m_{20} c^2}$, substituting into the above gives:</p>
+    $$ E' = \frac{1}{\sqrt{1-\beta^2}} \left(E_1 - \frac{P_1 c}{E_1 + m_{20} c^2} P_1 c + m_{20} c^2\right) $$
+    $$ = \frac{1}{\sqrt{1 - \left(\frac{P_1 c}{E_1 + m_{20} c^2}\right)^2}} \frac{(E_1 + m_{20} c^2)^2 - (P_1 c)^2}{E_1 + m_{20} c^2} $$
+    $$ = \sqrt{(E_1 + m_{20} c^2)^2 - (P_1 c)^2} = \sqrt{E_1^2 - P_1^2 c^2 + m_{20}^2 c^4 + 2E_1 m_{20} c^2} $$
+    $$ = \sqrt{m_{10}^2 c^4 + m_{20}^2 c^4 + 2E_1 m_{20} c^2} $$
+    <p>Because the total energy in the C-frame remains unchanged after the reaction, and after the threshold reaction only the rest mass energy of the products remains in the C-frame (requirement for threshold reaction), we have:</p>
+    $$ \sqrt{m_{10}^2 c^4 + m_{20}^2 c^4 + 2E_1 m_{20} c^2} = \sum m_{i0} c^2 $$
+    $$ \therefore E_1 = \frac{\left(\sum m_{i0} c^2\right)^2 - \left[(m_{10} c^2)^2 + (m_{20} c^2)^2\right]}{2 m_{20} c^2} $$
+
+    <p><strong>4. Q-value and Threshold Kinetic Energy:</strong></p>
+    <p>In the process of particle decay or particle reaction, the difference between the total kinetic energy of the particles before and after the process is the Q-value of the process.</p>
+    $$ Q = E_{kt} - E_{k0} = \left(\sum_{\text{after}} m_i c^2 - \sum_{\text{after}} m_{i0} c^2\right) - \left(\sum_{\text{before}} m_j c^2 - \sum_{\text{before}} m_{j0} c^2\right) $$
+    $$ = \left(\sum_{\text{before}} m_{j0} - \sum_{\text{after}} m_{i0}\right) c^2 $$
+    <p>This is equal to the difference in total rest mass energy before and after the reaction. For a threshold reaction:</p>
+    $$ E_{k1} = E_1 - m_{10} c^2 = \frac{\left(\sum m_{i0} c^2\right)^2 - \left[(m_{10} c^2)^2 + (m_{20} c^2)^2 + 2m_{10} m_{20} c^4\right]}{2m_{20} c^2} $$
+    $$ = \frac{\left(\sum m_{i0} c^2\right)^2 - \left(\sum_{\text{before}} m_{0} c^2\right)^2}{2m_{20} c^2} $$
+    $$ = \frac{\left(\sum m_{i0} c^2 + \sum_{\text{before}} m_{0} c^2\right)\left(\sum m_{i0} c^2 - \sum_{\text{before}} m_{0} c^2\right)}{2 m_{20} c^2} = -Q \frac{\sum m_{i0} c^2 + \sum_{\text{before}} m_{0} c^2}{2 m_{20} c^2} $$
+
+    <p><strong>5. Center-of-mass frame and Center-of-momentum frame:</strong></p>
+    <p>Center-of-mass frame definition: $\sum m_i \vec{r}_i = 0$.</p>
+    <p>Center-of-momentum frame definition: $\sum m_i \vec{v}_i = 0$.</p>
+    <p>$\because \frac{d}{dt} \left(\sum m_i \vec{r}_i\right) \ne \sum m_i \vec{v}_i$ (since $m_i$ is relativistic mass, which depends on velocity and time if particles interact or decay).</p>
+    <p>$\therefore$ The center-of-mass frame and the center-of-momentum frame do not coincide.</p>
+    <p>In threshold reactions, in the C-frame, we can specifically solve for the values of $P_1', P_2', E_1', E_2', E_i'$.</p>
+    <p>① $\because P_1' + P_2' = 0$, and $P_2' = -\gamma \beta m_{20} c \implies P_1' = \gamma \beta m_{20} c$</p>
+    $$ = \frac{\beta}{\sqrt{1-\beta^2}} m_{20} c = \frac{\frac{P_1 c}{E_1 + m_{20} c^2}}{\sqrt{1 - \left(\frac{P_1 c}{E_1 + m_{20} c^2}\right)^2}} m_{20} c = \frac{P_1 c}{\sqrt{(E_1 + m_{20} c^2)^2 - (P_1 c)^2}} m_{20} c $$
+    $$ = \frac{\sqrt{E_1^2 - m_{10}^2 c^4}}{\sum m_{i0} c^2} m_{20} c $$
+    <p>② And $P_1' = \frac{\sqrt{E_1'^2 - m_{10}^2 c^4}}{c} \dots$</p>
+    <p>③ From the invariance of the squared four-momentum:</p>
+    $$ P_1^2 + P_t^2 = P_1'^2 + P_t'^2 $$
+    $$ \text{i.e., } \left(\frac{1}{c}P_1\right)^2 - (m_1 c)^2 = P_1'^2 - (m_{10} c)^2 = -m_{10}^2 c^2 $$
+    $$ \therefore P_1' = 0 \quad \text{(in C-frame for the products)} $$
+    $$ \therefore E_0 = \sqrt{\left(\frac{1}{c}P_1\right)^2 + (m_{20} c^2)^2} $$
+    $$ \text{and } E_1' = \sqrt{m_{10}^2 c^4 + P_1'^2 c^2} = m_{10} c^2 $$
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Michelson-Morley Experiment</h3>
+    <p><strong>1. Light path, interference principle:</strong></p>
+    <img src="images/topic_michelson_morley_1.png" alt="Michelson-Morley interference principle" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>If the two arms are purely under conditions without an "ether wind", the apparatus can produce equal-thickness interference fringes caused by $G$.</p>
+    <div style="clear: both;"></div>
+
+    <p><strong>2. Null result:</strong></p>
+    <img src="images/topic_michelson_morley_2.png" alt="Michelson-Morley null result" style="max-width: 40%; display: block; margin: 1em auto;">
+    <p>If there is an "ether wind", light in paths $GM_1$ and $GM_2$ will have an extra phase difference due to different propagation times, thereby causing the interference fringes to shift.</p>
+    <p>The time taken for light to make a round trip on the arm $GM_2$ parallel to $v$:</p>
+    $$ t_1 = \frac{L}{c-v} + \frac{L}{c+v} = \frac{L(c+v+c-v)}{c^2-v^2} = \frac{2L}{c} \frac{1}{1-v^2/c^2} \approx \frac{2L}{c}\left(1+\frac{v^2}{c^2}\right) $$
+    <p>The actual path of light traveling on the arm $GM_1$ perpendicular to $v$ is $GM_1'G'$. Let the time taken for $G \to M_1'$ be $t_0$, then</p>
+    $$ (c \cdot t_0)^2 = L^2 + (v \cdot t_0)^2 \implies t_0 = \frac{L}{\sqrt{c^2-v^2}} $$
+    $$ \therefore t_2 = 2t_0 = \frac{2L}{\sqrt{c^2-v^2}} \approx \frac{2L}{c}\left(1+\frac{v^2}{2c^2}\right) $$
+    <p>From the expressions for $t_1$ and $t_2$, we get the additional path difference:</p>
+    $$ \delta' = c(t_1 - t_2) = L \cdot \frac{v^2}{c^2} $$
+    <p>If the whole apparatus is rotated by $90^\circ$, the change in path difference is twice the above value, which is $\frac{2L v^2}{c^2}$, causing the total number of shifted fringes to be:</p>
+    $$ x = \frac{2L v^2/c^2}{\lambda} $$
+    <p>From the experiment, $x = 0$, thus refuting the existence of the "ether wind"!</p>
+    <div style="clear: both;"></div>
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: Damped Oscillation, Forced Oscillation, Resonance (Solving a Class of Differential Equations)</h3>
+
+    <h4>1. Damped Oscillation</h4>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/topic_damped_spring.png" alt="Damped spring oscillator" style="max-width: 40%; display: block; margin: 1em auto;">
+    </div>
+    <p>Restoring force $\vec{F} = -k\vec{x}$, Damping force $\vec{F}' = -\gamma\vec{v} = -\gamma\frac{d\vec{x}}{dt}$.</p>
+    $$ \therefore m\frac{d^2\vec{x}}{dt^2} + k\vec{x} + \gamma\frac{d\vec{x}}{dt} = 0 $$
+    <p>Let $2\beta = \frac{\gamma}{m}$ and $\omega_0^2 = \frac{k}{m}$,</p>
+    $$ \therefore \frac{d^2x}{dt^2} + 2\beta\frac{dx}{dt} + \omega_0^2 x = 0 \quad \text{①} $$
+    <p>We can write equation ① as $r\frac{d}{dt}\left(\frac{dx}{dt} + qx\right) + p\left(\frac{dx}{dt} + qx\right) = 0$, where $p, q, r$ are undetermined coefficients.</p>
+    $$ \therefore r\frac{d^2x}{dt^2} + (p + qr)\frac{dx}{dt} + pq x = 0 $$
+    <p>Equating coefficients with ① gives:</p>
+    $$ \begin{cases} r = 1 \\ p + qr = 2\beta \\ pq = \omega_0^2 \end{cases} $$
+    <p>Since $r = 1$ and $q = \frac{\omega_0^2}{p}$:</p>
+    $$ \therefore p + \frac{\omega_0^2}{p} = 2\beta \implies p^2 - 2\beta p + \omega_0^2 = 0 \implies p = \frac{2\beta \pm \sqrt{4\beta^2 - 4\omega_0^2}}{2} = \beta \pm \sqrt{\beta^2 - \omega_0^2} $$
+    $$ \therefore q = 2\beta - p = 2\beta - (\beta \pm \sqrt{\beta^2 - \omega_0^2}) = \beta \mp \sqrt{\beta^2 - \omega_0^2} $$
+    $$ \therefore \begin{cases} r = 1 \\ p = \beta \pm \sqrt{\beta^2 - \omega_0^2} \\ q = \beta \mp \sqrt{\beta^2 - \omega_0^2} \end{cases} \quad \text{②} $$
+    <p>Substituting into the factorized equation, we have $d\left(\frac{dx}{dt} + qx\right) = -p\left(\frac{dx}{dt} + qx\right)dt$. Also, at $t=0$, $\frac{dx}{dt} = 0, x = A_0$ (assuming release from rest at $A_0$).</p>
+    $$ \therefore \ln\left(\frac{dx}{dt} + qx\right) \Big|_{qA_0} = -pt \implies \frac{dx}{dt} + qx = qA_0 e^{-pt} \quad \text{③} $$
+    <p>For a first-order linear differential equation of the form $\frac{dx}{dt} + q(t)x = P(t)$, the solution method via an integrating factor states that since $x$ is a function of $t$, it can be represented as $x = c(t)e^{-\int q(t)dt}$ ④.</p>
+    <p>Substitute ④ into the original differential equation $\frac{dx}{dt} + q(t)x = P(t)$:</p>
+    $$ \frac{dc(t)}{dt} e^{-\int q(t)dt} + c(t) \frac{d}{dt}\left(e^{-\int q(t)dt}\right) + q(t) c(t) e^{-\int q(t)dt} = P(t) $$
+    $$ \because c(t) \frac{d}{dt}\left(e^{-\int q(t)dt}\right) = -q(t) c(t) e^{-\int q(t)dt} $$
+    <p>Therefore, the original equation becomes $\frac{dc(t)}{dt} e^{-\int q(t)dt} = P(t)$.</p>
+    $$ \therefore c(t) = \int P(t) e^{\int q(t)dt} dt + C_2 \quad \text{⑤} $$
+    <p>Compare equation ③ with the differential equation $\frac{dx}{dt} + q(t)x = P(t)$, we get $q(t) = q$ and $P(t) = qA_0 e^{-pt}$. Substituting into ⑤ gives:</p>
+    $$ c(t) = \int q A_0 e^{-pt} e^{qt} dt + C_2 = q A_0 \int e^{(q-p)t} dt + C_2 = \frac{q A_0}{q-p} e^{(q-p)t} + C_2 $$
+    <p>Combining ③, ④, and ⑤ gives:</p>
+    $$ x = e^{-qt} \left[ \frac{q A_0}{q-p} e^{(q-p)t} + C_2 \right] = \frac{q A_0}{q-p} e^{-pt} + C_2 e^{-qt} $$
+    <p>Substitute the initial conditions ($t=0, x=A_0$): $A_0 = \frac{q A_0}{q-p} + C_2 \implies C_2 = -\frac{p A_0}{q-p}$.</p>
+    $$ \therefore x = \frac{q A_0}{q-p} e^{-pt} - \frac{p A_0}{q-p} e^{-qt} \quad \text{⑦} $$
+    <p>Substitute ② into ⑦, we get the general solution:</p>
+    $$ x = \frac{\beta \mp \sqrt{\beta^2-\omega_0^2}}{\mp 2\sqrt{\beta^2-\omega_0^2}} A_0 e^{-(\beta \pm \sqrt{\beta^2-\omega_0^2})t} + \frac{-(\beta \pm \sqrt{\beta^2-\omega_0^2})}{\mp 2\sqrt{\beta^2-\omega_0^2}} A_0 e^{-(\beta \mp \sqrt{\beta^2-\omega_0^2})t} \quad \text{⑧} $$
+
+    <h4>Underdamped Oscillation ($\beta^2 - \omega_0^2 < 0$)</h4>
+    <p>Then $\sqrt{\beta^2-\omega_0^2} = i\sqrt{\omega_0^2-\beta^2} = i\omega_r$.</p>
+    $$ \therefore x = \frac{A_0}{2} e^{-\beta t} \left( \frac{\omega_r \pm i\beta}{\omega_r} e^{\mp i\omega_r t} + \frac{\omega_r \mp i\beta}{\omega_r} e^{\pm i\omega_r t} \right) $$
+    <p>Since $\frac{\omega_r \pm i\beta}{\omega_r} = 1 \pm i\frac{\beta}{\omega_r} = A(\cos\theta \pm i\sin\theta)$, we can deduce $\tan\theta = \frac{\beta}{\omega_r}$ and $A = \frac{\sqrt{\beta^2+\omega_r^2}}{\omega_r} = \frac{\omega_0}{\omega_r}$.</p>
+    $$ \therefore \frac{\omega_r \pm i\beta}{\omega_r} = \frac{\omega_0}{\omega_r} e^{\pm i \arctan(\beta/\omega_r)} \quad \text{⑨} $$
+    <p>Substitute ⑨ back into $x(t)$:</p>
+    $$ x = \frac{A_0}{2} e^{-\beta t} \frac{\omega_0}{\omega_r} \left[ e^{\mp i(\omega_r t - \arctan(\beta/\omega_r))} + e^{\pm i(\omega_r t - \arctan(\beta/\omega_r))} \right] $$
+    <p>Using Euler's formula, the imaginary sine parts cancel out, leaving the cosine parts:</p>
+    $$ x = A_0 e^{-\beta t} \frac{\omega_0}{\omega_r} \cos\left(\omega_r t - \arctan\frac{\beta}{\omega_r}\right) \quad \text{⑩} $$
+
+    <h4>Overdamped Oscillation ($\beta^2 - \omega_0^2 > 0$)</h4>
+    <p>From ⑧, let $\beta_r = \sqrt{\beta^2-\omega_0^2}$:</p>
+    $$ x = \frac{\beta \mp \beta_r}{\mp 2\beta_r} A_0 e^{-(\beta \pm \beta_r)t} + \frac{-(\beta \pm \beta_r)}{\mp 2\beta_r} A_0 e^{-(\beta \mp \beta_r)t} \quad \text{⑪} $$
+
+    <h4>Critically Damped Oscillation ($\beta^2 - \omega_0^2 = 0$)</h4>
+    <p>From ③, we get $\frac{dx}{dt} + \beta x = \beta A_0 e^{-\beta t}$. Using the integrating factor approach directly:</p>
+    $$ x = e^{-\int \beta dt} \left( \beta A_0 \int e^{-\beta t} e^{\beta t} dt + C_3 \right) = e^{-\beta t} (\beta A_0 t + C_3) $$
+    <p>Substitute $t=0, x=A_0 \implies C_3 = A_0$.</p>
+    $$ \therefore x = A_0 (1 + \beta t) e^{-\beta t} \quad \text{⑫} $$
+
+    <h4>2. Forced Oscillation and Resonance</h4>
+    <p>Restoring force $\vec{F} = -k\vec{x}$, Damping force $\vec{F}' = -\gamma\vec{v} = -\gamma\frac{d\vec{x}}{dt}$, Driving force $\vec{F}_{\text{ext}} = \vec{F}_0 \cos\omega t$.</p>
+    $$ \therefore m\frac{d^2\vec{x}}{dt^2} + k\vec{x} + \gamma\frac{d\vec{x}}{dt} = \vec{F}_0 \cos\omega t $$
+    $$ \text{i.e., } \frac{d^2x}{dt^2} + 2\beta\frac{dx}{dt} + \omega_0^2 x = \frac{F_0}{m} \cos\omega t $$
+    <p>From the factorized conclusion earlier, we have $p\left(\frac{dx}{dt} + qx\right) + \frac{d}{dt}\left(\frac{dx}{dt} + qx\right) = \frac{F_0}{m} \cos\omega t$, where $p = \beta \pm \sqrt{\beta^2-\omega_0^2}$ and $q = \beta \mp \sqrt{\beta^2-\omega_0^2}$.</p>
+    <p>Let $y = \frac{dx}{dt} + qx \implies py + \frac{dy}{dt} = \frac{F_0}{m} \cos\omega t \quad \text{⑬}$.</p>
+    <p>From the integrating factor solution ⑤, we get:</p>
+    $$ y = e^{-pt} \left[ \int e^{pt} \frac{F_0}{m} \cos\omega t dt + C_6 \right] = e^{-pt} \left[ \frac{F_0}{2m} \int e^{pt} (e^{i\omega t} + e^{-i\omega t}) dt + C_6 \right] $$
+    $$ = e^{-pt} \left[ \frac{F_0}{2m} \left( \frac{1}{p+i\omega} e^{(p+i\omega)t} + \frac{1}{p-i\omega} e^{(p-i\omega)t} \right) + C_6 \right] $$
+    $$ = \frac{F_0}{2m} \frac{e^{i\omega t}}{p+i\omega} + \frac{F_0}{2m} \frac{e^{-i\omega t}}{p-i\omega} + C_6 e^{-pt} $$
+    $$ = \frac{F_0}{2m\sqrt{p^2+\omega^2}} \left[ e^{i(\omega t - \arctan\frac{\omega}{p})} + e^{-i(\omega t - \arctan\frac{\omega}{p})} \right] + C_6 e^{-pt} $$
+    $$ = \frac{F_0}{m\sqrt{p^2+\omega^2}} \cos\left(\omega t - \arctan\frac{\omega}{p}\right) + C_6 e^{-pt} \quad \text{⑭} $$
+    <p>Since $y(t) = \frac{dx}{dt} + qx$, we use the integrating factor again:</p>
+    $$ x = e^{-\int q dt} \left[ \int e^{\int q dt} y(t) dt + C_8 \right] = e^{-qt} \left[ \int e^{qt} \frac{F_0}{m\sqrt{p^2+\omega^2}} \cos\left(\omega t - \arctan\frac{\omega}{p}\right) dt + \int C_6 e^{(q-p)t} dt + C_8 \right] $$
+    <p>Solving the integral similarly introduces an $\arctan\frac{\omega}{q}$ phase shift, and combining terms with the initial condition ⑧ yields the steady-state forced oscillation:</p>
+    $$ x = \frac{F_0}{m\sqrt{(\omega_0^2-\omega^2)^2 + 4\beta^2\omega^2}} \cos\left(\omega t - \arctan\frac{2\beta\omega}{\omega_0^2-\omega^2}\right) + \text{transient terms} \quad \text{⑮} $$
+
+    <h4>Resonance Conditions</h4>
+    <p><strong>1) Displacement Resonance:</strong></p>
+    <p>The displacement amplitude is $A = \frac{F_0}{m\sqrt{(\omega_0^2-\omega^2)^2 + 4\beta^2\omega^2}}$.</p>
+    <p>Setting the derivative $\frac{dA}{d\omega} = 0$ gives $\omega = \sqrt{\omega_0^2 - 2\beta^2}$.</p>
+    $$ \therefore A_{\max} = \frac{F_0}{2m\beta\sqrt{\omega_0^2-\beta^2}} $$
+
+    <p><strong>2) Velocity Resonance:</strong></p>
+    <p>Taking the derivative of ⑮, the velocity is $v = \frac{dx}{dt} = -\frac{\omega F_0}{m\sqrt{(\omega_0^2-\omega^2)^2 + 4\beta^2\omega^2}} \sin(\omega t - \dots)$.</p>
+    <p>The velocity amplitude is $V = \frac{\omega F_0}{m\sqrt{(\omega_0^2-\omega^2)^2 + 4\beta^2\omega^2}}$.</p>
+    <p>Setting the derivative $\frac{dV}{d\omega} = 0$ gives $\omega = \omega_0$.</p>
+    $$ \therefore V_{\max} = \frac{F_0}{2m\beta} $$
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: The Brachistochrone Problem</h3>
+    <p><strong>Problem:</strong> In a uniform gravitational field $g$, establish a horizontal rightward x-axis and a vertically downward y-axis in a vertical plane. Pick a point $P$ in this plane, its coordinates are $x_P = a > 0, y_P = b > 0$. Try to find a smooth curved track from the origin $O$ to $P$, so that the time required for a particle starting from rest at $O$ to slide frictionlessly along this track to $P$ is minimized.</p>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/topic_brachistochrone.png" alt="Brachistochrone Curve Problem Setup" style="max-width: 50%; display: block; margin: 1em auto;">
+    </div>
+    <p>By Fermat's Principle of least time, $n_y \sin\left(\frac{\pi}{2} - \alpha\right) = \text{const} \implies n_y \cos\alpha = \text{const}$.</p>
+    <p>For the speed of light $v_y$ at depth $y$, $v_y = \frac{c}{n_y} \implies \frac{\cos\alpha}{v_y} = \text{const}$.</p>
+    <p>Analogous to the velocity of the particle, $v_y = \sqrt{2gy} \implies \frac{\cos\alpha}{\sqrt{y}} = \text{const}$.</p>
+    <p>And since $\cos\alpha = \frac{1}{\sqrt{1+(y')^2}} \implies y[1+(y')^2] = \text{const} = A$.</p>
+    <p>Let $y = A\sin^2\beta$,</p>
+    $$ \therefore A\left[1+\left(\frac{dy}{dx}\right)^2\right] = \frac{A}{\sin^2\beta} \implies \left(\frac{dy}{dx}\right)^2 = \frac{1}{\sin^2\beta} - 1 = \cot^2\beta \implies \frac{dy}{dx} = \cot\beta $$
+    <p>On the other hand, differentiating $y$ gives $dy = 2A\sin\beta\cos\beta d\beta$.</p>
+    <p>Combining the two expressions gives $dx = 2A\sin^2\beta d\beta$.</p>
+    <p>Since at $x=0$, $y=0$, corresponding to $\beta=0$, integrating the above equations gives:</p>
+    $$ x = \frac{A}{2}(2\beta - \sin 2\beta) \quad \text{and} \quad y = \frac{A}{2}(1 - \cos 2\beta) $$
+    <p>Let $R = \frac{A}{2}$ and $\varphi = 2\beta$.</p>
+    $$ \therefore \begin{cases} x = R(\varphi - \sin\varphi) \\ y = R(1 - \cos\varphi) \end{cases} $$
+    <p>This means the path of fastest descent (Brachistochrone) is a cycloid!</p>
+
+    <hr style="margin: 2em 0;">
+
+    <h3>Special Topic: High School Physics Experiments (Dynamics & Energy)</h3>
+
+    <h4>Experiment 4: Verify Newton's Laws of Motion</h4>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/exp_newtons_laws.png" alt="Newton's Laws Experiment Setup" style="max-width: 50%; display: block; margin: 1em auto;">
+    </div>
+    <p>For a cart of mass $m$ and a sand bucket of mass $M$, the equations of motion are:</p>
+    $$ \begin{cases} Mg - T = Ma \\ T = ma \end{cases} \implies a = \frac{M}{M+m} g $$
+    <p><strong>1. Relationship between Acceleration and Force:</strong></p>
+    <p>Take $m \gg M$, meaning the mass of the cart is much greater than the sand bucket, so $a \approx \frac{M}{m}g$. Continuously change $M$, meaning the external force $Mg$ continuously changes; from the paper tape hit by the timer, $a$ continuously changes. This verifies that $a \propto F$.</p>
+    <p><strong>2. Relationship between Acceleration and Mass:</strong></p>
+    <p>Keeping $a \approx \frac{M}{m}g$, add weights on the cart to change its mass $m$. From the paper tape, $a$ decreases. By plotting an $a - \frac{1}{m}$ graph, we find that $a \propto \frac{1}{m}$.</p>
+
+    <h4>Experiment 5: Explore the Work-Energy Theorem</h4>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/exp_work_energy.png" alt="Work-Energy Theorem Experiment Setup" style="max-width: 50%; display: block; margin: 1em auto;">
+    </div>
+    <ol>
+        <li>Change the release height $h$ of block A, release A, and observe the distance block B is pushed on the rough surface.</li>
+        <li>Change the mass $m_A$ of block A, release A from the same height, and observe the distance block B is pushed.</li>
+    </ol>
+
+    <h4>Experiment 6: Verify the Law of Conservation of Mechanical Energy</h4>
+    <p><strong>Experiment Objective:</strong> Verify the law of conservation of mechanical energy.</p>
+    <p><strong>Equipment:</strong> Iron stand (with iron clamp), electromagnetic spark timer, heavy hammer (with paper tape clamp), paper tape, carbon paper, ruler, low voltage AC power supply ($4\sim 6\text{V}$, $50\text{Hz}$).</p>
+    <p><strong>Principle:</strong> In free-fall motion where only gravity does work, potential energy $E_p$ and kinetic energy $E_k$ convert into each other, but the total mechanical energy is conserved. Using the velocity $v$ calculated from the points hit by the timer, verify whether the decrease in potential energy $\Delta E_p = mgh$ and the increase in kinetic energy $\Delta E_k = \frac{1}{2}mv^2$ are equal during the fall.</p>
+    <p><strong>Procedure:</strong></p>
+    <p>Measure the drop height $h_n$ directly with a ruler. Calculate the instantaneous velocity $v_n$ at point $n$ using the formula for the average velocity of the surrounding interval:</p>
+    $$ v_n = \frac{h_{n+1} - h_{n-1}}{2T} $$
+
+    <h4>Experiment 11: Explore the Motion of a Simple Pendulum and Measure Gravitational Acceleration</h4>
+    <p><strong>Experiment Objective:</strong> Use a simple pendulum to determine the local gravitational acceleration $g$.</p>
+    <p><strong>Equipment:</strong> Small steel ball with a hole, thin string ($\approx 1\text{m}$), iron stand, meter stick, stopwatch, vernier caliper.</p>
+    <p><strong>Principle:</strong> We can derive the period $T$ from the equations of motion:</p>
+    $$ \begin{cases} mg\sin\theta dt = m dv \\ mgL(\cos\theta - \cos\varphi) = \frac{1}{2}mv^2 \end{cases} \implies v = \sqrt{2gL(\cos\theta - \cos\varphi)} $$
+    <p>The time differential $dt$ is:</p>
+    $$ dt = \frac{ds}{v} = \frac{-L d\theta}{\sqrt{2gL(\cos\theta - \cos\varphi)}} $$
+    <p>For small angles, $\cos\theta \approx 1 - \frac{1}{2}\theta^2$ and $\cos\varphi \approx 1 - \frac{1}{2}\varphi^2$:</p>
+    $$ dt \approx \frac{-L d\theta}{\sqrt{gL(\varphi^2 - \theta^2)}} $$
+    <p>Let $\theta = \varphi\cos\alpha \implies d\theta = -\varphi\sin\alpha d\alpha$:</p>
+    $$ \therefore dt = \frac{-L(-\varphi\sin\alpha d\alpha)}{\sqrt{gL\varphi^2\sin^2\alpha}} = \sqrt{\frac{L}{g}} d\alpha $$
+    <p>Integrating over a full cycle ($2\pi$) yields the period $T = 2\pi\sqrt{\frac{L}{g}}$. Thus, $g = \frac{4\pi^2 L}{T^2}$. By measuring the pendulum length and the period of oscillation, $g$ can be found.</p>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/exp_simple_pendulum.png" alt="Simple Pendulum Experiment Setup" style="max-width: 40%; display: block; margin: 1em auto;">
+    </div>
+    <p><strong>Procedure:</strong></p>
+    <ol>
+        <li>Make a mark at the equilibrium position of the simple pendulum.</li>
+        <li>Use a meter stick to measure the length of the string $l'$. Use a vernier caliper to measure the diameter of the pendulum bob $d$, both accurate to $\text{mm}$. The effective pendulum length is $L = l' + \frac{d}{2}$.</li>
+        <li>Pull the simple pendulum away from the equilibrium position by a small angle ($<10^\circ$), release it, and use a stopwatch to measure the time for 50 full oscillations. Calculate the average time for one full oscillation $T$.</li>
+        <li>Change the pendulum length, repeat the experiment, and plot a $T^2 - L$ graph. The slope $k = \frac{4\pi^2}{g}$, so $g = \frac{4\pi^2}{k}$.</li>
+    </ol>
+    <p><strong>Precautions:</strong> Start timing when the pendulum passes through the lowest (equilibrium) position, and only count oscillations when it passes through the lowest position moving in the <em>same direction</em>.</p>
+
+    <h4>Experiment 14: Verify the Law of Conservation of Momentum</h4>
+    <p><strong>Experiment Objective:</strong> Verify the conservation of momentum during a collision.</p>
+    <p><strong>Equipment:</strong> Slanted track, two steel balls of the same size but different masses ($m_1, m_2$), plumb bob, white paper, carbon paper, balance, ruler, compass, triangle ruler.</p>
+    <p><strong>Principle & Procedure:</strong> Using a two-dimensional collision off a slanted track, the initial and final velocities are proportional to the horizontal distances $OP, OM, ON$ traveled by the balls before hitting the ground.</p>
+    <div style="text-align: center; margin: 1em 0;">
+        <img src="images/exp_momentum.png" alt="Momentum Conservation Collision Apparatus" style="max-width: 50%; display: block; margin: 1em auto;">
+    </div>
+    <p>Quantities to measure: The masses of the incident and target balls $m_1, m_2$ (using the balance), the radii of the balls $r$, and the horizontal distances $OP, OM, ON$. The conservation of momentum is verified if the following relationship holds:</p>
+    $$ m_1 \overline{OP} = m_1 \overline{OM} + m_2 \overline{ON} $$
 
 </main>
 </body>
