@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chapter 1: Thermodynamics | College Physics</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -30,16 +43,395 @@
     <h1>Chapter 1</h1>
     <h2 class="chapter-title">Thermodynamics</h2>
   </div>
-  <div class="pages-container">
-    <img src="images/ch01_page_001.png" class="page-img" alt="Page 1">
-    <img src="images/ch01_page_002.png" class="page-img" alt="Page 2">
-    <img src="images/ch01_page_003.png" class="page-img" alt="Page 3">
-    <img src="images/ch01_page_004.png" class="page-img" alt="Page 4">
-    <img src="images/ch01_page_005.png" class="page-img" alt="Page 5">
-    <img src="images/ch01_page_006.png" class="page-img" alt="Page 6">
-    <img src="images/ch01_page_007.png" class="page-img" alt="Page 7">
-    <img src="images/ch01_page_008.png" class="page-img" alt="Page 8">
+  
+  <h3>I. Thermodynamic Systems, States, and Processes</h3>
+
+  <p><strong>1. Thermodynamic Systems</strong></p>
+  <ul>
+    <li><strong>Isolated system:</strong> No exchange of matter or energy with the surroundings.</li>
+    <li><strong>Closed system:</strong> No exchange of matter, but has an exchange of energy.</li>
+    <li><strong>Open system:</strong> Has exchange of both matter and energy.</li>
+  </ul>
+
+  <p><strong>2. State of a System</strong></p>
+  <p>Isolated and closed systems will eventually reach an equilibrium state: <strong>Thermodynamic equilibrium</strong> (macroscopic quantities do not change).</p>
+  <p>Systems deviating from equilibrium but not moving far can be divided into several <strong>local equilibrium states</strong>. If there is a steady "flow", it is in a <strong>quasi-steady state</strong> (non-equilibrium state).</p>
+  <p>Independent macroscopic variables depend on the degrees of freedom of the equilibrium state: State parameters &rarr; Characteristic functions &rarr; State functions.</p>
+
+  <ol>
+    <li>Particle number: $N$</li>
+    <li>Volume: $V$</li>
+    <li>Temperature: $T$ (Equation of state)</li>
+    <li>Pressure: $P$</li>
+    <li>Entropy: $S$ (Entropy differential representation)</li>
+    <li>Internal energy: $E$ (Energy equation), $C_V = \left(\frac{\partial E}{\partial T}\right)_V$</li>
+    <li>Enthalpy: $H = E + PV$, $C_P = \left(\frac{\partial H}{\partial T}\right)_P$</li>
+    <li>Helmholtz free energy: $F = E - TS$</li>
+    <li>Gibbs free energy: $G = E + PV - TS$</li>
+    <li>Chemical potential: $\mu = \left(\frac{\partial G}{\partial N}\right)_{T,P} = \left(\frac{\partial F}{\partial N}\right)_{T,V} = \left(\frac{\partial H}{\partial N}\right)_{S,P} = \left(\frac{\partial E}{\partial N}\right)_{S,V}$</li>
+  </ol>
+
+  <p>Quantities can also be classified as:</p>
+  $$ \begin{cases} \text{Measurable quantities: } P, C_V, C_P, T, V, \dots \\ \text{Directly unmeasurable quantities: } E, H, F, G, S, \mu, \dots \end{cases} $$
+  $$ \begin{cases} \text{Extensive quantities: } N, V, E, H, F, G, S, \dots \\ \text{Intensive quantities: } P, T, \mu, \dots \end{cases} $$
+
+  <p><strong>3. Thermodynamic Processes</strong></p>
+  <p>A thermodynamic process describes the transition from one equilibrium state to another equilibrium state.</p>
+  <ul>
+    <li><strong>Work:</strong> Transfer of ordered motion energy: $dW = \sum Y_i dy_i$</li>
+    <li><strong>Heat:</strong> Transfer of disordered motion energy: $dQ = T dS$ (for a reversible process)</li>
+  </ul>
+  $$ \begin{cases} \text{Reversible process: e.g., quasi-static process (no dissipation, passes through a series of equilibrium states)} \\ \text{Irreversible process: e.g., all real spontaneous processes} \end{cases} $$
+
+  <p><strong>4. First Law of Thermodynamics</strong></p>
+  $$ dE = TdS - PdV + \sum \mu_i dN_i $$
+  $$ dH = TdS + VdP + \sum \mu_i dN_i $$
+  $$ dF = -SdT - PdV + \sum \mu_i dN_i $$
+  $$ dG = -SdT + VdP + \sum \mu_i dN_i $$
+  <p>From Green's formula, we can obtain the <strong>Maxwell relations</strong>.</p>
+
+  <p><strong>5. Second Law of Thermodynamics</strong></p>
+  <p>Reversible process: $dS = \frac{dQ}{T}$. Irreversible process: $dS > \frac{dQ}{T}$.</p>
+  <p>If the thermodynamic process is adiabatic ($dQ = 0$), then $dS \ge 0$.</p>
+  $$ dE \le 0 \quad (dS=0, dV=0, dN_i = 0) $$
+  $$ dH \le 0 \quad (dS=0, dP=0, dN_i = 0) $$
+  $$ dF \le 0 \quad (dT=0, dV=0, dN_i = 0) $$
+  $$ dG \le 0 \quad (dT=0, dP=0, dN_i = 0) $$
+
+  <hr>
+
+  <h3>II. Equilibrium Distribution of Nearly Independent Systems</h3>
+
+  <p>Macroscopic quantities (state parameters, state functions) are the statistical average of microscopic quantities.</p>
+  $$ \begin{cases} \text{Macroscopic quantities with microscopic counterparts: } P, E \dots \text{ (statistical average of microscopic quantities)} \\ \text{Macroscopic quantities without microscopic counterparts: } T, S \dots \text{ (obtained by comparing with thermodynamic results)} \end{cases} $$
+
+  <ul>
+    <li>$\varepsilon_i$: Energy of one particle on the $i$-th energy level.</li>
+    <li>$g_i$: Degeneracy of the $i$-th energy level.</li>
+    <li>$n_i$: Number of particles on the $i$-th energy level; $\{n_i\}$: Particle number distribution over all energy levels.</li>
+    <li>$W\{n_i\} = \prod W_i$: Number of microscopic states corresponding to the distribution $\{n_i\}$.</li>
+    <li>Constraints: $\sum n_i = N$, $\sum \varepsilon_i n_i = E$.</li>
+  </ul>
+
+  <p><strong>Equal probability hypothesis:</strong></p>
+  $$ P\{n_i\} = \frac{W(\{n_i\}, N, V, E)}{\sum_{\{n_i\}} W(\{n_i\}, N, V, E)} $$
+  <p><strong>Most probable distribution method:</strong> If $P\{n_i\}_m \gg P_{\text{other}}$, take $\{n_i\}_m$ as the equilibrium distribution.</p>
+
+  <p><strong>1. Localized Particles: Boltzmann Distribution</strong></p>
+  $$ W_{Bol}\{n_i\} = N! \prod \frac{g_i^{n_i}}{n_i!} = \prod C_{N}^{n_i} g_i^{n_i} $$
+  <p>From $\frac{\partial}{\partial n_i} \ln W_{Bol} + \alpha \frac{\partial}{\partial n_i} (N - \sum n_i) + \beta \frac{\partial}{\partial n_i} (E - \sum n_i \varepsilon_i) = 0$</p>
+  <p>We get the Boltzmann distribution:</p>
+  $$ n_i = g_i e^{-\alpha - \beta \varepsilon_i} $$
+
+  <p><strong>2. Non-localized Particles: Bose-Einstein Distribution</strong></p>
+  $$ W_{BE}\{n_i\} = \prod C_{n_i + g_i - 1}^{g_i - 1} $$
+  <p>From $\frac{\partial}{\partial n_i} \ln W_{BE} + \alpha \frac{\partial}{\partial n_i} (N - \sum n_i) + \beta \frac{\partial}{\partial n_i} (E - \sum n_i \varepsilon_i) = 0$</p>
+  <p>We get the Bose-Einstein distribution:</p>
+  $$ n_i = \frac{g_i}{e^{\alpha + \beta \varepsilon_i} - 1} $$
+
+  <p><strong>3. Non-localized Particles: Fermi-Dirac Distribution</strong></p>
+  $$ W_{FD}\{n_i\} = \prod C_{g_i}^{n_i} $$
+  <p>From $\frac{\partial}{\partial n_i} \ln W_{FD} + \alpha \frac{\partial}{\partial n_i} (N - \sum n_i) + \beta \frac{\partial}{\partial n_i} (E - \sum n_i \varepsilon_i) = 0$</p>
+  <p>We get the Fermi-Dirac distribution:</p>
+  $$ n_i = \frac{g_i}{e^{\alpha + \beta \varepsilon_i} + 1} $$
+
+  <p><strong>4. Classical Limit Condition</strong></p>
+  <p>When $e^\alpha \gg 1$ or $\frac{n_i}{g_i} \ll 1$ or $\left(\frac{V}{N}\right)^{\frac{1}{3}} \gg \frac{h}{\sqrt{2\pi m kT}}$:</p>
+  $$ W_S = W_{BE} \approx W_{FD} \approx W_{Bol} / N! = \prod \frac{g_i^{n_i}}{n_i!} $$
+  <p>From $\frac{\partial}{\partial n_i} \ln W_S + \alpha \frac{\partial}{\partial n_i} (N - \sum n_i) + \beta \frac{\partial}{\partial n_i} (E - \sum n_i \varepsilon_i) = 0$, we get:</p>
+  $$ n_i = g_i e^{-\alpha - \beta \varepsilon_i} $$
+  <p>(This does not consider particle indistinguishability).</p>
+
+  <p>When $\Delta \varepsilon \ll kT$, we can use continuous integration:</p>
+  $$ n(\varepsilon) = g(\varepsilon) f(\varepsilon) $$
+  <p>(This does not consider energy quantization, but considers the uncertainty principle).</p>
+  <p>In a $2\gamma$-dimensional phase space, $\varepsilon = \varepsilon(q_1, q_2 \dots q_\gamma, p_1, p_2 \dots p_\gamma)$:</p>
+  $$ \Omega(\varepsilon) = \int \dots \int_{(\varepsilon' \le \varepsilon)} dq_1 \dots dq_\gamma dp_1 \dots dp_\gamma $$
+  $$ g(\varepsilon)d\varepsilon = \frac{d\Omega(\varepsilon)}{h^\gamma} $$
+
+  <div class="example box">
+    <div class="box-title">Example 1: Classical Particle</div>
+    <p>Energy relation: $\varepsilon = \frac{p^2}{2m}$</p>
+    <ul>
+      <li><strong>3D:</strong> $d\Omega(\varepsilon) = V \cdot 4\pi p^2 dp = 2\pi V (2m)^{3/2} \sqrt{\varepsilon} d\varepsilon \implies g(\varepsilon) d\varepsilon = \frac{2\pi V (2m)^{3/2}}{h^3} \sqrt{\varepsilon} d\varepsilon$</li>
+      <li><strong>2D:</strong> $d\Omega(\varepsilon) = A \cdot 2\pi p dp = 2\pi A m d\varepsilon \implies g(\varepsilon) d\varepsilon = \frac{2\pi A m}{h^2} d\varepsilon$</li>
+      <li><strong>1D:</strong> $d\Omega(\varepsilon) = L \cdot 2 dp = L \cdot \sqrt{2m} \cdot \frac{1}{\sqrt{\varepsilon}} d\varepsilon \implies g(\varepsilon) d\varepsilon = \frac{L \sqrt{2m}}{h} \frac{1}{\sqrt{\varepsilon}} d\varepsilon$</li>
+    </ul>
   </div>
+
+  <div class="example box">
+    <div class="box-title">Example 2: Ultra-relativistic Particle</div>
+    <p>Energy relation: $\varepsilon = cp$</p>
+    <ul>
+      <li><strong>3D:</strong> $d\Omega(\varepsilon) = V \cdot 4\pi p^2 dp = \frac{4\pi V}{c^3} \varepsilon^2 d\varepsilon \implies g(\varepsilon) d\varepsilon = \frac{4\pi V}{(hc)^3} \varepsilon^2 d\varepsilon$</li>
+      <li><strong>2D:</strong> $d\Omega(\varepsilon) = A \cdot 2\pi p dp = \frac{2\pi A}{c^2} \varepsilon d\varepsilon \implies g(\varepsilon) d\varepsilon = \frac{2\pi A}{(hc)^2} \varepsilon d\varepsilon$</li>
+      <li><strong>1D:</strong> $d\Omega(\varepsilon) = L \cdot 2 dp = \frac{2L}{c} d\varepsilon \implies g(\varepsilon) d\varepsilon = \frac{2L}{hc} d\varepsilon$</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <h3>III. Macroscopic Quantities in Boltzmann Systems</h3>
+
+  <p><strong>Partition function (Characteristic function):</strong></p>
+  $$ z(\beta, V) = \sum e^{-\beta \varepsilon_i} g_i $$
+  <p>Under classical limit conditions:</p>
+  $$ z(\beta, V) = \int_0^\infty e^{-\beta \varepsilon} g(\varepsilon) d\varepsilon $$
+
+  <p>Using the partition function, we can derive the macroscopic state functions:</p>
+  <ul>
+    <li>Number of particles: $N = \sum g_i e^{-\alpha - \beta \varepsilon_i} = e^{-\alpha} z \implies \alpha = \ln \frac{z}{N}$</li>
+    <li>Internal energy: $E = \sum \varepsilon_i g_i e^{-\alpha - \beta \varepsilon_i} = -N \frac{\partial \ln z}{\partial \beta}$</li>
+  </ul>
+
+  <p>Differential relations:</p>
+  $$ dE = \sum n_i d\varepsilon_i + \sum \varepsilon_i dn_i = dW + dQ $$
+  $$ dW = \sum_k Y_k dy_k = \sum_k n_i \frac{\partial \varepsilon_i}{\partial y_k} dy_k = \frac{N}{z} \left(\sum_i n_i \frac{\partial \varepsilon_i}{\partial y_k}\right) dy_k $$
+  $$ Y_k = \sum n_i \frac{\partial \varepsilon_i}{\partial y_k} = -\frac{N}{\beta} \frac{\partial \ln z}{\partial y_k} \quad \text{e.g., } P = \frac{N}{\beta} \frac{\partial \ln z}{\partial V} $$
+  $$ dQ = dE - \sum Y_k dy_k = \frac{N}{\beta} d\left(\ln z - \beta \frac{\partial \ln z}{\partial \beta}\right) = T dS $$
+  $$ S = Nk\left(\ln z - \beta \frac{\partial \ln z}{\partial \beta}\right) + S' \quad \text{where } \beta = \frac{1}{kT} $$
+
+  <p><strong>In semi-classical distribution,</strong> $z = z(\beta, V)$:</p>
+  $$ \ln W_S \approx N(1 - \ln N) + N\left(\ln z - \beta \frac{\partial \ln z}{\partial \beta}\right) $$
+  $$ S = k \ln W_S\{n_i\} = Nk\left(\ln \frac{ez}{N} - \beta \frac{\partial \ln z}{\partial \beta}\right) $$
+  $$ S' = Nk(1 - \ln N) $$
+  $$ F = E - TS = -NkT \ln \frac{ez}{N} $$
+  $$ \mu = \left(\frac{\partial F}{\partial N}\right)_{T,V} = -kT \ln \frac{z}{N} = -kT\alpha \implies \alpha = -\frac{\mu}{kT} $$
+
+  <p><strong>In Boltzmann distribution,</strong> $z = z(\beta, V)$:</p>
+  $$ \ln W_{Bol} \approx N\left(\ln z - \beta \frac{\partial \ln z}{\partial \beta}\right) $$
+  $$ S = k \ln W_{Bol}\{n_i\} = Nk\left(\ln z - \beta \frac{\partial \ln z}{\partial \beta}\right) $$
+  $$ S' = 0 $$
+
+  <p><strong>1. Ideal gas of monoatomic molecules: semi-classical distribution, classical limit</strong></p>
+  <ul>
+    <li><strong>3D:</strong>
+      $$ z = \int_0^\infty e^{-\beta \varepsilon} \frac{2\pi V (2m)^{3/2}}{h^3} \sqrt{\varepsilon} d\varepsilon = V \left(\frac{2\pi m}{\beta h^2}\right)^{3/2} $$
+      $$ E = -N \frac{\partial}{\partial \beta} \ln z = \frac{3}{2} NkT $$
+      $$ C_V = \left(\frac{\partial E}{\partial T}\right)_V = \frac{3}{2} Nk $$
+      $$ P = \frac{N}{\beta} \frac{\partial \ln z}{\partial V} = \frac{NkT}{V} = \frac{2E}{3V} $$
+    </li>
+    <li><strong>2D:</strong>
+      $$ z = \int_0^\infty e^{-\beta \varepsilon} \frac{2\pi A m}{h^2} d\varepsilon = \frac{2\pi A m}{\beta h^2} $$
+      $$ E = NkT, \quad C_V = Nk, \quad P = \frac{NkT}{A} = \frac{E}{A} $$
+    </li>
+    <li><strong>1D:</strong>
+      $$ z = \int_0^\infty e^{-\beta \varepsilon} \frac{L \sqrt{2m}}{h} \frac{1}{\sqrt{\varepsilon}} d\varepsilon = \frac{L \sqrt{2\pi m}}{\sqrt{\beta} h} $$
+      $$ E = \frac{1}{2} NkT, \quad C_V = \frac{1}{2} Nk, \quad P = \frac{NkT}{L} = \frac{2E}{L} $$
+    </li>
+  </ul>
+
+  <p><strong>2. Ideal gas of monoatomic molecules: semi-classical distribution, ultra-relativistic limit</strong></p>
+  <ul>
+    <li><strong>3D:</strong>
+      $$ z = \int_0^\infty e^{-\beta \varepsilon} \frac{4\pi V}{(hc)^3} \varepsilon^2 d\varepsilon = \frac{8\pi V}{(\beta hc)^3} $$
+      $$ E = 3NkT, \quad C_V = 3Nk, \quad P = \frac{NkT}{V} = \frac{E}{3V} $$
+    </li>
+    <li><strong>2D:</strong>
+      $$ z = \int_0^\infty e^{-\beta \varepsilon} \frac{2\pi A}{(hc)^2} \varepsilon d\varepsilon = \frac{2\pi A}{(\beta hc)^2} $$
+      $$ E = 2NkT, \quad C_V = 2Nk, \quad P = \frac{E}{2A} $$
+    </li>
+    <li><strong>1D:</strong>
+      $$ z = \int_0^\infty e^{-\beta \varepsilon} \frac{2L}{hc} d\varepsilon = \frac{2L}{\beta hc} $$
+      $$ E = NkT, \quad C_V = Nk, \quad P = \frac{E}{L} $$
+    </li>
+  </ul>
+
+  <p><strong>3. Ideal gas of diatomic molecules: semi-classical distribution, classical limit</strong></p>
+  <p><strong>① Translation:</strong> Same as monoatomic molecules.</p>
+  <p><strong>② Vibration:</strong></p>
+  <ul>
+    <li><strong>1D:</strong>
+      $$ z^\nu = \sum_{n=0}^\infty e^{-\beta(n+\frac{1}{2})h\nu} \cdot 1 = \frac{e^{-\frac{1}{2}\beta h\nu}}{1 - e^{-\beta h\nu}} $$
+      $$ E^\nu = -N \frac{\partial}{\partial \beta} \ln z^\nu = N\left[\frac{1}{2}h\nu + \frac{h\nu}{e^{\beta h\nu} - 1}\right] $$
+      $$ C_V^\nu = \left(\frac{\partial E^\nu}{\partial T}\right)_V = Nk \frac{x^2 e^x}{(e^x - 1)^2}, \quad x = \frac{\Theta^\nu}{T}, \quad \Theta^\nu = \frac{h\nu}{k} = \frac{\Delta\varepsilon^\nu}{k} $$
+      $$ \begin{cases} T \ll \Theta^\nu \text{ (room temp)}: C_V^\nu \approx Nk \left(\frac{\Theta^\nu}{T}\right)^2 e^{-\frac{\Theta^\nu}{T}} \\ T \gg \Theta^\nu: C_V^\nu \approx Nk \end{cases} \quad P = 0 $$
+    </li>
+    <li><strong>2D:</strong>
+      $$ z^\nu = \sum_{n=0}^\infty e^{-\beta(n+1)h\nu} \cdot (n+1) = \frac{e^{\beta h\nu}}{(e^{\beta h\nu}-1)^2} $$
+      $$ E^\nu = -N \frac{\partial}{\partial \beta} \ln z^\nu = N\left[\frac{2h\nu}{1 - e^{-\beta h\nu}} - h\nu\right] $$
+      $$ C_V^\nu = \left(\frac{\partial E^\nu}{\partial T}\right)_V = 2Nk \left(\frac{\Theta^\nu}{T}\right)^2 \frac{e^{\frac{\Theta^\nu}{T}}}{(1 - e^{-\frac{\Theta^\nu}{T}})^2} $$
+      $$ \begin{cases} T \ll \Theta^\nu: C_V^\nu \approx 2Nk \left(\frac{\Theta^\nu}{T}\right)^2 e^{-\frac{\Theta^\nu}{T}} \\ T \gg \Theta^\nu: C_V^\nu \approx 2Nk \end{cases} \quad P = 0 $$
+    </li>
+  </ul>
+  
+  <p><strong>③ Rotation:</strong></p>
+  $$ z^r = \sum_{l=0}^\infty (2l+1) e^{-\beta \frac{h^2}{8\pi^2 I} l(l+1)}, \quad \Theta^r = \frac{h^2}{8\pi^2 I k} = \frac{\Delta\varepsilon^r}{k} $$
+  <p>When $T \ll \Theta^r$:</p>
+  $$ C_V^r \approx 12Nk \left(\frac{\Theta^r}{T}\right)^2 e^{-\frac{2\Theta^r}{T}} $$
+  <p>When $T \gg \Theta^r$ (room temperature):</p>
+  $$ z^r \approx \int_0^\infty (2l+1) e^{-\frac{\Theta^r}{T} l(l+1)} dl = \frac{T}{\Theta^r} $$
+  $$ E^r = -N \frac{\partial}{\partial \beta} \ln z^r = NkT $$
+  $$ C_V^r = Nk, \quad P = 0 $$
+
+  <p><strong>4. Paramagnetism of solids: Boltzmann distribution, spin</strong></p>
+  $$ z = e^{\beta \mu B} + e^{-\beta \mu B}, \quad g_\uparrow = g_\downarrow = 1 $$
+  $$ N_\uparrow = N \frac{e^{\beta\mu B}}{e^{\beta\mu B} + e^{-\beta\mu B}}, \quad N_\downarrow = N \frac{e^{-\beta\mu B}}{e^{\beta\mu B} + e^{-\beta\mu B}} $$
+  <p>Magnetic moment:</p>
+  $$ M = \mu(N_\uparrow - N_\downarrow) = N\mu \frac{e^{\beta\mu B} - e^{-\beta\mu B}}{z} = N\mu \tanh(\beta\mu B) $$
+  $$ \begin{cases} \frac{\mu B}{kT} \ll 1: M \approx \frac{N\mu^2}{kT} B = \frac{N\mu^2 \mu_0}{kT} H \\ \frac{\mu B}{kT} \gg 1: M \approx N\mu \end{cases} $$
+  $$ E = -N \frac{\partial \ln z}{\partial \beta} = -N\mu B \tanh(\beta\mu B) = -MB $$
+  $$ S = Nk\left(\ln z - \beta \frac{\partial \ln z}{\partial \beta}\right) \implies \begin{cases} \frac{\mu B}{kT} \ll 1: S \approx Nk\ln 2 \\ \frac{\mu B}{kT} \gg 1: S \approx 0 \end{cases} $$
+
+  <hr>
+
+  <h3>IV. Macroscopic Quantities in Bose Systems and Fermi Systems</h3>
+
+  <p><strong>Grand partition function (Characteristic function):</strong></p>
+  $$ \Phi(\alpha, \beta, y) = \pm \sum g_i \ln(1 \pm e^{-\alpha-\beta\varepsilon_i}) $$
+  <p>Under classical limit condition:</p>
+  $$ \Phi(\alpha, \beta, y) = \pm \int_0^\infty g(\varepsilon) \ln(1 \pm e^{-\alpha-\beta\varepsilon}) d\varepsilon $$
+  <p>(where $+$ is for Fermi, $-$ is for Bose).</p>
+
+  <ul>
+    <li>Particle number: $N = \sum \frac{g_i}{e^{\alpha+\beta\varepsilon_i} \pm 1} = -\frac{\partial \Phi}{\partial \alpha}$</li>
+    <li>Internal energy: $E = \sum \frac{\varepsilon_i g_i}{e^{\alpha+\beta\varepsilon_i} \pm 1} = -\frac{\partial \Phi}{\partial \beta}$</li>
+  </ul>
+  
+  <p>Similar to the Boltzmann derivations, we can get:</p>
+  $$ Y_k = -\frac{1}{\beta} \frac{\partial \Phi}{\partial y_k}, \quad \text{e.g. } P = \frac{1}{\beta} \frac{\partial \Phi}{\partial V} $$
+  $$ S = k \ln W_{S}\{n_i\} = k\left(\Phi - \alpha \frac{\partial \Phi}{\partial \alpha} - \beta \frac{\partial \Phi}{\partial \beta}\right), \quad S' = 0, \quad \beta = \frac{1}{kT} $$
+  <p>From the full differential equation of the open system $dE = TdS + \sum Y_k dy_k + \mu dN$ and the full differential formula of $\Phi$, we can get $\alpha = -\frac{\mu}{kT}$.</p>
+
+  <p><strong>1. Strongly Degenerate Bose Gas: Bose Distribution, Classical Limit</strong></p>
+  <p>We know $n_i = \frac{g_i}{e^{\frac{\varepsilon_i-\mu}{kT}} - 1} \ge 0$. Take $\varepsilon_0 = 0$, then $\mu < 0$.</p>
+  <p>Since $N = \sum n_i = \text{constant}$, we know that as $T \downarrow \implies \mu \uparrow$. When $T = T_c$, $\mu = 0$.</p>
+  
+  <ul>
+    <li><strong>3D:</strong>
+      $$ \Phi = -\sum g_i \ln(1 - e^{-\alpha - \beta\varepsilon_i}) \approx -g_0 \ln(1 - e^{-\alpha}) - CV \int_0^\infty \sqrt{\varepsilon} \ln(1 - e^{-\alpha-\beta\varepsilon}) d\varepsilon $$
+      $$ N = -\frac{\partial \Phi}{\partial \alpha} = CV \int_0^\infty \frac{\sqrt{\varepsilon} d\varepsilon}{e^{\alpha+\beta\varepsilon} - 1} $$
+      <p>When $T \le T_c$, $\alpha = \mu = 0$, this leads to <strong>Bose-Einstein Condensation (BEC)</strong>.</p>
+      $$ N = CV(kT_c)^{\frac{3}{2}} \frac{\sqrt{\pi}}{2} \zeta\left(\frac{3}{2}\right), \quad T_c = \frac{h^2}{2\pi mk} \left(\frac{N}{2.612 V g}\right)^{2/3} $$
+      $$ N_{\varepsilon \neq 0}(T) = N \left(\frac{T}{T_c}\right)^{3/2} $$
+      $$ N_{\varepsilon=0}(T) = N \left[1 - \left(\frac{T}{T_c}\right)^{3/2}\right] $$
+      $$ E = -\frac{\partial \Phi}{\partial \beta} = 0.770 NkT \left(\frac{T}{T_c}\right)^{3/2} \quad \text{(using numerical integration)} $$
+      $$ C_V = \left(\frac{\partial E}{\partial T}\right)_V = 1.925 Nk \left(\frac{T}{T_c}\right)^{3/2} $$
+      $$ P = \frac{1}{\beta} \frac{\partial \Phi}{\partial V} = 0.514 \frac{NkT}{V} \left(\frac{T}{T_c}\right)^{3/2} = \frac{2E}{3V} $$
+    </li>
+    <li><strong>2D / 1D:</strong>
+      <p>The integral form of $N$ does not converge, meaning there is <strong>no BEC</strong>.</p>
+    </li>
+  </ul>
+
+  <p><strong>2. Strongly Degenerate Photon Gas: Bose Distribution, Ultra-relativistic Limit</strong></p>
+  <p>Photon rest mass is 0. Under any condition, a photon gas is a strongly degenerate Bose gas. Spin degeneracy $g=2$. Particle number is not conserved, so $\alpha=0$.</p>
+  <ul>
+    <li><strong>3D:</strong>
+      $$ g(\varepsilon) d\varepsilon = \frac{8\pi V}{(hc)^3} \varepsilon^2 d\varepsilon $$
+      $$ E(\nu, T) d\nu = h\nu n(\nu) d\nu = \frac{8\pi V}{c^3} \frac{h\nu^3}{e^{\beta h\nu} - 1} d\nu $$
+      $$ \begin{cases} \frac{h\nu}{kT} \ll 1: E(\nu, T) d\nu \approx \frac{8\pi V}{c^3} kT \nu^2 d\nu \\ \frac{h\nu}{kT} \gg 1: E(\nu, T) d\nu \approx \frac{8\pi V}{c^3} h\nu^3 e^{-\beta h\nu} d\nu \end{cases} $$
+      $$ E(\lambda, T) d\lambda = \frac{hc}{\lambda} n(\lambda) d\lambda = \frac{8\pi hc V}{\lambda^5} \frac{d\lambda}{e^{\beta hc / \lambda} - 1} $$
+      <p>From $\frac{\partial E(\lambda, T)}{\partial \lambda} = 0$ we get Wien's Displacement Law: $\lambda_m T = \frac{hc}{4.965 k}$.</p>
+      $$ \Phi(\beta, V) \sim T^4 \quad N \sim T^3 \quad E \sim T^4 \quad J = \frac{1}{4} c \frac{E}{V} \text{ (Stefan-Boltzmann law)} $$
+      $$ C_V \sim T^3 \quad P = \frac{E}{3V} $$
+    </li>
+    <li><strong>2D:</strong>
+      $$ g(\varepsilon) d\varepsilon = \frac{4\pi A}{(hc)^2} \varepsilon d\varepsilon $$
+      $$ E(\nu, T) d\nu = \frac{4\pi A}{c^2} \frac{h\nu^2}{e^{\beta h\nu} - 1} d\nu $$
+      $$ \Phi(\beta, V) \sim T^3 \quad N \sim T^2 \quad E \sim T^3 \quad J = \frac{1}{\pi} c \frac{E}{A} $$
+      $$ C_V \sim T^2 \quad P = \frac{E}{2A} $$
+    </li>
+    <li><strong>1D:</strong>
+      $$ g(\varepsilon) d\varepsilon = \frac{4L}{hc} d\varepsilon $$
+      $$ E(\nu, T) d\nu = \frac{4L}{c} \frac{h\nu}{e^{\beta h\nu} - 1} d\nu $$
+      $$ \Phi(\beta, V) \sim T^2 \quad N \sim T \quad E \sim T^2 \quad C_V \sim T \quad P = \frac{E}{L} $$
+    </li>
+  </ul>
+
+  <p><strong>3. Strongly Degenerate Phonon Gas: Bose Distribution, Ultra-relativistic Limit</strong></p>
+  <p>The phonon quantum number can take any integer under simplification, so the phonon gas is a strongly degenerate Bose gas. $g_l=1, g_t=2$. Vibrational state is not conserved, so $\alpha=0$.</p>
+  
+  <p><strong>① Einstein Model:</strong> $\nu = \nu_E$</p>
+  $$ \Phi(\beta, V) = -\int_0^\infty \ln(1 - e^{-\beta h\nu}) g(\varepsilon) d\varepsilon = -3N \ln(1 - e^{-\beta h\nu_E}) $$
+  $$ E_{\text{vib}} = -\frac{\partial \Phi}{\partial \beta} = 3N \frac{h\nu_E}{e^{\beta h\nu_E} - 1} \quad E_{\text{total}} = E_p + E_{\text{vib}} $$
+  $$ C_V = 3Nk \frac{x^2 e^x}{(e^x - 1)^2}, \quad x = \frac{\Theta_E}{T}, \quad \Theta_E = \frac{h\nu_E}{k} = \frac{\Delta\varepsilon}{k} $$
+  $$ \begin{cases} T \ll \Theta_E: C_V \approx 3Nk \left(\frac{\Theta_E}{T}\right)^2 e^{-\frac{\Theta_E}{T}} \\ T \gg \Theta_E: C_V \approx 3Nk \end{cases} $$
+
+  <p><strong>② Debye Model:</strong> $\nu \le \nu_D$</p>
+  <ul>
+    <li><strong>3D:</strong>
+      $$ g(\varepsilon) d\varepsilon = \frac{d\Omega_l + d\Omega_t}{h^3} = \frac{4\pi V}{h^3} \left(\frac{1}{v_l^3} + \frac{2}{v_t^3}\right) \varepsilon^2 d\varepsilon $$
+      <p>From $\int_0^{\nu_D} g(\nu) d\nu = \int_0^{\nu_D} B\nu^2 d\nu = 3N$ we get $\nu_D = \left[\frac{9N}{4\pi V(\frac{1}{v_l^3} + \frac{2}{v_t^3})}\right]^{1/3}$ and $B = \frac{9N}{\nu_D^3}$.</p>
+      $$ E = \int_0^{h\nu_D} \frac{\varepsilon g(\varepsilon)}{e^{\beta\varepsilon} - 1} d\varepsilon = \frac{9N}{(h\nu_D)^3} \int_0^{h\nu_D} \frac{\varepsilon^3}{e^{\beta\varepsilon} - 1} d\varepsilon $$
+      <p>Let $\Theta^D = \frac{h\nu_D}{k}$:</p>
+      $$ \begin{cases} T \ll \Theta^D: C_V \sim T^3 \\ T \gg \Theta^D: C_V \approx 3Nk \end{cases} \quad P = \frac{E}{3V} $$
+    </li>
+    <li><strong>2D:</strong>
+      $$ g(\varepsilon) d\varepsilon = \frac{d\Omega_l + d\Omega_t}{h^2} = \frac{2\pi A}{h^2} \left(\frac{1}{v_l^2} + \frac{1}{v_t^2}\right) \varepsilon d\varepsilon $$
+      <p>From $\int_0^{\nu_D} g(\nu) d\nu = 3N$ we get $\nu_D = \left[\frac{3N}{\pi A(\frac{1}{v_l^2} + \frac{1}{v_t^2})}\right]^{1/2}$ and $B = \frac{6N}{\nu_D^2}$.</p>
+      $$ E = \frac{6N}{(h\nu_D)^2} \int_0^{h\nu_D} \frac{\varepsilon^2}{e^{\beta\varepsilon} - 1} d\varepsilon $$
+      $$ \begin{cases} T \ll \Theta^D: C_V \sim T^2 \\ T \gg \Theta^D: C_V \approx 3Nk \end{cases} \quad P = \frac{E}{2A} $$
+    </li>
+    <li><strong>1D:</strong>
+      $$ g(\varepsilon) d\varepsilon = \frac{d\Omega_l + d\Omega_t}{h} = \frac{2L}{h} \left(\frac{1}{v_l} + \frac{1}{v_t}\right) d\varepsilon $$
+      <p>From $\int_0^{\nu_D} g(\nu) d\nu = 3N$ we get $\nu_D = \frac{3N}{2L(\frac{1}{v_l} + \frac{1}{v_t})}$ and $B = \frac{3N}{\nu_D}$.</p>
+      $$ E = \frac{3N}{h\nu_D} \int_0^{h\nu_D} \frac{\varepsilon}{e^{\beta\varepsilon} - 1} d\varepsilon $$
+      $$ \begin{cases} T \ll \Theta^D: C_V \sim T \\ T \gg \Theta^D: C_V \approx 3Nk \end{cases} \quad P = \frac{E}{L} $$
+    </li>
+  </ul>
+
+  <p><strong>Note: Sommerfeld Expansion</strong></p>
+  <p>Calculate the integral of $f(\varepsilon) \varphi(\varepsilon)$ under $0 < T \ll T_F$:</p>
+  $$ I = \int_0^\infty \varphi(\varepsilon) f(\varepsilon) d\varepsilon = \int_0^\mu \varphi(\varepsilon) d\varepsilon + \frac{\pi^2}{6} (kT)^2 \varphi'(\mu) + \dots $$
+  <p>Proof: using integration by parts $I = -[g(\varepsilon) f(\varepsilon)]_0^\infty - \int_0^\infty g(\varepsilon) \frac{df}{d\varepsilon} d\varepsilon$. Since $f$ is non-zero only near $\varepsilon = \mu$, expand $g(\varepsilon)$ near $\mu$ and substitute. Let $x = \frac{\varepsilon - \mu}{kT}$. Since $T \ll \frac{\mu}{k}$, the lower bound approaches $-\infty$, and since $\frac{\partial f}{\partial x}$ is an even function, we integrate over the whole axis to get the expansion formula.</p>
+
+  <p><strong>4. Strongly Degenerate Fermi Gas: Fermi Distribution, Classical Limit</strong></p>
+  <p><strong>① At $T = 0K$:</strong></p>
+  $$ \frac{n_i}{g_i} = \frac{1}{e^{\frac{\varepsilon_i-\mu}{kT}} + 1} = \begin{cases} 1 & \varepsilon \le \mu_0 \\ 0 & \varepsilon > \mu_0 \end{cases}, \quad S_0 = 0 $$
+  <ul>
+    <li><strong>3D:</strong>
+      $$ N_0 = \frac{2}{3} \cdot \frac{2\pi V \cdot 2(2m)^{3/2}}{h^3} \cdot \mu_0^{3/2} \implies \mu_0 = \frac{h^2}{2m} \left(\frac{3N_0}{8\pi V}\right)^{2/3} $$
+      $$ E_0 = \int_0^{\mu_0} \varepsilon g(\varepsilon) d\varepsilon = \frac{3}{5} N_0 \mu_0 $$
+      $$ P_0 = -\frac{\partial E_0}{\partial V} = \frac{2E_0}{3V} $$
+    </li>
+    <li><strong>2D:</strong>
+      $$ N_0 = \frac{2\pi A \cdot 2 m}{h^2} \mu_0 \implies \mu_0 = \frac{h^2}{2m} \frac{N_0}{2\pi A} $$
+      $$ E_0 = \int_0^{\mu_0} \varepsilon g(\varepsilon) d\varepsilon = \frac{1}{2} N_0 \mu_0, \quad P_0 = -\frac{\partial E_0}{\partial A} = \frac{E_0}{A} $$
+    </li>
+    <li><strong>1D:</strong>
+      $$ N_0 = 2 \cdot \frac{L \sqrt{2m}}{h} \cdot \mu_0^{1/2} \implies \mu_0 = \frac{h^2}{2m} \left(\frac{N_0}{2L}\right)^2 $$
+      $$ E_0 = \int_0^{\mu_0} \varepsilon g(\varepsilon) d\varepsilon = \frac{1}{3} N_0 \mu_0, \quad P_0 = -\frac{\partial E_0}{\partial L} = \frac{2E_0}{L} $$
+    </li>
+  </ul>
+
+  <p><strong>② When $0 < T \ll \frac{\mu_0}{k} = T_F$:</strong></p>
+  <ul>
+    <li><strong>3D:</strong>
+      $$ \Phi(\alpha, \beta, V) = CV \int_0^\infty \ln(1 + e^{-\alpha-\beta\varepsilon}) \varepsilon^{1/2} d\varepsilon $$
+      $$ N = -\frac{\partial \Phi}{\partial \alpha} = \frac{2}{3} CV \mu^{3/2} \left[1 + \frac{\pi^2}{8} \left(\frac{kT}{\mu}\right)^2 + \dots\right] $$
+      <p>Solving for chemical potential:</p>
+      $$ \mu = \mu_0 \left[1 - \frac{1}{12} \left(\frac{\pi kT}{\mu_0}\right)^2 - \dots\right] $$
+      $$ E = E_0 \left[1 + \frac{5}{12} \left(\frac{\pi kT}{\mu_0}\right)^2 - \dots\right] $$
+      $$ C_V \approx Nk \frac{\pi^2}{2} \cdot \frac{kT}{\mu_0} $$
+      $$ S = k\left(\Phi - \beta \frac{\partial \Phi}{\partial \beta} - \alpha \frac{\partial \Phi}{\partial \alpha}\right) = \frac{1}{2\mu_0} N \pi^2 k^2 T \dots $$
+    </li>
+  </ul>
+
+  <p><strong>5. Strongly Degenerate Fermi Gas: Fermi Distribution, Ultra-relativistic Limit</strong></p>
+  <p>At $T = 0K, S_0 = 0$:</p>
+  <ul>
+    <li><strong>3D:</strong>
+      $$ N_0 = \frac{8\pi V}{(hc)^3} \cdot \frac{1}{3} \mu_0^3 \implies \mu_0 = \frac{hc}{2} \left(\frac{3N_0}{\pi V}\right)^{1/3} $$
+      $$ E_0 = \frac{3}{4} N_0 \mu_0, \quad P_0 = \frac{E_0}{3V} $$
+    </li>
+    <li><strong>2D:</strong>
+      $$ N_0 = \frac{4\pi A}{(hc)^2} \cdot \frac{1}{2} \mu_0^2 \implies \mu_0 = \frac{hc}{2\pi} \left(\frac{N_0}{A}\right)^{1/2} $$
+      $$ E_0 = \frac{2}{3} N_0 \mu_0, \quad P_0 = \frac{E_0}{2A} $$
+    </li>
+    <li><strong>1D:</strong>
+      $$ N_0 = \frac{4L}{hc} \cdot \mu_0 \implies \mu_0 = \frac{hc}{4} \frac{N_0}{L} $$
+      $$ E_0 = \frac{1}{2} N_0 \mu_0, \quad P_0 = \frac{E_0}{L} $$
+    </li>
+  </ul>
+  
+  <p>Energy scaling and pressure relations (from Schrödinger equation):</p>
+  <p>$$ E \sim p^L $$</p>
+  <p>For a 3D infinite potential well, solving the Schrödinger equation $\mathcal{H}\Psi = E\Psi$ gives boundary conditions containing $V^{-1/3}$. In general, for an $n$-dimensional infinite potential well:</p>
+  $$ \varepsilon_i \sim V^{-L/n}, \quad P = -\sum n_i \frac{\partial \varepsilon_i}{\partial V} $$
+  $$ P = \frac{LE}{nV}, \quad \frac{C_P}{C_V} = \frac{n+L}{n} $$
+  <p>(Assuming $H = E + PV$ holds).</p>
+
 </main>
 </body>
 </html>

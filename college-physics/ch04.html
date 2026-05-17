@@ -3,8 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapter 4: Optics I | College Physics</title>
+  <title>Chapter 4: Optics I & Modern Physics | College Physics</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -19,7 +32,7 @@
       <li><a href="ch01.html">Chapter 1: Thermodynamics</a></li>
       <li><a href="ch02.html">Chapter 2: Quantum Mechanics</a></li>
       <li><a href="ch03.html">Chapter 3: Electromagnetics</a></li>
-      <li><a href="ch04.html" class="active">Chapter 4: Optics I</a></li>
+      <li><a href="ch04.html" class="active">Chapter 4: Optics I & Modern Physics</a></li>
       <li><a href="ch05.html">Chapter 5: Optics II</a></li>
     </ul>
   </nav>
@@ -28,24 +41,207 @@
 <main id="content">
   <div class="chapter-header">
     <h1>Chapter 4</h1>
-    <h2 class="chapter-title">Optics I</h2>
+    <h2 class="chapter-title">Optics I & Modern Physics</h2>
   </div>
-  <div class="pages-container">
-    <img src="images/ch04_page_001.png" class="page-img" alt="Page 1">
-    <img src="images/ch04_page_002.png" class="page-img" alt="Page 2">
-    <img src="images/ch04_page_003.png" class="page-img" alt="Page 3">
-    <img src="images/ch04_page_004.png" class="page-img" alt="Page 4">
-    <img src="images/ch04_page_005.png" class="page-img" alt="Page 5">
-    <img src="images/ch04_page_006.png" class="page-img" alt="Page 6">
-    <img src="images/ch04_page_007.png" class="page-img" alt="Page 7">
-    <img src="images/ch04_page_008.png" class="page-img" alt="Page 8">
-    <img src="images/ch04_page_009.png" class="page-img" alt="Page 9">
-    <img src="images/ch04_page_010.png" class="page-img" alt="Page 10">
-    <img src="images/ch04_page_011.png" class="page-img" alt="Page 11">
-    <img src="images/ch04_page_012.png" class="page-img" alt="Page 12">
-    <img src="images/ch04_page_013.png" class="page-img" alt="Page 13">
-    <img src="images/ch04_page_014.png" class="page-img" alt="Page 14">
+
+  <h3>I. Synthesis of Simple Harmonic Motions on the Same Line</h3>
+  <p><strong>1. Two simple harmonic motions of the same frequency</strong></p>
+  <img src="images/topic_shm_addition_2.png" alt="Two SHM synthesis" class="diagram-inline" style="max-width: 15%; float: right; margin: 10px;">
+  <p>Given $x_1 = A_1 \cos(\omega t + \varphi_1)$ and $x_2 = A_2 \cos(\omega t + \varphi_2)$, the superposition is $x = x_1 + x_2 = A \cos(\omega t + \varphi)$, where:</p>
+  $$ \begin{cases} A = \sqrt{A_1^2 + A_2^2 + 2 A_1 A_2 \cos(\varphi_2 - \varphi_1)} \\ \tan\varphi = \frac{A_1 \sin\varphi_1 + A_2 \sin\varphi_2}{A_1 \cos\varphi_1 + A_2 \cos\varphi_2} \end{cases} $$
+
+  <p style="clear: both;"><strong>2. $n$ simple harmonic motions of the same frequency</strong></p>
+  <img src="images/topic_shm_addition_n.png" alt="n SHM synthesis" class="diagram-inline" style="max-width: 20%; float: right; margin: 10px;">
+  <p>Assume same amplitude and constant phase difference $\delta$:</p>
+  $$ \begin{aligned} x_1 &= a \cos\omega t \\ x_2 &= a \cos(\omega t + \delta) \\ &\dots \\ x_n &= a \cos[\omega t + (n-1)\delta] \end{aligned} $$
+  <p>From the phasor diagram, the arc corresponds to the synthesized amplitude. Let $R$ be the radius of the circumscribed circle:</p>
+  $$ A = 2R \sin\frac{n\delta}{2}, \quad a = 2R \sin\frac{\delta}{2} \implies A = a \frac{\sin(n\delta/2)}{\sin(\delta/2)} $$
+  <p>Also, the geometry gives $\angle COM = \frac{1}{2}(\pi - n\delta)$ and $\angle COP = \frac{1}{2}(\pi - \delta)$. The phase angle is:</p>
+  $$ \varphi = \angle COP - \angle COM = \frac{n-1}{2}\delta $$
+  $$ \therefore x = a \frac{\sin(n\delta/2)}{\sin(\delta/2)} \cos\left(\omega t + \frac{n-1}{2}\delta\right) $$
+
+  <hr style="clear: both;">
+
+  <h3>II. Synthesis of Mutually Perpendicular Simple Harmonic Motions (Same Frequency)</h3>
+  <p>Given $x = A_1 \cos(\omega t + \varphi_1)$ and $y = A_2 \cos(\omega t + \varphi_2)$. Eliminating $t$ yields the trajectory equation:</p>
+  $$ \frac{x^2}{A_1^2} + \frac{y^2}{A_2^2} - \frac{2xy}{A_1 A_2} \cos(\varphi_2 - \varphi_1) = \sin^2(\varphi_2 - \varphi_1) $$
+  <ol>
+    <li>When $\varphi_2 - \varphi_1 = 0$ or $\pi$, we get $\frac{x}{A_1} \pm \frac{y}{A_2} = 0$, which is a straight line.</li>
+    <li>When $\varphi_2 - \varphi_1 = \pm \frac{\pi}{2}$, we get $\frac{x^2}{A_1^2} + \frac{y^2}{A_2^2} = 1$, which is a standard ellipse.</li>
+    <li>When $\varphi_2 - \varphi_1$ takes other values, the trajectory is a slanted ellipse.</li>
+  </ol>
+
+  <hr>
+
+  <h3>III. Interference of Light</h3>
+  <p><strong>1. Conditions for Interference</strong></p>
+  <p>Superposition of waves requires the same vibration direction, same frequency, and constant phase difference. The optical disturbance is described by the electric field vector $\vec{E}(P, t) = \vec{E}_0(P) \cos[\omega t - \varphi(P)]$. In an isotropic medium, it can be represented by a complex scalar $u(P, t) = A(P) e^{-i[\omega t - \varphi(P)]} = u(P) e^{-i\omega t}$.</p>
+  <p>The light intensity is $I(P) = [A(P)]^2 = |u(P)|^2$. In a linear medium, $u(P) = u_1(P) + u_2(P)$:</p>
+  $$ I(P) = I_1(P) + I_2(P) + 2\sqrt{I_1(P) I_2(P)} \cos[\varphi_1(P) - \varphi_2(P)] $$
+  <p>If the two amplitudes are equal ($I_1 = I_2 = A^2$), then $I(P) = 4A^2 \cos^2 \frac{\varphi_1 - \varphi_2}{2}$. Fringe visibility is defined as $\gamma = \frac{I_{max} - I_{min}}{I_{max} + I_{min}}$.</p>
+
+  <p><strong>2. Temporal Coherence</strong></p>
+  <p>Reflects the influence of non-monochromaticity on interference fringes. The wave train length (coherence length) is $\delta_{max} = \frac{\lambda^2}{\Delta\lambda}$, where $\Delta\lambda$ is the spectral line width. The coherence time is $\tau = \frac{\delta_{max}}{c}$.</p>
+
+  <p><strong>3. Spatial Coherence</strong></p>
+  <p>Reflects the influence of the light source size on fringes. The fringe spacing is $d_0 = \frac{D}{d} \lambda$. Let $b$ be the light source width, and $R$ be the distance from the primary source to the screen. The coherence aperture is $\theta_0 = \frac{d_0}{R} = \frac{\lambda}{b}$, which is the angle subtended by the fringe spacing at the center of the source. For measuring instruments, the angle subtended by the source at the secondary source point is $\varphi = \frac{b}{R} = \frac{\lambda}{d_0}$.</p>
+
+  <p><strong>4. Obtaining Coherent Light</strong></p>
+  <p>Atomic spontaneous emission consists of discontinuous wave trains, making emissions from different atoms independent. Thus, ordinary light sources produce non-coherent superposition ($\overline{\cos\Delta\varphi} = 0$). To achieve interference, divide the light from the same point on the source into two parts, ensuring they are emitted by the same atom in the same emission event.</p>
+
+  <p><strong>5. Wavefront Splitting Method</strong></p>
+  <ul>
+    <li><strong>Young's double slit:</strong> Path difference $\delta \approx d \sin\theta$.
+      <br>Constructive: $d \sin\theta = k\lambda$. Destructive: $d \sin\theta = (2k-1)\frac{\lambda}{2}$.
+      <br>Fringe spacing $\Delta x = \frac{D}{d}\lambda$, angular separation $\Delta\theta = \frac{\lambda}{d \cos\theta}$.
+    </li>
+    <li><strong>Fresnel biprism</strong></li>
+    <li><strong>Lloyd's mirror:</strong> The central fringe is dark due to a half-wave loss (reflection from optically thinner to denser medium).</li>
+  </ul>
+
+  <p><strong>6. Amplitude Splitting Method</strong></p>
+  <ul>
+    <li><strong>Wedge-shaped equal thickness fringes:</strong> Path difference $\delta = 2nh + \frac{\lambda}{2}$.
+      <br>Constructive: $\delta = k\lambda$. Destructive: $\delta = (2k+1)\frac{\lambda}{2}$.
+      <br>Fringe spacing $\Delta x = \frac{\lambda}{2n\theta}$, thickness difference between fringes $\Delta h = \frac{\lambda}{2n}$.
+    </li>
+    <li><strong>Newton's rings:</strong> Equal thickness fringes with $\delta = 2h + \frac{\lambda}{2}$. Using $r^2 \approx 2Rh$:
+      <br>Constructive radius: $r = \sqrt{\frac{(2k-1)R\lambda}{2}}$. Destructive radius: $r = \sqrt{kR\lambda}$.
+      <br>Difference of squared radii: $\Delta r^2 = R\lambda$.
+    </li>
+    <li><strong>Thin film equal inclination fringes:</strong> Path difference $\delta = 2h\sqrt{n^2 - \sin^2 i} + \frac{\lambda}{2} = 2nh \cos r + \frac{\lambda}{2}$.
+      <br>Fringes of transmitted and reflected light are complementary.
+    </li>
+    <li><strong>Anti-reflective coating:</strong> Reflected light destructive $2n_c h = (2k-1)\frac{\lambda}{2} \implies h_{min} = \frac{\lambda}{4n_c}$.
+      <br><strong>Highly reflective coating:</strong> Reflected light constructive $2n_c h = k\lambda \implies h_{min} = \frac{\lambda}{2n_c}$ (requires $n_0 < n_c < n$).
+    </li>
+    <li><strong>Michelson interferometer:</strong> 
+      <br>Equal inclination: Mirrors $M_1, M_2'$ strictly perpendicular (parallel air film).
+      <br>Equal thickness: Mirrors $M_1, M_2'$ slightly tilted (air wedge).
+    </li>
+  </ul>
+
+  <hr>
+
+  <h3>IV. Diffraction of Light</h3>
+  <p><strong>1. Huygens-Fresnel Principle</strong></p>
+  <p>Interference is the superposition of discrete beams, whereas diffraction is the continuous superposition of infinite secondary waves from a wavefront.</p>
+
+  <p><strong>2. Far-field (Fraunhofer) Diffraction</strong></p>
+  <ul>
+    <li><strong>Single Slit:</strong> Divide the wavefront into $N$ equal zones. Using the synthesis of $N$ simple harmonic motions:
+      $$ I_\theta = I_0 \left(\frac{\sin\beta}{\beta}\right)^2, \quad \text{where } \beta = \frac{\pi a \sin\theta}{\lambda} $$
+      Using the half-period zone method, dark fringes occur at $a \sin\theta = k\lambda$, and the central bright fringe width is $\Delta x = \frac{2f\lambda}{a}$.
+    </li>
+    <li><strong>Circular Aperture:</strong> The first minimum occurs at $\sin\theta = 1.22 \frac{\lambda}{D}$. The Rayleigh criterion for resolving power is $\delta\theta = 1.22 \frac{\lambda}{D}$. Large diameter objective lenses (telescopes) or short wavelength light (electron microscopes) increase resolving power.</li>
+    <li><strong>Grating (N slits):</strong> The intensity distribution is:
+      $$ I_\theta = I_0 \left(\frac{\sin\beta}{\beta}\right)^2 \left(\frac{\sin N\gamma}{\sin\gamma}\right)^2, \quad \gamma = \frac{\pi d \sin\theta}{\lambda} $$
+      <ul>
+        <li>Principal maxima: $d \sin\theta = k\lambda$. Intensity is $N^2 I_0$.</li>
+        <li>Dark fringes: $Nd \sin\theta = k'\lambda$ (where $k'$ is not a multiple of $N$). Between two principal maxima, there are $N-1$ dark fringes and $N-2$ secondary maxima.</li>
+        <li>Missing orders: Occur when $k = \pm \frac{d}{a} k''$.</li>
+      </ul>
+      For a grating spectrum, the angular dispersion is $\delta\theta = \frac{k\delta\lambda}{d\cos\theta}$, and resolving power $R = \frac{\lambda}{\delta\lambda} = kN$.
+    </li>
+    <li><strong>3D Grating (X-ray diffraction):</strong> Bragg's law $\delta = 2d \sin\varphi$. Used in Laue method (continuous spectrum on single crystal) and Debye-Scherrer method (monochromatic X-ray on polycrystalline powder).</li>
+  </ul>
+
+  <hr>
+
+  <h3>V. Polarization of Light</h3>
+  <p><strong>1. Polarization States</strong></p>
+  <ul>
+    <li><strong>Natural light:</strong> Isotropic transverse vibrations. Intensity after a polarizer is $\frac{1}{2} I_0$.</li>
+    <li><strong>Linearly polarized light:</strong> Follows Malus's law $I_\theta = I_0 \cos^2\theta$. Obtained via dichroism, crystal prisms, reflection at Brewster angle, or a pile of plates.</li>
+    <li><strong>Circularly/Elliptically polarized light:</strong> $\frac{x^2}{A_x^2} + \frac{y^2}{A_y^2} - \frac{2xy}{A_x A_y} \cos\varphi = \sin^2\varphi$.</li>
+  </ul>
+
+  <p><strong>2. Polarization during Reflection and Refraction</strong></p>
+  <p>At the Brewster angle ($i_0 + r = 90^\circ \implies \tan i_0 = n_2/n_1$), reflected light is completely linearly polarized perpendicular to the plane of incidence.</p>
+
+  <div style="display: flex; gap: 20px; align-items: flex-start; margin-top: 10px;">
+    <div style="flex: 1;">
+      <p><strong>3. Birefringence Phenomenon</strong></p>
+      <ul>
+        <li><strong>Positive crystal:</strong> $n_e > n_o$. The o-wave surface is a sphere enclosing the e-wave ellipsoid.</li>
+        <li><strong>Negative crystal:</strong> $n_e < n_o$. The e-wave surface is an ellipsoid enclosing the o-wave sphere.</li>
+      </ul>
+    </div>
+    <div style="flex: 1; display: flex; gap: 10px; justify-content: center;">
+      <img src="images/topic_positive_crystal.png" alt="Positive crystal" class="diagram-inline" style="width: 45%;">
+      <img src="images/topic_negative_crystal.png" alt="Negative crystal" class="diagram-inline" style="width: 45%;">
+    </div>
   </div>
+
+  <p><strong>4. Passing through a Waveplate</strong></p>
+  <div style="display: flex; gap: 20px; align-items: flex-start; margin-top: 10px;">
+    <div style="flex: 1;">
+      <p>A waveplate introduces a phase difference $\Delta\varphi = \frac{2\pi}{\lambda}(n_o - n_e)d$ between the o-ray and e-ray.</p>
+      <ul>
+        <li>If linearly polarized light is incident, it generally becomes elliptically polarized light upon exiting.</li>
+        <li>If elliptically polarized light is incident, it can be projected onto the optical axis and remains elliptically polarized after passing through.</li>
+        <li>Natural light remains natural light.</li>
+      </ul>
+    </div>
+    <div style="flex: 1; display: flex; gap: 10px; justify-content: center;">
+      <img src="images/topic_polarization_1.png" alt="Polarization transformation 1" class="diagram-inline" style="width: 45%;">
+      <img src="images/topic_polarization_2.png" alt="Polarization transformation 2" class="diagram-inline" style="width: 45%;">
+    </div>
+  </div>
+
+  <p><strong>5. Testing Polarized Light</strong></p>
+  <p>First, observe transmission through a rotating polarizer. If intensity is constant, it's natural or circularly polarized; if it varies but doesn't extinguish, it's partially or elliptically polarized; if it extinguishes, it's linearly polarized. To distinguish further, insert a quarter-waveplate before the polarizer.</p>
+
+  <p><strong>6. Rotatory Polarization</strong></p>
+  <p>Optically active substances rotate the plane of polarization. The rotation angle is $\theta = \frac{\pi}{\lambda} (n_L - n_R) l$. Specific rotation $\alpha = \theta/l$.</p>
+
+  <hr>
+
+  <h3>VI. Particle Nature of Radiation</h3>
+  <p><strong>1. Blackbody Radiation</strong></p>
+  <p>Thermal radiation energy density $u(T) = \int u(\nu, T) d\nu$. Spectral radiant emittance is $r_0(\nu, T) = \frac{1}{4} c u(\nu, T)$.</p>
+  <p>Planck's law models the density of photon states in a 3D box, yielding the number of states per unit volume per unit frequency as $n_0(\nu) = \frac{8\pi\nu^2}{c^3}$. Using Boltzmann statistics for photon energies $\varepsilon = nh\nu$, the average energy is $\bar{\varepsilon} = \frac{h\nu}{e^{h\nu/kT} - 1}$.</p>
+  <p>The energy spectral density is $u(\nu, T) = n_0(\nu) \bar{\varepsilon} = \frac{8\pi\nu^2}{c^3} \frac{h\nu}{e^{h\nu/kT} - 1}$. Total emittance is $R_0(T) = \sigma T^4$ (Stefan-Boltzmann), and the peak wavelength is $\lambda_m = b/T$ (Wien's displacement).</p>
+
+  <p><strong>2. Photoelectric & Compton Effects</strong></p>
+  <ul>
+    <li><strong>Photoelectric effect:</strong> Energy conservation $h\nu = A + \frac{1}{2}mv^2$. Stopping potential $e U_0 = \frac{1}{2}mv_{max}^2$.</li>
+    <li><strong>Compton effect:</strong> Photon-electron energy and momentum conservation. Wavelength shift $\Delta\lambda = \frac{h}{m_0 c}(1 - \cos\varphi)$.</li>
+  </ul>
+
+  <hr>
+
+  <h3>VII. Fundamentals of Quantum Mechanics</h3>
+  <p><strong>1. Wavefunction & Born Statistical Interpretation</strong></p>
+  <p>Probability density: $|\Psi(\vec{r}, t)|^2$. Normalization: $\int |\Psi|^2 dV = 1$. The wavefunction must be single-valued, finite, and continuous. Follows the superposition principle.</p>
+
+  <p><strong>2. Mechanical Quantities and Operators</strong></p>
+  <p>Physical observables correspond to Hermitian operators satisfying $\hat{F}\Psi = \lambda\Psi$.</p>
+  <ul>
+    <li><strong>Coordinate:</strong> $\hat{\vec{r}} = \vec{r}$.</li>
+    <li><strong>Momentum:</strong> $\hat{\vec{p}} = -i\hbar\nabla$.</li>
+    <li><strong>Orbital angular momentum:</strong> $\hat{\vec{L}} = \hat{\vec{r}} \times \hat{\vec{p}}$. Eigenvalues of $\hat{L}^2$ are $l(l+1)\hbar^2$, and for $\hat{L}_z$ are $m_l\hbar$.</li>
+    <li><strong>Hamiltonian (Energy):</strong> $\hat{H} = \frac{\hat{p}^2}{2m} + U(\vec{r}) = -\frac{\hbar^2}{2m}\nabla^2 + U(\vec{r})$.</li>
+  </ul>
+
+  <p><strong>3. Eigenfunction Properties</strong></p>
+  <p>Eigenfunctions are orthogonal and form a complete set. The average value is $\bar{F} = \int \Psi^* \hat{F} \Psi dx$. Non-commuting operators share an uncertainty relation, e.g., $\Delta x \cdot \Delta p_x \ge \frac{\hbar}{2}$, while commuting operators (like $\hat{L}^2$ and $\hat{L}_z$) can have zero uncertainty product.</p>
+
+  <p><strong>4. Schrödinger Equation</strong></p>
+  <p>$i\hbar \frac{\partial}{\partial t}\Psi(\vec{r}, t) = \hat{H} \Psi(\vec{r}, t)$. For stationary states, $\Psi(\vec{r}, t) = \phi(\vec{r}) e^{-i\frac{E}{\hbar}t}$.</p>
+
+  <hr>
+
+  <h3>VIII. Atomic Models</h3>
+  <p><strong>1. Hydrogen Atom</strong></p>
+  <p>Solving the Schrödinger equation in a Coulomb field yields energy levels $E_n = -\frac{m_e e^4}{2(4\pi\varepsilon_0)^2 \hbar^2} \frac{1}{n^2}$. The wavefunction involves radial $R_{nl}(r)$ and spherical harmonics $Y_{lm}(\theta, \varphi)$.</p>
+
+  <p><strong>2. Electron Spin and Spin-Orbit Coupling</strong></p>
+  <p>Total angular momentum $\vec{J} = \vec{L} + \vec{S}$. Spin magnetic moment $\mu_{sz} = \pm \mu_B$. In an external magnetic field, $E_S = \mp \mu_B B$. The Stern-Gerlach experiment separates silver atoms based on the force $F_m = \pm \mu_B \frac{\partial B}{\partial z}$, proving space quantization of spin.</p>
+
+  <p><strong>3. Alkali Metal Energy Levels</strong></p>
+  <p>Due to orbit penetration and atomic core polarization, the energy levels are modified by a quantum defect $\Delta_{nl}$: $E_{nl} = \frac{-13.6 \text{eV}}{(n - \Delta_{nl})^2}$. Including spin, the fine structure levels are determined by quantum numbers $n, l, j, m_j$. Under a magnetic field, $E = E_{nlj} + m_j \mu_B B$.</p>
+
 </main>
 </body>
 </html>
