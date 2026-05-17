@@ -20,11 +20,11 @@ title: Notes – Angli Liu
     <ul class="notes-list">
       <li><a href="/notes/physics_highschool_1.pdf" target="_blank">physics_highschool_1</a> (<a href="/olympiad-physics/index.html" target="_blank">Olympiad Physics</a>)</li>
       <li><a href="/notes/physics_highschool_2.pdf" target="_blank">physics_highschool_2</a> (<a href="/olympiad-physics/index.html" target="_blank">Olympiad Physics</a>)</li>
-      <li><a href="/notes/thermodynamics.pdf" target="_blank">thermodynamics</a></li>
-      <li><a href="/notes/quantum mechanics.pdf" target="_blank">quantum mechanics</a></li>
-      <li><a href="/notes/optics_1.pdf" target="_blank">optics_1</a></li>
-      <li><a href="/notes/optics_2.pdf" target="_blank">optics_2</a></li>
-      <li><a href="/notes/electromagnetics.pdf" target="_blank">electromagnetics</a></li>
+      <li><a href="/notes/thermodynamics.pdf" target="_blank">thermodynamics</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
+      <li><a href="/notes/quantum mechanics.pdf" target="_blank">quantum mechanics</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
+      <li><a href="/notes/optics_1.pdf" target="_blank">optics_1</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
+      <li><a href="/notes/optics_2.pdf" target="_blank">optics_2</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
+      <li><a href="/notes/electromagnetics.pdf" target="_blank">electromagnetics</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
       <li><a href="/notes/antennae.pdf" target="_blank">antennae</a></li>
       <li><a href="/notes/multivariable calculus.pdf" target="_blank">multivariable calculus</a></li>
       <li><a href="/notes/mathematical physics.pdf" target="_blank">mathematical physics</a></li>
