@@ -9,9 +9,9 @@ title: Notes – Angli Liu
       <li><a href="https://tech-stuff-angli.quora.com/" target="_blank">Tech Stuff Blog</a></li>
       <li><a href="https://anglil.quora.com/" target="_blank">Personal Blog</a></li>
       <li><a href="https://scholar.google.com/citations?user=lNOZAc4AAAAJ&amp;hl=en" target="_blank">Google Scholar</a></li>
+      <li><a href="https://github.com/anglil" target="_blank">GitHub</a></li>
       <li><a href="https://www.amazon.com/stores/Angli-Liu/author/B0H1K6579T" target="_blank">Amazon Author</a></li>
       <li><a href="/notes/">Notes</a></li>
-      <li><a href="https://github.com/anglil" target="_blank">GitHub</a></li>
     </ul>
   </div>
 
