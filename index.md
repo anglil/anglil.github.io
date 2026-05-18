@@ -26,9 +26,7 @@ title: Angli Liu
 
     <p>Mind and hand</p>
 
-    <p>
-      <a href="mailto:anglil@cs.washington.edu">anglil@cs.washington.edu</a>
-    </p>
+
 
     <p>San Mateo, California</p>
 
