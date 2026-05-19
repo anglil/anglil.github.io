@@ -41,10 +41,10 @@ title: Notes – Angli Liu
       <li><a href="/notes/algorithms 3.pdf" target="_blank">algorithms 3</a></li>
       <li><a href="/notes/machine learning.pdf" target="_blank">machine learning</a></li>
       <li><a href="/notes/reinforcement learning.pdf" target="_blank">reinforcement learning</a></li>
-      <li><a href="/notes/circuits principles, experiments, and semiconductors.pdf" target="_blank">circuits principles, experiments, and semiconductors</a></li>
-      <li><a href="/notes/communication circuits.pdf" target="_blank">communication circuits</a></li>
-      <li><a href="/notes/antennae.pdf" target="_blank">antennae</a></li>
-      <li><a href="/notes/digital electronics.pdf" target="_blank">digital electronics</a></li>
+      <li><a href="/notes/circuits principles, experiments, and semiconductors.pdf" target="_blank">circuits principles, experiments, and semiconductors</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
+      <li><a href="/notes/communication circuits.pdf" target="_blank">communication circuits</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
+      <li><a href="/notes/antennae.pdf" target="_blank">antennae</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
+      <li><a href="/notes/digital electronics.pdf" target="_blank">digital electronics</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
       <li><a href="/notes/c.pdf" target="_blank">c</a></li>
       <li><a href="/notes/c++.pdf" target="_blank">c++</a></li>
       <li><a href="/notes/computer architecture.pdf" target="_blank">computer architecture</a></li>

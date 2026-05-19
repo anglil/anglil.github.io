@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 2: Communication Circuits | College Electrical Engineering</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">College Electrical Eng<span>Angli Liu</span></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Table of Contents</a></li>
+      <li><div class="part-label">Contents</div></li>
+      <li><a href="ch01.html">Chapter 1: Circuits & Semiconductors</a></li>
+      <li><a href="ch02.html" class="active">Chapter 2: Communication Circuits</a></li>
+      <li><a href="ch03.html">Chapter 3: Antennae</a></li>
+      <li><a href="ch04.html">Chapter 4: Digital Electronics</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+  <div class="chapter-header">
+    <h1>Chapter 2</h1>
+    <h2 class="chapter-title">Communication Circuits</h2>
+  </div>
+
+  <h3>I. Resonant Circuits and Impedance Matching</h3>
+
+<p><strong>1. Series and Parallel Resonance</strong></p>
+<p>In a series RLC circuit, resonance occurs when the inductive and capacitive reactances cancel out: $\omega_0 L = \frac{1}{\omega_0 C} \implies \omega_0 = \frac{1}{\sqrt{LC}}$. At resonance, the impedance is purely resistive ($Z = R$) and the current is maximized.</p>
+<p>The quality factor $Q$ is defined as $Q = \frac{\omega_0 L}{R} = \frac{1}{\omega_0 CR}$. The bandwidth is $BW = \frac{\omega_0}{Q}$.</p>
+<p><strong>2. Impedance Matching Networks</strong></p>
+<p>Maximum power transfer occurs when the load impedance is the complex conjugate of the source impedance: $Z_L = Z_S^*$. L-sections (LC circuits), Pi-networks, and T-networks are used to transform impedances at radio frequencies without resistive losses.</p>
+
+  <div class="pages-container">
+    <img src="images/ch02_page_001.png" class="page-img" alt="Page 1">
+    <img src="images/ch02_page_002.png" class="page-img" alt="Page 2">
+    <img src="images/ch02_page_003.png" class="page-img" alt="Page 3">
+    <img src="images/ch02_page_004.png" class="page-img" alt="Page 4">
+    <img src="images/ch02_page_005.png" class="page-img" alt="Page 5">
+    <img src="images/ch02_page_006.png" class="page-img" alt="Page 6">
+    <img src="images/ch02_page_007.png" class="page-img" alt="Page 7">
+    <img src="images/ch02_page_008.png" class="page-img" alt="Page 8">
+    <img src="images/ch02_page_009.png" class="page-img" alt="Page 9">
+    <img src="images/ch02_page_010.png" class="page-img" alt="Page 10">
+  </div>
+
+  <h3>II. High-Frequency and RF Amplifiers</h3>
+
+<p><strong>1. Small-Signal High-Frequency Transistor Models</strong></p>
+<p>At high frequencies, the parasitic capacitances of BJTs ($C_\pi, C_\mu$) and MOSFETs ($C_{gs}, C_{gd}, C_{ds}$) can no longer be ignored. The unity-gain transition frequency is $f_T = \frac{g_m}{2\pi (C_\pi + C_\mu)}$.</p>
+<p><strong>2. The Miller Effect</strong></p>
+<p>A capacitance connected between the input and output (like $C_\mu$ or $C_{gd}$) is amplified by the inverting voltage gain of the amplifier, appearing at the input as $C_{in} = C_F (1 - A_v)$. This significantly reduces the high-frequency bandwidth.</p>
+<p><strong>3. Tuned Amplifiers</strong></p>
+<p>RF amplifiers use tuned LC circuits as loads to provide high gain at a specific center frequency and reject out-of-band signals.</p>
+
+  <div class="pages-container">
+    <img src="images/ch02_page_011.png" class="page-img" alt="Page 11">
+    <img src="images/ch02_page_012.png" class="page-img" alt="Page 12">
+    <img src="images/ch02_page_013.png" class="page-img" alt="Page 13">
+    <img src="images/ch02_page_014.png" class="page-img" alt="Page 14">
+    <img src="images/ch02_page_015.png" class="page-img" alt="Page 15">
+    <img src="images/ch02_page_016.png" class="page-img" alt="Page 16">
+    <img src="images/ch02_page_017.png" class="page-img" alt="Page 17">
+    <img src="images/ch02_page_018.png" class="page-img" alt="Page 18">
+    <img src="images/ch02_page_019.png" class="page-img" alt="Page 19">
+    <img src="images/ch02_page_020.png" class="page-img" alt="Page 20">
+  </div>
+
+  <h3>III. Oscillators</h3>
+
+<p><strong>1. Barkhausen Criterion</strong></p>
+<p>For a feedback loop with forward gain $A(s)$ and feedback factor $\beta(s)$, sustained oscillation occurs if:</p>
+$$ |A(j\omega_0) \beta(j\omega_0)| = 1 \quad \text{and} \quad \angle(A\beta) = 2\pi n $$
+<p><strong>2. LC and Crystal Oscillators</strong></p>
+<p>Colpitts and Hartley oscillators use LC tanks to set the oscillation frequency. Quartz crystal oscillators utilize the piezoelectric effect to achieve extremely high $Q$ factors and frequency stability.</p>
+
+  <div class="pages-container">
+    <img src="images/ch02_page_021.png" class="page-img" alt="Page 21">
+    <img src="images/ch02_page_022.png" class="page-img" alt="Page 22">
+    <img src="images/ch02_page_023.png" class="page-img" alt="Page 23">
+    <img src="images/ch02_page_024.png" class="page-img" alt="Page 24">
+    <img src="images/ch02_page_025.png" class="page-img" alt="Page 25">
+    <img src="images/ch02_page_026.png" class="page-img" alt="Page 26">
+    <img src="images/ch02_page_027.png" class="page-img" alt="Page 27">
+    <img src="images/ch02_page_028.png" class="page-img" alt="Page 28">
+    <img src="images/ch02_page_029.png" class="page-img" alt="Page 29">
+    <img src="images/ch02_page_030.png" class="page-img" alt="Page 30">
+  </div>
+
+  <h3>IV. Amplitude Modulation (AM)</h3>
+
+<p><strong>1. AM Fundamentals</strong></p>
+<p>In amplitude modulation, the amplitude of a high-frequency carrier wave $A_c \cos(\omega_c t)$ is varied in proportion to the message signal $m(t)$:</p>
+$$ s(t) = A_c [1 + k_a m(t)] \cos(\omega_c t) $$
+<p>The modulation index is $\mu = k_a \max|m(t)|$. The spectrum contains the carrier and two sidebands.</p>
+<p><strong>2. Double Sideband Suppressed Carrier (DSB-SC)</strong></p>
+<p>DSB-SC simply multiplies the message and carrier: $s(t) = m(t) \cos(\omega_c t)$. It saves power but requires coherent (synchronous) demodulation.</p>
+<p><strong>3. AM Demodulation</strong></p>
+<p>Standard AM can be easily demodulated using an envelope detector (a diode followed by an RC low-pass filter). DSB-SC is demodulated using a local oscillator and a low-pass filter.</p>
+
+  <div class="pages-container">
+    <img src="images/ch02_page_031.png" class="page-img" alt="Page 31">
+    <img src="images/ch02_page_032.png" class="page-img" alt="Page 32">
+    <img src="images/ch02_page_033.png" class="page-img" alt="Page 33">
+    <img src="images/ch02_page_034.png" class="page-img" alt="Page 34">
+    <img src="images/ch02_page_035.png" class="page-img" alt="Page 35">
+    <img src="images/ch02_page_036.png" class="page-img" alt="Page 36">
+    <img src="images/ch02_page_037.png" class="page-img" alt="Page 37">
+    <img src="images/ch02_page_038.png" class="page-img" alt="Page 38">
+    <img src="images/ch02_page_039.png" class="page-img" alt="Page 39">
+    <img src="images/ch02_page_040.png" class="page-img" alt="Page 40">
+    <img src="images/ch02_page_041.png" class="page-img" alt="Page 41">
+    <img src="images/ch02_page_042.png" class="page-img" alt="Page 42">
+  </div>
+
+  <h3>V. Frequency and Phase Modulation (FM/PM)</h3>
+
+<p><strong>1. Angle Modulation Concepts</strong></p>
+<p>In angle modulation, the phase $\theta(t)$ of the carrier is varied. For Phase Modulation (PM), $\theta(t) = \omega_c t + k_p m(t)$. For Frequency Modulation (FM), the instantaneous frequency $\omega_i(t) = \omega_c + k_f m(t)$, meaning $\theta(t) = \omega_c t + k_f \int m(\tau) d\tau$.</p>
+<p><strong>2. FM Bandwidth and Carson's Rule</strong></p>
+<p>Unlike AM, FM has an infinite number of sidebands (Bessel functions). However, 98% of the power is contained within a bandwidth approximated by Carson's Rule:</p>
+$$ B_T \approx 2 (\Delta f + f_m) $$
+<p>where $\Delta f$ is the peak frequency deviation and $f_m$ is the maximum frequency of the message.</p>
+<p><strong>3. Phase-Locked Loops (PLL)</strong></p>
+<p>A PLL consists of a Phase Detector, a Loop Filter, and a Voltage-Controlled Oscillator (VCO). It tracks the phase of an incoming signal, acting as an excellent FM demodulator and frequency synthesizer.</p>
+
+  <div class="pages-container">
+    <img src="images/ch02_page_043.png" class="page-img" alt="Page 43">
+    <img src="images/ch02_page_044.png" class="page-img" alt="Page 44">
+    <img src="images/ch02_page_045.png" class="page-img" alt="Page 45">
+    <img src="images/ch02_page_046.png" class="page-img" alt="Page 46">
+    <img src="images/ch02_page_047.png" class="page-img" alt="Page 47">
+    <img src="images/ch02_page_048.png" class="page-img" alt="Page 48">
+    <img src="images/ch02_page_049.png" class="page-img" alt="Page 49">
+    <img src="images/ch02_page_050.png" class="page-img" alt="Page 50">
+    <img src="images/ch02_page_051.png" class="page-img" alt="Page 51">
+    <img src="images/ch02_page_052.png" class="page-img" alt="Page 52">
+    <img src="images/ch02_page_053.png" class="page-img" alt="Page 53">
+    <img src="images/ch02_page_054.png" class="page-img" alt="Page 54">
+    <img src="images/ch02_page_055.png" class="page-img" alt="Page 55">
+  </div>
+
+</main>
+</body>
+</html>

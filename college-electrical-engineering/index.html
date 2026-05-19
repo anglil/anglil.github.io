@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Electrical Engineering</title>
+  <meta name="description" content="College Electrical Engineering notes including Circuits, Communication Circuits, Antennae, and Digital Electronics. By Angli Liu.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">College Electrical Engineering<span>Angli Liu</span></div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Table of Contents</a></li>
+      <li><div class="part-label">Contents</div></li>
+      <li><a href="ch01.html">Chapter 1: Circuits & Semiconductors</a></li>
+      <li><a href="ch02.html">Chapter 2: Communication Circuits</a></li>
+      <li><a href="ch03.html">Chapter 3: Antennae</a></li>
+      <li><a href="ch04.html">Chapter 4: Digital Electronics</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+
+  <div class="landing-header">
+    <h1>College Electrical Engineering</h1>
+    <p class="subtitle">Complete Lecture Notes</p>
+    <p class="author">Angli Liu</p>
+  </div>
+
+  <p>
+    This online textbook is a unified collection of my College Electrical Engineering notes. 
+    It preserves the original derivations, diagrams, and explanations exactly as they were recorded.
+  </p>
+
+  <div class="toc-section">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="ch01.html">Circuits Principles, Experiments, and Semiconductors</a></li>
+      <li><a href="ch02.html">Communication Circuits</a></li>
+      <li><a href="ch03.html">Antennae</a></li>
+      <li><a href="ch04.html">Digital Electronics</a></li>
+    </ol>
+  </div>
+
+  <div class="footer-links">
+    <a href="/notes/">← Back to Notes</a>
+  </div>
+</main>
+
+<script>
+  // Optional: close menu when clicking outside on mobile
+  document.addEventListener('click', function(e) {
+    const sidebar = document.getElementById('sidebar');
+    const toggle = document.getElementById('menu-toggle');
+    if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+      sidebar.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>

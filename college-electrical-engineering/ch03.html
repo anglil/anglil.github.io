@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 3: Antennae | College Electrical Engineering</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">College Electrical Eng<span>Angli Liu</span></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Table of Contents</a></li>
+      <li><div class="part-label">Contents</div></li>
+      <li><a href="ch01.html">Chapter 1: Circuits & Semiconductors</a></li>
+      <li><a href="ch02.html">Chapter 2: Communication Circuits</a></li>
+      <li><a href="ch03.html" class="active">Chapter 3: Antennae</a></li>
+      <li><a href="ch04.html">Chapter 4: Digital Electronics</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+  <div class="chapter-header">
+    <h1>Chapter 3</h1>
+    <h2 class="chapter-title">Antennae</h2>
+  </div>
+
+  <h3>I. Maxwell's Equations and Wave Propagation</h3>
+
+<p><strong>1. Maxwell's Equations</strong></p>
+<p>Antenna theory is fundamentally grounded in Maxwell's equations. In differential form (time-harmonic fields $e^{j\omega t}$):</p>
+$$ \nabla \times \mathbf{E} = -j\omega \mu \mathbf{H} $$
+$$ \nabla \times \mathbf{H} = \mathbf{J} + j\omega \varepsilon \mathbf{E} $$
+$$ \nabla \cdot \mathbf{D} = \rho_v $$
+$$ \nabla \cdot \mathbf{B} = 0 $$
+<p><strong>2. The Wave Equation and Retarded Potentials</strong></p>
+<p>To find the fields radiated by a current distribution $\mathbf{J}$, we introduce the magnetic vector potential $\mathbf{A}$ and the electric scalar potential $V$. The retarded vector potential is:</p>
+$$ \mathbf{A}(\mathbf{r}) = \frac{\mu}{4\pi} \int_V \mathbf{J}(\mathbf{r}') \frac{e^{-jk|\mathbf{r}-\mathbf{r}'|}}{|\mathbf{r}-\mathbf{r}'|} dv' $$
+<p>where $k = \omega\sqrt{\mu\varepsilon}$ is the wavenumber.</p>
+
+  <div class="pages-container">
+    <img src="images/ch03_page_001.png" class="page-img" alt="Page 1">
+    <img src="images/ch03_page_002.png" class="page-img" alt="Page 2">
+    <img src="images/ch03_page_003.png" class="page-img" alt="Page 3">
+    <img src="images/ch03_page_004.png" class="page-img" alt="Page 4">
+    <img src="images/ch03_page_005.png" class="page-img" alt="Page 5">
+    <img src="images/ch03_page_006.png" class="page-img" alt="Page 6">
+    <img src="images/ch03_page_007.png" class="page-img" alt="Page 7">
+    <img src="images/ch03_page_008.png" class="page-img" alt="Page 8">
+    <img src="images/ch03_page_009.png" class="page-img" alt="Page 9">
+    <img src="images/ch03_page_010.png" class="page-img" alt="Page 10">
+    <img src="images/ch03_page_011.png" class="page-img" alt="Page 11">
+    <img src="images/ch03_page_012.png" class="page-img" alt="Page 12">
+  </div>
+
+  <h3>II. Fundamental Parameters of Antennas</h3>
+
+<p><strong>1. Radiation Pattern and Solid Angle</strong></p>
+<p>The radiation pattern describes the spatial distribution of radiated power as a function of spherical coordinates $(\theta, \phi)$. The beam solid angle $\Omega_A$ is the integral of the normalized power pattern.</p>
+<p><strong>2. Directivity, Gain, and Efficiency</strong></p>
+<p>Directivity $D$ is the ratio of the radiation intensity in a given direction to the radiation intensity averaged over all directions: $D = \frac{4\pi U(\theta, \phi)}{P_{rad}}$.</p>
+<p>Gain $G$ includes the radiation efficiency $e_{rad}$ of the antenna: $G = e_{rad} D$.</p>
+<p><strong>3. Input Impedance and Effective Area</strong></p>
+<p>The input impedance is $Z_{in} = R_r + R_L + jX_A$, where $R_r$ is the radiation resistance. The effective aperture $A_e$ is related to directivity by: $A_e = \frac{\lambda^2}{4\pi} D$.</p>
+
+  <div class="pages-container">
+    <img src="images/ch03_page_013.png" class="page-img" alt="Page 13">
+    <img src="images/ch03_page_014.png" class="page-img" alt="Page 14">
+    <img src="images/ch03_page_015.png" class="page-img" alt="Page 15">
+    <img src="images/ch03_page_016.png" class="page-img" alt="Page 16">
+    <img src="images/ch03_page_017.png" class="page-img" alt="Page 17">
+    <img src="images/ch03_page_018.png" class="page-img" alt="Page 18">
+    <img src="images/ch03_page_019.png" class="page-img" alt="Page 19">
+    <img src="images/ch03_page_020.png" class="page-img" alt="Page 20">
+    <img src="images/ch03_page_021.png" class="page-img" alt="Page 21">
+    <img src="images/ch03_page_022.png" class="page-img" alt="Page 22">
+    <img src="images/ch03_page_023.png" class="page-img" alt="Page 23">
+    <img src="images/ch03_page_024.png" class="page-img" alt="Page 24">
+  </div>
+
+  <h3>III. Wire Antennas and Arrays</h3>
+
+<p><strong>1. The Hertzian Dipole and Linear Wire Antennas</strong></p>
+<p>The infinitesimal (Hertzian) dipole has a radiation resistance of $R_r = 80\pi^2 \left(\frac{l}{\lambda}\right)^2$. A half-wave dipole ($l = \lambda/2$) has a much higher radiation resistance ($R_r \approx 73 \Omega$) and a directivity of 2.15 dBi.</p>
+<p><strong>2. Antenna Arrays</strong></p>
+<p>To increase directivity, multiple antenna elements are arranged in an array. The total far-field pattern is the product of the element pattern and the Array Factor (AF):</p>
+$$ \text{Total Pattern} = \text{Element Pattern} \times AF(\theta, \phi) $$
+<p>For a uniform linear array of $N$ elements with spacing $d$ and phase shift $\beta$, $AF = \frac{\sin(N\psi/2)}{\sin(\psi/2)}$, where $\psi = kd\cos\theta + \beta$.</p>
+
+  <div class="pages-container">
+    <img src="images/ch03_page_025.png" class="page-img" alt="Page 25">
+    <img src="images/ch03_page_026.png" class="page-img" alt="Page 26">
+    <img src="images/ch03_page_027.png" class="page-img" alt="Page 27">
+    <img src="images/ch03_page_028.png" class="page-img" alt="Page 28">
+    <img src="images/ch03_page_029.png" class="page-img" alt="Page 29">
+    <img src="images/ch03_page_030.png" class="page-img" alt="Page 30">
+    <img src="images/ch03_page_031.png" class="page-img" alt="Page 31">
+    <img src="images/ch03_page_032.png" class="page-img" alt="Page 32">
+    <img src="images/ch03_page_033.png" class="page-img" alt="Page 33">
+    <img src="images/ch03_page_034.png" class="page-img" alt="Page 34">
+    <img src="images/ch03_page_035.png" class="page-img" alt="Page 35">
+    <img src="images/ch03_page_036.png" class="page-img" alt="Page 36">
+  </div>
+
+  <h3>IV. Aperture and Microstrip Antennas</h3>
+
+<p><strong>1. Aperture Antennas</strong></p>
+<p>Horns, waveguides, and parabolic reflectors are examples of aperture antennas. They are analyzed using Huygens' Principle (Equivalence Principle), which states that the fields in an aperture can be replaced by equivalent electric and magnetic surface currents $\mathbf{J}_s$ and $\mathbf{M}_s$.</p>
+<p><strong>2. Microstrip (Patch) Antennas</strong></p>
+<p>Patch antennas are low-profile, lightweight, and easily integrated with planar circuits. They radiate primarily from the fringing fields between the patch edge and the ground plane. They are often analyzed using the transmission-line model or cavity model.</p>
+
+  <div class="pages-container">
+    <img src="images/ch03_page_037.png" class="page-img" alt="Page 37">
+    <img src="images/ch03_page_038.png" class="page-img" alt="Page 38">
+    <img src="images/ch03_page_039.png" class="page-img" alt="Page 39">
+    <img src="images/ch03_page_040.png" class="page-img" alt="Page 40">
+    <img src="images/ch03_page_041.png" class="page-img" alt="Page 41">
+    <img src="images/ch03_page_042.png" class="page-img" alt="Page 42">
+    <img src="images/ch03_page_043.png" class="page-img" alt="Page 43">
+    <img src="images/ch03_page_044.png" class="page-img" alt="Page 44">
+    <img src="images/ch03_page_045.png" class="page-img" alt="Page 45">
+    <img src="images/ch03_page_046.png" class="page-img" alt="Page 46">
+    <img src="images/ch03_page_047.png" class="page-img" alt="Page 47">
+  </div>
+
+</main>
+</body>
+</html>
