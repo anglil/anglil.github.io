@@ -26,11 +26,11 @@ title: Notes – Angli Liu
       <li><a href="/notes/optics_1.pdf" target="_blank">optics_1</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
       <li><a href="/notes/optics_2.pdf" target="_blank">optics_2</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
       <li><a href="/notes/electromagnetics.pdf" target="_blank">electromagnetics</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
-      <li><a href="/notes/multivariable calculus.pdf" target="_blank">multivariable calculus</a></li>
       <li><a href="/notes/mathematical physics.pdf" target="_blank">mathematical physics</a></li>
       <li><a href="/notes/complex analysis.pdf" target="_blank">complex analysis</a></li>
       <li><a href="/notes/algebra, geometry, and advanced calculus 1.pdf" target="_blank">algebra, geometry, and advanced calculus 1</a></li>
       <li><a href="/notes/algebra, geometry, and advanced calculus 2.pdf" target="_blank">algebra, geometry, and advanced calculus 2</a></li>
+      <li><a href="/notes/multivariable calculus.pdf" target="_blank">multivariable calculus</a></li>
       <li><a href="/notes/applied math.pdf" target="_blank">applied math</a></li>
       <li><a href="/notes/signals and systems.pdf" target="_blank">signals and systems</a></li>
       <li><a href="/notes/stochastic process.pdf" target="_blank">stochastic process</a></li>
