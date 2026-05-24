@@ -1,0 +1,114 @@
+import math
+
+sections = [
+    {
+        "title": "I. Boolean Algebra and Logic Gates",
+        "content": r"""
+<p><strong>1. Number Systems and Codes</strong></p>
+<p>Digital systems operate on binary digits (bits), $0$ and $1$. Common number representations include unsigned binary, two's complement for signed integers, and floating-point for real numbers. Hexadecimal (base-16) is often used as a compact representation.</p>
+<p><strong>2. Boolean Algebra</strong></p>
+<p>Boolean algebra relies on fundamental operations: AND ($\cdot$), OR ($+$), and NOT ($\overline{x}$). De Morgan's laws state:</p>
+$$ \overline{A \cdot B} = \overline{A} + \overline{B} $$
+$$ \overline{A + B} = \overline{A} \cdot \overline{B} $$
+<p><strong>3. Logic Gates</strong></p>
+<p>Basic gates are AND, OR, NOT. Universal gates (NAND, NOR) can be used to construct any logic function. Exclusive-OR (XOR) is widely used in arithmetic circuits.</p>
+""",
+        "img_start": 1,
+        "img_end": 2
+    },
+    {
+        "title": "II. Combinational Logic Circuits",
+        "content": r"""
+<p><strong>1. Minimization Techniques</strong></p>
+<p>Boolean functions can be simplified to minimize hardware using algebraic manipulation or Karnaugh Maps (K-maps). The goal is to find the Sum of Products (SOP) or Product of Sums (POS) with the fewest literals.</p>
+<p><strong>2. Typical Combinational Components</strong></p>
+<ul>
+    <li><strong>Adders:</strong> Half-adders and Full-adders. Ripple carry adders are simple but slow due to propagation delay; Carry Lookahead Adders (CLA) are faster.</li>
+    <li><strong>Multiplexers (MUX):</strong> Selects one of $2^N$ data inputs based on $N$ select lines.</li>
+    <li><strong>Decoders:</strong> Translates an $N$-bit input into up to $2^N$ unique output lines.</li>
+</ul>
+""",
+        "img_start": 3,
+        "img_end": 4
+    },
+    {
+        "title": "III. Sequential Logic Circuits",
+        "content": r"""
+<p><strong>1. Latches and Flip-Flops</strong></p>
+<p>Unlike combinational logic, sequential logic has memory. An SR Latch is the most basic memory element. A D Flip-Flop updates its output $Q$ to the value of input $D$ precisely at the active edge of a clock signal.</p>
+<p><strong>2. Finite State Machines (FSM)</strong></p>
+<p>Complex sequential circuits are modeled as FSMs, consisting of a state register, next-state combinational logic, and output combinational logic. In a Moore machine, outputs depend only on the current state. In a Mealy machine, outputs depend on both state and current inputs.</p>
+<p><strong>3. Registers and Counters</strong></p>
+<p>Shift registers are used for data storage and serial/parallel conversion. Counters iterate through a defined sequence of states (e.g., binary up counter).</p>
+""",
+        "img_start": 5,
+        "img_end": 6
+    }
+]
+
+html_head = r"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 4: Digital Electronics | College Electrical Engineering</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">College Electrical Eng<span>Angli Liu</span></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Table of Contents</a></li>
+      <li><div class="part-label">Contents</div></li>
+      <li><a href="ch01.html">Chapter 1: Circuits & Semiconductors</a></li>
+      <li><a href="ch02.html">Chapter 2: Communication Circuits</a></li>
+      <li><a href="ch03.html">Chapter 3: Antennae</a></li>
+      <li><a href="ch04.html" class="active">Chapter 4: Digital Electronics</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+  <div class="chapter-header">
+    <h1>Chapter 4</h1>
+    <h2 class="chapter-title">Digital Electronics</h2>
+  </div>
+"""
+
+html_tail = r"""
+</main>
+</body>
+</html>
+"""
+
+body = ""
+for sec in sections:
+    body += f"\n  <h3>{sec['title']}</h3>\n"
+    body += sec['content']
+    body += '\n  <div class="pages-container">\n'
+    for img_num in range(sec['img_start'], sec['img_end'] + 1):
+        body += f'    <img src="images/ch04_page_{img_num:03d}.png" class="page-img" alt="Page {img_num}">\n'
+    body += '  </div>\n'
+
+full_html = html_head + body + html_tail
+
+with open("college-electrical-engineering/ch04.html", "w", encoding="utf-8") as f:
+    f.write(full_html)
+print("Chapter 4 generated.")

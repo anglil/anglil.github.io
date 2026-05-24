@@ -1,0 +1,35 @@
+--- NATIVE MACOS VISION OCR OUTPUT ---
+No.
+No.
+Date
+羊肉植，五二一fa）此t
+有效值：
+正额电压为么）=Uhsit-④），有极值.
+俄性电路：ay +bys= fax +bxs）.
+天源电路：
+集总参数电路：流经无饼的电流和元件上的电压不是元体空间及度的函表
+元件的摸型是一个免整不可公割的整体.
+分布参数电路：流位传输償的电流和各输成上的电压均为距离2抽函為
+用于元件的空问又度和他源发出吧磁波波长可比时。
+另一种情况是考虑池漏也流时。
+例：传输成分布参教模型：并联四阻（俄问能童他漏）
+一并联电容（找间电场）一电感（磁扬）一他阻（报耗）
+理想导线模型，
+
+--- GOOGLE TRANSLATE OUTPUT ---
+No.
+No.
+Date
+Mutton plant, 521 fa) this t
+Valid values:
+What is the positive voltage)=Uhsit-④), there are extreme values.
+Russian circuit: ay +bys= fax +bxs).
+Tianyuan Circuit:
+Lumped parameter circuit: The current flowing through the pieless element and the voltage on the component are not a function of the space and degree of the element.
+The shape of a component is an integral and inseparable whole.
+Distributed parameter circuit: The current of the flow bit transmission compensation and the voltage on each input are both distance 2. The pumping function is
+It is used when the space of the component is comparable to the wavelength of the magnetic wave emitted by other sources.
+Another situation is when considering pool leakage.
+Example: Transmission component distributed parameter teaching model: four resistors in parallel (Russian question can teach him leakage)
+One parallel capacitor (to find the electric field) one inductor (magnetic lift) and one other resistance (to report the loss)
+ideal wire model,

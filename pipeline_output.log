@@ -1,0 +1,413 @@
+1. Cleaning up images dir...
+2. Extracting pages from PDF...
+3. Extracting diagrams using advanced heuristics and running OCR...
+Processing ch01...
+  OCR extracted 113 chars from ch01_page_001.png
+Translation error: Translation timed out
+  OCR extracted 0 chars from ch01_page_002.png
+  OCR extracted 296 chars from ch01_page_003.png
+Translation error: Translation timed out
+  OCR extracted 295 chars from ch01_page_004.png
+Translation error: Translation timed out
+  OCR extracted 373 chars from ch01_page_005.png
+Translation error: Translation timed out
+  OCR extracted 453 chars from ch01_page_006.png
+Translation error: Translation timed out
+  OCR extracted 470 chars from ch01_page_007.png
+Translation error: Translation timed out
+  OCR extracted 494 chars from ch01_page_008.png
+Translation error: Translation timed out
+  OCR extracted 235 chars from ch01_page_009.png
+Translation error: Translation timed out
+  OCR extracted 210 chars from ch01_page_010.png
+Translation error: Translation timed out
+  OCR extracted 216 chars from ch01_page_011.png
+Translation error: Translation timed out
+  OCR extracted 188 chars from ch01_page_012.png
+Translation error: Translation timed out
+  OCR extracted 428 chars from ch01_page_013.png
+Translation error: Translation timed out
+  OCR extracted 174 chars from ch01_page_014.png
+Translation error: Translation timed out
+  OCR extracted 274 chars from ch01_page_015.png
+Translation error: Translation timed out
+  OCR extracted 147 chars from ch01_page_016.png
+Translation error: Translation timed out
+  OCR extracted 578 chars from ch01_page_017.png
+Translation error: Translation timed out
+  OCR extracted 532 chars from ch01_page_018.png
+Translation error: Translation timed out
+  OCR extracted 465 chars from ch01_page_019.png
+Translation error: Translation timed out
+  OCR extracted 346 chars from ch01_page_020.png
+Translation error: Translation timed out
+  OCR extracted 632 chars from ch01_page_021.png
+Translation error: Translation timed out
+  OCR extracted 397 chars from ch01_page_022.png
+Translation error: Translation timed out
+  OCR extracted 0 chars from ch01_page_023.png
+  OCR extracted 472 chars from ch01_page_024.png
+Translation error: Translation timed out
+  OCR extracted 389 chars from ch01_page_025.png
+Translation error: Translation timed out
+  OCR extracted 268 chars from ch01_page_026.png
+Translation error: Translation timed out
+  OCR extracted 490 chars from ch01_page_027.png
+Translation error: Translation timed out
+  OCR extracted 326 chars from ch01_page_028.png
+Translation error: Translation timed out
+  OCR extracted 475 chars from ch01_page_029.png
+Translation error: Translation timed out
+  OCR extracted 411 chars from ch01_page_030.png
+Translation error: Translation timed out
+  OCR extracted 536 chars from ch01_page_031.png
+Translation error: Translation timed out
+  OCR extracted 485 chars from ch01_page_032.png
+Translation error: Translation timed out
+  OCR extracted 232 chars from ch01_page_033.png
+Translation error: Translation timed out
+  OCR extracted 476 chars from ch01_page_034.png
+Translation error: Translation timed out
+  OCR extracted 495 chars from ch01_page_035.png
+Translation error: Translation timed out
+  OCR extracted 404 chars from ch01_page_036.png
+Translation error: Translation timed out
+  OCR extracted 300 chars from ch01_page_037.png
+Translation error: Translation timed out
+  OCR extracted 443 chars from ch01_page_038.png
+Translation error: Translation timed out
+  OCR extracted 505 chars from ch01_page_039.png
+Translation error: Translation timed out
+  OCR extracted 564 chars from ch01_page_040.png
+Translation error: Translation timed out
+  OCR extracted 306 chars from ch01_page_041.png
+Translation error: Translation timed out
+  OCR extracted 515 chars from ch01_page_042.png
+Translation error: Translation timed out
+  OCR extracted 294 chars from ch01_page_043.png
+Translation error: Translation timed out
+  OCR extracted 347 chars from ch01_page_044.png
+Translation error: Translation timed out
+  OCR extracted 253 chars from ch01_page_045.png
+Translation error: Translation timed out
+  OCR extracted 236 chars from ch01_page_046.png
+Translation error: Translation timed out
+  OCR extracted 409 chars from ch01_page_047.png
+Translation error: Translation timed out
+  OCR extracted 364 chars from ch01_page_048.png
+Translation error: Translation timed out
+  OCR extracted 141 chars from ch01_page_049.png
+Translation error: Translation timed out
+  OCR extracted 394 chars from ch01_page_050.png
+Translation error: Translation timed out
+  OCR extracted 437 chars from ch01_page_051.png
+Translation error: Translation timed out
+  OCR extracted 205 chars from ch01_page_052.png
+Translation error: Translation timed out
+  OCR extracted 625 chars from ch01_page_053.png
+Translation error: Translation timed out
+  OCR extracted 548 chars from ch01_page_054.png
+Translation error: Translation timed out
+  OCR extracted 355 chars from ch01_page_055.png
+Translation error: Translation timed out
+  OCR extracted 484 chars from ch01_page_056.png
+Translation error: Translation timed out
+  OCR extracted 275 chars from ch01_page_057.png
+Translation error: Translation timed out
+  OCR extracted 358 chars from ch01_page_058.png
+Translation error: Translation timed out
+  OCR extracted 438 chars from ch01_page_059.png
+Translation error: Translation timed out
+  OCR extracted 441 chars from ch01_page_060.png
+Translation error: Translation timed out
+  OCR extracted 395 chars from ch01_page_061.png
+Translation error: Translation timed out
+  OCR extracted 453 chars from ch01_page_062.png
+Translation error: Translation timed out
+  OCR extracted 397 chars from ch01_page_063.png
+Translation error: Translation timed out
+  OCR extracted 250 chars from ch01_page_064.png
+Translation error: Translation timed out
+  OCR extracted 444 chars from ch01_page_065.png
+Translation error: Translation timed out
+  OCR extracted 559 chars from ch01_page_066.png
+Translation error: Translation timed out
+  OCR extracted 155 chars from ch01_page_067.png
+Translation error: Translation timed out
+  OCR extracted 330 chars from ch01_page_068.png
+Translation error: Translation timed out
+  OCR extracted 316 chars from ch01_page_069.png
+Translation error: Translation timed out
+  OCR extracted 571 chars from ch01_page_070.png
+Translation error: Translation timed out
+  OCR extracted 121 chars from ch01_page_071.png
+Translation error: Translation timed out
+  OCR extracted 353 chars from ch01_page_072.png
+Translation error: Translation timed out
+  OCR extracted 322 chars from ch01_page_073.png
+Translation error: Translation timed out
+  OCR extracted 476 chars from ch01_page_074.png
+Translation error: Translation timed out
+  OCR extracted 477 chars from ch01_page_075.png
+Translation error: Translation timed out
+  OCR extracted 525 chars from ch01_page_076.png
+Translation error: Translation timed out
+  OCR extracted 336 chars from ch01_page_077.png
+Translation error: Translation timed out
+  OCR extracted 321 chars from ch01_page_078.png
+Translation error: Translation timed out
+  OCR extracted 372 chars from ch01_page_079.png
+Translation error: Translation timed out
+  OCR extracted 411 chars from ch01_page_080.png
+Translation error: Translation timed out
+  OCR extracted 468 chars from ch01_page_081.png
+Translation error: Translation timed out
+  OCR extracted 412 chars from ch01_page_082.png
+Translation error: Translation timed out
+  OCR extracted 443 chars from ch01_page_083.png
+Translation error: Translation timed out
+  OCR extracted 388 chars from ch01_page_084.png
+Translation error: Translation timed out
+  OCR extracted 486 chars from ch01_page_085.png
+Translation error: Translation timed out
+  OCR extracted 459 chars from ch01_page_086.png
+Translation error: Translation timed out
+  OCR extracted 460 chars from ch01_page_087.png
+Translation error: Translation timed out
+  OCR extracted 448 chars from ch01_page_088.png
+Translation error: Translation timed out
+  OCR extracted 481 chars from ch01_page_089.png
+Translation error: Translation timed out
+  OCR extracted 435 chars from ch01_page_090.png
+Translation error: Translation timed out
+  OCR extracted 356 chars from ch01_page_091.png
+Translation error: Translation timed out
+  OCR extracted 650 chars from ch01_page_092.png
+Translation error: Translation timed out
+  OCR extracted 725 chars from ch01_page_093.png
+Translation error: Translation timed out
+  OCR extracted 455 chars from ch01_page_094.png
+Translation error: Translation timed out
+  OCR extracted 165 chars from ch01_page_095.png
+Translation error: Translation timed out
+Processing ch02...
+  OCR extracted 923 chars from ch02_page_001.png
+Translation error: Translation timed out
+  OCR extracted 792 chars from ch02_page_002.png
+Translation error: Translation timed out
+  OCR extracted 796 chars from ch02_page_003.png
+Translation error: Translation timed out
+  OCR extracted 1056 chars from ch02_page_004.png
+Translation error: Translation timed out
+  OCR extracted 943 chars from ch02_page_005.png
+Translation error: Translation timed out
+  OCR extracted 590 chars from ch02_page_006.png
+Translation error: Translation timed out
+  OCR extracted 982 chars from ch02_page_007.png
+Translation error: Translation timed out
+  OCR extracted 1047 chars from ch02_page_008.png
+Translation error: Translation timed out
+  OCR extracted 987 chars from ch02_page_009.png
+Translation error: Translation timed out
+  OCR extracted 706 chars from ch02_page_010.png
+Translation error: Translation timed out
+  OCR extracted 984 chars from ch02_page_011.png
+Translation error: Translation timed out
+  OCR extracted 867 chars from ch02_page_012.png
+Translation error: Translation timed out
+  OCR extracted 724 chars from ch02_page_013.png
+Translation error: Translation timed out
+  OCR extracted 924 chars from ch02_page_014.png
+Translation error: Translation timed out
+  OCR extracted 1002 chars from ch02_page_015.png
+Translation error: Translation timed out
+  OCR extracted 1512 chars from ch02_page_016.png
+Translation error: Translation timed out
+  OCR extracted 730 chars from ch02_page_017.png
+Translation error: Translation timed out
+  OCR extracted 1053 chars from ch02_page_018.png
+Translation error: Translation timed out
+  OCR extracted 632 chars from ch02_page_019.png
+Translation error: Translation timed out
+  OCR extracted 987 chars from ch02_page_020.png
+Translation error: Translation timed out
+  OCR extracted 751 chars from ch02_page_021.png
+Translation error: Translation timed out
+  OCR extracted 1038 chars from ch02_page_022.png
+Translation error: Translation timed out
+  OCR extracted 1004 chars from ch02_page_023.png
+Translation error: Translation timed out
+  OCR extracted 986 chars from ch02_page_024.png
+Translation error: Translation timed out
+  OCR extracted 769 chars from ch02_page_025.png
+Translation error: Translation timed out
+  OCR extracted 1200 chars from ch02_page_026.png
+Translation error: Translation timed out
+  OCR extracted 867 chars from ch02_page_027.png
+Translation error: Translation timed out
+  OCR extracted 589 chars from ch02_page_028.png
+Translation error: Translation timed out
+  OCR extracted 1298 chars from ch02_page_029.png
+Translation error: Translation timed out
+  OCR extracted 938 chars from ch02_page_030.png
+Translation error: Translation timed out
+  OCR extracted 1180 chars from ch02_page_031.png
+Translation error: Translation timed out
+  OCR extracted 695 chars from ch02_page_032.png
+Translation error: Translation timed out
+  OCR extracted 628 chars from ch02_page_033.png
+Translation error: Translation timed out
+  OCR extracted 1578 chars from ch02_page_034.png
+Translation error: Translation timed out
+  OCR extracted 1843 chars from ch02_page_035.png
+Translation error: Translation timed out
+  OCR extracted 850 chars from ch02_page_036.png
+Translation error: Translation timed out
+  OCR extracted 617 chars from ch02_page_037.png
+Translation error: Translation timed out
+  OCR extracted 775 chars from ch02_page_038.png
+Translation error: Translation timed out
+  OCR extracted 960 chars from ch02_page_039.png
+Translation error: Translation timed out
+  OCR extracted 1144 chars from ch02_page_040.png
+Translation error: Translation timed out
+  OCR extracted 644 chars from ch02_page_041.png
+Translation error: Translation timed out
+  OCR extracted 1354 chars from ch02_page_042.png
+Translation error: Translation timed out
+  OCR extracted 789 chars from ch02_page_043.png
+Translation error: Translation timed out
+  OCR extracted 979 chars from ch02_page_044.png
+Translation error: Translation timed out
+  OCR extracted 588 chars from ch02_page_045.png
+Translation error: Translation timed out
+  OCR extracted 561 chars from ch02_page_046.png
+Translation error: Translation timed out
+  OCR extracted 616 chars from ch02_page_047.png
+Translation error: Translation timed out
+  OCR extracted 1197 chars from ch02_page_048.png
+Translation error: Translation timed out
+  OCR extracted 560 chars from ch02_page_049.png
+Translation error: Translation timed out
+  OCR extracted 824 chars from ch02_page_050.png
+Translation error: Translation timed out
+  OCR extracted 1012 chars from ch02_page_051.png
+Translation error: Translation timed out
+  OCR extracted 721 chars from ch02_page_052.png
+Translation error: Translation timed out
+  OCR extracted 1009 chars from ch02_page_053.png
+Translation error: Translation timed out
+  OCR extracted 991 chars from ch02_page_054.png
+Translation error: Translation timed out
+  OCR extracted 699 chars from ch02_page_055.png
+Translation error: Translation timed out
+Processing ch03...
+  OCR extracted 108 chars from ch03_page_001.png
+Translation error: Translation timed out
+  OCR extracted 29 chars from ch03_page_002.png
+Translation error: Translation timed out
+  OCR extracted 590 chars from ch03_page_003.png
+Translation error: Translation timed out
+  OCR extracted 356 chars from ch03_page_004.png
+Translation error: Translation timed out
+  OCR extracted 369 chars from ch03_page_005.png
+Translation error: Translation timed out
+  OCR extracted 394 chars from ch03_page_006.png
+Translation error: Translation timed out
+  OCR extracted 360 chars from ch03_page_007.png
+Translation error: Translation timed out
+  OCR extracted 330 chars from ch03_page_008.png
+Translation error: Translation timed out
+  OCR extracted 253 chars from ch03_page_009.png
+Translation error: Translation timed out
+  OCR extracted 167 chars from ch03_page_010.png
+Translation error: Translation timed out
+  OCR extracted 113 chars from ch03_page_011.png
+Translation error: Translation timed out
+  OCR extracted 223 chars from ch03_page_012.png
+Translation error: Translation timed out
+  OCR extracted 217 chars from ch03_page_013.png
+Translation error: Translation timed out
+  OCR extracted 260 chars from ch03_page_014.png
+Translation error: Translation timed out
+  OCR extracted 267 chars from ch03_page_015.png
+Translation error: Translation timed out
+  OCR extracted 20 chars from ch03_page_016.png
+Translation error: Translation timed out
+  OCR extracted 523 chars from ch03_page_017.png
+Translation error: Translation timed out
+  OCR extracted 444 chars from ch03_page_018.png
+Translation error: Translation timed out
+  OCR extracted 480 chars from ch03_page_019.png
+Translation error: Translation timed out
+  OCR extracted 414 chars from ch03_page_020.png
+Translation error: Translation timed out
+  OCR extracted 373 chars from ch03_page_021.png
+Translation error: Translation timed out
+  OCR extracted 357 chars from ch03_page_022.png
+Translation error: Translation timed out
+  OCR extracted 559 chars from ch03_page_023.png
+Translation error: Translation timed out
+  OCR extracted 393 chars from ch03_page_024.png
+Translation error: Translation timed out
+  OCR extracted 391 chars from ch03_page_025.png
+Translation error: Translation timed out
+  OCR extracted 364 chars from ch03_page_026.png
+Translation error: Translation timed out
+  OCR extracted 306 chars from ch03_page_027.png
+Translation error: Translation timed out
+  OCR extracted 213 chars from ch03_page_028.png
+Translation error: Translation timed out
+  OCR extracted 26 chars from ch03_page_029.png
+Translation error: Translation timed out
+  OCR extracted 457 chars from ch03_page_030.png
+Translation error: Translation timed out
+  OCR extracted 353 chars from ch03_page_031.png
+Translation error: Translation timed out
+  OCR extracted 419 chars from ch03_page_032.png
+Translation error: Translation timed out
+  OCR extracted 475 chars from ch03_page_033.png
+Translation error: Translation timed out
+  OCR extracted 399 chars from ch03_page_034.png
+Translation error: Translation timed out
+  OCR extracted 167 chars from ch03_page_035.png
+Translation error: Translation timed out
+  OCR extracted 182 chars from ch03_page_036.png
+Translation error: Translation timed out
+  OCR extracted 340 chars from ch03_page_037.png
+Translation error: Translation timed out
+  OCR extracted 246 chars from ch03_page_038.png
+Translation error: Translation timed out
+  OCR extracted 197 chars from ch03_page_039.png
+Translation error: Translation timed out
+  OCR extracted 348 chars from ch03_page_040.png
+Translation error: Translation timed out
+  OCR extracted 299 chars from ch03_page_041.png
+Translation error: Translation timed out
+  OCR extracted 184 chars from ch03_page_042.png
+Translation error: Translation timed out
+  OCR extracted 354 chars from ch03_page_043.png
+Translation error: Translation timed out
+  OCR extracted 268 chars from ch03_page_044.png
+Translation error: Translation timed out
+  OCR extracted 368 chars from ch03_page_045.png
+Translation error: Translation timed out
+  OCR extracted 293 chars from ch03_page_046.png
+Translation error: Translation timed out
+  OCR extracted 379 chars from ch03_page_047.png
+Translation error: Translation timed out
+Processing ch04...
+  OCR extracted 0 chars from ch04_page_001.png
+  OCR extracted 116 chars from ch04_page_002.png
+Translation error: Translation timed out
+  OCR extracted 472 chars from ch04_page_003.png
+Translation error: Translation timed out
+  OCR extracted 573 chars from ch04_page_004.png
+Translation error: Translation timed out
+  OCR extracted 484 chars from ch04_page_005.png
+Translation error: Translation timed out
+  OCR extracted 347 chars from ch04_page_006.png
+Translation error: Translation timed out
+4. Deleting full pages...
+5. Rebuilding HTML chapters...
+Done!
