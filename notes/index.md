@@ -45,11 +45,11 @@ title: Notes – Angli Liu
       <li><a href="/notes/communication circuits.pdf" target="_blank">communication circuits</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
       <li><a href="/notes/antennae.pdf" target="_blank">antennae</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
       <li><a href="/notes/digital electronics.pdf" target="_blank">digital electronics</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
-      <li><a href="/notes/c.pdf" target="_blank">c</a></li>
-      <li><a href="/notes/c++.pdf" target="_blank">c++</a></li>
-      <li><a href="/notes/computer architecture.pdf" target="_blank">computer architecture</a></li>
-      <li><a href="/notes/computer networks.pdf" target="_blank">computer networks</a></li>
-      <li><a href="/notes/computer networks 2.pdf" target="_blank">computer networks 2</a></li>
+      <li><a href="/notes/c.pdf" target="_blank">c</a> (<a href="/college-computer-engineering/index.html" target="_blank">College Computer Engineering</a>)</li>
+      <li><a href="/notes/c++.pdf" target="_blank">c++</a> (<a href="/college-computer-engineering/index.html" target="_blank">College Computer Engineering</a>)</li>
+      <li><a href="/notes/computer architecture.pdf" target="_blank">computer architecture</a> (<a href="/college-computer-engineering/index.html" target="_blank">College Computer Engineering</a>)</li>
+      <li><a href="/notes/computer networks.pdf" target="_blank">computer networks</a> (<a href="/college-computer-engineering/index.html" target="_blank">College Computer Engineering</a>)</li>
+      <li><a href="/notes/computer networks 2.pdf" target="_blank">computer networks 2</a> (<a href="/college-computer-engineering/index.html" target="_blank">College Computer Engineering</a>)</li>
       <li><a href="/notes/college electrical engineering.pdf" target="_blank">college electrical engineering</a></li>
     </ul>
 

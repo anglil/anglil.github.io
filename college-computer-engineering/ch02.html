@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ch02 | College Computer Engineering</title>
+<link href="style.css" rel="stylesheet"/>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<aside id="sidebar">
+<div class="book-title">College Computer Engineering<span>Angli Liu</span></div>
+<nav>
+<ul>
+<li><a href="index.html">Table of Contents</a></li>
+<li><div class="part-label">Contents</div></li>
+<li><a href="ch01.html">Chapter 1: C</a></li>
+<li><a href="ch02.html">Chapter 2: C++</a></li>
+<li><a href="ch03.html">Chapter 3: Computer Architecture</a></li>
+<li><a href="ch04.html">Chapter 4: Computer Networks</a></li>
+<li><a href="ch05.html">Chapter 5: Computer Networks 2</a></li>
+</ul>
+</nav>
+</aside>
+<main class="content">
+<div class="page" id="page-1">
+<p>C++</p>
+<p>1. Variables: Values that do not change during program execution.
+   - Integer, float, character, string, boolean.</p>
+<p>2. Variables:
+   - auto: Temporary storage (stack mode)
+   - static: Fixed address in memory, valid throughout the program execution.
+   - extern: Available in all functions and programs.
+   - register: General-purpose register.</p>
+<p>3. Symbolic constants: const data type identifier = constant value.
+   [Forced types]: char, short, int, unsigned, long, unsigned long,
+   float, double</p>
+<p>4. Functions:
+1. Parameter passing:
+   - Value passing (unidirectional)
+   - Reference passing (when calling, it is passed by reference to the existing object)</p>
+<p>2. Inline functions:
+   - Inserted at the call site during compilation, saving parameter passing and control transfer.</p>
+<p>3. Default parameters:
+   - Parameters can be defined in the function declaration. From right to left declaration.
+   - Different scopes within the same function can have different default parameters.</p>
+</div><hr/>
+<div class="page" id="page-2">
+<p>4. Function Overloading:
+- Different parameter types
+- Different parameter counts
+- Compiler implements best matching</p>
+<p>III. Classes and Objects
+- Class (data abstraction) (behavior abstraction)
+- Encapsulation: becomes reusable modules
+- Inheritance
+- Polymorphism</p>
+<p>1. Object-Oriented Programming
+1. Access Control:
+- Base class
+  - public: public
+  - protected: protected
+  - private: not accessible
+- Derived class
+  - public: public
+  - protected: protected
+  - private: not accessible</p>
+<p>2. Class Members:
+- public: public
+- protected: protected
+- private: private</p>
+</div><hr/>
+<div class="page" id="page-3">
+<p>1. Statement
+2. Return value type: function or member (parameter list) {---}
+3. Member function with default parameters (5 before the function)
+4. Inline member function: placed in the header file.
+5. Inline member function: placed in the header file.
+6. Member function: class name member name.
+7. Accessing member functions: member name (parameter list).
+8. Constructor:
+   - For data members, initialize when the object is created.
+   - If no constructor, the compiler will automatically generate a default constructor (no initialization).
+9. Can be inline function, can have parameters, can have default parameters, can be overloaded.
+10. Member function of the class, no function member code.
+11. Copy constructor:
+   - Copy each data member's value to the new object.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.
+   - When creating a new object of the same class.</p>
+</div><hr/>
+<div class="page" id="page-4">
+<p>The note discusses the use of copy constructors in C++ programming. It explains that a copy constructor is used to create a new object by copying the data members of an existing object. The note mentions that if a copy constructor is not defined, the compiler will generate a default copy constructor, which simply copies the data members. It also notes that copy constructors can be virtual, allowing for polymorphic behavior. The note further explains that copy constructors are automatically called when objects are copied, and they can be virtual. The note also discusses the concept of class composition, where one class can contain another class as a data member. It mentions that the copy constructor of the contained class is called when the containing class is copied. The note concludes by mentioning that the copy constructor is called in the reverse order of the destructor.</p>
+</div><hr/>
+<div class="page" id="page-5">
+<p>### Notes on C++ Programming</p>
+<p>#### Section 1: Inheritance
+- **Form**: C:C(C&amp;c1):b(c1,b)
+- **C class contains B class object b as a member**
+- **c1 is an object of C class**</p>
+<p>#### Section 2: C++ Program Structure
+1. **Scope:**
+   - **Function Scope**: (within the function)
+   - **Block Scope**: (within the block)
+   - **Class Scope**: (if the class member function does not have a local scope, it can access class members)
+   - **File Scope**: (from the point of declaration (external), up to the end of the file) -&gt; global variable</p>
+<p>2. **Visibility:**
+   - **Local Variables**: (can be used within the function)
+   - **Global Variables**: (can be used throughout the program)</p>
+<p>#### Section 3: Lifetime
+- **Static Lifetime**: static object type variable name (address fixed)
+- **Dynamic Lifetime**: (object is created and destroyed)</p>
+</div><hr/>
+<div class="page" id="page-6">
+<p>### Notes on C++ Concepts</p>
+<p>#### Section 3: Classes and Objects (Continued)</p>
+<p>5. **Static Members:**
+   - **Static Members:** Declared with `static`, have a static lifetime, accessible via `ClassName::memberName`. Each class has a copy of static members.
+   - **Static Member Functions:** Access static data members and static member functions. They manage shared data among objects, not tied to any specific object.</p>
+<p>6. **Friendship:**
+   - **Friend Function:** A function that can access private and protected members of a class.
+   - **Friend Class:** A class where all members are friends. Friendship is not bidirectional and cannot be inherited.
+   - **Friendship Characteristics:**
+     - Not inheritable
+     - Not bidirectional</p>
+<p>7. **Const References:**
+   - **Const References:** The referenced object cannot be modified. Const references cannot be reassigned.
+   - **Const References in Function Parameters:** Const references can be used to pass objects by value without copying.
+   - **Const Objects:** Must be initialized. Const objects cannot be reassigned.
+   - **Const References in Return Types:** Const references can be used in return types to indicate that the function will not modify the object.
+   - **Example:**
+     ```cpp
+     const int&amp; getNumber() const {
+         return number;
+     }</p>
+</div><hr/>
+<div class="page" id="page-7">
+<p>The note discusses object-oriented programming concepts, specifically focusing on data members and member functions. It mentions that data members cannot be modified and cannot be overloaded. Member functions can be overloaded. It notes that member functions are the only external interface of an object and that they can be overloaded. The note also covers constant data members and their initialization. It discusses object arrays, where elements are accessed using array notation. It explains object pointers, which are variables that store the address of an object (only for data members, not for member functions). It mentions that class * object pointers can be used. The note also covers the `this` pointer, which points to the object on which the member function is being called. It concludes with a discussion on dynamic memory allocation using `new` and `delete` operators.</p>
+</div><hr/>
+<div class="page" id="page-8">
+<p>Dynamic Array (Array):
+new TypeName [n] [n-1] ...</p>
+<p>Pointer Array (*p) [n-1] ...</p>
+<p>Pointer to dynamic array of type.</p>
+<p>delete [p] ...</p>
+<p>Array of doubles:
+Array of doubles in memory, leading to delete in the same memory twice.</p>
+<p>Array of pointers:
+Create a new memory block, delete different memory blocks, must be careful!</p>
+<p>Six. Inheritance and Derivation.</p>
+<p>1. Declaration: class DerivedClassName : public BaseClassName1, public BaseClassName2 ...</p>
+<p>2. Rules:
+Inheritance of all members except constructors and destructors (including copy constructors) of the derived class.</p>
+</div><hr/>
+<div class="page" id="page-9">
+<p>Type Compatibility Rule:
+Any problem that can be solved by the base class can be solved by a public derived class.</p>
+<p>3. Derived Class Constructors and Destructors:
+The default constructor of a derived class only initializes the new data members. If you want to initialize the members inherited from the base class, you need to write a constructor. Destructors are similar.</p>
+<p>1. Constructor Sequence: Call the base class constructor (left to right) -&gt; Call the derived class constructor (left to right), only initialize the base class data members -&gt; Initialize the new members of the derived class.</p>
+<p>2. Derived Class Constructor:
+C::C(C &amp;c1): B(c1)</p>
+</div><hr/>
+<div class="page" id="page-10">
+<p>3. Abstract Class
+- Sequence: 
+- Derived
+- Member Variables
+- Base</p>
+<p>7. Polymorphism
+- Static Binding: 
+  - Forced Binding: Type Conversion (Explicit)
+  - Overloading: Function Overloading, Overriding
+  - Virtual: Template
+- Dynamic Binding: Inheritance: Virtual</p>
+<p>1. Overloading:
+  - Operator Overloading: operator (Formal)
+  - "Function"
+  - As Member Function: Less Formal, Another by Address
+  - Friend Function: Same Type as in Class Declaration</p>
+<p>2. Virtual Function:
+  - Virtual Function Type: Function Name (Pointer)</p>
+</div><hr/>
+<div class="page" id="page-11">
+<p>1) Virtual functions override the base class's version, hiding all other overloads of the base class.</p>
+<p>2) Virtual functions are dynamically bound, but the function pointer is statically bound.</p>
+<p>3) Virtual destructor virtual ~ClassName();</p>
+<p>{
+    Virtual functions (modifying base class behavior).
+    {
+        Virtual functions (not intended to be modified by derived classes).
+        Through the use of base type pointers, you can access the virtual function of the derived class pointed to by the pointer.
+}</p>
+<p>3. Function template:
+template<typename t="">
+typename function_name (parameter_list)
+{
+    ...
+}</typename></p>
+<p>T represents a generic type. It must be instantiated when called.</p>
+<p>2. Class template:
+template<typename t="">
+class ClassName
+{
+    ...
+}</typename></p>
+</div><hr/>
+<div class="page" id="page-12">
+<p>2) Member functions of template classes must be template functions.
+3) Declare objects of template classes: template <template parameter=""> object1, ...;</template></p>
+<p>八. Stream Library and Input/Output
+ifstream istream
+istream
+键盘、屏幕、打印机、通信端口、磁盘文件...
+读: 提取
+内存
+write: 插入
+ostream
+ofstream ostringstream</p>
+<p>类模板: basic_XXXX. ∈<iosfwd></iosfwd></p>
+<p>1. <iostream> 输出流: ostream (基)
+<fstream>
+ofstream
+cout, cerr, clog
+open, close
+put, write
+seekp, temp...
+fill, setw, width, setiosflags, resetiosflags.
+fixed
+scientific
+ios_base
+left
+right
+dec, oct, hex.
+app.
+ate
+in
+out
+trunc
+binary
+ios_base.</fstream></iostream></p>
+</div><hr/>
+<div class="page" id="page-13">
+<p>3. put('A').
+4. close() is a function, used to close a file.
+5. write((char*)&amp;x, int size).
+6. seekp(int).
+7. eof. (returns 0) if end of file reached.
+8. istream input stream: istream (base).
+9. cin.
+10. ifstream.
+11. open, close.
+12. get, getline.
+13. read, good.
+14. seekg, tellg.
+15. cin -&gt; ...
+16. ios_base::in (default)
+17. ios_base::binary
+18. get also reads newlines.
+19. getline (returns 0) if end of file reached.
+20. read ((char*)address, byte count).
+21. seekg (int).</p>
+</div><hr/>
+<div class="page" id="page-14">
+<p>### Exception Handling:</p>
+<p>try {
+    throw $expression$;
+} catch (Exception) {
+    $exceptionHandling$;
+}</p>
+<p>catch (Exception) {
+    $exceptionHandling$;
+}</p>
+<p>catch (...) {
+    $handleAllExceptions$;
+}</p>
+<p>Once a catch block receives an exception, it exits the try block and executes next.</p>
+<p>In the catch block, you can catch all exceptions of a specific type.</p>
+<p>void fun() throw (A, B, C, D)</p>
+<p>If not specified, it can throw any type of exception.</p>
+<p>void fun() throw();</p>
+<p>If not specified, it can throw any type of exception.</p>
+</div><hr/>
+</main>
+</body>
+</html>

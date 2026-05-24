@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ch05 | College Computer Engineering</title>
+<link href="style.css" rel="stylesheet"/>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<aside id="sidebar">
+<div class="book-title">College Computer Engineering<span>Angli Liu</span></div>
+<nav>
+<ul>
+<li><a href="index.html">Table of Contents</a></li>
+<li><div class="part-label">Contents</div></li>
+<li><a href="ch01.html">Chapter 1: C</a></li>
+<li><a href="ch02.html">Chapter 2: C++</a></li>
+<li><a href="ch03.html">Chapter 3: Computer Architecture</a></li>
+<li><a href="ch04.html">Chapter 4: Computer Networks</a></li>
+<li><a href="ch05.html">Chapter 5: Computer Networks 2</a></li>
+</ul>
+</nav>
+</aside>
+<main class="content">
+<div class="page" id="page-1">
+<p>### Information Network Overview</p>
+<p>#### I. Communication and Network Technology Development</p>
+<p>#### II. Communication and Network Development and Evolution</p>
+<p>1. **Communication Network Composition**
+   - Multiplexing + Switching + Transmission</p>
+<p>2. **Communication Network Classification**
+   - Information Content: Telephone Network, Computer Network, Television Network
+   - Multiplexing Methods: TDM, FDM, CDM, WDM
+   - Switching Methods: Circuit, Packet, Frame Relay, ATM
+   - Transmission Methods: Analog/Digital, Wired/Wireless, Fiber/Cable
+   - Coverage Areas: Local Area Network, Metropolitan Area Network, Wide Area Network, Global Network, Personal Area Network, Body Area Network, Micronet</p>
+<p>3. **Communication Network Development**
+   - (1) Analog Communication -&gt; Digital Communication (Long-Distance Transmission,抗Interference); Multimedia Communication (Multimedia Integration); Confidential Communication; High-Capacity (High Compression Ratio))
+     - Example 1: Analog Television
+     - Example 2: Integrated Services Digital Network (ISDN); Computer
+   - (2) Circuit Switching -&gt; Packet Switching
+     - Example 1: Telephone Network
+     - Example 2: Packet Switching (IP, X.25), Fast Packet Switching (Frame Relay, ATM)
+   - (3) Voice Communication -&gt; Multimedia Communication
+     - Example 1: Telephone Network
+     - Example 2: Internet
+   - (4) Fixed Communication -&gt; Mobile Communication
+     - Example 1: Local Area Network (Ethernet, FDDI), Wide Area Network (Internet)
+     - Example 2: Wireless Local Area Network (802.11), Wireless Personal Area Network (Bluetooth, ZigBee, UWB), Wireless Ad-Hoc Network (Ad-Hoc),蜂窝网 (1G-&gt;4G), Wireless Sensor Network</p>
+<p>#### III. New Requirements for Network Interconnection</p>
+<p>1. **Development Directions:**
+   - Interconnection of Heterogeneous Networks; Network Scalability; Network Reliability; Network Security
+   - Information: Multimedia, Mobility
+   - Switching: High-Speed, Flexible
+   - Transmission: Digital, High-Speed
+   - Network: Integrated, Intelligent, Personalized
+2. **Constraints:**
+   - Energy Consumption</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_001_0.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_001_2.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_001_4.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_001_5.png"/></div><hr/>
+<div class="page" id="page-2">
+<p>### Communication Business Basic Characteristics and Network Layering Model</p>
+<p>#### 1. Communication Business Characteristics Description</p>
+<p>1. Communication Business Classification
+   (1) By Service Type
+      - User Information: Voice, Video, Image, Data
+      - Control Information: Signaling, Network Management
+   (2) By Service Content
+      - Voice, Video, Image, Data
+   (3) By Service Mode
+      - End-to-End: Circuit Switching, Packet Switching
+      - Service Generation Characteristics: Periodic, Random, Bursty
+      - Bandwidth: Constant Bit Rate (CBR), Variable Bit Rate (VBR), Available Bit Rate (ABR), Unspecified Bit Rate (UBR)
+   (4) By QoS
+      - Real-time Services: Circuit Switching Network
+         - Effectiveness: Occupies Bandwidth, Low Latency -&gt; Dynamic Bandwidth Adjustment
+         - Reliability: Lossless -&gt; Increase Connection Rate
+      - Non-real-time Services: Packet Switching Network
+         - Effectiveness: Packet Transmission Efficiently Utilizes Bandwidth -&gt; Reduce Latency, Increase Throughput
+         - Reliability: Lossy</p>
+<p>2. Communication Business Performance Requirements
+   (1) Basic Requirements:
+      - Effectiveness: Connectivity (Any, Fast); Cost-Effectiveness; Flexibility (Robustness); Scalability (应对规模扩展)
+      - Reliability: Resilience to Single Point Failure and Traffic Attacks
+   (2) Special Requirements:
+      - Voice (Effectiveness) Delay Jitter: Very Small
+         - (Reliability) Tolerates Loss: Some
+      - Data (Effectiveness) Delay Jitter: As Small as Possible
+         - (Reliability) Tolerates Loss: Not Tolerated
+      - Image (Effectiveness) Delay Jitter: Very Small
+         - (Reliability) Tolerates Loss: Very Small
+      - Multimedia: Effectiveness + Reliability</p>
+<p>3. Factors Affecting Communication Network Performance
+   (1) Network Available Resources (Physical Layer): Bandwidth, Buffering, Power
+   (2) Network Topology Structure (Link Layer): Load Balancing, Energy Efficiency
+   (3) Network Routing Mechanism (Network Layer): Signaling and Advertisement
+   (4) Network Traffic Control (Transport Layer): Congestion Control
+   (5) Network Service Mode (Application Layer): Randomness (Network Performance Degradation Main Cause, Such as Bursty Packet Switching)</p>
+<p>#### 2. Communication Network Layering Model and Cross-Layer Design</p>
+<p>Cross-layer design's necessity: Improve network resource utilization, global optimization</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_002_0.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_002_1.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_002_2.png"/></div><hr/>
+<div class="page" id="page-3">
+<p>### Channel Sharing and Multiple Access Techniques</p>
+<p>#### I. Basic Principles of Digital Communication and Physical Interfaces</p>
+<p>1. **Source:**
+   (1) Sampling: Nyquist Sampling
+   (2) Quantization: Analog-to-digital conversion, reducing quantization noise, logarithmic compression
+   (3) Encoding: Source encoding (data compression), channel encoding (error detection and correction)
+   (4) Modulation: For multiplexing and multiple access</p>
+<p>2. **Channel:**
+   (1) Wired Channels: Twisted Pair, Coaxial Cable, Fiber Optics
+   (2) Wireless Channels: Shortwave, Ground Microwave Relay, Satellite</p>
+<p>**Problems:**
+   1) Fading (Multipath &amp; Time Delay) &lt;--- Direct, Reflection, Scattering, Diffraction
+      - Time Delay Spread: Selective Frequency Fading
+      - Frequency Spread: Selective Time Fading
+      - Angle Spread: Selective Space Fading
+   2) Time Variation (Time Delay &amp; Doppler) &lt;--- Motion
+      - Solution: Diversity (Orthogonal Space)!!</p>
+<p>3. **Protocol:** Automatic Repeat Request (ARQ)</p>
+<p>#### II. Multiplexing &amp; Multiple Access</p>
+<p>1. **Multiplexing:**
+   (1) Concept: Single user in the transmission end has exclusive access to the channel
+   (2) Reasons: Efficient resource utilization; randomness and economic nature of resource demand; acceptable delay
+   (3) Categories: Fixed Multiplexing; Statistical Multiplexing</p>
+<p>2. **Multiple Access:**
+   (1) Concept: Multiple users share the channel resources
+   (2) Reasons: Shared medium (usually uplink)
+   (3) Categories: Competitive Multiple Access; Coordinated Multiple Access</p>
+<p>3. **Fixed Multiplexing and Coordinated Multiple Access:**
+   (1) Concept:
+      - Fixed Multiplexing: Fixed channel division, fixed use
+      - Coordinated Multiple Access: Users obtain independent channel resources through orthogonal division within their domain
+   (2) Characteristics:
+      - Fixed Multiplexing: High efficiency, requires synchronization; suitable for streaming media
+      - Coordinated Multiple Access: Good scalability; suitable for heavy load networks
+   (3) Categories:
+      1) Frequency Division Multiplexing (FDM) &amp; Frequency Division Multiple Access (FDMA)
+         - FDM: Examples: Asymmetric Digital Subscriber Line (ADSL), Wavelength Division Multiplexing (WDM)
+         - FDMA: Example: American AMPS
+         - Concept: Users share the frequency spectrum
+         - Characteristics:
+            - Symbol period far greater than delay; low user capacity; no equalization required
+            - No need for bandpass filters;</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_003_0.png"/></div><hr/>
+<div class="page" id="page-4">
+<p>2) Time Division Multiplexing (TDM) &amp; Time Division Multiple Access (TDMA)</p>
+<p>TDM: Example: Synchronous Digital Hierarchy (SDH), Synchronous Optical Network (SONET)</p>
+<p>TDMA: Example: Integrated Services Digital Network (ISDN)</p>
+<p>Concept: Users share time slots</p>
+<p>Features:
+- Symbol period depends on bandwidth and modulation technology; user capacity higher than FDMA; needs equalization
+- Requires switches for group transmission
+- Has protection slots and synchronization slots</p>
+<p>3) Code Division Multiple Access (CDMA) &amp; Code Division Multiple Access (CDMA) &amp; Interleaved Multiple Access (IDMA)</p>
+<p>CDM:</p>
+<p>CDMA: Example: 3G</p>
+<p>Concept: Users distinguished by different spreading sequences (code orthogonal) - combating random errors; users interwoven in time domain - combating burst errors</p>
+<p>Features: User capacity higher than TDMA;</p>
+<p>IDMA:</p>
+<p>Concept: Users distinguished by different interleaving sequences (code uncorrelated) - distinguishing</p>
+<p>Features: Users not distinguished by spreading sequences</p>
+<p>4) Orthogonal Frequency Division Multiplexing (OFDM) &amp; Orthogonal Frequency Division Multiple Access (OFDMA): Orthogonal Frequency Division</p>
+<p>OFDM: Example: WLAN</p>
+<p>OFDMA: Example: 3G-LTE, 4G</p>
+<p>Concept: QAM (orthogonal) + FD (frequency division)</p>
+<p>Features:
+- User capacity higher than CDMA;
+- Reduces multipath interference (channel fading becomes flat); reduces adjacent channel interference (code element duration increases)</p>
+<p>5) Space Division Multiple Access (SDMA) and Space Division Multiple Access (SDMA)</p>
+<p>SDM:</p>
+<p>SDMA: Example: TD-SCDMA, optical space division</p>
+<p>Concept: Users separated in space</p>
+<p>Features:
+- Can be used with any modulation method, combined with previous multiple access technologies
+- Requires directional antennas, multiple beam antennas, MIMO (multiple input multiple output)</p>
+<p>4. Statistical Multiplexing and Competitive Multiple Access</p>
+<p>(1) Concept:
+- Statistical Multiplexing: Fixed channel division, not fixed usage
+- Competitive Multiple Access: Users obtain channel resources through non-coordinated or partial coordination</p>
+<p>(2) Features:
+- Statistical Multiplexing: Has labels, no synchronization; suitable for bursty services
+- Competitive Multiple Access: Simple, poor scalability; suitable for lightly loaded local area networks</p>
+<p>(3) Classification:
+1) Non-coordinated: Asynchronous Time Division Multiplexing (ATDM): Asynchronous Asynchronous
+Example: ATM
+Features: Only applicable to packet networks, fixed packet length
+2) Non-coordinated: Pure Competitive Access Technology (ALOHA with ALOHA)
+Example: Pure ALOHA -&gt; Time Slot ALOHA -&gt; Carrier Sense Multiple Access with Collision Detection (CSMA/CD)</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_004_0.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_004_1.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_004_3.png"/></div><hr/>
+<div class="page" id="page-5">
+<p>### Features:
+- Simple protocol; no synchronization; low throughput; interframe ALOHA throughput is twice that of pure ALOHA</p>
+<p>3) Non-coordinated: Carrier Sense Multiple Access with Collision Avoidance (CSMA)</p>
+<p>Example: 0坚持: Listen to collision, wait for random time before listening again, idle then transmit
+p坚持: Listen to collision, continuous listening, idle then transmit with probability p
+1坚持: Listen to collision, continuous listening, idle then transmit with probability 1</p>
+<p>### Classification:
+- Collision Detection (CD): Example: LAN
+  - Concept: Detect collision immediately, cannot avoid
+- Collision Avoidance (CA): Example: WLAN
+  - Concept: Cannot detect during transmission, avoid collisions as much as possible</p>
+<p>### Issues:
+- Hidden Node Problem: Sender does not detect collision (A: Transmitting --- B: Receiving --- C: Hidden Node)
+- Exposed Node Problem: Receiver incorrectly detects collision (A: Receiving --- B: Transmitting --- C: Exposed Node)
+  - Solution: RTS (request to send) / CTS (clear to send) coordination mechanism</p>
+<p>### Characteristics:
+- Terminal inquires if it has not received a response within the specified time, then it will transmit
+- The more nodes there are, the lower the channel utilization; the longer the data packet, the higher the channel utilization</p>
+<p>4) Partially coordinated: Round-robin access, reservation access, etc.
+Example: Token ring, bit map method</p>
+<p>### Reuse Technique:
+Example: ATM edge router
+- Concept: Divide an information flow into multiple parallel streams, each transmitted through a separate channel (such as T-1 or E-1 lines) simultaneously
+- Characteristics: Load balancing, reduced congestion, improved reliability</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_005_1.png"/></div><hr/>
+<div class="page" id="page-6">
+<p>### Network Layer Functions</p>
+<p>1. Addressing: Finding network nodes
+2. Switching: Routing data packets from input to output
+3. Routing: Calculating a path from source to destination
+4. Heterogeneous network interconnection
+5. Providing services to the transport layer: Circuit-switched (virtual circuit) or connectionless (datagram) services
+6. Flow control: Traffic description, QoS negotiation, congestion control, rate control</p>
+<p>### Circuit Switching</p>
+<p>1. Concept: Establishing a connection from source to destination, with reserved resources (such as bandwidth, switch capacity) for transmission
+2. Characteristics:
+   - (1) Circuit switching (connection-oriented, fixed link from source to destination, end-to-end sequential transmission)
+   - (2) Real-time (primarily used for voice and video)
+   - (3) Simple implementation
+   - (4) Low line utilization (fixed reuse, coordinated multi-access)</p>
+<p>3. Implementation: Circuit switching device: Establishes a circuit connection upon request
+   - (1) Space division switching (parallel)
+   - (2) Time division switching (serial)
+   - (3) Time-space-time switching (TST): Example: ATM switching
+   - (4) Soft switching
+     - Concept: Separating call control functions and media gateway, software controlling call functions
+     - Characteristics:
+       - (1) High flexibility, easy to adapt to new QoS
+       - (2) Limited emergency handling capability</p>
+<p>4. Signaling: Examples: Dial tone, call display, digital trunk control exchange (7th signaling system: SS7)
+   - Concept: Signals used in communication to control transmission, including network and terminal status information
+   - Characteristics: Overhead in addition to data
+   - Classification: In-band signaling (same frequency as information), out-of-band signaling, Common Channel Signaling (CCS) transmitted signaling</p>
+<p>### Issues</p>
+<p>1. Congestion (call blocking): Internal congestion (no allocated lines); external congestion (no allocated time slots)
+   - Concept: Crossbar in space division switching causing internal congestion
+   - Characteristics: Due to fixed routing for each connection, can predict whether the internal structure of the switch will cause congestion</p>
+<p>2. Speed
+   - Concept: Time-division switching requires higher frame rates in time slot interconnection (TSI)
+   - Characteristics: Due to limited read/write memory access time, new technology needs to replace pure time-division switching</p>
+<p>### Solutions</p>
+<p>1. Congestion: Design multi-level structure switches without internal congestion
+2. Speed: Space-time mixed switching</p>
+<p>### Packet Switching</p>
+<p>1. Concept: Source divides information into packets with destination addresses in the header, for connectionless or connection-oriented transmission</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_006_0.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_006_3.png"/></div><hr/>
+<div class="page" id="page-7">
+<p>(2) Difficult to ensure QoS (primarily used for data services)</p>
+<p>(3) Flexible, high reliability</p>
+<p>(4) High line utilization (statistical multiplexing, contention multi-access)</p>
+<p>3. Implementation: Data packet/frame/Cellular switch: Forward data from one link to another link</p>
+<p>(1) Datagram switching</p>
+<p>Concept:</p>
+<p>1) Router maintains routing table</p>
+<p>2) Different destination addresses forwarded to different ports</p>
+<p>Features: Connectionless (no resource reservation)</p>
+<p>Good: Router does not need to know the entire topology, does not need to wait for connection establishment</p>
+<p>Bad: Routing table grows larger</p>
+<p>(2) Virtual Circuit switching</p>
+<p>Concept:</p>
+<p>1) Router maintains routing table</p>
+<p>(Permanent Virtual Circuit (PVC): Connection is always in the routing table; Switched Virtual Circuit (SVC): Connection is established when communication is requested)</p>
+<p>2) Different VC numbers forwarded to different ports, VC number changes during forwarding</p>
+<p>Features: Connection-oriented (resources reserved when connection is established)</p>
+<p>Good: Small routing table, fast routing</p>
+<p>Bad: Each connection establishment or disconnection requires changing the routing table</p>
+<p>(3) X.25</p>
+<p>Concept: Physical layer, data link layer, packet layer</p>
+<p>Features: Connection-oriented (resources reserved when connection is established); Each layer has error detection and correction mechanisms</p>
+<p>Good: Reliable</p>
+<p>Bad: Slow</p>
+<p>(4) Frame Relay (frame relay)</p>
+<p>Concept: Frame (longer packet) relay (intermediate error detection, end error detection)</p>
+<p>Features: Connection-oriented (resources reserved when connection is established); Only end error detection; Longer packet</p>
+<p>Good: Fast</p>
+<p>Bad: Requires more reliable transmission</p>
+<p>(5) ATM switching</p>
+<p>Concept: ATM cell relay (fixed-length short packet), virtual path (VP) contains multiple virtual channels (VC)</p>
+<p>Features: Connection-oriented (resources reserved when connection is established); Only end error detection; Fixed-length cells</p>
+<p>Good:</p>
+<p>1) Predictable short delays, low jitter</p>
+<p>2) Easy to segment</p>
+<p>3) Fixed bandwidth</p>
+<p>4) Simplified buffer design, scalable parallel transmission</p>
+<p>Bad:</p>
+<p>1) Cell header overhead is large</p>
+<p>2) Fragmentation and reassembly costs high</p>
+<p>3) Fixed length leads to bandwidth waste</p>
+<p>4) Complex implementation</p>
+<p>4. Issues</p>
+<p>1) Blocking (cannot input from switch to output: call blocking): Internal blocking (no allocation of lines); Output blocking (no allocation of time slots)</p>
+</div><hr/>
+<div class="page" id="page-8">
+<p>### Concept: Self-routing Banyan Switches Have Internal Congestion (Blocking) Issues</p>
+<p>**Characteristics:** Due to the non-fixed routing of each link, it is impossible to predict congestion. When congestion occurs, packets can only be buffered or dropped.</p>
+<p>(2) Speed</p>
+<p>**Concept:** Store-and-forward mechanism is slow</p>
+<p>**Characteristics:** Error detection and correction mechanism is complex</p>
+<p>### Resolution</p>
+<p>(1) Congestion</p>
+<p>1) Input/intermediate/output buffering -&gt; expensive; hard to achieve zero packet loss rate</p>
+<p>2) Arbitration of each data packet's forwarding direction -&gt; slow; complex</p>
+<p>3) Parallel switching lines -&gt; expensive; if a Banyan switch has k levels, the output buffer speed must be k times that of the input. Use Batcher sorting + Banyan switch!</p>
+<p>Good: Symmetric structure can use the same modules</p>
+<p>Bad: Multicast (broadcast) still causes congestion; multi-level structure leads to long transmission delays; uniform port rates; high power consumption; memory speed cannot keep up with processor speed</p>
+<p>(2) Speed: Frame relay; ATM switching</p>
+<p>### Five. Multi-protocol Label Switching (MPLS)</p>
+<p>1. Concept: Meaning of labels:</p>
+<p>(1) X.25: LCN |-&gt; statistical multiplexing</p>
+<p>(2) Frame relay: DLCI |-&gt; statistical multiplexing</p>
+<p>(3) ATM labels: VP label VPI; VC label VCI |-&gt; statistical multiplexing</p>
+<p>(4) Time-division multiplexing: time slots |-&gt; fixed multiplexing</p>
+<p>(5) Wavelength division multiplexing: wavelength, frequency |-&gt; fixed multiplexing</p>
+<p>2. Characteristics: Edge of the network uses IP routing, core of the network uses label switching (MPLS labels attached to packet headers)</p>
+<p>Good:</p>
+<p>1) Based on a single forwarding mechanism, it can support multiple types of forwarding within the same network
+2) Fast due to label routing
+3) Through the integration of link layer (ATM, frame relay) with network layer routing technology, solving the problem of Internet expansion and ensuring QoS transmission in IP networks</p>
+<p>Bad: Complex</p>
+<p>### Six. Optical Switching Technology</p>
+<p>1. Optical Circuit Switching (OXC)</p>
+<p>Static configuration or end-to-end signaling</p>
+<p>2. Optical Burst Switching (OBS)</p>
+<p>Reserve bandwidth switching, no need for buffering</p>
+<p>3. Optical Packet Switching (OPS)</p>
+<p>Store-and-forward switching, needs buffering</p>
+<p>4. Automatic Switching Optical Network (ASON)</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_008_1.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_008_3.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_008_4.png"/></div><hr/>
+<div class="page" id="page-9">
+<p>### Routing and Mobility Management Techniques</p>
+<p>#### I. Basic Principles of Routing</p>
+<p>1. Concept: Finding the path from source to destination
+   (1) Information collection (topology, addresses)
+   (2) Routing algorithm (optimization methods, decision time, decision location)</p>
+<p>3. Circuit Switching Routing
+   (1) Characteristics: Fixed load; path reservation; single center control
+   (2) Classification
+      1) Hierarchical routing
+      2) Backup routing
+      3) Dynamic non-hierarchical routing
+      4) Self-adaptive real-time routing</p>
+<p>4. Packet Switching Routing
+   (1) Characteristics: Unfixed load; no path reservation; distributed control
+   (2) Classification
+      1) Datagram: Destination address determines the next hop; routing may change during transmission
+      2) Virtual Circuit: VC determines the next hop; path fixed during call setup and maintained throughout the call</p>
+<p>#### II. Information Collection (Topology, Addresses)</p>
+<p>Flooding (flooding)  
+Prim algorithm, Kruskal algorithm  
+Each independent node -&gt; Spanning tree (spanning tree) -&gt; Minimum spanning tree</p>
+<p>#### III. Routing Algorithms (Optimization Methods, Decision Time, Decision Location)</p>
+<p>1. Concept
+   (1) Measurement: Delay, throughput, hops  
+   (2) Protocol: How to inform other nodes of the information  
+   (3) Calculation: Calculate the shortest path from a single source based on the acquired information</p>
+<p>2. Classification
+   (1) Distance Vector Method  
+      Concept: Bellman-Ford  
+      Characteristics: Distributed algorithm; three-order complexity; only exchanges information with neighbors  
+      Good: Local information exchange, small amount of maintained information  
+      Bad: Convergence issues when network state changes or nodes fail  
+   (2) Link State Method  
+      Concept: Dijkstra  
+      Characteristics: Centralized algorithm; two-order complexity; exchanges information with all nodes  
+      Good: All nodes know global information, faster convergence, easier discovery of new topologies and faulty nodes, QoS guaranteed  
+      Bad: Each node stores a large amount of information  
+   (3) Another: Floyd-Warshall; three-order complexity</p>
+<p>3. Implementation
+   (1) AS internal routing</p>
+</div><hr/>
+<div class="page" id="page-10">
+<p>### Example: OSPF (Link State), RIP (Distance Vector)</p>
+<p>(2) AS Inter-domain Routing</p>
+<p>Requirements: Reachability, Address Aggregation, Topological Flexibility, Focus on Policy</p>
+<p>Example: EGP, BGP-4</p>
+<p>### Three, Mobility Management in Stateless Networks</p>
+<p>1. Problem: IPv4 Address Allocation Pressure; Routing Tables Increasing in Size</p>
+<p>2. Solution: IPv6; Stateless Inter-domain Routing</p>
+<p>3. Problem: Host Unreachable After Movement</p>
+<p>4. Solution: Tunneling Technology; Foreign Agent</p>
+<p>- Reception: Register Foreign Agent in Local Agent -&gt; Local Agent Uses Tunneling Technology to Forward -&gt; Foreign Agent Relays to Mobile Host
+   - Transmission: Use Local (Home) Address Directly for Communication with Remote End, No Need for Encapsulation</p>
+<p>5. Problem: Foreign Agent's Availability and Stability</p>
+<p>6. Solution: Decouple Terminal Identifier (ID) and Location (Locator) from Foreign Agent</p>
+<p>- Reception: Register Foreign Address in Local Agent -&gt; Local Agent Uses Tunneling Technology to Forward -&gt; Mobile Host Can Decapsulate
+   - Transmission: Use Local (Home) Address Directly for Communication with Remote End, No Need for Encapsulation</p>
+<p>### Four, Mobility Management in Mobile Ad-Hoc Networks</p>
+<p>1. Concept: Stateless, Dynamic Topology; Distributed Routing, Dynamic Resource Allocation (Bandwidth, Power, Routing)</p>
+<p>2. Characteristics:
+   - FD (Frequency Division) / TD (Time Division) / CD (Code Division) + SD (Space Division)
+   - Simple Deployment
+   - Suitable for Small-Scale Emergency Communication, Low Rate, Low Traffic</p>
+<p>3. Improving Capacity:
+   - Inter-node Interaction Weight Increase, Self-Organized Discovery of Transmission Opportunities</p>
+<p>4. Problem: Fixed Stateless Network Routing Protocols are Inapplicable</p>
+<p>- (1) Topology Changes
+   - (2) Asymmetric Upstream and Downstream
+   - (3) Redundant Connections
+   - (4) Interference from Other Nodes</p>
+<p>5. Solution: Wireless Ad-Hoc Network on Demand Flat Distance Vector Routing Protocol (AODV):
+   - Broadcast RREQ -&gt; Receive
+   - {
+       - if (Destination Node)
+           - {
+               - if (First Reception)
+                   - Receive, Inform Sender via Found Path
+               - else
+                   - Discard;
+           }
+       - else
+           - Broadcast in Broadcast Packet with Current Node's Address;
+   }</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_010_0.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_010_1.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_010_2.png"/></div><hr/>
+<div class="page" id="page-11">
+<p>(1) Establish when communication demand arises</p>
+<p>(2) Source broadcast connection request to discover routing path</p>
+<p>(3) Maintain node sequence number and broadcast id</p>
+<p>### Five. Mobile Management in Cellular Networks</p>
+<p>1. Concept: Fixed network structure, cell-based; centralized location management and handoff management</p>
+<p>2. Features:
+   - FD (Frequency Division) / TD (Time Division) / CDMA (Code Division) + SD (Space Division)
+   - High installation costs
+   - Suitable for large-scale communication, high capacity, and high quality</p>
+<p>3. Improving capacity:
+   - Increase cell capacity: voice activation, source compression, high-efficiency modulation,扇区化 (sectorization)
+   - Use more址址 (address) technology: FDMA -&gt; TDMA -&gt; CDMA
+   - Reduce cell area: microcells, picocells</p>
+<p>4. Issue: Location management</p>
+<p>5. Solution: Coverage methods, local attachment methods; authentication, location update, call forwarding</p>
+<p>6. Issue: Handoff management
+   - (1) Intra-cell handoff
+   - (2) Inter-cell handoff
+   - (3) Inter-system handoff</p>
+<p>7. Solution:
+   - Hard handoff; soft handoff (example: CDMA, improving QoS); reverse handoff; forward handoff
+   - Macrocell covers multiple microcells
+   - Integrate heterogeneous fixed and mobile networks</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_011_1.png"/></div><hr/>
+<div class="page" id="page-12">
+<p>### Network Traffic Control Techniques</p>
+<p>#### 1. Network Congestion and Traffic Control</p>
+<p>1. **Challenges in Broadband Networks: Network Resource Management and Service Quality Control**</p>
+<p>2. **QoS**</p>
+<p>(1) **Concepts:**</p>
+<p>1.1) **General Parameters:** Bandwidth, delay, jitter, packet loss rate</p>
+<p>1.2) **Specific Transmission/Application Parameters:** Jitter, important data packet loss rate</p>
+<p>1.3) **User Perspective (Network Edge):** Connectivity, flexibility, security</p>
+<p>1.4) **Network Perspective (Network Core):** Resource utilization, redundancy for reliability</p>
+<p>(2) **Classification:**</p>
+<p>2.1) **Strict:** Hard</p>
+<p>2.2) **Soft**</p>
+<p>2.3) **Perceptual**</p>
+<p>2.4) **Best-Effort Service Model:**</p>
+<p>2.5) **Integrated Service (Int-Serv) Model:**</p>
+<p>2.6) **Differentiated Service (Diff-Serv) Model:**</p>
+<p>(3) **Necessity:**</p>
+<p>3.1) **Traffic Growth Faster Than Bandwidth Growth:** Bandwidth expansion cannot solve congestion</p>
+<p>3.2) **Memory Changes Are Cheaper:** Long delays cause packet loss</p>
+<p>3.3) **Connection Device Changes Are Cheaper:** Limited bandwidth in wireless environments leads to congestion</p>
+<p>3.4) **High-Speed Routers Are Cheaper:** Low-speed links are more congested</p>
+<p>3.5) **Network Edge and Wireless Environment Bandwidth is Limited**</p>
+<p>3.6) **End-to-End Bandwidth is Not Infinite:** There are bottleneck nodes</p>
+<p>3.7) **Interzone Switching and Mobile Host Roaming Require Strict QoS**</p>
+<p>3.8) **QoS Differentiation and Tariff Require QoS Assurance**</p>
+<p>(4) **Costs:**</p>
+<p>4.1) **Traffic Control and Management**</p>
+<p>4.2) **End-to-End QoS Assurance**</p>
+<p>4.3) **Wireless Environment Bandwidth Assurance**</p>
+<p>#### 2. Congestion</p>
+<p>(1) **Concept:** For established connections and new connection requests, the network cannot guarantee the agreed QoS</p>
+<p>2.1) **No Congestion:** Managed</p>
+<p>2.2) **Congestion:** Avoided</p>
+<p>2.3) **Severe Congestion:** Recovered</p>
+<p>(2) **Characteristics:** Congestion is not buffer overflow, not long delays</p>
+<p>#### 3. Single-Business Network Traffic Control and Resource Allocation</p>
+<p>1. **Circuit Switching Network Traffic Control and Resource Allocation**</p>
+<p>1.1) **Characteristics:** To ensure QoS, optimized bandwidth (example: 64 kbps)</p>
+<p>1.2) **QoS:** For voice optimization, needs to establish connections, may block, no queue delay</p>
+<p>1.3) **Traffic Control:** When there are insufficient resources, block new connections; dynamic replaceable routes; trunk lines for interzone switching and broadband connections reserved resources</p>
+<p>2. **Packet Switching Network Traffic Control and Resource Allocation**</p>
+<p>(1) **LAN/MAN (Local Area Network/ Metropolitan Area Network)**</p>
+<p>1.4) **Characteristics:** Shared medium free access</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_012_0.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_012_1.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_012_2.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_012_4.png"/></div><hr/>
+<div class="page" id="page-13">
+<p>QoS: For data optimization, best effort work, may have delay jitter, may drop packets.</p>
+<p>Traffic control: competition/avoidance (e.g., Ethernet CSMA/CD); competition/reservation (e.g., ATM cell reservation in wireless ATM); polling (e.g., FDDI token ring).</p>
+<p>(2) PS-based WAN (Wide Area Network)</p>
+<p>Features: store-and-forward, time-out retransmission</p>
+<p>QoS: For data optimization, throughput, may have delay jitter, may drop packets.</p>
+<p>Traffic control: window-based flow control; traffic shaping; buffer management.</p>
+<p>(3) Frame Relay (FR)</p>
+<p>Features: end-to-end retransmission and error correction (intermediate nodes do not perform error correction), clear congestion notification.</p>
+<p>QoS: For high-speed data optimization, high throughput, guaranteed rate, low queue delay.</p>
+<p>Traffic control: forward congestion notification and backward congestion notification, selective packet discard (DE).</p>
+<p>III. Multi-service network traffic control and resource allocation</p>
+<p>1. ATM network traffic control and resource allocation</p>
+<p>Features: state-based; high transmission speed; unpredictable traffic patterns and scales; multiple QoS requirements (sensitive to delay and packet loss); needs to adapt to different network scales (LAN and WAN).</p>
+<p>QoS:</p>
+<p>(1) CBR: Constant bit rate. Real-time service.</p>
+<p>Traffic demand: PCR (peak cell rate)</p>
+<p>Service demand: CLR (packet loss rate), CTD/CDV (delay)</p>
+<p>(2) rt-VBR: Real-time variable bit rate. Real-time service. Generally used for image services.</p>
+<p>Traffic demand: PCR (peak cell rate), SCR (average cell rate)</p>
+<p>Service demand: CLR (packet loss rate), CTD/CDV (delay)</p>
+<p>(3) nrt-VBR: Non-real-time variable bit rate. Non-real-time service.</p>
+<p>Traffic demand: PCR (peak cell rate), SCR (average cell rate)</p>
+<p>Service demand: CLR (packet loss rate)</p>
+<p>(4) ABR: Available bit rate. Non-real-time service. Generally used for data services.</p>
+<p>Traffic demand: PCR (peak cell rate), MCR (minimum cell rate), feedback</p>
+<p>Service demand: CLR (packet loss rate)</p>
+<p>(5) UBR: Unspecified bit rate. Non-real-time service. Requires peak cell rate.</p>
+<p>Traffic demand: PCR (peak cell rate)</p>
+<p>Service demand: None</p>
+<p>Traffic control:</p>
+<p>(1) Access control (CAC - connection admission control)</p>
+<p>1) At connection admission, declare traffic demand and service requirements: CBR/VBR/ABR/UBR</p>
+<p>2) Based on network performance, decide whether to accept the QoS request for this transmission. If accepted, allocate a path and bandwidth for the transmission. Method: general cell rate algorithm</p>
+<p>leaky bucket</p>
+<p>double leaky bucket (one measures peak rate, one measures average rate)</p>
+<p>Issue: declared values and measured values may not be consistent</p>
+<p>(2) Network monitoring (UPC - usage parameter control)</p>
+<p>1) Traffic policing: check if declared values and measured values are consistent</p>
+<p>Method: no general cell rate algorithm</p>
+<p>2) Traffic shaping: end device will reformat the data, ensuring that the traffic demand and service requirements are met. Method: token bucket (token bucket), buffering (buffering), spacing (spacing)</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_013_0.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_013_2.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_013_3.png"/></div><hr/>
+<div class="page" id="page-14">
+<p>(3) Network resource management (network resource management)</p>
+<p>1) Scheduling (scheduling)</p>
+<p>- DFBA (difference fair buffer allocation)
+- Round Robin</p>
+<p>2) Queuing (queueing)</p>
+<p>3) Virtual path resource reservation (virtual path resource reservation)</p>
+<p>(4) Selective discard (selective cell/frame/packet discard)</p>
+<p>1) SCD (selective cell discard): CLP (cell loss priority) low cells are discarded first.</p>
+<p>2) SFD/SPD (selective frame/data packet discard)</p>
+<p>- PPD (partial packet discard): Discard part of the packet when the buffer overflows.
+- EPD (early packet discard): Discard the entire packet if the buffer exceeds the threshold.</p>
+<p>(5) Feedback control (feedback control): Suitable for ABR (available bit rate)</p>
+<p>1) Source: Based on network control information to determine the sending rate.
+- RM (resource management information): Periodic probe packets, each switch can write its own congestion status into the packet and return it to the source, informing the source of the network's congestion status.
+2) Switch: Writes feedback information into RM to control the source rate.
+- VS-VD (virtual source-destination): Divides the network into multiple inlets and outlets based on switches as nodes, implementing multi-level flow control to reduce the RM cycle time.
+3) Destination: Congestion information is reported to the source.</p>
+<p>2. In wired Internet,尽力为服务模型 (Best-Effort: default) of traffic control and resource allocation</p>
+<p>Features: Does not guarantee delay, reliability; IP: stateless; TCP: stateful</p>
+<p>QoS: Best-Effort</p>
+<p>Traffic control:</p>
+<p>1) Relying on timeouts or repeated confirmation of the same packet to determine congestion.
+2) Relying on window rate limiting, estimating timeout and round-trip time.
+3) Relying on AIMD (additive increase, multiplicative decrease) to control the window size: slow start + congestion avoidance -&gt; fast retransmit + fast recovery.</p>
+<p>3. In wired Internet, the integrated service model (Int-Serv) of traffic control and resource allocation</p>
+<p>Features: Stateful; requires resource reservation; guarantees multiple QoS; high complexity; poor scalability</p>
+<p>QoS: Int-Serv</p>
+<p>Traffic control: Resource reservation protocol RSVP</p>
+<p>4. In wired Internet, the differentiated service model (Diff-Serv) of traffic control and resource allocation</p>
+<p>Features: Stateless; no resource reservation; weak QoS guarantee; simple implementation; good scalability</p>
+<p>QoS: Diff-Serv</p>
+<p>Traffic control: IPv4 type of service domain/IPv6 differentiated service domain's 6-bit differentiated service model code point DSCP</p>
+<p>5. In wireless Internet, traffic control and resource allocation</p>
+<p>Features:</p>
+<p>1) Fading:
+1) Low bandwidth, high error rate: congestion loss, error loss.
+2) Power fading: hidden terminal, exposed terminal.</p>
+<p>2) Variable parameters:
+1) Within the cell: time variation, position variation.
+2) Between cells:越区切换, re-routing, signaling resource consumption.</p>
+<p>QoS challenges:</p>
+<p>(1) Traffic control</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_014_0.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_014_2.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_014_3.png"/></div><hr/>
+<div class="page" id="page-15">
+<p>1) Bandwidth delay product is large</p>
+<p>2) Unfair bandwidth allocation for long delays</p>
+<p>3) Buffer overflow, packet loss, and handover will cause packet loss/call drop, wired TCP cannot distinguish!</p>
+<p>(2) Retransmission mechanism</p>
+<p>1) Low retransmission efficiency</p>
+<p>2) Limited ability of retransmission confirmation mechanism to detect lost packets</p>
+<p>(3) Timing estimation</p>
+<p>1) Unable to adapt to sudden changes in end-to-end delay</p>
+<p>Flow control:</p>
+<p>(1) Transmission layer solution: Differentiate between buffer overflow, packet loss, and handover causing packet loss/call drop</p>
+<p>Example: TCP Reno</p>
+<p>(2) Link layer solution: Use a wireless access point (remote proxy) to isolate the sending end from the wireless environment</p>
+<p>Example: Split TCP (split TCP/indirect TCP)</p>
+<p>(3) Comparison:</p>
+<p>1) ACK: Re-transmit all packets after the first error</p>
+<p>2) SACK: Re-transmit erroneous packets, high efficiency</p>
+<p>3) Wireless SACK: Reduce the number of re-transmissions caused by high error rates and handovers, improving efficiency</p>
+<p>Summary and展望</p>
+<p>One, technology development:</p>
+<p>Overhype: High expectations -&gt; over-criticism: Many implementation issues -&gt; adopt/accept(accelerate): Adapt and accept</p>
+<p>-&gt; Leapfrogging development: Rapid development</p>
+<p>Origin: Technology leads the market</p>
+<p>Large investment, little innovation</p>
+<p>Less centralized resource control</p>
+<p>Network guides innovation</p>
+<p>Spends money on technology</p>
+<p>Market leads technology</p>
+<p>Innovation is everywhere</p>
+<p>Multiple resources</p>
+<p>End device guides innovation</p>
+<p>Many choices, free products have value</p>
+<p>IP's success: Standards rather than technology, expectations of investors</p>
+<p>Two, problems and challenges</p>
+<p>Problems:</p>
+<p>Three-network convergence: Telecommunications network, television network, and Internet or three-network unification: Providing three services on the Internet</p>
+<p>NGI: The extension of the current Internet, with IP as the core or NGN: Emphasizing QoS, business and transmission separation</p>
+<p>Intelligence at the edge or intelligence at the core</p>
+<p>Challenges:</p>
+<p>Multimedia services: Real-time, QoS</p>
+<p>Wireless services: TCP window errors, end-to-end control, mobility management</p>
+<p>Commercialization: QoS, etc.</p>
+<p>Protocol complexity</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_015_1.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_015_2.png"/></div><hr/>
+<div class="page" id="page-16">
+<p>Spectrum Resource Crisis</p>
+<p>Trust Crisis</p>
+<p>Energy Crisis (Energy growth outpaces business growth): Mobile communication, data centers, core routers, commercial computers, base stations</p>
+<p>Technology development -&gt; Unit performance energy consumption decreases, does not mean total energy consumption decreases -&gt; need to view systemically</p>
+<p>Theoretical Challenges</p>
+<p>"Go all out, complex periphery, core simplicity" concept's applicability</p>
+<p>Formal description, verification, testing, and reusability</p>
+<p>Poisson process, Markov process limitations in describing data flow</p>
+<p>Decoupling host's locator and identifier (MAC: identifier) (IP: identifier+locator)</p>
+<p>IPv6: Real-time, routing selection, smooth transition</p>
+<p>Law:</p>
+<p>Moore: Microprocessor speed doubles every 18 months</p>
+<p>Gilder: Bandwidth doubles every 6 months</p>
+<p>Metcalfe's Law: Network value is proportional to the square of the number of users</p>
+<p>Information, exchange, transmission, network trends: Ubiquitous networks, storage, intelligence, and perception, see Chapter One</p>
+<p>Trend towards integration and diversified access</p>
+<p>Trend towards intelligence</p>
+<p>Computing everywhere</p>
+<p>Communicating everywhere: Mobile communication, mobile networks, mobile multimedia</p>
+<p>Cloud computing</p>
+<p>User count growth, traffic increase</p>
+<p>Fiber to the home (not only core routers, edge routers also increase in energy consumption)</p>
+<p>Coverage priority -&gt; capacity priority -&gt; energy efficiency priority</p>
+<p>Summary</p>
+<p>No connection: MPLS can be introduced to have connection-oriented advantages</p>
+<p>Multiplexing: Statistical multiplexing and competition multi-address (for data packet switching and virtual circuit switching)</p>
+<p>Exchange: Stateless; unordered arrival; destination address -&gt; large routing table; network changes when routing table entries change; strong error recovery capability; simple equipment;</p>
+<p>Transmission: No resource reservation; difficult to guarantee QoS; delay jitter; delay hard to predict; good flexibility and scalability; high line utilization; data oriented connection;</p>
+<p>Multiplexing: Fixed multiplexing and coordinated multi-address (for circuit switching, virtual circuit switching is not)</p>
+<p>Exchange: Stateful; ordered arrival; connection number -&gt; small routing table; routing table changes when connection establishment or disconnection; poor error recovery capability; complex equipment;</p>
+<p>Transmission: Resource reservation; easy to guarantee QoS; small delay jitter; delay easy to predict; poor flexibility and scalability; low line utilization; voice and video</p>
+<p>Wireless issues:</p>
+<p>1. Wireless channel characteristics: Chapter Two</p>
+<p>2. Mobility management: Chapter Five</p>
+<p>3. QoS and traffic control: Chapter Six</p>
+<p>Fiber mesh network vs. mobile ad hoc network:</p>
+<p>1. Concept, characteristics, and mobility management: Chapter Five</p>
+<p>Circuit switching vs. packet switching:</p>
+<p>1. Concept and characteristics: Chapter Four</p>
+<p>2. Routing: Chapter Five</p>
+<p>3. QoS and traffic control: Chapter Six</p>
+<img class="diagram" src="images/diagrams/crop_ch05_page_016_0.png"/><img class="diagram" src="images/diagrams/crop_ch05_page_016_2.png"/></div><hr/>
+</main>
+</body>
+</html>
