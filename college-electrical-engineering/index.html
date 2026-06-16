@@ -3,9 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>College Electrical Engineering</title>
-  <meta name="description" content="College Electrical Engineering notes including Circuits, Communication Circuits, Antennae, and Digital Electronics. By Angli Liu.">
+  <title>Scope of Circuit Studies | College Electrical Engineering</title>
+  <meta name="description" content="Digitized notes for College Electrical Engineering, page 3: Scope of Circuit Studies, current, voltage, reference directions, power, and circuit modeling.">
   <link rel="stylesheet" href="style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -15,9 +28,9 @@
   <div class="book-title">College Electrical Engineering<span>Angli Liu</span></div>
   <nav>
     <ul>
-      <li><a href="index.html" class="active">Table of Contents</a></li>
+      <li><a href="index.html" class="active">Page 3: Circuit Studies</a></li>
       <li><div class="part-label">Contents</div></li>
-      <li><a href="ch01.html">Chapter 1: Circuits & Semiconductors</a></li>
+      <li><a href="ch01.html">Chapter 1: Circuits Principles</a></li>
       <li><a href="ch02.html">Chapter 2: Communication Circuits</a></li>
       <li><a href="ch03.html">Chapter 3: Antennae</a></li>
       <li><a href="ch04.html">Chapter 4: Digital Electronics</a></li>
@@ -26,40 +39,136 @@
 </aside>
 
 <main id="content">
-
-  <div class="landing-header">
-    <h1>College Electrical Engineering</h1>
-    <p class="subtitle">Complete Lecture Notes</p>
-    <p class="author">Angli Liu</p>
+  <div class="chapter-header" style="margin-bottom: 2rem;">
+    <h1>1. Scope of Circuit Studies</h1>
+    <p style="color: var(--text-light); font-style: italic;">English translation of page 3 from "Circuits Principles, Experiments, and Semiconductors"</p>
   </div>
 
-  <p>
-    This online textbook is a unified collection of my College Electrical Engineering notes. 
-    It preserves the original derivations, diagrams, and explanations exactly as they were recorded.
-  </p>
+  <section>
+    <h2>1.1 Circuit Studies Research Content</h2>
+    <p>The field of circuit studies typically focuses on three primary areas of research:</p>
+    
+    <div style="margin: 1.5rem 0; display: flex; flex-direction: column; gap: 1rem;">
+      <div style="background: var(--bg-box); padding: 1.2rem 1.5rem; border-left: 4px solid var(--border-theorem); border-radius: 0 6px 6px 0; box-shadow: var(--shadow);">
+        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.05rem; color: var(--border-theorem); text-transform: uppercase; letter-spacing: 0.05em;">Circuit Analysis</h3>
+        <p style="margin: 0;">Given the structure and parameters of a circuit, find the circuit responses ($u$, $i$, $\dots$).</p>
+      </div>
 
-  <div class="toc-section">
-    <h2>Contents</h2>
-    <ol>
-      <li><a href="ch01.html">Circuits Principles, Experiments, and Semiconductors</a></li>
-      <li><a href="ch02.html">Communication Circuits</a></li>
-      <li><a href="ch03.html">Antennae</a></li>
-      <li><a href="ch04.html">Digital Electronics</a></li>
+      <div style="background: var(--bg-box); padding: 1.2rem 1.5rem; border-left: 4px solid var(--border-definition); border-radius: 0 6px 6px 0; box-shadow: var(--shadow);">
+        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.05rem; color: var(--border-definition); text-transform: uppercase; letter-spacing: 0.05em;">Circuit Synthesis</h3>
+        <p style="margin: 0;">Given the circuit responses/behavior, determine the structure and parameters of the circuit (the solution may not be unique).</p>
+      </div>
+
+      <div style="background: var(--bg-box); padding: 1.2rem 1.5rem; border-left: 4px solid var(--border-example); border-radius: 0 6px 6px 0; box-shadow: var(--shadow);">
+        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.05rem; color: var(--border-example); text-transform: uppercase; letter-spacing: 0.05em;">Circuit Design</h3>
+        <p style="margin: 0;">From several alternative candidate schemes that satisfy performance requirements, select and determine the final circuit structure and parameters based on constraints such as cost, volume, and reliability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>1.2 Current and Voltage Definition</h2>
+    <p>The fundamental variables in electric circuits are defined as follows:</p>
+    <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; line-height: 2;">
+      <li><strong>Current:</strong> $$i = \frac{dq}{dt}$$</li>
+      <li><strong>Voltage:</strong> $$u_{AB} = \frac{dw_{AB}}{dq} = \varphi_A - \varphi_B$$</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>1.3 Reference Directions and Power</h2>
+    <p>Reference directions are critical for defining the algebraic sign of circuit variables. We analyze power using two configurations:</p>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: stretch; margin: 2rem 0;">
+      <!-- Diagram 1 -->
+      <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; background: #fff; box-shadow: var(--shadow);">
+        <div>
+          <img src="images/page_3_diag_1.png" alt="Associated Reference Direction" class="diagram" style="margin: 0 auto 1rem; border: none; box-shadow: none;">
+          <h3 style="margin: 0 0 0.5rem 0; text-align: center; color: var(--accent);">Associated Reference Direction</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); text-align: center; margin-bottom: 1rem;">The reference direction of current $i$ enters the terminal designated with positive voltage polarity ($+$).</p>
+        </div>
+        <div style="text-align: center; background: var(--bg-box); padding: 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1.1rem; color: var(--accent-light);">
+          Power: $p(t) = u(t)i(t)$
+        </div>
+      </div>
+      
+      <!-- Diagram 2 -->
+      <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; background: #fff; box-shadow: var(--shadow);">
+        <div>
+          <img src="images/page_3_diag_2.png" alt="Non-associated Reference Direction" class="diagram" style="margin: 0 auto 1rem; border: none; box-shadow: none;">
+          <h3 style="margin: 0 0 0.5rem 0; text-align: center; color: var(--accent);">Non-associated Reference Direction</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); text-align: center; margin-bottom: 1rem;">The reference direction of current $i$ leaves the terminal designated with positive voltage polarity ($+$).</p>
+        </div>
+        <div style="text-align: center; background: var(--bg-box); padding: 0.8rem; border-radius: 6px; font-weight: bold; font-size: 1.1rem; color: var(--accent-light);">
+          Power: $p(t) = -u(t)i(t)$
+        </div>
+      </div>
+    </div>
+
+    <div style="padding: 1.2rem 1.5rem; border-left: 4px solid var(--border-theorem); background: var(--bg-theorem); border-radius: 0 6px 6px 0; margin: 1.5rem 0; box-shadow: var(--shadow);">
+      <p style="margin: 0; font-weight: 600;">Power Calculation Rules (Under the Associated Reference Direction):</p>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8;">
+        <li>If calculated power is positive ($P_{\text{abs}} > 0$), the circuit element <strong>absorbs power</strong>.</li>
+        <li>If calculated power is negative ($P_{\text{del}} < 0$), the circuit element <strong>delivers (generates) power</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>1.4 Modeling of Circuit Elements</h2>
+    <p>Circuit modeling involves establishing relationships between fundamental variables ($u$, $i$, $\psi$, $q$). For linear elements, these relationships simplify to the following classical formulations:</p>
+    
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+      <div style="background: var(--bg-box); padding: 1rem 1.5rem; border-radius: 6px; border-left: 4px solid var(--border-theorem); box-shadow: var(--shadow);">
+        <strong>Resistance:</strong> relation between voltage and current
+        $$u = f(i) \xrightarrow{\text{Linear}} u = R i$$
+      </div>
+      <div style="background: var(--bg-box); padding: 1rem 1.5rem; border-radius: 6px; border-left: 4px solid var(--border-theorem); box-shadow: var(--shadow);">
+        <strong>Inductance:</strong> relation between magnetic flux linkage and current
+        $$\psi = f(i) \xrightarrow{\text{Linear}} \psi = L i \implies u_L = L \frac{di}{dt}$$
+      </div>
+      <div style="background: var(--bg-box); padding: 1rem 1.5rem; border-radius: 6px; border-left: 4px solid var(--border-theorem); box-shadow: var(--shadow);">
+        <strong>Capacitance:</strong> relation between charge and voltage
+        $$q = f(u) \xrightarrow{\text{Linear}} q = C u \implies i_C = C \frac{du}{dt}$$
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>1.5 Fundamental Perspectives in Circuit Analysis</h2>
+    <p>When analyzing circuit problems, three fundamental perspectives are employed:</p>
+    
+    <ol style="margin-left: 1.5rem; line-height: 2; margin-top: 0.5rem;">
+      <li>
+        <strong>Abstract Perspective:</strong> Mapping from a physical system to field representations, and finally to idealized circuit models:
+        <div style="text-align: center; margin: 0.5rem 0; font-weight: 600;">
+          Physical Model $\rightarrow$ Electromagnetic Field Model $\rightarrow$ Circuit Model
+        </div>
+      </li>
+      <li>
+        <strong>Engineering Approximation Perspective:</strong> Approximating non-linear and complex physical components with simplified behavioral models (e.g., operational amplifiers, diodes, transformers).
+      </li>
+      <li>
+        <strong>Equivalence Perspective:</strong> Determining equivalence for one-port networks. For instance, if two networks have terminal relationships $u = f_1(i)$ and $u = f_2(i)$ respectively, their electrical equivalence implies:
+        $$f_1 = f_2$$
+      </li>
     </ol>
-  </div>
+  </section>
 
-  <div class="footer-links">
-    <a href="/notes/">← Back to Notes</a>
+  <div class="footer-links" style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+    <a href="/notes/" style="text-decoration: none; font-weight: 600; color: var(--accent-light);">← Back to Notes</a>
   </div>
 </main>
 
 <script>
-  // Optional: close menu when clicking outside on mobile
+  // Mobile sidebar toggle script
   document.addEventListener('click', function(e) {
     const sidebar = document.getElementById('sidebar');
     const toggle = document.getElementById('menu-toggle');
-    if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
-      sidebar.classList.remove('open');
+    if (sidebar && toggle) {
+      if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+        sidebar.classList.remove('open');
+      }
     }
   });
 </script>
