@@ -112,35 +112,20 @@
     
   <div class="page" id="c-page-5">
   <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 5</div>
-  <pre><code class="language-markdown">$\downarrow$ positive number's two's complement representation=one's complement representation=original sign-magnitude representation
-
-3) negative number's two's complement representation=one's complement representationlast bit + 1
-
-Using n binary bits to store a two's complement representation, which can represent + (2^0 + ... + 2^(n-1)) = +2^(n-1) - 1
-and - (2^0 + 2^1 + 2^2 + ... + 2^(n-1)) - 1 = -2^(n-1)  numbers within.
-
-In computers, all addition and subtraction operations are converted to two's complement addition, and the sign bit participates in the operation.
-The calculation result is two's complement representation, which can be converted back to original sign-magnitude representation.
-
-4) Offset binary representation: two's complement representation's sign bit is inverted (0 for negative, 1 for positive).
-
-Using n binary bits to store an offset binary representation, which can represent the integer range -2^(n-1) to 2^(n-1) - 1.
-offset binary representation addition/subtraction and then taking the offset binary representation is the result in offset binary representation format.
-
-2. Floating Point Numbers
-
-binary number P = S × 2^N, S: fixed-point fraction, N: fixed-point integer
-
-(mantissa) (exponent)
-
-Mantissa S (fixed-point fraction original sign-magnitude representation or two's complement representation) + Exponent N (fixed-point integer two's complement representation or biased offset binary representation)
-
-highest bit of base / representation
-</code></pre>
-  <pre><code class="language-latex">\begin{equation}
-P = S \times 2^N, S: \text{fixed-point fraction}, N: \text{fixed-point integer}
-\end{equation}
-</code></pre>
+  <p>$\downarrow$ positive number's two's complement representation = one's complement representation = original sign-magnitude representation</p>
+  <p>3) negative number's two's complement representation = one's complement representation last bit + 1</p>
+  <p>Using $n$ binary bits to store a two's complement representation, which can represent $+ (2^0 + \dots + 2^{n-1}) = +2^{n-1} - 1$ and $- (2^0 + 2^1 + 2^2 + \dots + 2^{n-1}) - 1 = -2^{n-1}$ numbers within.</p>
+  <p>In computers, all addition and subtraction operations are converted to two's complement addition, and the sign bit participates in the operation. The calculation result is two's complement representation, which can be converted back to original sign-magnitude representation.</p>
+  <p>4) Offset binary representation: two's complement representation's sign bit is inverted (0 for negative, 1 for positive).</p>
+  <p>Using $n$ binary bits to store an offset binary representation, which can represent the integer range $-2^{n-1}$ to $2^{n-1} - 1$. Offset binary representation addition/subtraction and then taking the offset binary representation is the result in offset binary representation format.</p>
+  
+  <h3>2. Floating Point Numbers</h3>
+  <p>Binary number $P = S \times 2^N$, where $S$: fixed-point fraction, $N$: fixed-point integer.</p>
+  <p style="text-align: center;">(mantissa) (exponent)</p>
+  <p>Mantissa $S$ (fixed-point fraction original sign-magnitude representation or two's complement representation) + Exponent $N$ (fixed-point integer two's complement representation or biased offset binary representation).</p>
+  <p>Highest bit of base / representation.</p>
+  
+  <p>$$P = S \times 2^N, \quad S: \text{fixed-point fraction}, \quad N: \text{fixed-point integer}$$</p>
   </div>
   <hr />
 
@@ -251,29 +236,37 @@ char ~ 1B ~ ASCII code ~ integer constant (lowest 8 bits: 1B)</p>
     
   <div class="page" id="c-page-10">
   <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 10</div>
-  <pre><code class="language-markdown">8B (as double precision)
-
-2) Real type format specifier:
-- Fixed-point real number: %f
-- Exponential: %e
-- System guarantees minimum width m: %g
-- % can be followed by m.n, where m is the total width (including decimal point), and n is the number of digits after the decimal point (default is six digits, rounded if necessary).
-
-3) Character type format specifier: %c
-
-Note: 
-1. Except for %, d, f, c, s (string), l, etc., other double-quoted characters are output as they are.
-2. First calculate the values of each item (constant/variable/expression), then store them in the output buffer according to their byte size. Extract data from the output buffer according to the format specifier. If it's not a format specifier, output the original character.
-3. When storing integers (two's complement), real numbers (IEEE floating-point), and characters (ASCII), the low-order byte part of the data (from right to left) is stored at the end of the storage space. The high-order byte part is stored at the beginning.
-   For example: 0x0000 00 01 -&gt; 0x01 00 00 00 (input) (stored in memory as two's complement).
-4. When converting long to int, only the first 2B (from right to left) is stored in the storage space. (Reversed two's complement form)
-
-2. Format input function:
-1) Integer: Same as output
-2) Real type:
-- Single precision 4B: %f or %e
-- Double precision 8B: %lf
-</code></pre>
+  <p>8B (as double precision)</p>
+  
+  <p><strong>2) Real type format specifier:</strong></p>
+  <ul>
+    <li>Fixed-point real number: <code>%f</code></li>
+    <li>Exponential: <code>%e</code></li>
+    <li>System guarantees minimum width m: <code>%g</code></li>
+    <li><code>%</code> can be followed by <code>m.n</code>, where <code>m</code> is the total width (including decimal point), and <code>n</code> is the number of digits after the decimal point (default is six digits, rounded if necessary).</li>
+  </ul>
+  
+  <p><strong>3) Character type format specifier:</strong> <code>%c</code></p>
+  
+  <p><strong>Note:</strong></p>
+  <ol>
+    <li>Except for <code>%</code>, <code>d</code>, <code>f</code>, <code>c</code>, <code>s</code> (string), <code>l</code>, etc., other double-quoted characters are output as they are.</li>
+    <li>First calculate the values of each item (constant/variable/expression), then store them in the output buffer according to their byte size. Extract data from the output buffer according to the format specifier. If it's not a format specifier, output the original character.</li>
+    <li>When storing integers (two's complement), real numbers (IEEE floating-point), and characters (ASCII), the low-order byte part of the data (from right to left) is stored at the end of the storage space. The high-order byte part is stored at the beginning.
+       For example: <code>0x0000 00 01</code> &rarr; <code>0x01 00 00 00</code> (stored in memory as two's complement).</li>
+    <li>When converting long to int, only the first 2B (from right to left) is stored in the storage space. (Reversed two's complement form).</li>
+  </ol>
+  
+  <p><strong>2. Format input function:</strong></p>
+  <ol>
+    <li>Integer: Same as output</li>
+    <li>Real type:
+      <ul>
+        <li>Single precision 4B: <code>%f</code> or <code>%e</code></li>
+        <li>Double precision 8B: <code>%lf</code></li>
+      </ul>
+    </li>
+  </ol>
   </div>
   <hr />
 
@@ -4381,29 +4374,34 @@ void main()
     
   <div class="page" id="cpp-page-7">
   <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 7</div>
-  <pre><code class="language-markdown">Cannot modify object's data members.
-Cannot call non-const member functions.
-Const objects can only call const member functions, which serve as their only external interface.
-A const member function is an overload of the non-const member function of the same name.
+  <ul>
+    <li>Cannot modify object's data members.</li>
+    <li>Cannot call non-const member functions.</li>
+    <li>Const objects can only call const member functions, which serve as their only external interface.</li>
+    <li>A const member function is an overload of the non-const member function of the same name.</li>
+  </ul>
 
-1. Const data members: (constant or const reference)
-No function is allowed to assign values to it.
-The constructor must initialize it using the initialization list.
+  <p>**1. Const data members:** (constant or const reference)</p>
+  <ul>
+    <li>No function is allowed to assign values to it.</li>
+    <li>The constructor must initialize it using the initialization list.</li>
+  </ul>
 
-8. Discussion
-Object array: distinguished by array name subscripts
-Access: array_name[index].member_name
+  <p>**8. Discussion**</p>
+  <p>**Object array:** distinguished by array name subscripts<br>
+  Access: <code>array_name[index].member_name</code></p>
 
-Object pointer: variable used to store object address variable (only data members, no function members)
-class_name *pointer_name
-Access: object_pointer-&gt;member_name
+  <p>**Object pointer:** variable used to store object address variable (only data members, no function members)<br>
+  <code>class_name *pointer_name</code><br>
+  Access: <code>object_pointer-&gt;member_name</code></p>
 
-this pointer: points to the object currently operated on by the member function
+  <p>**this pointer:** points to the object currently operated on by the member function</p>
 
-5. Dynamic Memory Allocation
-new type_name(initial_values) returns pointer
-delete pointer_name
-</code></pre>
+  <p>**5. Dynamic Memory Allocation**</p>
+  <ul>
+    <li><code>new type_name(initial_values)</code> returns pointer</li>
+    <li><code>delete pointer_name</code></li>
+  </ul>
   </div>
   <hr />
 
@@ -6682,11 +6680,11 @@ The connection is established through a three-way handshake + timer mechanism.</
   <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 25</div>
   <p>Here's the extracted English text, code, and math from the handwritten note:</p>
   <p>---</p>
-  <p>**Mathematical Operations:**</p>
-  <pre><code class="language-math">\{service program exists on this TSAP \rightarrow connect.
-\{no service program on this TSAP \rightarrow process server spawns service program to handle the connection
-process server returns to listen.
-</code></pre>
+  <p>**TSAP Connection States:**</p>
+  <ul>
+    <li>Service program exists on this TSAP &rarr; connect.</li>
+    <li>No service program on this TSAP &rarr; process server spawns service program to handle the connection, process server returns to listen.</li>
+  </ul>
   <p>**Handwritten Notes:**</p>
   <p>- Three-way handshake scheme for connection
 - Three-way handshake + timeout scheme for releasing connection
