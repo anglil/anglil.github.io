@@ -41,15 +41,15 @@ title: Notes – Angli Liu
       <li><a href="/notes/algorithms 3.pdf" target="_blank">algorithms 3</a></li>
       <li><a href="/notes/machine learning.pdf" target="_blank">machine learning</a></li>
       <li><a href="/notes/reinforcement learning.pdf" target="_blank">reinforcement learning</a></li>
-      <li><a href="/notes/circuits principles, experiments, and semiconductors.pdf" target="_blank">circuits principles, experiments, and semiconductors</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
-      <li><a href="/notes/communication circuits.pdf" target="_blank">communication circuits</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
-      <li><a href="/notes/antennae.pdf" target="_blank">antennae</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
-      <li><a href="/notes/digital electronics.pdf" target="_blank">digital electronics</a> (<a href="/college-electrical-engineering/index.html" target="_blank">College Electrical Engineering</a>)</li>
-      <li><a href="/notes/c.pdf" target="_blank">c</a> (<a href="/college-computer-engineering/index.html" target="_blank">College Computer Engineering</a>)</li>
-      <li><a href="/notes/c++.pdf" target="_blank">c++</a> (<a href="/college-computer-engineering/index.html" target="_blank">College Computer Engineering</a>)</li>
-      <li><a href="/notes/computer architecture.pdf" target="_blank">computer architecture</a> (<a href="/college-computer-engineering/index.html" target="_blank">College Computer Engineering</a>)</li>
-      <li><a href="/notes/computer networks.pdf" target="_blank">computer networks</a> (<a href="/college-computer-engineering/index.html" target="_blank">College Computer Engineering</a>)</li>
-      <li><a href="/notes/computer networks 2.pdf" target="_blank">computer networks 2</a> (<a href="/college-computer-engineering/index.html" target="_blank">College Computer Engineering</a>)</li>
+      <li><a href="/notes/circuits principles, experiments, and semiconductors.pdf" target="_blank">circuits principles, experiments, and semiconductors</a> (<a href="/college-electrical-engineering/index.html#circuits" target="_blank">College Electrical Engineering</a>)</li>
+      <li><a href="/notes/communication circuits.pdf" target="_blank">communication circuits</a> (<a href="/college-electrical-engineering/index.html#communication" target="_blank">College Electrical Engineering</a>)</li>
+      <li><a href="/notes/antennae.pdf" target="_blank">antennae</a> (<a href="/college-electrical-engineering/index.html#antennae" target="_blank">College Electrical Engineering</a>)</li>
+      <li><a href="/notes/digital electronics.pdf" target="_blank">digital electronics</a> (<a href="/college-electrical-engineering/index.html#digital" target="_blank">College Electrical Engineering</a>)</li>
+      <li><a href="/notes/c.pdf" target="_blank">c</a> (<a href="/college-computer-engineering/index.html#c" target="_blank">College Computer Engineering</a>)</li>
+      <li><a href="/notes/c++.pdf" target="_blank">c++</a> (<a href="/college-computer-engineering/index.html#cpp" target="_blank">College Computer Engineering</a>)</li>
+      <li><a href="/notes/computer architecture.pdf" target="_blank">computer architecture</a> (<a href="/college-computer-engineering/index.html#architecture" target="_blank">College Computer Engineering</a>)</li>
+      <li><a href="/notes/computer networks.pdf" target="_blank">computer networks</a> (<a href="/college-computer-engineering/index.html#networks" target="_blank">College Computer Engineering</a>)</li>
+      <li><a href="/notes/computer networks 2.pdf" target="_blank">computer networks 2</a> (<a href="/college-computer-engineering/index.html#networks2" target="_blank">College Computer Engineering</a>)</li>
       <li><a href="/notes/college electrical engineering.pdf" target="_blank">college electrical engineering</a></li>
     </ul>
 

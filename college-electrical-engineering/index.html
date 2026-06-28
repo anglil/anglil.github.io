@@ -8978,13 +8978,18 @@ $$</p>
     window.scrollTo(0, 0);
   }
 
-  // Handle page load hash
-  window.addEventListener('DOMContentLoaded', () => {
+  function handleHash() {
     const hash = window.location.hash.substring(1);
     if (hash && ['circuits', 'communication', 'antennae', 'digital'].includes(hash)) {
       showChapter(hash);
+    } else {
+      showChapter('circuits');
     }
-  });
+  }
+
+  // Handle page load hash and history change
+  window.addEventListener('DOMContentLoaded', handleHash);
+  window.addEventListener('hashchange', handleHash);
 
   // Mobile sidebar toggle script
   document.addEventListener('click', function(e) {
