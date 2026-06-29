@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applied Math | Lecture Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">Applied Math<span>Angli Liu</span></div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Lecture Notes</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+  <div class="chapter-header">
+    <h1>Applied Math</h1>
+    <h2 class="chapter-title">Complete Lecture Notes</h2>
+  </div>
+
+  <div class="page" id="page-1">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 1</div>
+  <h3>0. Statistics; Numerical Characteristics; Parameter Estimation, Hypothesis Testing</h3>
+  <ol>
+    <li>- Mean = mean(x)
+  - Median = median(X) 
+    - Range = range(X)
+- Correlation Coefficient = corrcoef(x, y); Covariance Matrix = cov(x,y) 
+- Variance = var(X), Standard Deviation = std(X)
+  - Sample Standard Deviation = stdev(x,1)</li>
+  </ol>
+  <ol>
+    <li>- [μ₀, σ²] = ... dat(参); Random Number = ... rand(参.个数)
+  - f(x₀) = ... pdf(X,σ²); F(x₀)=...cdf(Xₐ,参)
+  - X₀ = ... inv(P²(0),參)</li>
+  </ol>
+  <ol>
+    <li>Normal Distribution Parameter Estimation
+  - [μ₀, σ²] = normfit(X)</li>
+  </ol>
+  <ol>
+    <li>Normal Distribution Hypothesis Testing (h=0: Accept; h≠1: Reject)
+  - Single μ₀
+    * z = (x̄-μ₀) / σ/√n ~ N(0,1)
+      - Two-tailed: |z| ≤ U₁-α/2
+        * Single-sided right tail test:
+          - z ≥ uₐ / U₁-α
+  * Single μ₀ (σ² unknown)
+    - t = x̄/s√n ~ t(n-1) 
+      * Two-tailed: |t| ≤ t₁₋α/2
+        - Single-sided right tail test:
+          * t ≥ ta / ti-α 
+  **Single σ²**
+    - χ² = (n-1)S² / S̄^2 ~ X²(n)
+      - Two-tailed: χ² ≤ x₁₋α/2
+        * Single-sided right tail test:
+          - χ² ≥ x₂^1 / X₁-α
+  **Two μ₀ (σ¹, σ² known)**
+    - z = x̄-y / √(σ₁^2/n + σ₂²/ n) ~ N(0,1)
+      - Two-tailed: |z| ≤ U₁-α/2
+        * Single-sided right tail test:
+          - z ≥ uₐ / U₁-α
+  **Two μ₀ (σ¹, σ² unknown)**
+    - t = x̄-y / √(S₁^2/n + S₂²/ n) ~ t(n-1,n)
+      - Two-tailed: |t| ≤ ti-α/2
+        * Single-sided right tail test:
+          - t ≥ ta / ti-d 
+  **Two σ²**
+    * F = S₁^2/S₂² ~ F(n-1,n)
+      - Two-tailed: s₁ ≤ S₃^2
+        * Single-sided right tail test:
+          - F ≥ f₁-α/2 
+  **Z-test**
+    * z = (x̄ - p₀) / √(p₀*(1-p₀)/n)
+      * Two-tailed: |z| ≤ U₁-α/2
+        - Single-sided right tail test:
+          * z ≥ uₐ / U₁-α
+  **χ²-test**
+    - χ² = (n-p) / p(1-p)
+      * Two-tailed: |z| ≤ U₁-α/2
+        - Single-sided right tail test:
+          * z ≥ uₐ / U₁-α</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-2">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 2</div>
+  <h3>Mathematical Interpolation and Numerical Integration</h3>
+  <ol>
+    <li>Lagrange Polynomial Interpolation:
+   $$ y = \text{lagr}(x_0, x) $$</li>
+    <li>Piecewise Linear Interpolation:
+   $$ y = \text{interp1}(x_0, x) $$</li>
+    <li>Cubic Spline Interpolation:
+   $$ y = \text{spline}(x_0, x) $$</li>
+    <li>Trapezoidal Integration:
+   $$ S = \text{trapz}(x, y) $$</li>
+    <li>Quadrature Integration:
+   $$ S = \text{quad}(f, a, b) $$</li>
+    <li>Monte Carlo Integration:
+   $$ S = \frac{m}{n} A, $$</li>
+    <li>Mean Value Integration:
+   $$ S = \frac{1}{n} A, $$</li>
+    <li>Numerical Differentiation and Ordinary Differential Equations</li>
+  </ol>
+  <p>**1st Order Forward Difference:**
+$$ y' = \text{diff}(y) $$
+**2nd Order Forward Difference:**
+$$ y' = \text{diff}(y) $$
+1. Euler's Method:
+   - Forward: Local error O(h²)
+2. Backward Euler’s Method
+3. Central Difference Formula:
+   - Local error O(h³)
+4. Improved Euler's Method
+5. 3rd Order Runge-Kutta:
+6. 4th Order Runge-Kutta:</p>
+  <h3>Linear Systems of Equations and Linear Differential Equations</h3>
+  <ol>
+    <li>Direct Method (Small-Scale):
+   $$ x = A \backslash b, $$</li>
+    <li>Cholesky Decomposition:</li>
+    <li>Symmetric Positive Definite Matrix:</li>
+  </ol>
+  <p>**Iterative Methods (Large-Scale, Ill-Conditioned)**
+$$ x^{(k+1)} = Bx^k + f, $$
+   $$ \|B\| < 1 \Leftrightarrow convergence. $$
+$$ [L, U] = lu(A), $$</p>
+  <p>**Matrix Decomposition:**
+   - Cholesky:
+$$ L^T = \text{chol}(A). $$</p>
+  <p>**Eigenvalue Decomposition:**
+$$ p(B) = \max(\text{abs}(eig(B))). $$</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-3">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 3</div>
+  <p>Mathematical Methods in Numerical Analysis</p>
+  <p>1) Direct Iteration:
+B = D^T(L + U), f=D^{-}b
+[x, time,B] = J(A,b,x0,tol)
+Abs: |aij| > ∑i≠j aij
+2) Gauss-Seidel Iteration:
+B = (D-L)^{-1}U, f=(D-Q^{-})b
+[x,t ime,B] = G(A,b,x0,tol)
+Abs: |aij| > ∑i≠j aij
+3) SOR Iteration:
+B = B(w), f=f(w)
+Abs: 0 < w ≤<1, stable</p>
+  <p>Note:
+A = D-L-U
+D=diag(diag(A)), U=-triu(A,1), L = -tril(A,-1)</p>
+  <p>Norm: norm(x,p)
+Condition Number:
+cond(x) ≥ 0
+Cond > 1 then ill-conditioned</p>
+  <p>Sparse Matrix: 
+S = sparse(i,j,val,m,n); SS=full(S)</p>
+  <p>Nonlinear Equations (System):
+x^(k+1) = φ(x^k), until |φ^(p)(x*)| < tol
+[x, time] = newton('f','df',x0,n,tol)
+Single Root:
+[x, f] = fsolve(@f,x0,opt,'')
+Multiple Roots: 
+root=roots(coefficients)</p>
+  <ol>
+    <li>Newton (Iteration) Method:
+φ(x_k)=x_{k+} - f(x_k)/f'(x_k)</li>
+    <li>Newton (Quotient) Method:
+φ(x_k)= x_{k+} - f(x_k)/f'(x_{k-1})</li>
+    <li>Quasi Newton (Iteration) Method:</li>
+    <li>Quasi Newton (Quotient) Method:</li>
+  </ol>
+  <p>1D Root Finding: 
+2. Unconstrained Optimization:
+3. Constrained Optimization (using gradient)</p>
+  <p>[x, f] = fnminbnd(@f,v0,v1,opt,'')
+[x,fv]=fnunc(@f,xo, opt,'')
+[x fv] = fnsearch(@f ,x0,opt,'')</p>
+  <p>Roots:
+求导数方程的根</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-4">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 4</div>
+  <h3>Mathematics Assignment Paper</h3>
+  <ol>
+    <li>Multivariate regression; polynomial linear regression, multivariable quadratic regression and non-linear regression.</li>
+  </ol>
+  <ol>
+    <li>Residuals: $\hat{e}_i = e_i = y_i - \widehat{\bar{y}}_i$</li>
+  </ol>
+  <ol>
+    <li>Residual sum of squares: $Q = \sum_{i=1}^{n}(y_i -\widehat{\bar{y}}_i)^2 = \sum_{i=1}^{n}(e_i^2)$</li>
+  </ol>
+  <ol>
+    <li>Regression sum of squares: $u = \sum_{i=1}^{n}(y_i -\widehat{\bar{y}})^2$</li>
+  </ol>
+  <ol>
+    <li>Total sum of squares: $S = \sum_{i=1}^{n}(y_i -\widehat{\bar{y}})^2 = u + Q$</li>
+  </ol>
+  <ol>
+    <li>Residual sum of squares: $\hat{\sigma}^2 = S^{2}= \frac{Q}{n-m-1}$, $m$ is the number of parameters; n - m - 1: degrees of freedom</li>
+  </ol>
+  <ol>
+    <li>Determination coefficient $R^2 = \frac{u}{S} ∈ (0,1)$</li>
+  </ol>
+  <h3>Linear Regression</h3>
+  <p>$\beta = (\Phi^T(x) \cdot\phi (x)) /(\Phi^{T}(x)\cdot y)$, prediction interval $\approx [y_0 - u_{1-\alpha/2} s , y_o +u _{1- \frac{\alpha}{ 2}}s]$</p>
+  <h3>Multivariate Linear Regression</h3>
+  <p>[B, pci , e, eci,[R^2,F,pF(1,n-m-1), Fval], s^{ 2}] = regress (y, x , α)</p>
+  <h3>Polynomial Linear Regression:</h3>
+  <ol>
+    <li>Polynomial regression</li>
+  </ol>
+  <p>$p = polyfit(x, y , m)$
+B,pCI,e <-polytool (x,y,m,a)</p>
+  <ol>
+    <li>Multivariable Quadratic Regression: Ascending</li>
+  </ol>
+  <p>B,s,e <- rstd (x,y,'model',a)</p>
+  <h3>Non-Linear Regression</h3>
+  <ol>
+    <li>[B, residual sum of squares , residuals] = lsqnonlin (@F,B0,v1,v2, opt,param)
+Residuals = F(B , param)</li>
+  </ol>
+  <ol>
+    <li>[B, residual sum of squares, residuals] = lsqcurvefit (@F,B0,x,y,v1 ,v2,opt,param)
+y=F(B, x)</li>
+  </ol>
+  <p>All of the above are based on least squares principle and thus belong to unconstrained optimization.</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-5">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 5</div>
+  <h3>Linear Programming; Nonlinear Programming</h3>
+  <ol>
+    <li>Linear programming:
+   $$\min z = c^T x$$</li>
+    <li>Quadratic Programming: 
+    $$
+        \min z = 0.5 x^T Hx + c^Tx
+    $$</li>
+    <li>Nonlinear Programming:
+   $$\min z = f(x)$$</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+</main>
+</body>
+</html>
