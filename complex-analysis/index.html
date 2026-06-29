@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complex Analysis | Lecture Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">Complex Analysis<span>Angli Liu</span></div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Lecture Notes</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+  <div class="chapter-header">
+    <h1>Complex Analysis</h1>
+    <h2 class="chapter-title">Complete Lecture Notes</h2>
+  </div>
+
+  <div class="page" id="page-1">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 1</div>
+  <ol>
+    <li>Complex Numbers and Complex Functions
+   - z = r(cosθ + i sinθ) = re^(iθ) = x + iy
+   - Arg z = arg z + 2kπ, k = 0, ±1, ±2, ...
+   - arg z = {arctan(y/x) + π} for the first quadrant
+   - arg z = {arctan(y/x) + π} for the second quadrant
+   - arg z = {arctan(y/x) - π} for the third quadrant
+   - ±π/2 for z on the imaginary axis
+   - π for z on the real axis</li>
+  </ol>
+  <ol>
+    <li>|z1z2| = |z1||z2| > |z1z2| = |z1|
+   - Arg(z1z2) = Arg z1 + Arg z2
+   - Arg(z1/z2) = Arg z1 - Arg z2
+   - Meaning: Multiplying two complex numbers is equivalent to rotating the second complex number by the argument of the first and scaling by its magnitude.</li>
+  </ol>
+  <ol>
+    <li>Complex Plane Ω = C ∪ iC</li>
+  </ol>
+  <ol>
+    <li>Complex Functions: (x, y) ∈ Ω → (u, v) : (u, v) = f(x, y)
+   - u = u(x, y)
+   - v = v(x, y)
+   - ω = f(Ω)
+   - If f(Ω) is defined in Ω, z0 is a limit point of Ω. For ∀ε > 0, ∃δ > 0, such that z ∈ V*(z0; δ) ∩ Ω, then f(z) ∈ V(L; ε), then f(z) has a limit L.
+   - If a ∈ Ω, and ∀ε > 0, ∃δ > 0, such that f(V(a; δ) ∩ Ω) ⊂ V(f(a); ε)
+   - Then f(Ω) is continuous at z = a. If f(Ω) is continuous at every point in Ω, then f(Ω) is continuous in Ω.
+   - Limit and continuity of two real-valued functions are equivalent (proof by contradiction).</li>
+  </ol>
+  <ol>
+    <li>Line: Bz + Bz̅ + C = 0
+   - Circle: |z - z0| = R ⇔ Az̅ + Bz + Bz̅ + C = 0</li>
+  </ol>
+  <p>If Ω ⊂ C is compact, and f(Ω) is continuous in Ω, then:
+   - f(Ω) is bounded in Ω, and f maps bounded sets to bounded sets.
+   - |f(z)| ∈ [1, f(z1), f(z2)] for ∀z1, z2 ∈ Ω, ∀z ∈ Ω
+   - f(Ω) is uniformly continuous in Ω. Therefore, u and v are uniformly continuous.</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-2">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 2</div>
+  <p>**Section II. Analytic Functions**</p>
+  <ol>
+    <li>**Derivative:**
+   - If the limit of the difference quotient exists, the function is differentiable. The derivative is the limit of the difference quotient. The derivative is the sum of the partial derivatives and the mixed partial derivatives. The function satisfies the Cauchy-Riemann equations. (In some points) k = 2. The derivative is continuous and differentiable.</li>
+  </ol>
+  <p>**(1) u, v are two real-valued functions. Their differentiability can be verified through:**</p>
+  <ul>
+    <li>**Definition:** $$\left|\frac{\Delta u - \Delta u}{\Delta x^2 + \Delta y^2}\right|_{z_0} = 0$$</li>
+    <li>**Sufficient condition for differentiability:** u, v have continuous partial derivatives at z_0.</li>
+  </ul>
+  <ol>
+    <li>**Differentiable ⇔ u, v are differentiable and satisfy the Cauchy-Riemann equations. Proof:**</li>
+  </ol>
+  <p>**Necessity:** Suppose f(z) is differentiable at z_0 = x_0 + iy_0. Then:
+   $$\left|\frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z} - f'(z_0)\right| < \epsilon \quad \forall \epsilon > 0$$
+   Define $$\varphi(\Delta z) = \frac{f(z_0 + \Delta z) - f(z_0) - f'(z_0)}{\Delta z}$$.
+   Then $$\lim_{\Delta z \to 0} \varphi(\Delta z) = 0$$.
+   $$\therefore f(z_0 + \Delta z) - f(z_0) = f'(z_0) \Delta z + \varphi(\Delta z) \Delta z$$.
+   Let $$f(z_0 + \Delta z) - f(z_0) = \Delta u + i \Delta v$$, $$f'(z_0) = a + ib$$, $$\varphi(\Delta z) = p_1 + i p_2$$.
+   $$\therefore \Delta u + i \Delta v = (a + ib)(\Delta x + i \Delta y) + (p_1 + i p_2)(\Delta x + i \Delta y)$$
+   $$= (a \Delta x - b \Delta y + p_1 \Delta x - p_2 \Delta y) + i (b \Delta x + a \Delta y + p_2 \Delta x + p_1 \Delta y)$$
+   $$\therefore \Delta u = a \Delta x - b \Delta y + p_1 \Delta x - p_2 \Delta y$$
+   $$\Delta v = b \Delta x + a \Delta y + p_2 \Delta x + p_1 \Delta y$$.
+   $$\because \lim_{\Delta z \to 0} \varphi(\Delta z) = 0 \quad \therefore p_1 = p_2 = 0$$.
+   $$\therefore u, v are differentiable at z_0 = x_0 + iy_0$$. Thus, $$a = \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}$$, $$b = -\frac{\partial u}{\partial y} = \frac{\partial v}{\partial x}$$.</p>
+  <p>**Sufficiency:** $$\because f(z_0 + \Delta z) - f(z_0) = [u(x + \Delta x, y + \Delta y) - u(x, y)] + i [v(x + \Delta x, y + \Delta y) - v(x, y)]$$
+   $$= \Delta u + i \Delta v$$.
+   $$\therefore u, v are differentiable at z_0$$. Thus, $$\Delta u = \frac{\partial u}{\partial x} \Delta x + \frac{\partial u}{\partial y} \Delta y + \varepsilon_1 \Delta x + \varepsilon_2 \Delta y$$
+   $$\Delta v = \frac{\partial v}{\partial x} \Delta x + \frac{\partial v}{\partial y} \Delta y + \varepsilon_3 \Delta x + \varepsilon_4 \Delta y$$.
+   $$\therefore \lim_{\Delta z \to 0} \varepsilon_1 = \lim_{\Delta z \to 0} \varepsilon_2 = \lim_{\Delta z \to 0} \varepsilon_3 = \lim_{\Delta z \to 0} \varepsilon_4 = 0$$.
+   $$\therefore u, v satisfy the Cauchy-Riemann equations. Thus, $$\frac{\partial u}{\partial y} = -\frac{\partial u}{\partial x}$$, $$\frac{\partial v}{\partial y} = \frac{\partial v}{\partial x}$$.</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-3">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 3</div>
+  <p>The function f(z) is defined as:
+$$f(z)=\frac{\partial u}{\partial x}+i\cdot \frac{\partial v}{\partial y},$$
+where u and v are real-valued functions of complex variable z. The Cauchy-Riemann equations must be satisfied:
+$$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},$$
+and 
+$$-\frac{\partial u}{\partial y}=\frac{\partial v}{\partial x},$$
+for f(z) to be complex differentiable at a point z. If these conditions hold, then the function is said to have an analytic derivative.</p>
+  <p>The Cauchy-Riemann equations are a necessary and sufficient condition for the function to be complex differentiable. If u, v satisfy these equations in a neighborhood of z and are continuous thereon, then f(z) is analytic at that point. The function can be expanded in a Taylor series around z.</p>
+  <p>The derivative of f(z) at point z is given by:
+$$f'(z)=\frac{\partial u}{\partial x}+i\cdot \frac{\partial v}{\partial y},$$
+which is a complex number. If f(z) has an analytic derivative at z, then it can be written as:
+$$f'(z)=\frac{\partial u}{\partial x}+i\cdot \frac{\partial v}{\partial y},$$
+where u and v are the real part of f(z) in terms of x and y. The function is said to be analytic at z if it can be written in this form.</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-4">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 4</div>
+  <p>The exponential function z^b = e^(bln z), can be decomposed into the original point and the real part of the complex plane. (z^b)' = b z^(b-1).</p>
+  <p>Before: b = integer, unitary
+b = rational, finite value
+b = other, infinite value.</p>
+  <p>Trigonometric functions:
+sin z = (e^(iz) - e^(-iz)) / 2i
+cos z = (e^(iz) + e^(-iz)) / 2
+The derivative of (cos z) = -sin z
+tan z = sin z / cos z = -i (e^(iz) - e^(-iz)) / (e^(iz) + e^(-iz))
+z = π/2 + 2kπ is a pole (cos z has a pole)
+1/z and cos z have no boundary.</p>
+  <p>Hyperbolic functions:
+sh z = (e^z - e^(-z)) / 2
+ch z = (e^z + e^(-z)) / 2
+{sh iy = i sh y, sh iy = i sy}
+{cos iy = ch y, ch iy = cosy}</p>
+  <ol>
+    <li>C-R coordinate form:
+∂u/∂r = 1/r ∂u/∂θ, ∂u/∂θ = -1/r ∂u/∂r</li>
+  </ol>
+  <p>Let r = √(x^2 + y^2) and θ = arctan y/x
+∂u/∂x = ∂u/∂r cosθ - ∂u/∂θ sinθ / r, ∂u/∂y = ∂u/∂r sinθ + ∂u/∂θ cosθ / r
+∂v/∂x = ∂v/∂r cosθ - ∂v/∂θ sinθ / r, ∂v/∂y = ∂v/∂r sinθ + ∂v/∂θ cosθ / r</p>
+  <p>Thus, (∂u/∂r - 1/r ∂v/∂θ) cosθ = (∂v/∂r + 1/r ∂u/∂θ) sinθ.
+(∂u/∂r - 1/r ∂v/∂θ) sinθ = - (∂v/∂r + 1/r ∂u/∂θ) cosθ.
+Thus ∂u/∂r = 1/r ∂v/∂θ. Similarly ∂v/∂r = -1/r ∂u/∂θ.</p>
+  <p>III. Complex variable integral.</p>
+  <ol>
+    <li>Riemann integral of the second kind of closed curves. (Directional, linear, path additivity)
+∫_C f(z) dz ≤ ∫_C |f(z)| ds ≤ M L.
+∫_C f(z) dz = ∫_C u dx - v dy + i ∫_C v dx + u dy.
+∫_C f(z) dz = ∫_a^b f(z(t)) z'(t) dt</li>
+  </ol>
+  <ol>
+    <li>Analytic function integral:
+If f(z) is analytic in the simply connected domain D, and C is a closed curve in D, then ∫_C f(z) dz = 0.</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-5">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 5</div>
+  <p>The Cauchy Integral Formula: $f(z_0) = \frac{1}{2\pi i} \oint_C \frac{f(z)}{z-z_0} dz$. $f(z)$ is analytic in $D$ and continuous in $\overline{D}$.</p>
+  <p>Higher-order derivatives formula: $f^{(n)}(z_0) = \frac{n!}{2\pi i} \oint_C \frac{f(z)}{(z-z_0)^{n+1}} dz$. $\Rightarrow$ Higher-order derivatives.</p>
+  <p>Cauchy Inequality: $|f^{(n)}(a)| \leq \frac{n!M}{R^n}$ ($n=1,2,\ldots$). $f(z)$ is analytic in $|z-a|<R$ and bounded by $M$.</p>
+  <p>Liouville's Theorem: If $|f(z)| \leq \frac{M}{R}$, as $R \to \infty$ then $f(z) = \text{constant}$. $f(z)$ is a constant function.</p>
+  <ol>
+    <li>Antiderivative: $f(z)$ is continuous in $D$ and if there exists a function $F(z)$ such that $F(z) = f(z)$, then $F(z)$ is an antiderivative of $f(z)$.</li>
+  </ol>
+  <p>Theorem: If $D$ is a simply connected domain and $f(z)$ is analytic in $D$, then $F(z) = \int_{z_0}^z f(\zeta) d\zeta$.</p>
+  <p>Proof: $D$ has an antiderivative:
+Since $f(z)$ is analytic in $D$, the integral is path-independent. Thus, the integral determines the unique antiderivative $F(z)$ in $D$.</p>
+  <p>2) $F(z)$ is differentiable:
+Since $f(z)$ is continuous at $z_1$, $\forall \epsilon > 0$ $\exists \delta > 0$ such that $|z-z_1| < \delta$ implies $|f(z) - f(z_1)| < \epsilon$.
+$|F(z) - F(z_1)| = \left|\frac{1}{z-z_1} \int_{z_1}^z [f(\zeta) - f(z_1)] d\zeta\right| \leq \frac{1}{|z-z_1|} \int_{z_1}^z |f(\zeta) - f(z_1)| d\zeta | < \frac{1}{\delta} \epsilon \cdot \delta = \epsilon$.
+$\therefore$ Differentiable, $F'(z) = f(z)$</p>
+  <p>$\Rightarrow$ Any order derivative of the antiderivative: Constant.</p>
+  <p>Morera's Theorem: $f(z)$ is continuous in $D$ and $C$ is any simple closed curve in $D$. If $\oint_C f(z) dz = 0$ then $f(z)$ is analytic in $D$.</p>
+  <p>Proof: By hypothesis, $f(z)$ along $B(z_0, \delta)$ is any simple closed curve integral is zero. $\therefore$ $f(z)$ is analytic in $D$.</p>
+  <p>$\therefore$ $F(z)$ is differentiable in $D$ and $F(z)$ is analytic in $D$.</p>
+  <p>$\therefore$ $f(z)$ is analytic.</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-6">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 6</div>
+  <ol>
+    <li>Given an analytic function (single-valued within) in the complex plane, find f(z):</li>
+  </ol>
+  <p>**Integration Method:**
+   Given u, through $\frac{\partial u}{\partial y} = \frac{\partial v}{\partial x}$ we get $v = \int \frac{\partial u}{\partial x} dy + C(x)$. Also $\frac{\partial v}{\partial x} = -\frac{\partial u}{\partial y}$, thus $\frac{\partial}{\partial x} (\int \frac{\partial u}{\partial y} dy) + C'(x) = -\frac{\partial u}{\partial y}$. Thus $C(x)$ is the solution for v.
+   
+   **Line Integral Method:**
+   $\because \text{rot}(-\frac{\partial u}{\partial y}, \frac{\partial u}{\partial x}) = \frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} = 0$
+   $\therefore v = \int_{(x_0, y_0)}^{(x, y)} \frac{\partial v}{\partial x} dx + \frac{\partial v}{\partial y} dy = \int_{(x_0, y_0)}^{(x, y)} -\frac{\partial u}{\partial y} dx + \frac{\partial u}{\partial x} dy$ is path-independent.
+   
+   **Direct Integration Method:**
+   $f'(z) = \frac{\partial u}{\partial x} + i \frac{\partial u}{\partial y} = \frac{\partial u}{\partial x} - i \frac{\partial u}{\partial y}$
+   $\therefore f(z)$ is an analytic function
+   $\therefore$ it can be expressed as $g(z)$.
+   $\therefore f(z) = \int g(z) dz + C$. C is a real constant.</p>
+  <ol>
+    <li>**Cauchy Integral Formula:** If f(z) is analytic in |z-a|<R, then $f(a) = \frac{1}{2\pi} \int_{\gamma} f(a+re^{i\theta}) d\theta$.
+   
+   **Maximum Modulus Principle:** If f(z) is analytic in D and not constant, then f(z) attains its maximum value in D only at the boundary of D.
+   
+   **Green's Theorem:** $\nabla^2 u = 0 \Rightarrow u(x, y) = u(r\cos\theta, r\sin\theta)$
+   $$ = \frac{1}{2\pi} \int_{0}^{2\pi} \frac{(R^2 - r^2) u(R\cos\theta, R\sin\theta)}{R^2 - 2Rr\cos(\theta-\phi) + r^2} d\theta. $$</li>
+  </ol>
+  <p>**Proof:**
+   If f(z) = u + iv is analytic in D, C is the circle |z|=R. Let z be a point in C, let $\tilde{z} = R^2/z$, then $\tilde{z} = \frac{2\pi z}{\tilde{z}} = |z|/z$.
+   $\therefore |\tilde{z}| > |z|$. $\therefore \tilde{z}$ is outside C. $\therefore \frac{f(\tilde{z})}{\tilde{z}}$ is analytic in C.
+   
+   $$ \therefore \oint_{C} \frac{f(\tilde{z})}{\tilde{z} - z} d\tilde{z} = \oint_{C} \frac{f(z)}{z - \tilde{z}} d\tilde{z} = 0. $$
+   
+   $$ \therefore f(z) = \frac{1}{2\pi i} \oint_{C} \left( \frac{1}{z - \tilde{z}} + \frac{R^2}{R^2 - \tilde{z}z} \right) f(\tilde{z}) d\tilde{z} = \frac{1}{2\pi i} \oint_{C} \frac{(R^2 - z\tilde{z}) f(\tilde{z})}{(z - \tilde{z})(R^2 - \tilde{z}z)} d\tilde{z}. $$
+   
+   $\because C: |z| = R$, $\therefore \tilde{z} = Re^{i\phi}$, $z = re^{i\theta}$.
+   
+   $$ \therefore f(z) = \frac{1}{2\pi i} \oint_{C} \frac{(R^2 - z\tilde{z}) f(\tilde{z})}{(z - \tilde{z})(R^2 - \tilde{z}z)} d\tilde{z} = \frac{1}{2\pi i} \oint_{C} \frac{(R^2 - z\tilde{z}) f(\tilde{z})}{(z - \tilde{z})(R^2 - \tilde{z}z)} d\tilde{z}. $$</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-7">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 7</div>
+  <ol>
+    <li>**Complex Series Convergence**:
+   - **Cauchy Convergence Criterion**: $\lim_{n\to\infty} |\alpha_n - \beta_n| < \epsilon$.
+   - **Convergence of Series**: $\sum \alpha_n$ and $\sum \beta_n$ converge $\Leftrightarrow$ Cauchy Convergence Criterion: $|\sum_{n=1}^N \alpha_n + \sum_{n=1}^N \beta_n| < \epsilon$.
+   - **Sufficient Condition**: $\lim_{n\to\infty} \alpha_n = 0$, $\beta_n = 0$, $\alpha_n = 0$. Check sufficient condition, then use (1) or (3).
+   - **Absolute Convergence**: $\sum |\alpha_n| \sum |\beta_n|$ absolutely convergent $\Rightarrow$ $\sum C_n$ convergent.
+   - **Absolute Convergence Condition**: $\sum |\alpha_n| \leq \sqrt{\alpha_n^2 + \beta_n^2}$, $\sum |\beta_n| \leq \sqrt{\alpha_n^2 + \beta_n^2}$.
+   - **Convergence of Series**: $\sum \alpha_n$ and $\sum \beta_n$ convergent $\Leftrightarrow$ Cauchy: $|f_n(z) + \cdots + f_m(z)| < \epsilon$.
+   - **Sufficient Condition**: Weierstrass Test.</li>
+  </ol>
+  <ol>
+    <li>**Power Series**:
+   - **Convergent Series**: Convergent series of complex numbers, function evaluation (holomorphic function), Taylor series (holomorphic function).
+   - **Abel's Theorem**: $\sum C_n z^n$ converges at $z_0$ if $|z_0| < R_1$, $\sum C_n z^n$ absolutely convergent.
+   - **Divergent Series**: $\sum C_n z^n$ diverges at $z_0$ if $|z_0| > R_1$, $\sum C_n z^n$ divergent.
+   - **Radius of Convergence**: $R = \lim_{n\to\infty} \frac{|C_n|}{|C_{n-1}|} = \lim_{n\to\infty} \frac{1}{n! C_n}$.
+   - **Series Property**: $\sum (\alpha a_n + \beta b_n) z^n = \alpha \sum a_n z^n + \beta \sum b_n z^n$. $R = \min(R_1, R_2)$.
+   - **Taylor Series**: $f(z)$ is holomorphic in $D$. $z \in D$. If $z_0$ is the closest point in $D$ to $z$, then in the disk $|z - z_0| < d$ $f(z) = \sum C_n (z - z_0)^n$. $C_n = \frac{1}{2\pi i} \oint_{C} \frac{f(s)}{(s - z_0)^{n+1}} ds$.
+   - **Radius of Convergence**: $R$ is the distance from $z_0$ to the nearest singularity; convergence in the whole disk does not imply holomorphicity!
+   - **Uniqueness**: $f(z) = \sum_{n=0}^{\infty} C_n (z - z_0)^n$. $C_n = \frac{1}{2\pi i} \oint_{C} \frac{f(s)}{(s - z_0)^{n+1}} ds$.</li>
+  </ol>
+  <ol>
+    <li>**Laurent Series**:
+   - **Laurent Series**: $f(z) = \sum_{n=-\infty}^{\infty} C_n (z - z_0)^n$. $C_n = \frac{1}{2\pi i} \oint_{C} \frac{f(s)}{(s - z_0)^{n+1}} ds$.
+   - **Convergent Part**: $|z - z_0| < R_2$ convergent.
+   - **Main Part**: $|z - z_0| > R_1$ convergent.
+   - **Integral Form**: $\oint_{R_1 < |z - z_0| < R_2} \frac{f(s)}{(s - z_0)^{n+1}} ds = \sum_{n=-\infty}^{\infty} C_n (z - z_0)^n$.
+   - **Integral Formula**: $\oint_{C} \frac{f(s)}{(s - z_0)^{n+1}} ds = 2\pi i C_n$.</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-8">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 8</div>
+  <ol>
+    <li>Poles and singular points.
+   - Removable singularity: f(z) = 0 when z → ∞. 
+     $$\lim_{z \to a} f(z)$$
+   - Essential singularity: $\frac{1}{z}$ has a finite limit. (a is not defined)
+   - Pole: $\lim_{z \to z_0} f(z) = ∞$.
+   - Removable singularity: $\lim_{z \to z_0} f(z)$ does not exist and is ∞ (any form).
+   - Also use Laurent series definition. Can be judged by poles, key is to determine the type of singularity.
+   - Removable point a: f(z) has an upper bound in V*(a; δ). |f(z)| ≤ M.
+   - Pole a: f(z) = g(z)/(z-a)^m. g(a) is not zero in V*(a; δ).
+   - ∞ removable point: f(z) has an upper bound in V*(∞; R). The normal value is 0.
+   - ∞ pole: f(z) = z^m g(z). g(∞) is not zero in V*(0; R).</li>
+  </ol>
+  <ol>
+    <li>Residue:
+   - Res[f(z), z_0] = $\frac{1}{2πi}$ ∮ f(z) dz.
+   - ∞: Res[f(∞), z_0] = $\frac{1}{2πi}$ ∮ f(z) dz. (∞ is a pole point)
+   - Removable singularity: Res = 0; ∞ then Res is not zero.
+     $$Res(f(z), z_0) = \frac{1}{(m+1)!}$$
+     $$Res(f(z), z_0) = \frac{P(a)}{Q'(z)}, P and Q are not zero at z_0, then Res = \frac{P(a)}{Q'(z)}. $$
+     $$Res(f(z), z_0) = -1 \times Res(\frac{f(∞)}{z^2}, 0).$$
+   - Essential singularity: Laurent series.
+     $$\oint f(z) dz = 2πi \sum_{k=1}^{n} Res(f(∞), z_k).$$
+     $$Res[f(z, ∞) + \sum_{k=1}^{n} Res(f(∞), z_k)] = 0. k is a finite pole point.$$</li>
+  </ol>
+  <ol>
+    <li>Contour integration.
+   - f(z) = $\frac{f(∞)}{(z-z_0)^n}$, then Res[f(z), z] = $\frac{1}{(m+1)!} \oint f(z) dz$.
+   - ∫ R(C, z_0) dx → ∮ f(z).
+     $$\int_{-∞}^{+∞} \frac{P(x)}{Q'(x)} e^{\text{i}ax} dx$$
+     $$\int_{-∞}^{</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+</main>
+</body>
+</html>
