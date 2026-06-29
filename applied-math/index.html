@@ -49,9 +49,9 @@
   - Sample Standard Deviation = stdev(x,1)</li>
   </ol>
   <ol>
-    <li>- [μ₀, σ²] = ... dat(参); Random Number = ... rand(参.个数)
-  - f(x₀) = ... pdf(X,σ²); F(x₀)=...cdf(Xₐ,参)
-  - X₀ = ... inv(P²(0),參)</li>
+    <li>- [μ₀, σ²] = ... data(param); Random Number = ... rand(param, count)
+  - f(x₀) = ... pdf(X,σ²); F(x₀)=...cdf(Xₐ,param)
+  - X₀ = ... inv(P²(0),param)</li>
   </ol>
   <ol>
     <li>Normal Distribution Parameter Estimation
@@ -199,7 +199,7 @@ root=roots(coefficients)</p>
 [x,fv]=fnunc(@f,xo, opt,'')
 [x fv] = fnsearch(@f ,x0,opt,'')</p>
   <p>Roots:
-求导数方程的根</p>
+Find the roots of the derivative equation.</p>
   </div>
   <hr style="margin: 40px 0;" />
 
