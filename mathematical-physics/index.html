@@ -41,48 +41,88 @@
   <div class="page" id="math-physics-page-1">
     <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 1</div>
   <h3>Basic Concepts</h3>
-  <p>#### Linear Equation</p>
+  <p><strong>Linear Equation</strong></p>
   $$
-  \Delta u = f \Rightarrow \text{Superposition Principle}: \Delta u_1 = f_1, \Delta u_2 = f_2, \Delta (au_1 + bu_2) = c_1f_1 + c_2f_2
+  \Delta u = f \Rightarrow \text{Superposition Principle}: \Delta u_1 = f_1, \Delta u_2 = f_2 \Rightarrow \Delta (au_1 + bu_2) = a f_1 + b f_2
+  $$
+  <p>where $a$ and $b$ are constants, representing a linear combination of terms dependent on independent variables.</p>
+
+  <p><strong>Homogeneous Equation</strong></p>
+  $$
+  \Delta u = 0 \Rightarrow \text{Superposition Principle}: \text{If } \Delta u_1 = 0, \Delta u_2 = 0, \text{ then } au_1 + bu_2 \text{ is a solution.}
   $$
 
-  (α and β are constants, linear combination of terms dependent on independent variables).</p>
-  <p>#### Homogeneous Equation
-  \Delta u = 0 \Rightarrow \text{Superposition Principle}: \text{If } \Delta u_1 = 0, \Delta u_2 = 0, \text{ then } au_1 + bu_2 \text{ is a solution of } \Delta u = 0. \text{ However, the superposition principle generally does not hold, as } au_1 + bu_2 \text{ may not be convergent.}
-  #### General Solution</p>
-  <p>General solution: all solutions of the equation.</p>
-  <p>#### Boundary Value Problem</p>
-  <p>Boundary value problem: partial differential equation + boundary conditions (initial and boundary conditions).</p>
-  <p>#### Stability</p>
-  <p>Stability: existence of solution + uniqueness of solution + solution stability.</p>
+  <p><strong>General Solution</strong></p>
+  <p>The general solution consists of all solutions to the partial differential equation.</p>
+
+  <p><strong>Boundary Value Problem</strong></p>
+  <p>A boundary value problem consists of a partial differential equation combined with boundary conditions (initial and boundary conditions).</p>
+
+  <p><strong>Stability</strong></p>
+  <p>Stability requires the existence, uniqueness, and continuous dependence on data (solution stability) of the solution.</p>
+
   <h3>Three Typical Partial Differential Equations</h3>
-  <p>1. Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G, \text{ constant coefficient second-order linear PDE}</p>
-  <p>Given \xi = \xi(x, y), \eta = \eta(x, y), then J = \begin{vmatrix} \xi_x & \xi_y \\ \eta_x & \eta_y \end{vmatrix}\therefore u_x = u_\xi \xi_x + u_\eta \eta_x, \quad u_y = u_\xi \xi_y + u_\eta \eta_y\therefore u_{xx} = u_{\xi\xi} \xi_x^2 + 2u_{\xi\eta} \xi_x \eta_x + u_{\eta\eta} \eta_x^2 + u_{\xi\xi} \xi_{xx} + u_{\eta\eta} \eta_{xx}u_{yy} = u_{\xi\xi} \xi_y^2 + 2u_{\xi\eta} \xi_y \eta_y + u_{\eta\eta} \eta_y^2 + u_{\xi\xi} \xi_{yy} + u_{\eta\eta} \eta_{yy}u_{xy} = u_{\xi\xi} \xi_x \xi_y + u_{\xi\eta} (\xi_x \eta_y + \xi_y \eta_x) + u_{\eta\eta} \eta_x \eta_y + u_{\xi\xi} \xi_{xy} + u_{\eta\eta} \eta_{xy}
-  Substitute into the original equation, get A_1 u_{\xi\xi} + B_1 u_{\xi\eta} + C_1 u_{\eta\eta} + D_1 u_{\xi} + E_1 u_{\eta} + F_1 u = G_1</p>
+  
+  <p>1. General second-order linear PDE with constant coefficients:</p>
   $$
-  where A_1 = A \xi_x^2 + B \xi_x \xi_y + C \xi_y^2B_1 = 2A \xi_x \eta_x + B (\xi_x \eta_y + \xi_y \eta_x) + 2C \xi_y \eta_yC_1 = A \eta_x^2 + B \eta_x \eta_y + C \eta_y^2D_1 = A \xi_{xx} + B \xi_{xy} + C \xi_{yy} + D \xi_x + E \xi_yE_1 = A \eta_{xx} + B \eta_{xy} + C \eta_{yy} + D \eta_x + E \eta_yF_1 = F, G_1 = G
-  $$
-
-  $$
-  Given B_1^2 - 4A_1C_1 = J^2 (B^2 - 4AC).
+  A u_{xx} + B u_{xy} + C u_{yy} + D u_x + E u_y + F u = G
   $$
 
+  <p>Under the coordinate transformation $\xi = \xi(x, y)$, $\eta = \eta(x, y)$ with Jacobian:</p>
   $$
-  If A_1 = C_1 = 0, then B_1 u_{\xi\eta} + D_1 u_{\xi} + E_1 u_{\eta} + F_1 u = G_1.
-  $$
-
-  $$
-  \therefore u_x = u_\xi \xi_x + u_\eta \eta_x\therefore u_y = u_\xi \xi_y + u_\eta \eta_y\therefore u_{xx} = u_{\xi\xi} \xi_x^2 + u_{\eta\eta} \eta_x^2 + u_{\xi\xi} \xi_{xx} + u_{\eta\eta} \eta_{xx}u_{yy} = u_{\xi\xi} \xi_y^2 + u_{\eta\eta} \eta_y^2 + u_{\xi\xi} \xi_{yy} + u_{\eta\eta} \eta_{yy}u_{xy} = u_{\xi\xi} \xi_x \xi_y + u_{\xi\eta} (\xi_x \eta_y + \xi_y \eta_x) + u_{\eta\eta} \eta_x \eta_y + u_{\xi\xi} \xi_{xy} + u_{\eta\eta} \eta_{xy}
+  J = \begin{vmatrix} \xi_x & \xi_y \\ \eta_x & \eta_y \end{vmatrix} \neq 0
   $$
 
-  Substitute into the original equation, get A u_{\xi\xi} + B u_{\xi\eta} + C u_{\eta\eta} + D u_{\xi} + E u_{\eta} + F u = G</p>
+  <p>Using the chain rule, the partial derivatives transform as follows:</p>
   $$
-  where A = A \xi_x^2 + B \xi_x \xi_y + C \xi_y^2B = 2A \xi_x \eta_x + B (\xi_x \eta_y + \xi_y \eta_x) + 2C \xi_y \eta_yC = A \eta_x^2 + B \eta_x \eta_y + C \eta_y^2D = A \xi_{xx} + B \xi_{xy} + C \xi_{yy} + D \xi_x + E \xi_yE = A \eta_{xx} + B \eta_{xy} + C \eta_{yy} + D \eta_x + E \eta_yF = F, G = G\therefore u_x = u_\xi \xi_x + u_\eta \eta_x\therefore u_y = u_\xi \xi_y + u_\eta \eta_y\therefore u_{xx} = u_{\xi\xi} \xi_x^2 + u_{\eta\eta} \eta_x^2 + u_{\xi\xi} \xi_{xx} + u_{\eta\eta} \eta_{xx}u_{yy} = u_{\xi\xi} \xi_y^2 + u_{\eta\eta} \eta_y^2 + u_{\xi\xi} \xi_{yy} + u_{\eta\eta} \eta_{yy}u_{xy} = u_{\xi\xi} \xi_x \xi_y + u_{\xi\eta} (\xi_x \eta_y + \xi_y \eta_x) + u_{\eta\eta} \eta_x \eta_y + u_{\xi\xi} \xi_{xy} + u_{\eta\eta} \eta_{xy}
+  u_x = u_\xi \xi_x + u_\eta \eta_x
+  $$
+  $$
+  u_y = u_\xi \xi_y + u_\eta \eta_y
+  $$
+  $$
+  u_{xx} = u_{\xi\xi} \xi_x^2 + 2u_{\xi\eta} \xi_x \eta_x + u_{\eta\eta} \eta_x^2 + u_\xi \xi_{xx} + u_\eta \eta_{xx}
+  $$
+  $$
+  u_{yy} = u_{\xi\xi} \xi_y^2 + 2u_{\xi\eta} \xi_y \eta_y + u_{\eta\eta} \eta_y^2 + u_\xi \xi_{yy} + u_\eta \eta_{yy}
+  $$
+  $$
+  u_{xy} = u_{\xi\xi} \xi_x \xi_y + u_{\xi\eta} (\xi_x \eta_y + \xi_y \eta_x) + u_{\eta\eta} \eta_x \eta_y + u_\xi \xi_{xy} + u_\eta \eta_{xy}
   $$
 
-  Substitute into the original equation, get A u_{\xi\xi} + B u_{\xi\eta} + C u_{\eta\eta} + D u_{\xi} + E u_{\eta} + F u = G</p>
+  <p>Substituting these into the original equation, we obtain the canonical form:</p>
   $$
-  where A = A \xi_x^2 + B \xi_x \xi_y + C \xi_y^2B = 2A \xi_x \eta_x + B (\xi_x \eta_y + \xi_y \eta_x) + 2C \xi_y \eta_yC = A \eta_x^2 + B \eta_x \eta_y + C \eta_y^2D = A \xi_{xx} + B \xi_{xy} + C \xi_{yy} + D \xi_x + E \xi_yE = A \eta_{xx} + B \eta_{xy} + C \eta_{yy} + D \eta_x + E \eta_yF = F, G = G\therefore u_x = u_\xi \xi_x + u_\eta \eta_x\therefore u_y = u_\xi \xi_y + u_\eta \eta_y\therefore u_{xx} = u_{\xi\xi} \xi_x^2 + u_{\eta\eta} \eta_x^2 + u_{\xi\xi} \xi_{xx} + u_{\eta\eta} \eta_{xx}u_{yy} = u_{\xi\xi} \xi_y^2 + u_{
+  A_1 u_{\xi\xi} + B_1 u_{\xi\eta} + C_1 u_{\eta\eta} + D_1 u_\xi + E_1 u_\eta + F_1 u = G_1
+  $$
+
+  <p>where the transformed coefficients are:</p>
+  $$
+  A_1 = A \xi_x^2 + B \xi_x \xi_y + C \xi_y^2
+  $$
+  $$
+  B_1 = 2A \xi_x \eta_x + B (\xi_x \eta_y + \xi_y \eta_x) + 2C \xi_y \eta_y
+  $$
+  $$
+  C_1 = A \eta_x^2 + B \eta_x \eta_y + C \eta_y^2
+  $$
+  $$
+  D_1 = A \xi_{xx} + B \xi_{xy} + C \xi_{yy} + D \xi_x + E \xi_y
+  $$
+  $$
+  E_1 = A \eta_{xx} + B \eta_{xy} + C \eta_{yy} + D \eta_x + E \eta_y
+  $$
+  $$
+  F_1 = F, \quad G_1 = G
+  $$
+
+  <p>The discriminant transforms according to the relation:</p>
+  $$
+  B_1^2 - 4A_1C_1 = J^2 (B^2 - 4AC)
+  $$
+
+  <p>If $A_1 = C_1 = 0$, the equation simplifies to:</p>
+  $$
+  B_1 u_{\xi\eta} + D_1 u_\xi + E_1 u_\eta + F_1 u = G_1
   $$
 
 
