@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signals and Systems | Lecture Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">Signals and Systems<span>Angli Liu</span></div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Lecture Notes</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+  <div class="chapter-header">
+    <h1>Signals and Systems</h1>
+    <h2 class="chapter-title">Complete Lecture Notes</h2>
+  </div>
+
+  <div class="page" id="page-1">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 1</div>
+  <h3>I. Signals</h3>
+  <ol>
+    <li>**Signal Classification**
+   - Time: Continuous, Discrete
+     *Continuous*: Analogous Sampling  
+     *Discrete*: Quantized Digital</li>
+  </ol>
+  <ol>
+    <li>**Signal Decomposition**
+   - ① Convergence Property
+     *1) f(t)=∫dλ|a_λ×e^(jωt)f(τ)|  
+     *Example*: t/δ(t); LT/e^st; FT/e^(jωt)  
+     *2) f(t)=∑|a_λ×e^((jωt))f(τ)|  
+     *Example*: t/δ(t); FC/e^(jωt) ; LT, FT  
+     *3) f(n)=∫dλ|a_λ×(e^(jωt)f(t))|
+     *Example*: n/δ(n); ZT/Z^(-n) ; DFT/e^(jωt)
+     *4) f(n)=∑|a_λ×(e^((jωt))f(t+nT))
+     *Example*: n/δ(n); DFS/e^(jωt) ; ZT, DFT</li>
+  </ol>
+  <ul>
+    <li>② Orthogonality
+     *<a_n|f(t)> = ∫dt <a_n|f(τ)>
+     *<f(n)|f(m)> = ∑<a_m|a_n>
+     *∑<f(n) f(m)>=∫dt <a_n|a_m></li>
+  </ul>
+  <p>**Energy Signals:**
+1. R_{2,1}(t) = <f_2(t)| f_t(τ)> = R_{2,1}^*(t)
+   E_0=R_{1.}(o)</p>
+  <p>**Power Signals:**
+3) R_{2,1}^*(t)=<f_2(t)| f_t(τ)> = R_{2,1}^*(t)
+P_0=R_{1.}(o)</p>
+  <p>4) R_{2,1}^*(m)=<f_2(m)| f_t(τ)> = R_{2,1}^*(m)
+P_0=R_{1.}(o)</p>
+  <h3>II. Systems</h3>
+  <ol>
+    <li>**System Classification**
+   - Linear: Stable (Stable)
+     *Continuous*: Discrete
+       Memoryless: Algebraic  
+         Linear: Additive & Multiplicative  
+           Time-invariant: x(t-t_0) → y(t)
+         Nonlinear: Multiplicative  
+           Time-invariant: x(t-t_0) → y(t)
+   - Nonlinear: Unstable (Unstable)
+     *Continuous*: Discrete
+       Memoryless: Algebraic  
+         Linear: Additive & Multiplicative  
+           Time-invariant: x(t-t_0) → y(t)
+         Nonlinear: Multiplicative  
+           Time-invariant: x(t-t_0) → y(t)
+   - Stable: BIBO
+     *Continuous*: Discrete  
+       Memoryless: Algebraic  
+         Linear: Additive & Multiplicative  
+           Time-invariant: x(t-t_0) → y(t)
+         Nonlinear: Multiplicative  
+           Time-invariant: x(t-t_0) → y(t)
+   - Unstable: BIBO</li>
+  </ol>
+  <ol>
+    <li>**System Decomposition**
+  *1) Block Diagram
+    - Input-Output Model: Ideal  
+      Variable-Multiplication Model:
+        *t → s → Ω → ω
+          n → z → w → f*</li>
+  </ol>
+  <p>*2) System Decomposition</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-2">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 2</div>
+  <p>A1:</p>
+  <p>No[δ(t)]=<∂(t), φ(t)> = δ(0)</p>
+  <p>{Distribution function ∂(t): Treats as a test function φ(t)}
+Test functions: C^∞ (R), ∂(t)≠0, a<t<b,-∞<a,b<∞</p>
+  <p>① ∂(t) + b∂ = (a+b)δ
+$$(1)\quad a\delta(t)+b\delta(t)=(a+b)\delta$$</p>
+  <p>② f(t)∂(t-t_0)=f(t_0)δ(t-t_0)
+$$(2)\quad f(t)\delta'(t-t_{o})=f(t_0) \, δ'$$</p>
+  <p>③ ∂(kt)=1/|a|\partial(t) => ∂ is an even function
+$$(3)\quad \delta(kt)=\frac{1}{|a|}\partial(t) => δ is even$$</p>
+  <p>④ ∂[f(t)] = 1/2 | f'(t) | δ (t-t_0)
+$$(4)\quad \delta[f(t)] =\frac{1}{2}|\,f'(t)| δ$$</p>
+  <p>No[∂(k)] = <δ^(k)(t), φ(t)> = (1)^kφ(k) δ(0)</p>
+  <p>The above formula can be proven using integration by parts and the properties of φ(t). δ^(k) is a distribution.</p>
+  <p>① Multiplication: By integration by parts, we can obtain any result
+$$(1)\quad \delta^{(k)} (at) =\frac{1}{|a|^{\, k}} \,\delta^{(k)} (t) => δ is even$$</p>
+  <p>No[e^(jwt)] = ∫[a^b] e^(jw) t φ(t) dt | w->∞ = 0 (-∞<a,b<∞): Cauchy-Schwarz inequality</p>
+  <p>① When w->0, e^(jwt) = cos(wt)=sin(wt)=1.</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-3">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 3</div>
+  <p>III. Time Domain Analysis and Systems</p>
+  <ol>
+    <li>Description:
+   - f(t) = ∫∞-∞f(τ)dδ(t−τ)dτ
+   - f(t) = ∫-∞+∞f(τ)dδ(t−τ)dτ</li>
+  </ol>
+  <ol>
+    <li>Solution:
+   - Free Response + Forced Response
+     ① Zero State Response + Zero Input Response</li>
+  </ol>
+  <ol>
+    <li>System Function:
+   - Causality: h(t) * u(τ) = δ(t)
+     ② Stability: BIBO:
+       |h(t)| ≤ ∫∞-∞|h(τ)e^(t−τ)dτ|
+       ≤ B∫∞0|h(t)|dt
+   - Impulse Response Method:
+     x(τ) = ∑Azke^(αkτ)
+   - Initial Condition: 
+     x(0) = ① Zero State Response + Zero Input Response
+       - Zero State: e(t)
+         x(0) → H[e(t)] = ②
+       - Zero Input: u(t)
+         x(0) → H[u(t)] = ③
+   - Impulse Response Matching Method:
+     x(τ) → H[x(t)] = ④</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-4">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 4</div>
+  <h3>Subject: Mathematics Assignment Paper</h3>
+  <p>### Page 3</p>
+  <p>#### Section IV. S-domain Signals and Systems
+1) Description:
+   - **Left-sided ROC**: $ROC = \{s | Re(s)<0\}$
+   - **Right-sided ROC**: $ROC = \{s | Re(s)>0\}$
+   - **Two-sided ROC**: $ROC = \{s | 0<Re(s)<\infty\}$</p>
+  <ul>
+    <li>**F(s) = $\int_{-\infty}^{\infty} f(t)e^{-st}\,dt$** where $s = \sigma + j\omega$</li>
+    <li>**F(s) is the Laplace Transform of f(t)**</li>
+  </ul>
+  <ol>
+    <li>Solution:
+    Zero state: $r(t) = e^{st} \cdot h(t)$, so
+    $$ R(s)=E(s)H(s), ROC(R)\subset ROC(E\cup H) $$
+    Linear time-invariant system's transfer function has rational functions.</li>
+    <li>Pole-zero plot
+   - **Simple poles**: $m<n$ partial fraction decomposition.
+     $$ \frac{1}{s^2 + p_1} = a\cdot s^{-p_1} $$
+   - **Complex conjugate poles**: $m>n$ long division method.
+     $$ \frac{1}{s^2 + p_1} = a\cdot s^{-p_1} $$</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-5">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 5</div>
+  <p>A3: Laplace Transform Properties.
+1. $$\frac{d}{dt} \rightarrow s$$
+2. t move: $f(t-t_0) e^{-s\tau} F(s)$
+3. s move: $e^{st_0 f(t)} \rightarrow e^{-s\tau} F(s-s)$
+4. Scale: $f(at) \rightarrow (\frac{1}{a})^s F(\frac{s}{a})$
+5. Convolution: $f_1(t) * f_2(t)$
+6. Initial Value:
+7. Final Value:</p>
+  <p>A4: 
+1. Steady State Response
+2. Transient Response:
+3. Oscillation Response</p>
+  <p>A5: Unilateral Laplace Transform Properties
+1.
+2.</p>
+  $$F(s) = \int_0^{\infty} f(t)e^{-st}\,dt$$
+$F(s) = \int_{-\infty}^{\infty} f(t)e^{-st}\,dt$
+$$f(t) = \frac{1}{2\pi j} \int_{c-j\infty}^{c+j\infty} F(s)e^{-st}\,ds$$
+1. $$L[\frac{d^n}{dt^m} f(t)] = s^{n-m-1}(F(s) - sf(0)-s^2f'(t))$$
+2. Convolution: $$\int_1^{n} f(t)dt \rightarrow F(s)\frac{F'(s)}{s^2 + s}$$
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-6">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 6</div>
+  <h3>Section 5: Continuous-Time Signals and Systems</h3>
+  <ol>
+    <li>**Description**
+   - F(s) = ∫∞-∞ f(t)e^(-st)dt: s on the Laplace plane.
+   - ROC(F(s)) along jw axis F(jω) = |F(s)|s=jw
+   - ROC(F(s)) does not contain jω axis: F(jω) doesn't exist.
+   - ROC(F(s)) along the imaginary part of s: e.g., jω axis has k-fold poles, then F(s) = Fo(s) + ∑k=1∞ (s-jωo)^k / k!
+   - f(t) = ∫-a^∞ F(ω)e^(jwt)dω</li>
+  </ol>
+  <ol>
+    <li>**Solution**
+   - Zero state: r(t) = e^(-t)*h(t), so Rn = En * Hn / T
+   - e^(-t) has duration T1, h(t) has duration T2. r(t) = e^(-t)*h(t), so Rn = En * Hn / T
+   - Let T (≥T3) be the period of e, h and r. Then get E1 * Hn + Rn.
+   - Energy signal: Er(jω) = ∑e^(-jw)*|H(jω)|²
+   - Rr(t) = Re(t)*h*(t)*Rn(t), so Rr + (t) = Re(t)+Re(n)
+   - Power signal: Pr(jω) = Pe^(-jw)*|H(jω)|²
+   - Rr(t) = Re(t)*h*(t)*Rn(t), so Rr + (t) = Re(t)+Re(n)</li>
+  </ol>
+  <ol>
+    <li>**System Function**
+   - Reciprocity: H(jω) * ~H(-jw) = 1
+   - Causality: For rational H(jω), ROC is on the right half plane.
+   - Stability: Bounded input bounded output (BIBO) stable.</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-7">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 7</div>
+  <p>A6: Periodic Signal's FT:
+If f(t) has a period of T, then
+$$f(t)=\sum_{n=-∞}^{+∞}{F_n e^{{j n(\frac{2π}{T})t}}}, F(ω)=\sum_{n=-∞}^{+∞}{F_n δ(\omega-n \frac{2π}{T})}, F_{n}=\frac1{T}\int\limits_{{-\frac T2}}^{\frac{3T}{2}}f(t)e^{-j n(\frac {2π} T)t}\,dt$$
+$F(ω)=\mathcal{F}[R_1(z)]=\int{\frac 1T \left[\sum_{n=-∞}^{+∞}{F_n e^{{j n(\frac{2π}{T})t}}}\right] \left[\sum_{n=-∞}^{+∞}{F_n^* e^{-j n(\frac{2π}{T})(z-t)}}\right]dt}$
+$=\int{\sum_{n=-∞}^{+∞}{F_n F^*_ne^{-j n(\frac{2π}{T})(z-t)}}dt}$
+$=\int{\sum_{n=-∞</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-8">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 8</div>
+  <h3>Subject: Mathematics Assignment</h3>
+  <ol>
+    <li>Description:
+   - $x(n) = \sum_{m=-\infty}^{\infty} x(m)\delta(n-m)$
+   - $x(m) = \sum_{n=-\infty}^{\infty} x(n)\delta(m-n)$</li>
+  </ol>
+  <ol>
+    <li>Solution:
+   - 1) Impulse Response + Forced Response
+      * Differential Equation
+         **Homogeneous Solution:**
+            - $e(n) = 0$
+               * Homogeneous Equation
+                  **Particular Solution:**
+                     - $n \geq 0$
+                        * Corresponding Coefficient Method
+                           **General Solution:**
+                              - $\sum C_k x^k$
+                                 * Summation
+                                    **Particular Solution:**
+                                       - $D(n)$
+                                          * Containing Unknown Coefficients
+                                             **General Solution:**
+                                                - $y(n) \sim y(1)$ (Iterative)
+                                                   * Complete Solution</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-9">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 9</div>
+  <p>A9: Hilbert Transform of Signals and Sequences</p>
+  <ol>
+    <li>Continuous Time:
+$$H(\omega) = \frac{2}{\pi} F[\kappa(t)] * F^{-1}[u(\omega t)]$$
+\begin{align*}
+&= \frac{\mathrm{i}}{2} [R(\omega) + jX(\omega)] * [\pi\delta(\omega)+ \frac{1}{j\omega}] \\
+&= \frac{1}{2} [R(\omega) + jX(\omega)]
+\end{align*}</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-10">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 10</div>
+  <h3>Page 6 of a Mathematics Assignment</h3>
+  <p>### Chapter: Z-Domain Signals and Systems</p>
+  <p>#### Section I. Description
+1) **Z-Transform**:
+   - $$ X(z)=\sum_{n=-∞}^{+∞}{x(n)z^{-n}} $$
+   - **ROC**: { z | ∑|X[n]||z^n| <∞ }
+   - **Right-sided Signal**: ROC = { z | (0<)z| < r }
+   - **Two-sided Signal**: ROC = { z | ri < |z|< ro }</p>
+  <p>2) $$ X(n)=\frac{1}{n!}x[n] $$
+   - For ROC = { z | (0<)z| < r }, x[n] = X(n)e^(n)
+   - For ROC = { z | ri < (0<)z| }, x[n] = X(n)e^(n)</p>
+  <p>#### Section II. Solution
+1) **Zero State Response**:
+   - $$ x(t)=e^t * h(t), \text{ so } R(z) = E(z)*H(z); ROC(R)=ROC(H)\cap ROC(E). $$</p>
+  <p>2) **Conjugate Poles**:
+   - For real poles: 
+     $$
+     H(z) = \frac{m}{n} (z-p_i)\sum_{i=1}^{p_j}(2-z) \frac{H(z)}{(z-p_i)}
+     $$
+   - For complex poles:
+     $$ \frac{e^{j\omega T}}{(z-p_i)} = e^{-j(\pi/2-\theta)T}u(n-n-1), $$
+     $$ \frac{z^2 - 3\cos(\omega T) +1}{(z-p_i)} = e^{-j(\pi/2-\theta)T}u(n-n-1), $$
+     $$ \frac{z^2 - 3\cos(\omega T) +1}{(z-p_i)} = e^{-j(\pi/2-\theta)T}u(n-n-1). $$</p>
+  <p>#### Section III. System Function
+1)** Inverse Z Transform**:
+   - $$ H(z) = \sum_{k=0}^{∞}\frac{c_kz}{(e-p)^k} + \sum_{n=1}^{∞}\frac{c_nz}{(e-p)^k}, $$
+   - $$ c_1 = \frac{X(z)(z-p)}{(e-p)^k} |_{x=p}, $$
+   - $$ c_2 = \frac{X(z)(z-p)}{(e-p)^k} |_{x=p}, $$
+   - $$ c_3 = \frac{X(z)(z-p)}{(e-p)^k} |_{x=p}, $$
+   - $$ \sum_n^{\infty}\frac{c_kz}{(e-p)^k} = \pm C_n^m u(n-n-1). $$</p>
+  <p>2)** Stability**:
+   - **Stable**: ROC contains |z|=0
+     $$ \sum_{n=-∞}^{+∞}|h(n)|<\infty = ∑|X[n]||z^n| <∞ \Rightarrow |H(z)|<1. $$
+   - **Critical Stable**: ROC is on the unit circle
+     $$ \sum_{n=-∞}^{+∞}|h(n)|<\infty = ∑|X[n]||z^n| <∞ \Rightarrow |H(z)|<1. $$
+   - **Unstable**: ROC does not contain z=0
+     $$ \sum_{n=-∞}^{+∞}|h(n)|<\infty = ∑|X[n]||z^n| <∞ \Rightarrow |H(z)|<1. $$</p>
+  <p>3)** Causality**:
+   - **Causal**: ROC is inside the unit circle
+     $$ \sum_{n=-∞}^{+∞}|h(n)|<\infty = ∑|X[n]||z^n| <∞ \Rightarrow |H(z)|<1. $$
+   - **Non-Causal**: ROC is outside the unit circle
+     $$ \sum_{n=-∞}^{+∞}|h(n)|<\infty = ∑|X[n]||z^n| <∞ \Rightarrow |H(z)|<1. $$</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-11">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 11</div>
+  <p>A90: Z Transform Properties</p>
+  <ol>
+    <li>$n^m \rightarrow (-z\frac{d}{dz})^{m}$</li>
+    <li>$n move$ → X(n-n0) $\rightarrow z^{-n_0}X(z)$ R (may increase or decrease 0, ∞)</li>
+    <li>Rotation: $z^{\frac{1}{2}}X(n) \rightarrow X(\frac{n}{\sqrt 2})$ $z^{1/4}$</li>
+    <li>n Flip: X(n) $\rightarrow$ X(-n)</li>
+    <li>Conjugate $X^*(n)$ → $X^{**}(z*)$</li>
+    <li>Convolution: X1(n) * X2(m-n) → $X_1(z)$ . $X_2(\frac{z}{\lambda})$</li>
+    <li>Initial Value: X(n) = x(0)u(n), then $X(z)$ $\rightarrow$ z^k [x(k)-$\sum_{n=0}^{∞}$ x(n)z^{-n}] z→1</li>
+    <li>Final Value: X(z) = x(∞)u(n), and $X(\infty)$ stable or -1 pole point p=1, then X(∞) = $\frac{z}{\lambda}$ (z-1)$X(\infty)$</li>
+    <li>Correlation: X1(n) * X2(m-n) → $X_1(z)$ . $\frac{z}{\lambda}$</li>
+  </ol>
+  <p>A10: Stability Response:
+- Stable response R(z) stable → H & E stable
+  - Critical stability: R(z) critical stable → H |E| critical stable 
+- Unstable response:
+  - Special case: H and E have the same poles. Partially decompose R(z) into terms with common pole numbers of H and E</p>
+  <p>A12: Single-sided Z Transform Properties:
+- Convolution when x_1(n) and x_2(m-n) are both causal: $x_{(n)} * X(n-m)$ → $\sum\limits^{∞}_{k=0} x_1(k) X(n-m-k)$
+- n move: $\mathcal{Z} \left\{\sum_{n=-∞}^{+∞}{x(n+m)u(m)} \right\}$ = $z^m [X(z)-{\sum_{k=0}^{+∞}{x(k)z^{-k}}}]$
+- n move: $\mathcal{Z} \left\{\sum_{n=-∞}^{+∞}{x(n-m)u(m)} \right\}$ = $z^{-m} [X(z)+{\sum_{k=0-m}^{+∞}{x(k)z^{-k}}}]$</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-12">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 12</div>
+  <h3>Subject: Mathematics Assignment</h3>
+  <ol>
+    <li>**Description**
+   - X(e^(jw)) = ∑(n=0 to infinity) x(n)e^(-jnω)
+   - ROC(X(z)) contains |z|=1: X(e^(jw)) = X(ω) when z=e^jw
+   - ROC(X(z)) does not contain |z|=1: X(e^(jωw) doesn't exist.
+   - ROC(X(z)) is outside |z|=1: z^k poles at...</li>
+  </ol>
+  <ol>
+    <li>**Solution**
+   - Zero state r(n) = e^(jωn)*h(n), so R(ke^jw)=E(k)e^jH(w) if ROC(E)*ROC(H) contains 1.
+   - Energy signal:
+     E_r(e^(jw)) = ∑(n=-∞ to +∞) |H(n)e^jω|²
+     R_r(kn)=Re(m)*h(n) * h*(m-n)
+   - Power signal:
+     P_r(e^(jw)) = Pe(e^jω) |H(n)e^jω|²
+     R_r(kn)=Re(m)*h(n) * h*(m-n)</li>
+  </ol>
+  <ol>
+    <li>**System Function**
+   - Reversibility: H(e^(jw)) * H̃(e^(-jω)) = 1
+   - Causality: For rational H(e^(jw)), ROC contains |z|=1
+   - Stability: Always stable (h(n) is a periodic extension of h[n])</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-13">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 13</div>
+  <p>A13: DTFT of Periodic Sequences</p>
+  <p>Given x(n) has a period N, then
+$$x(k)=\frac{1}{N}\sum_{k=0}^{N-1}x(k)e^{\frac{2\pi}{n}\omega k}, X(e^{jw})=\sum_{k=0}^{\infty}\frac{1}{N}\sum_{n=-\infty}^{+\infty}x(n)\delta(\omega-\frac{2n}{N}\kappa-2\pi r), X(k)=\sum_{n=0}^{N-1}x(n)e^{-j\frac{2k}{N}\omega}=X_w(e^{jw})|_{\omega=\frac{2k}{N}n},$$
+$P(e^{jw})=F[R(m)]=...$</p>
+  <p>A14: DTFT Properties:
+① n move $X(n-n_0)\rightarrow e^{-jw\omega} X(e^{jw})$
+② w move $e^{\frac{2\pi}{n}\omega} X(n)\rightarrow X(e^{j(w-w_0)})$
+③ $n\to j \frac{d}{dw}$
+④ Convolution
+$x(n)*y(n)\rightarrow X(e^{jw})\cdot Y(e^{jw}).$
+$x(m)*y(n)\rightarrow \frac{1}{2\pi}\int_{-\infty}^{\infty}X(e^{jw})Y(e^{-j\omega_0})dw.$
+⑤ Cross-correlation $R_{xy}(m)\rightarrow X(e^{jw})Y^*(e^{-j\omega}).$</p>
+  <p>A15: From DFS to Sequence Frequency Spectrum</p>
+  <p>Given x(n) is a finite-length sequence of length N0, extend it periodically to $x_N(n)$ (N>N_0)
+$X(e^{jw})=\sum_{n=-\infty}^{\infty}x(n)e^{-jnw},$
+$X_N(k)=\sum_{n=0}^{N-1}x(n)e^{-j\frac{2k}{N}\omega n},$
+$X(m)=x_N(n)[u(n)-u(n-N)],\text{ thus}$
+$$X(e^{jw})=\frac{1}{2N}\cdot\sum_{k=0}^{\infty}\left[\frac{1}{N}\cdot\sum_{n=0}^{N-1}x(n)e^{-j(\omega-\frac{2\pi}{n}\kappa-2\pi r)n}*\left(\frac{1-e^{-jnw}}{-e^{jn\omega}-(-n)}=\sum_{k=0}^{\infty}\frac{1}{N}\cdot\left(\sum_{n=0}^{N-1}x(n)\frac{e^{-jnw}-(-\omega-\kappa)}{-n}\right)$$</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-14">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 14</div>
+  <h3>Subject: Mathematics Homework</h3>
+  <p>---</p>
+  <p>### Chapter 1 - Sampling</p>
+  <p>#### Time-Domain Periodic Signal Time Domain Sampling
+(①) \( f(t)\rightarrow X(nT)=x[n] \)</p>
+  <p>\[
+X(e^{jw}) = e^{-jnTw} X(nT) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\pi}{N}(n-m)} = \sum_{m=-T}^{+\infty} X(m) e^{\frac{2\</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-15">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 15</div>
+  <p>A16: FFT</p>
+  <p>① Base 2 DIT  
+$$X(k) = \sum_{n=0}^{N-1} x(2r)n^k + W_N^{-\frac{k}{n}} \sum_{l=0}^{N-1} x(2r+1)W_N^{-\frac{k}{n}}$$  
+$$X(k+\frac{N^2}) = \sum_{r=0}^{n-1} x(4r)W_N^{-\frac{k}{2}} + W_{N^{\frac{1}{4}}}^{k} \sum_{l=0}^{n-2} x(3r+1)W_N^{-\frac{k}{4}}$$</p>
+  <p>② Base 2 DIF  
+$$X(0) = \sum_{n=1}^{N-1} x(n)n^k + W_N^{-\frac{k}{n}} \sum_{l=0}^{N-1} x(m+\frac{m}{2})W_N^{-\frac{k}{n}}$$  
+$$X(1) = \sum_{r=0}^{N-2} x(n)n^k + W_N^{-\frac{k}{n}} \sum_{l=0}^{N-1} x(m+\frac{m}{2})W_N^{-\frac{k}{n}}$$</p>
+  <p>③ Base 4 DIT  
+$$X(k) = \sum_{r=0}^{N-1} x(4n)n^k + W_N^{-\frac{k}{2}} \sum_{l=0}^{N-1} x(4r+3)W_N^{-\frac{k}{2}}$$  
+$$X(k+\frac{N^3}) = \sum_{r=0}^{n-1} x(4r)W_N^{-\frac{k}{2}} + W_{N^{\frac{1}{4}}}^{k} \sum_{l=0}^{n-2} x(3r+1)W_N^{-\frac{k}{4}}$$</p>
+  <p>④ Base 4 DIF  
+$$X(0) = \sum_{n=1}^{N-2} x(n)n^k + W_N^{-\frac{k}{n}} \sum_{l=0}^{N-1} x(m+\frac{m}{2})W_N^{-\frac{k}{n}}$$  
+$$X(1) = \sum_{r=0}^{N-2} x(n)n^k + W_N^{-\frac{k}{n}} \sum_{l=0}^{N-1} x(m+\frac{m}{2})W_N^{-\frac{k}{n}}$$</p>
+  <p>⑤ Splitting Base DIT  
+$$X(k) = \sum_{r=0}^{N-1} x(2n)n^k + W_N^{-\frac{k}{4}} \sum_{l=0}^{N-1} x(2r+3)W_N^{-\frac{k}{4}}$$  
+$$X(k+\frac{N^3}) = \sum_{r=0}^{n-1} x(4r)W_N^{-\frac{k}{2}} + W_{N^{\frac{1}{4}}}^{k} \sum_{l=0}^{n-2} x(3r+1)W_N^{-\frac{k}{4}}$$</p>
+  <p>⑥ Splitting Base DIF  
+$$X(0) = \sum_{n=1}^{N-2} x(n)n^k + W_N^{-\frac{k}{n}} \sum_{l=0}^{N-1} x(m+\frac{m}{2})W_N^{-\frac{k}{n}}$$  
+$$X(1) = \sum_{r=0}^{N-2} x(n)n^k + W_N^{-\frac{k}{n}} \sum_{l=0}^{N-1} x(m+\frac{m}{2})W_N^{-\frac{k}{n}}$$</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-16">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 16</div>
+  <ol>
+    <li>Discrete-time periodic signal sampling in the frequency domain</li>
+  </ol>
+  <p>(Periodic with period 2π is equivalent to N samples of a periodic signal Ωs)</p>
+  <p>∴ y(n) = ∑ h(k)x(m-n-k) or ∫ x(u)n-ku)dx</p>
+  <p>(1) X(e^(jw)) → X(e^((2π/N)n)) = X(k)</p>
+  <p>Xs(n) = 1/ N ∑ k=0 to n-1 X(k)e^(j(2π/N)nk)
+= ½ ∑ k=-∞ to n-1 X(m)e^(j(2π/N)m) e^((n-m)(2π/N))
+= ½ ∑ m=-∞ to n-1 X(m) e^(j(2π/N)(n-m))
+= ∑ m=-∞ to n-1 X(m) δ(n+m-rN)
+= ½ ∑ m=-∞ to n-1 X(m) δ(n+m-rN)</p>
+  <p>(2) X(e^(jw)) → ∑ k=-∞ to n-1 δ(w-kΩs)</p>
+  <p>Xs(n) = ½ ∫_2π X(e^(jw)) δ(w-kΩs)e^((n-m)dw)
+= ½ ∫_2π X(m) δ(w-kΩs)e^((n-m))dw
+= ½ ∑ m=-∞ to n-1 X(m) δ(w-kΩs)e^((n-m))
+= ½ ∑ m=-∞ to n-1 X(m) δ(Ωs(n-m)+2πr)
+= ∑ m=-∞ to n-1 X(m) δ(n+m-rN)</p>
+  <p>∴ y(n) = ∑ h(k)x((n-k)/L)
+y(ω) = H(e^(jw))W(w)</p>
+  <ol>
+    <li>Using integer L interpolation in the frequency domain</li>
+  </ol>
+  <p>First zero-padding and filtering: x(n) → w(n)
+w(n) = x((n/L))
+y(n) = ∑ h(k)x(m-Lk)
+∴ y(ω) = H(e^(jw))W(w)</p>
+  <ol>
+    <li>Using integer L interpolation in the frequency domain</li>
+  </ol>
+  <p>First zero-padding and filtering: x(n) → w(n)
+w(ω) = ∑ h(k)x((n-k)/L)</p>
+  <p>∴ y(e^(jw)) = 1/M ∑ m=0 to M-1 H(e^((2π/L)m)e^(jw))X(e^(j(ω- 2π/M)))</p>
+  <p>∴ y(n) = w((n/L))</p>
+  <ol>
+    <li>Using integer M sampling in the time domain</li>
+  </ol>
+  <p>First low-pass filtering: x(n) → w(n)
+w(ω) = ∑ h(k)x((n-k)/M)</p>
+  <p>∴ y(e^(jw)) = 1/M ∑ m=0 to M-1 H(e^((2π/L)m)e^(jw))X(e^(j(ω- 2π/M)))</p>
+  <p>∴ y(n) = w((n/L))</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-17">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 17</div>
+  <ol>
+    <li>Analog and digital filters.</li>
+    <li>Frequency transformation of analog filter.</li>
+  </ol>
+  <p>Problem: Given Ha(s) = Vo(s)/Es, find Z1(5), and derive the network structure.
+Solution: From |Ha(s)|^2 = Ha(s) * H(a(-s)), and given conditions, derive the expression for Ha(5).
+Source rated power: Pm = 1/2 * (Es)^2 / R
+Load power:
+Pz = Pm / 4R^3
+Power transmission function: |K|^2 = Rz/Pm * (Es)^2 / P
+Reflection coefficient:
+|P(s)|^2 = 1 - Rz * |Ha(5)^|^
+Since the network is lossless, P1 = P2.
+$$\frac{Es}{Z_1} = Rz + Z(5)$$
+|Ha(s)|^2 = |Vo|^/Es * |I1(5)^|
+$$|P(s)|^2 = \frac{Rz}{Es} * |Z(5)^|^$$
+|P(s)|^2 = \frac{1}{s} * |Z(5)^|^
+T type: s continuous form
+Foster's method:
+Parallel connection Z(5) = \Pi
+$$Z_1(s) = Rz * \frac{1}{s} + P(5)^$$
+Cauer's method:
+T type: s continuous form</p>
+  <ol>
+    <li>ZZR structure.
+H(z) = \frac{b_0 + b_{-1} z^{-}} {a_0 (z^2 - 1) + \sum_{k=1}^{N-3}(a_k z^{-}) - a_N (z^2 + 1)}
+y(n) = \sum_{k=0}^{N-3}(b_k x((n-k)) - a_k y(n-k))
+Direct structure:
+Delay unit least
+Zero pole adjustable; finite word length.
+Cascade connection:</li>
+  </ol>
+  <p>Parallel connection:</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-18">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 18</div>
+  <p>A18: Butterworth Filter Design</p>
+  <p>Given:
+$$|H_{a}(j\Omega)|^{2} = \left|\sqrt{\frac{1}{(s-\omega_{c})^{{2N}}+j\Omega^{n}}} \right| ^{2}$$
+Thus,
+$$|\frac{\omega_{c}}{(s-\Omega^{n})}| = \left|j\cdot s^{{2N}} + (\frac{\omega_{c}^{n}}{s})\right|$$</p>
+  <p>Poles:
+$${S}_{k}= \Omega_{c} e^{j\left[\frac{2n}{N}(2k-1)\pi + \frac{\pi^{3}}{4}\right]}$$
+where k = 1,2,...N</p>
+  <p>Taking all poles in the left half-plane as Ha(s) to obtain a stable Ha:
+$$H_{a}(s)=\frac{\Omega^{n}}{N} \sum _{{k=1}}^{{2N-3}}\frac{\Omega^{n} \cdot s}{(s-{S}_{k})}= 
+\begin{cases}
+{\Omega^{n}}/{N} \sum _{{k=1}}^{{2N-3}}\left[s^{n}- 2{\Omega_{c} \cos(\frac{1}{N}(k-1)\pi +\frac{\pi^{3}}{4})}s+ \Omega_{c}{^n}\right] & N=odd \\
+{\frac{{\omega^{2}}_{c}}{{N}^n}- 2s \cos(\frac{1}{4}(k-1)\pi +\frac{\pi^{3}}{2})s+ \Omega_{c}{^n}\right] & N=even
+\end{cases}$$</p>
+  <p>The above is the result after normalization s' = s/Ωc. Given bandwidth and cutoff frequency, N can be solved to obtain Ha(s). Generally Rs = Rc so H_{a}(j\omega) is 1/2. Therefore,
+$$p(s') = \frac{4Rs}{Rc} \cdot\left(\sum _{{k=1}}^{{2N-3}}{\frac{B_{n}(s')}{(j\omega)^{{2N}}} \cdot s^{k}} - 1 + (-s')^n\right) = 
+{\frac{(j\omega)^{{2N}}}{B_{1}(s') \cdot B_{n}(-j\omega)}}$$</p>
+  <p>Thus,
+$${p(s')} = \frac{(s')^{n}}{B_{1}(s')}$$</p>
+  <p>Therefore,
+$${Z}_{in} = R_s \frac{p(s')}{1+p(s')}$$</p>
+  <p>For internal resistance normalization:
+$${Z}_{in} = \frac{B_{n}(s')}{R_s}$$</p>
+  <p>To obtain actual inductance, capacitance and resistance values:
+$${L'} = \frac{R_s}{\Omega_{c}} L$$
+$${C}^{' } = \frac{1}{\Omega_{c}} C$$
+$${R}_{L}^{' } = R_s$$</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-19">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 19</div>
+  <h3>Mathematical Content:</h3>
+  $$H(e^{j\omega}) = \left| H(\hat{e}^{\mathrm{j}\omega}) \right|^2 e^{-j\beta + jw}$$
+  <h3>Chinese Text:</h3>
+  <ol>
+    <li>IIR design
+(1) Impulse invariance method</li>
+  </ol>
+  <p>Principle:
+$$h(nT_s)=\left. h_a(t) \right|_{t=nTs}$$
+Result:
+$${1\over s-s_0}\Rightarrow {1 \over 1-e^{sT_s}z^{-1}}$$
+Conclusion: No aliasing, high frequency distortion.</p>
+  <p>(2) Dual transformation method</p>
+  <p>Principle:
+$$s\rightarrow s_1 \text{ plane}:\\
+\begin{cases}
+    S = {Ts\over 2} \cdot {\frac{{1-e^{-s_0T_S}}}{(e^{Ts/2}- e^{\frac{-Ts} {s_0T_S}})}}
+    \\
+\Omega = \frac{2}{Ts} arctg{\omega_0\over Ts/2}
+    \\
+s \rightarrow z plane:
+\\
+z = e^{Ts\omega_0}\\ 
+w=\Omega Ts \\
+Result: s={Ts \over 2} {1-z^{-N}\over H(z)}\\
+z = {\frac{Ts}{2} \tan{\left(\omega_0\over 4T_S/}\right)}\\
+Conclusion: No aliasing, dual transformation distortion.
+\end{cases}$$</p>
+  <ol>
+    <li>FIR structure
+(1) Direct form (horizontal/vertical filter)
+\begin{cases}
+    \beta = 0\\
+a={N-1}\over2 \\
+h(n) = h(N - n)
+\end{cases}
+(2) Cascade structure
+$$H(e^{jw}) = \left| H(\hat{e}^{\mathrm{j}\omega})\right|^2 e^{-j(B+\alpha w)}$$</li>
+  </ol>
+  <p>(3) Fast convolution structure (comb filter)
+\begin{cases}
+    \beta = 0\\
+a={N-1}\over2 \\
+h(n)=- h(N - n)
+\end{cases}</p>
+  <p>(4) Zero sampling structure (comb filter)
+$$H(z)= \sum_{n=0}^{N-1}{h(n)z^{-n}} =\frac{H(z)}{\sum_{k=0}^{N-1}{W_N^{{\alpha k}}H(k)z^{-k}}}$$
+Conclusion: High speed, no aliasing.</p>
+  <p>(5) Dual transformation FIR structure</p>
+  <h3>Translation of Chinese Text:</h3>
+  <ol>
+    <li>IIR design
+(1) Impulse invariance method</li>
+  </ol>
+  <p>Principle:
+$$h(nT_s)=\left. h_a(t) \right|_{t=nTs}$$
+Result:
+$${1\over s-s_0}\Rightarrow {1 \over 1-e^{sT_s}z^{-1}}$$
+Conclusion: No aliasing, high frequency distortion.</p>
+  <p>(2) Dual transformation method</p>
+  <p>Principle:
+$$s\rightarrow s_1 \text{ plane}:\\
+\begin{cases}
+    S = {Ts\over 2} \cdot {\frac{{1-e^{-s_0T_S}}}{(e^{Ts/2}- e^{\frac{-Ts} {s_0T_S}})}}
+    \\
+\Omega = \frac{2}{Ts} arctg{\omega_0\over Ts/2}
+    \\
+s \rightarrow z plane:
+\\
+z = e^{Ts\omega_0}\\ 
+w=\Omega Ts \\
+Result: s={Ts \over 2} {1-z^{-N}\over H(z)}\\
+z = {\frac{Ts}{2} \tan{\left(\omega_0\over 4T_S/}\right)}\\
+Conclusion: No aliasing, dual transformation distortion.
+\end{cases}$$</p>
+  <ol>
+    <li>FIR structure
+(1) Direct form (horizontal/vertical filter)
+\begin{cases}
+    \beta = 0\\
+a={N-1}\over2 \\
+h(n) = h(N - n)
+\end{cases}
+(2) Cascade structure
+$$H(e^{jw}) = \left| H(\hat{e}^{\mathrm{j}\omega})\right|^2 e^{-j(B+\alpha w)}$$</li>
+  </ol>
+  <p>(3) Fast convolution structure (comb filter)
+\begin{cases}
+    \beta = 0\\
+a={N-1}\over2 \\
+h(n)=- h(N - n)
+\end{cases}</p>
+  <p>(4) Zero sampling structure (comb filter)
+$$H(z)= \sum_{n=0}^{N-1}{h(n)z^{-n}} =\frac{H(z)}{\sum_{k=0}^{N-1}{W_N^{{\alpha k}}H(k)z^{-k}}}$$
+Conclusion: High speed, no aliasing.</p>
+  <p>(5) Dual transformation FIR structure</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-20">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 20</div>
+  <p>A18:
+Distribution Mean Variance</p>
+  <p>Quantization Error U(-9,0) -q/2 q^2 = 1/4 * (3.78)
+Truncation Error U(-q, q) 0   q^2 = (1/4 * e^{-8})</p>
+  <p>General quantization error is the sum of truncation and rounding errors. Define:
+SNR = 10 log (σx^2 / σe^2) 
+= SNR = -6.0 dB + 10 log (σx^2 / σe^2)</p>
+  <p>According to the theory of random processes passing through linear systems, quantization noise in a digital system is:
+σx^2 = σe^2 * ∑ h(m) 
+= 1/4 π ∫_π H(e^(jω))|^2 dω</p>
+  <p>The quantization noise at the output terminal is:
+σ_total^2 = σe^2 * ∑ h(m)</p>
+  <p>The above output noise calculation is only correct when the quantization step size does not exceed 1. To ensure this, each node variable (quantized) satisfies:
+|ω(n)| ≤ 1</p>
+  <p>If the input signal x(n):
+|x(n)| ≤ 1
+And f(m) represents the unit sample response from input to node variable w(n):
+w(n) = ∑ f(m)x(n-m)
+Then at the output terminal, input is multiplied by β and then scaled down. The value of beta:
+β = ∑ |f(m)|^2
+or β = (√∑ f(n))^2</p>
+  <p>After multiplying by the compression factor beta, under identical input conditions and output quantization noise increases (due to β amplifying the source of noise).</p>
+  <p>Noise due to resistor thermal:
+Wv(f) = 4kT R(f), Wi(f) = 4kTG(f). (Power spectral density)</p>
+  <p>Noise due to transistor:
+Wv(f) = 4kT Rb
+Wi(f) = Zc / (1 - αβ^2)</p>
+  <p>Noise due to particle:
+Wv(f) = 4kT Zc
+Wi(f) = (1 - αβ^2)</p>
+  <p>Noise due to MOSFET:
+Wout(f) = |H(f)|² Wi_in(f)</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-21">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 21</div>
+  <p>a. h(n) even, N odd</p>
+  $$H(e^{j\omega}) = e^{-j \frac{\pi}{2} N w}\left(\sum_{n=0}^{\lfloor\frac{N}{2}-1}\right)$$
+  <p>b. h(n) even, N odd: ($\omega = \pi$)</p>
+  <p>c. h(n) odd, N even</p>
+  $$H(e^{j\omega}) = e^{-j \frac{\pi}{2} N w}\left(\sum_{n=0}^{\lfloor\frac{N}{2}-1}\right)$$
+  <p>d. h(n) odd, N even: ($\omega = 0$)</p>
+  <p>2) Frequency sampling method.</p>
+  $$H(e^{jw})=\frac{1}{N} e^{-j \omega\left(\sum_{k=0}^{n-1}\right)}$$
+  <ol>
+    <li>Digital filter frequency transformation.</li>
+  </ol>
+  <p>① From unit circle to G(z) on the unit circle: |G(e^{j\omega})|=1</p>
+  <p>② If 0 < z = e^{\frac{2j\pi}{N}}<1 → |G(z)| > 0, < -|z|</p>
+  <p>③ H(ω) has poles → H(G(z)) is rational</p>
+  <p>i. G(z)=±\frac{D(z)}{z^N D(1/z)}</p>
+  <p>ii. According to the standard filter passband number can determine N.</p>
+  <p>Prototype</p>
+  <p>z=1 e^{j\omega p}  e^{-j\omega r}</p>
+  <p>Lowpass</p>
+  $$-\frac{z-1}{2} \quad 0\quad e^{jw p}\quad -e^{-j w r}$$
+  <p>Highpass</p>
+  $$-\frac{z+1}{2}\quad -\infty \quad e^{jw p}$$
+  <p>Bandpass</p>
+  $$-\frac{z^2+1}{\left( z + 1 \right) ^{\omega}} e^{jw p}$$
+  <p>Bandstop</p>
+  $$\frac{z^2+1}{( z + 1 ) ^{\omega}} e^{jw p}$$
+  <ol>
+    <li>FIR design
+Zero distribution on the unit circle and frequency response characteristics</li>
+  </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-22">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 22</div>
+  <h3>Mathematics Assignment Paper</h3>
+  <ol>
+    <li>Continuous-time system state equation construction (integrator output as the state variable)
+$$\left\{\begin{array}{l}
+\frac{d \lambda(t)}{dt} = A_{1}\lambda (t) + B e^{A t}\\
+r(t)=C\lambda_{1}(t)+D e^{\beta}
+\end{array}\right.$$</li>
+  </ol>
+  <ol>
+    <li>Continuous-time system state equation solution
+1) t-domain  
+From the state equations, we get $$\frac{d}{dt}[e^{A t} \lambda(t)] = e^{-At}\beta$$  
+Solving $$\lambda (t)=[e^{A t} \lambda(0)] + [ e^{-At}\beta]$$  
+Thus, $$r(t)=[Ce^{A t} \lambda(0)] + [C e^{-At}\beta+D\delta(t) ]$$</li>
+  </ol>
+  <p>2) s-domain  
+From the state equations, we get $$s\lambda(s)- \lambda(0) = A_{1}\lambda (s)+B e^{A s}$$  
+Solving $$\lambda(s)=[(I-A)^{-1}(s I - A)]^{-} \cdot B e^{A s}$$  
+Thus, $$r(s)=[C(I-A)^{-1}(s I - A)]^{-} \cdot B e^{A s}$$</p>
+  <ol>
+    <li>High-time system state equation construction (delay element output as the state variable)
+\begin{cases}
+x(n+1) = A_{2} x (n)+B u n \\
+y(0)=C\lambda(n) + D \delta
+\end{cases}</li>
+  </ol>
+  <ol>
+    <li>High-time system state equation solution  
+1) t-domain: $$x(n)=K A^{n} u (0)+X(0)*h_{o}(u)$$  
+Solving $$k=\lambda (n), h(n)=A^{n} u_{(0)} B$$  
+Thus, $$\lambda (k)=[A^{n} u_{(0)}+ A^{n-1} B + X(n)u (k)]$$  
+Thus, $$y(k)=C A^{n} u_{(0)}+ C[A^{-1}(B + X(n)u (k))]$$</li>
+  </ol>
+  <p>2) s-domain:  
+From the state equations, we get $$\lambda(s)- \lambda(0) = A_{2}\lambda (s)+B X$$  
+Solving $$\lambda(s)=Z^{-1}[(z I - A)^{-s}] \cdot X(0)$$  
+Thus, $$y(s)=C Z^{-1}[(z I - A)^{-s}] \cdot X(0)$$  
+Thus, $$h(n)=C[A^{n} B u (k)+D \delta]$$</p>
+  <p>Zero state: $$\lambda(0)=[z I - A)^{-1} B X$$  
+Thus, $$y(s)=C[(s z I - A)^{-1} B X + D]$$  
+Thus, $$h(n)=C[A^{n-1}(B u (k)+D \delta)]$$</p>
+  <p>$A^{-s} = Z^{1}[Z I - A)^{-z}]$</p>
+  <p>$$e^{\lambda t} = Z^{-1}[Z I - A)^{-z}]$$.</p>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <div class="page" id="page-23">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 23</div>
+  <p>A: State Variables Linear Transformation</p>
+  <p>$$\gamma = P \lambda $$  
+$\Rightarrow A' = PA^{-1}P$, $B'=PB$,$C'=CP^T,D=P;H'(s/z)=H(s/2)$.</p>
+  <p>By solving the characteristic equation of A to obtain matrix P, making $A$ into Jordan form:
+$\Rightarrow \left\{ 
+  \begin{array}{l}
+    Each row of the Jordan block in B should not contain a zero element. \\
+    Each row of each Jordan block's first line does NOT appear in C, or $M = (B^T A B; -A^{k+1}B)$ is observable. \\
+  \end{array}
+\right.$</p>
+  $$
+J(-2A)^{-1} A = CA, \quad C(A) = 0 \\
+(C^T B + (A+I)^{-1}B)(C - A^{-k-2}) = 0
+$$
+  </div>
+  <hr style="margin: 40px 0;" />
+
+</main>
+</body>
+</html>

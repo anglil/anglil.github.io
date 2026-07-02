@@ -32,7 +32,7 @@ title: Notes – Angli Liu
       <li><a href="/notes/algebra, geometry, and advanced calculus 2.pdf" target="_blank">algebra, geometry, and advanced calculus 2</a></li>
       <li><a href="/notes/multivariable calculus.pdf" target="_blank">multivariable calculus</a></li>
       <li><a href="/notes/applied math.pdf" target="_blank">applied math</a> (<a href="/applied-math/index.html" target="_blank">Applied Math</a>)</li>
-      <li><a href="/notes/signals and systems.pdf" target="_blank">signals and systems</a></li>
+      <li><a href="/notes/signals and systems.pdf" target="_blank">signals and systems</a> (<a href="/signals-and-systems/index.html" target="_blank">Signals and Systems</a>)</li>
       <li><a href="/notes/stochastic process.pdf" target="_blank">stochastic process</a></li>
       <li><a href="/notes/stochastic process 2.pdf" target="_blank">stochastic process 2</a></li>
       <li><a href="/notes/information theory.pdf" target="_blank">information theory</a></li>
