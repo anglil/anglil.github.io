@@ -11,3 +11,23 @@ mathjax: true
 
 # Force rebuild trigger + safety
 future: true
+
+# Exclude development and temp folders to keep the build under the 1GB Pages limit
+exclude:
+  - venv
+  - diagram_crops
+  - diagram_crops_ce
+  - diagram_crops_ce2
+  - filtered_diagrams
+  - extracted_diagrams
+  - "*.py"
+  - "*.log"
+  - "*.sh"
+  - "*.swift"
+  - "*.png"
+  - "*.jpg"
+  - "*.docx"
+  - "*.epub"
+  - mac_ocr
+  - fg791pip.txt
+  - fg791pxe.txt
