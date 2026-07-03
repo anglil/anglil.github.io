@@ -35,7 +35,7 @@ title: Notes – Angli Liu
       <li><a href="/notes/signals and systems.pdf" target="_blank">signals and systems</a> (<a href="/signals-and-systems/index.html" target="_blank">Signals and Systems</a>)</li>
       <li><a href="/notes/stochastic process.pdf" target="_blank">stochastic process</a></li>
       <li><a href="/notes/stochastic process 2.pdf" target="_blank">stochastic process 2</a></li>
-      <li><a href="/notes/information theory.pdf" target="_blank">information theory</a></li>
+      <li><a href="/notes/information theory.pdf" target="_blank">information theory</a> (<a href="/information-theory/index.html" target="_blank">Information Theory</a>)</li>
       <li><a href="/notes/algorithms.pdf" target="_blank">algorithms</a></li>
       <li><a href="/notes/algorithms 2.pdf" target="_blank">algorithms 2</a></li>
       <li><a href="/notes/algorithms 3.pdf" target="_blank">algorithms 3</a></li>

@@ -1,0 +1,589 @@
+---
+---
+{% raw %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information Theory and Digital Communications | Lecture Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+              displayMath: [["$$", "$$"], ["\\\\[", "\\\\]"]],
+              macros: {
+                  bm: ["\\\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">Information Theory<span>Angli Liu</span></div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Lecture Notes</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+  <div class="chapter-header">
+    <h1>Information Theory & Digital Communications</h1>
+    <h2 class="chapter-title">Complete Lecture Notes</h2>
+  </div>
+
+  <!-- Page 1 -->
+  <div class="page" id="page-1">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 1</div>
+    <h3>I. Performance Measures of Communication Systems</h3>
+    <ol>
+      <li><strong>Analog Systems</strong>
+        <ul>
+          <li><strong>Bandwidth:</strong> The range of frequencies allocated to transmission.</li>
+          <li><strong>Reliability:</strong> Characterized by the Output Signal-to-Noise Ratio (SNR).</li>
+        </ul>
+      </li>
+      <li><strong>Digital Systems</strong>
+        <ul>
+          <li><strong>Bandwidth Utilization (Spectral Efficiency):</strong> Defined as the transmission rate per unit bandwidth $\eta = R_s / B$ or $R_b / B$ (symbols/s/Hz or bits/s/Hz).</li>
+          <li><strong>Reliability:</strong> Characterized by the Bit Error Rate (BER) $P_b$ or Symbol Error Rate (SER) $P_s$, as a function of the energy per bit or symbol to noise ratio ($E_b/N_0$ or $E_s/N_0$).
+            $$ P_b = \frac{\text{Incorrect Bits}}{\text{Total Transmitted Bits}}, \quad P_s = \frac{\text{Incorrect Symbols}}{\text{Total Transmitted Symbols}} $$
+            <ul>
+              <li>For Binary systems ($M = 2$): $P_b = P_s$.</li>
+              <li>For $M$-ary systems ($M > 2$): $P_b < P_s$.</li>
+              <li>Under Natural Binary Coding:
+                $$ P_b = \frac{M}{2(M-1)} P_s $$
+              </li>
+              <li>Under Gray Coding (where adjacent symbols differ by only 1 bit):
+                $$ P_b \approx \frac{1}{\log_2 M} P_s $$
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 2 -->
+  <div class="page" id="page-2">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 2</div>
+    <h3>II. Analog Modulation Systems Performance</h3>
+    <ol>
+      <li><strong>Amplitude Modulation (AM) with modulation index $\beta \le 1$:</strong>
+        <ul>
+          <li><strong>Efficiency:</strong> Transmission bandwidth is $ B = 2f_m $. Power efficiency for single-tone: $ \eta = \frac{\beta^2}{2 + \beta^2} $.</li>
+          <li><strong>Input Signal and Noise Powers:</strong>
+            $$ S_i = \frac{1}{2} A_c^2 \left( 1 + E[f^2(t)] \right), \quad N_i = n_0 B = 2 n_0 f_m $$
+          </li>
+          <li><strong>Output Signal and Noise Powers (Coherent/Envelope Demodulation):</strong>
+            $$ S_o = A_c^2 E[f^2(t)], \quad N_o = n_0 B = 2 n_0 f_m $$
+          </li>
+          <li><strong>Modulation Gain:</strong>
+            $$ G_1 = \frac{S_o / N_o}{S_i / N_i} = \frac{2 E[f^2(t)]}{1 + E[f^2(t)]} \le \frac{2}{3} \quad (\text{since } |f(t)| \le 1) $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Double Sideband Suppressed Carrier (DSB-SC):</strong>
+        <ul>
+          <li><strong>Efficiency:</strong> Bandwidth $ B = 2f_m $; carrier is suppressed, giving $\eta = 100\%$.</li>
+          <li><strong>Input Signal and Noise Powers:</strong>
+            $$ S_i = \frac{1}{2} A_c^2 E[f^2(t)], \quad N_i = n_0 B = 2 n_0 f_m $$
+          </li>
+          <li><strong>Output Signal and Noise Powers (Coherent Demodulation):</strong>
+            $$ S_o = \frac{1}{4} A_c^2 E[f^2(t)], \quad N_o = \frac{1}{4} n_0 B = \frac{1}{2} n_0 f_m $$
+          </li>
+          <li><strong>Modulation Gain:</strong>
+            $$ G_1 = \frac{S_o / N_o}{S_i / N_i} = 2 $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Single Sideband (SSB):</strong>
+        <ul>
+          <li><strong>Efficiency:</strong> Bandwidth is halved, $ B = f_m $; power efficiency $\eta = 100\%$.</li>
+          <li><strong>Input Signal and Noise Powers:</strong>
+            $$ S_i = \frac{1}{4} A_c^2 E[f^2(t)], \quad N_i = n_0 B = n_0 f_m $$
+          </li>
+          <li><strong>Output Signal and Noise Powers (Coherent Demodulation):</strong>
+            $$ S_o = \frac{1}{16} A_c^2 E[f^2(t)], \quad N_o = \frac{1}{4} n_0 B = \frac{1}{4} n_0 f_m $$
+          </li>
+          <li><strong>Modulation Gain:</strong>
+            $$ G_1 = \frac{S_o / N_o}{S_i / N_i} = 1 $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Vestigial Sideband (VSB):</strong>
+        <p>Requires the sideband shaping filter to satisfy the vestigial symmetry condition around the carrier frequency:</p>
+        $$ H_{VSB}(\omega - \omega_c) + H_{VSB}(\omega + \omega_c) = \text{constant}, \quad \text{for } |\omega - \omega_c| \le 2\pi f_m $$
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 3 -->
+  <div class="page" id="page-3">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 3</div>
+    <h3>III. Frequency Modulation (FM) and Phase Modulation (PM)</h3>
+    <ol>
+      <li><strong>Mathematical Representation</strong>
+        <ul>
+          <li>Frequency Modulation (FM):
+            $$ s_{FM}(t) = A_c \cos\left( \omega_c t + K_{FM} \int_{-\infty}^t f(\tau) d\tau \right) $$
+          </li>
+          <li>Phase Modulation (PM):
+            $$ s_{PM}(t) = A_c \cos\left( \omega_c t + K_{PM} f(t) \right) $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Wideband FM ($\beta \gg 1$) vs. PM</strong>
+        <p>In wideband FM, the transmission bandwidth is dominated by the frequency deviation and is independent of the message frequency $f_m$. This allows FM to achieve significant noise suppression and high output SNR compared to PM. Thus, FM is generally preferred.</p>
+        <ul>
+          <li><strong>Transmission Bandwidth (Carson's Rule):</strong>
+            $$ B \approx 2(f_m + \Delta f) = 2(\beta_{FM} + 1) f_m $$
+          </li>
+          <li><strong>Reliability:</strong> Output SNR exhibits a threshold effect. When the input carrier-to-noise ratio is above the threshold (typically $\approx 10$ dB), output SNR increases quadratically with bandwidth, trading bandwidth for improved noise immunity.</li>
+        </ul>
+      </li>
+      <li><strong>Receiver Structure:</strong>
+        <p>A typical FM receiver consists of the following cascade block diagram:</p>
+        <div class="table-container" style="text-align: center; padding: 1rem 0; font-weight: 500;">
+          $$ \text{Signal } s(t) + n(t) \rightarrow \boxed{\text{Bandpass Filter (BPF)}} \rightarrow \boxed{\text{Amplitude Limiter}} \rightarrow \boxed{\text{Frequency Discriminator}} \rightarrow \boxed{\text{Lowpass Filter (LPF)}} \rightarrow \text{Output } y(t) $$
+        </div>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 4 -->
+  <div class="page" id="page-4">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 4</div>
+    <h3>FM Noise Performance and Pre-emphasis/De-emphasis</h3>
+    <ol>
+      <li><strong>Broadband FM Performance ($\beta_{FM} \gg 1$):</strong>
+        <ul>
+          <li>Condition: $ |K_{FM} f(t)|_{\text{max}} = \Delta f_{\text{max}} \gg f_m $</li>
+          <li>Bandwidth: $ B \approx 2 \Delta f_{\text{max}} $</li>
+          <li>Modulation Gain:
+            $$ G_{FM} \approx 6 \left( \frac{\Delta f_{\text{max}}}{f_m} \right)^3 \frac{E[f^2(t)]}{f^2_{\text{max}}(t)} $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Single-Tone Broadband FM:</strong>
+        <ul>
+          <li>Spectrum representation:
+            $$ s(t) = A_c \sum_{n=-\infty}^{\infty} J_n(\beta_{FM}) \cos[(\omega_c + n \omega_m)t] $$
+          </li>
+          <li>Bandwidth: $ B \approx 2 \Delta f_{\text{max}} $</li>
+          <li>Modulation Gain:
+            $$ G_{FM} \approx 3 \beta_{FM}^3 $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>The Threshold Effect and Click Noise:</strong>
+        <p>As the bandwidth is expanded ($B \uparrow$), the output SNR initially increases because the modulation gain $G$ increases. However, the total noise power entering the discriminator also increases ($N_i \uparrow$). When the input SNR falls below the threshold, click noise occurs, causing a rapid degradation in output SNR. This establishes the limit on bandwidth expansion for SNR improvement.</p>
+      </li>
+      <li><strong>Improvement via Pre-emphasis and De-emphasis:</strong>
+        <p>In FM demodulation, the output noise PSD is parabolic, rising quadratically with frequency ($S_n(f) \propto f^2$). To counteract this high-frequency noise, we use pre-emphasis at the transmitter to boost high-frequency signal components, and de-emphasis at the receiver to restore the signal spectrum while attenuating high-frequency noise.</p>
+        <ul>
+          <li>System layout:
+            $$ f(t) \rightarrow \boxed{\text{Pre-emphasis Filter } H_{pe}(f)} \rightarrow \boxed{\text{FM Modulator}} \rightarrow \text{Channel} \rightarrow \boxed{\text{FM Demodulator}} \rightarrow \boxed{\text{De-emphasis Filter } H_{de}(f)} \rightarrow y(t) $$
+          </li>
+          <li>Typical filter transfer functions:
+            $$ H_{pe}(f) \approx 1 + j\frac{f}{f_1}, \quad H_{de}(f) = \frac{1}{1 + j f/f_1} $$
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 5 -->
+  <div class="page" id="page-5">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 5</div>
+    <h3>IV. Information Theory Foundations</h3>
+    <ol>
+      <li><strong>Information Measures</strong>
+        <ul>
+          <li><strong>Self-Information:</strong> Measures the uncertainty of an event $x_i$:
+            $$ I(x_i) = \log_2\left(\frac{1}{P(x_i)}\right) = -\log_2 P(x_i) \quad (\text{bits}) $$
+          </li>
+          <li><strong>Joint Information:</strong> For two events $x_i$ and $y_j$:
+            $$ I(x_i, y_j) = -\log_2 P(x_i, y_j) $$
+          </li>
+          <li><strong>Mutual Information:</strong> Information shared between $x_i$ and $y_j$:
+            $$ I(x_i; y_j) = \log_2\left(\frac{P(x_i \mid y_j)}{P(x_i)}\right) = \log_2\left(\frac{P(x_i, y_j)}{P(x_i)P(y_j)}\right) $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Entropy Definitions</strong>
+        <ul>
+          <li><strong>Source Entropy $H(X)$:</strong> The average self-information of source $X$:
+            $$ H(X) = \sum_{i=1}^M P(x_i) \log_2\left(\frac{1}{P(x_i)}\right) \le \log_2 M $$
+          </li>
+          <li><strong>Conditional Entropy $H(Y \mid X)$:</strong> The average uncertainty of $Y$ given $X$:
+            $$ H(Y \mid X) = \sum_{i=1}^M \sum_{j=1}^N P(x_i, y_j) \log_2\left(\frac{1}{P(y_j \mid x_i)}\right) \le H(Y) $$
+          </li>
+          <li><strong>Joint Entropy $H(X, Y)$:</strong> The total uncertainty of the joint system:
+            $$ H(X, Y) = \sum_{i=1}^M \sum_{j=1}^N P(x_i, y_j) \log_2\left(\frac{1}{P(x_i, y_j)}\right) = H(X) + H(Y \mid X) $$
+          </li>
+          <li><strong>Average Mutual Information $I(X; Y)$:</strong> The average information transmitted through a channel:
+            $$ I(X; Y) = H(X) - H(X \mid Y) = H(Y) - H(Y \mid X) \ge 0 $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Discrete Channel Capacity</strong>
+        <ul>
+          <li>Capacity $C$ is the maximum mutual information over all input distributions $P(X)$:
+            $$ C = \max_{P(X)} I(X; Y) = \max_{P(X)} \{ H(Y) - H(Y \mid X) \} \quad (\text{bits/symbol}) $$
+          </li>
+          <li>For symmetric channels, $H(Y \mid X)$ is independent of $P(X)$. Uniform input distribution maximizes $H(Y)$, giving:
+            $$ C = \log_2 M - H(\text{row of transition matrix}) $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Shannon's Channel Coding Theorem:</strong>
+        <p>If the transmission rate $R < C$, there exist error-correcting codes of block length $n$ such that the average block error probability $P_e$ satisfies:</p>
+        $$ P_e \le e^{-n E_r(R)} $$
+        <p>where $E_r(R)$ is the error exponent. As $n \to \infty$, $P_e \to 0$. If $R > C$, error-free transmission is impossible.</p>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 6 -->
+  <div class="page" id="page-6">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 6</div>
+    <h3>Continuous Sources and AWGN Channel Capacity</h3>
+    <ol>
+      <li><strong>Differential Entropy of Continuous Sources</strong>
+        <ul>
+          <li><strong>Differential (Relative) Entropy:</strong>
+            $$ H(X) = -\int_{-\infty}^{\infty} p(x) \log_2 p(x) dx \quad (\text{bits/symbol}) $$
+          </li>
+          <li><strong>Maximum Entropy for Bounded Range $[0, A]$:</strong> Achieved by uniform distribution:
+            $$ H(X) \le \log_2 A $$
+          </li>
+          <li><strong>Maximum Entropy for Given Variance $\sigma^2$:</strong> Achieved by Gaussian distribution:
+            $$ H(X) \le \frac{1}{2} \log_2(2\pi e \sigma^2) $$
+          </li>
+          <li><strong>Continuous Joint, Conditional, and Mutual Information:</strong>
+            $$ H(X, Y) = -\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} p(x, y) \log_2 p(x, y) dx dy $$
+            $$ H(Y \mid X) = -\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} p(x, y) \log_2 p(y \mid x) dx dy \le H(Y) $$
+            $$ I(X; Y) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} p(x, y) \log_2 \left( \frac{p(x, y)}{p(x)p(y)} \right) dx dy = H(Y) - H(Y \mid X) \ge 0 $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Continuous AWGN Channel Capacity</strong>
+        <ul>
+          <li>Let the received signal be $ Y = X + N $, where noise $ N \sim \mathcal{N}(0, \sigma_N^2) $ is independent of signal $X$.
+            $$ H(Y \mid X) = H(X+N \mid X) = H(N) = \frac{1}{2}\log_2(2\pi e \sigma_N^2) $$
+          </li>
+          <li>Mutual Information:
+            $$ I(X; Y) = H(Y) - H(N) $$
+          </li>
+          <li>For average power constraints $E[X^2] \le S$, the output power is $E[Y^2] = S + N$. Since $H(Y)$ is maximized when $Y$ is Gaussian:
+            $$ C = \max_{P(X)} I(X; Y) = \frac{1}{2} \log_2\left( 1 + \frac{S}{N} \right) \quad (\text{bits/symbol}) $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Shannon-Hartley Theorem</strong>
+        <p>For a bandlimited channel of bandwidth $B$ (Hz) sampled at the Nyquist rate $2B$ samples/second, the capacity in bits/second is:</p>
+        $$ C_t = 2B \cdot C = B \log_2\left( 1 + \frac{S}{N_0 B} \right) \quad (\text{bps}) $$
+        <p>where $N_0$ is the single-sided noise power spectral density ($N = N_0 B$).</p>
+        <ul>
+          <li><strong>Infinite Bandwidth Limit ($B \to \infty$):</strong>
+            $$ C_{\infty} = \lim_{B\to\infty} B \log_2\left(1 + \frac{S}{N_0 B}\right) = \frac{S}{N_0} \log_2 e \approx 1.44 \frac{S}{N_0} $$
+          </li>
+          <li><strong>Shannon Limit in terms of $E_b/N_0$:</strong>
+            <p>Since the transmission rate $R_b \le C_t$ and signal power is $S = R_b E_b$:</p>
+            $$ \frac{E_b}{N_0} \ge \ln 2 \approx -1.6 \text{ dB} $$
+            <p>This represents the absolute limit below which error-free communication is mathematically impossible.</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 7 -->
+  <div class="page" id="page-7">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 7</div>
+    <h3>V. Source Coding and Quantization</h3>
+    <ol>
+      <li><strong>Sampling</strong>
+        <ul>
+          <li><strong>Impulse/Natural Sampling:</strong>
+            $$ x_s(t) = x(t) \cdot \sum_{n=-\infty}^{\infty} \delta(t - n T_s) $$
+          </li>
+          <li><strong>Flat-Top Sampling (Zero-Order Hold):</strong>
+            $$ x_s(t) = \left[ x(t) \cdot \sum_{n=-\infty}^{\infty} \delta(t - n T_s) \right] * \text{rect}\left(\frac{t}{T_0}\right) $$
+            <p>Introduces aperture distortion, requiring an equalization filter.</p>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Optimal Quantization (Lloyd-Max Quantizer)</strong>
+        <p>To quantize a continuous source $x$ with probability density $p_x(x)$ into $L$ levels $\{y_k\}$ with boundaries $\{x_k\}$, we minimize the mean squared error (distortion $\sigma_q^2$):</p>
+        $$ \sigma_q^2 = \sum_{k=1}^L \int_{x_{k-1}}^{x_k} (x - y_k)^2 p_x(x) dx $$
+        <ul>
+          <li><strong>Optimal Boundaries $x_k$ (for given $\{y_k\}$):</strong>
+            $$ \frac{\partial \sigma_q^2}{\partial x_k} = 0 \Rightarrow x_k = \frac{1}{2}(y_k + y_{k+1}) $$
+          </li>
+          <li><strong>Optimal Reconstruction Levels $y_k$ (for given $\{x_k\}$):</strong>
+            $$ \frac{\partial \sigma_q^2}{\partial y_k} = 0 \Rightarrow y_k = \frac{\int_{x_{k-1}}^{x_k} x p_x(x) dx}{\int_{x_{k-1}}^{x_k} p_x(x) dx} \quad (\text{centroid of the partition interval}) $$
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 8 -->
+  <div class="page" id="page-8">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 8</div>
+    <h3>Quantization of Different Distributions</h3>
+    <ol>
+      <li><strong>Uniform Distribution on $[-V, V]$:</strong>
+        <ul>
+          <li>Spacing: $\Delta = \frac{2V}{L}$.</li>
+          <li>Distortion (Quantization noise variance):
+            $$ \sigma_q^2 = \frac{\Delta^2}{12} = \frac{V^2}{3L^2} $$
+          </li>
+          <li>Signal-to-Quantization Noise Ratio (SQNR):
+            $$ \text{SQNR} = \frac{\sigma_x^2}{\sigma_q^2} = L^2 = 2^{2B} \approx 6.02 B \text{ dB} $$
+            where $B = \log_2 L$ is the number of bits.
+          </li>
+        </ul>
+      </li>
+      <li><strong>Laplace Distribution:</strong>
+        <ul>
+          <li>Density: $ p_x(x) = \frac{1}{\sqrt{2}\sigma_x} e^{-\frac{\sqrt{2}|x|}{\sigma_x}} $</li>
+          <li>Distortion for large $L$:
+            $$ \sigma_q^2 \approx \frac{2\sigma_x^2}{3L^2} $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Gaussian Distribution (Gaussian Quantization):</strong>
+        <ul>
+          <li>Using uniform quantization with dynamic range parameter $D = V/\sigma_x$:
+            $$ \text{SQNR (dB)} \approx 6.02 B + 4.77 - 20\log_{10} D $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Logarithmic Quantization (Companding):</strong>
+        <p>Used to maintain a nearly constant SQNR over a wide dynamic range (e.g., $\mu$-law or $A$-law):</p>
+        $$ \sigma_q^2 \propto \sigma_x^2 \Rightarrow \text{SQNR} = \text{constant} $$
+      </li>
+      <li><strong>Source Encoder Bit Rate:</strong>
+        $$ R_b = f_s \cdot B = f_s \log_2 L \quad (\text{bps}) $$
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 9 -->
+  <div class="page" id="page-9">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 9</div>
+    <h3>VI. Baseband Transmission and Line Coding</h3>
+    <ol>
+      <li><strong>Binary Line Codes</strong>
+        <ul>
+          <li><strong>Unipolar NRZ (Non-Return-to-Zero):</strong>
+            <ul>
+              <li>"1" $\to$ pulse of amplitude $A$; "0" $\to$ 0. Has DC offset, poor clock recovery.</li>
+            </ul>
+          </li>
+          <li><strong>Polar NRZ:</strong>
+            <ul>
+              <li>"1" $\to$ $+A$; "0" $\to$ $-A$. Better noise margin, no DC offset if symmetric.</li>
+            </ul>
+          </li>
+          <li><strong>Bipolar NRZ (Alternate Mark Inversion - AMI):</strong>
+            <ul>
+              <li>"1" alternates between $+A$ and $-A$; "0" $\to$ 0. Zero DC component, allows error detection.</li>
+            </ul>
+          </li>
+          <li><strong>Return-to-Zero (RZ) codes:</strong>
+            <ul>
+              <li>Unipolar RZ: "1" $\to$ pulse of amplitude $A$ for half the bit interval, then returns to 0. Excellent clock recovery.</li>
+              <li>Polar RZ: "1" $\to$ $+A$ (half-interval); "0" $\to$ $-A$ (half-interval).</li>
+            </ul>
+          </li>
+          <li><strong>Manchester (Split-Phase) Coding:</strong>
+            <ul>
+              <li>"1" $\to$ high-to-low transition; "0" $\to$ low-to-high transition. Guaranteed transition at center of every bit interval, zero DC component.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 10 -->
+  <div class="page" id="page-10">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 10</div>
+    <h3>VII. Channel Coding and Error Control</h3>
+    <ol>
+      <li><strong>Linear Block Codes (Hamming Codes):</strong>
+        <ul>
+          <li>Codeword: $ \bm{c} = \bm{m} \bm{G} $, where $ \bm{G} = [\bm{I}_k \mid \bm{P}] $ is the generator matrix.</li>
+          <li>Parity check matrix: $ \bm{H} = [-\bm{P}^T \mid \bm{I}_{n-k}] $, satisfying $ \bm{G} \bm{H}^T = \bm{0} $.</li>
+          <li>Syndrome decoding: $ \bm{s} = \bm{r} \bm{H}^T = \bm{e} \bm{H}^T $. If $ \bm{s} = \bm{0} $, no detectable errors; otherwise, $ \bm{s} $ maps to the error vector $ \bm{e} $.</li>
+          <li>Hamming codes: $(2^m-1, 2^m-1-m)$ cyclic/linear codes with $d_{\text{min}} = 3$, correcting single errors.</li>
+        </ul>
+      </li>
+      <li><strong>Cyclic Codes:</strong>
+        <ul>
+          <li>Codewords are represented as polynomials: $ c(D) = m(D) g(D) $, where $g(D)$ is the generator polynomial of degree $n-k$.</li>
+          <li>Systematic form:
+            $$ c(D) = D^{n-k} m(D) + [D^{n-k} m(D) \bmod g(D)] $$
+          </li>
+          <li>Syndrome polynomial: $ s(D) = r(D) \bmod g(D) $.</li>
+        </ul>
+      </li>
+      <li><strong>BCH Codes:</strong>
+        <p>A generalized class of cyclic codes for multiple error corrections. Decoded using algebraic methods like the Berlekamp-Massey algorithm.</p>
+      </li>
+      <li><strong>Interleaving:</strong>
+        <p>Scrambles symbol sequences across a matrix of depth $M$ to convert burst errors caused by fading into isolated random errors, which are easily corrected by block codes.</p>
+      </li>
+      <li><strong>Convolutional Codes:</strong>
+        <ul>
+          <li>Parameters: $(n, k, K)$, where $K$ is the constraint length. Codewords depend on current and past bits.</li>
+          <li>Maximum Likelihood decoding is implemented using the <strong>Viterbi Algorithm</strong> on the code trellis.</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 11 -->
+  <div class="page" id="page-11">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 11</div>
+    <h3>VIII. Partial Response Systems (Duobinary Coding)</h3>
+    <ol>
+      <li><strong>Duobinary Precoding and Signaling:</strong>
+        <p>To transmit at the Nyquist rate $2B$ symbols/second over a physical channel of bandwidth $B$ without ISI, duobinary coding introduces controlled correlation between adjacent symbols. To prevent error propagation, we pre-code the input data $\{d_n\}$ (where $d_n \in \{0, 1, \dots, L-1\}$):</p>
+        $$ a_n = \left( d_n - \sum_{k=1}^M p_k a_{n-k} \right) \bmod L $$
+        <p>The transmitted sequence $\{c_n\}$ is:</p>
+        $$ c_n = a_n + \sum_{k=1}^M p_k a_{n-k} $$
+        <p>At the receiver, the data is decoded without error propagation using:</p>
+        $$ d_n = c_n \bmod L $$
+      </li>
+      <li><strong>Properties:</strong>
+        <ul>
+          <li><strong>Effectiveness:</strong> Compresses the required bandwidth, allowing signaling at the theoretical Nyquist rate over a practical channel.</li>
+          <li><strong>Limitations:</strong> Requires a higher SNR because the received signal has $2L-1$ levels instead of $L$. It is also sensitive to phase offset and timing jitter.</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 12 -->
+  <div class="page" id="page-12">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 12</div>
+    <h3>IX. Digital Passband Modulation Formats</h3>
+    <ol>
+      <li><strong>Spectral Analysis of Modulated Waveforms:</strong>
+        <ul>
+          <li><strong>Baseband Bipolar PSD:</strong>
+            $$ \Phi_s(f) = A^2 T_s \left( \frac{\sin(\pi f T_s)}{\pi f T_s} \right)^2 $$
+          </li>
+          <li><strong>M-ary Frequency Shift Keying (MFSK):</strong>
+            <p>Orthogonality condition requires carrier spacing $\Delta f = \frac{1}{2T_s}$.</p>
+            $$ \Phi_{FSK}(f) \propto \sum_{m=1}^M \left[ \Phi_s(f - f_m) + \Phi_s(f + f_m) \right], \quad B \approx 2B_0 + (M-1)\Delta f $$
+          </li>
+          <li><strong>M-ary Amplitude Shift Keying (MASK) / MPSK:</strong>
+            $$ \Phi_{PSK}(f) \propto \Phi_s(f - f_c) + \Phi_s(f + f_c) $$
+          </li>
+          <li><strong>Minimum Shift Keying (MSK):</strong>
+            <p>A continuous-phase FSK (CPFSK) scheme with modulation index $h = 0.5$ ($\Delta f = \frac{1}{2 T_s}$). Constant envelope, zero phase transitions, and rapid sidelobe decay.</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 13 -->
+  <div class="page" id="page-13">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 13</div>
+    <h3>Passband Bit Error Probabilities</h3>
+    <ol>
+      <li><strong>Coherent Digital Modulations:</strong>
+        <ul>
+          <li><strong>BPSK / QPSK:</strong>
+            $$ P_b = Q\left( \sqrt{\frac{2E_b}{N_0}} \right) $$
+          </li>
+          <li><strong>MASK:</strong>
+            $$ P_s = \frac{2(M-1)}{M} Q\left( \sqrt{\frac{6\log_2 M}{M^2 - 1} \frac{E_b}{N_0}} \right) $$
+          </li>
+          <li><strong>MFSK (Coherent):</strong>
+            $$ P_s \le (M-1) Q\left( \sqrt{\frac{E_s}{N_0}} \right) $$
+          </li>
+          <li><strong>MQAM:</strong>
+            $$ P_s \approx 4\left( 1 - \frac{1}{\sqrt{M}} \right) Q\left( \sqrt{\frac{3}{M-1} \frac{E_s}{N_0}} \right) $$
+          </li>
+          <li><strong>MPSK:</strong>
+            $$ P_s \approx 2 Q\left( \sqrt{\frac{2E_s}{N_0}} \sin\left(\frac{\pi}{M}\right) \right) $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Non-Coherent Digital Modulations:</strong>
+        <ul>
+          <li><strong>Non-Coherent FSK (BFSK):</strong>
+            $$ P_b = \frac{1}{2} e^{-\frac{E_b}{2N_0}} $$
+          </li>
+          <li><strong>Non-Coherent DPSK:</strong>
+            $$ P_b = \frac{1}{2} e^{-\frac{E_b}{N_0}} $$
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 14 -->
+  <div class="page" id="page-14">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 14</div>
+    <h3>X. Optimal Receivers in AWGN Channel</h3>
+    <ol>
+      <li><strong>Maximum Likelihood (ML) Detection</strong>
+        <p>Let received waveform be $ x(t) = s_i(t) + n(t) $ for $t \in [0, T_s]$ in AWGN. The Likelihood function is:</p>
+        $$ f(\bm{x} \mid s_i) = \left( \frac{1}{\sqrt{2\pi}\sigma_n} \right)^K \exp\left( -\frac{1}{2\sigma_n^2} \int_0^{T_s} [x(t) - s_i(t)]^2 dt \right) $$
+        <ul>
+          <li><strong>Decision Rule for Equiprobable Symbols (Minimum Distance):</strong>
+            $$ \hat{m} = \arg\min_i \int_0^{T_s} [x(t) - s_i(t)]^2 dt $$
+          </li>
+          <li><strong>Decision Rule for Equal Energy and Equiprobable Symbols (Correlation Receiver):</strong>
+            $$ \hat{m} = \arg\max_i \int_0^{T_s} x(t) s_i(t) dt $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>Matched Filter Receiver</strong>
+        <p>The linear filter that maximizes output SNR at sampling instant $t = T_s$ is matched to the signal $s_i(t)$:</p>
+        $$ h(t) = s_i^*(T_s - t) \leftrightarrow H(f) = s_i^*(f) e^{-j 2\pi f T_s} $$
+        <ul>
+          <li><strong>Maximum Output SNR:</strong>
+            $$ \text{SNR}_{\text{max}} = \frac{2 E_s}{N_0} $$
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+</main>
+</body>
+</html>
+
+{% endraw %}
