@@ -33,8 +33,8 @@ title: Notes – Angli Liu
       <li><a href="/notes/multivariable calculus.pdf" target="_blank">multivariable calculus</a></li>
       <li><a href="/notes/applied math.pdf" target="_blank">applied math</a> (<a href="/applied-math/index.html" target="_blank">Applied Math</a>)</li>
       <li><a href="/notes/signals and systems.pdf" target="_blank">signals and systems</a> (<a href="/signals-and-systems/index.html" target="_blank">Signals and Systems</a>)</li>
-      <li><a href="/notes/stochastic process.pdf" target="_blank">stochastic process</a></li>
-      <li><a href="/notes/stochastic process 2.pdf" target="_blank">stochastic process 2</a></li>
+      <li><a href="/notes/stochastic process.pdf" target="_blank">stochastic process</a> (<a href="/stochastic-process/index.html#part-1" target="_blank">Stochastic Process</a>)</li>
+      <li><a href="/notes/stochastic process 2.pdf" target="_blank">stochastic process 2</a> (<a href="/stochastic-process/index.html#part-2" target="_blank">Stochastic Process</a>)</li>
       <li><a href="/notes/information theory.pdf" target="_blank">information theory</a> (<a href="/information-theory/index.html" target="_blank">Information Theory</a>)</li>
       <li><a href="/notes/algorithms.pdf" target="_blank">algorithms</a></li>
       <li><a href="/notes/algorithms 2.pdf" target="_blank">algorithms 2</a></li>

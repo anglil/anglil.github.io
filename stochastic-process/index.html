@@ -1,0 +1,457 @@
+---
+---
+{% raw %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stochastic Processes | Lecture Notes & Solved Problems</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
+              displayMath: [["$$", "$$"], ["\\\\[", "\\\\]"]],
+              macros: {
+                  bm: ["\\\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">Stochastic Processes<span>Angli Liu</span></div>
+  <nav>
+    <ul>
+      <li><a href="#part-1" class="active">Part I: Theoretical Foundations</a></li>
+      <li><a href="#part-2">Part II: Solved Applied Problems</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+  <div class="chapter-header">
+    <h1>Stochastic Processes</h1>
+    <h2 class="chapter-title">Lecture Notes & Solved Problems</h2>
+  </div>
+
+  <!-- Part I Header -->
+  <div class="part-header" id="part-1" style="background: var(--bg-sidebar); color: var(--text-sidebar-active); padding: 2rem; margin: 3rem 0; border-radius: 8px;">
+    <h2 style="margin: 0; font-family: 'Source Sans 3', sans-serif; font-size: 2rem;">Part I: Theoretical Foundations</h2>
+    <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; opacity: 0.85;">A rigorous mathematical treatment of random processes, ergodicity, spectral analysis, Gaussian systems, Poisson models, and Markov chains.</p>
+  </div>
+
+  <!-- Page 1 -->
+  <div class="page" id="part1-page-1">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 1: Concepts and Basic Types</div>
+    <h3>1. Random Processes: Concepts and Basic Types</h3>
+    <ul>
+      <li><strong>1.1. Second-Order Processes</strong>
+        <p>A random process $\{X(t), t \in T\}$ is a second-order process if its mean $E[X(t)]$ and variance $D[X(t)]$ exist for all $t \in T$. By the Cauchy-Schwarz inequality, the autocorrelation function $R_X(t, s) = E[X(t)X(s)]$ and autocovariance function $C_X(t, s) = E[(X(t) - E[X(t)])(X(s) - E[X(s)])]$ are guaranteed to exist.</p>
+      </li>
+      <li><strong>1.2. Joint Autocorrelation and Cross-Correlation</strong>
+        <p>The cross-correlation between two random processes $X(t)$ and $Y(t)$ is defined as $R_{XY}(t, s) = E[X(t)Y(s)]$. If they are jointly wide-sense stationary, it depends only on the time difference $\tau = t - s$:</p>
+        $$ R_{XY}(t, s) = R_{XY}(t - s) $$
+        <p>Cross-correlation satisfies the symmetry property: $R_{XY}(\tau) = R_{YX}(-\tau)$. If the processes are real-valued, $R_{XY}(\tau) = R_{YX}(-\tau)$.</p>
+      </li>
+      <li><strong>1.3. Stationary Processes (Strict-sense and Wide-sense)</strong>
+        <ul>
+          <li><strong>Strict-Sense Stationary (SSS):</strong> The joint distribution is invariant under any shift in time:
+            $$ F_X(x_1, \dots, x_n; t_1, \dots, t_n) = F_X(x_1, \dots, x_n; t_1 + \tau, \dots, t_n + \tau) $$
+          </li>
+          <li><strong>Wide-Sense Stationary (WSS):</strong> The mean is constant and the autocorrelation depends only on time difference:
+            $$ E[X(t)] = \mu_X = \text{constant}, \quad R_X(t, s) = R_X(t - s) $$
+          </li>
+        </ul>
+      </li>
+      <li><strong>1.4. Properties of the Autocorrelation Function</strong>
+        <ol>
+          <li><strong>Symmetry:</strong> $R_X(\tau) = R_X(-\tau)$.</li>
+          <li><strong>Boundedness:</strong> $|R_X(\tau)| \le R_X(0) = E[X^2(t)]$.</li>
+          <li><strong>Relation to Autocovariance:</strong>
+            $$ C_X(t, s) = R_X(t, s) - E[X(t)]E[X(s)] $$
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 2 -->
+  <div class="page" id="part1-page-2">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 2: Mean Ergodicity & KL Expansion</div>
+    <h3>2. Mean Ergodicity</h3>
+    <p>A WSS process $\{X(t)\}$ is mean-ergodic if its time average converges to its ensemble average in the mean-square sense as $T \to \infty$:</p>
+    $$ \hat{\mu}_T = \frac{1}{T} \int_{-T/2}^{T/2} X(t) dt \xrightarrow{\text{m.s.}} E[X(t)] = \mu_X $$
+    <p>A necessary and sufficient condition for mean ergodicity is:</p>
+    $$ \lim_{T \to \infty} \frac{1}{T} \int_{-T}^T \left(1 - \frac{|\tau|}{T}\right) C_X(\tau) d\tau = 0 $$
+    <p>A sufficient condition is that $\lim_{\tau \to \infty} C_X(\tau) = 0$.</p>
+
+    <h3>3. Karhunen-Loève (KL) Expansion</h3>
+    <p>The KL expansion represents a continuous-time second-order random process $X(t)$ over an interval $[a, b]$ as an infinite linear combination of orthogonal coordinate functions:</p>
+    $$ X(t) = \sum_{n=1}^{\infty} X_n \phi_n(t) $$
+    <p>where $\{\phi_n(t)\}$ are deterministic orthonormal eigenfunctions satisfying the integral equation:</p>
+    $$ \int_a^b R_X(t, s) \phi_n(s) ds = \lambda_n \phi_n(t) $$
+    <p>The coefficients $X_n$ are uncorrelated random variables given by:</p>
+    $$ X_n = \int_a^b X(t) \phi_n^*(t) dt $$
+    <p>and satisfy $E[X_n X_m^*] = \lambda_n \delta_{nm}$. The autocorrelation function can be expanded as:</p>
+    $$ R_X(t, s) = \sum_{n=1}^{\infty} \lambda_n \phi_n(t) \phi_n^*(s) $$
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 3 -->
+  <div class="page" id="part1-page-3">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 3: Linear Systems and Spectral Density</div>
+    <h3>4. Linear Time-Invariant (LTI) Systems with Random Inputs</h3>
+    <p>When a WSS process $X(t)$ is passed through a stable LTI system with impulse response $h(t)$ and transfer function $H(\omega)$, the output $Y(t) = h(t) * X(t)$ is also WSS.</p>
+    <ul>
+      <li><strong>Output Mean:</strong>
+        $$ E[Y(t)] = E[X(t)] \int_{-\infty}^{\infty} h(t) dt = E[X(t)] H(0) $$
+      </li>
+      <li><strong>Power Spectral Density (PSD) Relations:</strong>
+        $$ S_Y(\omega) = |H(\omega)|^2 S_X(\omega) $$
+        $$ S_{YX}(\omega) = H(\omega) S_X(\omega), \quad S_{XY}(\omega) = \overline{H(\omega)} S_X(\omega) $$
+      </li>
+    </ul>
+
+    <h3>5. Hilbert Transform and Analytic Signals</h3>
+    <p>The Hilbert transform of a random process $X(t)$ is defined as:</p>
+    $$ \hat{X}(t) = X(t) * \frac{1}{\pi t} = \frac{1}{\pi} \int_{-\infty}^{\infty} \frac{X(\tau)}{t - \tau} d\tau $$
+    <p>The equivalent filter has transfer function $H(\omega) = -j \text{sgn}(\omega)$.</p>
+    <ul>
+      <li><strong>Analytic Signal:</strong> $Y(t) = X(t) + j\hat{X}(t)$.</li>
+      <li><strong>Autocorrelation of Analytic Signal:</strong>
+        $$ R_Y(\tau) = 2 R_X(\tau) + 2j \hat{R}_{X}(\tau) $$
+      </li>
+      <li><strong>PSD of Analytic Signal:</strong>
+        $$ S_Y(\omega) = 2 S_X(\omega) [1 + \text{sgn}(\omega)] = 4 S_X(\omega) u(\omega) $$
+      </li>
+    </ul>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 4 -->
+  <div class="page" id="part1-page-4">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 4: Bandpass Signals and I/Q Components</div>
+    <h3>6. In-Phase and Quadrature (I/Q) Components of Bandpass Processes</h3>
+    <p>A bandpass process $Y(t)$ centered at carrier frequency $\omega_c$ can be decomposed into in-phase $X_r(t)$ and quadrature $X_i(t)$ components:</p>
+    $$ Y(t) = X_r(t) \cos(\omega_c t) - X_i(t) \sin(\omega_c t) $$
+    $$ \hat{Y}(t) = X_r(t) \sin(\omega_c t) + X_i(t) \cos(\omega_c t) $$
+    <p>where $X_r(t)$ and $X_i(t)$ are lowpass processes defined as:</p>
+    $$ X_r(t) = Y(t)\cos(\omega_c t) + \hat{Y}(t)\sin(\omega_c t) $$
+    $$ X_i(t) = \hat{Y}(t)\cos(\omega_c t) - Y(t)\sin(\omega_c t) $$
+    <p>If $Y(t)$ is zero-mean and WSS, then $X_r(t)$ and $X_i(t)$ are jointly WSS with the following properties:</p>
+    <ol>
+      <li>$E[X_r(t)] = E[X_i(t)] = 0$.</li>
+      <li>$R_{X_r}(\tau) = R_{X_i}(\tau) = R_Y(\tau)\cos(\omega_c \tau) + \hat{R}_Y(\tau)\sin(\omega_c \tau)$.</li>
+      <li>$R_{X_r X_i}(\tau) = R_Y(\tau)\sin(\omega_c \tau) - \hat{R}_Y(\tau)\cos(\omega_c \tau) = -R_{X_i X_r}(\tau)$.</li>
+      <li>$S_{X_r}(\omega) = S_{X_i}(\omega) = [S_Y(\omega - \omega_c) + S_Y(\omega + \omega_c)]_{\text{LP}}$.</li>
+      <li>$S_{X_r X_i}(\omega) = j[S_Y(\omega - \omega_c) - S_Y(\omega + \omega_c)]_{\text{LP}}$.</li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 5 -->
+  <div class="page" id="part1-page-5">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 5: Gaussian Processes</div>
+    <h3>7. Gaussian Processes</h3>
+    <ol>
+      <li><strong>Multivariate Density Function:</strong>
+        <p>A vector of random variables $\bm{X} = (X_1, \dots, X_n)^T$ is Gaussian if its joint probability density is:</p>
+        $$ f_{\bm{X}}(\bm{x}) = \frac{1}{(2\pi)^{n/2} |\bm{\Sigma}|^{1/2}} \exp\left( -\frac{1}{2}(\bm{x} - \bm{\mu})^T \bm{\Sigma}^{-1} (\bm{x} - \bm{\mu}) \right) $$
+        <p>where $\bm{\mu}$ is the mean vector and $\bm{\Sigma}$ is the positive-definite covariance matrix.</p>
+      </li>
+      <li><strong>Characteristic Function:</strong>
+        $$ \Phi_{\bm{X}}(\bm{\omega}) = E\{ e^{j \bm{\omega}^T \bm{X}} \} = \exp\left( j \bm{\omega}^T \bm{\mu} - \frac{1}{2} \bm{\omega}^T \bm{\Sigma} \bm{\omega} \right) $$
+      </li>
+      <li><strong>Moments property:</strong> A Gaussian process is completely specified by its first and second moments (mean and autocorrelation).</li>
+      <li><strong>Linear Transformation:</strong> If $\bm{X}$ is Gaussian and $\bm{Y} = \bm{C}\bm{X} + \bm{d}$, then $\bm{Y}$ is also Gaussian.</li>
+      <li><strong>Conditional Gaussian Distribution:</strong>
+        <p>If $\bm{X} = (\bm{X}_1, \bm{X}_2)^T$ is Gaussian, the conditional distribution of $\bm{X}_1$ given $\bm{X}_2$ is also Gaussian:</p>
+        $$ \bm{X}_1 \mid \bm{X}_2 \sim \mathcal{N}\left( \bm{\mu}_1 + \bm{\Sigma}_{12}\bm{\Sigma}_{22}^{-1}(\bm{x}_2 - \bm{\mu}_2), \, \bm{\Sigma}_{11} - \bm{\Sigma}_{12}\bm{\Sigma}_{22}^{-1}\bm{\Sigma}_{21} \right) $$
+      </li>
+      <li><strong>Uncorrelatedness implies Independence:</strong> For Gaussian variables, they are independent if and only if they are uncorrelated ($\bm{\Sigma}_{12} = \bm{0}$).</li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 6 -->
+  <div class="page" id="part1-page-6">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 6: Gauss-Markov & Poisson Processes</div>
+    <h3>8. Gauss-Markov Processes</h3>
+    <p>A Gaussian process $X(t)$ is Markov if and only if for any $t_1 < t_2 < t_3$, the correlation satisfies the relation:</p>
+    $$ C_X(t_1, t_3) = \frac{C_X(t_1, t_2) C_X(t_2, t_3)}{C_X(t_2, t_2)} $$
+    <p>which implies the covariance factorizes as $C_X(t, s) = h(\min(t,s)) g(\max(t,s))$.</p>
+
+    <h3>9. Poisson Processes</h3>
+    <p>A Poisson process $\{N(t), t \ge 0\}$ with intensity $\lambda > 0$ is a discrete-state, continuous-time process representing count statistics of independent events:</p>
+    $$ P(N(t) = n) = \frac{(\lambda t)^n}{n!} e^{-\lambda t}, \quad n = 0, 1, \dots $$
+    <ul>
+      <li><strong>Mean and Variance:</strong> $E[N(t)] = D[N(t)] = \lambda t$.</li>
+      <li><strong>Autocorrelation Function:</strong>
+        $$ R_N(t, s) = E[N(t)N(s)] = \lambda^2 t s + \lambda \min(t, s) $$
+      </li>
+      <li><strong>Autocovariance Function:</strong>
+        $$ C_N(t, s) = \lambda \min(t, s) $$
+      </li>
+    </ul>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 7 -->
+  <div class="page" id="part1-page-7">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 7: Arrival Times and Order Statistics</div>
+    <h3>10. Poisson Process Arrival Times and Waiting Times</h3>
+    <ol>
+      <li><strong>Inter-Arrival Times ($T_n$):</strong>
+        <p>The time intervals between consecutive events $T_n = S_n - S_{n-1}$ are independent, identically distributed (i.i.d.) exponential random variables:</p>
+        $$ f_{T_n}(t) = \lambda e^{-\lambda t}, \quad t \ge 0, \quad E[T_n] = \frac{1}{\lambda}, \quad D[T_n] = \frac{1}{\lambda^2} $$
+      </li>
+      <li><strong>Waiting Times ($S_n$):</strong>
+        <p>The arrival time of the $n$-th event $S_n = \sum_{i=1}^n T_i$ follows a Gamma (Erlang) distribution:</p>
+        $$ f_{S_n}(t) = \frac{\lambda^n t^{n-1}}{(n-1)!} e^{-\lambda t}, \quad t \ge 0 $$
+      </li>
+      <li><strong>Conditional Distribution of Arrival Times:</strong>
+        <p>Given that $N(t) = n$ events occurred in the interval $[0, t]$, the arrival times $\{S_1, \dots, S_n\}$ are distributed as the order statistics of $n$ independent random variables uniformly distributed on $[0, t]$:</p>
+        $$ f_{S_1, \dots, S_n \mid N(t)=n}(u_1, \dots, u_n) = \frac{n!}{t^n}, \quad 0 \le u_1 \le \dots \le u_n \le t $$
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 8 -->
+  <div class="page" id="part1-page-8">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 8: Compound & Non-Homogeneous Poisson Processes</div>
+    <h3>11. Compound Poisson Processes</h3>
+    <p>A compound Poisson process $\{Y(t), t \ge 0\}$ is defined as $Y(t) = \sum_{k=1}^{N(t)} H_k$, where $\{N(t)\}$ is a Poisson process and $\{H_k\}$ are i.i.d. random variables independent of $N(t)$.</p>
+    <ul>
+      <li><strong>Mean:</strong> $E[Y(t)] = \lambda t E[H_k]$.</li>
+      <li><strong>Variance:</strong>
+        $$ D[Y(t)] = \lambda t E[H_k^2] $$
+      </li>
+      <li><strong>Characteristic Function:</strong>
+        $$ G_Y(u) = e^{\lambda t [G_H(u) - 1]} $$
+      </li>
+    </ul>
+
+    <h3>12. Non-Homogeneous Poisson Processes</h3>
+    <p>If the rate of arrival varies with time as $\lambda(t)$, the process has independent increments, and the count follows:</p>
+    $$ P(N(t) - N(s) = n) = \frac{\Lambda(s, t)^n}{n!} e^{-\Lambda(s, t)}, \quad \text{where } \Lambda(s, t) = \int_s^t \lambda(u) du $$
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 9 -->
+  <div class="page" id="part1-page-9">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 9: Markov Chains</div>
+    <h3>13. Discrete-Time Markov Chains (DTMC)</h3>
+    <ol>
+      <li><strong>Markov Property:</strong>
+        $$ P(X_{n+1} = j \mid X_n = i, X_{n-1} = i_{n-1}, \dots, X_0 = i_0) = P(X_{n+1} = j \mid X_n = i) = P_{ij} $$
+      </li>
+      <li><strong>Chapman-Kolmogorov Equations:</strong>
+        $$ P_{ij}^{(m+n)} = \sum_{k} P_{ik}^{(m)} P_{kj}^{(n)} $$
+      </li>
+      <li><strong>State Classification:</strong>
+        <ul>
+          <li><strong>Recurrent:</strong> A state is recurrent if the probability of eventually returning to it is 1 ($f_{ii} = 1$).
+            - If mean return time $\mu_i = E[T_{ii}] < \infty$, the state is <strong>positive recurrent</strong>.
+            - If $\mu_i = \infty$, it is <strong>null recurrent</strong>.
+          </li>
+          <li><strong>Transient:</strong> A state is transient if $f_{ii} < 1$, meaning $\sum_{n=1}^{\infty} P_{ii}^{(n)} < \infty$.</li>
+        </ul>
+      </li>
+      <li><strong>Stationary Distribution ($\bm{\pi}$):</strong>
+        <p>For an irreducible, aperiodic Markov chain, the stationary distribution satisfies the balance equations:</p>
+        $$ \pi_j = \sum_{k} \pi_k P_{kj}, \quad \sum_{j} \pi_j = 1 $$
+        <p>The limiting distribution is given by $P_{ij}^{(n)} \to \pi_j = 1/\mu_j$ as $n \to \infty$.</p>
+      </li>
+    </ol>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Page 10 -->
+  <div class="page" id="part1-page-10">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 10: Autocorrelation-PSD Transforms</div>
+    <h3>14. Common Autocorrelation and Power Spectral Density Pairs</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Autocorrelation Function $R_X(\tau)$</th>
+            <th>Power Spectral Density $S_X(\omega)$</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$e^{-\alpha |\tau|}$</td>
+            <td>$\frac{2\alpha}{\omega^2 + \alpha^2}$</td>
+          </tr>
+          <tr>
+            <td>$\delta(\tau)$</td>
+            <td>$1$</td>
+          </tr>
+          <tr>
+            <td>$\cos(\omega_0 \tau)$</td>
+            <td>$\pi [\delta(\omega - \omega_0) + \delta(\omega + \omega_0)]$</td>
+          </tr>
+          <tr>
+            <td>$\frac{\sin(\omega_0 \tau)}{\pi \tau}$</td>
+            <td>$\text{rect}\left(\frac{\omega}{2\omega_0}\right)$</td>
+          </tr>
+          <tr>
+            <td>$e^{-\alpha \tau^2}$</td>
+            <td>$\sqrt{\frac{\pi}{\alpha}} e^{-\frac{\omega^2}{4\alpha}}$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Part II Header -->
+  <div class="part-header" id="part-2" style="background: var(--bg-sidebar-hover); color: var(--text-sidebar-active); padding: 2rem; margin: 3rem 0; border-radius: 8px;">
+    <h2 style="margin: 0; font-family: 'Source Sans 3', sans-serif; font-size: 2rem;">Part II: Solved Applied Problems</h2>
+    <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; opacity: 0.85;">Detailed, step-by-step mathematical proofs and solutions to exam and homework problems on WSS processes, LTI transformations, Gaussian systems, Poisson processes, and expectations.</p>
+  </div>
+
+  <!-- Part 2 Page 1 -->
+  <div class="page" id="part2-page-1">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 11: Problems on Wide-Sense Stationarity</div>
+    <div class="theorem">
+      <strong>Problem 1:</strong> Let $X(t) = f(t + \eta)$, where $f(t)$ is a deterministic periodic function with period $T$, and $\eta$ is a random variable uniformly distributed on $[0, T]$. Prove that $X(t)$ is wide-sense stationary.
+    </div>
+    <div class="proof">
+      <strong>Proof:</strong>
+      <ol>
+        <li>Compute the mean:
+          $$ E[X(t)] = E[f(t + \eta)] = \frac{1}{T} \int_{0}^T f(t + u) du $$
+          Let $v = t + u$, then $du = dv$. Since $f(v)$ is periodic with period $T$, the integral over one full period is constant and independent of the shift $t$:
+          $$ E[X(t)] = \frac{1}{T} \int_{t}^{t+T} f(v) dv = \frac{1}{T} \int_0^T f(v) dv = \mu_X = \text{constant} $$
+        </li>
+        <li>Compute the autocorrelation:
+          $$ R_X(t, s) = E[X(t)X(s)] = E[f(t + \eta)f(s + \eta)] = \frac{1}{T} \int_{0}^T f(t+u) f(s+u) du $$
+          Let $v = t + u$, then:
+          $$ R_X(t, s) = \frac{1}{T} \int_{t}^{t+T} f(v) f(v + s - t) dv $$
+          Using the periodicity of $f$, this integral is independent of $t$ and depends only on $\tau = t - s$:
+          $$ R_X(t, s) = \frac{1}{T} \int_0^T f(v) f(v - \tau) dv = R_X(\tau) $$
+        </li>
+      </ol>
+      Since the mean is constant and the autocorrelation depends only on the time difference, $X(t)$ is WSS.
+    </div>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Part 2 Page 2 -->
+  <div class="page" id="part2-page-2">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 12: Derivatives and Integrals of WSS Processes</div>
+    <div class="theorem">
+      <strong>Problem 2:</strong> Let $X(t)$ be a WSS process with autocorrelation function $R_X(\tau) = e^{-\tau^2}$. Let $Y(t) = X(t) + X'(t)$. Compute the cross-correlation $R_{XY}(t, s)$ and the autocorrelation $R_Y(t, s)$.
+    </div>
+    <div class="proof">
+      <strong>Solution:</strong>
+      <ol>
+        <li>Compute the cross-correlation:
+          $$ R_{XY}(t, s) = E[X(t) Y(s)] = E[X(t)(X(s) + X'(s))] = E[X(t)X(s)] + E[X(t)X'(s)] $$
+          Using properties of derivatives of stationary processes:
+          $$ R_{XY}(t, s) = R_X(t - s) + \frac{\partial}{\partial s} R_X(t - s) = R_X(\tau) - R_X'(\tau) $$
+          For $R_X(\tau) = e^{-\tau^2}$, we have $R_X'(\tau) = -2\tau e^{-\tau^2}$, so:
+          $$ R_{XY}(\tau) = (1 + 2\tau) e^{-\tau^2} $$
+        </li>
+        <li>Compute the autocorrelation of $Y(t)$:
+          $$ R_Y(t, s) = E[Y(t)Y(s)] = E[(X(t) + X'(t))(X(s) + X'(s))] $$
+          $$ R_Y(t, s) = E[X(t)X(s)] + E[X(t)X'(s)] + E[X'(t)X(s)] + E[X'(t)X'(s)] $$
+          $$ R_Y(\tau) = R_X(\tau) + R_X'(\tau) - R_X'(\tau) - R_X''(\tau) = R_X(\tau) - R_X''(\tau) $$
+          Differentiating $R_X'(\tau) = -2\tau e^{-\tau^2}$:
+          $$ R_X''(\tau) = -2 e^{-\tau^2} + 4\tau^2 e^{-\tau^2} $$
+          Thus:
+          $$ R_Y(\tau) = e^{-\tau^2} - (-2 e^{-\tau^2} + 4\tau^2 e^{-\tau^2}) = (3 - 4\tau^2) e^{-\tau^2} $$
+        </li>
+      </ol>
+    </div>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Part 2 Page 3 -->
+  <div class="page" id="part2-page-3">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 13: Linear Systems and Filtering Problems</div>
+    <div class="theorem">
+      <strong>Problem 3:</strong> Let $X(t)$ be a WSS process passing through an LTI system with transfer function $H(\omega)$. Let $Z(t) = Y(t) - X(t)$ be the output tracking error, where $Y(t) = H(\omega) * X(t)$. Show that the PSD of the error is:
+      $$ S_Z(\omega) = |H(\omega) - 1|^2 S_X(\omega) $$
+    </div>
+    <div class="proof">
+      <strong>Proof:</strong>
+      <ol>
+        <li>Write the autocorrelation of $Z(t)$:
+          $$ R_Z(\tau) = E[Z(t+\tau)Z(t)] = E[(Y(t+\tau) - X(t+\tau))(Y(t) - X(t))] $$
+          $$ R_Z(\tau) = R_Y(\tau) - R_{YX}(\tau) - R_{XY}(\tau) + R_X(\tau) $$
+        </li>
+        <li>Convert to the frequency domain using the Fourier Transform:
+          $$ S_Z(\omega) = S_Y(\omega) - S_{YX}(\omega) - S_{XY}(\omega) + S_X(\omega) $$
+          Recall LTI relations: $S_Y(\omega) = |H(\omega)|^2 S_X(\omega)$, $S_{YX}(\omega) = H(\omega) S_X(\omega)$, and $S_{XY}(\omega) = \overline{H(\omega)} S_X(\omega)$.
+          $$ S_Z(\omega) = \left[ |H(\omega)|^2 - H(\omega) - \overline{H(\omega)} + 1 \right] S_X(\omega) $$
+          Factorizing the term inside the brackets:
+          $$ S_Z(\omega) = (H(\omega) - 1)(\overline{H(\omega)} - 1) S_X(\omega) = |H(\omega) - 1|^2 S_X(\omega) $$
+        </li>
+      </ol>
+      This completes the proof.
+    </div>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Part 2 Page 4 -->
+  <div class="page" id="part2-page-4">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 14: Spectral Factorization</div>
+    <div class="theorem">
+      <strong>Problem 4:</strong> Given a system power spectral response $|H(\omega)|^2 = \frac{\omega^2 + 8}{\omega^2 + 3}$, factorize it to find a stable and minimum-phase transfer function $H(s)$.
+    </div>
+    <div class="proof">
+      <strong>Solution:</strong>
+      <ol>
+        <li>Substitute $s = j\omega$ (so $\omega^2 = -s^2$):
+          $$ H(s)H(-s) = \frac{-s^2 + 8}{-s^2 + 3} = \frac{s^2 - 8}{s^2 - 3} = \frac{(s - \sqrt{8})(s + \sqrt{8})}{(s - \sqrt{3})(s + \sqrt{3})} $$
+        </li>
+        <li>Group the poles and zeros to construct a stable and minimum-phase transfer function.
+          A system is stable if its poles lie in the left half of the s-plane ($\text{Re}(s) < 0$).
+          It is minimum-phase if its zeros also lie in the left half of the s-plane ($\text{Re}(s) < 0$).
+          Thus, we choose:
+          $$ H(s) = \frac{s + \sqrt{8}}{s + \sqrt{3}} \Rightarrow H(\omega) = \frac{j\omega + \sqrt{8}}{j\omega + \sqrt{3}} $$
+        </li>
+      </ol>
+    </div>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+  <!-- Part 2 Page 5 -->
+  <div class="page" id="part2-page-5">
+    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 15: Joint Gaussianity and Conditional Expectations</div>
+    <div class="theorem">
+      <strong>Problem 5:</strong> Let $X(t)$ be a Gaussian process with PSD $S_X(\omega) = \frac{2\sigma^2}{\omega^2/\alpha^2 + 1}$. It is passed through a stable filter $H(s) = \frac{1}{s + \beta}$. Find the PSD $S_Y(\omega)$ and the autocorrelation $R_Y(\tau)$ of the output process $Y(t)$.
+    </div>
+    <div class="proof">
+      <strong>Solution:</strong>
+      <ol>
+        <li>Determine $S_Y(\omega)$:
+          $$ S_Y(\omega) = |H(\omega)|^2 S_X(\omega) = \frac{1}{\omega^2 + \beta^2} \cdot \frac{2\sigma^2 \alpha^2}{\omega^2 + \alpha^2} $$
+        </li>
+        <li>Apply partial fraction expansion:
+          $$ S_Y(\omega) = \frac{2\sigma^2 \alpha^2}{\alpha^2 - \beta^2} \left[ \frac{1}{\omega^2 + \beta^2} - \frac{1}{\omega^2 + \alpha^2} \right] $$
+        </li>
+        <li>Take the inverse Fourier Transform to find $R_Y(\tau)$:
+          $$ R_Y(\tau) = \frac{\sigma^2 \alpha^2}{\alpha^2 - \beta^2} \left[ \frac{e^{-\beta |\tau|}}{\beta} - \frac{e^{-\alpha |\tau|}}{\alpha} \right] $$
+        </li>
+      </ol>
+    </div>
+  </div>
+  <hr style="margin: 40px 0;" />
+
+</main>
+</body>
+</html>
+
+{% endraw %}
