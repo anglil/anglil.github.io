@@ -28,9 +28,9 @@ title: Notes – Angli Liu
       <li><a href="/notes/electromagnetics.pdf" target="_blank">electromagnetics</a> (<a href="/college-physics/index.html" target="_blank">College Physics</a>)</li>
       <li><a href="/notes/mathematical physics.pdf" target="_blank">mathematical physics</a> (<a href="/mathematical-physics/index.html" target="_blank">Mathematical Physics</a>)</li>
       <li><a href="/notes/complex analysis.pdf" target="_blank">complex analysis</a> (<a href="/complex-analysis/index.html" target="_blank">Complex Analysis</a>)</li>
-      <li><a href="/notes/algebra, geometry, and advanced calculus 1.pdf" target="_blank">algebra, geometry, and advanced calculus 1</a></li>
-      <li><a href="/notes/algebra, geometry, and advanced calculus 2.pdf" target="_blank">algebra, geometry, and advanced calculus 2</a></li>
-      <li><a href="/notes/multivariable calculus.pdf" target="_blank">multivariable calculus</a></li>
+      <li><a href="/notes/algebra, geometry, and advanced calculus 1.pdf" target="_blank">algebra, geometry, and advanced calculus 1</a> (<a href="/college-math/index.html#part-1" target="_blank">College Math</a>)</li>
+      <li><a href="/notes/algebra, geometry, and advanced calculus 2.pdf" target="_blank">algebra, geometry, and advanced calculus 2</a> (<a href="/college-math/index.html#part-2" target="_blank">College Math</a>)</li>
+      <li><a href="/notes/multivariable calculus.pdf" target="_blank">multivariable calculus</a> (<a href="/college-math/index.html#part-3" target="_blank">College Math</a>)</li>
       <li><a href="/notes/applied math.pdf" target="_blank">applied math</a> (<a href="/applied-math/index.html" target="_blank">Applied Math</a>)</li>
       <li><a href="/notes/signals and systems.pdf" target="_blank">signals and systems</a> (<a href="/signals-and-systems/index.html" target="_blank">Signals and Systems</a>)</li>
       <li><a href="/notes/stochastic process.pdf" target="_blank">stochastic process</a> (<a href="/stochastic-process/index.html#part-1" target="_blank">Stochastic Process</a>)</li>
