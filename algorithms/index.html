@@ -1,0 +1,2526 @@
+---
+---
+{% raw %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithms | Complete Lecture Notes & Textbook</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">Algorithms<span>Angli Liu</span></div>
+  <nav>
+    <ul>
+      <li><a href="#part-1" class="part-nav active">Part I: Algorithms & Data Structures</a></li>
+      <li><a href="#part-2" class="part-nav">Part II: Graphs & Complexity</a></li>
+      <li><a href="#part-3" class="part-nav">Part III: Advanced Algorithms</a></li>
+      <hr style="border-color: rgba(255,255,255,0.08); margin: 1rem 0;">
+      <div class="part-label">Part I: Algorithms & Data Structures</div>
+<li><a href="#p1-pg1">Page 1</a></li>
+<li><a href="#p1-pg2">Page 2</a></li>
+<li><a href="#p1-pg3">Page 3</a></li>
+<li><a href="#p1-pg4">Page 4</a></li>
+<li><a href="#p1-pg5">Page 5</a></li>
+<li><a href="#p1-pg6">Page 6</a></li>
+<li><a href="#p1-pg7">Page 7</a></li>
+<li><a href="#p1-pg8">Page 8</a></li>
+<li><a href="#p1-pg9">Page 9</a></li>
+<li><a href="#p1-pg10">Page 10</a></li>
+<li><a href="#p1-pg11">Page 11</a></li>
+<li><a href="#p1-pg12">Page 12</a></li>
+<li><a href="#p1-pg13">Page 13</a></li>
+<li><a href="#p1-pg14">Page 14</a></li>
+<li><a href="#p1-pg15">Page 15</a></li>
+<li><a href="#p1-pg16">Page 16</a></li>
+<li><a href="#p1-pg17">Page 17</a></li>
+<li><a href="#p1-pg18">Page 18</a></li>
+<li><a href="#p1-pg19">Page 19</a></li>
+<li><a href="#p1-pg20">Page 20</a></li>
+<li><a href="#p1-pg21">Page 21</a></li>
+<li><a href="#p1-pg22">Page 22</a></li>
+<li><a href="#p1-pg23">Page 23</a></li>
+<li><a href="#p1-pg24">Page 24</a></li>
+<li><a href="#p1-pg25">Page 25</a></li>
+<li><a href="#p1-pg26">Page 26</a></li>
+<div class="part-label">Part II: Graphs & Complexity</div>
+<li><a href="#p2-pg1">Page 1</a></li>
+<li><a href="#p2-pg2">Page 2</a></li>
+<li><a href="#p2-pg3">Page 3</a></li>
+<li><a href="#p2-pg4">Page 4</a></li>
+<li><a href="#p2-pg5">Page 5</a></li>
+<li><a href="#p2-pg6">Page 6</a></li>
+<li><a href="#p2-pg7">Page 7</a></li>
+<li><a href="#p2-pg8">Page 8</a></li>
+<li><a href="#p2-pg9">Page 9</a></li>
+<li><a href="#p2-pg10">Page 10</a></li>
+<div class="part-label">Part III: Advanced Algorithms</div>
+<li><a href="#p3-pg1">Page 1</a></li>
+<li><a href="#p3-pg2">Page 2</a></li>
+<li><a href="#p3-pg3">Page 3</a></li>
+<li><a href="#p3-pg4">Page 4</a></li>
+<li><a href="#p3-pg5">Page 5</a></li>
+<li><a href="#p3-pg6">Page 6</a></li>
+<li><a href="#p3-pg7">Page 7</a></li>
+<li><a href="#p3-pg8">Page 8</a></li>
+<li><a href="#p3-pg9">Page 9</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+  <div class="chapter-header">
+    <h1>Algorithms & Data Structures</h1>
+    <h2 class="chapter-title">Complete Handwritten Lecture Notes & Solved Problems</h2>
+  </div>
+
+  <!-- Part I Header -->
+  <div class="part-section" id="part-1-section">
+    <div class="part-header" id="part-1">
+      <h2>Part I: Algorithms Foundations & Core Data Structures</h2>
+      <p>Linear lists, stacks, queues, sparse matrices, binary trees, threaded binary trees, Huffman coding, heaps, and sorting algorithms.</p>
+    </div>
+    
+  <div class="page-card" id="p1-pg1">
+    <div class="page-number">Page 1</div>
+    <div class="page-content">
+      <p>The note discusses data structures and algorithms. It mentions:</p>
+<ul>
+<li>Linear and non-linear data structures</li>
+<li>Tables, trees, and graphs</li>
+<li>Storage structures: sequential, linked, indexed, and associative arrays</li>
+<li>Operations: search, insert, delete, merge, split, and traversal</li>
+<li>Pattern matching</li>
+<li>Sorting algorithms: bubble sort, quick sort, insertion sort, direct insertion, binary insertion, shell sort, selection sort, merge sort, and heap sort.</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg2">
+    <div class="page-number">Page 2</div>
+    <div class="page-content">
+      <p><strong>Chapter 1. Introduction</strong></p>
+<p>1.1 Data Abstraction and Binary Relations</p>
+<ul>
+<li><strong>Data Abstraction:</strong></li>
+<li>Elements + Relations → Directed Acyclic Graphs</li>
+<li>Cartesian Product of Sets</li>
+</ul>
+<p>$$ A \times B = \{(a, b) \mid a \in A \text{ and } b \in B\} $$</p>
+<p>- Extension Concept: n Sets Cartesian Product</p>
+<p>- <strong>Binary Relations:</strong></p>
+<p>- A subset of A × B. A = B is called a binary relation R.</p>
+<p>- A × A ⊃ R = {(a, b) | a ∈ A and b ∈ A and satisfy certain conditions}</p>
+<p>- Reflexivity: ∀a ∈ A, (a, a) ∈ R; Anti-reflexivity: ∀a ∈ A, (a, a) ∉ R.</p>
+<p>- Symmetry: (a, b) ∈ R then (b, a) ∈ R; Anti-symmetry: (a, b) ∈ R and a ≠ b, then (b, a) ∉ R.</p>
+<p>- Transitivity: (a, b) ∈ R and (b, c) ∈ R, then (a, c) ∈ R. The relation R is transitive.</p>
+<p>- Note: Reflexivity and symmetry + anti-symmetry → anti-symmetry: Counterexample.</p>
+<p>- Equivalence Relation: Reflexivity, symmetry, transitivity → equivalence class → partition of the set.</p>
+<p>- Partial Order Relation: Reflexivity, anti-symmetry, transitivity: cannot determine whether any element (a, b) ∈ R (ordering)</p>
+<p>- Total Order Relation: ∀a, b ∈ A, either (a, b) ∈ R or (b, a) ∈ R, where R is a partial order relation → total order.</p>
+<p>- Strict Partial Order Relation (Total Order Relation): Reflexivity, anti-symmetry, transitivity: e.g., ∈.</p>
+<p>1.2 Data Structure Basic Concepts</p>
+<p>- <strong>Data Logical Structure:</strong></p>
+<p>- B = (D, R) where D is a set and R is a relation on D. Linear: list; Non-linear: tree, graph.</p>
+<p>- <strong>Data Storage Structure:</strong></p>
+<p>- Sequential, Linked, Index, Array.</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg3">
+    <div class="page-number">Page 3</div>
+    <div class="page-content">
+      <p>1.3 Algorithm Description and Analysis</p>
+<ul>
+<li>Algorithm Basic Characteristics</li>
+<li>Algorithm Description</li>
+<li>Algorithm Design Common Methods</li>
+</ul>
+<p>Brute Force Method: Find the maximum element in A,Knapsack, string matching...</p>
+<p>Divide and Conquer Method: Find the maximum element in A,Merge Sort, Quick Sort, Shell Sort...</p>
+<p>Greedy Method: Find the maximum element in A,Knapsack, Binary Search, B-tree search...</p>
+<p>Backtracking Method: Maze, Knapsack...</p>
+<p>Dynamic Programming Method: Floyd、Worshall...</p>
+<p>Time Complexity and Space Complexity:</p>
+<p>Time: Best/Worst, addition/multiplication;loop/recursion</p>
+<p>Chapter 2: Linear List Storage and Operations</p>
+<p>2.1 Linear List Concepts</p>
+<ul>
+<li>B=(D,R) D={a_i | i=1,2,...,n} R={a_i, a_{i+1} | i=1,2,...,n-1}</li>
+</ul>
+<p>2.2 Linear List Operations</p>
+<ul>
+<li>Consider the insertion and deletion of elements in an ordered list.</li>
+<li>Limitation: Requires contiguous storage space; insertion and deletion efficiency.</li>
+</ul>
+<p>2.3 Stack</p>
+<ul>
+<li>Push upward: top=-1; Pop downward: top=ms.</li>
+<li>Double Stack: Efficiently handles stack operations.</li>
+</ul>
+<p>if (P is small enough) // Directly solve P;</p>
+<p>else</p>
+<p>for (i=1; i<=k; i++) y_i = Divide(P_i) // Solve sub-problems</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg4">
+    <div class="page-number">Page 4</div>
+    <div class="page-content">
+      <p><strong>Stack Work: Push: push; Pop: pop; Save local variables, actual parameters, return address.</strong></p>
+<p><strong>2.4 Queue</strong></p>
+<p><strong>Linear Queue:</strong></p>
+<p>$$a_1, a_2, \ldots, a_n \rightarrow i$$</p>
+<p><strong>Circular Queue:</strong></p>
+<p>$$0 \text{ element at } m-1 \text{ element after. Clear: delete } front = rear = 0$$</p>
+<p><strong>Queue Empty:</strong></p>
+<p>$$front = rear$$</p>
+<p><strong>Queue Full:</strong></p>
+<p>$$(rear + 1) \% m = front$$</p>
+<p><strong>Priority Queue:</strong></p>
+<p>$$\{ \text{New element in queue tail, dequeue highest priority element.} \}$$</p>
+<p><strong>2.5 Arrays and Matrix Representation</strong></p>
+<p><strong>1. Array Sequential Allocation</strong></p>
+<p><strong>Row Major:</strong></p>
+<p>$$AD(a_{ij}) = AD(a_{11}) + [(i-1)n + j-1] \cdot unit; AD(a_{ij}) = AD(a_{11}) + (in + j) \cdot unit$$</p>
+<p><strong>Column Major:</strong></p>
+<p>$$AD(a_{ij}) = AD(a_{11}) + [(j-1)n + i-1] \cdot unit;$$</p>
+<p><strong>2. Rule of Matrix Storage</strong></p>
+<p><strong>Lower Triangle:</strong></p>
+<p>$$\text{Row: } k = \frac{1}{2} i(i-1) + j$$</p>
+<p>$$\text{Column: } k = \frac{(2n-i-j)}{2} + i - (j-1)$$</p>
+<p><strong>Triangular Matrix:</strong></p>
+<p>$$\text{Row: } k = i(i-1)/2 + j, i > j$$</p>
+<p>$$\text{Column: } k = (j-1)/2 + i, i < j$$</p>
+<p><strong>Triangular Matrix:</strong></p>
+<p>$$\text{Row: } eg: \text{Triangular } k = 5(i-1) - 3 + [j - (i-3)], a_{ij} =$$</p>
+<p>$$k = \left\{ \begin{array}{ll}</p>
+<p>1 & \text{if } i < j \text{ or } i > j \text{ and } i \leq j + \frac{1}{2} \\</p>
+<p>0 & \text{else}</p>
+<p>\end{array} \right.$$</p>
+<p><strong>3. Sparse Matrix in 3D Array Representation - 3D Array Sequential Table B(row, col, value)</strong></p>
+<p>$$\{ pos[i,j]: \text{Sparse matrix first non-zero element in B, } pos[i,j] = pos[i-1] + num[i-1]$$</p>
+<p>$$num[i,j]: \text{Sparse matrix non-zero element count. } num[B[i,j]] = num[B[i,j]] + 1$$</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg5">
+    <div class="page-number">Page 5</div>
+    <div class="page-content">
+      <p>Chapter 3: Linked Lists</p>
+<p>3.1 Linear List's Linked Storage</p>
+<ul>
+<li>Linear List Concept</li>
+</ul>
+<p>The reason for using a linked list structure: the length is greater than the continuous space; the length cannot be determined in advance; the length changes frequently.</p>
+<ul>
+<li>Linear List and Its Structure</li>
+</ul>
+<p>Insertion special cases: empty list; insert at the first position; cannot find the insertion position.</p>
+<p>Deletion special cases: empty list; delete the first element; cannot find the deletion position.</p>
+<p>Merge operation: select basic link. O(m+n)</p>
+<p>Split operation (based on odd/even): O(n).</p>
+<p>3.2 Linked Stack and Linked Queue</p>
+<ul>
+<li>Linked Stack</li>
+</ul>
+<p>top -> [] -> [] -> ... -> []</p>
+<p>Empty stack using linked stack storage (static)</p>
+<ul>
+<li>Linked Queue</li>
+</ul>
+<p>[] -> [] -> ... -> []</p>
+<p>front -> rear</p>
+<p>Empty queue similarly stored (static)</p>
+<p>3.3 Circular Linked List</p>
+<p>H -> [] -> [a1] -> [a2] -> [a3] -> ... -> [an] -> H</p>
+<p>Empty: H -> []</p>
+<p>Advantages: empty list does not need special handling; determine the tail node condition: p->next == head.</p>
+<p>Merge operation: not considering empty list; when one chain is complete and the other chain still has elements, find the tail node of the other chain and connect it to the new chain.</p>
+<p>Split operation: new split head and tail points, based on odd/even, choose basic chain.</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg6">
+    <div class="page-number">Page 6</div>
+    <div class="page-content">
+      <p>3.4. Multilink List</p>
+<p>3.5. Generalized Table</p>
+<h3>Generalized Table Concepts:</h3>
+<ul>
+<li>Recursive structure; recursive definition; table depth = number of nested layers = maximum depth of table nodes. Table length = next number</li>
+</ul>
+<h3>Generalized Table Storage Structure:</h3>
+<ul>
+<li>head() tail() (first layer)</li>
+</ul>
+<ul>
+<li><strong>Additional Table Head Node:</strong></li>
+<li>flag = 0</li>
+<li>sublist</li>
+<li>next</li>
+</ul>
+<ul>
+<li><strong>Atomic Node:</strong></li>
+<li>flag = 1</li>
+<li>data</li>
+<li>next</li>
+</ul>
+<ul>
+<li><strong>Subtable Node:</strong></li>
+<li>flag = 2</li>
+<li>sublist</li>
+<li>next</li>
+</ul>
+<h3>Chapter 4: Trees and Binary Trees</h3>
+<h4>4.1. Tree Basic Concepts:</h4>
+<ul>
+<li>Root Node (root)</li>
+<li>Node (node)</li>
+<li>Node degree</li>
+<li>Subtree number</li>
+<li>Tree degree: maximum node degree</li>
+<li>From the root node, the levels are 1, 2, ..., the tree's depth is the maximum level.</li>
+<li>Properties:</li>
+<li>n nodes, degree di (i=1, 2, ..., n) => n = Σ di + 1.</li>
+<li>n nodes in a binary tree, minimum depth: ⌊log₂(n(k-1)+1)⌋ : excluding leaf nodes.</li>
+</ul>
+<h4>4.2. Binary Trees</h4>
+<h4>Binary Tree Definition</h4>
+<h4>Binary Tree Basic Properties:</h4>
+<ul>
+<li>Leaf node number n0, degree 2 node number n2 => n0 = n2 + 1.</li>
+</ul>
+<p>Proof: Total node number n, degree 1 node number n1</p>
+<p>n = n0 + n1 + n2.</p>
+<p>Except the root node, each node has one branch connected:</p>
+<p>n - 1 = 2n2 + n1</p>
+<p>Solve:</p>
+<p>n0 = n2 + 1.</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg7">
+    <div class="page-number">Page 7</div>
+    <div class="page-content">
+      <p><strong>2. Complete Binary Tree: Left -> Right Full; Ideal Balanced Binary Tree: Random Full; Full Binary Tree: Complete</strong></p>
+<p>n nodes, depth [log₂n]+1</p>
+<p>Depth h, maximum nodes 2^h - 1</p>
+<p><strong>3. i's Left: 2i+1, Right: 2i+2, Parent: [i-1]/2</strong></p>
+<p>$$2i$$</p>
+<p>$$2i+1$$</p>
+<p>$$[i/2]$$</p>
+<p><strong>Three. Binary Tree Storage</strong></p>
+<p>Binary Linked List; Complete Binary Trees can use sequential storage, like heaps.</p>
+<p><strong>Four. Binary Tree Operations</strong></p>
+<p>Preorder Traversal: Visit -> Left -> Right</p>
+<p>Time: O(n); Space: O(log₂n) ~ O(n)</p>
+<p>Inorder Traversal: Left -> Visit -> Right</p>
+<p>Non-recursive algorithm: Book P165; Supplement P46</p>
+<p>Postorder Traversal: Left -> Right -> Visit</p>
+<p>Layer Traversal: Left Enqueue -> Right Enqueue -> Dequeue: Loop while (!EmptyQueue())</p>
+<p><strong>Five. Binary Tree Counting</strong></p>
+<p>Inorder + Preorder or Inorder + Postorder or Inorder + Postorder => Element Counting!</p>
+<p>Number of nodes in the corresponding inorder sequence: $$\frac{1}{n+1} C_{n}^{n}$$ (Inorder corresponding to the preorder sequence).</p>
+<p>From preorder and inorder to determine the binary tree method: Preorder determines the root, inorder determines the left and right subtrees.</p>
+<p><strong>Six. Threaded Binary Trees</strong></p>
+<p>Left tag: Lkid: data: Right tag. tag=0: Original; tag=1: Threaded</p>
+<p>Preorder Threaded: Current node and preorder predecessor add thread -> Left -> Right.</p>
+<p>Inorder Threaded: Left -> Current node and inorder predecessor add thread -> Right.</p>
+<p>Postorder Threaded: Left -> Right -> Current node and postorder predecessor add thread.</p>
+<p><strong>4.3 Binary Tree Applications</strong></p>
+<p>- Convert Ordered Trees to Binary Trees</p>
+<p>Ordered Tree -> Binary Linked -> Binary Tree: Tree's child-sibling representation; Single branch ordered tree does not distinguish left and right</p>
+<p>- Huffman Binary Tree (Huffman). Height h: 2h-1 ≤ n ≤ 2^h - 1. {n_0 = n_2 + 1} → {n_0 = n/2}</p>
+<p>Weight: $$\sum_{i}^{n} weight(i) \cdot length(i) = min$$</p>
+<p>{n_0 + n_2 = n} {n_2 = n/2}</p>
+<p>Method: Each time from the forest select weight smallest two trees to form a binary tree, root weight = weight + 1</p>
+<p>Application: Huffman Encoding (Prefix Encoding): Left 0 Right 1.</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg8">
+    <div class="page-number">Page 8</div>
+    <div class="page-content">
+      <p>III. Binary Search Tree (BST) Height h: h < n < 2^n - 1</p>
+<p>Left < Right: In-order sequence, insert in in-order sequence. Time O(log n) ~ O(n), space: same</p>
+<p>Delete:</p>
+<ul>
+<li>Leaf: Directly delete</li>
+<li>Single branch (degree 1): Delete child</li>
+<li>Double branch (degree 2): In-order predecessor replaces -> delete in-order predecessor (single branch: ...)</li>
+</ul>
+<p>IV. Heap (heap). Height h: 2^(n-1) ≤ n ≤ 2^n - 1</p>
+<p>Parent: Up > Down; Child: Up < Down => Complete binary tree stored in order. Level order numbering</p>
+<p>Recursion: Left child 2i+1, right child 2i+2, parent [(i-1)/2]</p>
+<p>Insert: Insert at tail (right end); for this element siftup: O(log n)</p>
+<p>Delete: Delete from tail; direct delete; delete from top; swap with tail element; sift down; clear</p>
+<p>Build: Each element execute insert (siftup): O(n log n)</p>
+<p>Build after insert (right to left) siftdown: from ⌊n/2⌋ - 1 starting layer by layer upwards O(n)</p>
+<p>4.4 Tree Operations</p>
+<ul>
+<li>Tree Storage Structure</li>
+<li>Children: Multi-link list or left child right sibling: Binary link list or parent: Multi-link list</li>
+</ul>
+<ul>
+<li>Tree Traversal</li>
+<li>Pre-order traversal: DFT O(n): Find, output (Generalized list)</li>
+<li>Post-order traversal: O(n): Find depth, clear, find leaf count. Out of queue: visit</li>
+<li>Level-order traversal: BFT O(n) (time): k-1 (empty); k: degree; n: depth. Root in queue, left to right in queue</li>
+</ul>
+<p>4.5 Tree Applications</p>
+<ul>
+<li>Space Tree</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg9">
+    <div class="page-number">Page 9</div>
+    <div class="page-content">
+      <h3>Chapter 3: Graphs</h3>
+<h4>Section 3.1: Graphs and Their Basic Concepts</h4>
+<ul>
+<li><strong>Definition of a Graph</strong>:</li>
+</ul>
+<p>$$ G = (V, E) $$</p>
+<p>Where \( V \) is the set of vertices and \( E \) is the set of edges. \( G' \subseteq G \) represents a subgraph of \( G \).</p>
+<p>- <strong>Degree of a Vertex</strong>:</p>
+<p>- <strong>Undirected Graph</strong>: The degree of a vertex is the number of edges connected to it.</p>
+<p>- <strong>Directed Graph</strong>: The degree of a vertex is the sum of its in-degree and out-degree. The total degree of a graph is twice the number of edges.</p>
+<p>- <strong>Path and Connectivity</strong>:</p>
+<p>- <strong>Undirected Graph</strong>: A connected graph is one where there is a path between every pair of vertices. A connected component is a maximal connected subgraph.</p>
+<p>- <strong>Directed Graph</strong>: A strongly connected graph is one where there is a directed path between every pair of vertices. A strongly connected component is a maximal strongly connected subgraph.</p>
+<p>#### Section 3.2: Forests and Tree Traversal</p>
+<p>- <strong>Forest to Binary Tree Conversion</strong>:</p>
+<p>- Left child-right sibling</p>
+<p>- Binary tree to forest conversion: Left child-right sibling</p>
+<p>- <strong>Tree Traversal</strong>:</p>
+<p>- <strong>Preorder Traversal</strong>: Root-left-right</p>
+<p>- <strong>Postorder Traversal</strong>: Left-right-root</p>
+<p>- <strong>Inorder Traversal</strong>: Left-root-right</p>
+<p>#### Section 3.3: Graph Traversal</p>
+<p>- <strong>Breadth-First Search (BFS)</strong>:</p>
+<p>- Level-by-level traversal</p>
+<p>- Queue-based implementation</p>
+<p>- <strong>Depth-First Search (DFS)</strong>:</p>
+<p>- Recursive implementation</p>
+<p>- Stack-based implementation</p>
+<p>#### Section 3.4: Graph Traversal Algorithms</p>
+<p>- <strong>BFS</strong>:</p>
+<p>- Queue-based implementation</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS</strong>:</p>
+<p>- Recursive implementation</p>
+<p>- Stack-based implementation</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.5: Graph Traversal Applications</p>
+<p>- <strong>BFS</strong>:</p>
+<p>- Used for finding the shortest path in an unweighted graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS</strong>:</p>
+<p>- Used for finding cycles in a graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.6: Graph Traversal Variations</p>
+<p>- <strong>BFS Variations</strong>:</p>
+<p>- Level-by-level traversal</p>
+<p>- Queue-based implementation</p>
+<p>- <strong>DFS Variations</strong>:</p>
+<p>- Recursive implementation</p>
+<p>- Stack-based implementation</p>
+<p>#### Section 3.7: Graph Traversal Optimization</p>
+<p>- <strong>BFS Optimization</strong>:</p>
+<p>- Use of a queue to manage nodes to be visited.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Optimization</strong>:</p>
+<p>- Use of a stack to manage nodes to be visited.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.8: Graph Traversal Applications</p>
+<p>- <strong>BFS Applications</strong>:</p>
+<p>- Finding the shortest path in an unweighted graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Applications</strong>:</p>
+<p>- Finding cycles in a graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.9: Graph Traversal Challenges</p>
+<p>- <strong>BFS Challenges</strong>:</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Challenges</strong>:</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.10: Graph Traversal Conclusion</p>
+<p>- <strong>BFS Conclusion</strong>:</p>
+<p>- Used for finding the shortest path in an unweighted graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Conclusion</strong>:</p>
+<p>- Used for finding cycles in a graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.11: Graph Traversal Summary</p>
+<p>- <strong>BFS Summary</strong>:</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Summary</strong>:</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.12: Graph Traversal Exercises</p>
+<p>- <strong>BFS Exercises</strong>:</p>
+<p>- Finding the shortest path in an unweighted graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Exercises</strong>:</p>
+<p>- Finding cycles in a graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.13: Graph Traversal Conclusion</p>
+<p>- <strong>BFS Conclusion</strong>:</p>
+<p>- Used for finding the shortest path in an unweighted graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Conclusion</strong>:</p>
+<p>- Used for finding cycles in a graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.14: Graph Traversal Challenges</p>
+<p>- <strong>BFS Challenges</strong>:</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Challenges</strong>:</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.15: Graph Traversal Summary</p>
+<p>- <strong>BFS Summary</strong>:</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Summary</strong>:</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.16: Graph Traversal Exercises</p>
+<p>- <strong>BFS Exercises</strong>:</p>
+<p>- Finding the shortest path in an unweighted graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Exercises</strong>:</p>
+<p>- Finding cycles in a graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.17: Graph Traversal Conclusion</p>
+<p>- <strong>BFS Conclusion</strong>:</p>
+<p>- Used for finding the shortest path in an unweighted graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Conclusion</strong>:</p>
+<p>- Used for finding cycles in a graph.</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.18: Graph Traversal Challenges</p>
+<p>- <strong>BFS Challenges</strong>:</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>- <strong>DFS Challenges</strong>:</p>
+<p>- Time complexity: O(V + E)</p>
+<p>- Space complexity: O(V)</p>
+<p>#### Section 3.19: Graph Traversal Summary</p>
+<p>- <strong>BFS Summary</strong>:</p>
+<p>- Time complexity: O</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg10">
+    <div class="page-number">Page 10</div>
+    <div class="page-content">
+      <p>5.2 Graph Storage Representation</p>
+<ul>
+<li>Adjacency Matrix Representation</li>
+<li>Degree: In-degree: 2n-1; Out-degree: 2n-1</li>
+<li>Adjacency List Representation</li>
+<li>Table header, edge points, out-degree = sum of edge points</li>
+<li>Degree = sum of all points connected to each edge point</li>
+</ul>
+<p>5.3 Graph Traversal</p>
+<ul>
+<li>Depth-First Traversal (DFT)</li>
+<li>Adjacency Matrix: O(n²); Adjacency List: O(n+e); Space: O(n)</li>
+<li>Similar to tree's preorder traversal; for each connected component, find the smallest neighbor.</li>
+<li>Breadth-First Traversal (BFT)</li>
+<li>Adjacency Matrix: O(n²); Adjacency List: O(n+e); Space: O(n)</li>
+<li>Similar to tree's level-order traversal (using a queue)</li>
+</ul>
+<p>5.4 Minimum Spanning Tree (MST)</p>
+<ul>
+<li>Minimum Tree: A connected graph without cycles (V(G) = V(G)): n vertices, n-1 edges</li>
+<li>Prim's Algorithm: O(n²)</li>
+<li>Always adds the nearest edge to the minimum spanning tree</li>
+<li>Kruskal's Algorithm: O(e log n)</li>
+<li>Always selects the shortest edge in the edge set and adds it to the minimum spanning tree</li>
+</ul>
+<p>5.5 Shortest Path Problem</p>
+<ul>
+<li>Single Source Shortest Path: Dijkstra's Algorithm: O(n²) (SPF)</li>
+<li>Always adds the nearest vertex to the source in the shortest path tree</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg11">
+    <div class="page-number">Page 11</div>
+    <div class="page-content">
+      <p><strong>Section 2: Shortest Path Algorithm (Floyd Algorithm): O(n³) Space: O(n²)</strong></p>
+<p>Initially, the distance matrix values represent the direct distance between vertices (not passing through other points). After adding each vertex V_k, if A[i][k] + A[k][j] < A[i][j], then update V_i -> V_j's shortest path. Continue until all vertices are considered. The distance matrix now shows the shortest paths.</p>
+<p><strong>5.6 Critical Path</strong></p>
+<ul>
+<li><strong>Topological Sorting and AOV Network:</strong></li>
+<li>Most topological sorting (full sorting); least topological sorting (partial sorting).</li>
+<li>AOV Network: Directed acyclic graph.</li>
+<li>Topological sorting: Partial order relationship derived from the full order relationship, not unique; not necessarily from source to target.</li>
+</ul>
+<ul>
+<li><strong>AOE Network and Critical Path:</strong></li>
+<li>AOE Network: Single source, single sink directed acyclic graph.</li>
+<li>Critical path: The longest path from the source to the sink.</li>
+<li>Critical activity: Activities on the critical path.</li>
+<li>Event: Early event Vi = max{Vi + weight(Vi -> Vj)}</li>
+<li>Event: Late event Vi = min{Vi - weight(Vi -> Vj)} = Vi - max{weight(Vi -> Vj)}</li>
+<li>Activity: Early e < Vi -> Vj > = Vi</li>
+<li>Late L < Vi -> Vj > = Vi - weight(Vi -> Vj)</li>
+<li>If < Vi -> Vj > = < Vj -> Vi > forms the critical path, it needs to be accelerated.</li>
+</ul>
+<p><strong>Chapter 6: Searching</strong></p>
+<p>6.1 Sequential Search</p>
+<ul>
+<li>Sequential Search</li>
+<li>Recursive implementation: while (condition)</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg12">
+    <div class="page-number">Page 12</div>
+    <div class="page-content">
+      <p>6.2 Index Search</p>
+<ul>
+<li>Index Storage Structure:</li>
+<li>Indexing</li>
+<li>Index Table + Subtable</li>
+<li>Index Table + Subtable</li>
+<li>Suitable for sequential tables</li>
+<li>(Pointer Field + Data Field)</li>
+<li>Can use sequential or linked lists for subtables</li>
+<li>Two-level search: Search index (i = g(K), K as key, find subtable) → Search subtable (linked list)</li>
+<li>Multi-index (index table too large): Search index table again</li>
+</ul>
+<ul>
+<li>Block Search:</li>
+<li>Index table is an ordered table, index table key is the maximum value of each subtable element, subtables are ordered, tables are not</li>
+<li>m: Index table length, n: Main table length (divided into m subtables), time: O(log(m+1) + n/m) or O(n) + O(m)</li>
+</ul>
+<ul>
+<li>Index File:</li>
+<li>Index File (Main File): Index item (key) with file record corresponding to: Dense Index</li>
+<li>Index Table: Physical record with file record corresponding to a group of records: Sparse Index</li>
+<li>If index table is too large, rebuild index table → Search table, search item corresponds to a group of index items</li>
+<li>Insert operation:</li>
+<li>Insert record into file tail (last block, need to split a new block)</li>
+<li>Insert corresponding index item into index table: i = g(K)</li>
+<li>For index sequential file:</li>
+<li>In main file, search for insertion position, insert record</li>
+<li>Modify index table (sparse index), insert index item into index table (dense index)</li>
+</ul>
+<p>Delete operation:</p>
+<ul>
+<li>In main file, add "delete" mark to deleted record</li>
+<li>In index table, delete corresponding record in index table (sparse index) (not done)</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg13">
+    <div class="page-number">Page 13</div>
+    <div class="page-content">
+      <h3>Notes on Data Structures and Algorithms</h3>
+<h4>6.3 Hash Table Searching</h4>
+<ul>
+<li><strong>Linear Hash Table</strong>: Calculates \( i = H(k) \). If empty, insert; otherwise, search sequentially. \( i = i + 1 \mod M \). Cannot solve overflow issues; collision frequency is the load factor.</li>
+<li><strong>Random Hash Table</strong>: Calculates \( i = H(k) \). If not empty, \( i = i_0 + RN \), where \( i_0 \) is the initial position and \( RN \) is a random number. Not suitable for frequent insertions and deletions.</li>
+<li><strong>External Link Hash Table</strong>: Calculates \( i = H(k) \). Search the linked list sequentially (linked list search). Requires more external space, increasing time complexity.</li>
+<li><strong>Overflow Hash Table</strong>: Calculates \( i = H(k) \). If not empty, search the overflow table (linear probing).</li>
+</ul>
+<h4>6.4 Tree Searching</h4>
+<ul>
+<li><strong>Binary Search Tree vs. AVL Tree</strong>: Dynamic search vs. static search.</li>
+<li><strong>AVL Tree</strong>: Height \( h \), \( n \geq F(h+2) - 1 \). \( F(0) = F(1) = 1 \), \( \leq 2^h - 1 \).</li>
+<li><strong>Rotation Operations</strong>:</li>
+<li><strong>Left-Left (LL)</strong>: Root \( A \) is deeper than its left child \( P \), and \( P \) is deeper than its left child.</li>
+<li><strong>Right-Right (RR)</strong>: Root \( A \) is deeper than its right child \( P \), and \( P \) is deeper than its right child.</li>
+<li><strong>Left-Right (LR)</strong>: Root \( A \) is deeper than its right child \( P \), and \( P \) is deeper than its left child. Perform a right rotation on \( P \) and a left rotation on \( A \).</li>
+<li><strong>Right-Left (RL)</strong>: Root \( A \) is deeper than its left child \( P \), and \( P \) is deeper than its right child. Perform a left rotation on \( P \) and a right rotation on \( A \).</li>
+</ul>
+<p>Insertion and deletion operations are performed by rotating the tree.</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg14">
+    <div class="page-number">Page 14</div>
+    <div class="page-content">
+      <p>III. B-Tree</p>
+<ul>
+<li>Root</li>
+<li>Each node has at least m children and at least one key.</li>
+<li>Each node has at most 2m children and at most m-1 keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The tree has a maximum of 2m keys.</li>
+<li>The tree has a minimum of m keys.</li>
+<li>The</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg15">
+    <div class="page-number">Page 15</div>
+    <div class="page-content">
+      <p>Chapter 7 Sorting</p>
+<p>7.1 Sorting by Exchange</p>
+<ul>
+<li>Bubble Sort</li>
+<li>Each pass reverses the array, moving the largest element to the end; record the last position of the move to improve efficiency.</li>
+<li>Comparison: $$\frac{1}{2}n(n-1)$$, $$O(n^2)$$, stable, consider bidirectional bubble</li>
+</ul>
+<ul>
+<li>Quick Sort</li>
+<li>Divide and conquer: Each time select a pivot to split the array into two parts, until fully sorted. Select R[n] as the pivot.</li>
+<li>Comparison: $$O(n\log n)$$ ~ $$O(n^2)$$, movement: $$O(n)$$ ~ $$O(n)$$, unstable, suitable for large arrays</li>
+</ul>
+<p>7.2 Insertion Sort</p>
+<ul>
+<li>Direct Insertion Sort</li>
+<li>Each element is inserted into the sorted part, sequentially searching the sorted part.</li>
+<li>Comparison: n-1, movement: 2n-1, $$O(n^2)$$, stable, suitable for small basic sorted arrays</li>
+</ul>
+<ul>
+<li>Binary Insertion Sort</li>
+<li>Binary search in the sorted part.</li>
+<li>Comparison: $$O(n\log n)$$, movement: $$O(n)$$, $$O(n^2)$$, stable</li>
+</ul>
+<ul>
+<li>Binary Insertion Sort</li>
+<li>Use binary insertion method to insert elements of the unordered part into the front or rear part of the sorted part.</li>
+<li>Comparison: $$O(n\log n)$$, movement: $$O(n)$$</li>
+</ul>
+<ul>
+<li>Shell Sort</li>
+<li>Divide and conquer: Divide the array into subsequences based on the gap sequence, and sort each subsequence.</li>
+<li>Comparison: $$O(n^{\frac{5}{2}})$$, unstable</li>
+</ul>
+<p>7.3 Selection Sort</p>
+<ul>
+<li>Simple Selection Sort</li>
+<li>Each pass selects the largest element from the unordered part and places it at the end of the sorted part.</li>
+<li>Comparison: $$\frac{1}{2}n(n-1)$$, movement: 3(n-1), $$O(n^2)$$, unstable</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg16">
+    <div class="page-number">Page 16</div>
+    <div class="page-content">
+      <p><strong>Two. Heap Sort</strong></p>
+<p><strong>Tree Selection Sort:</strong></p>
+<p><strong>Heap Sort:</strong></p>
+<p><strong>Heap Sort:</strong></p>
+<p><strong>7.4. Merge Sort</strong></p>
+<p><strong>1. Merge Sort Concept:</strong></p>
+<p><strong>Merge (Merge):</strong></p>
+<p><strong>Merge Sort:</strong></p>
+<p><strong>Two. Merge of Adjacent Ordered Subarrays:</strong></p>
+<p><strong>Three. Merge Sort Implementation:</strong></p>
+<p><strong>7.5. External Sorting</strong></p>
+<p><strong>1. External Sorting Basic Steps:</strong></p>
+<p><strong>Two. External Sorting Time Complexity:</strong></p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg17">
+    <div class="page-number">Page 17</div>
+    <div class="page-content">
+      <h3>Huffman Tree and Optimal Merge Tree</h3>
+<h4>Huffman Tree:</h4>
+<ul>
+<li><strong>Definition</strong>: A Huffman tree is a binary tree where the left child is less than the right child; all Huffman trees reduce the number of moves.</li>
+<li><strong>Comparison</strong>: Similar to the merge tree sorting method (heap sort).</li>
+</ul>
+<h4>Optimal Merge Tree:</h4>
+<ul>
+<li><strong>Number of Merge Segments</strong>: $\log_{k} \frac{n}{T}$</li>
+<li><strong>Time Complexity</strong>: $O(n \log_{k} \frac{n}{T})$</li>
+<li><strong>Optimal Merge Tree</strong>: From the initial merge segment length as the value of the Huffman tree:</li>
+<li><strong>Degree of Leaf Nodes</strong>: $M_0 = (k-1)M_k + 1$</li>
+<li><strong>When $M_0 - 1$ is not an integer multiple of $k-1$</strong>, add virtual merge segments and fill leaf nodes. $\Rightarrow$ Get the order of all merge segments for merging.</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg18">
+    <div class="page-number">Page 18</div>
+    <div class="page-content">
+      <h3>Required Algorithm</h3>
+<h4>1. Linear List Insertion (Circular List Doesn't Need a Head)</h4>
+<ul>
+<li>Allocate a new node</li>
+<li>Set the new node's value</li>
+<li>Handle the list</li>
+<li>If element b is at the first position</li>
+<li>Search for element b from the second position</li>
+<li>If found, insert a before b; otherwise, append to the end of the list</li>
+</ul>
+<h4>2. Linear List Deletion (Similar to Insertion)</h4>
+<ul>
+<li>Search for element b in the list</li>
+<li>If not found, delete fails; handle b in the first position</li>
+<li>Otherwise, perform normal deletion; release the deleted node</li>
+</ul>
+<h4>3. Linear List Merge (Circular List Must Include New List Tail)</h4>
+<ul>
+<li>Handle the list situation</li>
+<li>Take X as the basic list</li>
+<li>When X and Y lists have unmerged nodes, connect Y's nodes to X's nodes</li>
+<li>If X has unmerged nodes, connect X's nodes to Y's nodes</li>
+</ul>
+<h4>4. Linear List Split (Circular List: Take X as the basic list, split Y out)</h4>
+<ul>
+<li>Divide into odd and even</li>
+</ul>
+<h4>II. Binary Tree Traversal Algorithm</h4>
+<ul>
+<li>Depth-first (post-order traversal)</li>
+<li>Sequence: BTreeNode *p;</li>
+<li>if (BT == NULL) return 0;</li>
+<li>else if (BT != NULL) EnQueue(BT);</li>
+<li>int dep1 = depth(BT->left);</li>
+<li>int dep2 = depth(BT->right);</li>
+<li>p = OutQueue();</li>
+<li>if (dep1 > dep2) return dep1 + 1;</li>
+<li>else return dep2 + 1;</li>
+</ul>
+<h4>III. Binary Search Tree Construction Algorithm, In-order Traversal Algorithm</h4>
+<ul>
+<li>Build Binary Search Tree Algorithm</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg19">
+    <div class="page-number">Page 19</div>
+    <div class="page-content">
+      <pre><code>
+void thread(BT)
+{
+    static Node *pre = NULL;
+    if (BT != NULL)
+    {
+        thread(BT-&gt;lchild);
+        if (pre != NULL &amp;&amp; pre-&gt;rtag == 1) // current thread's left child needs a thread
+            pre-&gt;rchild = BT;
+        if (BT-&gt;lchild == NULL) // current thread's left child is null
+            BT-&gt;ltag = 1; BT-&gt;lchild = pre;
+        if (BT-&gt;rchild == NULL) // current thread's right child is null
+            BT-&gt;rtag = 1;
+        pre = BT; // current thread is the parent
+        thread(BT-&gt;rchild);
+    }
+}
+2. Utilize threads in a binary tree for inorder traversal
+Node *p = BT; // initial pointer to root
+if (p != NULL)
+{
+    while (p-&gt;ltag == 0) p = p-&gt;lchild; // find the inorder predecessor
+    do
+    {
+        if (p-&gt;rtag == 1) p = p-&gt;rchild; // is a thread, move to the inorder successor
+        else
+        {
+            p = p-&gt;lchild; // is a child, move to the inorder predecessor
+        }
+    } while (p-&gt;ltag == 0) p = p-&gt;lchild; // find the inorder predecessor
+}
+</code></pre>
+<p>The provided code snippet is a C++ function `thread` that threads a binary tree. It traverses the tree and threads it in such a way that each node has a thread to its inorder predecessor. The second part of the code snippet is a pseudocode for inorder traversal using threads. It starts at the root and moves left until it finds a node with a left thread, then it moves right until it finds a node without a right thread, then it moves left again until it finds a node with a left thread, and so on.</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg20">
+    <div class="page-number">Page 20</div>
+    <div class="page-content">
+      <h3>Section 1: Binary Search Recursive and Non-Recursive Algorithms</h3>
+<ul>
+<li><strong>Recursive Implementation:</strong></li>
+<li>If left <= right, take the middle point.</li>
+<li>If middle point value < search value, middle point = recursive right half (middle + 1).</li>
+<li>If middle point value > search value, middle point = recursive left half (middle - 1).</li>
+<li>If middle point value = search value, stop.</li>
+</ul>
+<ul>
+<li><strong>Non-Recursive Implementation:</strong></li>
+<li>If left <= right, take the middle point.</li>
+<li>If middle point value < search value, left = middle + 1.</li>
+<li>If middle point value > search value, right = middle - 1.</li>
+<li>If middle point value = search value, stop.</li>
+</ul>
+<h3>Section 2: Simple Matching Algorithm and KMP Algorithm</h3>
+<ul>
+<li><strong>Simple Matching:</strong></li>
+<li>Outer loop: check if the pattern matches.</li>
+<li>Inner loop: move the pattern.</li>
+</ul>
+<ul>
+<li><strong>KMP:</strong></li>
+<li>int m = strlen(P); n[0] = 0;</li>
+<li>int i = 1, j = 0; // Initialize matching position.</li>
+<li>while (i < m) {</li>
+<li>if (pl[i] == pl[j]) {</li>
+<li>n[i] = j + 1; // Partial matching length increases.</li>
+<li>i++; j++;</li>
+<li>} else if (j > 0) {</li>
+<li>j = n[j - 1];</li>
+<li>} else {</li>
+<li>n[i] = 0; // j at the beginning, partial matching length is 0.</li>
+<li>}</li>
+<li>}</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg21">
+    <div class="page-number">Page 21</div>
+    <div class="page-content">
+      <pre><code>
+int kmp_match(text T, pattern P)
+{
+    int n = strlen(T), m = strlen(P);
+    int i = 0, j = 0, nxt[MaxSize];
+    Next(P, nxt);
+    while (i &lt; n)
+    {
+        if (T[i] == P[j])
+        {
+            if (j == m - 1) return i - j; // match success
+            else { i++; j++; }
+        }
+        else
+        {
+            if (j &gt; 0) j = nxt[j - 1]; // move to partial match point
+            else { i++; }
+        }
+    }
+    return -1;
+}
+VI. Sorting Algorithms
+1. Bubble Sort
+void bubble(a left right)
+{
+    for (int i = left; i &lt; right; i++)
+    for (int j = right; j &gt; i; j--)
+        if (a[j] &lt; a[j - 1]) swap(a[j], a[j - 1]);
+}
+Improvement: flag records the position of the last exchange in a pass of comparison
+</code></pre>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg22">
+    <div class="page-number">Page 22</div>
+    <div class="page-content">
+      <ul>
+<li>Quick Sort</li>
+</ul>
+<p>Partition Function:</p>
+<p>int Partition(a, left, right)</p>
+<p>{</p>
+<p>int k = left;</p>
+<p>int i = left, j = right;</p>
+<p>while (i != j) // when i and j meet, this pass of partitioning is complete</p>
+<p>{</p>
+<p>while (a[j] >= a[k] && i < j) j--; // move j left until a[j] < a[k]</p>
+<p>if (i < j) // a[j] < a[k]</p>
+<p>{</p>
+<p>a[i] = a[j]; i++;</p>
+<p>// a[i] and a[j] swap</p>
+<p>}</p>
+<p>while (a[i] <= a[k] && i < j) i++; // move i right until a[i] > a[k]</p>
+<p>if (i < j) // a[i] > a[k]</p>
+<p>{</p>
+<p>a[i] = a[j]; j--;</p>
+<p>// a[i] and a[j] swap</p>
+<p>}</p>
+<p>}</p>
+<p>a[i] = a[k]; // insert a[k] at partitioning point i</p>
+<p>return i; // return this pass's partitioning point i</p>
+<p>}</p>
+<p>Quick Sort:</p>
+<p>void QuickSort(a, left, right)</p>
+<p>{</p>
+<p>int i;</p>
+<p>if (right > left) // table length is not less than 2</p>
+<p>{</p>
+<p>i = Partition(a, left, right); // sequence partitioning operation</p>
+<p>QuickSort(a, left, i - 1); // quicksort left side</p>
+<p>QuickSort(a, i + 1, right); // quicksort right side</p>
+<p>}</p>
+<p>}</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg23">
+    <div class="page-number">Page 23</div>
+    <div class="page-content">
+      <ul>
+<li>Insert Sort:</li>
+<pre><code>
+void Insert(...) // Direct Insertion
+{
+    for (int j = 1; j &lt; len; j++) // Need len-1 insertions
+    {
+        int temp = a[j]; int i = j - 1; // Store the first element of the sorted part (to be inserted element)
+        while (i &gt;= 0 &amp;&amp; a[i] &gt; temp) // i points to the last position of the sorted part
+        {
+            a[i + 1] = a[i]; i--;
+        } // Move temp to its insertion position
+        a[i + 1] = temp; // Insert the element to be inserted into the sorted part.
+    }
+}
+</code></pre>
+</ul>
+<ul>
+<li>Binary Insert Sort:</li>
+<pre><code>
+void BInsert(...) // Binary Insertion
+{
+    for (int j = 1; j &lt; len; j++)
+    {
+        int temp = a[j]; int low = 0, high = j - 1;
+        while (low &lt;= high) // Binary search for the insertion element in the sorted part
+        {
+            int mid = (low + high) / 2;
+            if (a[mid] &gt; temp) high = mid - 1;
+            else low = mid + 1;
+        }
+        for (int i = j - 1; i &lt;= high + 1; i--) // Shift elements from high+1 to j-1 positions
+        {
+            a[i + 1] = a[i];
+        }
+        a[high + 1] = temp;
+    }
+}
+</code></pre>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg24">
+    <div class="page-number">Page 24</div>
+    <div class="page-content">
+      <ul>
+<li>Shell Sort</li>
+</ul>
+<pre><code>
+void Shell(a, times, d[]){ // times: sort intervals, d[]: gap between intervals
+    for(int k = times; k &gt; 1; k--) {
+        for(int j = k; j &lt; len; j++) {
+            int h = d[k];
+            for(int i = j - h; i &gt;= 0; i -= h) {
+                int temp = a[i];
+                a[i] = a[i + h];
+                a[i + h] = temp;
+            }
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>Merge Sort</li>
+</ul>
+<pre><code>
+void MergeSort(a) {
+    int *work = new int[len];
+    int length = 1; // initial subarray length
+    while(length &lt; len) {
+        int cur = 2 * length; // cur: current merged subarray length
+        for(int t = 0; t &lt; len; t += cur) {
+            int low = t, high = t + cur - 1, mid = t + length - 1;
+            if(high &gt; len - 1) high = len - 1; // special handling for the last group
+            if(high &gt; mid) merge(a, low, mid, high, work); // merge subarrays
+            length = cur;
+        }
+    }
+    delete[] work;
+}
+</code></pre>
+<ul>
+<li>Top Down:</li>
+<pre><code>
+for(int m = 1; m &lt;= n / 2; m = 2 * m)
+    merge_sort(a, left, (left + right) / 2);
+</code></pre>
+</ul>
+<ul>
+<li>Bottom Up:</li>
+<pre><code>
+for(int i = left; i &lt;= right - m; i += m)
+    merge_sort(a, i, i + m, min(i + 2 * m - 1, right));
+</code></pre>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg25">
+    <div class="page-number">Page 25</div>
+    <div class="page-content">
+      <ul>
+<li>Selection Sort</li>
+</ul>
+<pre><code>
+void SelectSort(a) {
+    for (int i = 0; i &lt; len - 1; i++) {
+        int pos = i;
+        for (int j = i + 1; j &lt; len; j++) {
+            if (a[j] &lt; a[pos]) {
+                pos = j;
+            }
+        }
+        if (pos != i) {
+            swap(a[i], a[pos]);
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>Heap Sort</li>
+</ul>
+<pre><code>
+void heapSort(a--) {
+    int len = right - left; int *p = a + left;
+    for (int k = (len - 1) / 2; k &gt;= 0; k--) {
+        SiftDown(p, k, len);
+    }
+    while (len &gt; 0) {
+        exchange(p[0], p[len]);
+        len--;
+        SiftDown(p, 0, len);
+    }
+}
+</code></pre>
+<p>The code provided is for implementing selection sort and heap sort algorithms in C.</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p1-pg26">
+    <div class="page-number">Page 26</div>
+    <div class="page-content">
+      <ul>
+<li>Merge Sort (Continued).</li>
+</ul>
+<pre><code>
+void merge(int *c, int *a, int n, int *b, int m) {
+    long i, j, k;
+    for (i = 0, j = 0, k = 0; k &lt; n + m; k++) {
+        if (i == n) { c[k] = a[j]; j++; continue; }
+        if (j == m) { c[k] = b[i]; i++; continue; }
+        c[k] = (a[i] &lt; b[j]) ? a[i++] : b[j++];
+    }
+}
+</code></pre>
+<p>Bottom-Up Merge Sort:</p>
+<pre><code>
+void merge_sort(int *a, int left, int right) {
+    for (int i = 1; i &lt;= right - left; i = 2 * i) {
+        for (int j = left; j &lt;= right - i; j += 2 * i) {
+            merge(a, j, j + i, min(j + 2 * i - 1, right), a[j]);
+        }
+    }
+}
+</code></pre>
+<p>Top-Down Merge Sort:</p>
+<pre><code>
+void merge_sort(int *a, int left, int right) {
+    if (right &lt;= left) return;
+    int mid = (left + right) / 2;
+    merge_sort(a, left, mid);
+    merge_sort(a, mid + 1, right);
+    merge(a, left, mid + 1, right);
+}
+</code></pre>
+<p>Time complexity: O(n log n)</p>
+<p>Space complexity: O(n)</p>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- Part II Header -->
+  <div class="part-section" id="part-2-section">
+    <div class="part-header" id="part-2">
+      <h2>Part II: Graphs & Complexity Analysis</h2>
+      <p>Graph storage, DFS, BFS traversals, topological sorting, shortest path algorithms (Dijkstra, Floyd), and minimum spanning trees.</p>
+    </div>
+    
+  <div class="page-card" id="p2-pg1">
+    <div class="page-number">Page 1</div>
+    <div class="page-content">
+      <p>linear non-linear</p>
+<p>linear list tree graph logical structure</p>
+<p>ordered list linked list index hash memory structure</p>
+<ul>
+<li>search; insert; delete; merge; split; traverse</li>
+<li>string search</li>
+<li>sort: exchange: bubble, quick</li>
+<li>insertion: ..., shell</li>
+<li>selection:</li>
+<li>merge:</li>
+<li>heap: ..., tree selection, tournament</li>
+</ul>
+<ul>
+<li>Introduction</li>
+</ul>
+<p>1.1 data abstraction & binary relation</p>
+<p>a. data abstraction</p>
+<p>element + relation → directed, weakly connected graph</p>
+<p>b. Cartesian product</p>
+<p>A × B = {(a, b) | a ∈ A & b ∈ B}</p>
+<p>A1 × ... × An = {(a1, ..., an) | ai ∈ Ai}</p>
+<p>c. binary relation</p>
+<p>R is a subset of A × B, called an endorelation over A</p>
+<p>when A = B.</p>
+<p>reflexivity: (a, a) ∈ R, symmetry: (a, b) ∈ R ⇒ (b, a) ∈ R</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p2-pg2">
+    <div class="page-number">Page 2</div>
+    <div class="page-content">
+      <p>1.2 Basics of data structure</p>
+<p>a. Logical structure of data</p>
+<p>B = (D, R) D: data, R: endorelation</p>
+<p>b. Memory structure of data</p>
+<p>see page 1</p>
+<p>c. Abstract data type</p>
+<p>data structure + operations</p>
+<p>1.3 Algorithms</p>
+<p>a. Brute force:</p>
+<p>b. Divide and conquer: merge sort, quick sort, shell sort.</p>
+<p>c. Decrease and conquer: binary search, b-tree search.</p>
+<p>d. Backtracking: maze</p>
+<p>e. Greedy: KMP, Prim, Kruskal, Dijkstra, Huffman</p>
+<p>f. Dynamic programming: Floyd-Warshall</p>
+<ul>
+<li>Linear list</li>
+</ul>
+<p>B = (D, R) D = {a_i | i = 1, ..., n}, R = {(a_i, a_{i+1}) | i = 1, ..., n-1}</p>
+<p>2.1 Ordered list</p>
+<p>2.2 Stack</p>
+<p>double stack:</p>
+<p>e.g. recursion + divide & conquer</p>
+<p>T(n) = aT(n/b) + f(n)</p>
+<p>if (P solvable) solve P directly</p>
+<p>else for (i = 1: k) y_i = Divide(P_i) // solve subproblems</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p2-pg3">
+    <div class="page-number">Page 3</div>
+    <div class="page-content">
+      <p>2.3 Queue</p>
+<p>a. sequential</p>
+<p>$$\uparrow a_1 a_2 \cdots a_n \rightarrow \vec{v}$$</p>
+<p>front rear</p>
+<p>b. circular</p>
+<p>delete: front = rear = 0</p>
+<p>enqueue: (rear + 1) % ms</p>
+<p>dequeue: (front + 1) % ms</p>
+<p>empty: front == rear</p>
+<p>full: (rear + 1) % ms == front</p>
+<p>c. priority: heap</p>
+<p>2.4 Array and matrix</p>
+<p>a. row-based array: AD(a_{ij}) = AD(a_{11}) + [(i-1)n + j-1] unit;</p>
+<p>column-based array: AD(a_{ij}) = AD(a_{11}) + [(j-1)n + i-1] unit</p>
+<p>b. compressed matrix</p>
+<p>- lower-triangular:</p>
+<p>row: k = $\frac{1}{2} i(i-1) + j$</p>
+<p>col: k = $\frac{[2n-(i-1)]j}{2} + i - (j-1)$</p>
+<p>- symmetric</p>
+<p>- lower-triangular:</p>
+<p>row: k = $\begin{cases} \frac{1}{2} i(i-1) + j & i \geq j \\ \frac{1}{2} j(j-1) + i & i < j \end{cases}$</p>
+<p>- diagonal:</p>
+<p>row: k = $\begin{cases} (\lfloor \frac{m}{2} \rfloor + 1) \cdot i + j - \lfloor \frac{m}{2} \rfloor + 1 & else \\ 0 & if not (i \leq j \&\& j \leq i + \lfloor \frac{m}{2} \rfloor) \&\& (i \leq j) \end{cases}$</p>
+<p>c. sparse matrix: B(row, col, val)</p>
+<p>- POS[k]: first non-zero element in row k - POS[i] = POS[i-1] + NUM[i-1]</p>
+<p>- NUM[k]: number of non-zero elements in row k: NUM[B[i, 1]] = NUM[B[i-1]] + 1</p>
+<p>3. linked list</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p2-pg4">
+    <div class="page-number">Page 4</div>
+    <div class="page-content">
+      <p>3.1 regular linked list</p>
+<p>*insertion: empty list; insert to the 1st node; can't find where to insert</p>
+<p>deletion: empty list; delete the 1st node; can't find where to delete</p>
+<p>merge: choose a base list, O(n+m)</p>
+<p>split: odd pos/even pos = O(n)</p>
+<p>3.2 linked stack, linked queue</p>
+<p>a. linked stack</p>
+<p>top -> [ ] -> [ ] -> ... -> [ ]</p>
+<p>b. linked queue</p>
+<p>[ ] -> [ ] -> ... -> [ ]</p>
+<p>front rear</p>
+<p>3.3 circular linked list</p>
+<p>H -> [ ] -> [a1] -> ... -> [an] -> H</p>
+<p>empty: H -> [ ] : no need to single out the empty case (vs 3.1)</p>
+<p>check rear: p->next == head</p>
+<p>merge: p1->next = head2, p2->next = head1</p>
+<p>split: create new head, consider odd pos/even pos, choose base</p>
+<p>3.4 multi-linked list</p>
+<p>3.5 lists</p>
+<p>linear; recursive definition; depth = # of layers of recursion</p>
+<p>length = # of "next"</p>
+<p>e.g. head:</p>
+<p>| flag=0 | sublist | next |</p>
+<p>|-------|---------|------|</p>
+<p>| flag=1 | data   | next |</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p2-pg5">
+    <div class="page-number">Page 5</div>
+    <div class="page-content">
+      <ul>
+<li>Tree; Binary Tree</li>
+</ul>
+<p>4.1 Basics of Tree</p>
+<p>n: number of nodes, degree of node i: di => n = Σ di + 1</p>
+<p>k: branches of a node (maximum) = least depth = ⌊log₂[n(k-1)+1]⌋</p>
+<p>4.2 Binary Tree</p>
+<p>a. Basic Properties</p>
+<ul>
+<li>No leaves, n2 nodes with degree 2 => n0 = n2 + 1</li>
+</ul>
+<p>proof: let n be # of nodes, n1 be # of nodes with degree 1</p>
+<p>n = n0 + n1 + n2</p>
+<p>every node has a parent except the root:</p>
+<p>n - 1 = 2n2 + n1</p>
+<p>n0 = n2 + 1</p>
+<ul>
+<li>Full (all leaves present) vs balanced vs complete (leaves present left-right)</li>
+</ul>
+<p>n nodes => depth = ⌊log₂n⌋ + 1</p>
+<p>depth h => n ≤ 2^h - 1</p>
+<ul>
+<li>Left child of i = 2i + 1, right child of i = 2i + 2</li>
+</ul>
+<p>parent: ⌊(i-1)/2⌋</p>
+<p>left child of i: 2i, right child of i: 2i + 1</p>
+<p>parent: ⌊i/2⌋</p>
+<p>4.3 Memory Structure of Binary Tree</p>
+<p>linked list; complete binary trees can be stored using a heap</p>
+<p>4.4 DFS, time: O(n), space: O(log₂n) ~ O(n)</p>
+<p>can also be implemented in a non-recursive way</p>
+<p>DFS: visit -> l -> r</p>
+<p>DFS: visit -> r -> l</p>
+<p>DFS: l -> r -> visit</p>
+<p>DFS: visit -> l -> r</p>
+<p>DFS: visit -> r -> l</p>
+<p>DFS: l -> r -> visit</p>
+<p>DFS: visit -> l -> r</p>
+<p>DFS: visit -> r -> l</p>
+<p>DFS: l -> r -> visit</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p2-pg6">
+    <div class="page-number">Page 6</div>
+    <div class="page-content">
+      <p>4.5 BFS binary tree time: O(n) space: k^(h-1), k: degree, h: depth</p>
+<p>Level order tree traversal: for getting depth, deletion, getting # of nodes while (!EmptyQueue()) { enqueue left child; enqueue right child; dequeue; }</p>
+<p>4.6 threaded binary tree for O(1) space traversal:</p>
+<p>l_tag: l_kid: data: r_kid: r_tag</p>
+<p>threaded preorder: thread cur_node & preorder predecessor -> l->r</p>
+<p>threaded in order: l->thread cur_node & in order predecessor -> r</p>
+<p>threaded post order: l->r->thread cur_node & postorder predecessor predecessor -> l_kid->r_kid.</p>
+<p>4.7 counting in binary trees</p>
+<p>number of in order traversals corresponding to a preorder: $\frac{1}{n+1} C^n_2$</p>
+<p>to specify a binary tree: using preorder to determine root, in order kids.</p>
+<p>4.8 applications of binary trees</p>
+<p>a. ordered tree -> binary linked list -> binary tree</p>
+<p>b. optimal binary tree (Huffman tree)</p>
+<p>depth h: 2h-1 ≤ n ≤ 2^h-1</p>
+<p>{ n_0 = n_2 + 1 } { n_0 = $\frac{n+1}{2}$ }</p>
+<p>{ n_0 + n_2 = n } { n_2 = $\frac{n-1}{2}$ }</p>
+<p>minimize: $\sum_{i=1}^{n}$ weight(i) * length(i)</p>
+<p>algorithm: select the two trees from the forest with minimum weights to form a binary tree; greedy</p>
+<p>root weight = l_weight + r_weight</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p2-pg7">
+    <div class="page-number">Page 7</div>
+    <div class="page-content">
+      <p>C. Binary search tree BST</p>
+<p>depth h: h < n < 2^h - 1</p>
+<ul>
+<li>N_left < N_right : in order insertion, time, space:</li>
+<li>deletion { leaf: delete directly (alogn) ~ O(n)</li>
+</ul>
+<p>degree 1 node: delete following child</p>
+<p>degree 2 nodes: replace with in order predecessor -> delete in order predecessor { leaf ... degree 1 ...</p>
+<p>d. Heap (binary sort) findmin/findmax in O(1)</p>
+<p>depth h: 2^(h-1) ≤ n ≤ 2^h - 1</p>
+<p>{ max-heap: parent > kid } list, complete binary tree</p>
+<p>{ min-heap: parent < kid } index by layer</p>
+<ul>
+<li>insertion: insert to rear (lower right), sift up the element: O(logn)</li>
+<li>deletion: { directly delete if at rear</li>
+</ul>
+<p>swap top & rear, sift down the top: O(logn) if at top</p>
+<ul>
+<li>creation: { insert each element (sift up): O(nlogn) --+</li>
+</ul>
+<p>(sorting) sift down each element from lower right to upper left: O(n)</p>
+<p>e. Solution space tree</p>
+<p>backtracking: pre-order traversal of the solution space tree</p>
+<p>4.9. Equivalence class and union-find (disjoint-set)</p>
+<p>memory structure: multi-branch linked list-based tree</p>
+<p>{ make set: rank=0, parent=x</p>
+<p>{ find: x.parent = find (x.parent) : recursive</p>
+<p>union: make the higher-ranked parent as parent.</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p2-pg8">
+    <div class="page-number">Page 8</div>
+    <div class="page-content">
+      <ul>
+<li>graph</li>
+</ul>
+<p>5.1 representation</p>
+<p>$$G = (V, E)$$</p>
+<p>$$G' \subseteq G$$ if $$G'$$ is a subgraph of $$G$$</p>
+<p>undirected: degree = edges connected</p>
+<p>directed: degree = inbound edges + outbound edges</p>
+<p>$$\sum_{v \in V} \text{deg}(v) = 2|E|$$</p>
+<p>$$n - 1 \leq |E| \leq C_n^2$$ for undirected graphs</p>
+<p>$$n \leq |E| \leq 2C_n^2$$ for directed graphs</p>
+<p>5.2 memory</p>
+<p>a. adjacency matrix for dense graphs</p>
+<p>inbound degree = $$\sum_{i=0}^{n-1} \text{col}_i = \sum_{i=0}^{n-1} A[i][j]$$</p>
+<p>outbound degree = $$\sum_{j=0}^{n-1} \text{row}_j = \sum_{j=0}^{n-1} A[i][j]$$</p>
+<p>b. linked list for sparse graphs</p>
+<p>triplet representation: (row, column, value)</p>
+<p>linked representation: (row, column, value, next node)</p>
+<p>5.3 traversal</p>
+<p>a. DFS (DFT): adjacency matrix: $$O(n^2)$$, linked list: $$O(n + e)$$, space: $$O(n)$$</p>
+<p>≈ pre-order traversal of a tree</p>
+<p>b. BFS (BFT): adjacency matrix: $$O(n^2)$$, linked list: $$O(n + e)$$, space: $$O(n)$$</p>
+<p>≈ level order traversal of a tree (single source single sink shortest path in an unweighted graph)</p>
+<p>5.4 MST minimum spanning tree (min $$\sum_{i \in E} e_i$$, $$E \in MST$$)</p>
+<p>$$V(G') = V(G)$$, n vertices, n-1 edges.</p>
+<p>a. Prim: $$O(n^2)$$: greedy, use heap</p>
+<p>b. Kruskal: $$O(e \log e)$$: greedy, use union-find structure</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p2-pg9">
+    <div class="page-number">Page 9</div>
+    <div class="page-content">
+      <p>5.5 Single source shortest path (all sinks)</p>
+<p>a. w/o negative weights: Dijkstra, based on priority queue O((V + E) log V) faster than iterative DFS's</p>
+<p>b. w/ negative weights: Bellman-Ford, slower than Dijkstra O(V * E)</p>
+<p>c. SPFA: Shortest path faster algorithm w/ negative weights O(k * E), k << V</p>
+<p>5.6 acyclic shortest path, DAGs</p>
+<p>O(V + E)</p>
+<p>5.7 topological sorting, DAGs</p>
+<p>O(V + E), using DFS</p>
+<p>5.8 all-source shortest path (all sinks), w/ negative weights</p>
+<p>O(V^3), Floyd-Warshall, dynamic programming</p>
+<ul>
+<li>Search, string search</li>
+</ul>
+<p>6.1 binary search tree. see 4.8, C, worst case O(n) for search, insert, delete and space.</p>
+<p>6.2 self-balancing binary search tree</p>
+<p>a. AVL tree { worst case O(log n) for }</p>
+<p>b. red-black tree search, insert, delete.</p>
+<p>6.3 high fan-out self-balancing tree</p>
+<p>b. Knuth-Morris-Pratt: preprocessing: O(m), matching: O(n), space: O(m)</p>
+<p>6.4. string searching algorithm</p>
+<p>string: n > pattern: m</p>
+<p>a. straightforward: O(m * n)</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p2-pg10">
+    <div class="page-number">Page 10</div>
+    <div class="page-content">
+      <ul>
+<li>Sort</li>
+</ul>
+<p>7.1 Exchange sort: swap</p>
+<p>a. bubble sort -> bidirectional bubble sort $O(n^2)$</p>
+<p>b. quick sort: Choose the median of R[m], R[m+n], R[n], divide and conquer, recursion $O(\log n) \rightarrow O(n^2)$</p>
+<p>7.2 Insertion sort: insert to sorted list</p>
+<p>a. naive $O(n^2)$</p>
+<p>b. binary search the sorted list $O(n \log n) \rightarrow O(n^2)$ or swaps</p>
+<p>c. shell $O(n^{1.5})$</p>
+<p>7.3 Selection sort: select from unsorted list</p>
+<p>a. naive $O(n^2)$</p>
+<p>b. heap sort: time $O(n) - O(n \log n)$, space: $O(1)$</p>
+<p>see 4.8 d, divide and conquer</p>
+<p>7.4 Merge sort: divide and conquer, $O(n \log n)$</p>
+<p>{ top-down $O(n)$ space: external sort</p>
+<p>bottom-up easy to parallelize, can be used on disk</p>
+<p>7.5 Distribution sort (non-comparison sort) integers</p>
+<p>a. bucket sort time: $O(n + k) - O(n^2)$, space: $O(n \cdot k)$</p>
+<p>b. counting sort time: $O(n + k)$, space: $O(n + k)$</p>
+<p>c. radix sort time: $O(wn)$, space: $O(w + N)$</p>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- Part III Header -->
+  <div class="part-section" id="part-3-section">
+    <div class="part-header" id="part-3">
+      <h2>Part III: Advanced Algorithms & Network Flows</h2>
+      <p>Dynamic programming, longest common subsequence, matrix chain multiplication, network flow, bipartite matching, NP-completeness, and SAT problem reductions.</p>
+    </div>
+    
+  <div class="page-card" id="p3-pg1">
+    <div class="page-number">Page 1</div>
+    <div class="page-content">
+      <ul>
+<li><strong>Asymptotics</strong></li>
+<li>Best-case complexity</li>
+<li>Average complexity</li>
+<li>Worst-case complexity</li>
+<li>Relationship between polynomial, exponential, logarithmic time</li>
+<li>Big-Oh notation: O(n^d), O(n), O(log n), O(1)</li>
+<li>Stable matching problem: (no men and women prefer to be with each other than assigned partner)</li>
+<li>Gale-Shapley algo: O(n^2). Propose and reject.</li>
+<li>Man-optimal.</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p3-pg2">
+    <div class="page-number">Page 2</div>
+    <div class="page-content">
+      <h3>Graphs (adjacency matrix)</h3>
+<h4>Key Concepts:</h4>
+<ul>
+<li>Relationship between degree and number of edges</li>
+<li>Cycles, trees</li>
+<li>Graph Search (DFS & BFS)</li>
+<li>Algorithms for coloring</li>
+<li>Negative Edge Weights in Directed Graphs</li>
+</ul>
+<h4>Notation:</h4>
+<ul>
+<li>\( O(m) \leq m \leq n(n-1)/2 \leq O(n^2) \)</li>
+<li>\( m = n \leq n(n-1)/2 \leq O(n^2) \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m \leq n \)</li>
+<li>\( m \leq n^2 \)</li>
+<li>\( m</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p3-pg3">
+    <div class="page-number">Page 3</div>
+    <div class="page-content">
+      <h3>Greedy Algorithms</h3>
+<h4>1. Greedy stays ahead</h4>
+<ul>
+<li><strong>Interval Scheduling</strong></li>
+<li>Sort by their finishing times</li>
+<li>Optimal: $$O(n \log n)$$</li>
+</ul>
+<h4>2. Structural</h4>
+<ul>
+<li><strong>Approximation algorithms for Vertex Cover, Set Cover (contact every point)</strong></li>
+<li><strong>Minimum Spanning Tree Algorithms, and Cycle and Cut Properties</strong></li>
+<li><strong>Union Find-Data Structure</strong> $$O(k \log n)$$</li>
+</ul>
+<h4>3. Exchange arguments</h4>
+<ul>
+<li>$$O(m \log n)$$ with a binary heap.</li>
+<li>Prim: priority queue $$O(n^2)$$ with an array</li>
+<li>Kruskal: union-find data structure</li>
+<li>Cut property: MST contains p by cycle property = MST not contain f. Contradiction.</li>
+<li>$$O(m \log n)$$ for Prim's</li>
+<li>$$O(m \log n)$$ for union-find.</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p3-pg4">
+    <div class="page-number">Page 4</div>
+    <div class="page-content">
+      <h3>Divide and Conquer Algorithms</h3>
+<h4>Recurrences (Master Theorem)</h4>
+<ul>
+<li>Algorithms for sorting, multiplication, integer multiplication</li>
+<li>Finding closest pairs, matrix multiplication</li>
+</ul>
+<h4>Quick Sort</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Merge Sort</h4>
+<ul>
+<li>$T(n) = T(n/2) + T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Strassen's Algorithm</h4>
+<ul>
+<li>$T(n) = 7T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Integer Multiplication</h4>
+<ul>
+<li>$T(n) = 8T(n/2) + n^2$</li>
+</ul>
+<h4>Matrix Multiplication</h4>
+<ul>
+<li>$T(n) = n^3$</li>
+</ul>
+<h4>Multiplication of Polynomials</h4>
+<ul>
+<li>$T(m) = aT(m/b) + cn^c$ (n > b)</li>
+<li>$= a(aT(n/b^2) + c(n/b))$ + cn</li>
+<li>$= a\log n + n^{1.584}$</li>
+</ul>
+<h4>Unbalanced Division</h4>
+<ul>
+<li>$T(n) = n\log n + n^{1.584}$</li>
+</ul>
+<h4>Adjacent</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>1-D Version</h4>
+<ul>
+<li>$D(n) = \Theta(n)$</li>
+</ul>
+<h4>2-D Version</h4>
+<ul>
+<li>$T(n) = T(n/2) + T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Divide and Conquer</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Strassen's Algorithm</h4>
+<ul>
+<li>$T(n) = 7T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Integer Multiplication</h4>
+<ul>
+<li>$T(n) = 8T(n/2) + n^2$</li>
+</ul>
+<h4>Matrix Multiplication</h4>
+<ul>
+<li>$T(n) = n^3$</li>
+</ul>
+<h4>Multiplication of Polynomials</h4>
+<ul>
+<li>$T(m) = aT(m/b) + cn^c$ (n > b)</li>
+<li>$= a(aT(n/b^2) + c(n/b))$ + cn</li>
+<li>$= a\log n + n^{1.584}$</li>
+</ul>
+<h4>Unbalanced Division</h4>
+<ul>
+<li>$T(n) = n\log n + n^{1.584}$</li>
+</ul>
+<h4>Adjacent</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>1-D Version</h4>
+<ul>
+<li>$D(n) = \Theta(n)$</li>
+</ul>
+<h4>2-D Version</h4>
+<ul>
+<li>$T(n) = T(n/2) + T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Divide and Conquer</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Strassen's Algorithm</h4>
+<ul>
+<li>$T(n) = 7T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Integer Multiplication</h4>
+<ul>
+<li>$T(n) = 8T(n/2) + n^2$</li>
+</ul>
+<h4>Matrix Multiplication</h4>
+<ul>
+<li>$T(n) = n^3$</li>
+</ul>
+<h4>Multiplication of Polynomials</h4>
+<ul>
+<li>$T(m) = aT(m/b) + cn^c$ (n > b)</li>
+<li>$= a(aT(n/b^2) + c(n/b))$ + cn</li>
+<li>$= a\log n + n^{1.584}$</li>
+</ul>
+<h4>Unbalanced Division</h4>
+<ul>
+<li>$T(n) = n\log n + n^{1.584}$</li>
+</ul>
+<h4>Adjacent</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>1-D Version</h4>
+<ul>
+<li>$D(n) = \Theta(n)$</li>
+</ul>
+<h4>2-D Version</h4>
+<ul>
+<li>$T(n) = T(n/2) + T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Divide and Conquer</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Strassen's Algorithm</h4>
+<ul>
+<li>$T(n) = 7T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Integer Multiplication</h4>
+<ul>
+<li>$T(n) = 8T(n/2) + n^2$</li>
+</ul>
+<h4>Matrix Multiplication</h4>
+<ul>
+<li>$T(n) = n^3$</li>
+</ul>
+<h4>Multiplication of Polynomials</h4>
+<ul>
+<li>$T(m) = aT(m/b) + cn^c$ (n > b)</li>
+<li>$= a(aT(n/b^2) + c(n/b))$ + cn</li>
+<li>$= a\log n + n^{1.584}$</li>
+</ul>
+<h4>Unbalanced Division</h4>
+<ul>
+<li>$T(n) = n\log n + n^{1.584}$</li>
+</ul>
+<h4>Adjacent</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>1-D Version</h4>
+<ul>
+<li>$D(n) = \Theta(n)$</li>
+</ul>
+<h4>2-D Version</h4>
+<ul>
+<li>$T(n) = T(n/2) + T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Divide and Conquer</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Strassen's Algorithm</h4>
+<ul>
+<li>$T(n) = 7T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Integer Multiplication</h4>
+<ul>
+<li>$T(n) = 8T(n/2) + n^2$</li>
+</ul>
+<h4>Matrix Multiplication</h4>
+<ul>
+<li>$T(n) = n^3$</li>
+</ul>
+<h4>Multiplication of Polynomials</h4>
+<ul>
+<li>$T(m) = aT(m/b) + cn^c$ (n > b)</li>
+<li>$= a(aT(n/b^2) + c(n/b))$ + cn</li>
+<li>$= a\log n + n^{1.584}$</li>
+</ul>
+<h4>Unbalanced Division</h4>
+<ul>
+<li>$T(n) = n\log n + n^{1.584}$</li>
+</ul>
+<h4>Adjacent</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>1-D Version</h4>
+<ul>
+<li>$D(n) = \Theta(n)$</li>
+</ul>
+<h4>2-D Version</h4>
+<ul>
+<li>$T(n) = T(n/2) + T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Divide and Conquer</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Strassen's Algorithm</h4>
+<ul>
+<li>$T(n) = 7T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>Integer Multiplication</h4>
+<ul>
+<li>$T(n) = 8T(n/2) + n^2$</li>
+</ul>
+<h4>Matrix Multiplication</h4>
+<ul>
+<li>$T(n) = n^3$</li>
+</ul>
+<h4>Multiplication of Polynomials</h4>
+<ul>
+<li>$T(m) = aT(m/b) + cn^c$ (n > b)</li>
+<li>$= a(aT(n/b^2) + c(n/b))$ + cn</li>
+<li>$= a\log n + n^{1.584}$</li>
+</ul>
+<h4>Unbalanced Division</h4>
+<ul>
+<li>$T(n) = n\log n + n^{1.584}$</li>
+</ul>
+<h4>Adjacent</h4>
+<ul>
+<li>$T(n) = 2T(n/2) + \Theta(n)$</li>
+</ul>
+<h4>1-D Version</h4>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p3-pg5">
+    <div class="page-number">Page 5</div>
+    <div class="page-content">
+      <p>Dynamic Programming</p>
+<p>DP: overlapping sub-problems</p>
+<p>Design the recurrence using subproblems, then write the program</p>
+<p>Algorithms for sequencing related problems, edit distance, knapsack, weighted interval scheduling, and max weight subset of mutually compatible jobs.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d + OPT(i-1,j-1) otherwise.</p>
+<p>OPT(i,j) = ∑j=0^i d</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p3-pg6">
+    <div class="page-number">Page 6</div>
+    <div class="page-content">
+      <p><strong>Network Flows</strong></p>
+<ul>
+<li>Directed graph, no parallel edges.</li>
+<li>Formulate as min-cut.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+<li>Directed graph, no parallel edges.</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p3-pg7">
+    <div class="page-number">Page 7</div>
+    <div class="page-content">
+      <p>Linear Programming</p>
+<p>Weak: $$c^T x \leq y^T A x \leq y^T b$$</p>
+<p>$$c^T x = y^T A x = y^T b$$</p>
+<p>Minimax Theorems</p>
+<p>Duality</p>
+<p>Strong Duality Theorem</p>
+<p>$$\max c^T x$$</p>
+<p>$$\text{s.t. } Ax \leq b$$</p>
+<p>$$x \geq 0$$</p>
+<p>$$\min y^T b$$</p>
+<p>$$\text{s.t. } y^T A x \geq c$$</p>
+<p>$$y \geq 0$$</p>
+<p>It doesn't matter whether the row-player or the column-player has to commit to a strategy first.</p>
+<p>$$\max c^T x$$</p>
+<p>$$\text{s.t. } Ax \leq b$$</p>
+<p>$$x \geq 0$$</p>
+<p>$$\min y^T b$$</p>
+<p>$$\text{s.t. } y^T A x \geq c$$</p>
+<p>$$y \geq 0$$</p>
+<p>$$B = c^T$$</p>
+<p>$$A = -A^T$$</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p3-pg8">
+    <div class="page-number">Page 8</div>
+    <div class="page-content">
+      <p>Randomized Algorithms</p>
+<p>\(\text{cldet}(B) = \sum_{\sigma: \{n\} \rightarrow [n]} \prod_{i=1}^{n} A_{\sigma(i), i}\)</p>
+<p>\(\text{Linearity of Expectation} \quad E\left(\sum_{i=1}^{n} X_i\right) = \sum_{i=1}^{n} E(X_i)\)</p>
+<p>\(\text{Algorithms for Min-Cut, Dominating Set, Flows, Testing when a polynomial is 0.}\)</p>
+<p>\(\text{Hot edges that cross from A to B is minimized.}\)</p>
+<p>\(\text{Let } p(x_1, \ldots, x_n) \text{ be a polynomial of degree d. Let } S \text{ be a finite set of numbers.}\)</p>
+<p>\(\text{The probability that } k \text{ edges of the polynomial are never picked is at least }\)</p>
+<p>\(\left(1 - \frac{2}{n}\right) \cdots \left(1 - \frac{2}{n}\right) = \frac{2^k}{n(n-1)}\)</p>
+<p>\(\text{If } x_1, \ldots, x_n \text{ are sampled uniformly from } S,\)</p>
+<p>\(\text{Then if } x_1, \ldots, x_n \text{ are sampled uniformly from } S,\)</p>
+<p>\(\text{cldet}(B) = \sum_{\sigma: \{n\} \rightarrow [n]} \prod_{i=1}^{n} A_{\sigma(i), i}\)</p>
+<p>\(\text{Linearity of Expectation} \quad E\left(\sum_{i=1}^{n} X_i\right) = \sum_{i=1}^{n} E(X_i)\)</p>
+<p>\(\text{Algorithms for Min-Cut, Dominating Set, Flows, Testing when a polynomial is 0.}\)</p>
+<p>\(\text{Hot edges that cross from A to B is minimized.}\)</p>
+<p>\(\text{Let } p(x_1, \ldots, x_n) \text{ be a polynomial of degree d. Let } S \text{ be a finite set of numbers.}\)</p>
+<p>\(\text{The probability that } k \text{ edges of the polynomial are never picked is at least }\)</p>
+<p>\(\left(1 - \frac{2}{n}\right) \cdots \left(1 - \frac{2}{n}\right) = \frac{2^k}{n(n-1)}\)</p>
+<p>\(\text{If } x_1, \ldots, x_n \text{ are sampled uniformly from } S,\)</p>
+<p>\(\text{Then if } x_1, \ldots, x_n \text{ are sampled uniformly from } S,\)</p>
+<p>\(\text{cldet}(B) = \sum_{\sigma: \{n\} \rightarrow [n]} \prod_{i=1}^{n} A_{\sigma(i), i}\)</p>
+<p>\(\text{Linearity of Expectation} \quad E\left(\sum_{i=1}^{n} X_i\right) = \sum_{i=1}^{n} E(X_i)\)</p>
+<p>\(\text{Algorithms for Min-Cut, Dominating Set, Flows, Testing when a polynomial is 0.}\)</p>
+<p>\(\text{Hot edges that cross from A to B is minimized.}\)</p>
+<p>\(\text{Let } p(x_1, \ldots, x_n) \text{ be a polynomial of degree d. Let } S \text{ be a finite set of numbers.}\)</p>
+<p>\(\text{The probability that } k \text{ edges of the polynomial are never picked is at least }\)</p>
+<p>\(\left(1 - \frac{2}{n}\right) \cdots \left(1 - \frac{2}{n}\right) = \frac{2^k}{n(n-1)}\)</p>
+<p>\(\text{If } x_1, \ldots, x_n \text{ are sampled uniformly from } S,\)</p>
+<p>\(\text{Then if } x_1, \ldots, x_n \text{ are sampled uniformly from } S,\)</p>
+<p>\(\text{cldet}(B) = \sum_{\sigma: \{n\} \rightarrow [n]} \prod_{i=1}^{n} A_{\sigma(i), i}\)</p>
+<p>\(\text{Linearity of Expectation} \quad E\left(\sum_{i=1}^{n} X_i\right) = \sum_{i=1}^{n} E(X_i)\)</p>
+<p>\(\text{Algorithms for Min-Cut, Dominating Set, Flows, Testing when a polynomial is 0.}\)</p>
+<p>\(\text{Hot edges that cross from A to B is minimized.}\)</p>
+<p>\(\text{Let } p(x_1, \ldots, x_n) \text{ be a polynomial of degree d. Let } S \text{ be a finite set of numbers.}\)</p>
+<p>\(\text{The probability that } k \text{ edges of the polynomial are never picked is at least }\)</p>
+<p>\(\left(1 - \frac{2}{n}\right) \cdots \left(1 - \frac{2}{n}\right) = \frac{2^k}{n(n-1)}\)</p>
+<p>\(\text{If } x_1, \ldots, x_n \text{ are sampled uniformly from } S,\)</p>
+<p>\(\text{Then if } x_1, \ldots, x_n \text{ are sampled uniformly from } S,\)</p>
+<p>\(\text{cldet}(B) = \sum_{\sigma: \{n\} \rightarrow [n]} \prod_{i=1}^{n} A_{\sigma(i), i}\)</p>
+<p>\(\text{Linearity of Expectation} \quad E\left(\sum_{i=1}^{n} X_i\right) = \sum_{i=1}^{n} E(X_i)\)</p>
+<p>\(\text{Algorithms for Min-Cut, Dominating Set, Flows, Testing when a polynomial is 0.}\)</p>
+<p>\(\text{Hot edges that cross from A to B is minimized.}\)</p>
+<p>\(\text{Let } p(x_1, \ldots, x_n) \text{ be a polynomial of degree d. Let } S \text{ be a finite set of numbers.}\)</p>
+<p>\(\text{The probability that } k \text{ edges of the polynomial are never picked is at least }\)</p>
+<p>\(\left(1 - \frac{2}{n}\right) \cdots \left(1 - \frac{2}{n}\right) = \frac{2^k}{n(n-1)}\)</p>
+<p>\(\text{If } x_1, \ldots, x_n \text{ are sampled uniformly from } S,\</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="p3-pg9">
+    <div class="page-number">Page 9</div>
+    <div class="page-content">
+      <p>decision problems:</p>
+<p>problems with "yes" or "no" answers</p>
+<p>NP: Nondeterministic Polynomial-time</p>
+<p>where P() is some poly.</p>
+<p>poly-time: P(x) ≤ poly steps</p>
+<p>Definition of NP: decision problems for which there exists a poly-time algorithm.</p>
+<p>P: P() algo.</p>
+<p>NP: P() certifier (checker)</p>
+<p>NP-completeness: NP-complete problems for which there exists a poly-time algorithm.</p>
+<p>EXP: EXP() algo.</p>
+<p>P ⊆ NP ⊆ EXP</p>
+<p>NP = EXP?: is the decision problem as easy as the certification problem?</p>
+<p>NP-Complete: a problem y is NP-complete</p>
+<p>if for every problem X in NP, X ≤ P y</p>
+<p>(Problem X polynomial reduces to problem y)</p>
+<p>if any instance of problem X can be solved using a polynomial number of standard computational steps, then y is NP-complete.</p>
+    </div>
+  </div>
+
+  </div>
+</main>
+
+<script>
+  // Active page highlighting and SPA routing
+  window.addEventListener('hashchange', handleRoute);
+  window.addEventListener('load', handleRoute);
+
+  function handleRoute() {
+    const hash = window.location.hash || '#part-1';
+    
+    // Highlight sidebar links
+    const links = document.querySelectorAll('#sidebar nav a');
+    links.forEach(link => {
+      if (link.getAttribute('href') === hash) {
+        link.classList.add('active');
+        // Scroll sidebar to active link
+        link.scrollIntoView({ block: 'nearest' });
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    // Handle sections visibility
+    if (hash.startsWith('#p1-') || hash === '#part-1') {
+      document.getElementById('part-1-section').style.display = 'block';
+      document.getElementById('part-2-section').style.display = 'none';
+      document.getElementById('part-3-section').style.display = 'none';
+    } else if (hash.startsWith('#p2-') || hash === '#part-2') {
+      document.getElementById('part-1-section').style.display = 'none';
+      document.getElementById('part-2-section').style.display = 'block';
+      document.getElementById('part-3-section').style.display = 'none';
+    } else if (hash.startsWith('#p3-') || hash === '#part-3') {
+      document.getElementById('part-1-section').style.display = 'none';
+      document.getElementById('part-2-section').style.display = 'none';
+      document.getElementById('part-3-section').style.display = 'block';
+    }
+    
+    // Scroll content to active card/header
+    const element = document.querySelector(hash);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
+</body>
+</html>
+{% endraw %}

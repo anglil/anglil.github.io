@@ -36,9 +36,9 @@ title: Notes – Angli Liu
       <li><a href="/notes/stochastic process.pdf" target="_blank">stochastic process</a> (<a href="/stochastic-process/index.html#part-1" target="_blank">Stochastic Process</a>)</li>
       <li><a href="/notes/stochastic process 2.pdf" target="_blank">stochastic process 2</a> (<a href="/stochastic-process/index.html#part-2" target="_blank">Stochastic Process</a>)</li>
       <li><a href="/notes/information theory.pdf" target="_blank">information theory</a> (<a href="/information-theory/index.html" target="_blank">Information Theory</a>)</li>
-      <li><a href="/notes/algorithms.pdf" target="_blank">algorithms</a></li>
-      <li><a href="/notes/algorithms 2.pdf" target="_blank">algorithms 2</a></li>
-      <li><a href="/notes/algorithms 3.pdf" target="_blank">algorithms 3</a></li>
+      <li><a href="/notes/algorithms.pdf" target="_blank">algorithms</a> (<a href="/algorithms/index.html#part-1" target="_blank">Algorithms</a>)</li>
+      <li><a href="/notes/algorithms 2.pdf" target="_blank">algorithms 2</a> (<a href="/algorithms/index.html#part-2" target="_blank">Algorithms</a>)</li>
+      <li><a href="/notes/algorithms 3.pdf" target="_blank">algorithms 3</a> (<a href="/algorithms/index.html#part-3" target="_blank">Algorithms</a>)</li>
       <li><a href="/notes/machine learning.pdf" target="_blank">machine learning</a></li>
       <li><a href="/notes/reinforcement learning.pdf" target="_blank">reinforcement learning</a></li>
       <li><a href="/notes/circuits principles, experiments, and semiconductors.pdf" target="_blank">circuits principles, experiments, and semiconductors</a> (<a href="/college-electrical-engineering/index.html#circuits" target="_blank">College Electrical Engineering</a>)</li>
