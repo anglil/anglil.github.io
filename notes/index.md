@@ -50,7 +50,7 @@ title: Notes – Angli Liu
       <li><a href="/notes/computer architecture.pdf" target="_blank">computer architecture</a> (<a href="/college-computer-engineering/index.html#architecture" target="_blank">College Computer Engineering</a>)</li>
       <li><a href="/notes/computer networks.pdf" target="_blank">computer networks</a> (<a href="/college-computer-engineering/index.html#networks" target="_blank">College Computer Engineering</a>)</li>
       <li><a href="/notes/computer networks 2.pdf" target="_blank">computer networks 2</a> (<a href="/college-computer-engineering/index.html#networks2" target="_blank">College Computer Engineering</a>)</li>
-      <li><a href="/notes/college electrical engineering.pdf" target="_blank">college electrical engineering</a></li>
+      <li><a href="/notes/college electrical engineering.pdf" target="_blank">college electrical engineering</a> (<a href="/college-electrical-engineering-short/index.html" target="_blank">College Electrical Engineering Short</a>)</li>
     </ul>
 
     <hr>

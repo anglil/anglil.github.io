@@ -1,0 +1,588 @@
+---
+---
+{% raw %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Electrical Engineering Short | Complete Lecture Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+      window.MathJax = {
+          tex: {
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+              macros: {
+                  bm: ["\\boldsymbol{#1}", 1]
+              }
+          }
+      };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<button id="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<aside id="sidebar">
+  <div class="book-title">College EE Short<span>Lecture Notes Review</span></div>
+  <nav>
+    <ul>
+      <li><a href="#pg1">Page 1</a></li>
+<li><a href="#pg2">Page 2</a></li>
+<li><a href="#pg3">Page 3</a></li>
+<li><a href="#pg4">Page 4</a></li>
+<li><a href="#pg5">Page 5</a></li>
+<li><a href="#pg6">Page 6</a></li>
+<li><a href="#pg7">Page 7</a></li>
+<li><a href="#pg8">Page 8</a></li>
+<li><a href="#pg9">Page 9</a></li>
+<li><a href="#pg10">Page 10</a></li>
+<li><a href="#pg11">Page 11</a></li>
+<li><a href="#pg12">Page 12</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="content">
+  <div class="chapter-header">
+    <h1>College Electrical Engineering Short</h1>
+    <h2 class="chapter-title">Complete Concise Lecture Notes Review & Core Formulas</h2>
+  </div>
+
+  <div class="pages-section">
+    
+  <div class="page-card" id="pg1">
+    <div class="page-number">Page 1</div>
+    <div class="page-content">
+      <h3>1.1 Electromagnetics & Maxwell's Equations</h3>
+<p>Maxwell's equations describe how electric and magnetic fields propagate and interact with matter. In differential form:</p>
+<ul>
+<li><strong>Faraday's Law of Induction:</strong></li>
+</ul>
+<p>$$</p>
+<p>abla 	imes ec{E} = -rac{\partial ec{B}}{\partial t}$$</p>
+<p>- <strong>Ampere's Circuital Law:</strong></p>
+<p>$$</p>
+<p>abla 	imes ec{H} = ec{J}_f + rac{\partial ec{D}}{\partial t}$$</p>
+<ul>
+<li><strong>Gauss's Law for Electricity:</strong></li>
+</ul>
+<p>$$</p>
+<p>abla \cdot ec{D} =</p>
+<p>ho_f$$</p>
+<p>- <strong>Gauss's Law for Magnetism:</strong></p>
+<p>$$</p>
+<p>abla \cdot ec{B} = 0$$</p>
+<h3>1.2 Electromagnetic Potentials</h3>
+<p>To solve Maxwell's equations, we define vector potential $ec{A}$ and scalar potential $\phi$:</p>
+<ul>
+<li><strong>Magnetic Vector Potential:</strong></li>
+</ul>
+<p>$$ec{B} =</p>
+<p>abla 	imes ec{A}$$</p>
+<p>- <strong>Electric Field relation:</strong></p>
+<p>$$ec{E} = -</p>
+<p>abla \phi - rac{\partial ec{A}}{\partial t}$$</p>
+<ul>
+<li><strong>Constitutive Relations:</strong></li>
+</ul>
+<p>$$ec{B} = \mu ec{H}, \quad ec{D} = \epsilon ec{E}, \quad ec{J}_c = \sigma ec{E}$$</p>
+<p>### 1.3 Poynting's Theorem & Wave Equations</p>
+<p>- <strong>Poynting's Theorem (Power Flow):</strong></p>
+<p>$$-</p>
+<p>abla \cdot ec{S} = ec{J}_c \cdot ec{E} + ec{E} \cdot rac{\partial ec{D}}{\partial t} + ec{H} \cdot rac{\partial ec{B}}{\partial t}$$</p>
+<p>where $ec{S} = ec{E} 	imes ec{H}$ is the Poynting vector representing power density.</p>
+<ul>
+<li>**Wave Equations under Lorentz Gauge ($</li>
+</ul>
+<p>abla \cdot ec{A} = -\mu\epsilon rac{\partial \phi}{\partial t}$):**</p>
+<ul>
+<li>For Vector Potential:</li>
+</ul>
+<p>$$</p>
+<p>abla^2 ec{A} - \mu\epsilon rac{\partial^2 ec{A}}{\partial t^2} = -\mu ec{J}_f$$</p>
+<p>- For Scalar Potential:</p>
+<p>$$</p>
+<p>abla^2 \phi - \mu\epsilon rac{\partial^2 \phi}{\partial t^2} = -rac{</p>
+<p>ho_f}{\epsilon}$$</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg2">
+    <div class="page-number">Page 2</div>
+    <div class="page-content">
+      <h3>2.1 Systems Analysis Domains</h3>
+<p>Signal processing systems can be analyzed in different mathematical domains depending on time continuity:</p>
+<ul>
+<li><strong>Continuous-Time Domain ($t$-domain):</strong></li>
+<li>Input-output relation is defined by convolution:</li>
+</ul>
+<p>$$y(t) = x(t) * h(t) = \int_{-\infty}^{\infty} x(	au) h(t-	au) d	au$$</p>
+<p>- <strong>Laplace Domain ($s$-domain):</strong></p>
+<p>- Transform definition:</p>
+<p>$$X(s) = \int_{0}^{\infty} x(t) e^{-st} dt$$</p>
+<ul>
+<li>System output:</li>
+</ul>
+<p>$$Y(s) = X(s) H(s)$$</p>
+<p>- <strong>Discrete-Time Domain ($n$-domain):</strong></p>
+<p>- Input-output relation:</p>
+<p>$$y(n) = x(n) * h(n) = \sum_{m=-\infty}^{\infty} x(m) h(n-m)$$</p>
+<ul>
+<li><strong>Z-Domain ($z$-domain):</strong></li>
+<li>Transform definition:</li>
+</ul>
+<p>$$X(z) = \sum_{n=-\infty}^{\infty} x(n) z^{-n}$$</p>
+<p>- System output:</p>
+<p>$$Y(z) = X(z) H(z)$$</p>
+<h3>2.2 Discrete Fourier Transform & FFT</h3>
+<ul>
+<li><strong>DFT Definition:</strong></li>
+</ul>
+<p>$$X(k) = \sum_{n=0}^{N-1} x(n) e^{-jrac{2\pi}{N}kn}$$</p>
+<p>- <strong>Decimation-in-Time (DIT) Radix-2 FFT:</strong> Splits the input sequence into even and odd indices, reducing complexity from $O(N^2)$ to $O(N \log N)$.</p>
+<p>- <strong>Decimation-in-Frequency (DIF) Radix-2 FFT:</strong> Splits the output spectrum into even and odd frequencies.</p>
+<p>- <strong>Split-Radix FFT:</strong> Combines Radix-2 and Radix-4 algorithms to achieve a minimum number of complex multiplications.</p>
+<p>### 2.3 Digital Filter Structures</p>
+<p>Digital filters are realized in hardware or software using basic structural building blocks:</p>
+<p>- <strong>Direct Form (DF-I & DF-II):</strong> Direct implementation of the difference equation. DF-II minimizes memory registers.</p>
+<p>- <strong>Cascade Form:</strong> Realizes the transfer function as a product of second-order sections (biquads).</p>
+<p>- <strong>Parallel Form:</strong> Realizes the transfer function as a sum of second-order sections via partial fraction expansion.</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg3">
+    <div class="page-number">Page 3</div>
+    <div class="page-content">
+      <h3>3.1 Digital Filter Design Methods</h3>
+<ul>
+<li><strong>Impulse Invariant Method:</strong></li>
+<li>Characteristics: Maps analog poles to digital poles. Aliasing occurs if the analog frequency response is not band-limited.</li>
+<li>Formula:</li>
+</ul>
+<p>$$H(e^{j\omega}) = rac{1}{T} \sum_{n=-\infty}^{\infty} H_a\left(jrac{\omega}{T} + jrac{2\pi}{T} n</p>
+<p>ight)$$</p>
+<p>- Pole mapping:</p>
+<p>$$rac{1}{s - s_n}</p>
+<p>ightarrow rac{1}{1 - e^{s_n T} z^{-1}}$$</p>
+<ul>
+<li><strong>Bilinear Transform Method:</strong></li>
+<li>Characteristics: Maps the entire analog frequency range to the digital range. No aliasing occurs.</li>
+<li>Distortion: Frequency warping occurs.</li>
+</ul>
+<h3>3.2 Ergodicity & Karhunen-Loève (K-L) Expansion</h3>
+<ul>
+<li><strong>Ergodicity:</strong> A stationary random process is ergodic if its time average equals its ensemble average.</li>
+<li><strong>K-L Expansion:</strong> Expands a random process $X(t)$ using the eigenfunctions of its autocorrelation function $R_X(t, s)$ as an orthonormal basis. The expansion coefficients are uncorrelated.</li>
+</ul>
+<h3>3.3 Quantization Noise & Filter Structure</h3>
+<ul>
+<li><strong>Scaling designs:</strong> Low-sensitivity realization using cascade/parallel structures with second-order sections.</li>
+<li><strong>Quantization Noise:</strong></li>
+<li>Quantization error variance:</li>
+</ul>
+<p>$$\sigma_q^2 = rac{\Delta^2}{12}$$</p>
+<p>- Single noise source output variance:</p>
+<p>$$\sigma_{no}^2 = \sigma_q^2 \sum_{n=-\infty}^{\infty} h(n)^2 = \sigma_q^2 rac{1}{2\pi} \int_{-\pi}^{\pi} |H(e^{j\omega})|^2 d\omega$$</p>
+<ul>
+<li>Multi-source output noise variance sum:</li>
+</ul>
+<p>$$\sigma_{total}^2 = \sum_m \Delta^2 \sum h_m(n)^2$$</p>
+<p>- Scaling factor: $eta < 1$ is used to prevent overflow.</p>
+<p>### 3.4 Random Processes & Stationarity</p>
+<p>- <strong>Envelope Noise:</strong></p>
+<p>- Broadband Gaussian noise without sine wave: Rayleigh distribution.</p>
+<p>- Broadband Gaussian noise with sine wave: Rice distribution.</p>
+<p>- <strong>Second-Order Process:</strong> A process whose mean $E[X(t)]$ and variance $D[X(t)]$ exist.</p>
+<p>- <strong>Strictly Stationary Process (SSS):</strong> Joint distribution is invariant under time shifts.</p>
+<p>- <strong>Weakly Stationary Process (WSS):</strong></p>
+<p>- Mean is constant: $E[X(t)] = m_X$</p>
+<p>- Autocorrelation depends only on time difference: $R_X(t, s) = R_X(t-s)$</p>
+<p>- <strong>Poisson Process:</strong></p>
+<p>- Probability distribution:</p>
+<p>$$P(N(t) = n) = rac{(\lambda t)^n}{n!} e^{-\lambda t}$$</p>
+<ul>
+<li>Has independent and stationary increments.</li>
+<li><strong>Compound Poisson Process:</strong></li>
+</ul>
+<p>$$X(t) = \sum_{k=1}^{N(t)} Y_k$$</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg4">
+    <div class="page-number">Page 4</div>
+    <div class="page-content">
+      <h3>4.1 Markov Chain Classifications</h3>
+<ul>
+<li><strong>Markov Property:</strong></li>
+</ul>
+<p>$$P(X_{n+1} = j \mid X_n = i, X_{n-1} = i_{n-1}, \dots, X_0 = i_0) = P(X_{n+1} = j \mid X_n = i)$$</p>
+<p>- <strong>State Classification:</strong></p>
+<p>- <strong>Transient State (Non-recurrent):</strong> $f_{ii} < 1$, and $\sum_{n=1}^{\infty} P_{ii}^{(n)} < \infty$.</p>
+<p>- <strong>Recurrent State:</strong> $f_{ii} = 1$, and $\sum_{n=1}^{\infty} P_{ii}^{(n)} = \infty$.</p>
+<p>- <strong>Positive Recurrent State:</strong> Recurrent state with finite mean recurrence time $\mu_i < \infty$.</p>
+<p>- <strong>Null Recurrent State:</strong> Recurrent state with infinite mean recurrence time $\mu_i = \infty$.</p>
+<p>- <strong>Stationary Distribution:</strong> A probability distribution $\pi$ satisfying $\pi = \pi P$.</p>
+<p>### 4.2 Analog Electronics: Amplifier Models</p>
+<p>- <strong>DC Model:</strong> Used to determine the quiescent operating point (Q-point).</p>
+<p>- <strong>AC Model:</strong> Used to analyze the small-signal AC response (AC load lines).</p>
+<p>- <strong>Mid-band Small-Signal Model:</strong> Capacitors are treated as short circuits or open circuits. High frequency parasitic parameters are ignored. Determines mid-band input resistance $R_{in}$, output resistance $R_{out}$, and voltage gain $A_v$.</p>
+<p>- <strong>High-Frequency Small-Signal Model (Hybrid-$\pi$ Model):</strong> Includes BJT internal capacitances ($C_\pi, C_\mu$) and base-spreading resistance ($r_{bb'}$). Hybrid-$\pi$ elements:</p>
+<p>- Base-spreading resistance: $r_{bb'}$</p>
+<p>- Base-to-internal-emitter resistance: $r_{b'e}$</p>
+<p>- Diffusion/depletion capacitance: $C_\pi$ (or $C_e$)</p>
+<p>- Collector depletion capacitance: $C_\mu$ (or $C_c$)</p>
+<p>- Transconductance: $g_m v_{b'e}$</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg5">
+    <div class="page-number">Page 5</div>
+    <div class="page-content">
+      <h3>5.1 Operational Amplifiers (Op-Amps)</h3>
+<ul>
+<li><strong>Characteristics:</strong> High input impedance, low output impedance, and high open-loop gain.</li>
+<li><strong>Linear Applications:</strong> Summing amplifier, subtractor, differentiator, integrator (requires negative feedback for stability).</li>
+<li><strong>Comparators:</strong> Open-loop configuration or with positive feedback to create hysteresis (Schmitt trigger).</li>
+<li><strong>Voltage Follower:</strong> Unity-gain buffer using direct negative feedback.</li>
+</ul>
+<h3>5.2 ADC & DAC Architectures</h3>
+<ul>
+<li><strong>Digital-to-Analog Converters (DAC):</strong></li>
+<li><strong>Weighted Resistor DAC:</strong> Combines binary-weighted currents.</li>
+<li><strong>R-2R Ladder DAC:</strong> Uses only two resistor values ($R$ and $2R$) to scale current.</li>
+<li><strong>Analog-to-Digital Converters (ADC):</strong></li>
+<li><strong>Flash ADC (Parallel comparator):</strong> Fastest conversion speed; requires $2^n-1$ comparators.</li>
+<li><strong>Successive Approximation Register (SAR) ADC:</strong> Uses binary search via feedback DAC; medium speed, low cost.</li>
+<li><strong>Dual-Slope Integrating ADC:</strong> High accuracy, slow speed, high noise immunity.</li>
+</ul>
+<h3>5.3 Digital Logic & Memory</h3>
+<ul>
+<li><strong>Logic Gates:</strong> Implemented using BJTs (TTL) or MOSFETs (CMOS) to perform bit-by-bit digital processing.</li>
+<li><strong>Decoder:</strong> Converts an $n$-bit input to $2^n$ unique outputs.</li>
+<li><strong>Encoder:</strong> Converts $2^n$ input lines to an $n$-bit binary code.</li>
+<li><strong>Multiplexer (Selector):</strong> Selects one of many input signals to route to a single output.</li>
+<li><strong>Demultiplexer (Distributor):</strong> Routes a single input to one of many outputs.</li>
+<li><strong>Adders:</strong> Ripple carry adder vs. Carry lookahead adder (eliminates carry hazards).</li>
+<li><strong>Microprocessor Byte Order:</strong></li>
+<li><strong>Little-Endian:</strong> Low address stores the least significant byte (LSB) (e.g., x86).</li>
+<li><strong>Big-Endian:</strong> Low address stores the most significant byte (MSB) (e.g., Network protocols).</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg6">
+    <div class="page-number">Page 6</div>
+    <div class="page-content">
+      <h3>6.1 Computer Architecture & ISA</h3>
+<ul>
+<li><strong>Software Levels:</strong></li>
+<li><strong>Assembler:</strong> Translates assembly instructions (e.g., MASM) to machine code.</li>
+<li><strong>Compiler:</strong> Translates high-level language (e.g., C/C++) to machine code.</li>
+<li><strong>Interpreter:</strong> Directly executes scripts (e.g., MATLAB) without compilation.</li>
+<li><strong>CPU Time Formula:</strong></li>
+</ul>
+<p>$$\text{CPU Time} = \text{Instruction Count} \times \text{CPI} \times \text{Clock Cycle Time}$$</p>
+<p>where $\text{CPI}$ is Clock Cycles Per Instruction.</p>
+<p>- <strong>Architectures:</strong></p>
+<p>- <strong>CISC (Complex Instruction Set Computer):</strong> Fewer instructions, higher CPI, complex hardware.</p>
+<p>- <strong>RISC (Reduced Instruction Set Computer):</strong> More instructions, lower CPI (aims for 1), simple hardware.</p>
+<p>- <strong>Instruction Set Architecture (ISA) types:</strong> Stack, Accumulator, Register-Memory, Register-Register (Load-Store).</p>
+<p>### 6.2 x86 Real Mode Memory Segmentation</p>
+<p>- <strong>Memory limit:</strong> 1 MB address space, 20-bit address bus.</p>
+<p>- <strong>Address translation:</strong> 16-bit segment address shifted left by 4 bits plus a 16-bit offset:</p>
+<p>$$\text{Physical Address} = \text{Segment} \times 16 + \text{Offset}$$</p>
+<ul>
+<li><strong>Segment Registers:</strong></li>
+<li>`CS` (Code Segment): Points to instruction memory (with IP).</li>
+<li>`DS` (Data Segment): Points to data memory (with BX, SI, DI).</li>
+<li>`SS` (Stack Segment): Points to stack memory (with SP, BP).</li>
+<li>`ES` (Extra Segment): Points to destination strings (with DI).</li>
+</ul>
+<h3>6.3 CPU Pipelining & CPU Hazards</h3>
+<ul>
+<li><strong>Control Methods:</strong> Hardwired control (fast) vs. Microprogrammed control (flexible but slower).</li>
+<li><strong>Pipelining Hazards:</strong></li>
+<li><strong>Structural Hazards:</strong> Resource conflict where hardware cannot support combination of instructions.</li>
+<li><strong>Data Hazards:</strong> Instruction depends on the result of a previous instruction still in the pipeline.</li>
+<li><strong>Control Hazards:</strong> Branch instructions determine the next instruction to fetch.</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg7">
+    <div class="page-number">Page 7</div>
+    <div class="page-content">
+      <h3>7.1 C++ Variables and Storage Classes</h3>
+<ul>
+<li>`static`: Local static variables retain their values between function calls and are stored in the data segment. Global static variables have file scope.</li>
+<li>`const`: Variables declared const are immutable and must be initialized upon declaration.</li>
+</ul>
+<h3>7.2 Object-Oriented Programming (OOP) in C++</h3>
+<ul>
+<li><strong>Polymorphism:</strong></li>
+<li><strong>Static Polymorphism (Compile-time):</strong> Overloading (functions/operators) and templates (class/function templates).</li>
+<li><strong>Dynamic Polymorphism (Run-time):</strong> Inheritance and virtual functions.</li>
+<li><strong>Virtual Functions:</strong> Declared with `virtual` keyword. Checked at run-time (via V-table) to invoke the correct derived function.</li>
+<li><strong>Constructors/Destructors:</strong> Constructors initialize data members and bind memory. Destructors can be virtual to ensure clean deletion of derived objects.</li>
+<li><strong>Friend Classes/Functions:</strong> Can access private and protected members of another class. Friends are one-way and are not inherited.</li>
+<li><strong>I/O Streams:</strong> `ofstream` (inherits from `ostream` for output files) and `ifstream` (inherits from `istream` for input files).</li>
+</ul>
+<h3>7.3 Numerical Methods</h3>
+<ul>
+<li><strong>Root Finding:</strong></li>
+<li><strong>Bisection Method:</strong> Divides the interval containing the root in half iteratively.</li>
+<li><strong>Newton-Raphson Method:</strong> Fast iterative tangent-line method:</li>
+</ul>
+<p>$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$</p>
+<p>- <strong>Ordinary Differential Equations (ODEs):</strong></p>
+<p>- Euler's Method: Iteratively steps forward:</p>
+<p>$$y_{n+1} = y_n + h f(t_n, y_n)$$</p>
+<ul>
+<li><strong>Linear Systems:</strong> Iterative solvers such as Jacobi iteration and Gauss-Seidel iteration. Converges if spectral radius of iteration matrix $\rho(B) < 1$.</li>
+<li><strong>Regression:</strong> Solving overdetermined systems by minimizing the sum of squared residuals (Least Squares).</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg8">
+    <div class="page-number">Page 8</div>
+    <div class="page-content">
+      <h3>8.1 String Matching Algorithms</h3>
+<ul>
+<li><strong>KMP (Knuth-Morris-Pratt) Algorithm:</strong></li>
+<li>Uses a precomputed `next` array representing prefix matching lengths to skip redundant character comparisons.</li>
+<li>Time complexity: $O(m + n)$.</li>
+</ul>
+<h3>8.2 Sorting Algorithms Summary</h3>
+<ul>
+<li><strong>Bubble Sort:</strong> Compares adjacent elements and swaps them. Stable, $O(n^2)$.</li>
+<li><strong>Quicksort:</strong> Divides array using a pivot. Unstable, average $O(n \log n)$, worst-case $O(n^2)$.</li>
+<li><strong>Direct Insertion Sort:</strong> Inserts each item into its correct place in the sorted prefix. Stable, $O(n^2)$.</li>
+<li><strong>Binary Insertion Sort:</strong> Uses binary search to find the insertion index. Stable, $O(n^2)$.</li>
+<li><strong>Shell Sort:</strong> Sorts sub-arrays separated by a diminishing gap. Unstable, $O(n^{1.5})$.</li>
+<li><strong>Simple Selection Sort:</strong> Finds the minimum element and swaps it. Unstable, $O(n^2)$.</li>
+<li><strong>Merge Sort:</strong> Recursively divides and merges sorted halves. Stable, $O(n \log n)$.</li>
+<li><strong>Heap Sort:</strong> Builds a heap and repeatedly extracts the root. Unstable, $O(n \log n)$.</li>
+</ul>
+<h3>8.3 RF Impedance Matching & Power Amplifiers</h3>
+<ul>
+<li><strong>Maximum Power Transfer:</strong> For complex source impedance $Z_s$, maximum power is delivered to the load when:</li>
+</ul>
+<p>$$Z_L = Z_s^*$$</p>
+<p>- <strong>Conjugate Matching:</strong> Match transmission line impedance $Z_c$ with load $Z_L$.</p>
+<p>- <strong>Resonant Matching Networks:</strong> L-networks, $\pi$-networks, and T-networks are used to transform impedances and filter harmonics.</p>
+<p>- <strong>Power Amplifier Classes:</strong></p>
+<p>- <strong>Class A:</strong> Conduction angle $	heta = 180^\circ$ (always conducting), low efficiency ($\eta < 50\%$), highly linear.</p>
+<p>- <strong>Class B:</strong> Conduction angle $	heta = 90^\circ$, max efficiency $\eta pprox 78.5\%$, uses push-pull configuration to reduce distortion.</p>
+<p>- <strong>Class C:</strong> Conduction angle $	heta < 90^\circ$, high efficiency, non-linear, requires resonant LC tank load.</p>
+<p>- <strong>Class D:</strong> Switching amplifier, theoretical efficiency up to $100\%$.</p>
+<p>- <strong>Oscillators (Barkhausen Criteria):</strong></p>
+<p>- <strong>Amplitude Condition:</strong> $|A F| = 1$ (startup requires $|A F| > 1$).</p>
+<p>- <strong>Phase Condition:</strong> $\phi_A + \phi_F = 2n\pi$.</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg9">
+    <div class="page-number">Page 9</div>
+    <div class="page-content">
+      <h3>9.1 RF Oscillators</h3>
+<ul>
+<li><strong>LC Oscillators:</strong></li>
+<li><strong>Colpitts Oscillator:</strong> Uses a capacitive divider in the resonant tank feedback.</li>
+<li><strong>Hartley Oscillator:</strong> Uses an inductive divider in the resonant tank feedback.</li>
+<li><strong>Clapp / Seiler Oscillators:</strong> Modified Colpitts with an extra capacitor in series (Clapp) or parallel (Seiler) to improve stability.</li>
+<li><strong>Active Stage:</strong> Common-Emitter (CE) and Common-Base (CB) are suitable; Common-Collector (CC) is not suitable due to lack of voltage gain.</li>
+<li><strong>Crystal Oscillators (Quartz):</strong></li>
+<li><strong>Series Mode:</strong> Crystal acts as a low-impedance short circuit at series resonance $f_s$.</li>
+<li><strong>Parallel Mode:</strong> Crystal acts as a high-value inductor between $f_s$ and $f_p$ (e.g., Pierce oscillator).</li>
+</ul>
+<h3>9.2 Superheterodyne Receivers</h3>
+<ul>
+<li><strong>Architecture:</strong> Antenna $	o$ LNA $	o$ RF Filter $	o$ Mixer (with LO) $	o$ IF Filter $	o$ Demodulator.</li>
+<li><strong>Zero-IF (Direct Conversion):</strong> Down-converts RF directly to baseband. Eliminates image frequency filter requirements but is sensitive to DC offset.</li>
+<li><strong>Image Rejection Mixers:</strong> Hartley and Weaver architectures reject the image frequency using phase shifting.</li>
+</ul>
+<h3>9.3 FM Modulation & Demodulation</h3>
+<ul>
+<li><strong>Direct FM:</strong> A varactor diode directly modulates the frequency of an LC tank oscillator.</li>
+<li><strong>Indirect FM (Armstrong Method):</strong> Integrates the message first, performs phase modulation (PM), and then uses frequency multipliers to increase frequency deviation.</li>
+<li><strong>FM Demodulation:</strong></li>
+<li><strong>Slope Detector:</strong> Double-tuned circuits convert FM to AM (differentiation), followed by envelope detection.</li>
+<li><strong>Quadrature Detector (Delay Line):</strong> Multiplies the FM signal with a phase-shifted version of itself.</li>
+<li><strong>Phase-Locked Loop (PLL) Demodulator:</strong> VCO output tracks input FM frequency; loop filter voltage is the demodulated output.</li>
+</ul>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg10">
+    <div class="page-number">Page 10</div>
+    <div class="page-content">
+      <h3>10.1 Electromagnetic Waveguides</h3>
+<p>Waveguides guide high-frequency electromagnetic waves using reflective boundary conditions:</p>
+<ul>
+<li><strong>Guided Wave Equations:</strong></li>
+<li>Guided wave number:</li>
+</ul>
+<p>$$k_z = \sqrt{k^2 - k_c^2}$$</p>
+<p>- Guided wave wavelength:</p>
+<p>$$\lambda_g = rac{2\pi}{k_z}$$</p>
+<ul>
+<li>Cutoff frequency:</li>
+</ul>
+<p>$$f_c = rac{v}{2\pi} k_c$$</p>
+<p>- Cutoff wavelength:</p>
+<p>$$\lambda_c = rac{2\pi}{k_c}$$</p>
+<ul>
+<li><strong>Field Decomposition:</strong> Fields decompose into transverse electric (TE, $E_z = 0$) and transverse magnetic (TM, $H_z = 0$) modes.</li>
+</ul>
+<h3>10.2 Transmission Line Theory</h3>
+<ul>
+<li><strong>Telegrapher's Equations:</strong></li>
+</ul>
+<p>$$\frac{dV(z)}{dz} = -(R + j\omega L)I(z)$$</p>
+<p>$$\frac{dI(z)}{dz} = -(G + j\omega C)V(z)$$</p>
+<ul>
+<li><strong>Line Terminations:</strong></li>
+<li><strong>Open Circuit:</strong> $Z_L = \infty$, Reflection Coefficient $\Gamma_L = 1$, SWR $\rho = \infty$.</li>
+<li><strong>Short Circuit:</strong> $Z_L = 0$, Reflection Coefficient $\Gamma_L = -1$, SWR $\rho = \infty$.</li>
+<li><strong>Pure Reactance:</strong> $Z_L = jX$, $|\Gamma_L| = 1$, SWR $\rho = \infty$.</li>
+<li><strong>Matched Load:</strong> $Z_L = Z_c$, Reflection Coefficient $\Gamma_L = 0$, SWR $\rho = 1$ (pure traveling wave).</li>
+</ul>
+<h3>10.3 Microwave Networks & Antennas</h3>
+<ul>
+<li><strong>Scattering Parameters (S-parameters):</strong> Relates incident power waves ($a$) to reflected waves ($b$):</li>
+</ul>
+<p>$$b = [S] a$$</p>
+<p>For a matched port $i$, $S_{ii} = 0$.</p>
+<p>- <strong>Antennas:</strong> Wire antennas, aperture antennas, and microstrip patch antennas. Antenna arrays use the pattern multiplication theorem:</p>
+<p>$$\text{Total Pattern} = \text{Element Factor} \times \text{Array Factor}$$</p>
+<h3>10.4 Information Theory</h3>
+<ul>
+<li><strong>Discrete Source Entropy:</strong> Measures source uncertainty:</li>
+</ul>
+<p>$$H(X) = -\sum_{i=1}^M P(x_i) \log_2 P(x_i) \le \log_2 M$$</p>
+<p>- <strong>Conditional Entropy:</strong></p>
+<p>$$H(Y|X) = -\sum_j P(y_j|x_i) \log_2 P(y_j|x_i)$$</p>
+<ul>
+<li><strong>Channel Capacity:</strong></li>
+</ul>
+<p>$$C = \max \{H(X) - H(X|Y)\} \le \log_2 M - H(Y|X)$$</p>
+<p>- <strong>Continuous Source Entropy:</strong></p>
+<p>$$H(X) = -\int_{-\infty}^{\infty} p(x) \log_2 p(x) dx \le \log_2(\sqrt{2\pi e} \sigma_X)$$</p>
+<ul>
+<li><strong>Shannon-Hartley Theorem:</strong></li>
+</ul>
+<p>$$C = B \log_2\left(1 + \frac{S}{N}\right)$$</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg11">
+    <div class="page-number">Page 11</div>
+    <div class="page-content">
+      <h3>11.1 Channel Coding (Error Correction)</h3>
+<ul>
+<li><strong>Hamming Codes:</strong> $(2^r - 1, 2^r - 1 - r)$ block codes with minimum Hamming distance $d_{min} = 3$. Can correct 1-bit errors.</li>
+<li><strong>Linear Block Codes:</strong></li>
+<li>Generator matrix $G = [I_k \mid P]$. Parity check matrix $H = [-P^T \mid I_{n-k}]$.</li>
+<li>Encoding: $C = M \cdot G$.</li>
+<li>Syndrome: $S = R \cdot H^T$ (if $S = 0$, no errors detected).</li>
+<li><strong>Cyclic Codes:</strong> Realized using feedback shift registers:</li>
+<li>Codeword polynomial:</li>
+</ul>
+<p>$$C(X) = X^{n-k} M(X) + (X^{n-k} M(X) \bmod g(X))$$</p>
+<p>- Parity check:</p>
+<p>$$S(X) = R(X) \bmod g(X)$$</p>
+<ul>
+<li><strong>Convolutional Codes:</strong> Realized by passing data through shift registers. Decoded using the Viterbi algorithm over a trellis diagram.</li>
+</ul>
+<h3>11.2 Digital Communication Systems</h3>
+<ul>
+<li><strong>Baseband Equalization:</strong> Duobinary signaling (partial response) introduces controlled ISI to achieve Nyquist rate without brick-wall filters.</li>
+<li><strong>Modulation Schemes:</strong> Minimum Shift Keying (MSK) features a constant envelope and continuous phase, minimizing spectral side-lobes.</li>
+<li><strong>Optimal Receiver:</strong> Matched filters maximize output SNR in the presence of AWGN:</li>
+</ul>
+<p>$$h(t) = s(T - t)$$</p>
+<p>$$\text{Peak SNR} = \text{Peak Signal Energy} / (N_0 / 2)$$</p>
+    </div>
+  </div>
+
+
+  <div class="page-card" id="pg12">
+    <div class="page-number">Page 12</div>
+    <div class="page-content">
+      <h3>12.1 Graph Algorithms</h3>
+<ul>
+<li><strong>Minimum Spanning Tree (MST):</strong></li>
+<li><strong>Prim's Algorithm:</strong> Starts from a root node and adds the closest unvisited node. $O(V^2)$ or $O(E \log V)$, preferred for dense graphs.</li>
+<li><strong>Kruskal's Algorithm:</strong> Sorts edges by weight and adds them if they don't form a cycle. $O(E \log E)$, preferred for sparse graphs.</li>
+<li><strong>Shortest Paths:</strong></li>
+<li><strong>Dijkstra's Algorithm:</strong> Solves single-source shortest path for non-negative edge weights.</li>
+<li><strong>Floyd-Warshall Algorithm:</strong> Solves all-pairs shortest paths using dynamic programming: $O(V^3)$.</li>
+<li><strong>Critical Path Method (CPM):</strong> Analyzes AOE (Activity On Edge) networks using topological sorting to find the earliest/latest event occurrence times.</li>
+</ul>
+<h3>12.2 Searching & Indexing</h3>
+<ul>
+<li><strong>Search Techniques:</strong></li>
+<li><strong>Sequential Search:</strong> Scan elements one-by-one. $O(n)$.</li>
+<li><strong>Binary Search:</strong> Divide-and-conquer on sorted lists. $O(\log n)$.</li>
+<li><strong>Binary Search Tree (BST):</strong> In-order traversal yields sorted elements. Can be self-balanced (AVL trees) to ensure $O(\log n)$ performance.</li>
+<li><strong>B-Trees:</strong> Balanced $m$-way search trees designed for disk indexing.</li>
+<li><strong>KMP Pattern Matching:</strong> Utilizes a failure function `next` to avoid back-tracking on the text string.</li>
+</ul>
+<h3>12.3 Embedded System Design</h3>
+<p>Case study: Digital Temperature Monitor</p>
+<ul>
+<li><strong>Calibration:</strong> Multi-point calibration to correct non-linearity.</li>
+<li><strong>Analog-to-Digital Conversion:</strong> Periodic reading updates using a built-in ADC.</li>
+<li><strong>Temperature Compensation:</strong> High-temperature and low-temperature range compensations.</li>
+<li><strong>Over-temperature Action:</strong> Log maximum peak temperatures and trigger alarms.</li>
+</ul>
+    </div>
+  </div>
+
+  </div>
+</main>
+
+<script>
+  // Active page highlighting and SPA routing
+  window.addEventListener('hashchange', handleRoute);
+  window.addEventListener('load', handleRoute);
+
+  function handleRoute() {
+    const hash = window.location.hash || '#pg1';
+    
+    // Highlight sidebar links
+    const links = document.querySelectorAll('#sidebar nav a');
+    links.forEach(link => {
+      if (link.getAttribute('href') === hash) {
+        link.classList.add('active');
+        // Scroll sidebar to active link
+        link.scrollIntoView({ block: 'nearest' });
+      } else {
+        link.classList.remove('active');
+      }
+    });
+    
+    // Scroll content to active card/header
+    const element = document.querySelector(hash);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
+</body>
+</html>
+{% endraw %}
