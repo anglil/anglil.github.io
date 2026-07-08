@@ -61,52 +61,38 @@
 <ul>
 <li><strong>Faraday's Law of Induction:</strong></li>
 </ul>
-<p>$$</p>
-<p>abla 	imes ec{E} = -rac{\partial ec{B}}{\partial t}$$</p>
+<p>$$\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}$$</p>
 <p>- <strong>Ampere's Circuital Law:</strong></p>
-<p>$$</p>
-<p>abla 	imes ec{H} = ec{J}_f + rac{\partial ec{D}}{\partial t}$$</p>
+<p>$$\nabla \times \vec{H} = \vec{J}_f + \frac{\partial \vec{D}}{\partial t}$$</p>
 <ul>
 <li><strong>Gauss's Law for Electricity:</strong></li>
 </ul>
-<p>$$</p>
-<p>abla \cdot ec{D} =</p>
-<p>ho_f$$</p>
+<p>$$\nabla \cdot \vec{D} = \rho_f$$</p>
 <p>- <strong>Gauss's Law for Magnetism:</strong></p>
-<p>$$</p>
-<p>abla \cdot ec{B} = 0$$</p>
+<p>$$\nabla \cdot \vec{B} = 0$$</p>
 <h3>1.2 Electromagnetic Potentials</h3>
-<p>To solve Maxwell's equations, we define vector potential $ec{A}$ and scalar potential $\phi$:</p>
+<p>To solve Maxwell's equations, we define vector potential $\vec{A}$ and scalar potential $\phi$:</p>
 <ul>
 <li><strong>Magnetic Vector Potential:</strong></li>
 </ul>
-<p>$$ec{B} =</p>
-<p>abla 	imes ec{A}$$</p>
+<p>$$\vec{B} = \nabla \times \vec{A}$$</p>
 <p>- <strong>Electric Field relation:</strong></p>
-<p>$$ec{E} = -</p>
-<p>abla \phi - rac{\partial ec{A}}{\partial t}$$</p>
+<p>$$\vec{E} = -\nabla \phi - \frac{\partial \vec{A}}{\partial t}$$</p>
 <ul>
 <li><strong>Constitutive Relations:</strong></li>
 </ul>
-<p>$$ec{B} = \mu ec{H}, \quad ec{D} = \epsilon ec{E}, \quad ec{J}_c = \sigma ec{E}$$</p>
+<p>$$\vec{B} = \mu \vec{H}, \quad \vec{D} = \epsilon \vec{E}, \quad \vec{J}_c = \sigma \vec{E}$$</p>
 <p>### 1.3 Poynting's Theorem & Wave Equations</p>
 <p>- <strong>Poynting's Theorem (Power Flow):</strong></p>
-<p>$$-</p>
-<p>abla \cdot ec{S} = ec{J}_c \cdot ec{E} + ec{E} \cdot rac{\partial ec{D}}{\partial t} + ec{H} \cdot rac{\partial ec{B}}{\partial t}$$</p>
-<p>where $ec{S} = ec{E} 	imes ec{H}$ is the Poynting vector representing power density.</p>
+<p>$$-\nabla \cdot \vec{S} = \vec{J}_c \cdot \vec{E} + \vec{E} \cdot \frac{\partial \vec{D}}{\partial t} + \vec{H} \cdot \frac{\partial \vec{B}}{\partial t}$$</p>
+<p>where $\vec{S} = \vec{E} \times \vec{H}$ is the Poynting vector representing power density.</p>
 <ul>
-<li>**Wave Equations under Lorentz Gauge ($</li>
-</ul>
-<p>abla \cdot ec{A} = -\mu\epsilon rac{\partial \phi}{\partial t}$):**</p>
-<ul>
+<li><strong>Wave Equations under Lorentz Gauge ($\nabla \cdot \vec{A} = -\mu\epsilon \frac{\partial \phi}{\partial t}$):</strong></li>
 <li>For Vector Potential:</li>
 </ul>
-<p>$$</p>
-<p>abla^2 ec{A} - \mu\epsilon rac{\partial^2 ec{A}}{\partial t^2} = -\mu ec{J}_f$$</p>
+<p>$$\nabla^2 \vec{A} - \mu\epsilon \frac{\partial^2 \vec{A}}{\partial t^2} = -\mu \vec{J}_f$$</p>
 <p>- For Scalar Potential:</p>
-<p>$$</p>
-<p>abla^2 \phi - \mu\epsilon rac{\partial^2 \phi}{\partial t^2} = -rac{</p>
-<p>ho_f}{\epsilon}$$</p>
+<p>$$\nabla^2 \phi - \mu\epsilon \frac{\partial^2 \phi}{\partial t^2} = -\frac{\rho_f}{\epsilon}$$</p>
     </div>
   </div>
 
@@ -120,7 +106,7 @@
 <li><strong>Continuous-Time Domain ($t$-domain):</strong></li>
 <li>Input-output relation is defined by convolution:</li>
 </ul>
-<p>$$y(t) = x(t) * h(t) = \int_{-\infty}^{\infty} x(	au) h(t-	au) d	au$$</p>
+<p>$$y(t) = x(t) * h(t) = \int_{-\infty}^{\infty} x(\tau) h(t-\tau) d\tau$$</p>
 <p>- <strong>Laplace Domain ($s$-domain):</strong></p>
 <p>- Transform definition:</p>
 <p>$$X(s) = \int_{0}^{\infty} x(t) e^{-st} dt$$</p>
@@ -142,7 +128,7 @@
 <ul>
 <li><strong>DFT Definition:</strong></li>
 </ul>
-<p>$$X(k) = \sum_{n=0}^{N-1} x(n) e^{-jrac{2\pi}{N}kn}$$</p>
+<p>$$X(k) = \sum_{n=0}^{N-1} x(n) e^{-j\frac{2\pi}{N}kn}$$</p>
 <p>- <strong>Decimation-in-Time (DIT) Radix-2 FFT:</strong> Splits the input sequence into even and odd indices, reducing complexity from $O(N^2)$ to $O(N \log N)$.</p>
 <p>- <strong>Decimation-in-Frequency (DIF) Radix-2 FFT:</strong> Splits the output spectrum into even and odd frequencies.</p>
 <p>- <strong>Split-Radix FFT:</strong> Combines Radix-2 and Radix-4 algorithms to achieve a minimum number of complex multiplications.</p>
@@ -164,11 +150,9 @@
 <li>Characteristics: Maps analog poles to digital poles. Aliasing occurs if the analog frequency response is not band-limited.</li>
 <li>Formula:</li>
 </ul>
-<p>$$H(e^{j\omega}) = rac{1}{T} \sum_{n=-\infty}^{\infty} H_a\left(jrac{\omega}{T} + jrac{2\pi}{T} n</p>
-<p>ight)$$</p>
+<p>$$H(e^{j\omega}) = \frac{1}{T} \sum_{n=-\infty}^{\infty} H_a\left(j\frac{\omega}{T} + j\frac{2\pi}{T} n\right)$$</p>
 <p>- Pole mapping:</p>
-<p>$$rac{1}{s - s_n}</p>
-<p>ightarrow rac{1}{1 - e^{s_n T} z^{-1}}$$</p>
+<p>$$\frac{1}{s - s_n} \rightarrow \frac{1}{1 - e^{s_n T} z^{-1}}$$</p>
 <ul>
 <li><strong>Bilinear Transform Method:</strong></li>
 <li>Characteristics: Maps the entire analog frequency range to the digital range. No aliasing occurs.</li>
@@ -185,14 +169,14 @@
 <li><strong>Quantization Noise:</strong></li>
 <li>Quantization error variance:</li>
 </ul>
-<p>$$\sigma_q^2 = rac{\Delta^2}{12}$$</p>
+<p>$$\sigma_q^2 = \frac{\Delta^2}{12}$$</p>
 <p>- Single noise source output variance:</p>
-<p>$$\sigma_{no}^2 = \sigma_q^2 \sum_{n=-\infty}^{\infty} h(n)^2 = \sigma_q^2 rac{1}{2\pi} \int_{-\pi}^{\pi} |H(e^{j\omega})|^2 d\omega$$</p>
+<p>$$\sigma_{no}^2 = \sigma_q^2 \sum_{n=-\infty}^{\infty} h(n)^2 = \sigma_q^2 \frac{1}{2\pi} \int_{-\pi}^{\pi} |H(e^{j\omega})|^2 d\omega$$</p>
 <ul>
 <li>Multi-source output noise variance sum:</li>
 </ul>
 <p>$$\sigma_{total}^2 = \sum_m \Delta^2 \sum h_m(n)^2$$</p>
-<p>- Scaling factor: $eta < 1$ is used to prevent overflow.</p>
+<p>- Scaling factor: $\beta < 1$ is used to prevent overflow.</p>
 <p>### 3.4 Random Processes & Stationarity</p>
 <p>- <strong>Envelope Noise:</strong></p>
 <p>- Broadband Gaussian noise without sine wave: Rayleigh distribution.</p>
@@ -204,7 +188,7 @@
 <p>- Autocorrelation depends only on time difference: $R_X(t, s) = R_X(t-s)$</p>
 <p>- <strong>Poisson Process:</strong></p>
 <p>- Probability distribution:</p>
-<p>$$P(N(t) = n) = rac{(\lambda t)^n}{n!} e^{-\lambda t}$$</p>
+<p>$$P(N(t) = n) = \frac{(\lambda t)^n}{n!} e^{-\lambda t}$$</p>
 <ul>
 <li>Has independent and stationary increments.</li>
 <li><strong>Compound Poisson Process:</strong></li>
@@ -289,8 +273,8 @@
 <li><strong>Interpreter:</strong> Directly executes scripts (e.g., MATLAB) without compilation.</li>
 <li><strong>CPU Time Formula:</strong></li>
 </ul>
-<p>$$\text{CPU Time} = \text{Instruction Count} \times \text{CPI} \times \text{Clock Cycle Time}$$</p>
-<p>where $\text{CPI}$ is Clock Cycles Per Instruction.</p>
+<p>$$\\text{CPU Time} = \\text{Instruction Count} \\times \\text{CPI} \\times \\text{Clock Cycle Time}$$</p>
+<p>where $\\text{CPI}$ is Clock Cycles Per Instruction.</p>
 <p>- <strong>Architectures:</strong></p>
 <p>- <strong>CISC (Complex Instruction Set Computer):</strong> Fewer instructions, higher CPI, complex hardware.</p>
 <p>- <strong>RISC (Reduced Instruction Set Computer):</strong> More instructions, lower CPI (aims for 1), simple hardware.</p>
@@ -298,7 +282,7 @@
 <p>### 6.2 x86 Real Mode Memory Segmentation</p>
 <p>- <strong>Memory limit:</strong> 1 MB address space, 20-bit address bus.</p>
 <p>- <strong>Address translation:</strong> 16-bit segment address shifted left by 4 bits plus a 16-bit offset:</p>
-<p>$$\text{Physical Address} = \text{Segment} \times 16 + \text{Offset}$$</p>
+<p>$$\\text{Physical Address} = \\text{Segment} \\times 16 + \\text{Offset}$$</p>
 <ul>
 <li><strong>Segment Registers:</strong></li>
 <li>`CS` (Code Segment): Points to instruction memory (with IP).</li>
@@ -342,12 +326,12 @@
 <li><strong>Bisection Method:</strong> Divides the interval containing the root in half iteratively.</li>
 <li><strong>Newton-Raphson Method:</strong> Fast iterative tangent-line method:</li>
 </ul>
-<p>$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$</p>
+<p>$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$</p>
 <p>- <strong>Ordinary Differential Equations (ODEs):</strong></p>
 <p>- Euler's Method: Iteratively steps forward:</p>
 <p>$$y_{n+1} = y_n + h f(t_n, y_n)$$</p>
 <ul>
-<li><strong>Linear Systems:</strong> Iterative solvers such as Jacobi iteration and Gauss-Seidel iteration. Converges if spectral radius of iteration matrix $\rho(B) < 1$.</li>
+<li><strong>Linear Systems:</strong> Iterative solvers such as Jacobi iteration and Gauss-Seidel iteration. Converges if spectral radius of iteration matrix $\\rho(B) < 1$.</li>
 <li><strong>Regression:</strong> Solving overdetermined systems by minimizing the sum of squared residuals (Least Squares).</li>
 </ul>
     </div>
@@ -382,13 +366,13 @@
 <p>- <strong>Conjugate Matching:</strong> Match transmission line impedance $Z_c$ with load $Z_L$.</p>
 <p>- <strong>Resonant Matching Networks:</strong> L-networks, $\pi$-networks, and T-networks are used to transform impedances and filter harmonics.</p>
 <p>- <strong>Power Amplifier Classes:</strong></p>
-<p>- <strong>Class A:</strong> Conduction angle $	heta = 180^\circ$ (always conducting), low efficiency ($\eta < 50\%$), highly linear.</p>
-<p>- <strong>Class B:</strong> Conduction angle $	heta = 90^\circ$, max efficiency $\eta pprox 78.5\%$, uses push-pull configuration to reduce distortion.</p>
-<p>- <strong>Class C:</strong> Conduction angle $	heta < 90^\circ$, high efficiency, non-linear, requires resonant LC tank load.</p>
+<p>- <strong>Class A:</strong> Conduction angle $\theta = 180^\\circ$ (always conducting), low efficiency ($\eta < 50\%$), highly linear.</p>
+<p>- <strong>Class B:</strong> Conduction angle $\theta = 90^\\circ$, max efficiency $\eta \approx 78.5\%$, uses push-pull configuration to reduce distortion.</p>
+<p>- <strong>Class C:</strong> Conduction angle $\theta < 90^\\circ$, high efficiency, non-linear, requires resonant LC tank load.</p>
 <p>- <strong>Class D:</strong> Switching amplifier, theoretical efficiency up to $100\%$.</p>
 <p>- <strong>Oscillators (Barkhausen Criteria):</strong></p>
 <p>- <strong>Amplitude Condition:</strong> $|A F| = 1$ (startup requires $|A F| > 1$).</p>
-<p>- <strong>Phase Condition:</strong> $\phi_A + \phi_F = 2n\pi$.</p>
+<p>- <strong>Phase Condition:</strong> $\\phi_A + \\phi_F = 2n\\pi$.</p>
     </div>
   </div>
 
@@ -409,7 +393,7 @@
 </ul>
 <h3>9.2 Superheterodyne Receivers</h3>
 <ul>
-<li><strong>Architecture:</strong> Antenna $	o$ LNA $	o$ RF Filter $	o$ Mixer (with LO) $	o$ IF Filter $	o$ Demodulator.</li>
+<li><strong>Architecture:</strong> Antenna $\to$ LNA $\to$ RF Filter $\to$ Mixer (with LO) $\to$ IF Filter $\to$ Demodulator.</li>
 <li><strong>Zero-IF (Direct Conversion):</strong> Down-converts RF directly to baseband. Eliminates image frequency filter requirements but is sensitive to DC offset.</li>
 <li><strong>Image Rejection Mixers:</strong> Hartley and Weaver architectures reject the image frequency using phase shifting.</li>
 </ul>
@@ -437,13 +421,13 @@
 </ul>
 <p>$$k_z = \sqrt{k^2 - k_c^2}$$</p>
 <p>- Guided wave wavelength:</p>
-<p>$$\lambda_g = rac{2\pi}{k_z}$$</p>
+<p>$$\lambda_g = \frac{2\pi}{k_z}$$</p>
 <ul>
 <li>Cutoff frequency:</li>
 </ul>
-<p>$$f_c = rac{v}{2\pi} k_c$$</p>
+<p>$$f_c = \frac{v}{2\pi} k_c$$</p>
 <p>- Cutoff wavelength:</p>
-<p>$$\lambda_c = rac{2\pi}{k_c}$$</p>
+<p>$$\lambda_c = \frac{2\pi}{k_c}$$</p>
 <ul>
 <li><strong>Field Decomposition:</strong> Fields decompose into transverse electric (TE, $E_z = 0$) and transverse magnetic (TM, $H_z = 0$) modes.</li>
 </ul>
@@ -451,14 +435,14 @@
 <ul>
 <li><strong>Telegrapher's Equations:</strong></li>
 </ul>
-<p>$$\frac{dV(z)}{dz} = -(R + j\omega L)I(z)$$</p>
-<p>$$\frac{dI(z)}{dz} = -(G + j\omega C)V(z)$$</p>
+<p>$$\\frac{dV(z)}{dz} = -(R + j\\omega L)I(z)$$</p>
+<p>$$\\frac{dI(z)}{dz} = -(G + j\\omega C)V(z)$$</p>
 <ul>
 <li><strong>Line Terminations:</strong></li>
-<li><strong>Open Circuit:</strong> $Z_L = \infty$, Reflection Coefficient $\Gamma_L = 1$, SWR $\rho = \infty$.</li>
-<li><strong>Short Circuit:</strong> $Z_L = 0$, Reflection Coefficient $\Gamma_L = -1$, SWR $\rho = \infty$.</li>
-<li><strong>Pure Reactance:</strong> $Z_L = jX$, $|\Gamma_L| = 1$, SWR $\rho = \infty$.</li>
-<li><strong>Matched Load:</strong> $Z_L = Z_c$, Reflection Coefficient $\Gamma_L = 0$, SWR $\rho = 1$ (pure traveling wave).</li>
+<li><strong>Open Circuit:</strong> $Z_L = \\infty$, Reflection Coefficient $\\Gamma_L = 1$, SWR $\\rho = \\infty$.</li>
+<li><strong>Short Circuit:</strong> $Z_L = 0$, Reflection Coefficient $\\Gamma_L = -1$, SWR $\\rho = \\infty$.</li>
+<li><strong>Pure Reactance:</strong> $Z_L = jX$, $|\\Gamma_L| = 1$, SWR $\\rho = \\infty$.</li>
+<li><strong>Matched Load:</strong> $Z_L = Z_c$, Reflection Coefficient $\\Gamma_L = 0$, SWR $\\rho = 1$ (pure traveling wave).</li>
 </ul>
 <h3>10.3 Microwave Networks & Antennas</h3>
 <ul>
@@ -467,24 +451,24 @@
 <p>$$b = [S] a$$</p>
 <p>For a matched port $i$, $S_{ii} = 0$.</p>
 <p>- <strong>Antennas:</strong> Wire antennas, aperture antennas, and microstrip patch antennas. Antenna arrays use the pattern multiplication theorem:</p>
-<p>$$\text{Total Pattern} = \text{Element Factor} \times \text{Array Factor}$$</p>
+<p>$$\\text{Total Pattern} = \\text{Element Factor} \\times \\text{Array Factor}$$</p>
 <h3>10.4 Information Theory</h3>
 <ul>
 <li><strong>Discrete Source Entropy:</strong> Measures source uncertainty:</li>
 </ul>
-<p>$$H(X) = -\sum_{i=1}^M P(x_i) \log_2 P(x_i) \le \log_2 M$$</p>
+<p>$$H(X) = -\\sum_{i=1}^M P(x_i) \\log_2 P(x_i) \\le \\log_2 M$$</p>
 <p>- <strong>Conditional Entropy:</strong></p>
-<p>$$H(Y|X) = -\sum_j P(y_j|x_i) \log_2 P(y_j|x_i)$$</p>
+<p>$$H(Y|X) = -\\sum_j P(y_j|x_i) \\log_2 P(y_j|x_i)$$</p>
 <ul>
 <li><strong>Channel Capacity:</strong></li>
 </ul>
-<p>$$C = \max \{H(X) - H(X|Y)\} \le \log_2 M - H(Y|X)$$</p>
+<p>$$C = \\max \\{H(X) - H(X|Y)\\} \\le \\log_2 M - H(Y|X)$$</p>
 <p>- <strong>Continuous Source Entropy:</strong></p>
-<p>$$H(X) = -\int_{-\infty}^{\infty} p(x) \log_2 p(x) dx \le \log_2(\sqrt{2\pi e} \sigma_X)$$</p>
+<p>$$H(X) = -\\int_{-\\infty}^{\\infty} p(x) \\log_2 p(x) dx \\le \\log_2(\\sqrt{2\\pi e} \\sigma_X)$$</p>
 <ul>
 <li><strong>Shannon-Hartley Theorem:</strong></li>
 </ul>
-<p>$$C = B \log_2\left(1 + \frac{S}{N}\right)$$</p>
+<p>$$C = B \\log_2\\left(1 + \\frac{S}{N}\\right)$$</p>
     </div>
   </div>
 
@@ -496,15 +480,15 @@
 <ul>
 <li><strong>Hamming Codes:</strong> $(2^r - 1, 2^r - 1 - r)$ block codes with minimum Hamming distance $d_{min} = 3$. Can correct 1-bit errors.</li>
 <li><strong>Linear Block Codes:</strong></li>
-<li>Generator matrix $G = [I_k \mid P]$. Parity check matrix $H = [-P^T \mid I_{n-k}]$.</li>
-<li>Encoding: $C = M \cdot G$.</li>
-<li>Syndrome: $S = R \cdot H^T$ (if $S = 0$, no errors detected).</li>
+<li>Generator matrix $G = [I_k \\mid P]$. Parity check matrix $H = [-P^T \\mid I_{n-k}]$.</li>
+<li>Encoding: $C = M \\cdot G$.</li>
+<li>Syndrome: $S = R \\cdot H^T$ (if $S = 0$, no errors detected).</li>
 <li><strong>Cyclic Codes:</strong> Realized using feedback shift registers:</li>
 <li>Codeword polynomial:</li>
 </ul>
-<p>$$C(X) = X^{n-k} M(X) + (X^{n-k} M(X) \bmod g(X))$$</p>
+<p>$$C(X) = X^{n-k} M(X) + (X^{n-k} M(X) \\bmod g(X))$$</p>
 <p>- Parity check:</p>
-<p>$$S(X) = R(X) \bmod g(X)$$</p>
+<p>$$S(X) = R(X) \\bmod g(X)$$</p>
 <ul>
 <li><strong>Convolutional Codes:</strong> Realized by passing data through shift registers. Decoded using the Viterbi algorithm over a trellis diagram.</li>
 </ul>
@@ -515,7 +499,7 @@
 <li><strong>Optimal Receiver:</strong> Matched filters maximize output SNR in the presence of AWGN:</li>
 </ul>
 <p>$$h(t) = s(T - t)$$</p>
-<p>$$\text{Peak SNR} = \text{Peak Signal Energy} / (N_0 / 2)$$</p>
+<p>$$\\text{Peak SNR} = \\text{Peak Signal Energy} / (N_0 / 2)$$</p>
     </div>
   </div>
 
