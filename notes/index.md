@@ -12,6 +12,7 @@ title: Notes – Angli Liu
       <li><a href="https://www.amazon.com/stores/Angli-Liu/author/B0H1K6579T" target="_blank">Amazon Author</a></li>
       <li><a href="https://github.com/anglil" target="_blank">GitHub</a></li>
       <li><a href="/notes/"><i>Notes</i></a></li>
+      <li><a href="/readings/"><i>Readings</i></a></li>
     </ul>
   </div>
 
