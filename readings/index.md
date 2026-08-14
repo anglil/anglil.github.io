@@ -22,6 +22,7 @@ title: Readings – Angli Liu
     <ul class="notes-list">
       <li><a href="/readings/Introduction to Algorithms - A Creative Approach.pdf" target="_blank">Introduction to Algorithms - A Creative Approach</a></li>
       <li><a href="/readings/Numerical Algorithms.pdf" target="_blank">Numerical Algorithms</a> (<a href="https://docs.google.com/document/d/1zHoG-MG_1Y_60Ks33nJgNR9hD_q_x0hn6Wo_uYTP7Y4/edit?tab=t.0" target="_blank">exercises</a>)</li>
+      <li><a href="/readings/Deep Learning - Foundations and Concepts.pdf" target="_blank">Deep Learning - Foundations and Concepts</a></li>
     </ul>
 
     <hr>
