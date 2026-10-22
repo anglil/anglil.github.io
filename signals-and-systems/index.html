@@ -6,20 +6,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signals and Systems | Lecture Notes</title>
+  <title>Signals and Systems | Complete Lecture Notes</title>
   <link rel="stylesheet" href="style.css">
   <script>
       window.MathJax = {
           tex: {
-              inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],
-              displayMath: [["$$", "$$"], ["\\\\[", "\\\\]"]],
+              inlineMath: [["$", "$"], ["\\(", "\\)"]],
+              displayMath: [["$$", "$$"], ["\\[", "\\]"]],
               macros: {
-                  bm: ["\\\\boldsymbol{#1}", 1]
+                  bm: ["\\boldsymbol{#1}", 1]
               }
           }
       };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      padding: 0.5rem 0.8rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    th {
+      background: var(--bg-box);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    ol, ul {
+      margin: 0.6rem 0 1rem 1.8rem;
+    }
+    li {
+      margin-bottom: 0.35rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -29,7 +54,29 @@
   <div class="book-title">Signals and Systems<span>Angli Liu</span></div>
   <nav>
     <ul>
-      <li><a href="index.html" class="active">Lecture Notes</a></li>
+      <li><a href="#pg1" class="active">Page 1: Signals & Systems</a></li>
+      <li><a href="#pg2">Page 2: A1 Generalized Functions</a></li>
+      <li><a href="#pg3">Page 3: Time-Domain (t-Domain)</a></li>
+      <li><a href="#pg4">Page 4: Laplace Domain (s-Domain)</a></li>
+      <li><a href="#pg5">Page 5: A3–A5 Laplace & All-Pass</a></li>
+      <li><a href="#pg6">Page 6: Fourier (ω & ω₀ Domains)</a></li>
+      <li><a href="#pg7">Page 7: A6–A8 Periodic FT & FS</a></li>
+      <li><a href="#pg8">Page 8: Discrete Time (n-Domain)</a></li>
+      <li><a href="#pg9">Page 9: A9 Causal Hilbert Transform</a></li>
+      <li><a href="#pg10">Page 10: z-Domain Analysis</a></li>
+      <li><a href="#pg11">Page 11: A10–A12 z-Transform & All-Pass</a></li>
+      <li><a href="#pg12">Page 12: DTFT & DFS Domains</a></li>
+      <li><a href="#pg13">Page 13: A13–A15 Periodic DTFT & DFS</a></li>
+      <li><a href="#pg14">Page 14: Time & Frequency Sampling</a></li>
+      <li><a href="#pg15">Page 15: A16 Fast Fourier Transform</a></li>
+      <li><a href="#pg16">Page 16: Multirate Signal Processing</a></li>
+      <li><a href="#pg17">Page 17: Analog & IIR Filter Structures</a></li>
+      <li><a href="#pg18">Page 18: A17 Butterworth Filter Design</a></li>
+      <li><a href="#pg19">Page 19: IIR Design & FIR Structures</a></li>
+      <li><a href="#pg20">Page 20: A18 Quantization & Circuit Noise</a></li>
+      <li><a href="#pg21">Page 21: Linear-Phase FIR & Transforms</a></li>
+      <li><a href="#pg22">Page 22: State-Space Analysis</a></li>
+      <li><a href="#pg23">Page 23: A19 State-Space Transformations</a></li>
     </ul>
   </nav>
 </aside>
@@ -37,589 +84,1538 @@
 <main id="content">
   <div class="chapter-header">
     <h1>Signals and Systems</h1>
-    <h2 class="chapter-title">Complete Lecture Notes</h2>
+    <h2 class="chapter-title">Complete Lecture Notes & Core Formulations</h2>
   </div>
+
+  <div class="pages-section">
 
   <!-- Page 1 -->
-  <div class="page" id="page-1">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 1</div>
-    <h3>I. Signals</h3>
-    <ol>
-      <li><strong>Signal Classification</strong>
-        <ul>
-          <li>Time: Continuous vs. Discrete
-            <ul>
-              <li>Continuous: Analog (e.g., continuous sampling)</li>
-              <li>Discrete: Digital (quantized sequence)</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><strong>Signal Decomposition</strong>
-        <ul>
-          <li>① Convergence Property:
-            <ul>
-              <li>Continuous-time non-periodic (Fourier Transform):
-                $$ f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(\omega) e^{j\omega t} d\omega $$
-                <em>Example:</em> $ t \leftrightarrow \delta(t) $, Laplace Transform kernel $ e^{-st} $, Fourier Transform kernel $ e^{-j\omega t} $
-              </li>
-              <li>Continuous-time periodic (Fourier Series):
-                $$ f(t) = \sum_{n=-\infty}^{\infty} F_n e^{j n \omega_0 t} $$
-                <em>Example:</em> Fourier coefficients, Laplace Transform, Fourier Transform
-              </li>
-              <li>Discrete-time non-periodic (DTFT):
-                $$ f[n] = \frac{1}{2\pi} \int_{-\pi}^{\pi} F(e^{j\omega}) e^{j\omega n} d\omega $$
-                <em>Example:</em> $ n \leftrightarrow \delta[n] $, z-Transform kernel $ z^{-n} $, DTFT kernel $ e^{-j\omega n} $
-              </li>
-              <li>Discrete-time periodic (DFS):
-                $$ f[n] = \sum_{k=0}^{N-1} \tilde{X}[k] e^{j \frac{2\pi}{N} k n} $$
-                <em>Example:</em> DFS coefficients, z-Transform, DFT
-              </li>
-            </ul>
-          </li>
-          <li>② Orthogonality:
-            <ul>
-              <li>Inner product of signals: $ \langle \phi_n(t), f(t) \rangle = \int_{-\infty}^{\infty} f(t) \phi_n^*(t) dt $</li>
-              <li>Discrete signals inner product: $ \langle f[n], g[n] \rangle = \sum_{n=-\infty}^{\infty} f[n] g^*[n] $</li>
-              <li>Orthogonality relation: $ \sum_{n} \phi_m[n] \phi_n^*[n] = \lambda_n \delta_{mn} $</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ol>
-    <p><strong>Energy Signals:</strong></p>
-    <ul>
-      <li>Cross-correlation: $ R_{21}(t) = \langle f_2(\tau), f_1(\tau - t) \rangle = R_{12}^*(-t) $</li>
-      <li>Total energy: $ E = R_{11}(0) = \int_{-\infty}^{\infty} |f(t)|^2 dt $</li>
-    </ul>
-  </div>
-  <hr style="margin: 40px 0;" />
+  <div class="page-card" id="pg1">
+    <div class="page-number">Page 1 (Sheet Page 1)</div>
+    <div class="page-content">
+      <h3>I. Signals</h3>
+      <h4>1. Classification of Signals</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Amplitude \ Time</th>
+            <th>Continuous Time</th>
+            <th>Discrete Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Continuous Amplitude</strong></td>
+            <td>Analog Signal</td>
+            <td>Sampled Signal</td>
+          </tr>
+          <tr>
+            <td><strong>Discrete Amplitude</strong></td>
+            <td>Quantized Signal</td>
+            <td>Digital Signal</td>
+          </tr>
+        </tbody>
+      </table>
 
-  <!-- Page 2 -->
-  <div class="page" id="page-2">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 2</div>
-    <p><strong>Power Signals:</strong></p>
-    <ul>
-      <li>Average power: $ P = R_{11}(0) = \lim_{T\to\infty} \frac{1}{T} \int_{-T/2}^{T/2} |f(t)|^2 dt $</li>
-      <li>Autocorrelation: $ R_{ff}(\tau) = \lim_{T\to\infty} \frac{1}{T} \int_{-T/2}^{T/2} f(t) f^*(t-\tau) dt $</li>
-    </ul>
+      <h4>2. Signal Decomposition</h4>
+      <p><strong>① Convergence Properties (Spectral & Basis Expansions in Dirac Bra-Ket Notation):</strong></p>
+      <ol>
+        <li><strong>Continuous-Time, Continuous-Spectrum Decomposition:</strong>
+          $$f(t) = \int d\lambda \, |a_\lambda\rangle \langle a_\lambda | f(t)\rangle$$
+          <em>Examples:</em> Time domain ($t / \delta(t)$); Laplace Transform ($\text{LT} / e^{st}$); Fourier Transform ($\text{FT} / e^{j\omega t}$).
+        </li>
+        <li><strong>Continuous-Time, Discrete-Spectrum (Periodic) Decomposition:</strong>
+          $$f(t) = \sum_i |a_i\rangle \langle a_i | f(t + mT)\rangle$$
+          <em>Examples:</em> Time domain ($t / \delta(t)$); Fourier Series ($\text{FS} / e^{j n (\frac{2\pi}{T}) t}$); $\text{LT}, \text{FT}$.
+        </li>
+        <li><strong>Discrete-Time, Continuous-Spectrum Decomposition:</strong>
+          $$f(n) = \int d\lambda \, |a_\lambda\rangle \langle a_\lambda | f(n)\rangle$$
+          <em>Examples:</em> Discrete time ($n / \delta(n)$); $z$-Transform ($\text{ZT} / z^{n-1}$); Discrete-Time Fourier Transform ($\text{DTFT} / e^{j n \omega}$).
+        </li>
+        <li><strong>Discrete-Time, Discrete-Spectrum (Periodic) Decomposition:</strong>
+          $$f(n) = \sum_i |a_i\rangle \langle a_i | f(n + rN)\rangle$$
+          <em>Examples:</em> Discrete time ($n / \delta(n)$); Discrete Fourier Series ($\text{DFS} / e^{j (\frac{2\pi}{N}) n k}$); $\text{ZT}, \text{DTFT}$.
+        </li>
+      </ol>
 
-    <h3>II. Systems</h3>
-    <ol>
-      <li><strong>System Properties</strong>
-        <ul>
-          <li>Superposition (Linearity): $ \mathcal{H}\{a x_1(t) + b x_2(t)\} = a \mathcal{H}\{x_1(t)\} + b \mathcal{H}\{x_2(t)\} $</li>
-          <li>Time-invariance: If $ x(t) \rightarrow y(t) $, then $ x(t - t_0) \rightarrow y(t - t_0) $</li>
-          <li>Causality: Output depends only on present and past inputs.</li>
-          <li>Stability: BIBO (Bounded-Input Bounded-Output) stable.</li>
-        </ul>
-      </li>
-      <li><strong>Impulse Response of Combined LTI Systems</strong>
-        <ul>
-          <li>Parallel Connection: $ h(t) = h_1(t) + h_2(t) $</li>
-          <li>Cascade Connection: $ h(t) = h_1(t) * h_2(t) $</li>
-        </ul>
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
+      <p><strong>Orthogonality and Completeness (Parseval's Identity):</strong></p>
+      <ul>
+        <li><strong>Orthogonality:</strong> $\langle a_\lambda | a_{\lambda'} \rangle = \delta(\lambda - \lambda')$, $\quad \langle a_i | a_j \rangle = \delta_{ij}$</li>
+        <li><strong>Completeness:</strong>
+          $$\int dt \, \langle f(t) | f(t) \rangle = \int d\lambda \, \langle a_\lambda | a_\lambda \rangle, \quad \int dt \, \langle f(t) | f(t) \rangle = \sum_i \langle a_i | a_i \rangle$$
+          $$\sum_n \langle f(n) | f(n) \rangle = \int d\lambda \, \langle a_\lambda | a_\lambda \rangle, \quad \sum_n \langle f(n) | f(n) \rangle = \sum_i \langle a_i | a_i \rangle$$
+        </li>
+      </ul>
 
-  <!-- Page 3 -->
-  <div class="page" id="page-3">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 3</div>
-    <h3>III. Time-Domain Analysis of LTI Systems</h3>
-    <ol>
-      <li><strong>Differential & Difference Equation Formulations</strong>
-        <ul>
-          <li>Continuous LTI systems:
-            $$ \sum_{k=0}^N a_k \frac{d^k y(t)}{dt^k} = \sum_{m=0}^M b_m \frac{d^m x(t)}{dt^m} $$
-          </li>
-          <li>Discrete LTI systems:
-            $$ \sum_{k=0}^N a_k y[n-k] = \sum_{m=0}^M b_m x[n-m] $$
-          </li>
-        </ul>
-      </li>
-      <li><strong>Convolution Integrals & Sums</strong>
-        <ul>
-          <li>Convolution Integral:
-            $$ y(t) = x(t) * h(t) = \int_{-\infty}^{\infty} x(\tau) h(t - \tau) d\tau $$
-          </li>
-          <li>Convolution Sum:
-            $$ y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k] h[n - k] $$
-          </li>
-        </ul>
-      </li>
-      <li><strong>Impulse Response matching method</strong>
-        <p>Used to find initial conditions at $ t = 0^+ $ from $ t = 0^- $ when an impulse input $ \delta(t) $ is applied.</p>
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
+      <p><strong>② Correlation Properties:</strong></p>
+      <ul>
+        <li><strong>Energy Signals:</strong>
+          <ol>
+            <li>Continuous-time: $R_{12}(\tau) = \langle f_2(t - \tau) | f_1(t) \rangle = R_{21}^*(-\tau)$, with energy $E_1 = R_{11}(0)$.</li>
+            <li>Discrete-time: $R_{12}(m) = \langle f_2(n - m) | f_1(n) \rangle = R_{21}^*(-m)$, with energy $E_1 = R_{11}(0)$.</li>
+          </ol>
+        </li>
+        <li><strong>Power Signals:</strong>
+          <ol start="3">
+            <li>Continuous-time: $R_{12}(\tau) = \lim_{T \to \infty} \frac{1}{T} \langle f_2(t - \tau) | f_1(t) \rangle_T = R_{21}^*(-\tau)$, with average power $P_1 = R_{11}(0)$.</li>
+            <li>Discrete-time: $R_{12}(m) = \lim_{N \to \infty} \frac{1}{N} \langle f_2(n - m) | f_1(n) \rangle_N = R_{21}^*(-m)$, with average power $P_1 = R_{11}(0)$.</li>
+          </ol>
+        </li>
+      </ul>
 
-  <!-- Page 4 -->
-  <div class="page" id="page-4">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 4</div>
-    <h3>IV. Laplace Transform and s-Domain Analysis</h3>
-    <ol>
-      <li><strong>Definition of Bilateral Laplace Transform</strong>
-        $$ X(s) = \int_{-\infty}^{\infty} x(t) e^{-st} dt, \quad s = \sigma + j\omega $$
-      </li>
-      <li><strong>Region of Convergence (ROC) properties</strong>
-        <ul>
-          <li>Determined by $ \text{Re}(s) = \sigma $.</li>
-          <li>For right-sided signals, ROC is $ \text{Re}(s) > \sigma_{\text{max}} $.</li>
-          <li>For left-sided signals, ROC is $ \text{Re}(s) < \sigma_{\text{min}} $.</li>
-          <li>For two-sided signals, ROC is a strip $ \sigma_1 < \text{Re}(s) < \sigma_2 $.</li>
-        </ul>
-      </li>
-      <li><strong>Partial Fraction Expansion (PFE)</strong>
-        <p>Real poles: $ H(s) = \sum_{i=1}^N \frac{r_i}{s - p_i} \leftrightarrow h(t) = \sum_{i=1}^N r_i e^{p_i t} u(t) $</p>
-        <p>Conjugate complex poles: $ H(s) = \frac{A s + B}{(s + \alpha)^2 + \beta^2} \leftrightarrow h(t) = C e^{-\alpha t} \cos(\beta t + \theta) u(t) $</p>
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 5 -->
-  <div class="page" id="page-5">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 5</div>
-    <h3>Laplace Transform Properties</h3>
-    <div class="table-container">
+      <h3>II. Systems</h3>
+      <h4>1. Classification of Systems</h4>
       <table>
         <thead>
           <tr>
             <th>Property</th>
-            <th>Time Domain $x(t)$</th>
-            <th>s-Domain $X(s)$</th>
+            <th>Class I</th>
+            <th>Class II</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Parameter Distribution</strong></td>
+            <td>Lumped: ODE / Difference Eq.</td>
+            <td>Distributed: PDE / Partial Diff. Eq.</td>
+          </tr>
+          <tr>
+            <td><strong>Time Domain</strong></td>
+            <td>Continuous: Differential Eq.</td>
+            <td>Discrete: Difference Eq.</td>
+          </tr>
+          <tr>
+            <td><strong>Memory</strong></td>
+            <td>Memoryless: Algebraic Eq.</td>
+            <td>With Memory: Differential / Difference Eq.</td>
+          </tr>
+          <tr>
+            <td><strong>Linearity</strong></td>
+            <td>Linear: Superposition &amp; Homogeneity</td>
+            <td>Nonlinear: Non-superposition or Non-homogeneous</td>
+          </tr>
+          <tr>
+            <td><strong>Time-Invariance</strong></td>
+            <td>Time-Varying: $x(t - t_0) \not\to y(t - t_0)$</td>
+            <td>Time-Invariant: $x(t - t_0) \to y(t - t_0)$</td>
+          </tr>
+          <tr>
+            <td><strong>Invertibility</strong></td>
+            <td>Invertible: Injective &amp; Surjective (Bijective)</td>
+            <td>Non-invertible: Non-injective or Non-surjective</td>
+          </tr>
+          <tr>
+            <td><strong>Causality</strong></td>
+            <td>Causal: $x(t - t_0) \to y(t)$ ($t_0 \ge 0$)</td>
+            <td>Non-causal: $x(t + t_0) \to y(t)$ ($t_0 > 0$)</td>
+          </tr>
+          <tr>
+            <td><strong>Stability</strong></td>
+            <td>Stable: $\text{BIBO}$</td>
+            <td>Unstable: $\overline{\text{BIBO}}$</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Primary Focus:</strong> Linear Time-Invariant (LTI) systems with deterministic inputs, lumped parameters, linearity, and time-invariance.</p>
+      <ul>
+        <li><strong>Models:</strong> Input-output external models vs. state-variable internal models.</li>
+        <li><strong>Transform Domains:</strong>
+          <ul>
+            <li>Continuous: $t \to s \to \Omega \to \Omega_0$ (Time $\to$ Laplace $\to$ Continuous Fourier $\to$ Fourier Series)</li>
+            <li>Discrete: $n \to z \to \omega \to \omega_0$ (Discrete Time $\to$ $z$-Transform $\to$ DTFT $\to$ DFS/DFT)</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>2. System Decomposition &amp; Representation</h4>
+      <ul>
+        <li>① Block diagrams</li>
+        <li>② Signal flow graphs and Mason's Gain Formula</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page-card" id="pg2">
+    <div class="page-number">Page 2 (Appendix A1)</div>
+    <div class="page-content">
+      <h3>Appendix A1: Generalized Functions (Distributions) and Impulse Properties</h3>
+      <h4>1. The Dirac Delta Distribution $\delta(t)$</h4>
+      <p>Defined as a functional acting on a test function $\varphi(t)$:</p>
+      $$N_\delta[\varphi(t)] = \langle \delta(t), \varphi(t) \rangle = \varphi(0)$$
+      <ul>
+        <li><strong>Distribution (Generalized Function) $\delta(t)$:</strong> Assigns the value $\varphi(0)$ to $\varphi(t)$.</li>
+        <li><strong>Test Function $\varphi(t)$:</strong> Smooth function of compact support $\varphi(t) \in C^\infty(\mathbb{R})$ (i.e., $D(\mathbb{R})$), where $\varphi(t) \neq 0$ only on a bounded open interval $a < t < b$ ($-\infty < a, b < \infty$).</li>
+      </ul>
+      <p><strong>Fundamental Properties of $\delta(t)$:</strong></p>
+      <ol>
+        <li><strong>Linearity:</strong> $a\delta(t) + b\delta(t) = (a + b)\delta(t)$</li>
+        <li><strong>Sampling (Multiplication) Property:</strong> $f(t)\delta(t - t_0) = f(t_0)\delta(t - t_0)$</li>
+        <li><strong>Scaling Property:</strong> $\delta(at) = \frac{1}{|a|}\delta(t) \implies \delta(t)$ is an even function ($\delta(-t) = \delta(t)$).</li>
+        <li><strong>Composition with a Smooth Function $f(t)$:</strong> For simple roots $t_i$ where $f(t_i) = 0$ and $f'(t_i) \neq 0$:
+          $$\delta[f(t)] = \sum_i \frac{1}{|f'(t_i)|} \delta(t - t_i)$$
+        </li>
+      </ol>
+
+      <h4>2. Higher-Order Derivatives of the Impulse $\delta^{(k)}(t)$</h4>
+      $$N_{\delta^{(k)}}[\varphi(t)] = \langle \delta^{(k)}(t), \varphi(t) \rangle = (-1)^k \varphi^{(k)}(0)$$
+      <p>This identity is proved via integration by parts and the compact support of $\varphi(t)$. The strength of $\delta(t)$ corresponds to the area enclosed during the limiting approximation process.</p>
+      <ul>
+        <li>① <strong>Multiplication by a smooth function $f(t)$:</strong> Can be evaluated to arbitrary order $k$ via integration by parts:
+          $$\langle f(t)\delta^{(k)}(t), \varphi(t) \rangle = \langle \delta^{(k)}(t), f(t)\varphi(t) \rangle = (-1)^k \left.\frac{d^k}{dt^k}[f(t)\varphi(t)]\right|_{t=0}$$
+        </li>
+        <li>② <strong>Scaling of $\delta^{(k)}(t)$:</strong>
+          $$\delta^{(k)}(at) = \frac{1}{|a|} \frac{1}{a^k} \delta^{(k)}(t) \implies \delta^{(k)}(t) \text{ is even for even } k \text{ and odd for odd } k.$$
+        </li>
+      </ul>
+
+      <h4>3. Riemann–Lebesgue Lemma in Distribution Sense</h4>
+      $$N_{e^{-j\omega t}}[\varphi(t)] = \lim_{\omega \to \infty} \int_a^b e^{-j\omega t} \varphi(t) \, dt = 0 \quad (-\infty < a, b < \infty)$$
+      <ul>
+        <li>① As $\omega \to \infty$, in the distributional (weak) sense, $e^{-j\omega t} = e^{j\omega t} = \cos(\omega t) = \sin(\omega t) = 0$.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page-card" id="pg3">
+    <div class="page-number">Page 3 (Sheet Page 2)</div>
+    <div class="page-content">
+      <h3>III. Continuous-Time Signals and Systems ($t$-Domain)</h3>
+      <h4>1. Signal Representation via Impulses (Sifting Property)</h4>
+      <ul>
+        <li>① $f(\tau) = \int_{-\infty}^{\infty} f(t) \delta(\tau - t) \, dt$</li>
+        <li>② $f(t) = \int_{-\infty}^{\infty} f(\tau) \delta(t - \tau) \, d\tau$</li>
+      </ul>
+
+      <h4>2. System Response Solution</h4>
+      <p><strong>① Natural (Free) Response + Forced Response (Classical ODE Solution):</strong></p>
+      <ul>
+        <li>Given a linear constant-coefficient ordinary differential equation (ODE):
+          <ul>
+            <li><strong>Homogeneous Equation ($e(t) = 0$):</strong> Solve the characteristic equation to obtain the homogeneous solution (natural/free response): $r_h(t) = \sum_k A_k e^{\alpha_k t}$.</li>
+            <li><strong>Non-homogeneous Equation ($t > 0_+$):</strong> Use the method of undetermined coefficients corresponding to the input form to obtain a particular solution (forced response): $B(t)$.</li>
+          </ul>
+        </li>
+        <li>Summing the two gives the total response containing undetermined constants $A_k$: $r(t) = \sum_k A_k e^{\alpha_k t} + B(t)$.</li>
+        <li>Using the initial states $x(0_-)$ and the <strong>impulse matching method</strong> on the ODE at $t = 0$, determine the post-impulse initial conditions $x(0_+)$, which then uniquely determine the coefficients $A_k$ for the complete response.</li>
+      </ul>
+
+      <p><strong>② Zero-State Response ($r_{zs}$) + Zero-Input Response ($r_{zi}$):</strong></p>
+      <ul>
+        <li><strong>Zero-State Response ($e(t) \to H[e(t)]$):</strong>
+          $$r_{zs}(t) = \sum_k A_{zsk} e^{\alpha_k t} + B(t)$$
+          Subject to initial conditions:
+          $$\begin{cases} x_{zs}(0_-) = 0 \\ x_{zs}(0_+) \text{ determined via the impulse matching method} \end{cases}$$
+          <em>Note:</em> $x_{zs}(t)$ contains $\delta(t)$ (and its derivatives) when the highest derivative order of $e(t)$ (or $\delta$ order in $e(t)$) $\ge$ the order of the differential equation; determined via impulse matching.
+        </li>
+        <li><strong>Zero-Input Response ($x(0_+) \to H[x(0_+)]$):</strong>
+          $$r_{zi}(t) = \sum_k A_{zik} e^{\beta_k t}$$
+          Subject to initial conditions:
+          $$\begin{cases} x_{zi}(0_-) \text{ is given} \\ x_{zi}(0_+) = x_{zi}(0_-) \quad (\text{since } x_{zi}(t) \text{ contains no } \delta) \end{cases}$$
+        </li>
+        <li><strong>Total Response Decomposition &amp; Linearity:</strong>
+          $$\begin{aligned}
+          r(t) &= [r_{zs}(t) + r_{zi}(t)] u(t) = H[e(t)] + H[x(0_+)] \\
+          &= H\left[\int_{-\infty}^{\infty} e(\tau) \delta(t - \tau) \, d\tau\right] + H[x(0_+)] \\
+          &= \int_{-\infty}^{\infty} e(\tau) h(t - \tau) \, d\tau + H[x(0_+)] \\
+          &= e(t) * h(t) + H[x(0_+)]
+          \end{aligned}$$
+          Exhibits <strong>zero-state linearity</strong> (with respect to excitation $e(t)$) and <strong>zero-input linearity</strong> (with respect to initial state $x(0_+)$).
+        </li>
+      </ul>
+
+      <h4>3. System Impulse Response $h(t)$ Properties</h4>
+      <ul>
+        <li>① <strong>Invertibility:</strong> $h(t) * \tilde{h}(t) = \delta(t)$</li>
+        <li>② <strong>Causality:</strong> $h(t) = h(t) u(t)$ (i.e., $h(t) = 0$ for $t < 0$)</li>
+        <li>③ <strong>Stability (BIBO):</strong> Suppose $|e(t)| \le B < \infty$:
+          $$|r(t)| = \left|\int_{-\infty}^{\infty} h(\tau) e(t - \tau) \, d\tau\right| \le \int_{-\infty}^{\infty} |h(\tau)| \, |e(t - \tau)| \, d\tau \le B \int_{-\infty}^{\infty} |h(\tau)| \, d\tau$$
+          Therefore, a necessary and sufficient condition for BIBO stability is absolute integrability:
+          $$\int_{-\infty}^{\infty} |h(\tau)| \, d\tau < \infty$$
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 4 -->
+  <div class="page-card" id="pg4">
+    <div class="page-number">Page 4 (Sheet Page 3)</div>
+    <div class="page-content">
+      <h3>IV. Laplace Domain Signals and Systems ($s$-Domain)</h3>
+      <h4>1. Signal Representation (Bilateral Laplace Transform)</h4>
+      <ul>
+        <li>① <strong>Analysis Equation (Direct Transform):</strong>
+          $$F(s) = \int_{-\infty}^{\infty} f(t) e^{-st} \, dt, \quad s = \sigma + j\omega$$
+          <strong>Region of Convergence (ROC):</strong> $\text{ROC} = \left\{ s \;\middle|\; \int_{-\infty}^{\infty} |f(t)| e^{-\sigma t} \, dt < \infty \right\}$, which forms a vertical strip in the $s$-plane:
+          $$\begin{cases}
+          \text{Left-sided signal:} & \text{ROC} = \{ s \mid -\infty < \sigma < \sigma_r \} \\
+          \text{Right-sided signal:} & \text{ROC} = \{ s \mid \sigma_l < \sigma < \infty \} \\
+          \text{Two-sided signal:} & \text{ROC} = \{ s \mid \sigma_l < \sigma < \sigma_r \}
+          \end{cases}$$
+        </li>
+        <li>② <strong>Synthesis Equation (Inverse Transform):</strong>
+          $$f(t) = \frac{1}{2\pi j} \int_{\sigma - j\infty}^{\sigma + j\infty} F(s) e^{st} \, ds = \sum_{p_i} \text{Res}[F(s)e^{st}, p_i] \quad (\sigma \in \text{ROC})$$
+          For the same algebraic expression $F(s)$, the time-domain signal depends on the ROC:
+          $$\begin{cases}
+          \text{If } \text{ROC} = \{ s \mid -\infty < \sigma < \sigma_r \}, & f(t) = f(t) u(-t) \quad (\text{left-sided}) \\
+          \text{If } \text{ROC} = \{ s \mid \sigma_l < \sigma < \infty \}, & f(t) = f(t) u(t) \quad (\text{right-sided}) \\
+          \text{If } \text{ROC} = \{ s \mid \sigma_l < \sigma < \sigma_r \}, & f(t) = f_r(t) u(t) + f_l(t) u(-t) \quad (\text{two-sided})
+          \end{cases}$$
+        </li>
+      </ul>
+
+      <h4>2. System Response &amp; Partial Fraction Expansion</h4>
+      <p>Under zero-state conditions, $r(t) = e(t) * h(t)$, so in the $s$-domain:</p>
+      $$R(s) = E(s) \cdot H(s), \quad \text{ROC}(R) \supseteq \text{ROC}(H) \cap \text{ROC}(E)$$
+      <p>For a system described by a linear constant-coefficient ODE, $H(s)$ is a rational function. By the Fundamental Theorem of Algebra:</p>
+      $$H(s) = \frac{\prod_{i=1}^m (s - z_i)}{\prod_{j=1}^n (s - p_j)}$$
+      <ul>
+        <li>① <strong>Distinct Real Poles:</strong>
+          $$\begin{cases}
+          m < n \text{ (Proper):} & \text{Partial fraction expansion with residues } K_i = \left.(s - p_i) H(s)\right|_{s=p_i} \\
+          m \ge n \text{ (Improper):} & \text{Long division first; note } \mathcal{L}^{-1}(s^k) = \delta^{(k)}(t)
+          \end{cases}$$
+        </li>
+        <li>② <strong>Complex Conjugate Poles:</strong> Can be expanded either in real quadratic form or complex conjugate first-order terms:
+          $$\begin{cases}
+          \dfrac{1}{s^2 + p_1^2} \cdot \dfrac{1}{s + p_2} = \dfrac{as + b}{s^2 + p_1^2} + \dfrac{k}{s + p_2} \\[1.2ex]
+          \dfrac{1}{s^2 + p_1^2} \cdot \dfrac{1}{s^2 + p_2^2} = \dfrac{k_1}{s + jp_1} + \dfrac{k_1^*}{s - jp_1} + \dfrac{k_2}{s + jp_2} + \dfrac{k_2^*}{s - jp_2}
+          \end{cases}$$
+        </li>
+        <li>③ <strong>Multiple (Repeated) Poles of Order $k$ at $s = p_1$:</strong>
+          $$H(s) = \frac{K_{11}}{(s - p_1)^k} + \frac{K_{12}}{(s - p_1)^{k-1}} + \cdots + \frac{K_{1k}}{s - p_1} + \frac{E(s)}{P(s)}$$
+          where the coefficients are computed recursively (or via derivatives):
+          $$K_{11} = \left.H(s)(s - p_1)^k\right|_{s=p_1} = \left.H_1(s)\right|_{s=p_1}$$
+          $$K_{12} = \left.\frac{H_1(s) - K_{11}}{s - p_1}\right|_{s=p_1} = \left.H_2(s)\right|_{s=p_1}, \quad K_{13} = \left.\frac{H_2(s) - K_{12}}{s - p_1}\right|_{s=p_1} = \left.H_3(s)\right|_{s=p_1}, \dots$$
+          Inverse transform pair: $\mathcal{L}^{-1}\left(\frac{1}{s^n}\right) = \pm \frac{t^{n-1}}{(n-1)!} u(\pm t)$.
+        </li>
+      </ul>
+
+      <h4>3. System Function $H(s)$ Properties</h4>
+      <ul>
+        <li>① <strong>Invertibility:</strong> $H(s) \cdot \tilde{H}(s) = 1$</li>
+        <li>② <strong>Causality:</strong> For a rational $H(s)$, the ROC is a right half-plane ($\text{Re}(s) > \sigma_{\max}$).</li>
+        <li>③ <strong>Stability:</strong>
+          <ol>
+            <li><strong>Stable $\Longleftrightarrow$ ROC contains the $j\omega$-axis ($\text{Re}(s) = 0$):</strong>
+              $$\int_{-\infty}^{\infty} |h(t)| \, dt < \infty \Longleftrightarrow \left.\int_{-\infty}^{\infty} |h(t) e^{-st}| \, dt\right|_{s=j\omega} < \infty \implies |H(s)|\Big|_{s=j\omega} < \infty$$
+            </li>
+            <li><strong>Marginally Stable $\Longleftrightarrow$</strong> ROC has the $j\omega$-axis as its boundary (with only simple poles on the $j\omega$-axis).</li>
+            <li><strong>Unstable $\Longleftrightarrow$</strong> ROC does not contain the $j\omega$-axis.</li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 5 -->
+  <div class="page-card" id="pg5">
+    <div class="page-number">Page 5 (Appendices A3, A4, A5)</div>
+    <div class="page-content">
+      <h3>Appendix A3: Bilateral Laplace Transform Properties</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Time Domain $f(t)$</th>
+            <th>$s$-Domain $F(s)$</th>
             <th>ROC</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Linearity</td>
-            <td>$ a x_1(t) + b x_2(t) $</td>
-            <td>$ a X_1(s) + b X_2(s) $</td>
-            <td>Contains $R_1 \cap R_2$</td>
+            <td>① Differentiation / Integration</td>
+            <td>$\frac{d}{dt} \to s, \quad \int_{-\infty}^t \to \frac{1}{s}$</td>
+            <td>$\frac{d}{ds} \to -t, \quad \int_s^\infty \to \frac{1}{t}$</td>
+            <td>Contains $R$ (or $R \cap \{\sigma > 0\}$)</td>
           </tr>
           <tr>
-            <td>Time Shifting</td>
-            <td>$ x(t - t_0) $</td>
-            <td>$ e^{-s t_0} X(s) $</td>
-            <td>Same as $R$</td>
+            <td>② Time Shifting ($t$-move)</td>
+            <td>$f(t - t_0)$</td>
+            <td>$e^{-s t_0} F(s)$</td>
+            <td>$R$</td>
           </tr>
           <tr>
-            <td>s-Domain Shifting</td>
-            <td>$ e^{s_0 t} x(t) $</td>
-            <td>$ X(s - s_0) $</td>
-            <td>Shifted by $\text{Re}(s_0)$</td>
+            <td>③ Frequency Shifting ($s$-move)</td>
+            <td>$e^{s_0 t} f(t)$</td>
+            <td>$F(s - s_0)$</td>
+            <td>$R$ shifted by $\text{Re}(s_0)$</td>
           </tr>
           <tr>
-            <td>Scaling</td>
-            <td>$ x(at) $</td>
-            <td>$ \frac{1}{|a|} X(\frac{s}{a}) $</td>
-            <td>Scaled by $a$</td>
+            <td>④ Scaling</td>
+            <td>$f(at)$</td>
+            <td>$\frac{1}{|a|} F\left(\frac{s}{a}\right)$</td>
+            <td>$R / a$</td>
           </tr>
           <tr>
-            <td>Differentiation</td>
-            <td>$ \frac{dx(t)}{dt} $</td>
-            <td>$ s X(s) - x(0^-) $</td>
-            <td>Contains $R$</td>
+            <td>⑤ Conjugation</td>
+            <td>$f^*(t)$</td>
+            <td>$F^*(s^*)$</td>
+            <td>$R$</td>
           </tr>
           <tr>
-            <td>Integration</td>
-            <td>$ \int_{-\infty}^t x(\tau) d\tau $</td>
-            <td>$ \frac{X(s)}{s} $</td>
-            <td>Contains $R \cap \{\text{Re}(s) > 0\}$</td>
+            <td>⑥ Convolution</td>
+            <td>$f_1(t) * f_2(t)$</td>
+            <td>$F_1(s) \cdot F_2(s)$</td>
+            <td>At least $R_1 \cap R_2$</td>
           </tr>
           <tr>
-            <td>Convolution</td>
-            <td>$ x_1(t) * x_2(t) $</td>
-            <td>$ X_1(s) X_2(s) $</td>
-            <td>Contains $R_1 \cap R_2$</td>
+            <td>⑦ Initial Value Theorem</td>
+            <td colspan="3">If $f(t) = f(t)u(t)$ and $f(t)$ contains $k\delta(t)$, then $f(0_+) = \lim_{s \to \infty} [s F(s) - k s]$</td>
+          </tr>
+          <tr>
+            <td>⑧ Final Value Theorem</td>
+            <td colspan="3">If $f(t) = f(t)u(t)$ and $F(s)$ is stable or has at most a simple pole at $p = 0$, then $f(\infty) = \lim_{s \to 0} s F(s)$</td>
+          </tr>
+          <tr>
+            <td>⑨ Correlation</td>
+            <td>$f_1(t) * f_2(-t)$</td>
+            <td>$F_1(s) \cdot F_2(-s)$</td>
+            <td>At least $R_1 \cap (-R_2)$</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Appendix A4: Response Classification, All-Pass, and Minimum-Phase Systems</h3>
+      <ul>
+        <li>① <strong>Transient, Steady-State, and Divergent Responses:</strong>
+          <ul>
+            <li><strong>Transient (Decaying) Response:</strong> $R(s)$ stable $\implies$ both $H(s)$ and $E(s)$ are stable.</li>
+            <li><strong>Steady-State Response:</strong> $R(s)$ marginally stable $\implies$ $H(s)$ or $E(s)$ is marginally stable while the other is stable.</li>
+            <li><strong>Divergent Response:</strong> $R(s)$ unstable $\implies$ $H(s)$ or $E(s)$ is unstable.</li>
+            <li><em>Special Case:</em> Pole-zero cancellation between $H(s)$ and $E(s)$.</li>
+          </ul>
+        </li>
+        <li>② <strong>Natural (Free) vs. Forced Response in $s$-Domain:</strong>
+          <ul>
+            <li><strong>Natural Response:</strong> Contributed by the poles of $H(s)$.</li>
+            <li><strong>Forced Response:</strong> Contributed by the poles of $E(s)$.</li>
+            <li><em>Special Case:</em> When $H(s)$ and $E(s)$ share common poles, in the partial fraction expansion of $R(s)$, the terms whose pole orders match the pole orders in $H(s)$ belong to the natural response.</li>
+          </ul>
+        </li>
+        <li>③ <strong>All-Pass and Minimum-Phase Systems:</strong>
+          <ul>
+            <li><strong>First-order all-pass:</strong> $H_1(s) = \frac{s - s_p}{s + s_p^*}$; <strong>Second-order all-pass:</strong> $H_2(s) = \frac{s - s_p}{s + s_p^*} \cdot \frac{s - s_p^*}{s + s_p}$; <strong>General all-pass:</strong> $H_{ap}(s) = \prod_i H_{1i}(s) \prod_j H_{2j}(s)$.</li>
+            <li><strong>All-pass group delay property:</strong> $-\frac{d}{d\omega}\varphi_{ap}(\omega) > 0$.</li>
+            <li><strong>Minimum-Phase System $H_{\min}(s)$:</strong> All poles and zeros lie in the left half-plane (or on the $j\omega$-axis).</li>
+            <li><strong>Canonical Decomposition:</strong> Any stable, causal non-minimum-phase system can be factored as:
+              $$H(s) = H_{ap}(s) \cdot H_{\min}(s)$$
+            </li>
+            <li><strong>Properties:</strong> Group delay satisfies $-\frac{d}{d\omega}\varphi(\omega) > -\frac{d}{d\omega}\varphi_{\min}(\omega)$ (minimum-phase has minimum group delay). Furthermore, if $|H(j\omega)| = |H_{\min}(j\omega)|$, partial energy satisfies $\int_0^t |h_{\min}(\tau)|^2 d\tau \ge \int_0^t |h(\tau)|^2 d\tau$ (written $\langle h_{\min}(t) | h_{\min}(t) \rangle \ge \langle h(t) | h(t) \rangle$).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Appendix A5: Unilateral Laplace Transform Properties</h3>
+      <p>Definition: $F(s) = \int_{0_-}^{\infty} f(t) e^{-st} \, dt = \int_{-\infty}^{\infty} f(t) u(t) e^{-st} \, dt$, with inverse $f(t) = \frac{1}{2\pi j} \int_{\sigma - j\infty}^{\sigma + j\infty} F(s) e^{st} \, ds$.</p>
+      <ul>
+        <li>① <strong>Differentiation &amp; Integration:</strong>
+          $$\mathcal{L}\left[\frac{d^n}{dt^n} f(t)\right] = s^n F(s) - s^{n-1} f(0_-) - s^{n-2} f'(0_-) - \cdots - s^0 f^{(n-1)}(0_-)$$
+          $$\mathcal{L}\left[\int_{-\infty}^t f(\tau) \, d\tau\right] = \frac{F(s)}{s} + \frac{\int_{-\infty}^{0_-} f(\tau) \, d\tau}{s}$$
+        </li>
+        <li>② <strong>Convolution:</strong> When both $f_1(t)$ and $f_2(t)$ are causal, $f_1(t) * f_2(t) \to F_1(s) F_2(s)$.</li>
+        <li>③ <strong>Time Shifting ($t$-move):</strong> $f(t - t_0) u(t - t_0) \to F(s) e^{-s t_0}$ ($t_0 > 0$).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 6 -->
+  <div class="page-card" id="pg6">
+    <div class="page-number">Page 6 (Sheet Page 4)</div>
+    <div class="page-content">
+      <h3>V. Continuous-Time Fourier Domain ($\omega$-Domain Signals &amp; Systems)</h3>
+      <h4>1. Signal Representation (Continuous-Time Fourier Transform)</h4>
+      <ul>
+        <li>① <strong>Direct Transform:</strong>
+          $$F(j\omega) = \int_{-\infty}^{\infty} f(t) e^{-j\omega t} \, dt \quad (\text{Laplace transform evaluated on the } j\omega\text{-axis})$$
+          <strong>Relation to $F(s)$ based on $\text{ROC}(F(s))$:</strong>
+          $$\begin{cases}
+          \text{ROC}(F(s)) \text{ contains } j\omega\text{-axis}: & F(j\omega) = \left.F(s)\right|_{s=j\omega} \\
+          \text{ROC}(F(s)) \text{ does not contain } j\omega\text{-axis}: & F(j\omega) \text{ does not exist} \\
+          \text{ROC}(F(s)) \text{ has } j\omega\text{-axis as boundary}: & \text{If there is a } k\text{-th order pole on the } j\omega\text{-axis at } s = j\omega_0:
+          \end{cases}$$
+          $$F(s) = F_0(s) + \frac{K_0}{(s - j\omega_0)^k} \implies F(j\omega) = \left.F_0(s)\right|_{s=j\omega} + \frac{K_0 \pi j^{k-1}}{(k-1)!} \delta^{(k-1)}(\omega - \omega_0)$$
+        </li>
+        <li>② <strong>Inverse Transform:</strong>
+          $$f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(j\omega) e^{j\omega t} \, d\omega$$
+        </li>
+      </ul>
+
+      <h4>2. System Response &amp; Spectral Density</h4>
+      <p>Under zero-state conditions, $r(t) = e(t) * h(t)$, so:</p>
+      $$R(j\omega) = E(j\omega) \cdot H(j\omega) \quad \text{if } \text{ROC}(E) \text{ and } \text{ROC}(H) \text{ contain the } j\omega\text{-axis.}$$
+      <ul>
+        <li><strong>Energy Signals (Energy Spectral Density $\mathcal{E}(\omega)$ &amp; Autocorrelation):</strong>
+          $$\mathcal{E}_r(j\omega) = \mathcal{E}_e(j\omega) \cdot |H(j\omega)|^2, \quad R_r(t) = R_e(t) * h(t) * h^*(-t) = R_e(t) * R_h(t)$$
+        </li>
+        <li><strong>Power Signals (Power Spectral Density $P(\omega)$ &amp; Autocorrelation):</strong>
+          $$P_r(j\omega) = P_e(j\omega) \cdot |H(j\omega)|^2, \quad R_r(t) = R_e(t) * h(t) * h^*(-t) = R_e(t) * R_h(t)$$
+        </li>
+      </ul>
+
+      <h4>3. System Function $H(j\omega)$ Properties</h4>
+      <ul>
+        <li>① <strong>Invertibility:</strong> $H(j\omega) \cdot \tilde{H}(j\omega) = 1$</li>
+        <li>② <strong>Causality:</strong> For rational $\left.H(j\omega)\right|_{j\omega=s}$, the ROC is the right half-plane containing the $j\omega$-axis.</li>
+        <li>③ <strong>Stability:</strong> Always BIBO stable (since $H(j\omega)$ exists on the $j\omega$-axis).</li>
+      </ul>
+
+      <hr style="margin: 1.5rem 0; border-color: var(--border);">
+
+      <h3>VI. Continuous-Time Periodic Fourier Series Domain ($\omega_0$-Domain Signals &amp; Systems)</h3>
+      <h4>1. Signal Representation (Fourier Series, $\omega_0 = \frac{2\pi}{T}$)</h4>
+      <ul>
+        <li>① <strong>Fourier Series Coefficients:</strong>
+          $$F_n = \frac{1}{T} \int_{-T/2}^{T/2} f(t) e^{-j n \left(\frac{2\pi}{T}\right) t} \, dt = \frac{1}{2}\sqrt{a_n^2 + b_n^2} \, e^{-j \arctan\frac{b_n}{a_n}}$$
+        </li>
+        <li>② <strong>Fourier Series Expansion:</strong>
+          $$f(t) = \sum_{n=-\infty}^{\infty} F_n e^{j n \left(\frac{2\pi}{T}\right) t} = a_0 + \sum_{n=1}^{\infty} \left[ a_n \cos\left(n \frac{2\pi}{T} t\right) + b_n \sin\left(n \frac{2\pi}{T} t\right) \right]$$
+        </li>
+      </ul>
+
+      <h4>2. System Response via Periodic Extension</h4>
+      <p>Under zero-state conditions, $r(t) = e(t) * h(t)$, so for periodic/extended signals:</p>
+      $$R_n = E_n \cdot H_n \cdot T \quad \left(\text{or } R_n = E_n \cdot H_n \cdot \frac{1}{T} \text{ depending on normalization}\right)$$
+      <p>Suppose $e(t)$ has finite duration $T_1$ and $h(t)$ has finite duration $T_2$; then $r(t) = e(t) * h(t)$ has duration $T_3 = T_1 + T_2$. Periodically extending $e(t), h(t), r(t)$ with period $T \ge T_3$ yields $e_T(t), h_T(t), r_T(t)$, whose Fourier Series with fundamental frequency $\omega_0 = \frac{2\pi}{T}$ give $E_n, H_n, R_n$.</p>
+
+      <h4>3. System Function $H_n$ Properties</h4>
+      <ul>
+        <li>① <strong>Invertibility:</strong> $H_n \cdot \tilde{H}_n = T$ (or $1$), with period $T \ge T_h + T_{\tilde{h}}$.</li>
+        <li>② <strong>Causality:</strong> For rational $\left.H_n\right|_{j\frac{2\pi}{T}n = s}$, the ROC is a right half-plane containing the $j\omega$-axis.</li>
+        <li>③ <strong>Stability:</strong> Always stable (since $h(t)$ is the periodic extension of a time-limited impulse response $h$).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 7 -->
+  <div class="page-card" id="pg7">
+    <div class="page-number">Page 7 (Appendices A6, A7, A8)</div>
+    <div class="page-content">
+      <h3>Appendix A6: Fourier Transform of Periodic Signals &amp; Wiener–Khinchin Derivation</h3>
+      <p>Let $f(t)$ be periodic with period $T$ ($\omega_0 = \frac{2\pi}{T}$). Then:</p>
+      $$f(t) = \sum_{n=-\infty}^{\infty} F_n e^{j n \left(\frac{2\pi}{T}\right) t}, \quad F(\omega) = 2\pi \sum_{n=-\infty}^{\infty} F_n \delta\left(\omega - n\frac{2\pi}{T}\right), \quad F_n = \frac{1}{T} \int_{-T/2}^{T/2} f(t) e^{-j n \left(\frac{2\pi}{T}\right) t} \, dt = \frac{1}{T} \left.F_T(\omega)\right|_{\omega = n\frac{2\pi}{T}}$$
+      <p><strong>Power Spectral Density $P(\omega) = \mathcal{F}[R(\tau)]$ of a Periodic Signal:</strong></p>
+      $$\begin{aligned}
+      P(\omega) &= \mathcal{F}[R(\tau)] = \mathcal{F}\left\{ \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} f(t) f^*(t - \tau) \, dt \right\} \\
+      &= \mathcal{F}\left\{ \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} \sum_{p=-\infty}^{\infty} F_p e^{j p \left(\frac{2\pi}{T}\right) t} \sum_{q=-\infty}^{\infty} F_q^* e^{-j q \left(\frac{2\pi}{T}\right) (t - \tau)} \, dt \right\} \\
+      &= \mathcal{F}\left\{ \sum_{p,q} F_p F_q^* e^{j q \left(\frac{2\pi}{T}\right) \tau} \left[ \lim_{T \to \infty} \frac{1}{T} \int_{-T/2}^{T/2} e^{j (p - q) \left(\frac{2\pi}{T}\right) t} \, dt \right] \right\} \\
+      &= \mathcal{F}\left\{ \sum_{p,q} F_p F_q^* e^{j q \left(\frac{2\pi}{T}\right) \tau} \delta_{p,q} \right\} = \mathcal{F}\left\{ \sum_{q=-\infty}^{\infty} |F_q|^2 e^{j q \left(\frac{2\pi}{T}\right) \tau} \right\} = 2\pi \sum_{n=-\infty}^{\infty} |F_n|^2 \delta\left(\omega - n\frac{2\pi}{T}\right)
+      \end{aligned}$$
+
+      <h3>Appendix A7: Continuous-Time Fourier Transform Properties</h3>
+      <ol>
+        <li><strong>Duality (Symmetry):</strong> $\mathcal{F}[F(t)] = 2\pi f(-\omega) \implies \left.\mathcal{F}^{-1}[F(\omega)]\right|_{t=-\omega} = \frac{1}{2\pi} \mathcal{F}[F(t)] \implies \mathcal{F}^{-1}[f(\omega)] = \frac{1}{2\pi} \left.\mathcal{F}[f(t)]\right|_{\omega=-t}$</li>
+        <li><strong>Scaling:</strong> $\mathcal{F}[f(at)] = \frac{1}{|a|} F\left(\frac{\omega}{a}\right)$</li>
+        <li><strong>Time Shifting ($t$-move):</strong> $\mathcal{F}[f(t - t_0)] = F(\omega) e^{-j\omega t_0} \implies \mathcal{F}[f(at - t_0)] = \frac{1}{|a|} F\left(\frac{\omega}{a}\right) e^{-j\omega t_0 / a}$</li>
+        <li><strong>Frequency Shifting ($\omega$-move):</strong> $\mathcal{F}[f(t) e^{j\omega_0 t}] = F(\omega - \omega_0)$</li>
+        <li><strong>Differentiation &amp; Integration:</strong>
+          $$\frac{d^n}{dt^n} \to (j\omega)^n, \quad \frac{d^n}{d\omega^n} \to (-jt)^n, \quad \int_{-\infty}^t \to \cdot\,\mathcal{F}[u(t)] = \frac{1}{j\omega} + \pi\delta(\omega), \quad \int_{-\infty}^\omega \to \cdot\,2\pi \mathcal{F}^{-1}[u(\omega)]$$
+        </li>
+        <li><strong>Convolution &amp; Multiplication:</strong>
+          $$\mathcal{F}[f_1 * f_2] = F_1 \cdot F_2, \quad \mathcal{F}[f_1 \cdot f_2] = \frac{1}{2\pi} F_1 * F_2$$
+          $$\mathcal{F}^{-1}[F_1(\omega) \cdot F_2(\omega)] = \mathcal{F}^{-1}[F_1(\omega)] * \mathcal{F}^{-1}[F_2(\omega)], \quad \mathcal{F}^{-1}[F_1 * F_2] = 2\pi \mathcal{F}^{-1}[F_1] \cdot \mathcal{F}^{-1}[F_2]$$
+        </li>
+        <li><strong>Correlation (Wiener–Khinchin):</strong> $\mathcal{F}[R_{12}(\tau)] = F_1(\omega) \cdot F_2^*(\omega) \implies \mathcal{F}[R(\tau)] = |F(\omega)|^2$</li>
+      </ol>
+
+      <h3>Appendix A8: Reconstructing Continuous Spectrum from Fourier Series</h3>
+      <p>Let $f(t)$ be a time-limited signal of duration $T_0$ (supported on $[0, T]$). Periodically extending $f(t)$ with period $T \ge T_0$ yields $f_T(t)$:</p>
+      <ul>
+        <li>FT of $f(t)$: $F(j\omega) = \int_{-\infty}^{\infty} f(t) e^{-j\omega t} \, dt$</li>
+        <li>FS of $f_T(t)$: $F_n = \frac{1}{T} \int_T f_T(t) e^{-j n \left(\frac{2\pi}{T}\right) t} \, dt$</li>
+      </ul>
+      <p>Since $f(t) = f_T(t)[u(t) - u(t - T)]$, convolving in the frequency domain gives the interpolation formula:</p>
+      $$F(j\omega) = \frac{1}{2\pi} \left[ \sum_{n=-\infty}^{\infty} F_n \cdot 2\pi \delta\left(\omega - n\frac{2\pi}{T}\right) \right] * \left[ T \cdot \text{Sa}\left(\frac{\omega T}{2}\right) e^{-j\omega \frac{T}{2}} \right] = T \sum_{n=-\infty}^{\infty} F_n \, \text{Sa}\left[\frac{T}{2}\left(\omega - n\frac{2\pi}{T}\right)\right] e^{-j\frac{T}{2}\left(\omega - n\frac{2\pi}{T}\right)}$$
+      <p>where $\text{Sa}(x) = \frac{\sin x}{x}$.</p>
+    </div>
+  </div>
+
+  <!-- Page 8 -->
+  <div class="page-card" id="pg8">
+    <div class="page-number">Page 8 (Sheet Page 5)</div>
+    <div class="page-content">
+      <h3>VII. Discrete-Time Signals and Systems ($n$-Domain)</h3>
+      <h4>1. Signal Representation via Unit Impulses</h4>
+      <ul>
+        <li>① $x(n) = \sum_{m=-\infty}^{\infty} x(m) \delta(n - m)$</li>
+        <li>② $x(m) = \sum_{n=-\infty}^{\infty} x(n) \delta(m - n)$</li>
+      </ul>
+
+      <h4>2. Difference Equation Solution</h4>
+      <p><strong>① Natural (Free) Response + Forced Response:</strong></p>
+      <ul>
+        <li>Given an $N$-th order linear constant-coefficient difference equation:
+          <ul>
+            <li><strong>Homogeneous Equation ($e(n) = 0$):</strong> Solve the characteristic equation to get the homogeneous solution (natural response): $\sum_k C_k \alpha_k^n$.</li>
+            <li><strong>Particular Solution ($n \ge 0$):</strong> Use undetermined coefficients matching the input form to obtain the forced response: $D(n)$.</li>
+          </ul>
+        </li>
+        <li>Summing gives the complete response with undetermined constants $C_k$: $r(n) = \sum_k C_k \alpha_k^n + D(n)$.</li>
+        <li>From pre-initial states $y(-N) \sim y(-1)$, iterate the difference equation to find $y(0) \sim y(N-1)$, which uniquely determine $C_k$.</li>
+      </ul>
+
+      <p><strong>② Zero-State Response ($r_{zs}$) + Zero-Input Response ($r_{zi}$):</strong></p>
+      <ul>
+        <li><strong>Zero-State Response ($e(n) \to H[e(n)]$):</strong>
+          $$r_{zs}(n) = \sum_k C_{zsk} \alpha_k^n + D(n), \quad \begin{cases} y_{zs}(-N) \sim y_{zs}(-1) = 0 \\ y_{zs}(0) \sim y_{zs}(N-1) \text{ obtained by iteration} \end{cases}$$
+        </li>
+        <li><strong>Zero-Input Response ($y(0) \sim y(N-1) \to H[\cdots]$):</strong>
+          $$r_{zi}(n) = \sum_k C_{zik} \beta_k^n, \quad \begin{cases} y_{zi}(-N) \sim y_{zi}(-1) \text{ are given} \\ y_{zi}(0) \sim y_{zi}(N-1) \text{ (or solved directly from } y_{zi}(-N) \sim y_{zi}(-1)\text{)} \end{cases}$$
+          <em>Note:</em> The response to $\delta(n)$ and $\delta(n - n_0)$ in $e(n)$ can be found using LTI time-invariance and the zero-input method (since $h(0) = y(0)$ determines the coefficients).
+        </li>
+        <li><strong>Total Response Decomposition &amp; Linearity:</strong>
+          $$\begin{aligned}
+          r(n) &= [r_{zs}(n) + r_{zi}(n)] u(n) = H[e(n)] + H[y(0) \sim y(N-1)] \\
+          &= H\left[\sum_{m=-\infty}^{\infty} e(m) \delta(n - m)\right] + H[y(0) \sim y(N-1)] \\
+          &= \sum_{m=-\infty}^{\infty} e(m) h(n - m) + H[y(0) \sim y(N-1)] \\
+          &= e(n) * h(n) + H[y(0) \sim y(N-1)]
+          \end{aligned}$$
+          Exhibits both <strong>zero-state linearity</strong> and <strong>zero-input linearity</strong>.
+        </li>
+      </ul>
+
+      <h4>3. Discrete-Time System Impulse Response $h(n)$ Properties</h4>
+      <ul>
+        <li>① <strong>Invertibility:</strong> $h(n) * \tilde{h}(n) = \delta(n)$</li>
+        <li>② <strong>Causality:</strong> $h(n) = h(n) u(n)$ (i.e., $h(n) = 0$ for $n < 0$)</li>
+        <li>③ <strong>Stability (BIBO):</strong> For bounded input $|e(n)| \le B < \infty$:
+          $$|r(n)| = \left|\sum_{m=-\infty}^{\infty} h(m) e(n - m)\right| \le \sum_{m=-\infty}^{\infty} |h(m)| \, |e(n - m)| \le B \sum_{m=-\infty}^{\infty} |h(m)|$$
+          Thus, BIBO stability holds if and only if $h(n)$ is absolutely summable:
+          $$\sum_{m=-\infty}^{\infty} |h(m)| < \infty$$
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 9 -->
+  <div class="page-card" id="pg9">
+    <div class="page-number">Page 9 (Appendix A9)</div>
+    <div class="page-content">
+      <h3>Appendix A9: Hilbert Transform Relations for Causal Signals and Sequences</h3>
+      <h4>① Causal Continuous-Time Signal ($h(t) = h(t) u(t)$)</h4>
+      <p>Let $H(\omega) = R(\omega) + j X(\omega) = \mathcal{F}[h(t)]$. Since $h(t) = h(t) u(t)$ (assuming no impulse at $t = 0$):</p>
+      $$\begin{aligned}
+      H(\omega) &= \frac{1}{2\pi} \mathcal{F}[h(t)] * \mathcal{F}[u(t)] = \frac{1}{2\pi} [R(\omega) + j X(\omega)] * \left[\pi \delta(\omega) + \frac{1}{j\omega}\right] \\
+      &= \frac{1}{2\pi} \left[\pi R(\omega) + X(\omega) * \frac{1}{\omega}\right] + \frac{j}{2\pi} \left[\pi X(\omega) - R(\omega) * \frac{1}{\omega}\right] \\
+      &= \left[\frac{R(\omega)}{2} + \frac{1}{2\pi} \int_{-\infty}^{\infty} \frac{X(\xi)}{\omega - \xi} \, d\xi\right] + j\left[\frac{X(\omega)}{2} - \frac{1}{2\pi} \int_{-\infty}^{\infty} \frac{R(\xi)}{\omega - \xi} \, d\xi\right]
+      \end{aligned}$$
+      <p>Equating real and imaginary parts gives the <strong>Kramers–Kronig / Hilbert Transform relations</strong>:</p>
+      $$R(\omega) = \frac{1}{\pi} \int_{-\infty}^{\infty} \frac{X(\xi)}{\omega - \xi} \, d\xi, \quad X(\omega) = -\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{R(\xi)}{\omega - \xi} \, d\xi$$
+
+      <h4>② Causal Discrete-Time Sequence ($x(n) = x(n) u(n)$)</h4>
+      <p>A causal sequence can be recovered from its even part $x_e(n)$ or odd part $x_o(n)$:</p>
+      $$x(n) = 2x_e(n)u(n) - x_e(0)\delta(n) = 2x_o(n)u(n) + x(0)\delta(n)$$
+      <p>Taking the DTFT, where $\text{DTFT}[u(n)] = \pi \sum_{k=-\infty}^{\infty} \delta(\omega - 2\pi k) + \frac{1}{1 - e^{-j\omega}} = \pi \sum_{k=-\infty}^{\infty} \delta(\omega - 2\pi k) + \frac{1}{2} - \frac{j}{2}\cot\left(\frac{\omega}{2}\right)$:</p>
+      $$\begin{aligned}
+      X(e^{j\omega}) &= \text{DTFT}[2x_e(n)u(n) - x_e(0)\delta(n)] \\
+      &= \frac{1}{2\pi} \left[ \text{Re}\,X(e^{j\omega}) * 2\pi \sum_{k=-\infty}^{\infty} \delta(\omega - 2\pi k) + \int_{-\pi}^{\pi} \text{Re}\,X(e^{j\omega}) \, d\omega - \text{Re}\,X(e^{j\omega}) * j\cot\frac{\omega}{2} \right] - \frac{1}{2\pi}\int_{-\pi}^{\pi} \text{Re}\,X(e^{j\omega}) \, d\omega \\
+      &= \text{Re}\,X(e^{j\omega}) - \frac{j}{2\pi} \text{Re}\,X(e^{j\omega}) * \cot\frac{\omega}{2}
+      \end{aligned}$$
+      <p>Similarly, from the odd part:</p>
+      $$X(e^{j\omega}) = \text{DTFT}[2x_o(n)u(n) + x(0)\delta(n)] = \frac{1}{2\pi} \left[ j\,\text{Im}\,X(e^{j\omega}) * 2\pi \sum_{k=-\infty}^{\infty} \delta(\omega - 2\pi k) + j\int_{-\pi}^{\pi} \text{Im}\,X(e^{j\omega}) \, d\omega - j\,\text{Im}\,X(e^{j\omega}) * j\cot\frac{\omega}{2} \right] + x(0)$$
+      <p>Therefore, the real and imaginary parts of $X(e^{j\omega})$ satisfy the discrete periodic Hilbert relations (where $\mathcal{P}$ denotes the Cauchy principal value):</p>
+      $$\text{Re}[X(e^{j\omega})] = x(0) + \frac{1}{2\pi} \mathcal{P} \int_{-\pi}^{\pi} \text{Im}[X(e^{j\theta})] \cot\left(\frac{\omega - \theta}{2}\right) d\theta$$
+      $$\text{Im}[X(e^{j\omega})] = -\frac{1}{2\pi} \mathcal{P} \int_{-\pi}^{\pi} \text{Re}[X(e^{j\theta})] \cot\left(\frac{\omega - \theta}{2}\right) d\theta$$
+
+      <h4>③ Causal Spectrum (Analytic Signal $f_a(t) = f(t) + j\hat{f}(t)$ with One-Sided Spectrum)</h4>
+      $$f(t) = -\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{\hat{f}(\tau)}{t - \tau} \, d\tau, \quad \hat{f}(t) = \frac{1}{\pi} \int_{-\infty}^{\infty} \frac{f(\tau)}{t - \tau} \, d\tau$$
+
+      <h4>④ Causal Discrete Line Spectrum</h4>
+      <p>Analogous discrete Hilbert relations hold by duality between the time and frequency domains.</p>
+    </div>
+  </div>
+
+  <!-- Page 10 -->
+  <div class="page-card" id="pg10">
+    <div class="page-number">Page 10 (Sheet Page 6)</div>
+    <div class="page-content">
+      <h3>VIII. $z$-Domain Signals and Systems ($z$-Transform)</h3>
+      <h4>1. Signal Representation (Bilateral $z$-Transform)</h4>
+      <ul>
+        <li>① <strong>Direct Transform:</strong>
+          $$X(z) = \sum_{n=-\infty}^{\infty} x(n) z^{-n}, \quad z = r e^{j\omega}$$
+          <strong>Region of Convergence (ROC):</strong> $\text{ROC} = \left\{ z \;\middle|\; \sum_{n=-\infty}^{\infty} |x(n) z^{-n}| < \infty \right\}$, forming an annulus (ring) in the $z$-plane:
+          $$\begin{cases}
+          \text{Left-sided sequence:} & \text{ROC} = \{ z \mid 0 \le |z| < r_o \} \quad (\text{may exclude } z = 0) \\
+          \text{Right-sided sequence:} & \text{ROC} = \{ z \mid r_i < |z| \le \infty \} \quad (\text{may exclude } z = \infty) \\
+          \text{Two-sided sequence:} & \text{ROC} = \{ z \mid r_i < |z| < r_o \}
+          \end{cases}$$
+        </li>
+        <li>② <strong>Inverse $z$-Transform (Contour Integration &amp; Residue Theorem):</strong>
+          $$x(n) = \frac{1}{2\pi j} \oint_C X(z) z^{n-1} \, dz = \sum_{p_i \text{ inside } C} \text{Res}[X(z) z^{n-1}, p_i] \quad (C \subset \text{ROC})$$
+          For the same rational $X(z)$, the sequence depends on the ROC:
+          $$\begin{cases}
+          \text{If } \text{ROC} = \{ z \mid 0 \le |z| < r_i \}, & x(n) = x(n) u(-n-1) \quad (\text{left-sided}) \\
+          \text{If } \text{ROC} = \{ z \mid |z| > r_o \}, & x(n) = x(n) u(n) \quad (\text{right-sided}) \\
+          \text{If } \text{ROC} = \{ z \mid r_i < |z| < r_o \}, & x(n) = x_r(n) u(n) + x_l(n) u(-n-1) \quad (\text{two-sided})
+          \end{cases}$$
+        </li>
+      </ul>
+
+      <h4>2. System Response &amp; Partial Fraction Expansion</h4>
+      <p>Under zero-state conditions, $r(n) = e(n) * h(n)$, so:</p>
+      $$R(z) = E(z) \cdot H(z), \quad \text{ROC}(R) \supseteq \text{ROC}(H) \cap \text{ROC}(E)$$
+      <p>For a linear constant-coefficient difference equation, $H(z)$ is rational. Expanding $\frac{H(z)}{z} = \frac{\prod_{i=1}^m (z - z_i)}{\prod_{j=1}^n (z - p_j)}$:</p>
+      <ul>
+        <li>① <strong>Distinct Real Poles:</strong>
+          $$\begin{cases}
+          m < n: & \text{Partial fractions on } \frac{H(z)}{z} \text{ with } K_i = \left.(z - p_i)\frac{H(z)}{z}\right|_{z=p_i} \\
+          m \ge n: & \text{Long division; note } \mathcal{Z}^{-1}(z^k) = \delta(n + k)
+          \end{cases}$$
+        </li>
+        <li>② <strong>Complex Conjugate Poles on/near Circle:</strong>
+          $$\begin{cases}
+          \dfrac{z \sin(\omega_0 T)}{z^2 - 2z\cos(\omega_0 T) + 1} \longleftrightarrow \pm \sin(n\omega_0 T) u(n / -n-1) \\[1.2ex]
+          \dfrac{z(z - \cos(\omega_0 T))}{z^2 - 2z\cos(\omega_0 T) + 1} \longleftrightarrow \pm \cos(n\omega_0 T) u(n / -n-1)
+          \end{cases}$$
+        </li>
+        <li>③ <strong>Multiple Poles of Order $k$ at $z = p$:</strong>
+          $$H(z) = \sum_{r=1}^k \frac{C_r z}{(z - p)^r} + \frac{E(z)}{P(z)}$$
+          where coefficients are found via:
+          $$C_1 = \left.\frac{X(z)}{z}(z - p)^k\right|_{z=p} = \left.X_1(z)\right|_{z=p}, \quad C_2 = \left.\frac{X_1(z) - C_1}{z - p}\right|_{z=p} = \left.X_2(z)\right|_{z=p}, \quad C_3 = \left.\frac{X_2(z) - C_2}{z - p}\right|_{z=p} = \left.X_3(z)\right|_{z=p}, \dots$$
+          Inverse transform pair: $\mathcal{Z}^{-1}\left[\frac{z}{(z - 1)^m}\right] = \pm \binom{n + m - 1}{m - 1} u(n / -n-1)$ (written $\pm C_n^m u(n / -n-1)$).
+        </li>
+      </ul>
+
+      <h4>3. System Function $H(z)$ Properties</h4>
+      <ul>
+        <li>① <strong>Invertibility:</strong> $H(z) \cdot \tilde{H}(z) = 1$</li>
+        <li>② <strong>Causality:</strong> For rational $H(z)$, the ROC is the exterior of a circle including $z = \infty$ ($|z| > r_{\max}$), and the numerator degree in $z$ is $\le$ the denominator degree.</li>
+        <li>③ <strong>Stability:</strong>
+          <ol>
+            <li><strong>Stable $\Longleftrightarrow$ ROC contains the unit circle $|z| = 1$:</strong>
+              $$\sum_{n=-\infty}^{\infty} |h(n)| < \infty \Longleftrightarrow \left.\sum_{n=-\infty}^{\infty} |h(n) z^{-n}|\right|_{|z|=1} < \infty \implies |H(z)|\Big|_{|z|=1} < \infty$$
+            </li>
+            <li><strong>Marginally Stable $\Longleftrightarrow$</strong> ROC has the unit circle $|z| = 1$ as its boundary (with simple poles on $|z| = 1$).</li>
+            <li><strong>Unstable $\Longleftrightarrow$</strong> ROC does not contain the unit circle $|z| = 1$.</li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 11 -->
+  <div class="page-card" id="pg11">
+    <div class="page-number">Page 11 (Appendices A10, A11, A12)</div>
+    <div class="page-content">
+      <h3>Appendix A10: Bilateral $z$-Transform Properties</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Sequence $x(n)$</th>
+            <th>$z$-Transform $X(z)$</th>
+            <th>ROC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>① Multiplication by $n^m$</td>
+            <td>$n^m x(n)$</td>
+            <td>$\left(-z\frac{d}{dz}\right)^m X(z)$</td>
+            <td>$R$</td>
+          </tr>
+          <tr>
+            <td>② Time Shifting ($n$-move)</td>
+            <td>$x(n - n_0)$</td>
+            <td>$z^{-n_0} X(z)$</td>
+            <td>$R$ (may add or remove $0, \infty$)</td>
+          </tr>
+          <tr>
+            <td>③ Scaling in $z$-Domain</td>
+            <td>$z_0^n x(n)$</td>
+            <td>$X\left(\frac{z}{z_0}\right)$</td>
+            <td>$|z_0| R$</td>
+          </tr>
+          <tr>
+            <td>④ Time Reversal</td>
+            <td>$x(-n)$</td>
+            <td>$X(z^{-1})$</td>
+            <td>$R^{-1}$</td>
+          </tr>
+          <tr>
+            <td>⑤ Conjugation</td>
+            <td>$x^*(n)$</td>
+            <td>$X^*(z^*)$</td>
+            <td>$R$</td>
+          </tr>
+          <tr>
+            <td>⑥ Convolution</td>
+            <td>$x_1(n) * x_2(n)$</td>
+            <td>$X_1(z) \cdot X_2(z)$</td>
+            <td>At least $R_1 \cap R_2$</td>
+          </tr>
+          <tr>
+            <td>⑦ Initial Value Theorem</td>
+            <td colspan="3">If $x(n) = x(n)u(n)$ (causal), then $x(0) = \lim_{z \to \infty} X(z)$, and generally $x(k) = \lim_{z \to \infty} z^k \left[X(z) - \sum_{r=0}^{k-1} x(r) z^{-r}\right]$</td>
+          </tr>
+          <tr>
+            <td>⑧ Final Value Theorem</td>
+            <td colspan="3">If $x(n) = x(n)u(n)$ and $X(z)$ is stable (or has at most a simple pole at $p = 1$), then $x(\infty) = \lim_{z \to 1} (z - 1) X(z)$</td>
+          </tr>
+          <tr>
+            <td>⑨ Correlation</td>
+            <td>$x_1(n) * x_2(-n)$</td>
+            <td>$X_1(z) \cdot X_2(z^{-1})$</td>
+            <td>At least $R_1 \cap R_2^{-1}$</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Appendix A11: Discrete-Time Response Classification, All-Pass, and Minimum-Phase Systems</h3>
+      <ul>
+        <li>① <strong>Transient, Steady-State, and Divergent Responses:</strong>
+          <ul>
+            <li><strong>Transient Response:</strong> $R(z)$ stable $\implies$ $H(z)$ and $E(z)$ are both stable.</li>
+            <li><strong>Steady-State Response:</strong> $R(z)$ marginally stable $\implies$ $H(z)$ or $E(z)$ is marginally stable while the other is stable.</li>
+            <li><strong>Divergent Response:</strong> $R(z)$ unstable $\implies$ $H(z)$ or $E(z)$ is unstable.</li>
+            <li><em>Special Case:</em> Pole-zero cancellation between $H(z)$ and $E(z)$.</li>
+          </ul>
+        </li>
+        <li>② <strong>Natural vs. Forced Response in $z$-Domain:</strong>
+          <ul>
+            <li><strong>Natural Response:</strong> Produced by poles of $H(z)$.</li>
+            <li><strong>Forced Response:</strong> Produced by poles of $E(z)$.</li>
+            <li><em>Special Case:</em> When $H(z)$ and $E(z)$ share identical poles, the partial fraction terms of $R(z)$ whose pole orders match those of $H(z)$ constitute the natural response.</li>
+          </ul>
+        </li>
+        <li>③ <strong>Discrete-Time All-Pass and Minimum-Phase Systems:</strong>
+          <ul>
+            <li><strong>First-order all-pass:</strong> $H_1(z) = \frac{z^{-1} - z_p^*}{1 - z_p z^{-1}}$; <strong>Second-order all-pass:</strong> $H_2(z) = \frac{z^{-1} - z_p^*}{1 - z_p z^{-1}} \cdot \frac{z^{-1} - z_p}{1 - z_p^* z^{-1}}$; <strong>General all-pass:</strong> $H_{ap}(z) = \prod_i H_{1i}(z) \prod_j H_{2j}(z)$.</li>
+            <li><strong>All-pass group delay property:</strong> $-\frac{d}{d\omega}\varphi_{ap}(\omega) > 0$.</li>
+            <li><strong>Minimum-Phase System $H_{\min}(z)$:</strong> All poles and zeros lie inside (or on) the unit circle $|z| \le 1$.</li>
+            <li><strong>Factorization:</strong> Any stable, causal non-minimum-phase system can be decomposed as $H(z) = H_{ap}(z) \cdot H_{\min}(z)$.</li>
+            <li><strong>Properties:</strong> $-\frac{d}{d\omega}\varphi(\omega) > -\frac{d}{d\omega}\varphi_{\min}(\omega)$; and if $|H(e^{j\omega})| = |H_{\min}(e^{j\omega})|$, partial energy satisfies $\sum_{n=0}^M |h_{\min}(n)|^2 \ge \sum_{n=0}^M |h(n)|^2$ (written $\langle h_{\min}(n) | h_{\min}(n) \rangle \ge \langle h(n) | h(n) \rangle$).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Appendix A12: Unilateral $z$-Transform Properties</h3>
+      <p>Definition: $X(z) = \sum_{n=0}^{\infty} x(n) z^{-n} = \sum_{n=-\infty}^{\infty} x(n) u(n) z^{-n}$, with inverse $x(n) = \frac{1}{2\pi j} \oint_C X(z) z^{n-1} \, dz$.</p>
+      <ul>
+        <li>① <strong>Convolution:</strong> When both $x_1(n)$ and $x_2(n)$ are causal, $x_1(n) * x_2(n) \to X_1(z) X_2(z)$.</li>
+        <li>② <strong>Time Shifting ($n$-move, Advance &amp; Delay):</strong>
+          $$\mathcal{Z}[x(n + m) u(n)] = z^m \left[ X(z) - \sum_{k=0}^{m-1} x(k) z^{-k} \right] \quad (m > 0)$$
+          $$\mathcal{Z}[x(n - m) u(n)] = z^{-m} \left[ X(z) + \sum_{k=-m}^{-1} x(k) z^{-k} \right] \quad (m > 0)$$
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 12 -->
+  <div class="page-card" id="pg12">
+    <div class="page-number">Page 12 (Sheet Page 7)</div>
+    <div class="page-content">
+      <h3>IX. Discrete-Time Fourier Transform Domain ($\omega$-Domain / DTFT)</h3>
+      <h4>1. Signal Representation</h4>
+      <ul>
+        <li>① <strong>Direct Transform (DTFT):</strong>
+          $$X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x(n) e^{-j n \omega} \quad (\text{$z$-Transform evaluated on the unit circle } |z| = 1)$$
+          <strong>Relation to $X(z)$ based on $\text{ROC}(X(z))$:</strong>
+          $$\begin{cases}
+          \text{ROC}(X(z)) \text{ contains } |z| = 1: & X(e^{j\omega}) = \left.X(z)\right|_{z=e^{j\omega}} \\
+          \text{ROC}(X(z)) \text{ does not contain } |z| = 1: & X(e^{j\omega}) \text{ does not exist} \\
+          \text{ROC}(X(z)) \text{ has } |z| = 1 \text{ as boundary}: & \text{If } |z| = 1 \text{ has } k\text{-th order poles, } X(e^{j\omega}) \text{ includes }\delta^{(k-1)} \text{ impulses}
+          \end{cases}$$
+        </li>
+        <li>② <strong>Inverse Transform (IDTFT):</strong>
+          $$x(n) = \frac{1}{2\pi} \int_{2\pi} X(e^{j\omega}) e^{j n \omega} \, d\omega$$
+        </li>
+      </ul>
+
+      <h4>2. System Response &amp; Spectral Density</h4>
+      <p>Under zero-state conditions, $r(n) = e(n) * h(n)$, so:</p>
+      $$R(e^{j\omega}) = E(e^{j\omega}) \cdot H(e^{j\omega}) \quad \text{if } \text{ROC}(E) \text{ and } \text{ROC}(H) \text{ contain } |z| = 1.$$
+      <ul>
+        <li><strong>Energy Sequences:</strong>
+          $$\mathcal{E}_r(e^{j\omega}) = \mathcal{E}_e(e^{j\omega}) \cdot |H(e^{j\omega})|^2, \quad R_r(n) = R_e(n) * h(n) * h^*(-n) = R_e(n) * R_h(n)$$
+        </li>
+        <li><strong>Power Sequences:</strong>
+          $$P_r(e^{j\omega}) = P_e(e^{j\omega}) \cdot |H(e^{j\omega})|^2, \quad R_r(n) = R_e(n) * h(n) * h^*(-n) = R_e(n) * R_h(n)$$
+        </li>
+      </ul>
+
+      <h4>3. System Function $H(e^{j\omega})$ Properties</h4>
+      <ul>
+        <li>① <strong>Invertibility:</strong> $H(e^{j\omega}) \cdot \tilde{H}(e^{j\omega}) = 1$</li>
+        <li>② <strong>Causality:</strong> For rational $\left.H(e^{j\omega})\right|_{e^{j\omega}=z}$, the ROC is the exterior of a circle containing $|z| = 1$ (and $z = \infty$).</li>
+        <li>③ <strong>Stability:</strong> Always BIBO stable.</li>
+      </ul>
+
+      <hr style="margin: 1.5rem 0; border-color: var(--border);">
+
+      <h3>X. Discrete Fourier Series / Transform Domain ($\omega_0$-Domain, $\omega_0 = \frac{2\pi}{N}$)</h3>
+      <h4>1. Signal Representation (DFS / DFT, where $W_N = e^{-j\frac{2\pi}{N}}$)</h4>
+      <ul>
+        <li>① <strong>Inverse DFS / IDFT:</strong>
+          $$x(n) = \frac{1}{N} \sum_{k=0}^{N-1} X(k) e^{j\left(\frac{2\pi}{N}\right) n k} = \frac{1}{N} \sum_{k=0}^{N-1} X(k) W_N^{-nk}$$
+        </li>
+        <li>② <strong>Direct DFS / DFT:</strong>
+          $$X(k) = \sum_{n=0}^{N-1} x(n) e^{-j\left(\frac{2\pi}{N}\right) n k} = \sum_{n=0}^{N-1} x(n) W_N^{nk}$$
+        </li>
+      </ul>
+
+      <h4>2. System Response via Periodic Extension (Linear Convolution via Circular/DFS)</h4>
+      <p>Under zero-state conditions, $r(n) = e(n) * h(n)$, so:</p>
+      $$R(k) = E(k) \cdot H(k)$$
+      <p>Suppose $e(n)$ has finite length $N_1$ and $h(n)$ has finite length $N_2$; then the linear convolution $r(n) = e(n) * h(n)$ has length $N_3 = N_1 + N_2 - 1$. Periodically extending $e(n), h(n), r(n)$ with period $N \ge N_3$ yields $e_N(n), h_N(n), r_N(n)$, whose DFS with fundamental frequency $\omega_0 = \frac{2\pi}{N}$ give $E(k), H(k), R(k)$.</p>
+
+      <h4>3. System Function $H(k)$ Properties</h4>
+      <ul>
+        <li>① <strong>Invertibility:</strong> $H(k) \cdot \tilde{H}(k) = 1$, for $N > N_h + N_{\tilde{h}}$.</li>
+        <li>② <strong>Causality:</strong> For rational $\left.H(k)\right|_{e^{j\frac{2\pi}{N}k}=z}$, the ROC is the exterior of $|z| = 1$.</li>
+        <li>③ <strong>Stability:</strong> Always stable (since $h(n)$ is a periodic extension of a finite-duration impulse response).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 13 -->
+  <div class="page-card" id="pg13">
+    <div class="page-number">Page 13 (Appendices A13, A14, A15)</div>
+    <div class="page-content">
+      <h3>Appendix A13: DTFT of Periodic Sequences</h3>
+      <p>Let $x(n)$ be periodic with period $N$. Then:</p>
+      $$x(n) = \frac{1}{N} \sum_{k=0}^{N-1} X(k) e^{j\frac{2\pi}{N}nk}, \quad X(e^{j\omega}) = \frac{2\pi}{N} \sum_{r=-\infty}^{\infty} \sum_{k=0}^{N-1} X(k) \delta\left(\omega - \frac{2\pi}{N}k - 2\pi r\right), \quad X(k) = \sum_{n=0}^{N-1} x(n) e^{-j\frac{2\pi}{N}nk} = \left.X_N(e^{j\omega})\right|_{\omega = \frac{2\pi}{N}k}$$
+      <p>The power spectral density is $P(e^{j\omega}) = \mathcal{F}[R(m)] = \frac{2\pi}{N^2} \sum_{r=-\infty}^{\infty} \sum_{k=0}^{N-1} |X(k)|^2 \delta\left(\omega - \frac{2\pi}{N}k - 2\pi r\right)$.</p>
+
+      <h3>Appendix A14: DTFT Properties</h3>
+      <ol>
+        <li><strong>Time Shifting ($n$-move):</strong> $x(n - n_0) \to e^{-j\omega n_0} X(e^{j\omega})$</li>
+        <li><strong>Frequency Shifting ($\omega$-move):</strong> $e^{j\omega_0 n} x(n) \to X\left(e^{j(\omega - \omega_0)}\right)$</li>
+        <li><strong>Frequency Differentiation:</strong> $n x(n) \to j \frac{d}{d\omega} X(e^{j\omega})$</li>
+        <li><strong>Convolution &amp; Multiplication:</strong>
+          $$x(n) * y(n) \to X(e^{j\omega}) \cdot Y(e^{j\omega}), \quad x(n) \cdot y(n) \to \frac{1}{2\pi} \int_{2\pi} X(e^{j\theta}) Y\left(e^{j(\omega - \theta)}\right) d\theta$$
+        </li>
+        <li><strong>Correlation:</strong> $R_{xy}(m) = x(m) * y^*(-m) \to X(e^{j\omega}) Y^*(e^{j\omega})$</li>
+      </ol>
+
+      <h3>Appendix A15: Reconstructing DTFT Spectrum from DFS / DFT</h3>
+      <p>Let $x(n)$ be a finite-length sequence of length $N_0$ (supported on $0 \le n \le N_0 - 1$). Periodically extending $x(n)$ with period $N \ge N_0$ gives $x_N(n)$:</p>
+      <ul>
+        <li>DTFT of $x(n)$: $X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x(n) e^{-j n \omega}$</li>
+        <li>DFS of $x_N(n)$: $X(k) = \sum_{n=0}^{N-1} x_N(n) e^{-j\left(\frac{2\pi}{N}\right) n k}$</li>
+      </ul>
+      <p>Since $x(n) = x_N(n)[u(n) - u(n - N)]$, periodic convolution in the frequency domain yields the exact interpolation formula:</p>
+      $$X(e^{j\omega}) = \frac{1}{2\pi} \left[ \frac{2\pi}{N} \sum_{r=-\infty}^{\infty} \sum_{k=0}^{N-1} X(k) \delta\left(\omega - \frac{2\pi}{N}k - 2\pi r\right) \right] * \frac{1 - e^{-j N \omega}}{1 - e^{-j\omega}} = \frac{1}{N} \sum_{k=0}^{N-1} X(k) \frac{1 - e^{-j N \omega}}{1 - e^{-j\left(\omega - \frac{2\pi}{N}k\right)}}$$
+    </div>
+  </div>
+
+  <!-- Page 14 -->
+  <div class="page-card" id="pg14">
+    <div class="page-number">Page 14 (Sheet Page 8)</div>
+    <div class="page-content">
+      <h3>XI. Sampling Theory (Time &amp; Frequency Domains)</h3>
+      <h4>1. Time-Domain Sampling of Continuous Aperiodic Signals</h4>
+      <ul>
+        <li>① <strong>Discrete-Time Sequence Representation ($f(t) \to f(nT) = x(n)$):</strong>
+          $$\begin{aligned}
+          X(e^{j\omega}) &= \sum_{n=-\infty}^{\infty} x(n) e^{-j n \omega} = \sum_{n=-\infty}^{\infty} f(nT) e^{-j n \omega} = \sum_{n=-\infty}^{\infty} \left[ \frac{1}{2\pi} \int_{-\infty}^{\infty} F(j\Omega) e^{j\Omega n T} \, d\Omega \right] e^{-j n \omega} \\
+          &= \frac{1}{2\pi} \int_{-\infty}^{\infty} F(j\Omega) \, d\Omega \sum_{n=-\infty}^{\infty} e^{j n (\Omega T - \omega)} = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(j\Omega) \, d\Omega \cdot 2\pi \sum_{r=-\infty}^{\infty} \delta(\omega - \Omega T - 2\pi r) \\
+          &= \frac{1}{T} \int_{-\infty}^{\infty} F(j\Omega) \, d\Omega \sum_{r=-\infty}^{\infty} \delta\left(\Omega - \frac{\omega}{T} - \frac{2\pi}{T}r\right) = \frac{1}{T} \sum_{r=-\infty}^{\infty} F\left(j\frac{\omega}{T} + j\frac{2\pi}{T}r\right)
+          \end{aligned}$$
+        </li>
+        <li>② <strong>Impulse-Train Modulated Representation ($f(t) \to f_s(t) = f(t) \sum_{n=-\infty}^{\infty} \delta(t - nT)$):</strong>
+          $$F_s(j\Omega) = \mathcal{F}\left[ f(t) \cdot \sum_{n=-\infty}^{\infty} \delta(t - nT) \right] = \frac{1}{2\pi} F(j\Omega) * \frac{2\pi}{T} \sum_{r=-\infty}^{\infty} \delta\left(\Omega + \frac{2\pi}{T}r\right) = \frac{1}{T} \sum_{r=-\infty}^{\infty} F\left(j\Omega + j\frac{2\pi}{T}r\right)$$
+        </li>
+      </ul>
+
+      <h4>2. Time-Domain Sampling of Continuous Periodic Signals</h4>
+      <p>Assume the signal period $T$ is an integer multiple $N$ of the sampling interval $T_s$ ($T = N T_s$):</p>
+      <ul>
+        <li>① <strong>Discrete Periodic Sequence ($f(t) \to f(n T_s) = x(n)$):</strong>
+          $$\begin{aligned}
+          X(k) &= \sum_{n=0}^{N-1} x(n) e^{-j\left(\frac{2\pi}{N}\right) n k} = \sum_{n=0}^{N-1} f(n T_s) e^{-j\left(\frac{2\pi}{N}\right) n k} = \sum_{n=0}^{N-1} \sum_{m=-\infty}^{\infty} F_m e^{j m \left(\frac{2\pi}{T}\right) n T_s} e^{-j\left(\frac{2\pi}{N}\right) n k} \\
+          &= \sum_{m=-\infty}^{\infty} F_m \sum_{n=0}^{N-1} e^{j n \left(\frac{2\pi}{N}m - \frac{2\pi}{N}k\right)} = \sum_{m=-\infty}^{\infty} F_m \cdot N \sum_{r=-\infty}^{\infty} \delta(m - k - rN) = N \sum_{r=-\infty}^{\infty} F_{k + rN}
+          \end{aligned}$$
+        </li>
+        <li>② <strong>Impulse-Train Sampled Periodic Signal ($f(t) \to f(t) \sum_{n=-\infty}^{\infty} \delta(t - n T_s)$):</strong>
+          $$\begin{aligned}
+          F_m &= \frac{1}{T} \int_T \left[ f(t) \sum_{n=-\infty}^{\infty} \delta(t - n T_s) \right] e^{-j m \left(\frac{2\pi}{T}\right) t} \, dt = \frac{1}{T} \sum_{\ell=-\infty}^{\infty} F_\ell \sum_{n=-\infty}^{\infty} \int_T \delta(t - n T_s) e^{j \frac{2\pi}{T} n T_s (\ell - m)} \, dt \\
+          &= \frac{1}{T} \sum_{\ell=-\infty}^{\infty} F_\ell \cdot 2\pi \sum_{r=-\infty}^{\infty} \delta\left[\frac{2\pi}{N}(\ell - m) - 2\pi r\right] = \frac{2\pi}{T} \sum_{r=-\infty}^{\infty} \sum_{\ell=-\infty}^{\infty} F_\ell \frac{N}{2\pi} \delta(\ell - m - rN) = \frac{1}{T_s} \sum_{r=-\infty}^{\infty} F_{m + rN}
+          \end{aligned}$$
+        </li>
+      </ul>
+
+      <h4>3. Frequency-Domain Sampling of Continuous Aperiodic Signals</h4>
+      <ul>
+        <li>① <strong>Fourier Series from Spectral Samples ($F(j\omega) \to F(j n \Omega) = F_n$):</strong>
+          $$\begin{aligned}
+          f_s(t) &= \sum_{n=-\infty}^{\infty} F_n e^{j n \Omega t} = \sum_{n=-\infty}^{\infty} \left[ \int_{-\infty}^{\infty} f(\tau) e^{-j n \Omega \tau} \, d\tau \right] e^{j n \Omega t} = \int_{-\infty}^{\infty} f(\tau) \, d\tau \sum_{n=-\infty}^{\infty} e^{j n \Omega (t - \tau)} \\
+          &= \int_{-\infty}^{\infty} f(\tau) \, d\tau \cdot 2\pi \sum_{r=-\infty}^{\infty} \delta[\Omega(t - \tau) - 2\pi r] = \frac{2\pi}{\Omega} \int_{-\infty}^{\infty} f(\tau) \, d\tau \sum_{r=-\infty}^{\infty} \delta\left(\tau - t + \frac{2\pi}{\Omega}r\right) = \frac{2\pi}{\Omega} \sum_{r=-\infty}^{\infty} f\left(t - \frac{2\pi}{\Omega}r\right)
+          \end{aligned}$$
+        </li>
+        <li>② <strong>Impulse-Train Sampled Spectrum ($F(j\omega) \to F(j\omega) \sum_{n=-\infty}^{\infty} \delta(\omega - n\Omega)$):</strong>
+          $$\tilde{f}_s(t) = \mathcal{F}^{-1}\left[ F(j\omega) \cdot \sum_{n=-\infty}^{\infty} \delta(\omega - n\Omega) \right] = f(t) * \frac{2\pi}{\Omega} \sum_{m=-\infty}^{\infty} \delta\left(t - m\frac{2\pi}{\Omega}\right) = \frac{2\pi}{\Omega} \sum_{m=-\infty}^{\infty} f\left(t - \frac{2\pi}{\Omega}m\right)$$
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 15 -->
+  <div class="page-card" id="pg15">
+    <div class="page-number">Page 15 (Appendix A16)</div>
+    <div class="page-content">
+      <h3>Appendix A16: Fast Fourier Transform (FFT) Algorithms</h3>
+      <p>Let $W_N = e^{-j\frac{2\pi}{N}}$. Using $W_N^{2} = W_{N/2}$, $W_N^{4} = W_{N/4}$, and $W_N^{N/2} = -1$:</p>
+
+      <h4>① Radix-2 Decimation-in-Time (DIT) FFT</h4>
+      <p>Split $x(n)$ into even ($n = 2r$) and odd ($n = 2r + 1$) indices:</p>
+      $$X(k) = \sum_{r=0}^{\frac{N}{2}-1} x(2r) W_N^{2rk} + \sum_{r=0}^{\frac{N}{2}-1} x(2r + 1) W_N^{(2r + 1)k} = \sum_{r=0}^{\frac{N}{2}-1} x(2r) W_{N/2}^{rk} + W_N^k \sum_{r=0}^{\frac{N}{2}-1} x(2r + 1) W_{N/2}^{rk}$$
+      $$X\left(k + \frac{N}{2}\right) = \sum_{r=0}^{\frac{N}{2}-1} x(2r) W_{N/2}^{rk} + W_N^{k + \frac{N}{2}} \sum_{r=0}^{\frac{N}{2}-1} x(2r + 1) W_{N/2}^{rk} = \sum_{r=0}^{\frac{N}{2}-1} x(2r) W_{N/2}^{rk} - W_N^k \sum_{r=0}^{\frac{N}{2}-1} x(2r + 1) W_{N/2}^{rk}$$
+
+      <h4>② Radix-2 Decimation-in-Frequency (DIF) FFT</h4>
+      <p>Split the summation interval into first half ($0 \le n < N/2$) and second half ($n + N/2$), then evaluate at even ($k = 2r$) and odd ($k = 2r + 1$) frequencies:</p>
+      $$X(2r) = \sum_{n=0}^{N-1} x(n) W_N^{2rn} = \sum_{n=0}^{\frac{N}{2}-1} x(n) W_{N/2}^{rn} + \sum_{n=0}^{\frac{N}{2}-1} x\left(n + \frac{N}{2}\right) W_{N/2}^{r(n + \frac{N}{2})} = \sum_{n=0}^{\frac{N}{2}-1} \left[ x(n) + x\left(n + \frac{N}{2}\right) \right] W_{N/2}^{rn}$$
+      $$X(2r + 1) = \sum_{n=0}^{N-1} x(n) W_N^{(2r + 1)n} = \sum_{n=0}^{\frac{N}{2}-1} x(n) W_N^n W_{N/2}^{rn} + \sum_{n=0}^{\frac{N}{2}-1} x\left(n + \frac{N}{2}\right) W_N^{(2r + 1)(n + \frac{N}{2})} = \sum_{n=0}^{\frac{N}{2}-1} \left\{ \left[ x(n) - x\left(n + \frac{N}{2}\right) \right] W_N^n \right\} W_{N/2}^{rn}$$
+
+      <h4>③ Radix-4 Decimation-in-Time (DIT) FFT</h4>
+      <p>Decompose into 4 subsequences $x(4r + i)$ ($i = 0, 1, 2, 3$):</p>
+      $$\begin{aligned}
+      X(k) &= \sum_{r=0}^{\frac{N}{4}-1} x(4r) W_N^{4rk} + \sum_{r=0}^{\frac{N}{4}-1} x(4r + 1) W_N^{(4r + 1)k} + \sum_{r=0}^{\frac{N}{4}-1} x(4r + 2) W_N^{(4r + 2)k} + \sum_{r=0}^{\frac{N}{4}-1} x(4r + 3) W_N^{(4r + 3)k} \\
+      &= \sum_{r=0}^{\frac{N}{4}-1} x(4r) W_{N/4}^{rk} + W_N^k \sum_{r=0}^{\frac{N}{4}-1} x(4r + 1) W_{N/4}^{rk} + W_N^{2k} \sum_{r=0}^{\frac{N}{4}-1} x(4r + 2) W_{N/4}^{rk} + W_N^{3k} \sum_{r=0}^{\frac{N}{4}-1} x(4r + 3) W_{N/4}^{rk}
+      \end{aligned}$$
+      <p>And similarly for $X\left(k + \frac{N}{4}\right), X\left(k + \frac{N}{2}\right), X\left(k + \frac{3N}{4}\right)$ using $W_N^{m(k + qN/4)} = (-j)^{mq} W_N^{mk}$.</p>
+
+      <h4>④ Radix-4 Decimation-in-Frequency (DIF) FFT</h4>
+      <p>Split the input into 4 quarters $x\left(n + i\frac{N}{4}\right)$ ($i = 0, 1, 2, 3$):</p>
+      $$\begin{aligned}
+      X(4r) &= \sum_{n=0}^{\frac{N}{4}-1} x(n) W_N^{4nr} + \sum_{n=\frac{N}{4}}^{\frac{N}{2}-1} x(n) W_N^{4nr} + \sum_{n=\frac{N}{2}}^{\frac{3N}{4}-1} x(n) W_N^{4nr} + \sum_{n=\frac{3N}{4}}^{N-1} x(n) W_N^{4nr} \\
+      &= \sum_{n=0}^{\frac{N}{4}-1} \left[ x(n) + x\left(n + \frac{N}{4}\right) + x\left(n + \frac{N}{2}\right) + x\left(n + \frac{3N}{4}\right) \right] W_{N/4}^{rn}
+      \end{aligned}$$
+      <p>With analogous expressions for $X(4r + 1), X(4r + 2), X(4r + 3)$.</p>
+
+      <h4>⑤ Split-Radix DIT FFT &amp; ⑥ Split-Radix DIF FFT</h4>
+      <p>Combines Radix-2 for even indices ($n = 2r$) and Radix-4 for odd indices ($n = 4\ell + 1, 4\ell + 3$):</p>
+      $$\begin{aligned}
+      X(k) &= \sum_{r=0}^{\frac{N}{2}-1} x(2r) W_N^{2rk} + \sum_{\ell=0}^{\frac{N}{4}-1} x(4\ell + 1) W_N^{(4\ell + 1)k} + \sum_{\ell=0}^{\frac{N}{4}-1} x(4\ell + 3) W_N^{(4\ell + 3)k} \\
+      &= \sum_{r=0}^{\frac{N}{2}-1} x(2r) W_{N/2}^{rk} + W_N^k \sum_{\ell=0}^{\frac{N}{4}-1} x(4\ell + 1) W_{N/4}^{\ell k} + W_N^{3k} \sum_{\ell=0}^{\frac{N}{4}-1} x(4\ell + 3) W_{N/4}^{\ell k}
+      \end{aligned}$$
+      <p>(And dual formulation for ⑥ Split-Radix DIF FFT.)</p>
+    </div>
+  </div>
+
+  <!-- Page 16 -->
+  <div class="page-card" id="pg16">
+    <div class="page-number">Page 16 (Sheet Page 9)</div>
+    <div class="page-content">
+      <h3>XI (cont.). Frequency-Domain Sampling &amp; Multirate Signal Processing</h3>
+      <h4>4. Frequency-Domain Sampling of Periodic Spectrum $X(e^{j\omega})$</h4>
+      <p>Assume the frequency period $2\pi$ is an integer multiple $N$ of the frequency sampling interval $\Omega_s$ ($2\pi = N \Omega_s$, i.e., $\Omega_s = \frac{2\pi}{N}$):</p>
+      <ul>
+        <li>① <strong>IDFS from DTFT Samples ($X(e^{j\omega}) \to X(e^{j k \Omega_s}) = X(k)$):</strong>
+          $$\begin{aligned}
+          x_s(n) &= \frac{1}{N} \sum_{k=0}^{N-1} X(k) e^{j\left(\frac{2\pi}{N}\right) n k} = \frac{1}{N} \sum_{k=0}^{N-1} \left[ \sum_{m=-\infty}^{\infty} x(m) e^{-j m k \Omega_s} \right] e^{j \Omega_s n k} \\
+          &= \frac{1}{N} \sum_{m=-\infty}^{\infty} x(m) \sum_{k=0}^{N-1} e^{j \Omega_s k (n - m)} = \sum_{m=-\infty}^{\infty} x(m) \sum_{r=-\infty}^{\infty} \delta(n - m + rN) = \sum_{r=-\infty}^{\infty} x(n + rN)
+          \end{aligned}$$
+        </li>
+        <li>② <strong>Impulse-Train Sampled DTFT ($X(e^{j\omega}) \to X(e^{j\omega}) \sum_{k=-\infty}^{\infty} \delta(\omega - k\Omega_s)$):</strong>
+          $$\begin{aligned}
+          \tilde{x}_s(n) &= \frac{1}{2\pi} \int_{2\pi} X(e^{j\omega}) \sum_{k=-\infty}^{\infty} \delta(\omega - k\Omega_s) e^{j\omega n} \, d\omega = \frac{1}{2\pi} \sum_{m=-\infty}^{\infty} x(m) \sum_{k=-\infty}^{\infty} e^{j k \Omega_s (n - m)} \\
+          &= \sum_{m=-\infty}^{\infty} x(m) \sum_{r=-\infty}^{\infty} \delta[\Omega_s(n - m) + 2\pi r] = \sum_{m=-\infty}^{\infty} x(m) \frac{1}{\Omega_s} \sum_{r=-\infty}^{\infty} \delta(m - n - rN) = \frac{1}{\Omega_s} \sum_{r=-\infty}^{\infty} x(n + rN)
+          \end{aligned}$$
+        </li>
+      </ul>
+
+      <h4>5. Downsampling (Decimation) by Integer Factor $M$</h4>
+      <p><strong>Anti-aliasing filter followed by decimation:</strong> $x(n) \xrightarrow{h(n)} w(n) \xrightarrow{\downarrow M} y(n)$.</p>
+      $$\begin{cases}
+      w(n) = \sum_k h(k) x(n - k) \\
+      y(n) = w(Mn)
+      \end{cases} \implies y(n) = \sum_k h(k) x(Mn - k) = \sum_k h(Mn - k) x(k)$$
+      <p>Using the identity $\frac{1}{M} \sum_{\ell=0}^{M-1} e^{j\frac{2\pi}{M}\ell n} = \begin{cases} 1, & n = mM \\ 0, & \text{otherwise} \end{cases}$:</p>
+      $$Y(z) = \sum_m y(m) z^{-m} = \sum_m w(Mm) z^{-m} = \sum_{n=-\infty}^{\infty} w(n) z^{-n/M} \frac{1}{M} \sum_{\ell=0}^{M-1} e^{j\frac{2\pi}{M}\ell n} = \frac{1}{M} \sum_{\ell=0}^{M-1} W\left(e^{-j\frac{2\pi}{M}\ell} z^{1/M}\right)$$
+      <p>Evaluating on the unit circle ($z = e^{j\omega}$):</p>
+      $$Y(e^{j\omega}) = \frac{1}{M} \sum_{\ell=0}^{M-1} H\left(e^{j\left(\frac{\omega - 2\pi\ell}{M}\right)}\right) X\left(e^{j\left(\frac{\omega - 2\pi\ell}{M}\right)}\right) \implies \frac{1}{M} X\left(e^{j\frac{\omega}{M}}\right), \quad |\omega| \le \pi \quad (\text{with ideal lowpass } H)$$
+
+      <h4>6. Upsampling (Interpolation) by Integer Factor $L$</h4>
+      <p><strong>Zero-insertion followed by anti-imaging filter:</strong> $x(n) \xrightarrow{\uparrow L} w(n) \xrightarrow{h(n)} y(n)$.</p>
+      $$\begin{cases}
+      w(n) = x(n / L) \quad (\text{for } n = mL, \text{ else } 0) \\
+      y(n) = \sum_k h(n - k) w(k)
+      \end{cases} \implies y(n) = \sum_k h(n - k) x(k / L) = \sum_k h(n - kL) x(k)$$
+      <p>In the $z$-domain and frequency domain:</p>
+      $$Y(z) = H(z) W(z) = H(z) \sum_m w(m) z^{-m} = H(z) \sum_m x(m) z^{-mL} = H(z) X(z^L)$$
+      $$Y(e^{j\omega}) = H(e^{j\omega}) X(e^{j\omega L}) \implies L X(e^{j\omega L}), \quad |\omega| \le \pi \quad (\text{with ideal lowpass } H \text{ of gain } L)$$
+
+      <h4>7. Rational Sampling Rate Conversion by $L / M$ (Interpolate by $L$, then Decimate by $M$)</h4>
+      $$y(n) = \sum_{r=-\infty}^{\infty} h(Mn - Lr) x(r)$$
+      $$Y(e^{j\omega}) = \frac{1}{M} \sum_{\ell=0}^{M-1} H\left(e^{j\left(\frac{\omega - 2\pi\ell}{M}\right)}\right) X\left(e^{j L\left(\frac{\omega - 2\pi\ell}{M}\right)}\right) \implies \frac{L}{M} X\left(e^{j\frac{L}{M}\omega}\right), \quad |\omega| \le \min\left\{\pi, \pi\frac{M}{L}\right\}$$
+    </div>
+  </div>
+
+  <!-- Page 17 -->
+  <div class="page-card" id="pg17">
+    <div class="page-number">Page 17 (Sheet Page 10)</div>
+    <div class="page-content">
+      <p><em>Header Note:</em> <strong>Minimum-Phase System:</strong> Among all systems sharing the same magnitude response, the minimum-phase system has the minimum group delay (and minimum phase lag).</p>
+
+      <h3>XII. Analog and Digital Filters</h3>
+      <h4>1. Analog Filter Synthesis (Doubly-Terminated Lossless $LC$ Network — Darlington Synthesis)</h4>
+      <p>Consider a source $E_s$ with internal resistance $R_s$ driving a two-port lossless $LC$ network (ports $1\text{-}1'$ and $2\text{-}2'$, input impedance $Z_{11}(s)$, input voltage $V_i$, input current $I_1$) terminated in load resistance $R_L$ (output voltage $V_o$, current $I_2$).</p>
+      <ul>
+        <li><strong>Problem Statement:</strong> Given that $H_a(s) = \frac{V_o(s)}{E_s(s)}$ is stable, causal, minimum-phase, and conjugate-symmetric, and given $|H_a(j\Omega)|^2$, determine the driving-point impedance $Z_{11}(s)$ and synthesize the $LC$ ladder network.</li>
+        <li><strong>Solution Procedure:</strong>
+          <ul>
+            <li>From $\left.|H_a(j\Omega)|^2\right|_{j\Omega = s} = H_a(s) H_a(-s)$ and the stability/minimum-phase conditions, identify $H_a(s)$.</li>
+            <li><strong>Available (Rated) Source Power:</strong> $P_m = \frac{1}{2} \frac{|E_s|^2}{4 R_s}$</li>
+            <li><strong>Load Power:</strong> $P_L = \frac{1}{2} \frac{|V_o|^2}{R_L}$</li>
+            <li><strong>Transducer Power Gain (Transmission Function):</strong> $|K|^2 = \frac{P_L}{P_m} = \frac{4 R_s}{R_L} \left|\frac{V_o}{E_s}\right|^2 = \frac{4 R_s}{R_L} |H_a(j\Omega)|^2$</li>
+            <li><strong>Reflection Coefficient:</strong> $|\rho|^2 = 1 - \frac{4 R_s}{R_L} |H_a(s)|^2$</li>
+            <li>Since the $LC$ network is lossless, input power at port $1\text{-}1'$ equals load power ($P_1 = P_2 = P_L$):
+              $$\frac{1}{2} \text{Re}[Z_{11}(j\Omega)] \, |I_1(j\Omega)|^2 = \frac{1}{2} \frac{|V_o(j\Omega)|^2}{R_L} \implies \left|\frac{V_o}{I_1}\right|^2 = R_L \cdot \text{Re}[Z_{11}(s)]$$
+            </li>
+            <li>Also, since $\frac{E_s}{I_1} = R_s + Z_{11}(s)$:
+              $$|H_a(s)|^2 = \left|\frac{V_o}{I_1}\right|^2 \left|\frac{I_1}{E_s}\right|^2 = \frac{R_L \cdot \text{Re}[Z_{11}(s)]}{|R_s + Z_{11}(s)|^2}$$
+              $$|\rho(s)|^2 = \frac{|Z_{11} - R_s|^2}{|Z_{11} + R_s|^2} \implies \rho(s) = \pm \frac{Z_{11} - R_s}{Z_{11} + R_s} \implies Z_{11}(s) = R_s \frac{1 \pm \rho(s)}{1 \mp \rho(s)}$$
+            </li>
+          </ul>
+        </li>
+        <li><strong>Network Realization Methods from $Z_{11}(s)$:</strong>
+          <ul>
+            <li>① <strong>Foster Canonical Forms:</strong> Series form ($Z_{11}(s) = \sum \cdots$ partial fractions) and Parallel form ($Y_{11}(s) = \sum \cdots$).</li>
+            <li>② <strong>Cauer Canonical (Ladder) Forms:</strong> T-type ($s$ continued fraction expansion around $\infty$) and $\Pi$-type ($\frac{1}{s}$ continued fraction expansion around $0$).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>2. Analog Filter Frequency Transformations (Normalized Prototype $s'$, $L'$, $C'$)</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Filter Type</th>
+            <th>Complex Frequency Mapping $s' \leftarrow$</th>
+            <th>Inductor $s'L' \leftarrow$</th>
+            <th>Capacitor $\frac{1}{s'C'} \leftarrow$</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Prototype</strong></td>
+            <td>$s'$</td>
+            <td>$s'L'$</td>
+            <td>$\frac{1}{s'C'}$</td>
+          </tr>
+          <tr>
+            <td><strong>Lowpass (LP)</strong></td>
+            <td>$\frac{s}{\Omega_c}$</td>
+            <td>$s \frac{R_s}{\Omega_c} L'$</td>
+            <td>$\frac{\Omega_c R_s}{s C'}$</td>
+          </tr>
+          <tr>
+            <td><strong>Highpass (HP)</strong></td>
+            <td>$\frac{\Omega_c}{s}$</td>
+            <td>$\frac{1}{s \frac{1}{\Omega_c R_s L'}}$</td>
+            <td>$s \frac{R_s}{C' \Omega_c}$</td>
+          </tr>
+          <tr>
+            <td><strong>Bandpass (BP)</strong></td>
+            <td>$\frac{s^2 + \Omega_0^2}{s \Omega_r}$</td>
+            <td>$s \frac{R_s L'}{\Omega_r} + \frac{\Omega_r}{s \Omega_0^2 R_s L'}$ (Series $LC$)</td>
+            <td>$\left(s \frac{\Omega_r R_s}{\Omega_0^2 C'}\right) \parallel \left(\frac{C'}{s \Omega_r R_s}\right)$ (Parallel $LC$)</td>
+          </tr>
+          <tr>
+            <td><strong>Bandstop (BS)</strong></td>
+            <td>$\frac{s \Omega_r}{s^2 + \Omega_0^2}$</td>
+            <td>$\left(s \frac{\Omega_r R_s L'}{\Omega_0^2}\right) \parallel \left(\frac{1}{s \Omega_r R_s L'}\right)$ (Parallel $LC$)</td>
+            <td>$s \frac{R_s}{\Omega_r C'} + \frac{\Omega_r C'}{s \Omega_0^2 R_s}$ (Series $LC$)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>(where $\Omega_r = \Omega_2 - \Omega_1$ is the bandwidth and $\Omega_0^2 = \Omega_1 \Omega_2$ is the center frequency squared.)</em></p>
+
+      <h4>3. IIR Digital Filter Structures</h4>
+      $$H(z) = \frac{\sum_{r=0}^M b_r z^{-r}}{1 + \sum_{k=1}^N a_k z^{-k}}, \quad y(n) = \sum_{r=0}^M b_r x(n - r) - \sum_{k=1}^N a_k y(n - k)$$
+      <ul>
+        <li>① <strong>Direct Form Structures (Direct Form I &amp; Canonical Direct Form II):</strong>
+          <ul>
+            <li>Direct Form II uses the minimum number of delay elements ($\max(M, N)$).</li>
+            <li>Poles and zeros are difficult to tune independently; highly sensitive to finite word-length (coefficient quantization) effects.</li>
+          </ul>
+        </li>
+        <li>② <strong>Cascade Form Structure:</strong>
+          <ul>
+            <li>Factored into second-order sections (biquads). Uses minimum delay elements; zeros and poles can be tuned independently.</li>
+            <li><strong>Pairing &amp; Ordering Rules:</strong> Pair poles with their closest zeros; order sections by decreasing gain (from the perspective of minimizing quantization noise) or by decreasing pole distance to the unit circle (from the perspective of signal attenuation / preventing overflow).</li>
+          </ul>
+        </li>
+        <li>③ <strong>Parallel Form Structure:</strong> (Continued on Page 19)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 18 -->
+  <div class="page-card" id="pg18">
+    <div class="page-number">Page 18 (Appendix A17)</div>
+    <div class="page-content">
+      <h3>Appendix A17: Butterworth Analog Filter Design &amp; Synthesis</h3>
+      <h4>1. Magnitude-Squared Response &amp; Pole Distribution</h4>
+      <p>Given the $N$-th order Butterworth magnitude-squared specification:</p>
+      $$|H_a(j\Omega)|^2 = \left( \frac{1}{\sqrt{1 + \left(\frac{\Omega}{\Omega_c}\right)^{2N}}} \right)^2 = \frac{1}{1 + \left(\frac{\Omega}{\Omega_c}\right)^{2N}} \implies |H_a(s)|^2 = H_a(s) H_a(-s) = \frac{(j\Omega_c)^{2N}}{s^{2N} + (j\Omega_c)^{2N}}$$
+      <p>The $2N$ poles lie on a circle of radius $\Omega_c$ in the $s$-plane:</p>
+      $$s_k = \Omega_c \, e^{j\left[\frac{1}{2N}(2k - 1)\pi + \frac{\pi}{2}\right]}, \quad k = 1, 2, \dots, 2N$$
+
+      <h4>2. Stable Transfer Function $H_a(s)$</h4>
+      <p>Selecting all $N$ left-half-plane (LHP) poles ($k = 1, 2, \dots, N$) to form a stable and causal transfer function $H_a(s)$:</p>
+      $$H_a(s) = \frac{\Omega_c^N}{\prod_{k=1}^N (s - s_k)} = \begin{cases}
+      \displaystyle \Omega_c^N \Big/ \left\{ (s + \Omega_c) \prod_{k=1}^{(N-1)/2} \left[ s^2 - 2\Omega_c \cos\left(\frac{2k - 1}{2N}\pi + \frac{\pi}{2}\right) s + \Omega_c^2 \right] \right\}, & N \text{ odd} \\[2.5ex]
+      \displaystyle \Omega_c^N \Big/ \prod_{k=1}^{N/2} \left[ s^2 - 2\Omega_c \cos\left(\frac{2k - 1}{2N}\pi + \frac{\pi}{2}\right) s + \Omega_c^2 \right], & N \text{ even}
+      \end{cases}$$
+      <p>With normalized frequency $s' = s / \Omega_c$, the normalized Butterworth polynomial $B_N(s')$ gives:</p>
+      $$H_a(s') = \frac{1}{B_N(s')} = \begin{cases}
+      \displaystyle 1 \Big/ \left\{ (s' + 1) \prod_{k=1}^{(N-1)/2} \left[ {s'}^2 - 2\cos\left(\frac{2k - 1}{2N}\pi + \frac{\pi}{2}\right) s' + 1 \right] \right\}, & N \text{ odd} \\[2.5ex]
+      \displaystyle 1 \Big/ \prod_{k=1}^{N/2} \left[ {s'}^2 - 2\cos\left(\frac{2k - 1}{2N}\pi + \frac{\pi}{2}\right) s' + 1 \right], & N \text{ even}
+      \end{cases}$$
+
+      <h4>3. Darlington Impedance Synthesis &amp; Element Denormalization</h4>
+      <p>Given passband and stopband specifications, solve for $N$ and $\Omega_c$ to determine $H_a(s)$. Typically, source and load resistances are matched ($R_s = R_L$), so $H_a(j0) = \frac{1}{2}$. Then:</p>
+      $$\rho(s') \rho(-s') = 1 - \frac{4 R_s}{R_L} \cdot \frac{1/2}{\sqrt{1 + (s'/j)^{2N}}} \cdot \frac{1/2}{\sqrt{1 + (-s'/j)^{2N}}} = 1 - \frac{1}{1 + (-1)^N (s')^{2N}} = \frac{(s')^N (-s')^N}{B_N(s') B_N(-s')}$$
+      <p>Therefore, the reflection coefficient and driving-point impedance are:</p>
+      $$\rho(s') = \frac{(s')^N}{B_N(s')} \implies Z_{11}(s') = R_s \frac{1 \pm \rho(s')}{1 \mp \rho(s')} = R_s \frac{B_N(s') \pm (s')^N}{B_N(s') \mp (s')^N}$$
+      <p>Normalized with respect to source resistance $R_s$:</p>
+      $$\frac{Z_{11}(s')}{R_s} = \frac{B_N(s') \pm (s')^N}{B_N(s') \mp (s')^N}$$
+      <p><strong>Denormalizing to actual physical inductance, capacitance, and resistance values:</strong></p>
+      $$\begin{cases}
+      L = \dfrac{R_s}{\Omega_c} L' \\[1.2ex]
+      C = \dfrac{1}{\Omega_c R_s} C' \\[1.2ex]
+      R_L = R_s
+      \end{cases}$$
+    </div>
+  </div>
+
+  <!-- Page 19 -->
+  <div class="page-card" id="pg19">
+    <div class="page-number">Page 19 (Sheet Page 11)</div>
+    <div class="page-content">
+      <h3>XII (cont.). IIR Design Methods &amp; FIR Filter Structures</h3>
+      <h4>3 (cont.). Parallel Form IIR Structure</h4>
+      <p>Realized via partial fraction expansion of $H(z)$ into parallel first- and second-order sections:</p>
+      <ul>
+        <li>High computational speed (parallel execution); poles can be tuned independently; quantization/arithmetic errors in individual parallel branches do not accumulate across sections.</li>
+        <li>Zeros are difficult to tune directly.</li>
+      </ul>
+
+      <h4>4. IIR Digital Filter Design Methods</h4>
+      <p><strong>① Impulse Invariance Method:</strong></p>
+      <ul>
+        <li><strong>Principle:</strong> Sample the analog impulse response: $h(n T_s) = \left.h_a(t)\right|_{t = n T_s}$ (or $h(n) = T_s h_a(n T_s)$).</li>
+        <li><strong>Mapping Result:</strong>
+          $$\frac{1}{s - s_k} \implies \frac{1}{1 - e^{s_k T_s} z^{-1}}, \quad H(e^{j\omega}) = \frac{1}{T_s} \sum_{r=-\infty}^{\infty} H_a\left(j\frac{\omega}{T_s} + j\frac{2\pi}{T_s}r\right)$$
+        </li>
+        <li><strong>Conclusion:</strong> Suffers from frequency aliasing; high-frequency response is distorted (unsuitable for highpass or bandstop filters).</li>
+      </ul>
+
+      <p><strong>② Bilinear Transformation Method:</strong></p>
+      <ul>
+        <li><strong>Principle:</strong> Two-step conformal mapping ($s \to s_1$-plane via $\tanh$, then $s_1 \to z$-plane):
+          <ul>
+            <li>Step 1 ($s \to s_1$-plane, compressed strip $[-\pi/T_s, \pi/T_s]$):
+              $$\begin{cases}
+              s = \frac{2}{T_s} \frac{1 - e^{-s_1 T_s}}{1 + e^{-s_1 T_s}} \\[1ex]
+              \Omega = \frac{2}{T_s} \tan\left(\frac{\Omega_1 T_s}{2}\right) \Longleftrightarrow \Omega_1 = \frac{2}{T_s} \arctan\left(\frac{\Omega T_s}{2}\right)
+              \end{cases}$$
+            </li>
+            <li>Step 2 ($s_1 \to z$-plane):
+              $$\begin{cases}
+              z = e^{s_1 T_s} \\
+              \omega = \Omega_1 T_s
+              \end{cases}$$
+            </li>
+          </ul>
+        </li>
+        <li><strong>Combined Mapping Result:</strong>
+          $$s = \frac{2}{T_s} \frac{1 - z^{-1}}{1 + z^{-1}}, \quad \Omega = \frac{2}{T_s} \tan\left(\frac{\omega}{2}\right)$$
+        </li>
+        <li><strong>Conclusion:</strong> Completely eliminates aliasing (one-to-one mapping of $j\Omega$-axis to unit circle), but introduces nonlinear frequency warping distortion (requires pre-warping at critical frequencies).</li>
+      </ul>
+
+      <h4>5. FIR Digital Filter Structures</h4>
+      $$H(z) = \sum_{n=0}^{N-1} h(n) z^{-n}, \quad y(n) = \sum_{r=0}^{N-1} h(r) x(n - r)$$
+      <ul>
+        <li>① <strong>Direct Form Structure (Transversal / Tapped-Delay-Line Filter):</strong> Delay line $z^{-1}$ with tap weights $h(0), h(1), \dots, h(N-1)$. Zeros are difficult to control directly.</li>
+        <li>② <strong>Cascade Form Structure:</strong> Product of second-order sections $(1 + \beta_{1k} z^{-1} + \beta_{2k} z^{-2})$. Zeros can be tuned independently.</li>
+        <li>③ <strong>Fast Convolution Structure (Overlap-Add / Overlap-Save):</strong> $x(n) \to \text{FFT} \to \times H(k) \to \text{IDFT} \to y(n)$. High computational speed for long $N$.</li>
+        <li>④ <strong>Frequency Sampling Structure (Comb Filter + Parallel Resonators):</strong>
+          $$H(z) = \sum_{n=0}^{N-1} h(n) z^{-n} = \sum_{n=0}^{N-1} \left( \frac{1}{N} \sum_{k=0}^{N-1} H(k) W_N^{-nk} \right) z^{-n} = \frac{1}{N} (1 - z^{-N}) \sum_{k=0}^{N-1} \frac{H(k)}{1 - W_N^{-k} z^{-1}}$$
+        </li>
+        <li>⑤ <strong>Linear-Phase FIR Structures:</strong>
+          <p>For a linear-phase filter $H(e^{j\omega}) = |H(e^{j\omega})| e^{-j(\beta + \alpha\omega)}$ (or $\hat{H}(e^{j\omega}) e^{-j(\beta + \alpha\omega)}$):</p>
+          $$\begin{cases}
+          \text{Even Symmetry (Type I &amp; II):} & \beta = 0, \quad \alpha = \frac{N-1}{2}, \quad h(n) = h(N - 1 - n) \\[1ex]
+          \text{Odd / Anti-Symmetry (Type III &amp; IV):} & \beta = \pm\frac{\pi}{2}, \quad \alpha = \frac{N-1}{2}, \quad h(n) = -h(N - 1 - n)
+          \end{cases}$$
+          <p>1) <strong>Direct Form Linear-Phase Realization:</strong> Folds the delay line to add symmetric/anti-symmetric taps $x(n - k) \pm x(n - (N - 1 - k))$ before multiplying by $h(k)$, halving the number of multipliers (detailed for all 4 types on Page 21).</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 20 -->
+  <div class="page-card" id="pg20">
+    <div class="page-number">Page 20 (Appendix A18)</div>
+    <div class="page-content">
+      <h3>Appendix A18: Finite Word-Length Quantization Effects &amp; Electronic Circuit Noise</h3>
+      <h4>1. Quantization Error Statistical Models (Step Size $q = 2^{-b}$)</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Error Type</th>
+            <th>Distribution</th>
+            <th>Mean $\mu_e$</th>
+            <th>Variance $\sigma_e^2$</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Truncation Error</strong> (Two's Complement)</td>
+            <td>$U(-q, 0)$</td>
+            <td>$-\frac{q}{2}$</td>
+            <td>$\frac{q^2}{12} = \frac{1}{12} \times 2^{-2b}$</td>
+          </tr>
+          <tr>
+            <td><strong>Rounding Error</strong></td>
+            <td>$U\left(-\frac{q}{2}, \frac{q}{2}\right)$</td>
+            <td>$0$</td>
+            <td>$\frac{q^2}{12} = \frac{1}{12} \times 2^{-2b}$</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Generally, two's complement fixed-point rounding is used to analyze quantization noise. The Signal-to-Quantization-Noise Ratio (SQNR) is:</p>
+      $$\frac{S}{N} = 10 \lg \frac{\sigma_x^2}{\sigma_e^2} = 10 \lg \left( \frac{\sigma_x^2}{\frac{1}{12} \times 2^{-2b}} \right) = \left( 6.02 b + 10.79 + 10 \lg \sigma_x^2 \right) \text{ dB}$$
+
+      <h4>2. Quantization Noise Propagation &amp; Dynamic Range Scaling</h4>
+      <ul>
+        <li>By the theory of random processes through linear systems, the quantization noise variance at the output of a digital filter with impulse response $h(m)$ from noise source to output is:
+          $$\sigma_f^2 = \sigma_e^2 \sum_{m=0}^{\infty} h^2(m) = \sigma_e^2 \frac{1}{2\pi} \int_{-\pi}^{\pi} |H(e^{j\omega})|^2 \, d\omega$$
+        </li>
+        <li>For multiple independent quantization noise sources ($i = 1, \dots, N$), superposition holds at the output:
+          $$\sigma_{\text{total}}^2 = \sigma_e^2 \sum_{i=1}^N \sum_{m=0}^{\infty} h_i^2(m)$$
+        </li>
+        <li><strong>Scaling to Prevent Overflow:</strong> The above noise analysis is valid only when no addition overflow occurs at any internal node. To prevent fixed-point overflow, every internal node variable $w(n)$ must satisfy $|w(n)| \le 1$. Suppose the input signal is bounded by $|x(n)| \le 1$, and let $f(n)$ denote the unit impulse response from the input to node variable $w(n)$:
+          $$w(n) = f(n) * x(n) = \sum_{m=0}^{\infty} f(m) x(n - m)$$
+          We scale the input to node $w(n)$ by dividing by $\beta$ (and multiply by $\beta$ at the output), where the scaling factor $\beta$ is chosen according to:
+          $$\begin{cases}
+          \ell_1\text{-norm criterion (strict):} & \beta = \sum_{n=0}^{\infty} |f(n)| = \|f\|_1 \\[1.2ex]
+          \ell_2\text{-norm criterion (energy/RMS):} & \beta = \sqrt{\sum_{n=0}^{\infty} f^2(n)} = \|f\|_2
+          \end{cases}$$
+          <em>Trade-off:</em> After introducing the compression scaling factor $\beta$, for the same input signal, the output quantization noise increases (because scaling requires multiplying the output or internal branches by $\beta$, amplifying the noise sources).
+        </li>
+      </ul>
+
+      <h4>3. Electronic Device Noise Power Spectral Densities (PSD)</h4>
+      <ul>
+        <li><strong>Resistor Thermal (Johnson–Nyquist) Noise:</strong>
+          $$W_v(f) = 4 k T R(f), \quad W_i(f) = 4 k T G(f) \quad (\text{Power Spectral Density})$$
+        </li>
+        <li><strong>Bipolar Junction Transistor (BJT) Noise:</strong>
+          <ul>
+            <li>Base resistance thermal noise: $W_v(f) = 4 k T r_{bb'}$</li>
+            <li>Shot noise: $W_i(f) = 2 q I_{E/CO}$</li>
+            <li>Partition noise: $W_i(f) = 2 q I_C \left(1 - \frac{|\alpha(f)|^2}{\alpha_0}\right)$</li>
+            <li>Flicker ($1/f$) noise: $W_i(f) = \frac{K}{f} \cdot \frac{I}{A}$</li>
+          </ul>
+        </li>
+        <li><strong>MOSFET Noise &amp; Linear System Output Noise PSD:</strong>
+          $$W_{\text{out}}(f) = |H(f)|^2 W_{\text{in}}(f)$$
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page 21 -->
+  <div class="page-card" id="pg21">
+    <div class="page-number">Page 21 (Sheet Page 12)</div>
+    <div class="page-content">
+      <h3>XII (cont.). Linear-Phase FIR Types, Design, and Digital Frequency Transformations</h3>
+      <h4>5 (cont.). Four Types of Linear-Phase FIR Filters</h4>
+      <ul>
+        <li><strong>a. Type I: $h(n)$ Even-Symmetric, $N$ Odd:</strong>
+          $$H(e^{j\omega}) = e^{-j\frac{N-1}{2}\omega} \left\{ \sum_{n=0}^{\frac{N-3}{2}} 2 h(n) \cos\left[\omega\left(\frac{N-1}{2} - n\right)\right] + h\left(\frac{N-1}{2}\right) \right\}$$
+          <em>Constraint:</em> No fixed zeros at $\omega = 0$ or $\pi$; suitable for all filter types (LP, HP, BP, BS).
+        </li>
+        <li><strong>b. Type II: $h(n)$ Even-Symmetric, $N$ Even:</strong> $\left.H(e^{j\omega})\right|_{\omega = \pi} = 0$
+          $$H(e^{j\omega}) = e^{-j\frac{N-1}{2}\omega} \left\{ \sum_{n=0}^{\frac{N}{2}-1} 2 h(n) \cos\left[\omega\left(\frac{N-1}{2} - n\right)\right] \right\}$$
+          <em>Constraint:</em> Always has a zero at $\omega = \pi$ ($z = -1$); cannot be used for highpass or bandstop filters.
+        </li>
+        <li><strong>c. Type III: $h(n)$ Odd-Symmetric (Anti-Symmetric), $N$ Odd:</strong> $\left.H(e^{j\omega})\right|_{\omega = 0, \pi} = 0$
+          $$H(e^{j\omega}) = e^{-j\frac{N-1}{2}\omega} \left\{ j \sum_{n=0}^{\frac{N-3}{2}} 2 h(n) \sin\left[\omega\left(\frac{N-1}{2} - n\right)\right] \right\}$$
+          <em>Constraint:</em> Fixed zeros at both $\omega = 0$ and $\omega = \pi$; used for differentiators, Hilbert transformers, and bandpass filters.
+        </li>
+        <li><strong>d. Type IV: $h(n)$ Odd-Symmetric (Anti-Symmetric), $N$ Even:</strong> $\left.H(e^{j\omega})\right|_{\omega = 0} = 0$
+          $$H(e^{j\omega}) = e^{-j\frac{N-1}{2}\omega} \left\{ j \sum_{n=0}^{\frac{N}{2}-1} 2 h(n) \sin\left[\omega\left(\frac{N-1}{2} - n\right)\right] \right\}$$
+          <em>Constraint:</em> Fixed zero at $\omega = 0$ ($z = 1$); used for differentiators, Hilbert transformers, and highpass filters.
+        </li>
+        <li><strong>2) Cascade Structure of Linear-Phase FIR Filters:</strong> Zeros occur in mirror-image conjugate reciprocal quadruplets ($z_k, z_k^*, 1/z_k, 1/z_k^*$) with respect to the unit circle.</li>
+      </ul>
+
+      <h4>6. FIR Filter Design Methods</h4>
+      <ul>
+        <li>① <strong>Window Design Method ($h(n) = h_d(n) \cdot w(n)$):</strong>
+          <ul>
+            <li>Mainlobe width $\uparrow \Longleftrightarrow$ Peak sidelobe level $\downarrow \Longleftrightarrow$ Transition band width $\uparrow \Longleftrightarrow$ Minimum stopband attenuation $\uparrow$ (stopband ripple $\downarrow$).</li>
+          </ul>
+        </li>
+        <li>② <strong>Frequency Sampling Design Method:</strong>
+          $$H(e^{j\omega}) = \frac{1}{N} e^{-j\omega\frac{N-1}{2}} \sum_{k=0}^{N-1} H(k) e^{-j\frac{k\pi}{N}(N-1)} \frac{\sin\left[\frac{N}{2}\left(\omega - \frac{2\pi}{N}k\right)\right]}{\sin\left[\frac{1}{2}\left(\omega - \frac{2\pi}{N}k\right)\right]}$$
+          Matches the desired response exactly at the frequency sampling points $\omega_k = \frac{2\pi}{N}k$. At abrupt transitions between passband and stopband, Gibbs ripples are large; typically one inserts several unconstrained transition samples between passband and stopband to optimize stopband attenuation.
+        </li>
+      </ul>
+
+      <h4>7. Digital Filter Frequency Transformations (Constantinides All-Pass Mapping $Z \leftarrow G(z)$)</h4>
+      <p>Mapping requirements from prototype $Z$-plane to target $z$-plane:</p>
+      <ul>
+        <li>① Unit circle of $Z$ maps to unit circle of $G(z)$: $|G(e^{j\omega})| = 1$.</li>
+        <li>② Interior/boundary/exterior preserved: $|z| \gtreqless 1 \implies |G(z)| \gtreqless 1$ (Wait: for $Z = g(z)$, $|z| < 1 \implies |G(z)| < 1$ so causal stable maps to causal stable).</li>
+        <li>③ Rational $H(Z) \implies$ Rational $H(G(z))$.</li>
+      </ul>
+      <p>Therefore, $G(z)$ must be an all-pass function of order $N$ (where $N$ equals the number of passbands of the target filter as $z$ traverses the unit circle once):</p>
+      $$G(z) = \pm \frac{D(z)}{z^N D(z^{-1})}$$
+      <table>
+        <thead>
+          <tr>
+            <th>Target Filter</th>
+            <th>Mapping $Z \leftarrow G(z)$</th>
+            <th>DC ($z = 1$) Maps To</th>
+            <th>Cutoff $e^{j\theta_p}$ Maps To</th>
+            <th>Cutoff $e^{-j\theta_p}$ Maps To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Prototype</strong></td>
+            <td>$z$</td>
+            <td>$z = 1$</td>
+            <td>$e^{j\theta_p}$</td>
+            <td>$e^{-j\theta_p}$</td>
+          </tr>
+          <tr>
+            <td><strong>Lowpass (LP)</strong></td>
+            <td>$\dfrac{z - \alpha}{1 - \alpha z}$</td>
+            <td>$1$</td>
+            <td>$e^{j\omega_p}$</td>
+            <td>$e^{-j\omega_p}$</td>
+          </tr>
+          <tr>
+            <td><strong>Highpass (HP)</strong></td>
+            <td>$-\dfrac{z + \alpha}{1 + \alpha z}$</td>
+            <td>$-1$</td>
+            <td>$e^{j\omega_p}$</td>
+            <td>$e^{-j\omega_p}$</td>
+          </tr>
+          <tr>
+            <td><strong>Bandpass (BP)</strong></td>
+            <td>$-\dfrac{z^2 + \alpha_1 z + \alpha_2}{1 + \alpha_1 z + \alpha_2 z^2}$</td>
+            <td>$e^{\pm j\omega_0}$</td>
+            <td>$e^{j\omega_2}$</td>
+            <td>$e^{j\omega_1}$</td>
+          </tr>
+          <tr>
+            <td><strong>Bandstop (BS)</strong></td>
+            <td>$\dfrac{z^2 + \alpha_1 z + \alpha_2}{1 + \alpha_1 z + \alpha_2 z^2}$</td>
+            <td>$\pm 1$</td>
+            <td>$e^{j\omega_1}$</td>
+            <td>$e^{j\omega_2}$</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 6 -->
-  <div class="page" id="page-6">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 6</div>
-    <h3>V. Fourier Analysis of Continuous-Time Signals</h3>
-    <ol>
-      <li><strong>Energy and Power Signal Spectrum</strong>
-        <ul>
-          <li>Energy spectral density: $ S_e(j\omega) = |X(j\omega)|^2 $, with total energy:
-            $$ E_y = \frac{1}{2\pi} \int_{-\infty}^{\infty} |X(j\omega)|^2 d\omega $$
-          </li>
-          <li>Power spectral density: $ S_p(j\omega) = \lim_{T \to \infty} \frac{|X_T(j\omega)|^2}{T} $, with average power:
-            $$ P_y = \frac{1}{2\pi} \int_{-\infty}^{\infty} S_p(j\omega) d\omega $$
-          </li>
-        </ul>
-      </li>
-      <li><strong>LTI System Transfer Function</strong>
-        <ul>
-          <li>Reciprocity: $ H(j\omega) H(-j\omega) = 1 $</li>
-          <li>Causality: ROC of rational $H(s)$ lies in the right-half plane $\text{Re}(s) > \sigma_0$.</li>
-          <li>Stability: BIBO stable if ROC contains the $j\omega$ axis ($\text{Re}(s) = 0$).</li>
-        </ul>
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 7 -->
-  <div class="page" id="page-7">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 7</div>
-    <h3>Fourier Transform of Periodic Signals</h3>
-    <p>If $f(t)$ is periodic with period $T$, then we can write it using the Fourier series representation:</p>
-    $$ f(t) = \sum_{n=-\infty}^{\infty} F_n e^{j n \omega_0 t}, \quad \omega_0 = \frac{2\pi}{T} $$
-    <p>Evaluating its Fourier Transform yields:</p>
-    $$ F(\omega) = 2\pi \sum_{n=-\infty}^{\infty} F_n \delta(\omega - n \omega_0) $$
-    <p>where the coefficients $F_n$ are given by:</p>
-    $$ F_n = \frac{1}{T} \int_{-T/2}^{T/2} f(t) e^{-j n \omega_0 t} dt $$
-    <p>For periodic power signals, the autocorrelation spectral density satisfies:</p>
-    $$ R_f(\tau) = \sum_{n=-\infty}^{\infty} |F_n|^2 e^{j n \omega_0 \tau} \leftrightarrow S_f(\omega) = 2\pi \sum_{n=-\infty}^{\infty} |F_n|^2 \delta(\omega - n \omega_0) $$
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 8 -->
-  <div class="page" id="page-8">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 8</div>
-    <h3>VI. Discrete-Time LTI System Response</h3>
-    <ol>
-      <li><strong>Time Domain Representation</strong>
-        $$ x[n] = \sum_{m=-\infty}^{\infty} x[m] \delta[n-m] $$
-      </li>
-      <li><strong>Response Decomposition</strong>
-        <p>Total response is decomposed into the homogeneous solution (impulse response) and the particular solution (forced response):</p>
-        $$ y[n] = y_h[n] + y_p[n] $$
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 9 -->
-  <div class="page" id="page-9">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 9</div>
-    <h3>VII. The Hilbert Transform</h3>
-    <ol>
-      <li><strong>Continuous-Time Definition</strong>
-        $$ \hat{x}(t) = \mathcal{H}\{x(t)\} = x(t) * \frac{1}{\pi t} = \frac{1}{\pi} \int_{-\infty}^{\infty} \frac{x(\tau)}{t-\tau} d\tau $$
-        <p>In the frequency domain, the transfer function is:</p>
-        $$ H(j\omega) = -j \text{sgn}(\omega) $$
-      </li>
-      <li><strong>Properties</strong>
-        <p>An analytic signal is defined as: $ z(t) = x(t) + j\hat{x}(t) $. Its spectrum is double-sided, containing only positive frequencies:</p>
-        $$ Z(j\omega) = \begin{cases} 2 X(j\omega), & \omega > 0 \\ X(j\omega), & \omega = 0 \\ 0, & \omega < 0 \end{cases} $$
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 10 -->
-  <div class="page" id="page-10">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 10</div>
-    <h3>VIII. The z-Transform</h3>
-    <ol>
-      <li><strong>Bilateral z-Transform</strong>
-        $$ X(z) = \sum_{n=-\infty}^{\infty} x[n] z^{-n} $$
-        <p><strong>ROC:</strong> the set of values $z$ for which $ \sum_{n=-\infty}^{\infty} |x[n] z^{-n}| < \infty $ converges.</p>
-        <ul>
-          <li>Right-sided signal: ROC is $|z| > r_0$</li>
-          <li>Left-sided signal: ROC is $|z| < r_0$</li>
-          <li>Two-sided signal: ROC is an annular region $r_i < |z| < r_o$</li>
-        </ul>
-      </li>
-      <li><strong>Rational Transfer Functions & Pole locations</strong>
-        <p>For causal real-pole and complex-pole systems:</p>
-        $$ H(z) = \sum_{i=1}^P \frac{A_i}{1 - p_i z^{-1}} \leftrightarrow h[n] = \sum_{i=1}^P A_i p_i^n u[n] $$
-      </li>
-      <li><strong>System Stability</strong>
-        <ul>
-          <li>Stable: ROC of $H(z)$ contains the unit circle $|z| = 1$.</li>
-          <li>Causal: ROC is the exterior of a circle $|z| > r_{\text{max}}$.</li>
-        </ul>
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 11 -->
-  <div class="page" id="page-11">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 11</div>
-    <h3>z-Transform Properties</h3>
-    <ol>
-      <li>Line multiplication: $ n^m x[n] \leftrightarrow \left(-z \frac{d}{dz}\right)^m X(z) $</li>
-      <li>Time Shifting: $ x[n - n_0] \leftrightarrow z^{-n_0} X(z) $</li>
-      <li>Frequency Scaling (Rotation): $ a^n x[n] \leftrightarrow X(a^{-1} z) $</li>
-      <li>Time Reversal: $ x[-n] \leftrightarrow X(z^{-1}) $</li>
-      <li>Conjugation: $ x^*[n] \leftrightarrow X^*(z^*) $</li>
-      <li>Convolution: $ x_1[n] * x_2[n] \leftrightarrow X_1(z) X_2(z) $</li>
-      <li>Initial Value Theorem: If $x[n]$ is causal, $ x[0] = \lim_{z\to\infty} X(z) $</li>
-      <li>Final Value Theorem: If $x[n]$ is causal and stable, $ x[\infty] = \lim_{z\to 1} (z-1) X(z) $</li>
-    </ol>
-
-    <h3>Single-sided z-Transform properties:</h3>
-    <ul>
-      <li>Time Shifting (Advance): $ x[n+m] u[n] \leftrightarrow z^m \left[X(z) - \sum_{k=0}^{m-1} x[k] z^{-k}\right] $</li>
-      <li>Time Shifting (Delay): $ x[n-m] u[n] \leftrightarrow z^{-m} \left[X(z) + \sum_{k=-m}^{-1} x[k] z^{-k}\right] $</li>
-    </ul>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 12 -->
-  <div class="page" id="page-12">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 12</div>
-    <h3>IX. Discrete-Time Fourier Transform (DTFT)</h3>
-    <ol>
-      <li><strong>Definition</strong>
-        $$ X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x[n] e^{-j n \omega} $$
-      </li>
-      <li><strong>Relation to z-Transform</strong>
-        <p>If the ROC of $X(z)$ contains the unit circle ($|z|=1$), the DTFT is equivalent to evaluating the z-transform on the unit circle:</p>
-        $$ X(e^{j\omega}) = X(z)\Big|_{z=e^{j\omega}} $$
-      </li>
-      <li><strong>LTI System output DTFT</strong>
-        $$ Y(e^{j\omega}) = X(e^{j\omega}) H(e^{j\omega}) $$
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 13 -->
-  <div class="page" id="page-13">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 13</div>
-    <h3>DTFT of Periodic Sequences</h3>
-    <p>Given periodic sequence $x[n]$ with period $N$, its Discrete Fourier Series (DFS) representation is:</p>
-    $$ x[n] = \frac{1}{N} \sum_{k=0}^{N-1} X[k] e^{j \frac{2\pi}{N} k n} $$
-    <p>Its DTFT is represented as a train of impulse deltas in the frequency domain:</p>
-    $$ X(e^{j\omega}) = \frac{2\pi}{N} \sum_{k=-\infty}^{\infty} X[k] \delta\left(\omega - \frac{2\pi k}{N}\right) $$
-    <p>where the DFS/DFT coefficients $X[k]$ are:</p>
-    $$ X[k] = \sum_{n=0}^{N-1} x[n] e^{-j \frac{2\pi}{N} k n} $$
-    <p>For a finite length sequence of length $N_0$, if we extend it periodically to $x_N[n]$ with period $N \ge N_0$, the DTFT samples are directly related to the DFT coefficients:</p>
-    $$ X_N[k] = X(e^{j\omega})\Big|_{\omega = \frac{2\pi}{N} k} $$
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 14 -->
-  <div class="page" id="page-14">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 14</div>
-    <h3>X. Sampling in Time and Frequency</h3>
-    <ol>
-      <li><strong>Time-Domain Sampling of Continuous Signals</strong>
-        <p>Continuous signal $f(t)$ sampled with interval $T$ gives $x[n] = f(nT)$. In the frequency domain:</p>
-        $$ X(e^{j\omega}) = \frac{1}{T} \sum_{m=-\infty}^{\infty} F_a\left(j\left(\frac{\omega}{T} - m\frac{2\pi}{T}\right)\right) $$
-        <p>If the continuous spectrum is bandlimited to $\omega_m$ and the sampling frequency satisfies the Nyquist rate $\omega_s = \frac{2\pi}{T} > 2\omega_m$, reconstruction is possible using ideal interpolation:</p>
-        $$ f(t) = \sum_{n=-\infty}^{\infty} f(nT) \text{sinc}\left(\frac{t - nT}{T}\right) $$
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 15 -->
-  <div class="page" id="page-15">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 15</div>
-    <h3>XI. The Fast Fourier Transform (FFT)</h3>
-    <ol>
-      <li><strong>Decimation-in-Time Base-2 FFT (DIT-FFT)</strong>
-        <p>Splitting the DFT sum into even and odd indices:</p>
-        $$ X[k] = \sum_{r=0}^{N/2-1} x[2r] W_{N/2}^{kr} + W_N^k \sum_{r=0}^{N/2-1} x[2r+1] W_{N/2}^{kr} $$
-        $$ X[k + N/2] = \sum_{r=0}^{N/2-1} x[2r] W_{N/2}^{kr} - W_N^k \sum_{r=0}^{N/2-1} x[2r+1] W_{N/2}^{kr} $$
-      </li>
-      <li><strong>Decimation-in-Frequency Base-2 FFT (DIF-FFT)</strong>
-        <p>Splitting the output sequence into even and odd bins:</p>
-        $$ X[2r] = \sum_{n=0}^{N/2-1} (x[n] + x[n + N/2]) W_{N/2}^{nr} $$
-        $$ X[2r+1] = \sum_{n=0}^{N/2-1} (x[n] - x[n + N/2]) W_N^n W_{N/2}^{nr} $$
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 16 -->
-  <div class="page" id="page-16">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 16</div>
-    <h3>XII. Decimation and Interpolation</h3>
-    <ol>
-      <li><strong>Decimation (Downsampling by $M$)</strong>
-        <p>Anti-aliasing low-pass filtering followed by downsampling:</p>
-        $$ y[n] = v[nM] \leftrightarrow Y(e^{j\omega}) = \frac{1}{M} \sum_{i=0}^{M-1} V\left(e^{j\frac{\omega - 2\pi i}{M}}\right) $$
-      </li>
-      <li><strong>Interpolation (Upsampling by $L$)</strong>
-        <p>Upsampling by inserting $L-1$ zeros followed by interpolation low-pass filtering:</p>
-        $$ w[n] = \begin{cases} x[n/L], & n = 0, \pm L, \pm 2L, \dots \\ 0, & \text{otherwise} \end{cases} \leftrightarrow W(e^{j\omega}) = X(e^{j\omega L}) $$
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 17 -->
-  <div class="page" id="page-17">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 17</div>
-    <h3>XIII. Filter Structures and Lossless Network Synthesis</h3>
-    <ol>
-      <li><strong>Lossless Double-Terminated Networks</strong>
-        <p>For a continuous network with source resistance $R_s$ and load resistance $R_L$, the rated power of the source is $P_{\text{max}} = \frac{|E_s|^2}{4 R_s}$. The power transmission coefficient is:</p>
-        $$ |H(j\Omega)|^2 = \frac{P_L}{P_{\text{max}}} = 4 \frac{R_s}{R_L} \left| \frac{V_o(j\Omega)}{E_s} \right|^2 $$
-        <p>The reflection coefficient function satisfies:</p>
-        $$ |\rho(j\Omega)|^2 = 1 - |H(j\Omega)|^2 $$
-      </li>
-      <li><strong>Digital Filter Realization (Difference Equations)</strong>
-        <p>Direct realization of IIR systems:</p>
-        $$ H(z) = \frac{\sum_{k=0}^M b_k z^{-k}}{1 + \sum_{k=1}^N a_k z^{-k}} \leftrightarrow y[n] = \sum_{k=0}^M b_k x[n-k] - \sum_{k=1}^N a_k y[n-k] $$
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 18 -->
-  <div class="page" id="page-18">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 18</div>
-    <h3>Butterworth Filter Design</h3>
-    <ol>
-      <li><strong>Magnitude squared frequency response</strong>
-        $$ |H_a(j\Omega)|^2 = \frac{1}{1 + \left(\frac{\Omega}{\Omega_c}\right)^{2N}} $$
-      </li>
-      <li><strong>Pole distributions</strong>
-        $$ s_k = \Omega_c e^{j\left[\frac{\pi}{2} + \frac{2k-1}{2N}\pi\right]}, \quad k = 1, 2, \dots, 2N $$
-      </li>
-      <li><strong>Stable lowpass transfer function</strong>
-        <p>Selecting only LHP (left-half plane) poles to ensure stability:</p>
-        $$ H_a(s) = \frac{\Omega_c^N}{\prod_{k \in \text{LHP}} (s - s_k)} = \frac{\Omega_c^N}{B_N(s')} $$
-        where $s' = s/\Omega_c$ is the normalized Laplace variable, and $B_N(s')$ is the normalized Butterworth polynomial.
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 19 -->
-  <div class="page" id="page-19">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 19</div>
-    <h3>XIV. Infinite Impulse Response (IIR) Digital Filter Design</h3>
-    <ol>
-      <li><strong>Impulse Invariance Method</strong>
-        <p>The continuous impulse response is sampled to form the discrete system: $ h[n] = T_d h_a(n T_d) $.</p>
-        $$ \frac{A}{s - s_0} \Rightarrow \frac{A T_d}{1 - e^{s_0 T_d} z^{-1}} $$
-        <p><em>Conclusion:</em> Suffers from aliasing at high frequencies.</p>
-      </li>
-      <li><strong>Bilinear Transform Method</strong>
-        <p>A mapping that maps the continuous s-plane to the discrete z-plane without aliasing:</p>
-        $$ s = \frac{2}{T_d} \left( \frac{1 - z^{-1}}{1 + z^{-1}} \right) $$
-        <p>Frequency warping relation:</p>
-        $$ \Omega = \frac{2}{T_d} \tan\left(\frac{\omega}{2}\right) $$
-        <p><em>Conclusion:</em> Free of aliasing, but exhibits non-linear frequency warping distortion.</p>
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 20 -->
-  <div class="page" id="page-20">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 20</div>
-    <h3>XV. Finite Word Length Effects in Digital Filters</h3>
-    <ol>
-      <li><strong>Quantization Error Models</strong>
-        <ul>
-          <li>Rounding (uniform on $[-q/2, q/2]$): Mean $\mu_e = 0$, Variance $\sigma_e^2 = \frac{q^2}{12}$</li>
-          <li>Truncation (uniform on $[-q, 0]$): Mean $\mu_e = -q/2$, Variance $\sigma_e^2 = \frac{q^2}{12}$</li>
-        </ul>
-      </li>
-      <li><strong>Output Noise Power</strong>
-        <p>For quantization noise passing through an LTI system with impulse response $h[n]$:</p>
-        $$ \sigma_{yo}^2 = \sigma_e^2 \sum_{n=-\infty}^{\infty} |h[n]|^2 = \sigma_e^2 \frac{1}{2\pi} \int_{-\pi}^{\pi} |H(e^{j\omega})|^2 d\omega $$
-      </li>
-      <li><strong>Scaling to Avoid Overflow</strong>
-        <p>To ensure node variables $w[n]$ do not exceed $1$, we apply a scaling factor $\beta$ to the input signal:</p>
-        $$ \beta \le \frac{1}{\sum_{n=-\infty}^{\infty} |f[n]|} \quad \text{($L_1$ bound)} $$
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
-
-  <!-- Page 21 -->
-  <div class="page" id="page-21">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 21</div>
-    <h3>XVI. Linear Phase FIR Filter Design</h3>
-    <ol>
-      <li><strong>Symmetry and Anti-symmetry Conditions</strong>
-        <p>Symmetric (Type 1 & 2): $ h[n] = h[N - 1 - n] $</p>
-        <p>Anti-symmetric (Type 3 & 4): $ h[n] = -h[N - 1 - n] $</p>
-      </li>
-      <li><strong>Frequency Response $H(e^{j\omega})$ Types</strong>
-        <ul>
-          <li>Type 1 (Symmetric, $N$ odd): $ H(e^{j\omega}) = e^{-j\omega(N-1)/2} \sum_{n=0}^{(N-1)/2} a[n] \cos(\omega n) $</li>
-          <li>Type 2 (Symmetric, $N$ even): $ H(e^{j\omega}) = e^{-j\omega(N-1)/2} \sum_{n=1}^{N/2} b[n] \cos\left(\omega\left(n - \frac{1}{2}\right)\right) $</li>
-        </ul>
-      </li>
-      <li><strong>Frequency Transformation of Lowpass Digital Filters</strong>
-        <p>Lowpass mapping function for the unit circle:</p>
-        $$ Z^{-1} = G(z^{-1}) = \pm \frac{z^{-1} - \alpha}{1 - \alpha z^{-1}} $$
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
 
   <!-- Page 22 -->
-  <div class="page" id="page-22">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 22</div>
-    <h3>XVII. State-Space Representation of Systems</h3>
-    <ol>
-      <li><strong>Continuous-Time State-Space Equations</strong>
-        $$ \dot{\bm{x}}(t) = \bm{A} \bm{x}(t) + \bm{B} \bm{u}(t) $$
-        $$ \bm{y}(t) = \bm{C} \bm{x}(t) + \bm{D} \bm{u}(t) $$
-        <ul>
-          <li>Time domain solution:
-            $$ \bm{x}(t) = e^{\bm{A}t} \bm{x}(0) + \int_{0}^t e^{\bm{A}(t-\tau)} \bm{B} \bm{u}(\tau) d\tau $$
-          </li>
-          <li>s-domain solution:
-            $$ \bm{X}(s) = (s\bm{I} - \bm{A})^{-1} \bm{x}(0) + (s\bm{I} - \bm{A})^{-1} \bm{B} \bm{U}(s) $$
-            $$ \bm{Y}(s) = \bm{C}(s\bm{I} - \bm{A})^{-1} \bm{x}(0) + [\bm{C}(s\bm{I} - \bm{A})^{-1} \bm{B} + \bm{D}] \bm{U}(s) $$
-          </li>
-        </ul>
-      </li>
-      <li><strong>Discrete-Time State-Space Equations</strong>
-        $$ \bm{x}[n+1] = \bm{A} \bm{x}[n] + \bm{B} \bm{u}[n] $$
-        $$ \bm{y}[n] = \bm{C} \bm{x}[n] + \bm{D} \bm{u}[n] $$
-        <ul>
-          <li>Time domain solution:
-            $$ \bm{x}[n] = \bm{A}^n \bm{x}[0] + \sum_{k=0}^{n-1} \bm{A}^{n-1-k} \bm{B} \bm{u}[k] $$
-          </li>
-          <li>z-domain solution:
-            $$ \bm{X}(z) = z(z\bm{I} - \bm{A})^{-1} \bm{x}[0] + (z\bm{I} - \bm{A})^{-1} \bm{B} \bm{U}(z) $$
-            $$ \bm{Y}(z) = z\bm{C}(z\bm{I} - \bm{A})^{-1} \bm{x}[0] + [\bm{C}(z\bm{I} - \bm{A})^{-1} \bm{B} + \bm{D}] \bm{U}(z) $$
-          </li>
-        </ul>
-      </li>
-    </ol>
+  <div class="page-card" id="pg22">
+    <div class="page-number">Page 22 (Sheet Page 13)</div>
+    <div class="page-content">
+      <h3>XIII. State-Space Analysis of Continuous and Discrete Systems</h3>
+      <h4>1. Formulation of Continuous-Time State-Space Equations</h4>
+      <p>Choose integrator outputs as state variables $\bm{\lambda}(t)$ (input $\bm{e}(t)$, output $\bm{r}(t)$):</p>
+      $$\begin{cases}
+      \dfrac{d}{dt}\bm{\lambda}(t) = \bm{A}\bm{\lambda}(t) + \bm{B}\bm{e}(t) \\[1ex]
+      \bm{r}(t) = \bm{C}\bm{\lambda}(t) + \bm{D}\bm{e}(t)
+      \end{cases}$$
+
+      <h4>2. Solution of Continuous-Time State-Space Equations</h4>
+      <p><strong>① Time-Domain ($t$-Domain) Solution:</strong></p>
+      <p>From the state equation, $\frac{d}{dt}[e^{-\bm{A}t}\bm{\lambda}(t)] = e^{-\bm{A}t}\bm{B}\bm{e}(t)$. Integrating from $0_-$ to $t$ yields:</p>
+      $$\bm{\lambda}(t) = e^{\bm{A}t}\bm{\lambda}(0_-) + \int_{0_-}^t e^{\bm{A}(t - \tau)}\bm{B}\bm{e}(\tau) \, d\tau = e^{\bm{A}t}\bm{\lambda}(0_-) + e^{\bm{A}t}\bm{B} * \bm{e}(t)$$
+      $$\bm{r}(t) = \bm{C}e^{\bm{A}t}\bm{\lambda}(0_-) + \int_{0_-}^t \bm{C}e^{\bm{A}(t - \tau)}\bm{B}\bm{e}(\tau) \, d\tau + \bm{D}\bm{e}(t) = \bm{C}e^{\bm{A}t}\bm{\lambda}(0_-) + [\bm{C}e^{\bm{A}t}\bm{B} + \bm{D}\delta(t)] * \bm{e}(t)$$
+
+      <p><strong>② Laplace-Domain ($s$-Domain) Solution:</strong></p>
+      <p>Taking the unilateral Laplace transform of the state equation gives $s\bm{\Lambda}(s) - \bm{\lambda}(0_-) = \bm{A}\bm{\Lambda}(s) + \bm{B}\bm{E}(s)$, so:</p>
+      $$\bm{\Lambda}(s) = (s\bm{I} - \bm{A})^{-1}\bm{\lambda}(0_-) + (s\bm{I} - \bm{A})^{-1}\bm{B}\bm{E}(s)$$
+      $$\bm{\lambda}(t) = \mathcal{L}^{-1}[(s\bm{I} - \bm{A})^{-1}]\bm{\lambda}(0_-) + \mathcal{L}^{-1}[(s\bm{I} - \bm{A})^{-1}]\bm{B} * \bm{e}(t)$$
+      $$\bm{r}(t) = \bm{C}\mathcal{L}^{-1}[(s\bm{I} - \bm{A})^{-1}]\bm{\lambda}(0_-) + \left\{ \bm{C}\mathcal{L}^{-1}[(s\bm{I} - \bm{A})^{-1}]\bm{B} + \bm{D}\delta(t) \right\} * \bm{e}(t)$$
+      <p>Under zero-state conditions ($\bm{\lambda}(0_-) = \bm{0}$), $\bm{\Lambda}(s) = (s\bm{I} - \bm{A})^{-1}\bm{B}\bm{E}(s)$ and $\bm{R}(s) = \bm{C}(s\bm{I} - \bm{A})^{-1}\bm{B}\bm{E}(s) + \bm{D}\bm{E}(s)$, yielding the transfer function matrix and impulse response:</p>
+      $$\bm{H}(s) = \bm{C}(s\bm{I} - \bm{A})^{-1}\bm{B} + \bm{D} = \bm{C}\frac{\text{adj}(s\bm{I} - \bm{A})}{|s\bm{I} - \bm{A}|}\bm{B} + \bm{D}, \quad \bm{h}(t) = \bm{C}e^{\bm{A}t}\bm{B}u(t) + \bm{D}\delta(t)$$
+      <ul>
+        <li><strong>State Transition Matrix:</strong> $e^{\bm{A}t} = \mathcal{L}^{-1}[(s\bm{I} - \bm{A})^{-1}]$</li>
+        <li><strong>Resolvent (Characteristic) Matrix:</strong> $(s\bm{I} - \bm{A})^{-1}$</li>
+      </ul>
+
+      <hr style="margin: 1.5rem 0; border-color: var(--border);">
+
+      <h4>3. Formulation of Discrete-Time State-Space Equations</h4>
+      <p>Choose delay element outputs as state variables $\bm{\lambda}(n)$ (input $\bm{x}(n)$, output $\bm{y}(n)$):</p>
+      $$\begin{cases}
+      \bm{\lambda}(n + 1) = \bm{A}\bm{\lambda}(n) + \bm{B}\bm{x}(n) \\[1ex]
+      \bm{y}(n) = \bm{C}\bm{\lambda}(n) + \bm{D}\bm{x}(n)
+      \end{cases}$$
+
+      <h4>4. Solution of Discrete-Time State-Space Equations</h4>
+      <p><strong>① Discrete Time-Domain ($n$-Domain) Solution:</strong></p>
+      <p>From the state equation, $\bm{\lambda}(n) = \bm{K}\bm{A}^n u(n) + \bm{x}(n) * \bm{h}_0(n)$, solving for $\bm{K} = \bm{\lambda}(0)$ and $\bm{h}_0(n) = \bm{A}^{n-1}u(n - 1)\bm{B}$ gives:</p>
+      $$\bm{\lambda}(n) = \bm{A}^n \bm{\lambda}(0) u(n) + \bm{A}^{n-1}\bm{B} u(n - 1) * \bm{x}(n) u(n)$$
+      $$\bm{y}(n) = \bm{C}\bm{A}^n \bm{\lambda}(0) u(n) + \bm{C}\bm{A}^{n-1}\bm{B} u(n - 1) * \bm{x}(n) u(n) + \bm{D}\bm{x}(n) u(n)$$
+
+      <p><strong>② $z$-Domain Solution:</strong></p>
+      <p>Taking the unilateral $z$-transform gives $z\bm{\Lambda}(z) - z\bm{\lambda}(0) = \bm{A}\bm{\Lambda}(z) + \bm{B}\bm{X}(z)$, so:</p>
+      $$\bm{\Lambda}(z) = (z\bm{I} - \bm{A})^{-1} z \bm{\lambda}(0) + (z\bm{I} - \bm{A})^{-1}\bm{B}\bm{X}(z)$$
+      $$\bm{\lambda}(n) = \mathcal{Z}^{-1}[(z\bm{I} - \bm{A})^{-1} z]\bm{\lambda}(0) + \mathcal{Z}^{-1}[(z\bm{I} - \bm{A})^{-1}\bm{B}] * \bm{x}(n)$$
+      $$\bm{y}(n) = \bm{C}\mathcal{Z}^{-1}[(z\bm{I} - \bm{A})^{-1} z]\bm{\lambda}(0) + \left\{ \bm{C}\mathcal{Z}^{-1}[(z\bm{I} - \bm{A})^{-1}\bm{B}] + \bm{D}\delta(n) \right\} * \bm{x}(n)$$
+      <p>Under zero-state conditions ($\bm{\lambda}(0) = \bm{0}$), $\bm{\Lambda}(z) = (z\bm{I} - \bm{A})^{-1}\bm{B}\bm{X}(z)$ and $\bm{Y}(z) = \bm{C}(z\bm{I} - \bm{A})^{-1}\bm{B}\bm{X}(z) + \bm{D}\bm{X}(z)$, yielding:</p>
+      $$\bm{H}(z) = \bm{C}(z\bm{I} - \bm{A})^{-1}\bm{B} + \bm{D} = \bm{C}\frac{\text{adj}(z\bm{I} - \bm{A})}{|z\bm{I} - \bm{A}|}\bm{B} + \bm{D}, \quad \bm{h}(n) = \bm{C}\bm{A}^{n-1}\bm{B}u(n - 1) + \bm{D}\delta(n)$$
+      <ul>
+        <li><strong>State Transition Matrix:</strong> $\bm{A}^n = \mathcal{Z}^{-1}[(z\bm{I} - \bm{A})^{-1} z]$, and $\bm{A}^{n-1} u(n - 1) = \mathcal{Z}^{-1}[(z\bm{I} - \bm{A})^{-1}]$.</li>
+        <li><strong>Resolvent Matrix:</strong> $(z\bm{I} - \bm{A})^{-1} z$.</li>
+      </ul>
+    </div>
   </div>
-  <hr style="margin: 40px 0;" />
 
   <!-- Page 23 -->
-  <div class="page" id="page-23">
-    <div style="font-size:0.85rem; color:var(--accent-bright); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; border-bottom: 1px solid var(--border); padding-bottom:0.3rem;">Page 23</div>
-    <h3>State-Space Linear Coordinate Transformation</h3>
-    <ol>
-      <li><strong>Coordinate Mapping</strong>
-        <p>Let $ \bm{x}' = \bm{P} \bm{x} $, where $ \bm{P} $ is a non-singular transformation matrix. The transformed matrices are:</p>
-        $$ \bm{A}' = \bm{P}\bm{A}\bm{P}^{-1}, \quad \bm{B}' = \bm{P}\bm{B}, \quad \bm{C}' = \bm{C}\bm{P}^{-1}, \quad \bm{D}' = \bm{D} $$
-      </li>
-      <li><strong>Controllability and Observability Criteria</strong>
-        <ul>
-          <li>An $N$-th order system is controllable if the controllability matrix $ \bm{Q}_c $ has rank $N$:
-            $$ \bm{Q}_c = [\bm{B}, \bm{A}\bm{B}, \bm{A}^2\bm{B}, \dots, \bm{A}^{N-1}\bm{B}] $$
-          </li>
-          <li>An $N$-th order system is observable if the observability matrix $ \bm{Q}_o $ has rank $N$:
-            $$ \bm{Q}_o = \begin{bmatrix} \bm{C} \\ \bm{C}\bm{A} \\ \bm{C}\bm{A}^2 \\ \vdots \\ \bm{C}\bm{A}^{N-1} \end{bmatrix} $$
-          </li>
-        </ul>
-      </li>
-    </ol>
-  </div>
-  <hr style="margin: 40px 0;" />
+  <div class="page-card" id="pg23">
+    <div class="page-number">Page 23 (Appendix A19)</div>
+    <div class="page-content">
+      <h3>Appendix A19: Linear Similarity Transformations of State Variables, Controllability, and Observability</h3>
+      <h4>1. Similarity Transformation &amp; Transfer Function Invariance</h4>
+      <p>Let $\bm{\gamma} = \bm{P}\bm{\lambda}$ be a non-singular linear transformation of the state vector ($\det \bm{P} \neq 0$). The transformed state-space matrices are:</p>
+      $$\bm{A}' = \bm{P}\bm{A}\bm{P}^{-1}, \quad \bm{B}' = \bm{P}\bm{B}, \quad \bm{C}' = \bm{C}\bm{P}^{-1}, \quad \bm{D}' = \bm{D}$$
+      <p>The transfer function matrix is invariant under similarity transformations:</p>
+      $$\bm{H}'(s / z) = \bm{C}'(s\bm{I} - \bm{A}')^{-1}\bm{B}' + \bm{D}' = \bm{H}(s / z)$$
 
+      <h4>2. Jordan Canonical Form &amp; Kalman Controllability / Observability Criteria</h4>
+      <p>Using the modal matrix $\bm{P}$ formed by the eigenvectors (and generalized eigenvectors) of $\bm{A}$ from its characteristic equation, transform $\bm{A}$ into its <strong>Jordan Canonical Form</strong> $\bm{A}' = \bm{J}$:</p>
+      <ul>
+        <li><strong>Controllability Criterion:</strong>
+          <ul>
+            <li><strong>Gilbert / Jordan Form Criterion:</strong> For each distinct eigenvalue's Jordan blocks, the rows of $\bm{B}' = \bm{P}\bm{B}$ corresponding to the <em>last row</em> of each Jordan sub-block contain no all-zero row (and for distinct blocks sharing the same eigenvalue, those last rows are linearly independent).</li>
+            <li><strong>Kalman Rank Criterion:</strong> Equivalent to the controllability matrix $\bm{M}$ having full row rank $N$:
+              $$\text{rank}\,\bm{M} = \text{rank}\begin{bmatrix} \bm{B} & \bm{A}\bm{B} & \cdots & \bm{A}^{N-1}\bm{B} \end{bmatrix} = N \Longleftrightarrow \text{System is State Controllable.}$$
+            </li>
+          </ul>
+        </li>
+        <li><strong>Observability Criterion:</strong>
+          <ul>
+            <li><strong>Gilbert / Jordan Form Criterion:</strong> For each Jordan sub-block, the columns of $\bm{C}' = \bm{C}\bm{P}^{-1}$ corresponding to the <em>first column</em> of each Jordan sub-block contain no all-zero column (and for blocks sharing the same eigenvalue, those first columns are linearly independent).</li>
+            <li><strong>Kalman Rank Criterion:</strong> Equivalent to the observability matrix $\bm{N}$ having full column rank $N$:
+              $$\text{rank}\,\bm{N} = \text{rank}\begin{bmatrix} \bm{C} \\ \bm{C}\bm{A} \\ \vdots \\ \bm{C}\bm{A}^{N-1} \end{bmatrix} = N \Longleftrightarrow \text{System is State Observable.}$$
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  </div>
 </main>
 </body>
 </html>
-
 {% endraw %}
