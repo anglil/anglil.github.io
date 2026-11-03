@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunlit Footsteps &amp; Ocean Breezes — Family Album | Angli Liu</title>
+  <meta name="description" content="A warm and joyful 10-photo family album from our 2026 journey through tranquil gardens, banyan avenues, and golden coastal horizons.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #fdf8f0;
+      --bg-sand: #f6ecdc;
+      --paper-white: #fffdf9;
+      --ink-dark: #2c221e;
+      --ink-muted: #6b584c;
+      --accent-amber: #c4820e;
+      --accent-terracotta: #d96b43;
+      --accent-gold: #e8a838;
+      --accent-sage: #5c7a62;
+      --tape-rose: rgba(235, 168, 150, 0.52);
+      --tape-gold: rgba(236, 198, 120, 0.56);
+      --tape-sage: rgba(143, 178, 150, 0.48);
+      --card-shadow: 0 14px 34px -8px rgba(62, 40, 22, 0.14), 0 4px 10px -2px rgba(62, 40, 22, 0.08);
+      --card-shadow-hover: 0 22px 44px -10px rgba(62, 40, 22, 0.22), 0 8px 18px -4px rgba(62, 40, 22, 0.12);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg-cream);
+      background-image:
+        radial-gradient(circle at 15% 12%, rgba(232, 168, 56, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 85% 28%, rgba(217, 107, 67, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(232, 168, 56, 0.14) 0%, transparent 55%),
+        repeating-linear-gradient(45deg, rgba(196, 130, 14, 0.018) 0px, rgba(196, 130, 14, 0.018) 2px, transparent 2px, transparent 10px);
+      color: var(--ink-dark);
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.65;
+      overflow-x: clip;
+    }
+
+    img, svg {
+      display: block;
+      max-inline-size: 100%;
+    }
+
+    /* Ambient floating bokeh and warm sparkles */
+    .ambient-decor {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: clip;
+    }
+
+    .sun-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(45px);
+      opacity: 0.45;
+    }
+
+    .sun-orb-1 {
+      inline-size: 360px;
+      block-size: 360px;
+      background: radial-gradient(circle, #f7c96e, transparent 70%);
+      inset-block-start: -80px;
+      inset-inline-end: -60px;
+    }
+
+    .sun-orb-2 {
+      inline-size: 420px;
+      block-size: 420px;
+      background: radial-gradient(circle, #f29f79, transparent 70%);
+      inset-block-start: 42%;
+      inset-inline-start: -140px;
+    }
+
+    .sun-orb-3 {
+      inline-size: 340px;
+      block-size: 340px;
+      background: radial-gradient(circle, #e8b86d, transparent 70%);
+      inset-block-end: 5%;
+      inset-inline-end: -100px;
+    }
+
+    /* Top navigation bar */
+    .top-nav {
+      position: relative;
+      z-index: 2;
+      max-inline-size: 1060px;
+      margin-inline: auto;
+      padding-block: 1.5rem 0.5rem;
+      padding-inline: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      flex-wrap: balance;
+      align-items: safe center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: safe center;
+      gap: 0.5rem;
+      color: var(--ink-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(255, 253, 249, 0.8);
+      border: 1px solid rgba(196, 130, 14, 0.22);
+      box-shadow: 0 2px 8px rgba(44, 34, 30, 0.05);
+      transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--accent-terracotta);
+      border-color: var(--accent-terracotta);
+      transform: translateX(-2px);
+    }
+
+    .chapter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      flex-wrap: balance;
+      gap: 0.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .chapter-pills a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 253, 249, 0.75);
+      border: 1px solid rgba(196, 130, 14, 0.18);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .chapter-pills a:hover {
+      background: var(--accent-amber);
+      color: #fff;
+    }
+
+    /* Hero header */
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-inline-size: 860px;
+      margin-inline: auto;
+      padding-block: 3rem 2.5rem;
+      padding-inline: 1.5rem;
+      text-align: center;
+    }
+
+    .postmark-badge {
+      display: inline-flex;
+      align-items: safe center;
+      gap: 0.6rem;
+      padding: 0.38rem 1.1rem;
+      border-radius: 999px;
+      background: #fff8eb;
+      border: 1.5px dashed var(--accent-amber);
+      color: var(--accent-amber);
+      font-family: "Caveat", cursive;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-block-end: 1.1rem;
+      box-shadow: 0 4px 12px rgba(196, 130, 14, 0.1);
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.12;
+      color: var(--ink-dark);
+      margin-block: 0 0.85rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent-terracotta);
+      font-weight: 600;
+    }
+
+    .hero-prologue {
+      max-inline-size: 650px;
+      margin-inline: auto;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.22rem, 2.2vw, 1.42rem);
+      line-height: 1.6;
+      color: var(--ink-muted);
+      margin-block: 0 1.8rem;
+    }
+
+    /* Decorative botanical divider */
+    .botanical-divider {
+      display: flex;
+      align-items: safe center;
+      justify-content: center;
+      gap: 1rem;
+      margin-block: 1.5rem 0.5rem;
+      color: var(--accent-amber);
+    }
+
+    .botanical-divider::before,
+    .botanical-divider::after {
+      content: "";
+      inline-size: clamp(60px, 15vw, 140px);
+      block-size: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196, 130, 14, 0.45), transparent);
+    }
+
+    /* Storyline timeline container */
+    .storybook {
+      position: relative;
+      z-index: 1;
+      max-inline-size: 1040px;
+      margin-inline: auto;
+      padding-inline: 1.5rem;
+      padding-block-end: 4rem;
+    }
+
+    /* Subtle winding golden thread down the center on desktop */
+    .storybook::before {
+      content: "";
+      position: absolute;
+      inset-block: 2rem 4rem;
+      inset-inline-start: 50%;
+      inline-size: 2px;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(196, 130, 14, 0.35) 0px,
+        rgba(196, 130, 14, 0.35) 8px,
+        transparent 8px,
+        transparent 16px
+      );
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
+    /* Chapter Banner */
+    .chapter-banner {
+      text-align: center;
+      margin-block: 3.5rem 2.2rem;
+      position: relative;
+    }
+
+    .chapter-card {
+      display: inline-block;
+      background: var(--paper-white);
+      padding: 1.15rem 2.2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(196, 130, 14, 0.28);
+      box-shadow: 0 10px 26px rgba(62, 40, 22, 0.08);
+      max-inline-size: 620px;
+      position: relative;
+    }
+
+    .chapter-label {
+      display: block;
+      font-family: "Caveat", cursive;
+      font-size: 1.35rem;
+      color: var(--accent-terracotta);
+      margin-block-end: 0.15rem;
+    }
+
+    .chapter-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      color: var(--ink-dark);
+    }
+
+    .chapter-desc {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+    }
+
+    /* Scrapbook Photo Row */
+    .memory-step {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      align-items: center;
+      gap: 2rem;
+      margin-block-end: 4.2rem;
+      position: relative;
+    }
+
+    .memory-step:nth-of-type(odd) .polaroid-wrap {
+      grid-column: 1 / 8;
+    }
+
+    .memory-step:nth-of-type(odd) .story-note {
+      grid-column: 8 / 13;
+    }
+
+    .memory-step:nth-of-type(even) .polaroid-wrap {
+      grid-column: 6 / 13;
+      grid-row: 1;
+    }
+
+    .memory-step:nth-of-type(even) .story-note {
+      grid-column: 1 / 6;
+      grid-row: 1;
+      text-align: right;
+    }
+
+    /* Polaroid Frame with Washi Tape */
+    .polaroid-wrap {
+      position: relative;
+      container: polaroid / inline-size;
+    }
+
+    .polaroid-card {
+      background: var(--paper-white);
+      padding: 1rem 1rem 2.6rem 1rem;
+      border-radius: 6px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(62, 40, 22, 0.08);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+      cursor: pointer;
+      position: relative;
+      margin: 0;
+    }
+
+    .memory-step:nth-of-type(odd) .polaroid-card {
+      transform: rotate(-1.6deg);
+    }
+
+    .memory-step:nth-of-type(even) .polaroid-card {
+      transform: rotate(1.6deg);
+    }
+
+    .memory-step:nth-of-type(3n) .polaroid-card {
+      transform: rotate(-0.9deg);
+    }
+
+    .polaroid-card:hover,
+    .polaroid-card:focus-visible {
+      transform: rotate(0deg) translateY(-6px) scale(1.015);
+      box-shadow: var(--card-shadow-hover);
+      outline: none;
+    }
+
+    .polaroid-card:focus-visible {
+      box-shadow: 0 0 0 3px var(--accent-amber), var(--card-shadow-hover);
+    }
+
+    /* Decorative Washi Tape */
+    .washi-tape {
+      position: absolute;
+      inline-size: 118px;
+      block-size: 30px;
+      inset-block-start: -13px;
+      inset-inline-start: 50%;
+      transform: translateX(-50%) rotate(-3deg);
+      background: var(--tape-gold);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+      z-index: 3;
+      pointer-events: none;
+      border-inline: 2px dotted rgba(255, 255, 255, 0.55);
+    }
+
+    .memory-step:nth-of-type(2n) .washi-tape {
+      background: var(--tape-rose);
+      transform: translateX(-50%) rotate(2.5deg);
+    }
+
+    .memory-step:nth-of-type(3n) .washi-tape {
+      background: var(--tape-sage);
+      transform: translateX(-50%) rotate(-1.5deg);
+    }
+
+    /* Corner photo-mount flourishes */
+    .photo-frame {
+      position: relative;
+      overflow: clip;
+      border-radius: 3px;
+      background: #efe5d5;
+    }
+
+    .photo-frame img {
+      inline-size: 100%;
+      block-size: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    .photo-frame.portrait img {
+      aspect-ratio: 3 / 4;
+      max-block-size: 540px;
+      object-position: center 25%;
+    }
+
+    .polaroid-card:hover .photo-frame img {
+      transform: scale(1.03);
+    }
+
+    .polaroid-handwriting {
+      position: absolute;
+      inset-block-end: 0.45rem;
+      inset-inline: 1rem;
+      display: flex;
+      align-items: safe center;
+      justify-content: space-between;
+      font-family: "Caveat", cursive;
+      font-size: clamp(1.2rem, 4cqi, 1.45rem);
+      color: var(--ink-dark);
+      letter-spacing: 0.02em;
+    }
+
+    .polaroid-index {
+      font-size: 1rem;
+      color: var(--accent-terracotta);
+      font-weight: 700;
+    }
+
+    /* Story Note beside each Polaroid */
+    .story-note {
+      background: rgba(255, 253, 249, 0.86);
+      backdrop-filter: blur(6px);
+      padding: 1.65rem 1.85rem;
+      border-radius: 16px;
+      border: 1px solid rgba(196, 130, 14, 0.2);
+      box-shadow: 0 8px 24px rgba(62, 40, 22, 0.06);
+      position: relative;
+    }
+
+    .story-step-badge {
+      display: inline-flex;
+      align-items: safe center;
+      gap: 0.4rem;
+      font-family: "Caveat", cursive;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-amber);
+      margin-block-end: 0.25rem;
+    }
+
+    .story-note h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin: 0 0 0.55rem;
+      color: var(--ink-dark);
+      line-height: 1.25;
+    }
+
+    .story-note p {
+      margin: 0 0 0.85rem;
+      font-size: 0.96rem;
+      color: var(--ink-muted);
+    }
+
+    .story-tag {
+      display: inline-flex;
+      align-items: safe center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-sage);
+      background: rgba(92, 122, 98, 0.1);
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    /* Decorative Stamp Sticker on Story Cards */
+    .postage-stamp {
+      position: absolute;
+      inset-block-start: -16px;
+      inset-inline-end: 18px;
+      inline-size: 46px;
+      block-size: 54px;
+      background: #fff9ef;
+      border: 2px dotted var(--accent-terracotta);
+      border-radius: 4px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 3px 8px rgba(44, 34, 30, 0.1);
+      transform: rotate(6deg);
+      color: var(--accent-terracotta);
+    }
+
+    .memory-step:nth-of-type(even) .postage-stamp {
+      inset-inline-end: auto;
+      inset-inline-start: 18px;
+      transform: rotate(-6deg);
+    }
+
+    /* Scroll-driven entry animations (Progressive Enhancement with fallback) */
+    @media (prefers-reduced-motion: no-preference) {
+      @supports ((animation-timeline: view()) and (animation-range: entry)) {
+        @keyframes album-card-enter {
+          from {
+            opacity: 0.15;
+            transform: translateY(36px) scale(0.96);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        .memory-step {
+          animation: album-card-enter auto ease-out backwards;
+          animation-timeline: view(block);
+          animation-range: entry 5% cover 28%;
+        }
+      }
+    }
+
+    /* Epilogue Keepsake Card */
+    .epilogue {
+      max-inline-size: 720px;
+      margin-inline: auto;
+      margin-block: 2rem 4rem;
+      padding: 2.4rem 2.2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #fffdf9 0%, #fbf1df 100%);
+      border-radius: 20px;
+      border: 1px solid rgba(196, 130, 14, 0.3);
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+
+    .epilogue h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.35rem);
+      margin: 0 0 0.75rem;
+      color: var(--ink-dark);
+    }
+
+    .epilogue p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--ink-muted);
+      margin: 0 0 1.2rem;
+    }
+
+    .epilogue-sign {
+      font-family: "Caveat", cursive;
+      font-size: 1.65rem;
+      color: var(--accent-terracotta);
+    }
+
+    /* Lightbox Modal Dialog */
+    dialog#photoLightbox {
+      border: none;
+      border-radius: 14px;
+      padding: 1.25rem;
+      background: var(--paper-white);
+      color: var(--ink-dark);
+      max-inline-size: min(92dvw, 960px);
+      max-block-size: 90dvh;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      overscroll-behavior: contain;
+    }
+
+    dialog#photoLightbox::backdrop {
+      background-color: rgba(28, 20, 15, 0.76);
+      backdrop-filter: blur(6px);
+    }
+
+    .lightbox-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: safe center;
+      gap: 0.9rem;
+    }
+
+    .lightbox-header {
+      inline-size: 100%;
+      display: flex;
+      align-items: safe center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .lightbox-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .lightbox-close {
+      background: var(--bg-sand);
+      border: 1px solid rgba(196, 130, 14, 0.3);
+      color: var(--ink-dark);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .lightbox-close:hover {
+      background: var(--accent-terracotta);
+      color: #fff;
+      border-color: var(--accent-terracotta);
+    }
+
+    .lightbox-img-wrap img {
+      max-block-size: 70dvh;
+      inline-size: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      margin-inline: auto;
+    }
+
+    .lightbox-caption {
+      font-family: "Caveat", cursive;
+      font-size: 1.4rem;
+      color: var(--ink-muted);
+      margin: 0;
+      text-align: center;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 840px) {
+      .storybook::before {
+        display: none;
+      }
+
+      .memory-step,
+      .memory-step:nth-of-type(odd),
+      .memory-step:nth-of-type(even) {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-block-end: 3.2rem;
+      }
+
+      .memory-step:nth-of-type(odd) .polaroid-wrap,
+      .memory-step:nth-of-type(even) .polaroid-wrap,
+      .memory-step:nth-of-type(odd) .story-note,
+      .memory-step:nth-of-type(even) .story-note {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        text-align: left;
+      }
+
+      .memory-step:nth-of-type(even) .postage-stamp {
+        inset-inline-start: auto;
+        inset-inline-end: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Decorative ambient sunbeams -->
+  <div class="ambient-decor" aria-hidden="true">
+    <div class="sun-orb sun-orb-1"></div>
+    <div class="sun-orb sun-orb-2"></div>
+    <div class="sun-orb sun-orb-3"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="top-nav" aria-label="Album navigation">
+    <a href="/" class="back-link">← Angli Liu Home</a>
+    <ul class="chapter-pills">
+      <li><a href="#chapter-1">I. Courtyard Whispers</a></li>
+      <li><a href="#chapter-2">II. Bamboo &amp; Banyan</a></li>
+      <li><a href="#chapter-3">III. Ocean Horizon</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="postmark-badge">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"></circle>
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+      </svg>
+      <span>Summer 2026 · Southern China Keepsake</span>
+    </div>
+    <h1>Sunlit Footsteps &amp; <em>Ocean Breezes</em></h1>
+    <p class="hero-prologue">
+      Ten cherished frames from a warm family journey—wandering through whitewashed moon-gates, sharing tea and laughter beneath tropical orchids, and chasing the tide until the coastal sky turned to amber gold.
+    </p>
+    <div class="botanical-divider" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 2C6.5 2 2 6.5 2 12c0 4.5 3 8.3 7.2 9.6-.2-2.2.4-4.5 1.8-6.3 1.5-1.8 3.8-2.9 6.2-3.1C17.8 6.8 15.2 2 12 2z"/>
+        <path d="M2 12c4 0 7.5 2 9.5 5.5"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Main Storybook Timeline -->
+  <main class="storybook">
+
+    <!-- CHAPTER I -->
+    <div id="chapter-1" class="chapter-banner">
+      <div class="chapter-card">
+        <span class="chapter-label">Chapter One</span>
+        <h2 class="chapter-title">Morning Light in the Lingnan Courtyard</h2>
+        <p class="chapter-desc">Where whitewashed walls, sweeping eaves, and unhurried footsteps set the rhythm of our day.</p>
+      </div>
+    </div>
+
+    <!-- Photo 01 (LCP Image: fetchpriority="high", no lazy loading) -->
+    <article class="memory-step">
+      <div class="polaroid-wrap">
+        <div class="washi-tape"></div>
+        <figure class="polaroid-card" tabindex="0" role="button" aria-label="View full size: Stepping Through the Moon-Gate"
+                data-src="/album/photos/01_garden_arch.jpg"
+                data-title="01 · Stepping Through the Moon-Gate"
+                data-caption="Blue skies, red hibiscus blooms, and a welcoming classical arch.">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="/album/photos/01_garden_arch.webp" type="image/webp">
+              <img src="/album/photos/01_garden_arch.jpg"
+                   alt="Classical white garden wall and arched doorway framed by lush palm trees and bright blue clouds"
+                   fetchpriority="high"
+                   width="1600" height="1200">
+            </picture>
+          </div>
+          <figcaption class="polaroid-handwriting">
+            <span>Where the quiet garden begins</span>
+            <span class="polaroid-index">#01 / 10</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="story-note">
+        <div class="postage-stamp" aria-hidden="true">✿</div>
+        <span class="story-step-badge">Stop 01 · Morning Arrival</span>
+        <h3>Stepping Through the Moon-Gate</h3>
+        <p>
+          Our morning began beneath a sky brushed with cotton clouds. Framed by red hibiscus hedges and swaying palms, the classical whitewashed archway felt like an invitation into a slower, gentler world.
+        </p>
+        <span class="story-tag">Lingnan Garden Sanctuary</span>
+      </div>
+    </article>
+
+    <!-- Photo 02 -->
+    <article class="memory-step">
+      <div class="polaroid-wrap">
+        <div class="washi-tape"></div>
+        <figure class="polaroid-card" tabindex="0" role="button" aria-label="View full size: Three Smiles on the Stone Path"
+                data-src="/album/photos/02_garden_trio.jpg"
+                data-title="02 · Three Smiles on the Stone Path"
+                data-caption="Side by side on the shaded flagstone walkway.">
+          <div class="photo-frame portrait">
+            <picture>
+              <source srcset="/album/photos/02_garden_trio.webp" type="image/webp">
+              <img src="/album/photos/02_garden_trio.jpg"
+                   alt="Family of three standing together smiling on a stone garden path under green trees"
+                   loading="lazy"
+                   width="1200" height="1600">
+            </picture>
+          </div>
+          <figcaption class="polaroid-handwriting">
+            <span>Together under the emerald canopy</span>
+            <span class="polaroid-index">#02 / 10</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="story-note">
+        <div class="postage-stamp" aria-hidden="true">☀</div>
+        <span class="story-step-badge">Stop 02 · Family Portrait</span>
+        <h3>Three Smiles on the Flagstone Path</h3>
+        <p>
+          Just inside the courtyard, the ancient trees wove a cool green tunnel over the stone pavers. Pausing shoulder-to-shoulder for a family portrait, the joy of being on the road together was unmistakable.
+        </p>
+        <span class="story-tag">Together Again</span>
+      </div>
+    </article>
+
+    <!-- Photo 03 -->
+    <article class="memory-step">
+      <div class="polaroid-wrap">
+        <div class="washi-tape"></div>
+        <figure class="polaroid-card" tabindex="0" role="button" aria-label="View full size: Under thecurving Timber Veranda"
+                data-src="/album/photos/03_corridor_stroll.jpg"
+                data-title="03 · Under the Curving Timber Veranda"
+                data-caption="Warm cedar rafters and latticed windows casting afternoon patterns.">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="/album/photos/03_corridor_stroll.webp" type="image/webp">
+              <img src="/album/photos/03_corridor_stroll.jpg"
+                   alt="Parents smiling together along a curved wooden veranda with carved lattice windows"
+                   loading="lazy"
+                   width="1600" height="1200">
+            </picture>
+          </div>
+          <figcaption class="polaroid-handwriting">
+            <span>Unhurried conversations in the shade</span>
+            <span class="polaroid-index">#03 / 10</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="story-note">
+        <div class="postage-stamp" aria-hidden="true">❖</div>
+        <span class="story-step-badge">Stop 03 · Shaded Corridor</span>
+        <h3>Along the curving Timber Veranda</h3>
+        <p>
+          Sunlight filtered softly through carved wooden lattice windows as we strolled down the sweeping gallery. Every turn of the corridor offered a cool breeze and another moment to linger and talk.
+        </p>
+        <span class="story-tag">Timber &amp; Lattice</span>
+      </div>
+    </article>
+
+    <!-- Photo 04 -->
+    <article class="memory-step">
+      <div class="polaroid-wrap">
+        <div class="washi-tape"></div>
+        <figure class="polaroid-card" tabindex="0" role="button" aria-label="View full size: Joining the Bronze Tea Table"
+                data-src="/album/photos/04_tea_statues.jpg"
+                data-title="04 · Joining the Bronze Tea Table"
+                data-caption="Pulling up an imaginary seat for morning tea in the courtyard.">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="/album/photos/04_tea_statues.webp" type="image/webp">
+              <img src="/album/photos/04_tea_statues.jpg"
+                   alt="Playfully posing with lifelike bronze statues gathered around a traditional courtyard tea table"
+                   loading="lazy"
+                   width="1600" height="1200">
+            </picture>
+          </div>
+          <figcaption class="polaroid-handwriting">
+            <span>“Room for two more at the tea table?”</span>
+            <span class="polaroid-index">#04 / 10</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="story-note">
+        <div class="postage-stamp" aria-hidden="true">🍵</div>
+        <span class="story-step-badge">Stop 04 · Courtyard Humor</span>
+        <h3>Room for Two More at Tea</h3>
+        <p>
+          In the open plaza before the upturned pavilion roofs, a circle of bronze figures sat deep in conversation over teacups. Naturally, we stepped right in to join the party and pour a pretend cup.
+        </p>
+        <span class="story-tag">Playful Traditions</span>
+      </div>
+    </article>
+
+    <!-- CHAPTER II -->
+    <div id="chapter-2" class="chapter-banner">
+      <div class="chapter-card">
+        <span class="chapter-label">Chapter Two</span>
+        <h2 class="chapter-title">Orchid Whimsy &amp; Banyan Tunnels</h2>
+        <p class="chapter-desc">Playful detours through botanical wonders, woven bamboo domes, and green country roads.</p>
+      </div>
+    </div>
+
+    <!-- Photo 05 -->
+    <article class="memory-step">
+      <div class="polaroid-wrap">
+        <div class="washi-tape"></div>
+        <figure class="polaroid-card" tabindex="0" role="button" aria-label="View full size: Dancing with Giant Orchids"
+                data-src="/album/photos/05_orchid_joy.jpg"
+                data-title="05 · Dancing with Giant Orchids"
+                data-caption="A joyful pose beside oversized violet-and-white orchid sculptures.">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="/album/photos/05_orchid_joy.webp" type="image/webp">
+              <img src="/album/photos/05_orchid_joy.jpg"
+                   alt="Smiling and striking a playful ballet pose next to giant purple and white orchid sculptures in a sunny park"
+                   loading="lazy"
+                   width="1600" height="1200">
+            </picture>
+          </div>
+          <figcaption class="polaroid-handwriting">
+            <span>Pure joy in full bloom</span>
+            <span class="polaroid-index">#05 / 10</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="story-note">
+        <div class="postage-stamp" aria-hidden="true">❀</div>
+        <span class="story-step-badge">Stop 05 · Botanical Whimsy</span>
+        <h3>Dancing with Giant Orchids</h3>
+        <p>
+          Spotting a pair of larger-than-life orchid blossoms along the garden trail sparked an instant ballet pose—one of the happiest, most carefree snapshots of the entire trip.
+        </p>
+        <span class="story-tag">Lighthearted Laughter</span>
+      </div>
+    </article>
+
+    <!-- Photo 06 -->
+    <article class="memory-step">
+      <div class="polaroid-wrap">
+        <div class="washi-tape"></div>
+        <figure class="polaroid-card" tabindex="0" role="button" aria-label="View full size: Beneath the Woven Bamboo Oculus"
+                data-src="/album/photos/06_woven_pavilion.jpg"
+                data-title="06 · Beneath the Woven Bamboo Oculus"
+                data-caption="Resting by the water under a sweeping organic canopy.">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="/album/photos/06_woven_pavilion.webp" type="image/webp">
+              <img src="/album/photos/06_woven_pavilion.jpg"
+                   alt="Sitting peacefully on a wooden boardwalk beneath an organic woven dome pavilion looking out toward green trees"
+                   loading="lazy"
+                   width="1600" height="1199">
+            </picture>
+          </div>
+          <figcaption class="polaroid-handwriting">
+            <span>A quiet breath under the woven sky</span>
+            <span class="polaroid-index">#06 / 10</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="story-note">
+        <div class="postage-stamp" aria-hidden="true">✦</div>
+        <span class="story-step-badge">Stop 06 · Waterside Rest</span>
+        <h3>Beneath the Woven Oculus</h3>
+        <p>
+          Out over the water, an organic canopy of woven lattice arched overhead like a giant bird’s nest, framing a circle of sky and treetops while we rested our feet along the wooden deck.
+        </p>
+        <span class="story-tag">Midday Serenity</span>
+      </div>
+    </article>
+
+    <!-- Photo 07 -->
+    <article class="memory-step">
+      <div class="polaroid-wrap">
+        <div class="washi-tape"></div>
+        <figure class="polaroid-card" tabindex="0" role="button" aria-label="View full size: The Endless Green Cathedral"
+                data-src="/album/photos/07_banyan_avenue.jpg"
+                data-title="07 · The Endless Green Cathedral"
+                data-caption="A tranquil two-lane road completely arched over by ancient banyan branches.">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="/album/photos/07_banyan_avenue.webp" type="image/webp">
+              <img src="/album/photos/07_banyan_avenue.jpg"
+                   alt="Long straight road disappearing into a lush green tunnel formed by overarching banyan trees"
+                   loading="lazy"
+                   width="1600" height="1200">
+            </picture>
+          </div>
+          <figcaption class="polaroid-handwriting">
+            <span>The road that led us to the sea</span>
+            <span class="polaroid-index">#07 / 10</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="story-note">
+        <div class="postage-stamp" aria-hidden="true">🌿</div>
+        <span class="story-step-badge">Stop 07 · The Open Road</span>
+        <h3>Through the Banyan Cathedral</h3>
+        <p>
+          Heading toward the coast, the highway narrowed into a living tunnel of interlocking banyan boughs. Driving through that quiet emerald archway felt like crossing a threshold between forest and ocean.
+        </p>
+        <span class="story-tag">Scenic Drive</span>
+      </div>
+    </article>
+
+    <!-- CHAPTER III -->
+    <div id="chapter-3" class="chapter-banner">
+      <div class="chapter-card">
+        <span class="chapter-label">Chapter Three</span>
+        <h2 class="chapter-title">Salt Air &amp; Golden Horizons</h2>
+        <p class="chapter-desc">Where granite boulders meet the rolling tide and dusk paints the palms in amber fire.</p>
+      </div>
+    </div>
+
+    <!-- Photo 08 -->
+    <article class="memory-step">
+      <div class="polaroid-wrap">
+        <div class="washi-tape"></div>
+        <figure class="polaroid-card" tabindex="0" role="button" aria-label="View full size: Arms Wide to the Sea Breeze"
+                data-src="/album/photos/08_ocean_breeze.jpg"
+                data-title="08 · Arms Wide to the Sea Breeze"
+                data-caption="Standing atop the coastal granite boulders as the waves roll in.">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="/album/photos/08_ocean_breeze.webp" type="image/webp">
+              <img src="/album/photos/08_ocean_breeze.jpg"
+                   alt="Standing atop large smooth coastal boulders with arms spread wide in front of the ocean waves"
+                   loading="lazy"
+                   width="1600" height="1200">
+            </picture>
+          </div>
+          <figcaption class="polaroid-handwriting">
+            <span>Catching every gust of ocean wind</span>
+            <span class="polaroid-index">#08 / 10</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="story-note">
+        <div class="postage-stamp" aria-hidden="true">🌊</div>
+        <span class="story-step-badge">Stop 08 · Rocky Headland</span>
+        <h3>Arms Wide to the Sea Breeze</h3>
+        <p>
+          Clambering onto the smooth, wave-sculpted granite boulders along the headland, there was only one thing to do: throw both arms wide open and greet the salt-sweet wind rolling off the water.
+        </p>
+        <span class="story-tag">Coastal Freedom</span>
+      </div>
+    </article>
+
+    <!-- Photo 09 -->
+    <article class="memory-step">
+      <div class="polaroid-wrap">
+        <div class="washi-tape"></div>
+        <figure class="polaroid-card" tabindex="0" role="button" aria-label="View full size: Wind-Tousled Smiles by the Surf"
+                data-src="/album/photos/09_seaside_selfie.jpg"
+                data-title="09 · Wind-Tousled Smiles by the Surf"
+                data-caption="All three of us together along the sandy shore.">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="/album/photos/09_seaside_selfie.webp" type="image/webp">
+              <img src="/album/photos/09_seaside_selfie.jpg"
+                   alt="Warm family selfie of three smiling on a sandy beach with gentle ocean waves in the background"
+                   loading="lazy"
+                   width="1600" height="1200">
+            </picture>
+          </div>
+          <figcaption class="polaroid-handwriting">
+            <span>Salt air and the happiest hearts</span>
+            <span class="polaroid-index">#09 / 10</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="story-note">
+        <div class="postage-stamp" aria-hidden="true">♥</div>
+        <span class="story-step-badge">Stop 09 · Shoreline Selfie</span>
+        <h3>Wind-Tousled Smiles by the Surf</h3>
+        <p>
+          Down on the soft sand where the white foam curled ashore, we gathered close for a seaside selfie—wind-tousled hair, easy laughter, and the steady rhythm of the tide behind us.
+        </p>
+        <span class="story-tag">Family Keepsake</span>
+      </div>
+    </article>
+
+    <!-- Photo 10 -->
+    <article class="memory-step">
+      <div class="polaroid-wrap">
+        <div class="washi-tape"></div>
+        <figure class="polaroid-card" tabindex="0" role="button" aria-label="View full size: Amber Dusk Over the Palms"
+                data-src="/album/photos/10_sunset_glow.jpg"
+                data-title="10 · Amber Dusk Over the Palms"
+                data-caption="Twilight silhouettes and a tangerine horizon to close the day.">
+          <div class="photo-frame">
+            <picture>
+              <source srcset="/album/photos/10_sunset_glow.webp" type="image/webp">
+              <img src="/album/photos/10_sunset_glow.jpg"
+                   alt="Vibrant orange and gold sunset glowing behind silhouetted palm trees and softly lit coastal towers"
+                   loading="lazy"
+                   width="1600" height="1200">
+            </picture>
+          </div>
+          <figcaption class="polaroid-handwriting">
+            <span>Until the next horizon together</span>
+            <span class="polaroid-index">#10 / 10</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="story-note">
+        <div class="postage-stamp" aria-hidden="true">★</div>
+        <span class="story-step-badge">Stop 10 · Golden Finale</span>
+        <h3>Amber Dusk Over the Palms</h3>
+        <p>
+          As evening settled over the coast, the horizon ignited in ribbons of apricot and gold behind silhouetted palms. A peaceful, glowing curtain call for days we will always hold dear.
+        </p>
+        <span class="story-tag">Golden Hour</span>
+      </div>
+    </article>
+
+    <!-- Epilogue Card -->
+    <section class="epilogue" aria-labelledby="epilogue-heading">
+      <h2 id="epilogue-heading">Every Mile Warmer Together</h2>
+      <p>
+        “The best journeys aren’t measured in miles on a map, but in the quiet walks, shared teacups, and ocean breezes we carry home with the people we love.”
+      </p>
+      <div class="epilogue-sign">— Angli &amp; Family · 2026</div>
+    </section>
+
+  </main>
+
+  <!-- Native Modal Lightbox Dialog with declarative light-dismiss -->
+  <dialog id="photoLightbox" closedby="any" aria-labelledby="lightboxTitle">
+    <div class="lightbox-inner">
+      <div class="lightbox-header">
+        <h2 id="lightboxTitle" class="lightbox-title">Photo View</h2>
+        <form method="dialog">
+          <button type="submit" class="lightbox-close">Close (Esc)</button>
+        </form>
+      </div>
+      <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="" alt="" fetchpriority="low">
+      </div>
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+  </dialog>
+
+  <script>
+    (() => {
+      const dialog = document.getElementById('photoLightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxTitle = document.getElementById('lightboxTitle');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+
+      function openPhoto(card) {
+        const src = card.getAttribute('data-src');
+        const title = card.getAttribute('data-title');
+        const caption = card.getAttribute('data-caption');
+        const imgEl = card.querySelector('img');
+        lightboxImg.src = src;
+        lightboxImg.alt = imgEl ? imgEl.alt : title;
+        lightboxTitle.textContent = title;
+        lightboxCaption.textContent = caption;
+        dialog.showModal();
+      }
+
+      document.querySelectorAll('.polaroid-card').forEach((card) => {
+        card.addEventListener('click', () => openPhoto(card));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openPhoto(card);
+          }
+        });
+      });
+
+      // Fallback for browsers without <dialog closedby="any"> support (e.g. Safari)
+      if (!('closedBy' in HTMLDialogElement.prototype)) {
+        dialog.addEventListener('click', (event) => {
+          if (event.target !== dialog) return;
+          const rect = dialog.getBoundingClientRect();
+          const isDialogContent = (
+            rect.top <= event.clientY &&
+            event.clientY <= rect.top + rect.height &&
+            rect.left <= event.clientX &&
+            event.clientX <= rect.left + rect.width
+          );
+          if (isDialogContent) return;
+          dialog.close();
+        });
+      }
+
+      // Fallback for browsers without CSS scroll-driven view() animation support
+      if (
+        window.matchMedia('(prefers-reduced-motion: no-preference)').matches &&
+        !CSS.supports('(animation-timeline: view()) and (animation-range: entry)')
+      ) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              const ratio = Math.min(1, entry.intersectionRatio / 0.35);
+              entry.target.style.opacity = String(0.2 + ratio * 0.8);
+              entry.target.style.transform = `translateY(${(1 - ratio) * 24}px)`;
+            }
+          },
+          {
+            threshold: Array.from({ length: 21 }, (_, i) => i / 20),
+          }
+        );
+
+        document.querySelectorAll('.memory-step').forEach((el) => {
+          el.style.transition = 'opacity 0.25s ease-out, transform 0.25s ease-out';
+          observer.observe(el);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

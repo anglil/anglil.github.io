@@ -24,10 +24,14 @@ exclude:
   - "*.log"
   - "*.sh"
   - "*.swift"
-  - "*.png"
-  - "*.jpg"
+  - "temp_*.png"
+  - "temp_*.jpg"
+  - "test_*.png"
+  - "preview_page.png"
   - "*.docx"
   - "*.epub"
   - mac_ocr
   - fg791pip.txt
   - fg791pxe.txt
+include:
+  - album/photos

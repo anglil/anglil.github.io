@@ -13,6 +13,7 @@ title: Notes – Angli Liu
       <li><a href="https://github.com/anglil" target="_blank">GitHub</a></li>
       <li><a href="/notes/"><i>Notes</i></a></li>
       <li><a href="/readings/"><i>Readings</i></a></li>
+      <li><a href="/album/"><i>Album</i></a></li>
     </ul>
   </div>
 
