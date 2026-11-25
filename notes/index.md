@@ -56,8 +56,11 @@ title: Notes – Angli Liu
 
     <hr>
 
-    <div class="back-home">
-      <a href="/">← Home</a>
+    <div class="footnote-bar">
+      <p class="footnote">Source of all transcribed notes: <a href="https://drive.google.com/drive/folders/1HVe9q3uRpztCHPufmoapgLRTKyTBtECR" target="_blank">notes</a></p>
+      <div class="back-home">
+        <a href="/">← Home</a>
+      </div>
     </div>
   </div>
 </div>
@@ -165,9 +168,38 @@ title: Notes – Angli Liu
     }
   }
 
+  .footnote-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 1.5em;
+  }
+
+  .footnote {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .footnote a {
+    font-style: normal;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #c4820e;
+  }
+
+  .footnote a:hover {
+    text-decoration: underline;
+    color: #d35400;
+  }
+
   .back-home {
     text-align: right;
-    margin-top: 1.5em;
+    margin-inline-start: auto;
   }
 
   .back-home a {
